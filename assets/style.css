@@ -234,6 +234,66 @@ a.card:hover {
   .level-grid { grid-template-columns: repeat(2, 1fr); }
 }
 
+/* ===== Checkpoint cards in unit list ===== */
+.check-item {
+  border: 1px solid var(--border);
+  border-left: 3px solid transparent;
+  border-radius: var(--radius);
+  padding: 1rem 1.25rem;
+  display: flex;
+  align-items: baseline;
+  gap: 1rem;
+  transition: border-left-color 0.15s, box-shadow 0.15s;
+}
+
+.check-item--quick {
+  background: #fffaf4;
+  border-left-color: #b8763a;
+}
+
+.check-item--quick:hover {
+  box-shadow: 0 2px 8px rgba(184,118,58,0.15);
+}
+
+.check-item--knowledge {
+  background: #fdf6f0;
+  border-left-color: #8B5E3C;
+}
+
+.check-item--knowledge:hover {
+  box-shadow: 0 2px 8px rgba(139,94,60,0.15);
+}
+
+.check-tag {
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  min-width: 52px;
+  flex-shrink: 0;
+}
+
+.check-item--quick .check-tag  { color: #b8763a; }
+.check-item--knowledge .check-tag { color: #8B5E3C; }
+
+.check-name {
+  font-size: 0.975rem;
+  font-weight: 600;
+  color: var(--brown);
+}
+
+.check-desc {
+  font-size: 0.825rem;
+  color: var(--muted);
+  margin-left: auto;
+  text-align: right;
+}
+
+@media (max-width: 600px) {
+  .check-item { flex-wrap: wrap; }
+  .check-desc { margin-left: 0; text-align: left; width: 100%; }
+}
+
 /* ===== Unit list ===== */
 .unit-list {
   display: flex;
