@@ -5,6 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Unit 1 · Saludos · Spanish with Brady</title>
   <link rel="stylesheet" href="../../../assets/style.css">
+  <style>
+    .lang-zh { display: none; }
+    body.zh .lang-en { display: none; }
+    body.zh .lang-zh { display: inline; }
+    .lang-zh-block { display: none; }
+    body.zh .lang-zh-block { display: block; }
+    body.zh .lang-en-block { display: none; }
+  </style>
 </head>
 <body>
 
@@ -24,6 +32,14 @@
 </nav>
 
 <main>
+
+  <div style="display:flex; justify-content:flex-end; padding: 8px 0 0;">
+    <div style="display:flex; gap:0; border:1px solid #e2ddd4; border-radius:6px; overflow:hidden;">
+      <button id="btn-en" onclick="setLang('en')" style="padding:6px 16px; font-size:13px; font-weight:500; border:none; cursor:pointer; background:#5a7a32; color:white;">EN</button>
+      <button id="btn-zh" onclick="setLang('zh')" style="padding:6px 16px; font-size:13px; font-weight:500; border:none; cursor:pointer; background:#f7f5ef; color:#7a6e60;">中文</button>
+    </div>
+  </div>
+
   <div class="unit-header">
     <div class="unit-num">A1.1 · Unit 1</div>
     <h1>Saludos</h1>
@@ -36,18 +52,24 @@
     <details class="panel">
       <summary>
         <span class="panel-num">1</span>
-        <span class="panel-title">Hook / Opener</span>
+        <span class="panel-title"><span class="lang-en">Hook / Opener</span><span class="lang-zh">课程导入</span></span>
         <svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg>
       </summary>
       <div class="panel-body">
         <p>📷 <em>Suggested image: two people meeting for the first time on a video call — one in Spain, one in China. Warm, modern, friendly.</em></p>
-        <p>Before we start — think about this:</p>
-        <ul>
+        <p class="lang-en-block">Before we start — think about this:</p>
+        <p class="lang-zh-block">开始之前，思考一下：</p>
+        <ul class="lang-en-block">
           <li>How do you greet someone in the morning in Chinese? And in the evening?</li>
           <li>In Spanish, the greeting changes depending on the time of day. Do you know any Spanish greetings already?</li>
           <li>How do you say "nice to meet you" in English? Spanish has three different ways.</li>
         </ul>
-        <p><strong>By the end of this unit you can:</strong> greet anyone in Spanish at any time of day, introduce yourself, spell your name aloud, and survive your first online Spanish lesson.</p>
+        <ul class="lang-zh-block">
+          <li>在中文里，早上和晚上分别怎么打招呼？</li>
+          <li>西班牙语中，问候语会因时间不同而变化。你已经知道哪些西班牙语问候语了吗？</li>
+          <li>英语中怎么说"很高兴认识你"？西班牙语有三种不同的说法。</li>
+        </ul>
+        <p><strong><span class="lang-en">By the end of this unit you can:</span><span class="lang-zh">完成本单元后，你能够：</span></strong> <span class="lang-en">greet anyone in Spanish at any time of day, introduce yourself, spell your name aloud, and survive your first online Spanish lesson.</span><span class="lang-zh">用西班牙语在任意时间与任何人打招呼、自我介绍、大声拼出自己的名字，以及顺利完成第一堂在线西班牙语课。</span></p>
       </div>
     </details>
 
@@ -55,46 +77,46 @@
     <details class="panel">
       <summary>
         <span class="panel-num">2</span>
-        <span class="panel-title">Vocabulary</span>
+        <span class="panel-title"><span class="lang-en">Vocabulary</span><span class="lang-zh">词汇</span></span>
         <svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg>
       </summary>
       <div class="panel-body">
-        <h4>Greetings (问候语)</h4>
+        <h4><span class="lang-en">Greetings (问候语)</span><span class="lang-zh">问候语</span></h4>
         <table>
-          <tr><th>Spanish</th><th>English</th><th>When to use</th></tr>
-          <tr><td><strong>Hola</strong></td><td>Hi / Hello</td><td>Any time, any situation</td></tr>
-          <tr><td><strong>Buenos días</strong></td><td>Good morning</td><td>Until about 12:00</td></tr>
-          <tr><td><strong>Buenas tardes</strong></td><td>Good afternoon</td><td>12:00 to around 20:00</td></tr>
-          <tr><td><strong>Buenas noches</strong></td><td>Good evening / night</td><td>After 20:00 — also used as goodbye</td></tr>
-          <tr><td><strong>Buenas</strong></td><td>Hi (casual shortcut)</td><td>Any time — very common in Spain</td></tr>
+          <tr><th>Spanish</th><th>English</th><th><span class="lang-en">When to use</span><span class="lang-zh">使用时机</span></th></tr>
+          <tr><td><strong>Hola</strong></td><td>Hi / Hello</td><td><span class="lang-en">Any time, any situation</span><span class="lang-zh">任何时间、任何场合</span></td></tr>
+          <tr><td><strong>Buenos días</strong></td><td>Good morning</td><td><span class="lang-en">Until about 12:00</span><span class="lang-zh">约 12:00 前</span></td></tr>
+          <tr><td><strong>Buenas tardes</strong></td><td>Good afternoon</td><td><span class="lang-en">12:00 to around 20:00</span><span class="lang-zh">12:00 至约 20:00</span></td></tr>
+          <tr><td><strong>Buenas noches</strong></td><td>Good evening / night</td><td><span class="lang-en">After 20:00 — also used as goodbye</span><span class="lang-zh">20:00 后——也可用作告别语</span></td></tr>
+          <tr><td><strong>Buenas</strong></td><td>Hi (casual shortcut)</td><td><span class="lang-en">Any time — very common in Spain</span><span class="lang-zh">任何时间——在西班牙非常常见</span></td></tr>
         </table>
 
-        <h4>Farewells (告别语)</h4>
+        <h4><span class="lang-en">Farewells (告别语)</span><span class="lang-zh">告别语</span></h4>
         <table>
-          <tr><th>Spanish</th><th>English</th><th>Note</th></tr>
-          <tr><td><strong>Adiós</strong></td><td>Goodbye</td><td>Final farewell</td></tr>
-          <tr><td><strong>Hasta luego</strong></td><td>See you later</td><td>Most common farewell</td></tr>
-          <tr><td><strong>Hasta mañana</strong></td><td>See you tomorrow</td><td>When you'll see them next day</td></tr>
-          <tr><td><strong>Hasta pronto</strong></td><td>See you soon</td><td>When you'll meet again soon</td></tr>
-          <tr><td><strong>Nos vemos</strong></td><td>See you around</td><td>Casual, friendly</td></tr>
-          <tr><td><strong>Chao / Chau</strong></td><td>Bye</td><td>Informal — very common</td></tr>
+          <tr><th>Spanish</th><th>English</th><th><span class="lang-en">Note</span><span class="lang-zh">注意</span></th></tr>
+          <tr><td><strong>Adiós</strong></td><td>Goodbye</td><td><span class="lang-en">Final farewell</span><span class="lang-zh">正式告别</span></td></tr>
+          <tr><td><strong>Hasta luego</strong></td><td>See you later</td><td><span class="lang-en">Most common farewell</span><span class="lang-zh">最常用的告别语</span></td></tr>
+          <tr><td><strong>Hasta mañana</strong></td><td>See you tomorrow</td><td><span class="lang-en">When you'll see them next day</span><span class="lang-zh">明天还会见面时使用</span></td></tr>
+          <tr><td><strong>Hasta pronto</strong></td><td>See you soon</td><td><span class="lang-en">When you'll meet again soon</span><span class="lang-zh">近期还会再见面时使用</span></td></tr>
+          <tr><td><strong>Nos vemos</strong></td><td>See you around</td><td><span class="lang-en">Casual, friendly</span><span class="lang-zh">随意、亲切</span></td></tr>
+          <tr><td><strong>Chao / Chau</strong></td><td>Bye</td><td><span class="lang-en">Informal — very common</span><span class="lang-zh">非正式——非常常见</span></td></tr>
         </table>
 
-        <h4>Polite expressions (礼貌用语)</h4>
+        <h4><span class="lang-en">Polite expressions (礼貌用语)</span><span class="lang-zh">礼貌用语</span></h4>
         <table>
-          <tr><th>Spanish</th><th>English</th><th>Note</th></tr>
+          <tr><th>Spanish</th><th>English</th><th><span class="lang-en">Note</span><span class="lang-zh">注意</span></th></tr>
           <tr><td><strong>Por favor</strong></td><td>Please</td><td></td></tr>
-          <tr><td><strong>Gracias</strong></td><td>Thank you</td><td>Stress: GRA-cias</td></tr>
-          <tr><td><strong>De nada</strong></td><td>You're welcome</td><td>Only after gracias — not after mucho gusto</td></tr>
-          <tr><td><strong>Perdón</strong></td><td>Sorry / Excuse me</td><td>Light apology or getting attention</td></tr>
-          <tr><td><strong>Lo siento</strong></td><td>I'm sorry</td><td>Genuine apology — stronger than perdón</td></tr>
-          <tr><td><strong>Con permiso</strong></td><td>Excuse me</td><td>When physically passing someone</td></tr>
+          <tr><td><strong>Gracias</strong></td><td>Thank you</td><td><span class="lang-en">Stress: GRA-cias</span><span class="lang-zh">重音：GRA-cias</span></td></tr>
+          <tr><td><strong>De nada</strong></td><td>You're welcome</td><td><span class="lang-en">Only after gracias — not after mucho gusto</span><span class="lang-zh">只用于回应 gracias，不用于回应 mucho gusto</span></td></tr>
+          <tr><td><strong>Perdón</strong></td><td>Sorry / Excuse me</td><td><span class="lang-en">Light apology or getting attention</span><span class="lang-zh">轻度道歉或引起注意</span></td></tr>
+          <tr><td><strong>Lo siento</strong></td><td>I'm sorry</td><td><span class="lang-en">Genuine apology — stronger than perdón</span><span class="lang-zh">真诚道歉——比 perdón 更正式</span></td></tr>
+          <tr><td><strong>Con permiso</strong></td><td>Excuse me</td><td><span class="lang-en">When physically passing someone</span><span class="lang-zh">从别人身旁经过时使用</span></td></tr>
           <tr><td><strong>Mucho gusto</strong></td><td>Nice to meet you</td><td></td></tr>
-          <tr><td><strong>Encantado/a</strong></td><td>Pleased to meet you</td><td>Encantado (male) / Encantada (female)</td></tr>
-          <tr><td><strong>Igualmente</strong></td><td>Likewise / Same here</td><td>Response to mucho gusto</td></tr>
+          <tr><td><strong>Encantado/a</strong></td><td>Pleased to meet you</td><td><span class="lang-en">Encantado (male) / Encantada (female)</span><span class="lang-zh">Encantado（男性用）/ Encantada（女性用）</span></td></tr>
+          <tr><td><strong>Igualmente</strong></td><td>Likewise / Same here</td><td><span class="lang-en">Response to mucho gusto</span><span class="lang-zh">回应 mucho gusto 时使用</span></td></tr>
         </table>
 
-        <p>⚠️ <strong>Pronunciation tip:</strong> The H in Spanish is always silent. <em>Hola</em> = OH-la, not HOH-la.</p>
+        <p>⚠️ <strong><span class="lang-en">Pronunciation tip:</span><span class="lang-zh">发音提示：</span></strong> <span class="lang-en">The H in Spanish is always silent. <em>Hola</em> = OH-la, not HOH-la.</span><span class="lang-zh">西班牙语中的 H 永远不发音。<em>Hola</em> = OH-la，不读 HOH-la。</span></p>
       </div>
     </details>
 
@@ -102,50 +124,67 @@
     <details class="panel">
       <summary>
         <span class="panel-num">3</span>
-        <span class="panel-title">Grammar in context</span>
+        <span class="panel-title"><span class="lang-en">Grammar in context</span><span class="lang-zh">语法讲解</span></span>
         <svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg>
       </summary>
       <div class="panel-body">
-        <h4>Part 1 — Tú vs. Usted (你 vs. 您)</h4>
-        <p>Spanish has two ways to say "you" — and choosing the wrong one can feel rude.</p>
+        <h4><span class="lang-en">Part 1 — Tú vs. Usted (你 vs. 您)</span><span class="lang-zh">第一部分 — Tú 与 Usted (你 vs. 您)</span></h4>
+        <p class="lang-en-block">Spanish has two ways to say "you" — and choosing the wrong one can feel rude.</p>
+        <p class="lang-zh-block">西班牙语中有两种表达"你"的方式——选错了会让人感到不礼貌。</p>
         <table>
           <tr><th></th><th>Tú</th><th>Usted</th></tr>
-          <tr><td>Use with</td><td>Friends, family, classmates, people your age</td><td>Boss, teacher, doctor, older people, strangers</td></tr>
-          <tr><td>Feeling</td><td>Casual, warm, friendly</td><td>Respectful, formal</td></tr>
-          <tr><td>Quick test</td><td>Would you use their first name?</td><td>Would you say señor/señora?</td></tr>
+          <tr>
+            <td><span class="lang-en">Use with</span><span class="lang-zh">使用场合</span></td>
+            <td><span class="lang-en">Friends, family, classmates, people your age</span><span class="lang-zh">朋友、家人、同学、同龄人</span></td>
+            <td><span class="lang-en">Boss, teacher, doctor, older people, strangers</span><span class="lang-zh">上司、老师、医生、年长者、陌生人</span></td>
+          </tr>
+          <tr>
+            <td><span class="lang-en">Feeling</span><span class="lang-zh">语气感觉</span></td>
+            <td><span class="lang-en">Casual, warm, friendly</span><span class="lang-zh">随意、亲切、友好</span></td>
+            <td><span class="lang-en">Respectful, formal</span><span class="lang-zh">尊重、正式</span></td>
+          </tr>
+          <tr>
+            <td><span class="lang-en">Quick test</span><span class="lang-zh">判断技巧</span></td>
+            <td><span class="lang-en">Would you use their first name?</span><span class="lang-zh">你会直接叫对方的名字吗？</span></td>
+            <td><span class="lang-en">Would you say señor/señora?</span><span class="lang-zh">你会称呼对方为 señor/señora 吗？</span></td>
+          </tr>
         </table>
-        <p>Real examples:</p>
+        <p class="lang-en-block">Real examples:</p>
+        <p class="lang-zh-block">实际例句：</p>
         <ul>
-          <li>¿<strong>Tú</strong> eres Ana? — (asking a classmate)</li>
-          <li>¿<strong>Usted</strong> es la profesora Lin? — (addressing a teacher)</li>
-          <li>Wei le dice a Carlos: "¿Cómo estás <strong>tú</strong>?" — (they are friends)</li>
+          <li>¿<strong>Tú</strong> eres Ana? — <span class="lang-en">(asking a classmate)</span><span class="lang-zh">（问同学时使用）</span></li>
+          <li>¿<strong>Usted</strong> es la profesora Lin? — <span class="lang-en">(addressing a teacher)</span><span class="lang-zh">（称呼老师时使用）</span></li>
+          <li>Wei le dice a Carlos: "¿Cómo estás <strong>tú</strong>?" — <span class="lang-en">(they are friends)</span><span class="lang-zh">（他们是朋友）</span></li>
         </ul>
-        <p>⚠️ <strong>Note (注意):</strong> In Latin America, <em>usted</em> is used even more than in Spain — sometimes even with people your own age in formal situations.</p>
+        <p class="lang-en-block">⚠️ <strong>Note (注意):</strong> In Latin America, <em>usted</em> is used even more than in Spain — sometimes even with people your own age in formal situations.</p>
+        <p class="lang-zh-block">⚠️ <strong>注意：</strong>在拉丁美洲，<em>usted</em> 的使用比西班牙更普遍——有时甚至在与同龄人交流的正式场合也会使用。</p>
 
-        <h4>Part 2 — Subject pronouns (主语人称代词)</h4>
+        <h4><span class="lang-en">Part 2 — Subject pronouns (主语人称代词)</span><span class="lang-zh">第二部分 — 主语人称代词</span></h4>
         <table>
-          <tr><th>Pronoun</th><th>English</th><th>Note</th></tr>
-          <tr><td><strong>yo</strong></td><td>I</td><td>Always lowercase in Spanish — unlike English</td></tr>
-          <tr><td><strong>tú</strong></td><td>you (informal)</td><td>The tilde (accent) is essential: tú = you / tu = your</td></tr>
-          <tr><td><strong>él / ella</strong></td><td>he / she</td><td>él (pronoun) ≠ el (article "the")</td></tr>
-          <tr><td><strong>usted</strong></td><td>you (formal)</td><td>Abbreviated Ud. — uses él/ella verb forms</td></tr>
-          <tr><td><strong>nosotros/as</strong></td><td>we</td><td>Nosotras = all female group</td></tr>
-          <tr><td><strong>vosotros/as</strong></td><td>you all (Spain only)</td><td>Not used in Latin America</td></tr>
-          <tr><td><strong>ellos/ellas</strong></td><td>they</td><td>Ellos = mixed or all male group</td></tr>
-          <tr><td><strong>ustedes</strong></td><td>you all</td><td>Used everywhere — formal and informal</td></tr>
+          <tr><th><span class="lang-en">Pronoun</span><span class="lang-zh">人称代词</span></th><th>English</th><th><span class="lang-en">Note</span><span class="lang-zh">注意</span></th></tr>
+          <tr><td><strong>yo</strong></td><td>I</td><td><span class="lang-en">Always lowercase in Spanish — unlike English</span><span class="lang-zh">西班牙语中始终小写——与英语不同</span></td></tr>
+          <tr><td><strong>tú</strong></td><td>you (informal)</td><td><span class="lang-en">The tilde (accent) is essential: tú = you / tu = your</span><span class="lang-zh">重音符号至关重要：tú = 你 / tu = 你的</span></td></tr>
+          <tr><td><strong>él / ella</strong></td><td>he / she</td><td><span class="lang-en">él (pronoun) ≠ el (article "the")</span><span class="lang-zh">él（代词）≠ el（冠词"the"）</span></td></tr>
+          <tr><td><strong>usted</strong></td><td>you (formal)</td><td><span class="lang-en">Abbreviated Ud. — uses él/ella verb forms</span><span class="lang-zh">缩写为 Ud.——使用 él/ella 动词形式</span></td></tr>
+          <tr><td><strong>nosotros/as</strong></td><td>we</td><td><span class="lang-en">Nosotras = all female group</span><span class="lang-zh">Nosotras = 全女性群体</span></td></tr>
+          <tr><td><strong>vosotros/as</strong></td><td>you all (Spain only)</td><td><span class="lang-en">Not used in Latin America</span><span class="lang-zh">拉丁美洲不使用</span></td></tr>
+          <tr><td><strong>ellos/ellas</strong></td><td>they</td><td><span class="lang-en">Ellos = mixed or all male group</span><span class="lang-zh">Ellos = 混合或全男性群体</span></td></tr>
+          <tr><td><strong>ustedes</strong></td><td>you all</td><td><span class="lang-en">Used everywhere — formal and informal</span><span class="lang-zh">各地均可使用——正式和非正式场合皆宜</span></td></tr>
         </table>
-        <p>💡 <strong>Good news:</strong> In Spanish you can often drop the pronoun — the verb ending already tells you who is speaking. <em>Soy Ana</em> is more natural than <em>Yo soy Ana</em>. As a beginner, keeping the pronoun is completely fine.</p>
+        <p class="lang-en-block">💡 <strong>Good news:</strong> In Spanish you can often drop the pronoun — the verb ending already tells you who is speaking. <em>Soy Ana</em> is more natural than <em>Yo soy Ana</em>. As a beginner, keeping the pronoun is completely fine.</p>
+        <p class="lang-zh-block">💡 <strong>好消息：</strong>西班牙语中通常可以省略人称代词——动词变位已经说明了主语是谁。<em>Soy Ana</em> 比 <em>Yo soy Ana</em> 更自然。初学者保留人称代词完全没问题。</p>
 
-        <h4>Part 3 — Verb SER: who you are (动词 SER)</h4>
-        <p>Examples first — notice the pattern:</p>
+        <h4><span class="lang-en">Part 3 — Verb SER: who you are (动词 SER)</span><span class="lang-zh">第三部分 — 动词 SER：描述身份</span></h4>
+        <p class="lang-en-block">Examples first — notice the pattern:</p>
+        <p class="lang-zh-block">先看例子——注意规律：</p>
         <ul>
-          <li>Me llamo <strong>Wei</strong>. — My name is Wei.</li>
-          <li>Yo <strong>soy</strong> estudiante. — I am a student.</li>
-          <li>Ella <strong>es</strong> de España. — She is from Spain.</li>
-          <li>Nosotros <strong>somos</strong> compañeros. — We are classmates.</li>
+          <li>Me llamo <strong>Wei</strong>. — <span class="lang-en">My name is Wei.</span><span class="lang-zh">我的名字叫 Wei。</span></li>
+          <li>Yo <strong>soy</strong> estudiante. — <span class="lang-en">I am a student.</span><span class="lang-zh">我是学生。</span></li>
+          <li>Ella <strong>es</strong> de España. — <span class="lang-en">She is from Spain.</span><span class="lang-zh">她来自西班牙。</span></li>
+          <li>Nosotros <strong>somos</strong> compañeros. — <span class="lang-en">We are classmates.</span><span class="lang-zh">我们是同班同学。</span></li>
         </ul>
         <table>
-          <tr><th>Pronoun</th><th>SER</th><th>Example</th></tr>
+          <tr><th><span class="lang-en">Pronoun</span><span class="lang-zh">人称代词</span></th><th>SER</th><th><span class="lang-en">Example</span><span class="lang-zh">例句</span></th></tr>
           <tr><td>yo</td><td><strong>soy</strong></td><td>Soy Ana.</td></tr>
           <tr><td>tú</td><td><strong>eres</strong></td><td>¿Eres estudiante?</td></tr>
           <tr><td>él / ella / usted</td><td><strong>es</strong></td><td>Él es de China.</td></tr>
@@ -153,17 +192,19 @@
           <tr><td>vosotros/as</td><td><strong>sois</strong></td><td>¿Sois de aquí?</td></tr>
           <tr><td>ellos/as / ustedes</td><td><strong>son</strong></td><td>Son profesores.</td></tr>
         </table>
-        <p>⚠️ <strong>In this unit</strong>, SER is used only for: name, basic identity. More uses come in Unit 2.</p>
+        <p class="lang-en-block">⚠️ <strong>In this unit</strong>, SER is used only for: name, basic identity. More uses come in Unit 2.</p>
+        <p class="lang-zh-block">⚠️ <strong>在本单元中</strong>，SER 仅用于：姓名和基本身份介绍。更多用法将在第 2 单元学习。</p>
 
-        <h4>Part 4 — LLAMARSE: your name (叫)</h4>
-        <p>Examples first:</p>
+        <h4><span class="lang-en">Part 4 — LLAMARSE: your name (叫)</span><span class="lang-zh">第四部分 — LLAMARSE：介绍名字</span></h4>
+        <p class="lang-en-block">Examples first:</p>
+        <p class="lang-zh-block">先看例子：</p>
         <ul>
-          <li>¿Cómo <strong>te llamas</strong>? — What is your name?</li>
-          <li><strong>Me llamo</strong> Wei. — My name is Wei.</li>
-          <li>Ella <strong>se llama</strong> Sara. — Her name is Sara.</li>
+          <li>¿Cómo <strong>te llamas</strong>? — <span class="lang-en">What is your name?</span><span class="lang-zh">你叫什么名字？</span></li>
+          <li><strong>Me llamo</strong> Wei. — <span class="lang-en">My name is Wei.</span><span class="lang-zh">我的名字叫 Wei。</span></li>
+          <li>Ella <strong>se llama</strong> Sara. — <span class="lang-en">Her name is Sara.</span><span class="lang-zh">她叫 Sara。</span></li>
         </ul>
         <table>
-          <tr><th>Pronoun</th><th>LLAMARSE</th></tr>
+          <tr><th><span class="lang-en">Pronoun</span><span class="lang-zh">人称代词</span></th><th>LLAMARSE</th></tr>
           <tr><td>yo</td><td><strong>me llamo</strong></td></tr>
           <tr><td>tú</td><td><strong>te llamas</strong></td></tr>
           <tr><td>él / ella / usted</td><td><strong>se llama</strong></td></tr>
@@ -171,8 +212,10 @@
           <tr><td>vosotros/as</td><td><strong>os llamáis</strong></td></tr>
           <tr><td>ellos/as / ustedes</td><td><strong>se llaman</strong></td></tr>
         </table>
-        <p>❌ <em>Me llamo es Wei</em> — incorrect<br>
+        <p class="lang-en-block">❌ <em>Me llamo es Wei</em> — incorrect<br>
         ✅ <em>Me llamo Wei</em> — correct (no extra verb needed)</p>
+        <p class="lang-zh-block">❌ <em>Me llamo es Wei</em> — 错误<br>
+        ✅ <em>Me llamo Wei</em> — 正确（不需要再加动词）</p>
       </div>
     </details>
 
@@ -180,14 +223,15 @@
     <details class="panel">
       <summary>
         <span class="panel-num">4</span>
-        <span class="panel-title">Reading or dialogue</span>
+        <span class="panel-title"><span class="lang-en">Reading or dialogue</span><span class="lang-zh">阅读与对话</span></span>
         <svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg>
       </summary>
       <div class="panel-body">
         <p>📷 <em>Suggested image: two people on a video call, one in a modern apartment, one in a café — smiling, relaxed.</em></p>
 
         <h4>Primera conversación</h4>
-        <p>Wei and Ana meet in an online Spanish course for the first time. Read carefully.</p>
+        <p class="lang-en-block">Wei and Ana meet in an online Spanish course for the first time. Read carefully.</p>
+        <p class="lang-zh-block">Wei 和 Ana 第一次在线上西班牙语课相识。请仔细阅读。</p>
 
         <div class="dialogue">
           <p><strong>Ana:</strong> Hola, buenos días. ¿Cómo te llamas?</p>
@@ -203,7 +247,9 @@
           <p><strong>Ana:</strong> ¡Hasta luego! ¡Hasta la próxima clase!</p>
         </div>
 
-        <h4>Comprehension questions</h4>
+        <h4><span class="lang-en">Comprehension questions</span><span class="lang-zh">理解问题</span></h4>
+        <p class="lang-en-block">Answer in Spanish:</p>
+        <p class="lang-zh-block">用西班牙语回答：</p>
         <ol>
           <li>¿Cómo se llama el estudiante de China?</li>
           <li>¿De dónde es Ana exactamente?</li>
@@ -218,12 +264,13 @@
     <details class="panel">
       <summary>
         <span class="panel-num">5</span>
-        <span class="panel-title">Controlled practice</span>
+        <span class="panel-title"><span class="lang-en">Controlled practice</span><span class="lang-zh">强化练习</span></span>
         <svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg>
       </summary>
       <div class="panel-body">
-        <h4>Exercise 1 — Choose the right greeting</h4>
-        <p>What would you say in each situation? Write the correct Spanish greeting or farewell.</p>
+        <h4><span class="lang-en">Exercise 1 — Choose the right greeting</span><span class="lang-zh">练习一 — 选择正确的问候语</span></h4>
+        <p class="lang-en-block">What would you say in each situation? Write the correct Spanish greeting or farewell.</p>
+        <p class="lang-zh-block">在以下每种情境中，你会说什么？写出正确的西班牙语问候或告别语。</p>
         <ol>
           <li>It is 9:00 a.m. Your class is starting. You say hello to your teacher. → ___</li>
           <li>It is 3:00 p.m. You meet a friend on WeChat. → ___</li>
@@ -235,8 +282,9 @@
           <li>You meet Ana for the first time (you are male). → ___</li>
         </ol>
 
-        <h4>Exercise 2 — Tú or Usted?</h4>
-        <p>For each person, decide: tú or usted?</p>
+        <h4><span class="lang-en">Exercise 2 — Tú or Usted?</span><span class="lang-zh">练习二 — 用 Tú 还是 Usted？</span></h4>
+        <p class="lang-en-block">For each person, decide: tú or usted?</p>
+        <p class="lang-zh-block">对以下每个人，判断应使用 tú 还是 usted。</p>
         <ol>
           <li>Your Spanish teacher</li>
           <li>Your classmate Wei</li>
@@ -246,8 +294,9 @@
           <li>Your younger sister</li>
         </ol>
 
-        <h4>Exercise 3 — Complete with SER</h4>
-        <p>Fill in the correct form of SER.</p>
+        <h4><span class="lang-en">Exercise 3 — Complete with SER</span><span class="lang-zh">练习三 — 用 SER 的正确形式填空</span></h4>
+        <p class="lang-en-block">Fill in the correct form of SER.</p>
+        <p class="lang-zh-block">用 SER 的正确形式填空。</p>
         <ol>
           <li>Yo ___ estudiante.</li>
           <li>Tú ___ de China.</li>
@@ -263,36 +312,39 @@
     <details class="panel">
       <summary>
         <span class="panel-num">6</span>
-        <span class="panel-title">Question formation</span>
+        <span class="panel-title"><span class="lang-en">Question formation</span><span class="lang-zh">如何提问</span></span>
         <svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg>
       </summary>
       <div class="panel-body">
-        <p>Most students learn to <em>answer</em> questions. In this class, you also learn to <em>ask</em> them. A conversation only works if both people can ask questions.</p>
+        <p class="lang-en-block">Most students learn to <em>answer</em> questions. In this class, you also learn to <em>ask</em> them. A conversation only works if both people can ask questions.</p>
+        <p class="lang-zh-block">大多数学生只学会回答问题。在这节课上，你也要学会提问。对话的前提是双方都能提问。</p>
 
-        <h4>Questions for this unit</h4>
+        <h4><span class="lang-en">Questions for this unit</span><span class="lang-zh">本单元问句</span></h4>
         <table>
-          <tr><th>Question</th><th>Meaning</th><th>Typical answer</th></tr>
-          <tr><td><strong>¿Cómo te llamas?</strong></td><td>What is your name?</td><td>Me llamo Wei. / Soy Ana.</td></tr>
-          <tr><td><strong>¿Cómo se llama usted?</strong></td><td>What is your name? (formal)</td><td>Me llamo profesora Lin.</td></tr>
-          <tr><td><strong>¿De dónde eres?</strong></td><td>Where are you from?</td><td>Soy de China. / Soy de España.</td></tr>
-          <tr><td><strong>¿Cómo estás?</strong></td><td>How are you? (informal)</td><td>Bien, gracias. / Más o menos.</td></tr>
-          <tr><td><strong>¿Cómo está usted?</strong></td><td>How are you? (formal)</td><td>Muy bien, gracias.</td></tr>
-          <tr><td><strong>¿Cómo se escribe?</strong></td><td>How do you spell it?</td><td>S - A - R - A.</td></tr>
-          <tr><td><strong>¿Y tú? / ¿Y usted?</strong></td><td>And you?</td><td>(repeat your answer about them)</td></tr>
+          <tr><th><span class="lang-en">Question</span><span class="lang-zh">问句</span></th><th><span class="lang-en">Meaning</span><span class="lang-zh">意思</span></th><th><span class="lang-en">Typical answer</span><span class="lang-zh">常见回答</span></th></tr>
+          <tr><td><strong>¿Cómo te llamas?</strong></td><td><span class="lang-en">What is your name?</span><span class="lang-zh">你叫什么名字？</span></td><td>Me llamo Wei. / Soy Ana.</td></tr>
+          <tr><td><strong>¿Cómo se llama usted?</strong></td><td><span class="lang-en">What is your name? (formal)</span><span class="lang-zh">您怎么称呼？（正式）</span></td><td>Me llamo profesora Lin.</td></tr>
+          <tr><td><strong>¿De dónde eres?</strong></td><td><span class="lang-en">Where are you from?</span><span class="lang-zh">你来自哪里？</span></td><td>Soy de China. / Soy de España.</td></tr>
+          <tr><td><strong>¿Cómo estás?</strong></td><td><span class="lang-en">How are you? (informal)</span><span class="lang-zh">你好吗？（非正式）</span></td><td>Bien, gracias. / Más o menos.</td></tr>
+          <tr><td><strong>¿Cómo está usted?</strong></td><td><span class="lang-en">How are you? (formal)</span><span class="lang-zh">您好吗？（正式）</span></td><td>Muy bien, gracias.</td></tr>
+          <tr><td><strong>¿Cómo se escribe?</strong></td><td><span class="lang-en">How do you spell it?</span><span class="lang-zh">怎么拼写？</span></td><td>S - A - R - A.</td></tr>
+          <tr><td><strong>¿Y tú? / ¿Y usted?</strong></td><td><span class="lang-en">And you?</span><span class="lang-zh">那你呢？</span></td><td><span class="lang-en">(repeat your answer about them)</span><span class="lang-zh">（用对方的答案反问）</span></td></tr>
         </table>
 
-        <h4>Practice — Ask the question</h4>
-        <p>Look at the answer. What was the question?</p>
+        <h4><span class="lang-en">Practice — Ask the question</span><span class="lang-zh">练习 — 写出问句</span></h4>
+        <p class="lang-en-block">Look at the answer. What was the question?</p>
+        <p class="lang-zh-block">看答案，写出对应的问句。</p>
         <ol>
           <li>→ Me llamo Carlos.</li>
           <li>→ Soy de México.</li>
           <li>→ Muy bien, gracias.</li>
           <li>→ M - I - N - G.</li>
-          <li>→ (Student answers about themselves)</li>
+          <li>→ <span class="lang-en">(Student answers about themselves)</span><span class="lang-zh">（学生自己回答）</span></li>
         </ol>
 
-        <h4>Mini conversation practice</h4>
-        <p>Now use the questions above to interview your teacher. Ask all five questions in order. Then swap — your teacher asks you.</p>
+        <h4><span class="lang-en">Mini conversation practice</span><span class="lang-zh">迷你对话练习</span></h4>
+        <p class="lang-en-block">Now use the questions above to interview your teacher. Ask all five questions in order. Then swap — your teacher asks you.</p>
+        <p class="lang-zh-block">用上面的问句来采访你的老师，按顺序问所有问题，然后互换角色——老师来问你。</p>
       </div>
     </details>
 
@@ -300,32 +352,33 @@
     <details class="panel">
       <summary>
         <span class="panel-num">7</span>
-        <span class="panel-title">Real-life task</span>
+        <span class="panel-title"><span class="lang-en">Real-life task</span><span class="lang-zh">真实任务</span></span>
         <svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg>
       </summary>
       <div class="panel-body">
         <p>📷 <em>Suggested image: a phone screen showing a WeChat contact — someone about to start an online call.</em></p>
 
-        <h4>Task: Your first Spanish introduction</h4>
-        <p>Imagine you are joining a new online Spanish group class with students from different countries. You need to introduce yourself to the group.</p>
+        <h4><span class="lang-en">Task: Your first Spanish introduction</span><span class="lang-zh">任务：你的第一次西班牙语自我介绍</span></h4>
+        <p class="lang-en-block">Imagine you are joining a new online Spanish group class with students from different countries. You need to introduce yourself to the group.</p>
+        <p class="lang-zh-block">想象你正在加入一个新的在线西班牙语群课，同学来自不同国家。你需要向大家介绍自己。</p>
 
-        <p><strong>Step 1 — Prepare your introduction:</strong> Answer these questions in Spanish:</p>
+        <p><strong><span class="lang-en">Step 1 — Prepare your introduction:</span><span class="lang-zh">第一步 — 准备你的自我介绍：</span></strong> <span class="lang-en">Answer these questions in Spanish:</span><span class="lang-zh">用西班牙语回答以下问题：</span></p>
         <ul>
           <li>¿Cómo te llamas?</li>
           <li>¿De dónde eres?</li>
           <li>¿Cómo estás hoy?</li>
         </ul>
 
-        <p><strong>Step 2 — Spell your name:</strong> Using the Spanish alphabet, spell your name out loud. Your teacher will write it as they hear it — did they get it right?</p>
+        <p><strong><span class="lang-en">Step 2 — Spell your name:</span><span class="lang-zh">第二步 — 拼读你的名字：</span></strong> <span class="lang-en">Using the Spanish alphabet, spell your name out loud. Your teacher will write it as they hear it — did they get it right?</span><span class="lang-zh">用西班牙语字母大声拼出你的名字。老师会边听边写——他们写对了吗？</span></p>
 
-        <p><strong>Step 3 — Greet and leave:</strong> Practice greeting your teacher for three different times of day:</p>
+        <p><strong><span class="lang-en">Step 3 — Greet and leave:</span><span class="lang-zh">第三步 — 问候与告别：</span></strong> <span class="lang-en">Practice greeting your teacher for three different times of day:</span><span class="lang-zh">练习在以下三个不同时间段向老师打招呼：</span></p>
         <ul>
           <li>8:00 a.m.</li>
           <li>4:00 p.m.</li>
           <li>9:30 p.m.</li>
         </ul>
 
-        <p><strong>Step 4 — Real life:</strong> Open WhatsApp or WeChat and type a greeting message to someone <em>in Spanish</em> right now. Show your teacher what you wrote.</p>
+        <p><strong><span class="lang-en">Step 4 — Real life:</span><span class="lang-zh">第四步 — 真实生活：</span></strong> <span class="lang-en">Open WhatsApp or WeChat and type a greeting message to someone <em>in Spanish</em> right now. Show your teacher what you wrote.</span><span class="lang-zh">现在就打开 WhatsApp 或微信，用西班牙语发一条问候消息给某人。把你写的内容展示给老师看。</span></p>
       </div>
     </details>
 
@@ -333,21 +386,29 @@
     <details class="panel">
       <summary>
         <span class="panel-num">8</span>
-        <span class="panel-title">Free production</span>
+        <span class="panel-title"><span class="lang-en">Free production</span><span class="lang-zh">自由表达</span></span>
         <svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg>
       </summary>
       <div class="panel-body">
-        <p>No script. No word bank. Just you, speaking freely using everything from this unit.</p>
+        <p class="lang-en-block">No script. No word bank. Just you, speaking freely using everything from this unit.</p>
+        <p class="lang-zh-block">没有脚本，没有词汇表。用你在本单元学到的一切自由表达。</p>
 
-        <h4>Speaking prompts</h4>
-        <ol>
+        <h4><span class="lang-en">Speaking prompts</span><span class="lang-zh">口语提示</span></h4>
+        <ol class="lang-en-block">
           <li>Introduce yourself fully in Spanish — name, where you are from, how you are today.</li>
           <li>How do you greet different people in your life? Your boss? Your friend? Your parent? Would you use tú or usted with each one?</li>
           <li>You meet someone Spanish-speaking for the first time at work. What do you say? Act it out from start to finish — greeting, introduction, farewell.</li>
           <li>What was the hardest thing in this unit? Can you explain it in English, and then try to say the correct version in Spanish?</li>
         </ol>
+        <ol class="lang-zh-block">
+          <li>用西班牙语完整介绍自己——姓名、来自哪里、今天状态如何。</li>
+          <li>你如何向生活中的不同人打招呼？你的上司？朋友？父母？对每个人你会用 tú 还是 usted？</li>
+          <li>你在工作中第一次遇到一位说西班牙语的人。你会说什么？从头到尾演练一遍——问候、介绍、告别。</li>
+          <li>本单元最难的是什么？你能先用英语或中文解释一下，然后尝试用西班牙语说出正确版本吗？</li>
+        </ol>
 
-        <p>💡 <strong>Remember:</strong> mistakes are part of learning. The goal here is not to be perfect — it is to communicate.</p>
+        <p class="lang-en-block">💡 <strong>Remember:</strong> mistakes are part of learning. The goal here is not to be perfect — it is to communicate.</p>
+        <p class="lang-zh-block">💡 <strong>记住：</strong>犯错是学习的一部分。这里的目标不是完美——而是能够沟通。</p>
       </div>
     </details>
 
@@ -355,20 +416,59 @@
     <details class="panel">
       <summary>
         <span class="panel-num">9</span>
-        <span class="panel-title">Homework</span>
+        <span class="panel-title"><span class="lang-en">Homework</span><span class="lang-zh">课后作业</span></span>
         <svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg>
       </summary>
       <div class="panel-body">
-        <p>Choose <strong>one</strong> of the options below. No need to send anything — just do it and we'll talk about it at the start of the next class if you want to share.</p>
+        <p class="lang-en-block">Choose <strong>one</strong> of the options below. No need to send anything — just do it before the next class.</p>
+        <p class="lang-zh-block">选择以下任一选项。无需发给老师——课前自己完成就好。</p>
 
-        <h4>Option A — Receptive</h4>
-        <p>Find any short video in Spanish on YouTube — cooking, travel, music, anything you like. Watch 2 minutes. Count how many greetings or farewells you hear. Write them down in your notebook. Bring your list to the next class.</p>
+        <h4><span class="lang-en">Option A — Receptive</span><span class="lang-zh">选项 A — 听力输入</span></h4>
+        <p class="lang-en-block">Find any short video in Spanish on YouTube — cooking, travel, music, anything you like. Watch 2 minutes. Count how many greetings or farewells you hear. Write them down in your notebook or Google Doc. We can talk about it at the start of next class if you want.</p>
+        <p class="lang-zh-block">在 YouTube 上找一段西班牙语短视频——烹饪、旅游、音乐，任何你喜欢的内容。看 2 分钟，数一数你听到多少次问候语或告别语，记在笔记本或 Google Doc 里。如果你愿意，我们可以在下节课开始时聊聊。</p>
 
-        <h4>Option B — Productive</h4>
-        <p>Write 5 short sentences about yourself in Spanish using what you learned today. Example: <em>Me llamo Wei. Soy de China. Estoy bien.</em> Write them in your notebook or phone notes. Read them out loud three times before your next class.</p>
+        <h4><span class="lang-en">Option B — Practice exercise</span><span class="lang-zh">选项 B — 书面练习</span></h4>
+        <p class="lang-en-block">Copy the exercise below into your Google Doc and fill in the blanks. Check your answers at the bottom when you are done.</p>
+        <p class="lang-zh-block">将以下练习复制到你的 Google Doc 中并填空。完成后在下方核对答案。</p>
 
-        <h4>Option C — Creative</h4>
-        <p>Write the 5 most useful words or phrases from this unit on sticky notes and put them somewhere you see every day — your mirror, your desk, your fridge. Before the next class, make sure you can say each one out loud without looking.</p>
+        <div style="background:#f7f5ef; padding:16px; border-radius:8px; margin:12px 0; font-size:14px; line-height:2;">
+          <p><strong>Part 1 — Complete with SER (用 SER 的正确形式填空)</strong></p>
+          <p>1. Yo ___ estudiante.</p>
+          <p>2. Tú ___ de China.</p>
+          <p>3. Ella ___ profesora.</p>
+          <p>4. Nosotros ___ compañeros.</p>
+          <p>5. Ellos ___ de España.</p>
+          <p>6. ¿Usted ___ el profesor Brady?</p>
+
+          <br>
+          <p><strong>Part 2 — Complete with LLAMARSE (用 LLAMARSE 的正确形式填空)</strong></p>
+          <p>1. Yo ___ Wei.</p>
+          <p>2. ¿Cómo ___ tú?</p>
+          <p>3. Ella ___ Sara.</p>
+          <p>4. Nosotros ___ Ana y Carlos.</p>
+          <p>5. ¿Cómo ___ usted?</p>
+
+          <br>
+          <p><strong>Part 3 — Correct the mistake (找出错误并改正)</strong></p>
+          <p>1. Me llamo es Carlos. → ___</p>
+          <p>2. Yo Soy de china. → ___</p>
+          <p>3. ¿Como te llamas? → ___</p>
+          <p>4. Ella son profesora. → ___</p>
+          <p>5. Tu eres estudiante. (tú problem) → ___</p>
+        </div>
+
+        <details style="margin-top:8px;">
+          <summary style="cursor:pointer; color:#5a7a32; font-weight:500; font-size:13px;"><span class="lang-en">Show answers / 查看答案</span><span class="lang-zh">查看答案 / Show answers</span></summary>
+          <div style="background:#eef4e4; padding:12px; border-radius:8px; margin-top:8px; font-size:13px; line-height:2;">
+            <p><strong>Part 1:</strong> 1. soy · 2. eres · 3. es · 4. somos · 5. son · 6. es</p>
+            <p><strong>Part 2:</strong> 1. me llamo · 2. te llamas · 3. se llama · 4. nos llamamos · 5. se llama</p>
+            <p><strong>Part 3:</strong> 1. Me llamo Carlos · 2. Yo soy de China · 3. ¿Cómo te llamas? · 4. Ella es profesora · 5. Tú eres estudiante</p>
+          </div>
+        </details>
+
+        <h4><span class="lang-en">Option C — Creative</span><span class="lang-zh">选项 C — 创意练习</span></h4>
+        <p class="lang-en-block">Write the 5 most useful words or phrases from this unit on sticky notes and put them somewhere you see every day — your mirror, your desk, your fridge. Before the next class, make sure you can say each one out loud without looking.</p>
+        <p class="lang-zh-block">将本单元最有用的 5 个词或短语写在便利贴上，贴在你每天都能看到的地方——镜子、书桌或冰箱。在下节课前，确保你能不看便利贴就大声说出每一个。</p>
       </div>
     </details>
 
@@ -387,6 +487,27 @@
 </main>
 
 <footer class="site-footer">Spanish with Brady · Private use only</footer>
+
+<script>
+function setLang(lang) {
+  if (lang === 'zh') {
+    document.body.classList.add('zh');
+    document.getElementById('btn-zh').style.background = '#5a7a32';
+    document.getElementById('btn-zh').style.color = 'white';
+    document.getElementById('btn-en').style.background = '#f7f5ef';
+    document.getElementById('btn-en').style.color = '#7a6e60';
+  } else {
+    document.body.classList.remove('zh');
+    document.getElementById('btn-en').style.background = '#5a7a32';
+    document.getElementById('btn-en').style.color = 'white';
+    document.getElementById('btn-zh').style.background = '#f7f5ef';
+    document.getElementById('btn-zh').style.color = '#7a6e60';
+  }
+  localStorage.setItem('lang', lang);
+}
+const saved = localStorage.getItem('lang');
+if (saved === 'zh') setLang('zh');
+</script>
 
 </body>
 </html>
