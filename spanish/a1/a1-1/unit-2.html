@@ -44,6 +44,20 @@
       padding: 0.9rem;
     }
     .cr-flag { font-size: 2rem; line-height: 1; }
+    .cr-flag-placeholder {
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: var(--muted);
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      line-height: 1;
+    }
     .cr-btn {
       background: var(--green);
       color: #fff;
@@ -397,7 +411,7 @@
         <div class="cr-card cr-widget">
           <p class="cr-card-sub"><span class="lang-en">Spin for a random country, then answer the questions below using what you know.</span><span class="lang-zh">转一下，随机抽取一个国家，然后用你知道的内容回答下面的问题。</span></p>
 
-          <div class="cr-display"></div>
+          <div class="cr-display"><span class="cr-flag-placeholder">?</span></div>
           <button class="cr-btn">Girar país</button>
 
           <div class="cr-questions">
