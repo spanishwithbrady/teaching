@@ -5,41 +5,362 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Unit 7 · Descripción · Spanish with Brady</title>
   <link rel="stylesheet" href="../../../assets/style.css">
+  <style>
+    .lang-zh { display: none; }
+    body.zh .lang-en { display: none; }
+    body.zh .lang-zh { display: inline; }
+    .lang-zh-block { display: none; }
+    body.zh .lang-zh-block { display: block; }
+    body.zh .lang-en-block { display: none; }
+  </style>
 </head>
 <body>
+
 <header class="site-header">
   <a class="site-logo" href="../../../">Spanish with Brady</a>
-  <nav><ul class="site-nav">
-    <li><a href="../../../spanish/" class="active">Spanish</a></li>
-    <li><a href="../../../mandarin/">Mandarin</a></li>
-    <li><a href="#">English</a></li>
-  </ul></nav>
+  <nav>
+    <ul class="site-nav">
+      <li><a href="../../../spanish/" class="active">Spanish</a></li>
+      <li><a href="../../../mandarin/">Mandarin</a></li>
+      <li><a href="#">English</a></li>
+    </ul>
+  </nav>
 </header>
+
 <nav class="breadcrumb">
   <a href="../../../">Home</a><span>›</span><a href="../../../spanish/">Spanish</a><span>›</span><a href="../../../spanish/a1/">A1</a><span>›</span><a href="./index.html">A1.1</a><span>›</span>Unit 7
 </nav>
+
 <main>
+  <div style="display:flex; justify-content:flex-end; padding: 8px 0 0;">
+    <div style="display:flex; gap:0; border:1px solid #e2ddd4; border-radius:6px; overflow:hidden;">
+      <button id="btn-en" onclick="setLang('en')" style="padding:6px 16px; font-size:13px; font-weight:500; border:none; cursor:pointer; background:#5a7a32; color:white;">EN</button>
+      <button id="btn-zh" onclick="setLang('zh')" style="padding:6px 16px; font-size:13px; font-weight:500; border:none; cursor:pointer; background:#f7f5ef; color:#7a6e60;">中文</button>
+    </div>
+  </div>
+
   <div class="unit-header">
     <div class="unit-num">A1.1 · Unit 7</div>
     <h1>Descripción</h1>
-    <p class="unit-subtitle">Physical description and the verb TENER</p>
+    <p class="unit-subtitle">Physical appearance, personality and SER vs. TENER</p>
   </div>
+
   <div class="panels">
-    <details class="panel"><summary><span class="panel-num">1</span><span class="panel-title">Hook / Opener</span><svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg></summary><div class="panel-body">Content coming soon</div></details>
-    <details class="panel"><summary><span class="panel-num">2</span><span class="panel-title">Vocabulary</span><svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg></summary><div class="panel-body">Content coming soon</div></details>
-    <details class="panel"><summary><span class="panel-num">3</span><span class="panel-title">Grammar in context</span><svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg></summary><div class="panel-body">Content coming soon</div></details>
-    <details class="panel"><summary><span class="panel-num">4</span><span class="panel-title">Reading or dialogue</span><svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg></summary><div class="panel-body">Content coming soon</div></details>
-    <details class="panel"><summary><span class="panel-num">5</span><span class="panel-title">Controlled practice</span><svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg></summary><div class="panel-body">Content coming soon</div></details>
-    <details class="panel"><summary><span class="panel-num">6</span><span class="panel-title">Question formation</span><svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg></summary><div class="panel-body">Content coming soon</div></details>
-    <details class="panel"><summary><span class="panel-num">7</span><span class="panel-title">Real-life task</span><svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg></summary><div class="panel-body">Content coming soon</div></details>
-    <details class="panel"><summary><span class="panel-num">8</span><span class="panel-title">Free production</span><svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg></summary><div class="panel-body">Content coming soon</div></details>
-    <details class="panel"><summary><span class="panel-num">9</span><span class="panel-title">Homework</span><svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg></summary><div class="panel-body">Content coming soon</div></details>
+
+    <details class="panel">
+      <summary>
+        <span class="panel-num">1</span>
+        <span class="panel-title"><span class="lang-en">Hook / Opener</span><span class="lang-zh">课程导入</span></span>
+        <svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg>
+      </summary>
+      <div class="panel-body">
+        <p>📷 <em>Suggested image: a diverse group of people with different physical appearances.</em></p>
+        <p class="lang-en-block">Before we start, think about this: How would you describe your own appearance and personality in Spanish?</p>
+        <p class="lang-zh-block">开始之前，想一想：你能用西班牙语描述自己的外貌和性格吗？</p>
+        <p><strong><span class="lang-en">By the end of this unit you can:</span><span class="lang-zh">完成本单元后，你能够：</span></strong> <span class="lang-en">describe physical appearance and basic personality, using SER for traits and TENER for specific features.</span><span class="lang-zh">描述外貌和基本性格，用 SER 表达特征，用 TENER 表达具体部位特征。</span></p>
+      </div>
+    </details>
+
+    <details class="panel">
+      <summary>
+        <span class="panel-num">2</span>
+        <span class="panel-title"><span class="lang-en">Vocabulary</span><span class="lang-zh">词汇</span></span>
+        <svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg>
+      </summary>
+      <div class="panel-body">
+        <h4><span class="lang-en">Hair &amp; eyes</span><span class="lang-zh">头发与眼睛</span></h4>
+        <table>
+          <tr><th>Spanish</th><th>English</th><th>中文</th></tr>
+          <tr><td><strong>rubio/a</strong></td><td>blond</td><td>金发</td></tr>
+          <tr><td><strong>moreno/a</strong></td><td>dark-haired / dark-skinned</td><td>黑发/深肤色</td></tr>
+          <tr><td><strong>castaño/a</strong></td><td>brown (hair)</td><td>棕色（头发）</td></tr>
+          <tr><td><strong>pelirrojo/a</strong></td><td>red-haired</td><td>红发</td></tr>
+          <tr><td><strong>largo/a</strong></td><td>long</td><td>长</td></tr>
+          <tr><td><strong>corto/a</strong></td><td>short</td><td>短</td></tr>
+          <tr><td><strong>liso/a</strong></td><td>straight</td><td>直（发）</td></tr>
+          <tr><td><strong>ondulado/a</strong></td><td>wavy</td><td>卷曲（波浪状）</td></tr>
+          <tr><td><strong>rizado/a</strong></td><td>curly</td><td>卷（发）</td></tr>
+          <tr><td><strong>azules / verdes / marrones / negros</strong></td><td>blue / green / brown / black (eyes)</td><td>蓝色/绿色/棕色/黑色（眼睛）</td></tr>
+        </table>
+
+        <h4><span class="lang-en">Height &amp; build</span><span class="lang-zh">身高与体型</span></h4>
+        <table>
+          <tr><th>Spanish</th><th>English</th><th>中文</th></tr>
+          <tr><td><strong>alto/a</strong></td><td>tall</td><td>高</td></tr>
+          <tr><td><strong>bajo/a</strong></td><td>short</td><td>矮</td></tr>
+          <tr><td><strong>delgado/a</strong></td><td>slim</td><td>瘦</td></tr>
+          <tr><td><strong>gordo/a</strong></td><td>heavy-set</td><td>胖</td></tr>
+          <tr><td><strong>guapo/a</strong></td><td>handsome / pretty</td><td>帅/漂亮</td></tr>
+          <tr><td><strong>bonito/a</strong></td><td>pretty / nice-looking</td><td>好看</td></tr>
+        </table>
+
+        <h4><span class="lang-en">Personality</span><span class="lang-zh">性格</span></h4>
+        <table>
+          <tr><th>Spanish</th><th>English</th><th>中文</th></tr>
+          <tr><td><strong>simpático/a</strong></td><td>nice, friendly</td><td>友善</td></tr>
+          <tr><td><strong>antipático/a</strong></td><td>unfriendly</td><td>不友善</td></tr>
+          <tr><td><strong>amable</strong></td><td>kind</td><td>和蔼</td></tr>
+          <tr><td><strong>trabajador/a</strong></td><td>hardworking</td><td>勤奋</td></tr>
+          <tr><td><strong>perezoso/a</strong></td><td>lazy</td><td>懒惰</td></tr>
+          <tr><td><strong>inteligente</strong></td><td>intelligent</td><td>聪明</td></tr>
+          <tr><td><strong>divertido/a</strong></td><td>fun</td><td>有趣</td></tr>
+          <tr><td><strong>serio/a</strong></td><td>serious</td><td>严肃</td></tr>
+          <tr><td><strong>tímido/a</strong></td><td>shy</td><td>害羞</td></tr>
+          <tr><td><strong>extrovertido/a</strong></td><td>outgoing</td><td>外向</td></tr>
+          <tr><td><strong>generoso/a</strong></td><td>generous</td><td>慷慨</td></tr>
+        </table>
+      </div>
+    </details>
+
+    <details class="panel">
+      <summary>
+        <span class="panel-num">3</span>
+        <span class="panel-title"><span class="lang-en">Grammar in context</span><span class="lang-zh">语法讲解</span></span>
+        <svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg>
+      </summary>
+      <div class="panel-body">
+        <h4><span class="lang-en">SER vs. TENER for description</span><span class="lang-zh">描述外貌：SER 与 TENER 的区别</span></h4>
+        <table>
+          <tr><th>SER + adjective</th><th>TENER + article + noun</th></tr>
+          <tr><td><span class="lang-en">General trait</span><span class="lang-zh">总体特征</span></td><td><span class="lang-en">Specific feature</span><span class="lang-zh">具体部位特征</span></td></tr>
+          <tr><td>Es alta.</td><td>Tiene los ojos azules.</td></tr>
+          <tr><td>Es simpático.</td><td>Tiene el pelo largo.</td></tr>
+        </table>
+
+        <p class="lang-en-block">⚠️ TENER always uses the definite article for eyes/hair: <em>tiene LOS ojos verdes</em>, <em>tiene EL pelo rizado</em>. But for some features there's no article at all: <em>tiene barba</em>, <em>tiene pecas</em>, <em>tiene gafas</em>.</p>
+        <p class="lang-zh-block">⚠️ TENER 描述眼睛/头发时永远使用定冠词：<em>tiene LOS ojos verdes</em>，<em>tiene EL pelo rizado</em>。但有些特征则完全不用冠词：<em>tiene barba</em>（有胡子），<em>tiene pecas</em>（有雀斑），<em>tiene gafas</em>（戴眼镜）。</p>
+
+        <h4><span class="lang-en">Degree words</span><span class="lang-zh">程度副词</span></h4>
+        <table>
+          <tr><th>Spanish</th><th>English</th><th><span class="lang-en">Example</span><span class="lang-zh">例句</span></th></tr>
+          <tr><td><strong>muy</strong></td><td>very</td><td>Es muy alta.</td></tr>
+          <tr><td><strong>bastante</strong></td><td>quite</td><td>Es bastante simpático.</td></tr>
+          <tr><td><strong>un poco</strong></td><td>a little</td><td>Es un poco tímida.</td></tr>
+          <tr><td><strong>-ísimo/a</strong></td><td>extremely (suffix)</td><td>Es altísimo. (extremely tall)</td></tr>
+        </table>
+      </div>
+    </details>
+
+    <details class="panel">
+      <summary>
+        <span class="panel-num">4</span>
+        <span class="panel-title"><span class="lang-en">Reading or dialogue</span><span class="lang-zh">阅读与对话</span></span>
+        <svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg>
+      </summary>
+      <div class="panel-body">
+        <p>📷 <em>Suggested image: a phone screen showing a text conversation with photos.</em></p>
+
+        <h4>Describiendo a mis amigos</h4>
+        <p class="lang-en-block">Li is describing two friends to Ming over text messages.</p>
+        <p class="lang-zh-block">Li 通过短信向 Ming 描述两位朋友。</p>
+
+        <div class="dialogue">
+          <p><strong>Ming:</strong> ¿Cómo es tu amiga Sara?</p>
+          <p><strong>Li:</strong> Es bastante alta y delgada. Tiene el pelo largo y castaño.</p>
+          <p><strong>Ming:</strong> ¿Y de qué color tiene los ojos?</p>
+          <p><strong>Li:</strong> Tiene los ojos verdes. Es muy simpática y extrovertida.</p>
+          <p><strong>Ming:</strong> ¡Suena genial! ¿Y tu amigo Carlos?</p>
+          <p><strong>Li:</strong> Carlos es bajo y un poco tímido, pero es muy trabajador.</p>
+          <p><strong>Ming:</strong> ¿Tiene el pelo rizado?</p>
+          <p><strong>Li:</strong> Sí, tiene el pelo corto y rizado, y tiene barba.</p>
+        </div>
+
+        <h4><span class="lang-en">Comprehension questions</span><span class="lang-zh">理解问题</span></h4>
+        <ol>
+          <li>¿De qué color tiene el pelo Sara?</li>
+          <li>¿Cómo es la personalidad de Sara?</li>
+          <li>¿Cómo es físicamente Carlos?</li>
+          <li>¿Tiene barba Carlos?</li>
+        </ol>
+      </div>
+    </details>
+
+    <details class="panel">
+      <summary>
+        <span class="panel-num">5</span>
+        <span class="panel-title"><span class="lang-en">Controlled practice</span><span class="lang-zh">强化练习</span></span>
+        <svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg>
+      </summary>
+      <div class="panel-body">
+        <h4><span class="lang-en">Exercise 1 — SER or TENER?</span><span class="lang-zh">练习一 — SER 还是 TENER？</span></h4>
+        <ol>
+          <li>Ana ___ alta.</li>
+          <li>Carlos ___ los ojos azules.</li>
+          <li>Mi madre ___ el pelo rizado.</li>
+          <li>Nosotros ___ simpáticos.</li>
+          <li>Ellos ___ barba.</li>
+          <li>Tú ___ muy inteligente.</li>
+        </ol>
+
+        <h4><span class="lang-en">Exercise 2 — Complete the description (match gender)</span><span class="lang-zh">练习二 — 补全描述（注意阴阳性一致）</span></h4>
+        <ol>
+          <li>Mi hermana es ___ (tall, fem).</li>
+          <li>Mi padre es ___ (hardworking, masc).</li>
+          <li>Sara es ___ (shy, fem).</li>
+          <li>Mis amigos son ___ (fun, masc pl).</li>
+          <li>La profesora es ___ (generous, fem).</li>
+          <li>Wei es ___ (intelligent — no change needed).</li>
+        </ol>
+
+        <h4><span class="lang-en">Exercise 3 — Find the error</span><span class="lang-zh">练习三 — 找出错误</span></h4>
+        <ol>
+          <li>Ella tiene ojos azules. → ___</li>
+          <li>Mi hermano es tiene alto. → ___</li>
+          <li>Sara es simpático. → ___</li>
+          <li>Tiene el pelo larga. → ___</li>
+          <li>Carlos tiene muy barba. → ___</li>
+        </ol>
+      </div>
+    </details>
+
+    <details class="panel">
+      <summary>
+        <span class="panel-num">6</span>
+        <span class="panel-title"><span class="lang-en">Question formation</span><span class="lang-zh">如何提问</span></span>
+        <svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg>
+      </summary>
+      <div class="panel-body">
+        <h4><span class="lang-en">Questions for this unit</span><span class="lang-zh">本单元问句</span></h4>
+        <table>
+          <tr><th><span class="lang-en">Question</span><span class="lang-zh">问句</span></th><th><span class="lang-en">Meaning</span><span class="lang-zh">意思</span></th><th><span class="lang-en">Typical answer</span><span class="lang-zh">常见回答</span></th></tr>
+          <tr><td><strong>¿Cómo es + name?</strong></td><td><span class="lang-en">What is (name) like?</span><span class="lang-zh">（某人）是什么样的？</span></td><td>Es alta y simpática.</td></tr>
+          <tr><td><strong>¿De qué color tiene los ojos/el pelo?</strong></td><td><span class="lang-en">What color are their eyes/hair?</span><span class="lang-zh">他/她的眼睛/头发是什么颜色？</span></td><td>Tiene los ojos marrones.</td></tr>
+          <tr><td><strong>¿Cómo es su personalidad?</strong></td><td><span class="lang-en">What is their personality like?</span><span class="lang-zh">他/她的性格怎么样？</span></td><td>Es muy divertida.</td></tr>
+          <tr><td><strong>¿Es alto/a o bajo/a?</strong></td><td><span class="lang-en">Is he/she tall or short?</span><span class="lang-zh">他/她是高还是矮？</span></td><td>Es bastante alto.</td></tr>
+        </table>
+
+        <h4><span class="lang-en">Practice — Ask the question</span><span class="lang-zh">练习 — 写出问句</span></h4>
+        <p class="lang-en-block">Look at the answer. What was the question?</p>
+        <p class="lang-zh-block">看答案，写出对应的问句。</p>
+        <ol>
+          <li>→ Es muy simpático y trabajador.</li>
+          <li>→ Tiene los ojos verdes.</li>
+          <li>→ Es bastante alta.</li>
+          <li>→ Tiene el pelo corto y rizado.</li>
+        </ol>
+      </div>
+    </details>
+
+    <details class="panel">
+      <summary>
+        <span class="panel-num">7</span>
+        <span class="panel-title"><span class="lang-en">Real-life task</span><span class="lang-zh">真实任务</span></span>
+        <svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg>
+      </summary>
+      <div class="panel-body">
+        <p>📷 <em>Suggested image: a Google Images search results page of a well-known actor.</em></p>
+
+        <h4><span class="lang-en">Task: Describe a celebrity</span><span class="lang-zh">任务：描述一位名人</span></h4>
+        <p class="lang-en-block">Search "famous Spanish-speaking actor" or "famous Spanish-speaking singer" on Google Images. Pick one person and describe them fully in Spanish — minimum 5 sentences: appearance plus a guess about their personality.</p>
+        <p class="lang-zh-block">在 Google 图片中搜索"著名西语演员"或"著名西语歌手"，选择一个人，用西班牙语完整描述——至少 5 句话：外貌加上你对其性格的猜测。</p>
+      </div>
+    </details>
+
+    <details class="panel">
+      <summary>
+        <span class="panel-num">8</span>
+        <span class="panel-title"><span class="lang-en">Free production</span><span class="lang-zh">自由表达</span></span>
+        <svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg>
+      </summary>
+      <div class="panel-body">
+        <p class="lang-en-block">No script. No word bank. Just you, speaking freely using everything from this unit.</p>
+        <p class="lang-zh-block">没有脚本，没有词汇表。用你在本单元学到的一切自由表达。</p>
+
+        <h4><span class="lang-en">Speaking prompts</span><span class="lang-zh">口语提示</span></h4>
+        <ol class="lang-en-block">
+          <li>Describe yourself fully.</li>
+          <li>Describe your best friend.</li>
+          <li>Play "guess who" — describe someone in your family without naming them.</li>
+          <li>Describe your ideal travel companion's personality.</li>
+        </ol>
+        <ol class="lang-zh-block">
+          <li>完整描述你自己。</li>
+          <li>描述你最好的朋友。</li>
+          <li>玩"猜猜我是谁"——描述一位家人但不说出名字。</li>
+          <li>描述你理想的旅行伙伴的性格。</li>
+        </ol>
+      </div>
+    </details>
+
+    <details class="panel">
+      <summary>
+        <span class="panel-num">9</span>
+        <span class="panel-title"><span class="lang-en">Homework</span><span class="lang-zh">课后作业</span></span>
+        <svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg>
+      </summary>
+      <div class="panel-body">
+        <p class="lang-en-block">Choose <strong>one</strong> of the options below. No need to send anything — just do it before the next class.</p>
+        <p class="lang-zh-block">选择以下任一选项。无需发给老师——课前自己完成就好。</p>
+
+        <h4><span class="lang-en">Option A — Receptive</span><span class="lang-zh">选项 A — 听力输入</span></h4>
+        <p class="lang-en-block">Watch a short Spanish video where someone is described or interviewed. Write down any appearance or personality words you hear mentioned.</p>
+        <p class="lang-zh-block">看一段西班牙语视频，其中有人被描述或采访，记下你听到的外貌或性格词。</p>
+
+        <h4><span class="lang-en">Option B — Practice exercise</span><span class="lang-zh">选项 B — 书面练习</span></h4>
+        <p class="lang-en-block">Copy the exercise below into your Google Doc and fill in the blanks. Check your answers at the bottom when you are done.</p>
+        <p class="lang-zh-block">将以下练习复制到你的 Google Doc 中并填空。完成后在下方核对答案。</p>
+
+        <div style="background:#f7f5ef; padding:16px; border-radius:8px; margin:12px 0; font-size:14px; line-height:2;">
+          <p><strong>Part 1 — SER vs. TENER (SER 与 TENER)</strong></p>
+          <p>1. Ana ___ alta.</p>
+          <p>2. Carlos ___ los ojos azules.</p>
+          <p>3. Mi madre ___ el pelo largo.</p>
+          <p>4. Nosotros ___ simpáticos.</p>
+          <p>5. Ellos ___ barba.</p>
+
+          <br>
+          <p><strong>Part 2 — Adjective agreement (形容词阴阳性一致)</strong></p>
+          <p>1. Mi hermana es ___ (tall, fem).</p>
+          <p>2. Mi padre es ___ (hardworking, masc).</p>
+          <p>3. Sara es ___ (shy, fem).</p>
+          <p>4. Mis amigos son ___ (fun, masc pl).</p>
+          <p>5. La profesora es ___ (generous, fem).</p>
+        </div>
+
+        <details style="margin-top:8px;">
+          <summary style="cursor:pointer; color:#5a7a32; font-weight:500; font-size:13px;"><span class="lang-en">Show answers</span><span class="lang-zh">查看答案</span></summary>
+          <div style="background:#eef4e4; padding:12px; border-radius:8px; margin-top:8px; font-size:13px; line-height:2;">
+            <p><strong>Part 1:</strong> 1. es · 2. tiene · 3. tiene · 4. somos · 5. tienen</p>
+            <p><strong>Part 2:</strong> 1. alta · 2. trabajador · 3. tímida · 4. divertidos · 5. generosa</p>
+          </div>
+        </details>
+
+        <h4><span class="lang-en">Option C — Creative</span><span class="lang-zh">选项 C — 创意练习</span></h4>
+        <p class="lang-en-block">Draw a simple portrait of yourself or a friend and label 5 features in Spanish.</p>
+        <p class="lang-zh-block">画一幅你自己或朋友的简单肖像，用西班牙语标注 5 个特征。</p>
+      </div>
+    </details>
+
   </div>
+
   <div class="unit-nav">
     <a class="prev" href="./unit-6.html"><span>←</span><div><span class="nav-label">Previous</span><span class="nav-title">Unit 6 · Familia</span></div></a>
     <a class="next" href="./knowledge-check-1.html"><div><span class="nav-label">Next</span><span class="nav-title">Knowledge Check 1</span></div><span>→</span></a>
   </div>
 </main>
+
 <footer class="site-footer">Spanish with Brady · Private use only</footer>
+
+<script>
+function setLang(lang) {
+  if (lang === 'zh') {
+    document.body.classList.add('zh');
+    document.getElementById('btn-zh').style.background = '#5a7a32';
+    document.getElementById('btn-zh').style.color = 'white';
+    document.getElementById('btn-en').style.background = '#f7f5ef';
+    document.getElementById('btn-en').style.color = '#7a6e60';
+  } else {
+    document.body.classList.remove('zh');
+    document.getElementById('btn-en').style.background = '#5a7a32';
+    document.getElementById('btn-en').style.color = 'white';
+    document.getElementById('btn-zh').style.background = '#f7f5ef';
+    document.getElementById('btn-zh').style.color = '#7a6e60';
+  }
+  localStorage.setItem('lang', lang);
+}
+const saved = localStorage.getItem('lang');
+if (saved === 'zh') setLang('zh');
+</script>
+
 </body>
 </html>

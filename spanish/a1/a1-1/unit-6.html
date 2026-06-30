@@ -5,41 +5,343 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Unit 6 · Familia · Spanish with Brady</title>
   <link rel="stylesheet" href="../../../assets/style.css">
+  <style>
+    .lang-zh { display: none; }
+    body.zh .lang-en { display: none; }
+    body.zh .lang-zh { display: inline; }
+    .lang-zh-block { display: none; }
+    body.zh .lang-zh-block { display: block; }
+    body.zh .lang-en-block { display: none; }
+  </style>
 </head>
 <body>
+
 <header class="site-header">
   <a class="site-logo" href="../../../">Spanish with Brady</a>
-  <nav><ul class="site-nav">
-    <li><a href="../../../spanish/" class="active">Spanish</a></li>
-    <li><a href="../../../mandarin/">Mandarin</a></li>
-    <li><a href="#">English</a></li>
-  </ul></nav>
+  <nav>
+    <ul class="site-nav">
+      <li><a href="../../../spanish/" class="active">Spanish</a></li>
+      <li><a href="../../../mandarin/">Mandarin</a></li>
+      <li><a href="#">English</a></li>
+    </ul>
+  </nav>
 </header>
+
 <nav class="breadcrumb">
   <a href="../../../">Home</a><span>›</span><a href="../../../spanish/">Spanish</a><span>›</span><a href="../../../spanish/a1/">A1</a><span>›</span><a href="./index.html">A1.1</a><span>›</span>Unit 6
 </nav>
+
 <main>
+  <div style="display:flex; justify-content:flex-end; padding: 8px 0 0;">
+    <div style="display:flex; gap:0; border:1px solid #e2ddd4; border-radius:6px; overflow:hidden;">
+      <button id="btn-en" onclick="setLang('en')" style="padding:6px 16px; font-size:13px; font-weight:500; border:none; cursor:pointer; background:#5a7a32; color:white;">EN</button>
+      <button id="btn-zh" onclick="setLang('zh')" style="padding:6px 16px; font-size:13px; font-weight:500; border:none; cursor:pointer; background:#f7f5ef; color:#7a6e60;">中文</button>
+    </div>
+  </div>
+
   <div class="unit-header">
     <div class="unit-num">A1.1 · Unit 6</div>
     <h1>Familia</h1>
-    <p class="unit-subtitle">Family and possessives</p>
+    <p class="unit-subtitle">Family, possessives and the verb TENER</p>
   </div>
+
   <div class="panels">
-    <details class="panel"><summary><span class="panel-num">1</span><span class="panel-title">Hook / Opener</span><svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg></summary><div class="panel-body">Content coming soon</div></details>
-    <details class="panel"><summary><span class="panel-num">2</span><span class="panel-title">Vocabulary</span><svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg></summary><div class="panel-body">Content coming soon</div></details>
-    <details class="panel"><summary><span class="panel-num">3</span><span class="panel-title">Grammar in context</span><svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg></summary><div class="panel-body">Content coming soon</div></details>
-    <details class="panel"><summary><span class="panel-num">4</span><span class="panel-title">Reading or dialogue</span><svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg></summary><div class="panel-body">Content coming soon</div></details>
-    <details class="panel"><summary><span class="panel-num">5</span><span class="panel-title">Controlled practice</span><svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg></summary><div class="panel-body">Content coming soon</div></details>
-    <details class="panel"><summary><span class="panel-num">6</span><span class="panel-title">Question formation</span><svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg></summary><div class="panel-body">Content coming soon</div></details>
-    <details class="panel"><summary><span class="panel-num">7</span><span class="panel-title">Real-life task</span><svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg></summary><div class="panel-body">Content coming soon</div></details>
-    <details class="panel"><summary><span class="panel-num">8</span><span class="panel-title">Free production</span><svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg></summary><div class="panel-body">Content coming soon</div></details>
-    <details class="panel"><summary><span class="panel-num">9</span><span class="panel-title">Homework</span><svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg></summary><div class="panel-body">Content coming soon</div></details>
+
+    <details class="panel">
+      <summary>
+        <span class="panel-num">1</span>
+        <span class="panel-title"><span class="lang-en">Hook / Opener</span><span class="lang-zh">课程导入</span></span>
+        <svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg>
+      </summary>
+      <div class="panel-body">
+        <p>📷 <em>Suggested image: a diverse, illustrated family tree.</em></p>
+        <p class="lang-en-block">Before we start, think about this: Can you describe your family in Spanish? Do you know how to say "my", "your", "his" or "her" correctly?</p>
+        <p class="lang-zh-block">开始之前，想一想：你能用西班牙语描述你的家人吗？你知道怎么正确地说"我的"、"你的"、"他的"或"她的"吗？</p>
+        <p><strong><span class="lang-en">By the end of this unit you can:</span><span class="lang-zh">完成本单元后，你能够：</span></strong> <span class="lang-en">describe family relationships, give ages, and use possessives correctly.</span><span class="lang-zh">描述家庭关系、说出年龄，并正确使用物主代词。</span></p>
+      </div>
+    </details>
+
+    <details class="panel">
+      <summary>
+        <span class="panel-num">2</span>
+        <span class="panel-title"><span class="lang-en">Vocabulary</span><span class="lang-zh">词汇</span></span>
+        <svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg>
+      </summary>
+      <div class="panel-body">
+        <h4><span class="lang-en">Family</span><span class="lang-zh">家庭成员</span></h4>
+        <table>
+          <tr><th>Spanish</th><th>English</th><th>中文</th></tr>
+          <tr><td><strong>el padre / la madre</strong></td><td>father / mother</td><td>父亲/母亲</td></tr>
+          <tr><td><strong>el hermano / la hermana</strong></td><td>brother / sister</td><td>兄弟/姐妹</td></tr>
+          <tr><td><strong>el hijo / la hija</strong></td><td>son / daughter</td><td>儿子/女儿</td></tr>
+          <tr><td><strong>el esposo / la esposa</strong></td><td>husband / wife</td><td>丈夫/妻子</td></tr>
+          <tr><td><strong>el abuelo / la abuela</strong></td><td>grandfather / grandmother</td><td>祖父/祖母</td></tr>
+          <tr><td><strong>el tío / la tía</strong></td><td>uncle / aunt</td><td>叔叔(舅舅)/阿姨(姑姑)</td></tr>
+          <tr><td><strong>el primo / la prima</strong></td><td>cousin (m/f)</td><td>表/堂兄弟姐妹</td></tr>
+          <tr><td><strong>el sobrino / la sobrina</strong></td><td>nephew / niece</td><td>侄子(外甥)/侄女(外甥女)</td></tr>
+          <tr><td><strong>el nieto / la nieta</strong></td><td>grandson / granddaughter</td><td>孙子/孙女</td></tr>
+          <tr><td><strong>el novio / la novia</strong></td><td>boyfriend / girlfriend</td><td>男朋友/女朋友</td></tr>
+          <tr><td><strong>la mascota</strong></td><td>pet</td><td>宠物</td></tr>
+        </table>
+      </div>
+    </details>
+
+    <details class="panel">
+      <summary>
+        <span class="panel-num">3</span>
+        <span class="panel-title"><span class="lang-en">Grammar in context</span><span class="lang-zh">语法讲解</span></span>
+        <svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg>
+      </summary>
+      <div class="panel-body">
+        <h4><span class="lang-en">Possessives</span><span class="lang-zh">物主代词</span></h4>
+        <table>
+          <tr><th><span class="lang-en">Possessive</span><span class="lang-zh">物主代词</span></th><th><span class="lang-en">Meaning</span><span class="lang-zh">意思</span></th><th><span class="lang-en">Example</span><span class="lang-zh">例句</span></th></tr>
+          <tr><td><strong>mi / mis</strong></td><td>my</td><td>mi madre / mis hermanos</td></tr>
+          <tr><td><strong>tu / tus</strong></td><td>your (informal)</td><td>tu padre / tus primas</td></tr>
+          <tr><td><strong>su / sus</strong></td><td>his / her / their / your (formal)</td><td>su abuela / sus tíos</td></tr>
+          <tr><td><strong>nuestro/a / nuestros/as</strong></td><td>our</td><td>nuestro hijo / nuestras hijas</td></tr>
+          <tr><td><strong>vuestro/a / vuestros/as</strong></td><td>your all (Spain)</td><td>vuestro abuelo / vuestras primas</td></tr>
+          <tr><td><strong>su / sus</strong></td><td>their / your all (formal)</td><td>su casa / sus mascotas</td></tr>
+        </table>
+
+        <p class="lang-en-block">⚠️ <strong>Critical rule:</strong> the possessive agrees with THE NOUN, not the owner! "Su madre" means his mother, her mother, OR their mother — it never changes. This is a big shift for Chinese speakers, since Chinese possessives (他的/她的/他们的) match the owner instead.</p>
+        <p class="lang-zh-block">⚠️ <strong>关键规则：</strong>物主代词与所有物（名词）的阴阳性一致，而不是与所有者一致！"Su madre" 可以表示"他的母亲"、"她的母亲"或"他们的母亲"——形式永远不变。这对中文使用者来说是个很大的转变，因为中文的物主代词（他的/她的/他们的）是根据所有者变化的。</p>
+
+        <h4><span class="lang-en">TENER (full conjugation)</span><span class="lang-zh">TENER（完整变位）</span></h4>
+        <table>
+          <tr><th><span class="lang-en">Pronoun</span><span class="lang-zh">人称代词</span></th><th>TENER</th><th><span class="lang-en">Example</span><span class="lang-zh">例句</span></th></tr>
+          <tr><td>yo</td><td><strong>tengo</strong></td><td>Tengo 25 años.</td></tr>
+          <tr><td>tú</td><td><strong>tienes</strong></td><td>¿Tienes hermanos?</td></tr>
+          <tr><td>él / ella / usted</td><td><strong>tiene</strong></td><td>Mi madre tiene 52 años.</td></tr>
+          <tr><td>nosotros/as</td><td><strong>tenemos</strong></td><td>Tenemos dos primos.</td></tr>
+          <tr><td>vosotros/as</td><td><strong>tenéis</strong></td><td>¿Tenéis mascotas?</td></tr>
+          <tr><td>ellos/as / ustedes</td><td><strong>tienen</strong></td><td>Tienen una hija.</td></tr>
+        </table>
+      </div>
+    </details>
+
+    <details class="panel">
+      <summary>
+        <span class="panel-num">4</span>
+        <span class="panel-title"><span class="lang-en">Reading or dialogue</span><span class="lang-zh">阅读与对话</span></span>
+        <svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg>
+      </summary>
+      <div class="panel-body">
+        <p>📷 <em>Suggested image: a video call screen with family photos in the background.</em></p>
+
+        <h4>Mi familia</h4>
+        <p class="lang-en-block">Elena introduces her family to Pablo over a video call.</p>
+        <p class="lang-zh-block">Elena 在视频通话中向 Pablo 介绍她的家人。</p>
+
+        <div class="dialogue">
+          <p><strong>Pablo:</strong> Elena, ¿tienes hermanos?</p>
+          <p><strong>Elena:</strong> Sí, tengo un hermano. Se llama Diego.</p>
+          <p><strong>Pablo:</strong> ¿Cuántos años tiene tu hermano?</p>
+          <p><strong>Elena:</strong> Tiene 20 años. Y mi madre tiene 52 años.</p>
+          <p><strong>Pablo:</strong> ¿Y tu padre?</p>
+          <p><strong>Elena:</strong> Mi padre tiene 55 años. Tengo también dos primas.</p>
+          <p><strong>Pablo:</strong> ¡Qué familia tan grande! ¿Tienes mascotas?</p>
+          <p><strong>Elena:</strong> Sí, tenemos un perro. Se llama Toby. ¿Y tu familia?</p>
+          <p><strong>Pablo:</strong> Mi familia es pequeña. Tengo una hermana y nuestro gato.</p>
+        </div>
+
+        <h4><span class="lang-en">Comprehension questions</span><span class="lang-zh">理解问题</span></h4>
+        <ol>
+          <li>¿Cómo se llama el hermano de Elena?</li>
+          <li>¿Cuántos años tiene la madre de Elena?</li>
+          <li>¿Cuántas primas tiene Elena?</li>
+          <li>¿Qué mascota tiene la familia de Pablo?</li>
+        </ol>
+      </div>
+    </details>
+
+    <details class="panel">
+      <summary>
+        <span class="panel-num">5</span>
+        <span class="panel-title"><span class="lang-en">Controlled practice</span><span class="lang-zh">强化练习</span></span>
+        <svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg>
+      </summary>
+      <div class="panel-body">
+        <h4><span class="lang-en">Exercise 1 — Complete with the correct possessive</span><span class="lang-zh">练习一 — 用正确的物主代词填空</span></h4>
+        <ol>
+          <li>(my) ___ madre tiene 50 años.</li>
+          <li>(your, informal) ¿Cómo se llama ___ padre?</li>
+          <li>(his) ___ hermana es médica.</li>
+          <li>(our) ___ abuelo vive en México.</li>
+          <li>(their) ___ primos son simpáticos.</li>
+          <li>(her) ___ hijos están en la escuela.</li>
+        </ol>
+
+        <h4><span class="lang-en">Exercise 2 — Complete with TENER</span><span class="lang-zh">练习二 — 用 TENER 填空</span></h4>
+        <ol>
+          <li>Yo ___ 30 años.</li>
+          <li>¿Tú ___ hermanos?</li>
+          <li>Mi padre ___ 60 años.</li>
+          <li>Nosotros ___ una mascota.</li>
+          <li>Ellos ___ dos hijos.</li>
+          <li>¿Usted ___ nietos?</li>
+        </ol>
+
+        <h4><span class="lang-en">Exercise 3 — Find the error</span><span class="lang-zh">练习三 — 找出错误</span></h4>
+        <ol>
+          <li>Su madre de Carlos es profesora. → ___</li>
+          <li>Yo tiene 25 años. → ___</li>
+          <li>Mis hermano son altos. → ___</li>
+          <li>Ella tienes una hija. → ___</li>
+          <li>Sus madre se llama Ana. → ___</li>
+        </ol>
+      </div>
+    </details>
+
+    <details class="panel">
+      <summary>
+        <span class="panel-num">6</span>
+        <span class="panel-title"><span class="lang-en">Question formation</span><span class="lang-zh">如何提问</span></span>
+        <svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg>
+      </summary>
+      <div class="panel-body">
+        <h4><span class="lang-en">Questions for this unit</span><span class="lang-zh">本单元问句</span></h4>
+        <table>
+          <tr><th><span class="lang-en">Question</span><span class="lang-zh">问句</span></th><th><span class="lang-en">Meaning</span><span class="lang-zh">意思</span></th><th><span class="lang-en">Typical answer</span><span class="lang-zh">常见回答</span></th></tr>
+          <tr><td><strong>¿Tienes hermanos?</strong></td><td><span class="lang-en">Do you have siblings?</span><span class="lang-zh">你有兄弟姐妹吗？</span></td><td>Sí, tengo una hermana.</td></tr>
+          <tr><td><strong>¿Cuántos años tiene tu madre/padre?</strong></td><td><span class="lang-en">How old is your mother/father?</span><span class="lang-zh">你母亲/父亲多大年纪？</span></td><td>Tiene 50 años.</td></tr>
+          <tr><td><strong>¿Cómo se llama tu...?</strong></td><td><span class="lang-en">What is your... called?</span><span class="lang-zh">你的……叫什么名字？</span></td><td>Se llama Ana.</td></tr>
+          <tr><td><strong>¿Tienes mascotas?</strong></td><td><span class="lang-en">Do you have pets?</span><span class="lang-zh">你有宠物吗？</span></td><td>Sí, tengo un perro.</td></tr>
+        </table>
+
+        <h4><span class="lang-en">Practice — Ask the question</span><span class="lang-zh">练习 — 写出问句</span></h4>
+        <p class="lang-en-block">Look at the answer. What was the question?</p>
+        <p class="lang-zh-block">看答案，写出对应的问句。</p>
+        <ol>
+          <li>→ Sí, tengo dos hermanos.</li>
+          <li>→ Mi madre tiene 48 años.</li>
+          <li>→ Se llama Toby.</li>
+          <li>→ No, no tengo mascotas.</li>
+        </ol>
+      </div>
+    </details>
+
+    <details class="panel">
+      <summary>
+        <span class="panel-num">7</span>
+        <span class="panel-title"><span class="lang-en">Real-life task</span><span class="lang-zh">真实任务</span></span>
+        <svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg>
+      </summary>
+      <div class="panel-body">
+        <p>📷 <em>Suggested image: a blank family tree template.</em></p>
+
+        <h4><span class="lang-en">Task: Your family tree</span><span class="lang-zh">任务：你的家谱</span></h4>
+        <p class="lang-en-block">Draw or describe your real family tree (3–5 people). For each person, say: relationship, name, and age if known. Use possessives correctly.</p>
+        <p class="lang-zh-block">画出或描述你真实的家谱（3-5 人）。对每个人说明：关系、姓名，以及年龄（如果知道）。注意正确使用物主代词。</p>
+        <p><em>Example: "Mi madre se llama Lin. Tiene 48 años. Mi hermano se llama Hao. Tiene 22 años."</em></p>
+      </div>
+    </details>
+
+    <details class="panel">
+      <summary>
+        <span class="panel-num">8</span>
+        <span class="panel-title"><span class="lang-en">Free production</span><span class="lang-zh">自由表达</span></span>
+        <svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg>
+      </summary>
+      <div class="panel-body">
+        <p class="lang-en-block">No script. No word bank. Just you, speaking freely using everything from this unit.</p>
+        <p class="lang-zh-block">没有脚本，没有词汇表。用你在本单元学到的一切自由表达。</p>
+
+        <h4><span class="lang-en">Speaking prompts</span><span class="lang-zh">口语提示</span></h4>
+        <ol class="lang-en-block">
+          <li>Describe your full family.</li>
+          <li>Describe your best friend's family, if you know it.</li>
+          <li>Do you have pets? Describe them.</li>
+          <li>Guess a classmate's family size and ask them to confirm.</li>
+        </ol>
+        <ol class="lang-zh-block">
+          <li>描述你完整的家庭。</li>
+          <li>如果你了解，描述你最好朋友的家庭。</li>
+          <li>你有宠物吗？描述一下它们。</li>
+          <li>猜猜同学的家庭人数，并向他们确认。</li>
+        </ol>
+      </div>
+    </details>
+
+    <details class="panel">
+      <summary>
+        <span class="panel-num">9</span>
+        <span class="panel-title"><span class="lang-en">Homework</span><span class="lang-zh">课后作业</span></span>
+        <svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg>
+      </summary>
+      <div class="panel-body">
+        <p class="lang-en-block">Choose <strong>one</strong> of the options below. No need to send anything — just do it before the next class.</p>
+        <p class="lang-zh-block">选择以下任一选项。无需发给老师——课前自己完成就好。</p>
+
+        <h4><span class="lang-en">Option A — Receptive</span><span class="lang-zh">选项 A — 听力输入</span></h4>
+        <p class="lang-en-block">Watch a short Spanish video about a family. Write down any family words or ages you hear mentioned.</p>
+        <p class="lang-zh-block">看一段关于家庭的西班牙语短视频，记下你听到的家庭称谓或年龄。</p>
+
+        <h4><span class="lang-en">Option B — Practice exercise</span><span class="lang-zh">选项 B — 书面练习</span></h4>
+        <p class="lang-en-block">Copy the exercise below into your Google Doc and fill in the blanks. Check your answers at the bottom when you are done.</p>
+        <p class="lang-zh-block">将以下练习复制到你的 Google Doc 中并填空。完成后在下方核对答案。</p>
+
+        <div style="background:#f7f5ef; padding:16px; border-radius:8px; margin:12px 0; font-size:14px; line-height:2;">
+          <p><strong>Part 1 — Possessives (物主代词)</strong></p>
+          <p>1. (my) ___ padre es alto.</p>
+          <p>2. (your, informal) ¿Dónde está ___ mochila?</p>
+          <p>3. (her) ___ hermano es médico.</p>
+          <p>4. (our) ___ casa es pequeña.</p>
+          <p>5. (their) ___ abuela vive en España.</p>
+
+          <br>
+          <p><strong>Part 2 — TENER (用 TENER 填空)</strong></p>
+          <p>1. Yo ___ 28 años.</p>
+          <p>2. ¿Tú ___ hermanas?</p>
+          <p>3. Mi abuelo ___ 80 años.</p>
+          <p>4. Nosotros ___ un gato.</p>
+          <p>5. Ellos ___ tres hijos.</p>
+        </div>
+
+        <details style="margin-top:8px;">
+          <summary style="cursor:pointer; color:#5a7a32; font-weight:500; font-size:13px;"><span class="lang-en">Show answers</span><span class="lang-zh">查看答案</span></summary>
+          <div style="background:#eef4e4; padding:12px; border-radius:8px; margin-top:8px; font-size:13px; line-height:2;">
+            <p><strong>Part 1:</strong> 1. Mi · 2. tu · 3. Su · 4. Nuestra · 5. Su</p>
+            <p><strong>Part 2:</strong> 1. tengo · 2. tienes · 3. tiene · 4. tenemos · 5. tienen</p>
+          </div>
+        </details>
+
+        <h4><span class="lang-en">Option C — Creative</span><span class="lang-zh">选项 C — 创意练习</span></h4>
+        <p class="lang-en-block">Draw your family tree on paper with names and ages, labeled in Spanish.</p>
+        <p class="lang-zh-block">在纸上画出你的家谱，用西班牙语标注姓名和年龄。</p>
+      </div>
+    </details>
+
   </div>
+
   <div class="unit-nav">
     <a class="prev" href="./unit-5.html"><span>←</span><div><span class="nav-label">Previous</span><span class="nav-title">Unit 5 · Objetos</span></div></a>
     <a class="next" href="./unit-7.html"><div><span class="nav-label">Next</span><span class="nav-title">Unit 7 · Descripción</span></div><span>→</span></a>
   </div>
 </main>
+
 <footer class="site-footer">Spanish with Brady · Private use only</footer>
+
+<script>
+function setLang(lang) {
+  if (lang === 'zh') {
+    document.body.classList.add('zh');
+    document.getElementById('btn-zh').style.background = '#5a7a32';
+    document.getElementById('btn-zh').style.color = 'white';
+    document.getElementById('btn-en').style.background = '#f7f5ef';
+    document.getElementById('btn-en').style.color = '#7a6e60';
+  } else {
+    document.body.classList.remove('zh');
+    document.getElementById('btn-en').style.background = '#5a7a32';
+    document.getElementById('btn-en').style.color = 'white';
+    document.getElementById('btn-zh').style.background = '#f7f5ef';
+    document.getElementById('btn-zh').style.color = '#7a6e60';
+  }
+  localStorage.setItem('lang', lang);
+}
+const saved = localStorage.getItem('lang');
+if (saved === 'zh') setLang('zh');
+</script>
+
 </body>
 </html>

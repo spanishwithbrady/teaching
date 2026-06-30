@@ -5,41 +5,352 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Unit 5 · Objetos · Spanish with Brady</title>
   <link rel="stylesheet" href="../../../assets/style.css">
+  <style>
+    .lang-zh { display: none; }
+    body.zh .lang-en { display: none; }
+    body.zh .lang-zh { display: inline; }
+    .lang-zh-block { display: none; }
+    body.zh .lang-zh-block { display: block; }
+    body.zh .lang-en-block { display: none; }
+  </style>
 </head>
 <body>
+
 <header class="site-header">
   <a class="site-logo" href="../../../">Spanish with Brady</a>
-  <nav><ul class="site-nav">
-    <li><a href="../../../spanish/" class="active">Spanish</a></li>
-    <li><a href="../../../mandarin/">Mandarin</a></li>
-    <li><a href="#">English</a></li>
-  </ul></nav>
+  <nav>
+    <ul class="site-nav">
+      <li><a href="../../../spanish/" class="active">Spanish</a></li>
+      <li><a href="../../../mandarin/">Mandarin</a></li>
+      <li><a href="#">English</a></li>
+    </ul>
+  </nav>
 </header>
+
 <nav class="breadcrumb">
   <a href="../../../">Home</a><span>›</span><a href="../../../spanish/">Spanish</a><span>›</span><a href="../../../spanish/a1/">A1</a><span>›</span><a href="./index.html">A1.1</a><span>›</span>Unit 5
 </nav>
+
 <main>
+  <div style="display:flex; justify-content:flex-end; padding: 8px 0 0;">
+    <div style="display:flex; gap:0; border:1px solid #e2ddd4; border-radius:6px; overflow:hidden;">
+      <button id="btn-en" onclick="setLang('en')" style="padding:6px 16px; font-size:13px; font-weight:500; border:none; cursor:pointer; background:#5a7a32; color:white;">EN</button>
+      <button id="btn-zh" onclick="setLang('zh')" style="padding:6px 16px; font-size:13px; font-weight:500; border:none; cursor:pointer; background:#f7f5ef; color:#7a6e60;">中文</button>
+    </div>
+  </div>
+
   <div class="unit-header">
     <div class="unit-num">A1.1 · Unit 5</div>
     <h1>Objetos</h1>
-    <p class="unit-subtitle">Objects: articles and demonstratives</p>
+    <p class="unit-subtitle">Everyday objects, demonstratives and HAY</p>
   </div>
+
   <div class="panels">
-    <details class="panel"><summary><span class="panel-num">1</span><span class="panel-title">Hook / Opener</span><svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg></summary><div class="panel-body">Content coming soon</div></details>
-    <details class="panel"><summary><span class="panel-num">2</span><span class="panel-title">Vocabulary</span><svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg></summary><div class="panel-body">Content coming soon</div></details>
-    <details class="panel"><summary><span class="panel-num">3</span><span class="panel-title">Grammar in context</span><svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg></summary><div class="panel-body">Content coming soon</div></details>
-    <details class="panel"><summary><span class="panel-num">4</span><span class="panel-title">Reading or dialogue</span><svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg></summary><div class="panel-body">Content coming soon</div></details>
-    <details class="panel"><summary><span class="panel-num">5</span><span class="panel-title">Controlled practice</span><svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg></summary><div class="panel-body">Content coming soon</div></details>
-    <details class="panel"><summary><span class="panel-num">6</span><span class="panel-title">Question formation</span><svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg></summary><div class="panel-body">Content coming soon</div></details>
-    <details class="panel"><summary><span class="panel-num">7</span><span class="panel-title">Real-life task</span><svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg></summary><div class="panel-body">Content coming soon</div></details>
-    <details class="panel"><summary><span class="panel-num">8</span><span class="panel-title">Free production</span><svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg></summary><div class="panel-body">Content coming soon</div></details>
-    <details class="panel"><summary><span class="panel-num">9</span><span class="panel-title">Homework</span><svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg></summary><div class="panel-body">Content coming soon</div></details>
+
+    <details class="panel">
+      <summary>
+        <span class="panel-num">1</span>
+        <span class="panel-title"><span class="lang-en">Hook / Opener</span><span class="lang-zh">课程导入</span></span>
+        <svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg>
+      </summary>
+      <div class="panel-body">
+        <p>📷 <em>Suggested image: a messy desk with books, a phone, keys, a backpack, a water bottle.</em></p>
+        <p class="lang-en-block">Before we start, think about this: How many objects on your desk right now could you name in Spanish?</p>
+        <p class="lang-zh-block">开始之前，想一想：你现在书桌上的东西，能用西班牙语说出几个？</p>
+        <p><strong><span class="lang-en">By the end of this unit you can:</span><span class="lang-zh">完成本单元后，你能够：</span></strong> <span class="lang-en">identify everyday objects, use demonstratives correctly, and use HAY to talk about what exists.</span><span class="lang-zh">说出日常物品的名称、正确使用指示代词，并用 HAY 表达"有"。</span></p>
+      </div>
+    </details>
+
+    <details class="panel">
+      <summary>
+        <span class="panel-num">2</span>
+        <span class="panel-title"><span class="lang-en">Vocabulary</span><span class="lang-zh">词汇</span></span>
+        <svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg>
+      </summary>
+      <div class="panel-body">
+        <h4><span class="lang-en">Everyday objects</span><span class="lang-zh">日常物品</span></h4>
+        <table>
+          <tr><th>Spanish</th><th>English</th><th>中文</th></tr>
+          <tr><td><strong>el libro</strong></td><td>book</td><td>书</td></tr>
+          <tr><td><strong>el cuaderno</strong></td><td>notebook</td><td>笔记本</td></tr>
+          <tr><td><strong>el bolígrafo</strong></td><td>pen</td><td>圆珠笔</td></tr>
+          <tr><td><strong>el lápiz / los lápices</strong></td><td>pencil / pencils</td><td>铅笔</td></tr>
+          <tr><td><strong>la mesa</strong></td><td>table</td><td>桌子</td></tr>
+          <tr><td><strong>la silla</strong></td><td>chair</td><td>椅子</td></tr>
+          <tr><td><strong>el teléfono / móvil</strong></td><td>phone / cellphone</td><td>电话/手机</td></tr>
+          <tr><td><strong>el ordenador</strong></td><td>computer</td><td>电脑</td></tr>
+          <tr><td><strong>la mochila</strong></td><td>backpack</td><td>背包</td></tr>
+          <tr><td><strong>la llave / las llaves</strong></td><td>key / keys</td><td>钥匙</td></tr>
+          <tr><td><strong>el vaso</strong></td><td>glass</td><td>杯子</td></tr>
+          <tr><td><strong>la botella</strong></td><td>bottle</td><td>瓶子</td></tr>
+          <tr><td><strong>el bolso / la bolsa</strong></td><td>purse / bag</td><td>手提包/袋子</td></tr>
+          <tr><td><strong>el reloj</strong></td><td>watch / clock</td><td>手表/钟</td></tr>
+          <tr><td><strong>la cartera</strong></td><td>wallet</td><td>钱包</td></tr>
+          <tr><td><strong>la pantalla</strong></td><td>screen</td><td>屏幕</td></tr>
+          <tr><td><strong>los auriculares</strong></td><td>headphones</td><td>耳机</td></tr>
+          <tr><td><strong>el cargador</strong></td><td>charger</td><td>充电器</td></tr>
+          <tr><td><strong>el cable</strong></td><td>cable</td><td>数据线</td></tr>
+        </table>
+      </div>
+    </details>
+
+    <details class="panel">
+      <summary>
+        <span class="panel-num">3</span>
+        <span class="panel-title"><span class="lang-en">Grammar in context</span><span class="lang-zh">语法讲解</span></span>
+        <svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg>
+      </summary>
+      <div class="panel-body">
+        <h4><span class="lang-en">Demonstratives</span><span class="lang-zh">指示代词</span></h4>
+        <table>
+          <tr><th><span class="lang-en">Distance</span><span class="lang-zh">距离</span></th><th><span class="lang-en">Masculine sg/pl</span><span class="lang-zh">阳性单/复数</span></th><th><span class="lang-en">Feminine sg/pl</span><span class="lang-zh">阴性单/复数</span></th></tr>
+          <tr><td><span class="lang-en">Near speaker (this/these)</span><span class="lang-zh">靠近说话者（这个/这些）</span></td><td>este / estos</td><td>esta / estas</td></tr>
+          <tr><td><span class="lang-en">Near listener (that/those)</span><span class="lang-zh">靠近听话者（那个/那些）</span></td><td>ese / esos</td><td>esa / esas</td></tr>
+          <tr><td><span class="lang-en">Far from both (that/those over there)</span><span class="lang-zh">远离双方（那个/那些，更远）</span></td><td>aquel / aquellos</td><td>aquella / aquellas</td></tr>
+        </table>
+
+        <p class="lang-en-block">💡 <strong>Note for Chinese speakers:</strong> Chinese has two distance levels (这/那). Spanish has three — the middle one (ese, near the listener) is the new concept to get used to.</p>
+        <p class="lang-zh-block">💡 <strong>中文使用者注意：</strong>中文有两个距离层级（这/那）。西班牙语有三个——中间的那个（ese，靠近听话者）是需要适应的新概念。</p>
+
+        <h4><span class="lang-en">HAY vs. ESTÁ/ESTÁN</span><span class="lang-zh">HAY 与 ESTÁ/ESTÁN 的区别</span></h4>
+        <table>
+          <tr><th>HAY</th><th>ESTÁ / ESTÁN</th></tr>
+          <tr><td><span class="lang-en">Existence — something new/unspecific</span><span class="lang-zh">表示存在——新的/不确定的事物</span></td><td><span class="lang-en">Location of a known/specific thing</span><span class="lang-zh">已知/特定事物的位置</span></td></tr>
+          <tr><td>Hay un libro en la mesa.</td><td>El libro está en la mesa.</td></tr>
+          <tr><td>Hay dos sillas aquí.</td><td>Las sillas están aquí.</td></tr>
+        </table>
+
+        <p class="lang-en-block">⚠️ HAY never changes form — it's always "hay", no matter singular or plural.</p>
+        <p class="lang-zh-block">⚠️ HAY 永远不变形——无论单数还是复数，都是 "hay"。</p>
+      </div>
+    </details>
+
+    <details class="panel">
+      <summary>
+        <span class="panel-num">4</span>
+        <span class="panel-title"><span class="lang-en">Reading or dialogue</span><span class="lang-zh">阅读与对话</span></span>
+        <svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg>
+      </summary>
+      <div class="panel-body">
+        <p>📷 <em>Suggested image: two people on a video call, each showing their desk to the camera.</em></p>
+
+        <h4>Preparando el estudio</h4>
+        <p class="lang-en-block">Wei and Sara are setting up for an online study session and describe what's around them.</p>
+        <p class="lang-zh-block">Wei 和 Sara 准备在线学习，互相描述自己周围的东西。</p>
+
+        <div class="dialogue">
+          <p><strong>Sara:</strong> Wei, ¿tienes tu cuaderno? Hay un examen mañana.</p>
+          <p><strong>Wei:</strong> Sí, está aquí, al lado de mi ordenador.</p>
+          <p><strong>Sara:</strong> Perfecto. ¿Qué hay encima de tu mesa?</p>
+          <p><strong>Wei:</strong> Hay un libro, dos bolígrafos y mi móvil. ¿Y en tu mesa?</p>
+          <p><strong>Sara:</strong> Hay una botella de agua y mis auriculares. Este cable es nuevo.</p>
+          <p><strong>Wei:</strong> ¿Ese cable es de tu cargador?</p>
+          <p><strong>Sara:</strong> Sí, exacto. Bueno, ¿dónde están tus llaves? Las necesitas luego.</p>
+          <p><strong>Wei:</strong> Están dentro de mi mochila. ¡Todo listo!</p>
+        </div>
+
+        <h4><span class="lang-en">Comprehension questions</span><span class="lang-zh">理解问题</span></h4>
+        <ol>
+          <li>¿Qué hay encima de la mesa de Wei?</li>
+          <li>¿Qué hay encima de la mesa de Sara?</li>
+          <li>¿De quién es el cargador?</li>
+          <li>¿Dónde están las llaves de Wei?</li>
+        </ol>
+      </div>
+    </details>
+
+    <details class="panel">
+      <summary>
+        <span class="panel-num">5</span>
+        <span class="panel-title"><span class="lang-en">Controlled practice</span><span class="lang-zh">强化练习</span></span>
+        <svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg>
+      </summary>
+      <div class="panel-body">
+        <h4><span class="lang-en">Exercise 1 — Choose the correct demonstrative</span><span class="lang-zh">练习一 — 选择正确的指示代词</span></h4>
+        <p class="lang-en-block">Based on the distance described, choose este/esta, ese/esa, or aquel/aquella.</p>
+        <p class="lang-zh-block">根据描述的距离，选择 este/esta、ese/esa 或 aquel/aquella。</p>
+        <ol>
+          <li>(in your hand) ___ libro es mío.</li>
+          <li>(in your friend's hand, on a video call) ___ cuaderno es bonito.</li>
+          <li>(far away, across the room) ___ mochila es de Carlos.</li>
+          <li>(right next to you) ___ silla está rota.</li>
+          <li>(near the listener) ___ bolígrafo no escribe.</li>
+          <li>(far away, near the window) ___ ventana está abierta.</li>
+        </ol>
+
+        <h4><span class="lang-en">Exercise 2 — HAY or ESTÁ/ESTÁN?</span><span class="lang-zh">练习二 — HAY 还是 ESTÁ/ESTÁN？</span></h4>
+        <ol>
+          <li>___ un libro en la mesa.</li>
+          <li>El libro ___ en la mesa.</li>
+          <li>___ dos sillas en la sala.</li>
+          <li>Las llaves ___ dentro de la mochila.</li>
+          <li>___ muchos estudiantes en la biblioteca.</li>
+          <li>Mi teléfono ___ encima del cuaderno.</li>
+        </ol>
+
+        <h4><span class="lang-en">Exercise 3 — Match the article</span><span class="lang-zh">练习三 — 匹配正确的冠词</span></h4>
+        <p class="lang-en-block">Choose el / la / los / las.</p>
+        <p class="lang-zh-block">选择 el / la / los / las。</p>
+        <ol>
+          <li>___ mochila</li>
+          <li>___ auriculares</li>
+          <li>___ cuaderno</li>
+          <li>___ llaves</li>
+          <li>___ pantalla</li>
+          <li>___ lápices</li>
+        </ol>
+      </div>
+    </details>
+
+    <details class="panel">
+      <summary>
+        <span class="panel-num">6</span>
+        <span class="panel-title"><span class="lang-en">Question formation</span><span class="lang-zh">如何提问</span></span>
+        <svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg>
+      </summary>
+      <div class="panel-body">
+        <h4><span class="lang-en">Questions for this unit</span><span class="lang-zh">本单元问句</span></h4>
+        <table>
+          <tr><th><span class="lang-en">Question</span><span class="lang-zh">问句</span></th><th><span class="lang-en">Meaning</span><span class="lang-zh">意思</span></th><th><span class="lang-en">Typical answer</span><span class="lang-zh">常见回答</span></th></tr>
+          <tr><td><strong>¿Qué es esto/eso/aquello?</strong></td><td><span class="lang-en">What is this/that/that (over there)?</span><span class="lang-zh">这是/那是什么？</span></td><td>Es mi cuaderno.</td></tr>
+          <tr><td><strong>¿Hay... en tu mochila?</strong></td><td><span class="lang-en">Is there a... in your backpack?</span><span class="lang-zh">你的背包里有……吗？</span></td><td>Sí, hay un libro.</td></tr>
+          <tr><td><strong>¿Dónde está tu/tus...?</strong></td><td><span class="lang-en">Where is/are your...?</span><span class="lang-zh">你的……在哪里？</span></td><td>Está en la mesa.</td></tr>
+          <tr><td><strong>¿De quién es esto?</strong></td><td><span class="lang-en">Whose is this?</span><span class="lang-zh">这是谁的？</span></td><td>Es de Carlos.</td></tr>
+        </table>
+
+        <h4><span class="lang-en">Practice — Ask the question</span><span class="lang-zh">练习 — 写出问句</span></h4>
+        <p class="lang-en-block">Look at the answer. What was the question?</p>
+        <p class="lang-zh-block">看答案，写出对应的问句。</p>
+        <ol>
+          <li>→ Es mi teléfono.</li>
+          <li>→ Sí, hay dos bolígrafos.</li>
+          <li>→ Están encima de la mesa.</li>
+          <li>→ Es de Sara.</li>
+        </ol>
+      </div>
+    </details>
+
+    <details class="panel">
+      <summary>
+        <span class="panel-num">7</span>
+        <span class="panel-title"><span class="lang-en">Real-life task</span><span class="lang-zh">真实任务</span></span>
+        <svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg>
+      </summary>
+      <div class="panel-body">
+        <p>📷 <em>Suggested image: a phone camera pointed at a real desk or room.</em></p>
+
+        <h4><span class="lang-en">Task: Look around your room</span><span class="lang-zh">任务：环顾你的房间</span></h4>
+        <p class="lang-en-block">Look around your real room right now. Name 5 objects you see using HAY, then describe where 2 of them are using ESTÁ + a preposition from Unit 4.</p>
+        <p class="lang-zh-block">现在环顾你的真实房间，用 HAY 说出你看到的 5 个物品，然后用 ESTÁ + 第四单元的介词描述其中 2 个的位置。</p>
+        <p><em>Example: "Hay un libro, un cuaderno, una mochila... El libro está encima de la mesa. La mochila está debajo de la silla."</em></p>
+      </div>
+    </details>
+
+    <details class="panel">
+      <summary>
+        <span class="panel-num">8</span>
+        <span class="panel-title"><span class="lang-en">Free production</span><span class="lang-zh">自由表达</span></span>
+        <svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg>
+      </summary>
+      <div class="panel-body">
+        <p class="lang-en-block">No script. No word bank. Just you, speaking freely using everything from this unit.</p>
+        <p class="lang-zh-block">没有脚本，没有词汇表。用你在本单元学到的一切自由表达。</p>
+
+        <h4><span class="lang-en">Speaking prompts</span><span class="lang-zh">口语提示</span></h4>
+        <ol class="lang-en-block">
+          <li>Describe everything in your bag or backpack.</li>
+          <li>Compare an object near you (este) with one near your teacher (ese) on a video call.</li>
+          <li>Describe 3 objects you wish you had.</li>
+          <li>What is the most important object you own, and why?</li>
+        </ol>
+        <ol class="lang-zh-block">
+          <li>描述你包里或背包里的所有东西。</li>
+          <li>在视频通话中，比较一个靠近你的物品（este）和一个靠近老师的物品（ese）。</li>
+          <li>描述你希望拥有的 3 件物品。</li>
+          <li>你拥有的最重要的物品是什么？为什么？</li>
+        </ol>
+      </div>
+    </details>
+
+    <details class="panel">
+      <summary>
+        <span class="panel-num">9</span>
+        <span class="panel-title"><span class="lang-en">Homework</span><span class="lang-zh">课后作业</span></span>
+        <svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg>
+      </summary>
+      <div class="panel-body">
+        <p class="lang-en-block">Choose <strong>one</strong> of the options below. No need to send anything — just do it before the next class.</p>
+        <p class="lang-zh-block">选择以下任一选项。无需发给老师——课前自己完成就好。</p>
+
+        <h4><span class="lang-en">Option A — Receptive</span><span class="lang-zh">选项 A — 听力输入</span></h4>
+        <p class="lang-en-block">Watch a short Spanish video about a room tour or "what's in my bag". Write down any objects you hear mentioned.</p>
+        <p class="lang-zh-block">看一段西班牙语的"房间参观"或"包里有什么"短视频，记下你听到的物品名称。</p>
+
+        <h4><span class="lang-en">Option B — Practice exercise</span><span class="lang-zh">选项 B — 书面练习</span></h4>
+        <p class="lang-en-block">Copy the exercise below into your Google Doc and fill in the blanks. Check your answers at the bottom when you are done.</p>
+        <p class="lang-zh-block">将以下练习复制到你的 Google Doc 中并填空。完成后在下方核对答案。</p>
+
+        <div style="background:#f7f5ef; padding:16px; border-radius:8px; margin:12px 0; font-size:14px; line-height:2;">
+          <p><strong>Part 1 — Demonstratives (指示代词)</strong></p>
+          <p>1. (in your hand) ___ libro es mío.</p>
+          <p>2. (near the listener) ___ cuaderno es bonito.</p>
+          <p>3. (far away) ___ mochila es de Carlos.</p>
+          <p>4. (right next to you, feminine) ___ silla está rota.</p>
+          <p>5. (near the listener, plural) ___ llaves son tuyas.</p>
+
+          <br>
+          <p><strong>Part 2 — HAY or ESTÁ/ESTÁN (HAY 还是 ESTÁ/ESTÁN)</strong></p>
+          <p>1. ___ un libro en la mesa.</p>
+          <p>2. El libro ___ en la mesa.</p>
+          <p>3. ___ dos sillas en la sala.</p>
+          <p>4. Las llaves ___ dentro de la mochila.</p>
+          <p>5. ___ muchos estudiantes aquí.</p>
+        </div>
+
+        <details style="margin-top:8px;">
+          <summary style="cursor:pointer; color:#5a7a32; font-weight:500; font-size:13px;"><span class="lang-en">Show answers</span><span class="lang-zh">查看答案</span></summary>
+          <div style="background:#eef4e4; padding:12px; border-radius:8px; margin-top:8px; font-size:13px; line-height:2;">
+            <p><strong>Part 1:</strong> 1. Este · 2. Ese · 3. Aquella · 4. Esta · 5. Esas</p>
+            <p><strong>Part 2:</strong> 1. Hay · 2. está · 3. Hay · 4. están · 5. Hay</p>
+          </div>
+        </details>
+
+        <h4><span class="lang-en">Option C — Creative</span><span class="lang-zh">选项 C — 创意练习</span></h4>
+        <p class="lang-en-block">Take a photo of your desk or bag and label 5 objects in Spanish with sticky notes or text.</p>
+        <p class="lang-zh-block">拍一张你书桌或包的照片，用西班牙语在便利贴或文字中标注 5 个物品。</p>
+      </div>
+    </details>
+
   </div>
+
   <div class="unit-nav">
     <a class="prev" href="./unit-4.html"><span>←</span><div><span class="nav-label">Previous</span><span class="nav-title">Unit 4 · Ubicación</span></div></a>
     <a class="next" href="./unit-6.html"><div><span class="nav-label">Next</span><span class="nav-title">Unit 6 · Familia</span></div><span>→</span></a>
   </div>
 </main>
+
 <footer class="site-footer">Spanish with Brady · Private use only</footer>
+
+<script>
+function setLang(lang) {
+  if (lang === 'zh') {
+    document.body.classList.add('zh');
+    document.getElementById('btn-zh').style.background = '#5a7a32';
+    document.getElementById('btn-zh').style.color = 'white';
+    document.getElementById('btn-en').style.background = '#f7f5ef';
+    document.getElementById('btn-en').style.color = '#7a6e60';
+  } else {
+    document.body.classList.remove('zh');
+    document.getElementById('btn-en').style.background = '#5a7a32';
+    document.getElementById('btn-en').style.color = 'white';
+    document.getElementById('btn-zh').style.background = '#f7f5ef';
+    document.getElementById('btn-zh').style.color = '#7a6e60';
+  }
+  localStorage.setItem('lang', lang);
+}
+const saved = localStorage.getItem('lang');
+if (saved === 'zh') setLang('zh');
+</script>
+
 </body>
 </html>

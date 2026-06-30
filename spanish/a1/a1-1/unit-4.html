@@ -5,41 +5,367 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Unit 4 · Ubicación · Spanish with Brady</title>
   <link rel="stylesheet" href="../../../assets/style.css">
+  <style>
+    .lang-zh { display: none; }
+    body.zh .lang-en { display: none; }
+    body.zh .lang-zh { display: inline; }
+    .lang-zh-block { display: none; }
+    body.zh .lang-zh-block { display: block; }
+    body.zh .lang-en-block { display: none; }
+  </style>
 </head>
 <body>
+
 <header class="site-header">
   <a class="site-logo" href="../../../">Spanish with Brady</a>
-  <nav><ul class="site-nav">
-    <li><a href="../../../spanish/" class="active">Spanish</a></li>
-    <li><a href="../../../mandarin/">Mandarin</a></li>
-    <li><a href="#">English</a></li>
-  </ul></nav>
+  <nav>
+    <ul class="site-nav">
+      <li><a href="../../../spanish/" class="active">Spanish</a></li>
+      <li><a href="../../../mandarin/">Mandarin</a></li>
+      <li><a href="#">English</a></li>
+    </ul>
+  </nav>
 </header>
+
 <nav class="breadcrumb">
   <a href="../../../">Home</a><span>›</span><a href="../../../spanish/">Spanish</a><span>›</span><a href="../../../spanish/a1/">A1</a><span>›</span><a href="./index.html">A1.1</a><span>›</span>Unit 4
 </nav>
+
 <main>
+  <div style="display:flex; justify-content:flex-end; padding: 8px 0 0;">
+    <div style="display:flex; gap:0; border:1px solid #e2ddd4; border-radius:6px; overflow:hidden;">
+      <button id="btn-en" onclick="setLang('en')" style="padding:6px 16px; font-size:13px; font-weight:500; border:none; cursor:pointer; background:#5a7a32; color:white;">EN</button>
+      <button id="btn-zh" onclick="setLang('zh')" style="padding:6px 16px; font-size:13px; font-weight:500; border:none; cursor:pointer; background:#f7f5ef; color:#7a6e60;">中文</button>
+    </div>
+  </div>
+
   <div class="unit-header">
     <div class="unit-num">A1.1 · Unit 4</div>
     <h1>Ubicación</h1>
-    <p class="unit-subtitle">Location: ESTAR and prepositions</p>
+    <p class="unit-subtitle">Places, prepositions and the verb ESTAR</p>
   </div>
+
   <div class="panels">
-    <details class="panel"><summary><span class="panel-num">1</span><span class="panel-title">Hook / Opener</span><svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg></summary><div class="panel-body">Content coming soon</div></details>
-    <details class="panel"><summary><span class="panel-num">2</span><span class="panel-title">Vocabulary</span><svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg></summary><div class="panel-body">Content coming soon</div></details>
-    <details class="panel"><summary><span class="panel-num">3</span><span class="panel-title">Grammar in context</span><svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg></summary><div class="panel-body">Content coming soon</div></details>
-    <details class="panel"><summary><span class="panel-num">4</span><span class="panel-title">Reading or dialogue</span><svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg></summary><div class="panel-body">Content coming soon</div></details>
-    <details class="panel"><summary><span class="panel-num">5</span><span class="panel-title">Controlled practice</span><svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg></summary><div class="panel-body">Content coming soon</div></details>
-    <details class="panel"><summary><span class="panel-num">6</span><span class="panel-title">Question formation</span><svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg></summary><div class="panel-body">Content coming soon</div></details>
-    <details class="panel"><summary><span class="panel-num">7</span><span class="panel-title">Real-life task</span><svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg></summary><div class="panel-body">Content coming soon</div></details>
-    <details class="panel"><summary><span class="panel-num">8</span><span class="panel-title">Free production</span><svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg></summary><div class="panel-body">Content coming soon</div></details>
-    <details class="panel"><summary><span class="panel-num">9</span><span class="panel-title">Homework</span><svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg></summary><div class="panel-body">Content coming soon</div></details>
+
+    <details class="panel">
+      <summary>
+        <span class="panel-num">1</span>
+        <span class="panel-title"><span class="lang-en">Hook / Opener</span><span class="lang-zh">课程导入</span></span>
+        <svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg>
+      </summary>
+      <div class="panel-body">
+        <p>📷 <em>Suggested image: a city map with pins on different buildings.</em></p>
+        <p class="lang-en-block">Before we start, think about this: Do you know how to ask where something is in Spanish?</p>
+        <p class="lang-zh-block">开始之前，想一想：你知道怎么用西班牙语问某个地方在哪里吗？</p>
+        <p><strong><span class="lang-en">By the end of this unit you can:</span><span class="lang-zh">完成本单元后，你能够：</span></strong> <span class="lang-en">locate people and things using ESTAR and prepositions of place, and start telling SER and ESTAR apart.</span><span class="lang-zh">用 ESTAR 和地点介词来描述人或物的位置，并开始区分 SER 和 ESTAR。</span></p>
+      </div>
+    </details>
+
+    <details class="panel">
+      <summary>
+        <span class="panel-num">2</span>
+        <span class="panel-title"><span class="lang-en">Vocabulary</span><span class="lang-zh">词汇</span></span>
+        <svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg>
+      </summary>
+      <div class="panel-body">
+        <h4><span class="lang-en">Places in a city</span><span class="lang-zh">城市场所</span></h4>
+        <table>
+          <tr><th>Spanish</th><th>English</th><th>中文</th></tr>
+          <tr><td><strong>el banco</strong></td><td>bank</td><td>银行</td></tr>
+          <tr><td><strong>el hospital</strong></td><td>hospital</td><td>医院</td></tr>
+          <tr><td><strong>la farmacia</strong></td><td>pharmacy</td><td>药店</td></tr>
+          <tr><td><strong>la biblioteca</strong></td><td>library</td><td>图书馆</td></tr>
+          <tr><td><strong>el parque</strong></td><td>park</td><td>公园</td></tr>
+          <tr><td><strong>el supermercado</strong></td><td>supermarket</td><td>超市</td></tr>
+          <tr><td><strong>el restaurante</strong></td><td>restaurant</td><td>餐厅</td></tr>
+          <tr><td><strong>la estación</strong></td><td>station</td><td>车站</td></tr>
+          <tr><td><strong>el aeropuerto</strong></td><td>airport</td><td>机场</td></tr>
+          <tr><td><strong>el museo</strong></td><td>museum</td><td>博物馆</td></tr>
+          <tr><td><strong>la iglesia</strong></td><td>church</td><td>教堂</td></tr>
+          <tr><td><strong>el correo</strong></td><td>post office</td><td>邮局</td></tr>
+        </table>
+
+        <h4><span class="lang-en">Prepositions of place</span><span class="lang-zh">地点介词</span></h4>
+        <table>
+          <tr><th>Spanish</th><th>English</th><th><span class="lang-en">Example</span><span class="lang-zh">例句</span></th></tr>
+          <tr><td><strong>en</strong></td><td>in / at / on</td><td>Estoy en el banco.</td></tr>
+          <tr><td><strong>a</strong></td><td>to</td><td>Voy a la biblioteca.</td></tr>
+          <tr><td><strong>cerca de</strong></td><td>near</td><td>El parque está cerca de mi casa.</td></tr>
+          <tr><td><strong>lejos de</strong></td><td>far from</td><td>El aeropuerto está lejos de aquí.</td></tr>
+          <tr><td><strong>al lado de</strong></td><td>next to</td><td>El museo está al lado del banco.</td></tr>
+          <tr><td><strong>enfrente de</strong></td><td>across from</td><td>La farmacia está enfrente del hospital.</td></tr>
+          <tr><td><strong>detrás de</strong></td><td>behind</td><td>El correo está detrás de la iglesia.</td></tr>
+          <tr><td><strong>delante de</strong></td><td>in front of</td><td>Hay un coche delante del restaurante.</td></tr>
+          <tr><td><strong>dentro de</strong></td><td>inside</td><td>Estoy dentro del supermercado.</td></tr>
+          <tr><td><strong>fuera de</strong></td><td>outside</td><td>Esperamos fuera de la estación.</td></tr>
+          <tr><td><strong>encima de</strong></td><td>on top of</td><td>El libro está encima de la mesa.</td></tr>
+          <tr><td><strong>debajo de</strong></td><td>under</td><td>El gato está debajo de la silla.</td></tr>
+          <tr><td><strong>entre</strong></td><td>between</td><td>El parque está entre el banco y el museo.</td></tr>
+          <tr><td><strong>a la derecha de</strong></td><td>to the right of</td><td>La farmacia está a la derecha del hospital.</td></tr>
+          <tr><td><strong>a la izquierda de</strong></td><td>to the left of</td><td>El museo está a la izquierda de la iglesia.</td></tr>
+        </table>
+
+        <p class="lang-en-block">⚠️ Mandatory contractions: a + el = al, de + el = del — never "a el" or "de el".</p>
+        <p class="lang-zh-block">⚠️ 强制缩合：a + el = al，de + el = del——绝不能说 "a el" 或 "de el"。</p>
+      </div>
+    </details>
+
+    <details class="panel">
+      <summary>
+        <span class="panel-num">3</span>
+        <span class="panel-title"><span class="lang-en">Grammar in context</span><span class="lang-zh">语法讲解</span></span>
+        <svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg>
+      </summary>
+      <div class="panel-body">
+        <h4><span class="lang-en">ESTAR (full conjugation)</span><span class="lang-zh">ESTAR（完整变位）</span></h4>
+        <table>
+          <tr><th><span class="lang-en">Pronoun</span><span class="lang-zh">人称代词</span></th><th>ESTAR</th><th><span class="lang-en">Example</span><span class="lang-zh">例句</span></th></tr>
+          <tr><td>yo</td><td><strong>estoy</strong></td><td>Estoy en casa.</td></tr>
+          <tr><td>tú</td><td><strong>estás</strong></td><td>¿Dónde estás?</td></tr>
+          <tr><td>él / ella / usted</td><td><strong>está</strong></td><td>Ana está en el museo.</td></tr>
+          <tr><td>nosotros/as</td><td><strong>estamos</strong></td><td>Estamos en el parque.</td></tr>
+          <tr><td>vosotros/as</td><td><strong>estáis</strong></td><td>¿Estáis cerca?</td></tr>
+          <tr><td>ellos/as / ustedes</td><td><strong>están</strong></td><td>Están en la biblioteca.</td></tr>
+        </table>
+
+        <h4><span class="lang-en">SER vs. ESTAR — first comparison</span><span class="lang-zh">SER 与 ESTAR 的初步对比</span></h4>
+        <table>
+          <tr><th>SER</th><th>ESTAR</th></tr>
+          <tr><td><span class="lang-en">Origin</span><span class="lang-zh">出身</span> — Soy de China.</td><td><span class="lang-en">Location of people/things</span><span class="lang-zh">人或物的位置</span> — Estoy en casa.</td></tr>
+          <tr><td><span class="lang-en">Nationality</span><span class="lang-zh">国籍</span> — Es mexicano.</td><td><span class="lang-en">Temporary states</span><span class="lang-zh">临时状态</span> — Está cansado.</td></tr>
+          <tr><td><span class="lang-en">Profession</span><span class="lang-zh">职业</span> — Es médica.</td><td></td></tr>
+          <tr><td><span class="lang-en">Permanent traits</span><span class="lang-zh">永久性特征</span> — Es alta.</td><td></td></tr>
+        </table>
+
+        <p class="lang-en-block">💡 <strong>Key rule for now:</strong> ESTAR is for WHERE and HOW YOU FEEL. Everything else is SER. (This is simplified, but it works at this level.)</p>
+        <p class="lang-zh-block">💡 <strong>目前的关键规则：</strong>ESTAR 用于"在哪里"和"感觉如何"。其他情况一律用 SER。（这是简化说法，但在这个阶段完全够用。）</p>
+      </div>
+    </details>
+
+    <details class="panel">
+      <summary>
+        <span class="panel-num">4</span>
+        <span class="panel-title"><span class="lang-en">Reading or dialogue</span><span class="lang-zh">阅读与对话</span></span>
+        <svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg>
+      </summary>
+      <div class="panel-body">
+        <p>📷 <em>Suggested image: someone holding a phone, looking lost on a street corner.</em></p>
+
+        <h4>¿Dónde estás?</h4>
+        <p class="lang-en-block">Ana is lost in the city and calls Carlos for directions.</p>
+        <p class="lang-zh-block">Ana 在城市里迷路了，打电话给 Carlos 问路。</p>
+
+        <div class="dialogue">
+          <p><strong>Ana:</strong> ¡Carlos! Estoy perdida. ¿Dónde estás tú?</p>
+          <p><strong>Carlos:</strong> Estoy en el museo. ¿Dónde estás tú ahora?</p>
+          <p><strong>Ana:</strong> Estoy cerca de una farmacia, creo.</p>
+          <p><strong>Carlos:</strong> Vale. El museo está al lado del banco. ¿Ves un banco?</p>
+          <p><strong>Ana:</strong> Sí, hay un banco a la derecha de la farmacia.</p>
+          <p><strong>Carlos:</strong> ¡Perfecto! El museo está entre el banco y la biblioteca.</p>
+          <p><strong>Ana:</strong> Vale, ya lo veo. ¡Está enfrente de mí!</p>
+          <p><strong>Carlos:</strong> Genial. Te espero dentro del museo.</p>
+        </div>
+
+        <h4><span class="lang-en">Comprehension questions</span><span class="lang-zh">理解问题</span></h4>
+        <ol>
+          <li>¿Dónde está Carlos?</li>
+          <li>¿Qué hay a la derecha de la farmacia?</li>
+          <li>¿Dónde está el museo exactamente?</li>
+          <li>¿Dónde espera Carlos a Ana?</li>
+        </ol>
+      </div>
+    </details>
+
+    <details class="panel">
+      <summary>
+        <span class="panel-num">5</span>
+        <span class="panel-title"><span class="lang-en">Controlled practice</span><span class="lang-zh">强化练习</span></span>
+        <svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg>
+      </summary>
+      <div class="panel-body">
+        <h4><span class="lang-en">Exercise 1 — Complete with ESTAR</span><span class="lang-zh">练习一 — 用 ESTAR 填空</span></h4>
+        <ol>
+          <li>Yo ___ en el parque.</li>
+          <li>Tú ___ cerca del banco.</li>
+          <li>Ella ___ en la biblioteca.</li>
+          <li>Nosotros ___ lejos del aeropuerto.</li>
+          <li>Ellos ___ dentro del museo.</li>
+          <li>¿Usted ___ en casa?</li>
+        </ol>
+
+        <h4><span class="lang-en">Exercise 2 — Choose the correct preposition</span><span class="lang-zh">练习二 — 选择正确的介词</span></h4>
+        <p class="lang-en-block">Look at the description and choose the right preposition.</p>
+        <p class="lang-zh-block">根据描述选择正确的介词。</p>
+        <ol>
+          <li>El libro está ___ la mesa. (on top of)</li>
+          <li>El gato está ___ la silla. (under)</li>
+          <li>El parque está ___ mi casa. (near)</li>
+          <li>La farmacia está ___ del hospital. (across from)</li>
+          <li>El banco está ___ la iglesia y el museo. (between)</li>
+          <li>Hay un coche ___ del restaurante. (in front of)</li>
+        </ol>
+
+        <h4><span class="lang-en">Exercise 3 — SER or ESTAR?</span><span class="lang-zh">练习三 — SER 还是 ESTAR？</span></h4>
+        <ol>
+          <li>Wei ___ de China.</li>
+          <li>El museo ___ cerca del parque.</li>
+          <li>Ana ___ profesora.</li>
+          <li>Nosotros ___ cansados.</li>
+          <li>Ellos ___ altos.</li>
+          <li>¿Dónde ___ tú ahora?</li>
+        </ol>
+      </div>
+    </details>
+
+    <details class="panel">
+      <summary>
+        <span class="panel-num">6</span>
+        <span class="panel-title"><span class="lang-en">Question formation</span><span class="lang-zh">如何提问</span></span>
+        <svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg>
+      </summary>
+      <div class="panel-body">
+        <h4><span class="lang-en">Questions for this unit</span><span class="lang-zh">本单元问句</span></h4>
+        <table>
+          <tr><th><span class="lang-en">Question</span><span class="lang-zh">问句</span></th><th><span class="lang-en">Meaning</span><span class="lang-zh">意思</span></th><th><span class="lang-en">Typical answer</span><span class="lang-zh">常见回答</span></th></tr>
+          <tr><td><strong>¿Dónde está...?</strong></td><td><span class="lang-en">Where is...?</span><span class="lang-zh">……在哪里？</span></td><td>Está cerca del parque.</td></tr>
+          <tr><td><strong>¿Hay un/una... cerca?</strong></td><td><span class="lang-en">Is there a... nearby?</span><span class="lang-zh">附近有……吗？</span></td><td>Sí, hay una farmacia cerca.</td></tr>
+          <tr><td><strong>¿Está lejos de aquí?</strong></td><td><span class="lang-en">Is it far from here?</span><span class="lang-zh">离这里远吗？</span></td><td>No, está cerca.</td></tr>
+          <tr><td><strong>¿Cómo llego a...?</strong></td><td><span class="lang-en">How do I get to...?</span><span class="lang-zh">怎么去……？</span></td><td>Está a la derecha del banco.</td></tr>
+        </table>
+
+        <h4><span class="lang-en">Practice — Ask the question</span><span class="lang-zh">练习 — 写出问句</span></h4>
+        <p class="lang-en-block">Look at the answer. What was the question?</p>
+        <p class="lang-zh-block">看答案，写出对应的问句。</p>
+        <ol>
+          <li>→ El hospital está al lado de la farmacia.</li>
+          <li>→ Sí, hay un supermercado cerca.</li>
+          <li>→ No, el aeropuerto está lejos.</li>
+          <li>→ Está a la izquierda del museo.</li>
+        </ol>
+      </div>
+    </details>
+
+    <details class="panel">
+      <summary>
+        <span class="panel-num">7</span>
+        <span class="panel-title"><span class="lang-en">Real-life task</span><span class="lang-zh">真实任务</span></span>
+        <svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg>
+      </summary>
+      <div class="panel-body">
+        <p>📷 <em>Suggested image: a phone showing Google Maps with a pin on a pharmacy.</em></p>
+
+        <h4><span class="lang-en">Task: Find a real place near you</span><span class="lang-zh">任务：寻找你附近的真实地点</span></h4>
+        <p class="lang-en-block">Open Google Maps and find a real pharmacy or supermarket near you. Describe its location using at least 3 prepositions from this unit.</p>
+        <p class="lang-zh-block">打开 Google 地图，找一家你附近真实存在的药店或超市，用本单元至少 3 个介词描述它的位置。</p>
+        <p><em>Example: "La farmacia está cerca de mi casa, al lado del banco y enfrente del parque."</em></p>
+      </div>
+    </details>
+
+    <details class="panel">
+      <summary>
+        <span class="panel-num">8</span>
+        <span class="panel-title"><span class="lang-en">Free production</span><span class="lang-zh">自由表达</span></span>
+        <svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg>
+      </summary>
+      <div class="panel-body">
+        <p class="lang-en-block">No script. No word bank. Just you, speaking freely using everything from this unit.</p>
+        <p class="lang-zh-block">没有脚本，没有词汇表。用你在本单元学到的一切自由表达。</p>
+
+        <h4><span class="lang-en">Speaking prompts</span><span class="lang-zh">口语提示</span></h4>
+        <ol class="lang-en-block">
+          <li>Describe where 3 objects are in your room right now.</li>
+          <li>Give directions from your home to the nearest park.</li>
+          <li>Describe where your school or workplace is located.</li>
+          <li>Ask your teacher where something is.</li>
+        </ol>
+        <ol class="lang-zh-block">
+          <li>描述你房间里此刻 3 个物品的位置。</li>
+          <li>从你家到最近的公园，给出方向指引。</li>
+          <li>描述你的学校或工作地点在哪里。</li>
+          <li>问老师某个东西在哪里。</li>
+        </ol>
+      </div>
+    </details>
+
+    <details class="panel">
+      <summary>
+        <span class="panel-num">9</span>
+        <span class="panel-title"><span class="lang-en">Homework</span><span class="lang-zh">课后作业</span></span>
+        <svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg>
+      </summary>
+      <div class="panel-body">
+        <p class="lang-en-block">Choose <strong>one</strong> of the options below. No need to send anything — just do it before the next class.</p>
+        <p class="lang-zh-block">选择以下任一选项。无需发给老师——课前自己完成就好。</p>
+
+        <h4><span class="lang-en">Option A — Receptive</span><span class="lang-zh">选项 A — 听力输入</span></h4>
+        <p class="lang-en-block">Watch a short Spanish video showing a city or neighborhood. Write down any places or prepositions you hear mentioned.</p>
+        <p class="lang-zh-block">看一段展示城市或社区的西班牙语短视频，记下你听到的场所词或介词。</p>
+
+        <h4><span class="lang-en">Option B — Practice exercise</span><span class="lang-zh">选项 B — 书面练习</span></h4>
+        <p class="lang-en-block">Copy the exercise below into your Google Doc and fill in the blanks. Check your answers at the bottom when you are done.</p>
+        <p class="lang-zh-block">将以下练习复制到你的 Google Doc 中并填空。完成后在下方核对答案。</p>
+
+        <div style="background:#f7f5ef; padding:16px; border-radius:8px; margin:12px 0; font-size:14px; line-height:2;">
+          <p><strong>Part 1 — Complete with ESTAR (用 ESTAR 填空)</strong></p>
+          <p>1. Yo ___ en casa.</p>
+          <p>2. Tú ___ en el parque.</p>
+          <p>3. Ella ___ cerca del banco.</p>
+          <p>4. Nosotros ___ en la biblioteca.</p>
+          <p>5. Ellos ___ lejos de aquí.</p>
+
+          <br>
+          <p><strong>Part 2 — Choose the correct preposition (选择正确的介词)</strong></p>
+          <p>1. El libro está ___ la mesa. (on top of)</p>
+          <p>2. La farmacia está ___ del hospital. (across from)</p>
+          <p>3. El parque está ___ mi casa. (near)</p>
+          <p>4. El gato está ___ la silla. (under)</p>
+          <p>5. El banco está ___ la iglesia y el museo. (between)</p>
+        </div>
+
+        <details style="margin-top:8px;">
+          <summary style="cursor:pointer; color:#5a7a32; font-weight:500; font-size:13px;"><span class="lang-en">Show answers</span><span class="lang-zh">查看答案</span></summary>
+          <div style="background:#eef4e4; padding:12px; border-radius:8px; margin-top:8px; font-size:13px; line-height:2;">
+            <p><strong>Part 1:</strong> 1. estoy · 2. estás · 3. está · 4. estamos · 5. están</p>
+            <p><strong>Part 2:</strong> 1. encima de · 2. enfrente · 3. cerca de · 4. debajo de · 5. entre</p>
+          </div>
+        </details>
+
+        <h4><span class="lang-en">Option C — Creative</span><span class="lang-zh">选项 C — 创意练习</span></h4>
+        <p class="lang-en-block">Draw a simple map of your neighborhood and label 5 places using the vocabulary from this unit.</p>
+        <p class="lang-zh-block">画一张你所在社区的简单地图，用本单元词汇标注 5 个场所。</p>
+      </div>
+    </details>
+
   </div>
+
   <div class="unit-nav">
     <a class="prev" href="./quick-check-a.html"><span>←</span><div><span class="nav-label">Previous</span><span class="nav-title">Quick Check A</span></div></a>
     <a class="next" href="./unit-5.html"><div><span class="nav-label">Next</span><span class="nav-title">Unit 5 · Objetos</span></div><span>→</span></a>
   </div>
 </main>
+
 <footer class="site-footer">Spanish with Brady · Private use only</footer>
+
+<script>
+function setLang(lang) {
+  if (lang === 'zh') {
+    document.body.classList.add('zh');
+    document.getElementById('btn-zh').style.background = '#5a7a32';
+    document.getElementById('btn-zh').style.color = 'white';
+    document.getElementById('btn-en').style.background = '#f7f5ef';
+    document.getElementById('btn-en').style.color = '#7a6e60';
+  } else {
+    document.body.classList.remove('zh');
+    document.getElementById('btn-en').style.background = '#5a7a32';
+    document.getElementById('btn-en').style.color = 'white';
+    document.getElementById('btn-zh').style.background = '#f7f5ef';
+    document.getElementById('btn-zh').style.color = '#7a6e60';
+  }
+  localStorage.setItem('lang', lang);
+}
+const saved = localStorage.getItem('lang');
+if (saved === 'zh') setLang('zh');
+</script>
+
 </body>
 </html>
