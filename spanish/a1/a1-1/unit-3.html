@@ -5,41 +5,360 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Unit 3 · Profesiones · Spanish with Brady</title>
   <link rel="stylesheet" href="../../../assets/style.css">
+  <style>
+    .lang-zh { display: none; }
+    body.zh .lang-en { display: none; }
+    body.zh .lang-zh { display: inline; }
+    .lang-zh-block { display: none; }
+    body.zh .lang-zh-block { display: block; }
+    body.zh .lang-en-block { display: none; }
+  </style>
 </head>
 <body>
+
 <header class="site-header">
   <a class="site-logo" href="../../../">Spanish with Brady</a>
-  <nav><ul class="site-nav">
-    <li><a href="../../../spanish/" class="active">Spanish</a></li>
-    <li><a href="../../../mandarin/">Mandarin</a></li>
-    <li><a href="#">English</a></li>
-  </ul></nav>
+  <nav>
+    <ul class="site-nav">
+      <li><a href="../../../spanish/" class="active">Spanish</a></li>
+      <li><a href="../../../mandarin/">Mandarin</a></li>
+      <li><a href="#">English</a></li>
+    </ul>
+  </nav>
 </header>
+
 <nav class="breadcrumb">
   <a href="../../../">Home</a><span>›</span><a href="../../../spanish/">Spanish</a><span>›</span><a href="../../../spanish/a1/">A1</a><span>›</span><a href="./index.html">A1.1</a><span>›</span>Unit 3
 </nav>
+
 <main>
+  <div style="display:flex; justify-content:flex-end; padding: 8px 0 0;">
+    <div style="display:flex; gap:0; border:1px solid #e2ddd4; border-radius:6px; overflow:hidden;">
+      <button id="btn-en" onclick="setLang('en')" style="padding:6px 16px; font-size:13px; font-weight:500; border:none; cursor:pointer; background:#5a7a32; color:white;">EN</button>
+      <button id="btn-zh" onclick="setLang('zh')" style="padding:6px 16px; font-size:13px; font-weight:500; border:none; cursor:pointer; background:#f7f5ef; color:#7a6e60;">中文</button>
+    </div>
+  </div>
+
   <div class="unit-header">
     <div class="unit-num">A1.1 · Unit 3</div>
     <h1>Profesiones</h1>
     <p class="unit-subtitle">Jobs, gender and plurals</p>
   </div>
+
   <div class="panels">
-    <details class="panel"><summary><span class="panel-num">1</span><span class="panel-title">Hook / Opener</span><svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg></summary><div class="panel-body">Content coming soon</div></details>
-    <details class="panel"><summary><span class="panel-num">2</span><span class="panel-title">Vocabulary</span><svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg></summary><div class="panel-body">Content coming soon</div></details>
-    <details class="panel"><summary><span class="panel-num">3</span><span class="panel-title">Grammar in context</span><svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg></summary><div class="panel-body">Content coming soon</div></details>
-    <details class="panel"><summary><span class="panel-num">4</span><span class="panel-title">Reading or dialogue</span><svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg></summary><div class="panel-body">Content coming soon</div></details>
-    <details class="panel"><summary><span class="panel-num">5</span><span class="panel-title">Controlled practice</span><svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg></summary><div class="panel-body">Content coming soon</div></details>
-    <details class="panel"><summary><span class="panel-num">6</span><span class="panel-title">Question formation</span><svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg></summary><div class="panel-body">Content coming soon</div></details>
-    <details class="panel"><summary><span class="panel-num">7</span><span class="panel-title">Real-life task</span><svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg></summary><div class="panel-body">Content coming soon</div></details>
-    <details class="panel"><summary><span class="panel-num">8</span><span class="panel-title">Free production</span><svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg></summary><div class="panel-body">Content coming soon</div></details>
-    <details class="panel"><summary><span class="panel-num">9</span><span class="panel-title">Homework</span><svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg></summary><div class="panel-body">Content coming soon</div></details>
+
+    <details class="panel">
+      <summary>
+        <span class="panel-num">1</span>
+        <span class="panel-title"><span class="lang-en">Hook / Opener</span><span class="lang-zh">课程导入</span></span>
+        <svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg>
+      </summary>
+      <div class="panel-body">
+        <p>📷 <em>Suggested image: a collage of people in different professions — doctor, chef, architect, firefighter.</em></p>
+        <p class="lang-en-block">What does your family do for work? Can you say it in Spanish yet?</p>
+        <p class="lang-zh-block">你的家人是做什么工作的？你能用西班牙语说出来吗？</p>
+        <p><strong><span class="lang-en">By the end of this unit you can:</span><span class="lang-zh">完成本单元后，你能够：</span></strong> <span class="lang-en">name more professions correctly with their gender (职业), form plurals, and choose the right article — or no article at all.</span><span class="lang-zh">正确说出更多职业（注意阴阳性）、构成复数形式，并选择正确的冠词——或不使用冠词。</span></p>
+      </div>
+    </details>
+
+    <details class="panel">
+      <summary>
+        <span class="panel-num">2</span>
+        <span class="panel-title"><span class="lang-en">Vocabulary</span><span class="lang-zh">词汇</span></span>
+        <svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg>
+      </summary>
+      <div class="panel-body">
+        <h4><span class="lang-en">Professions (职业)</span><span class="lang-zh">职业</span></h4>
+        <table>
+          <tr><th>Spanish</th><th>English</th><th>中文</th></tr>
+          <tr><td><strong>arquitecto / arquitecta</strong></td><td>architect</td><td>建筑师</td></tr>
+          <tr><td><strong>bombero / bombera</strong></td><td>firefighter</td><td>消防员</td></tr>
+          <tr><td><strong>policía</strong> <span class="lang-en">(invariable)</span><span class="lang-zh">（不分阴阳性）</span></td><td>police officer</td><td>警察</td></tr>
+          <tr><td><strong>agricultor / agricultora</strong></td><td>farmer</td><td>农民</td></tr>
+          <tr><td><strong>músico / música</strong></td><td>musician</td><td>音乐家</td></tr>
+          <tr><td><strong>fotógrafo / fotógrafa</strong></td><td>photographer</td><td>摄影师</td></tr>
+          <tr><td><strong>programador / programadora</strong></td><td>programmer</td><td>程序员</td></tr>
+          <tr><td><strong>veterinario / veterinaria</strong></td><td>veterinarian</td><td>兽医</td></tr>
+          <tr><td><strong>psicólogo / psicóloga</strong></td><td>psychologist</td><td>心理学家</td></tr>
+        </table>
+
+        <p class="lang-en-block">Some professions never change form: el/la policía, el/la piloto, el/la periodista. Only the article changes.</p>
+        <p class="lang-zh-block">有些职业词不分阴阳性：el/la policía, el/la piloto, el/la periodista。只有冠词会变化。</p>
+      </div>
+    </details>
+
+    <details class="panel">
+      <summary>
+        <span class="panel-num">3</span>
+        <span class="panel-title"><span class="lang-en">Grammar in context</span><span class="lang-zh">语法讲解</span></span>
+        <svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg>
+      </summary>
+      <div class="panel-body">
+        <h4><span class="lang-en">Part 1 — Gender of nouns (名词的阴阳性)</span><span class="lang-zh">第一部分 — 名词的阴阳性</span></h4>
+        <table>
+          <tr><th><span class="lang-en">Pattern</span><span class="lang-zh">规律</span></th><th><span class="lang-en">Example</span><span class="lang-zh">例子</span></th></tr>
+          <tr><td><span class="lang-en">-o ending → usually masculine</span><span class="lang-zh">-o 结尾 → 通常为阳性</span></td><td>el médico, el arquitecto</td></tr>
+          <tr><td><span class="lang-en">-a ending → usually feminine</span><span class="lang-zh">-a 结尾 → 通常为阴性</span></td><td>la médica, la arquitecta</td></tr>
+          <tr><td><span class="lang-en">Exceptions exist!</span><span class="lang-zh">也有例外！</span></td><td>la mano <span class="lang-en">(hand, feminine despite -o)</span><span class="lang-zh">（手，虽以 -o 结尾但为阴性）</span> · el día <span class="lang-en">(day, masculine despite -a)</span><span class="lang-zh">（日子，虽以 -a 结尾但为阳性）</span></td></tr>
+        </table>
+
+        <h4><span class="lang-en">Part 2 — Plural formation (复数变化)</span><span class="lang-zh">第二部分 — 复数变化</span></h4>
+        <table>
+          <tr><th><span class="lang-en">Ending</span><span class="lang-zh">词尾</span></th><th><span class="lang-en">Rule</span><span class="lang-zh">规则</span></th><th><span class="lang-en">Example</span><span class="lang-zh">例子</span></th></tr>
+          <tr><td><span class="lang-en">vowel</span><span class="lang-zh">元音</span></td><td>+ s</td><td>médico → médicos</td></tr>
+          <tr><td><span class="lang-en">consonant</span><span class="lang-zh">辅音</span></td><td>+ es</td><td>profesor → profesores</td></tr>
+          <tr><td>-z</td><td>z → ces</td><td>actriz → actrices</td></tr>
+        </table>
+
+        <h4><span class="lang-en">Part 3 — Definite vs. indefinite articles (定冠词与不定冠词)</span><span class="lang-zh">第三部分 — 定冠词与不定冠词</span></h4>
+        <table>
+          <tr><th></th><th><span class="lang-en">Masculine</span><span class="lang-zh">阳性</span></th><th><span class="lang-en">Feminine</span><span class="lang-zh">阴性</span></th></tr>
+          <tr><td><span class="lang-en">Definite ("the")</span><span class="lang-zh">定冠词（"这个/那个"）</span></td><td>el médico</td><td>la médica</td></tr>
+          <tr><td><span class="lang-en">Indefinite ("a/an")</span><span class="lang-zh">不定冠词（"一个"）</span></td><td>un médico</td><td>una médica</td></tr>
+        </table>
+
+        <p class="lang-en-block">⚠️ Chinese has no articles, so this takes practice. Quick rule: known/specific thing → el/la. New/unspecific thing → un/una. After SER + profession → no article at all.</p>
+        <p class="lang-zh-block">⚠️ 中文没有冠词，所以这部分需要多练习。简单规则：已知/特定的事物 → el/la。新的/不确定的事物 → un/una。SER + 职业之后 → 不用冠词。</p>
+      </div>
+    </details>
+
+    <details class="panel">
+      <summary>
+        <span class="panel-num">4</span>
+        <span class="panel-title"><span class="lang-en">Reading or dialogue</span><span class="lang-zh">阅读与对话</span></span>
+        <svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg>
+      </summary>
+      <div class="panel-body">
+        <p>📷 <em>Suggested image: two friends video-calling, talking about their families.</em></p>
+
+        <h4>Las familias</h4>
+        <p class="lang-en-block">Carlos and Li talk about what their family members do for work.</p>
+        <p class="lang-zh-block">Carlos 和 Li 聊起家人的职业。</p>
+
+        <div class="dialogue">
+          <p><strong>Carlos:</strong> Li, ¿a qué se dedica tu padre?</p>
+          <p><strong>Li:</strong> Mi padre es ingeniero. Y mi madre es psicóloga.</p>
+          <p><strong>Carlos:</strong> ¡Qué interesante! Mi padre es bombero.</p>
+          <p><strong>Li:</strong> ¿De verdad? ¡Es un trabajo muy importante!</p>
+          <p><strong>Carlos:</strong> Sí. Y mi madre es veterinaria. Le encantan los animales.</p>
+          <p><strong>Li:</strong> Mi hermano también trabaja con animales. Es agricultor.</p>
+          <p><strong>Carlos:</strong> ¡Qué bien! ¿Y tu hermana?</p>
+          <p><strong>Li:</strong> Mi hermana es fotógrafa. Trabaja en Pekín.</p>
+        </div>
+
+        <h4><span class="lang-en">Comprehension questions</span><span class="lang-zh">理解问题</span></h4>
+        <ol>
+          <li>¿A qué se dedica el padre de Li?</li>
+          <li>¿Cuál es la profesión de la madre de Carlos?</li>
+          <li>¿Qué hace el hermano de Li?</li>
+          <li>¿Dónde trabaja la hermana de Li?</li>
+        </ol>
+      </div>
+    </details>
+
+    <details class="panel">
+      <summary>
+        <span class="panel-num">5</span>
+        <span class="panel-title"><span class="lang-en">Controlled practice</span><span class="lang-zh">强化练习</span></span>
+        <svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg>
+      </summary>
+      <div class="panel-body">
+        <h4><span class="lang-en">Exercise 1 — Give the feminine form</span><span class="lang-zh">练习一 — 写出阴性形式</span></h4>
+        <ol>
+          <li>arquitecto → ___</li>
+          <li>bombero → ___</li>
+          <li>programador → ___</li>
+          <li>veterinario → ___</li>
+          <li>psicólogo → ___</li>
+          <li>agricultor → ___</li>
+        </ol>
+
+        <h4><span class="lang-en">Exercise 2 — Plural formation</span><span class="lang-zh">练习二 — 复数变化练习</span></h4>
+        <ol>
+          <li>médico → ___</li>
+          <li>profesor → ___</li>
+          <li>actriz → ___</li>
+          <li>enfermera → ___</li>
+          <li>ingeniero → ___</li>
+          <li>luz → ___</li>
+        </ol>
+
+        <h4><span class="lang-en">Exercise 3 — Choose the right article</span><span class="lang-zh">练习三 — 选择正确的冠词</span></h4>
+        <p class="lang-en-block">Choose el / la / un / una / no article.</p>
+        <p class="lang-zh-block">选择 el / la / un / una / 不用冠词。</p>
+        <ol>
+          <li>Soy ___ médico.</li>
+          <li>___ profesora de mi escuela se llama Ana.</li>
+          <li>Necesito ___ abogado para este caso.</li>
+          <li>Mi madre es ___ enfermera.</li>
+          <li>___ policía de mi barrio es muy simpático.</li>
+          <li>Quiero ser ___ arquitecta en el futuro.</li>
+        </ol>
+      </div>
+    </details>
+
+    <details class="panel">
+      <summary>
+        <span class="panel-num">6</span>
+        <span class="panel-title"><span class="lang-en">Question formation</span><span class="lang-zh">如何提问</span></span>
+        <svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg>
+      </summary>
+      <div class="panel-body">
+        <h4><span class="lang-en">Questions for this unit</span><span class="lang-zh">本单元问句</span></h4>
+        <table>
+          <tr><th><span class="lang-en">Question</span><span class="lang-zh">问句</span></th><th><span class="lang-en">Meaning</span><span class="lang-zh">意思</span></th><th><span class="lang-en">Typical answer</span><span class="lang-zh">常见回答</span></th></tr>
+          <tr><td><strong>¿A qué se dedica tu padre/madre?</strong></td><td><span class="lang-en">What does your father/mother do?</span><span class="lang-zh">你父亲/母亲是做什么的？</span></td><td>Mi padre es ingeniero.</td></tr>
+          <tr><td><strong>¿Qué hace + name?</strong></td><td><span class="lang-en">What does (name) do?</span><span class="lang-zh">（某人）是做什么的？</span></td><td>Li es estudiante.</td></tr>
+          <tr><td><strong>¿Dónde trabaja?</strong></td><td><span class="lang-en">Where does he/she work?</span><span class="lang-zh">他/她在哪里工作？</span></td><td>Trabaja en un hospital.</td></tr>
+          <tr><td><strong>¿Le gusta su trabajo?</strong></td><td><span class="lang-en">Does he/she like their job?</span><span class="lang-zh">他/她喜欢自己的工作吗？</span></td><td>Sí, le gusta mucho.</td></tr>
+        </table>
+
+        <h4><span class="lang-en">Practice — Ask the question</span><span class="lang-zh">练习 — 写出问句</span></h4>
+        <p class="lang-en-block">Look at the answer. What was the question?</p>
+        <p class="lang-zh-block">看答案，写出对应的问句。</p>
+        <ol>
+          <li>→ Mi madre es psicóloga.</li>
+          <li>→ Trabaja en una escuela.</li>
+          <li>→ Sí, le gusta mucho su trabajo.</li>
+          <li>→ Sara es fotógrafa.</li>
+        </ol>
+      </div>
+    </details>
+
+    <details class="panel">
+      <summary>
+        <span class="panel-num">7</span>
+        <span class="panel-title"><span class="lang-en">Real-life task</span><span class="lang-zh">真实任务</span></span>
+        <svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg>
+      </summary>
+      <div class="panel-body">
+        <p>📷 <em>Suggested image: a simple family tree sketch with photos.</em></p>
+
+        <h4><span class="lang-en">Task: People you know</span><span class="lang-zh">任务：你认识的人</span></h4>
+        <p class="lang-en-block">Think of 3 real people you know (family, friends). Write one sentence about each person's profession using SER, with correct gender. Then describe where they work using "Trabaja en..."</p>
+        <p class="lang-zh-block">想三个你认识的真实的人（家人、朋友）。用 SER 为每个人写一句话描述其职业，注意阴阳性正确。然后用 "Trabaja en..." 描述他们在哪里工作。</p>
+        <ul>
+          <li><span class="lang-en">Person 1: ___</span><span class="lang-zh">第一人：___</span></li>
+          <li><span class="lang-en">Person 2: ___</span><span class="lang-zh">第二人：___</span></li>
+          <li><span class="lang-en">Person 3: ___</span><span class="lang-zh">第三人：___</span></li>
+        </ul>
+      </div>
+    </details>
+
+    <details class="panel">
+      <summary>
+        <span class="panel-num">8</span>
+        <span class="panel-title"><span class="lang-en">Free production</span><span class="lang-zh">自由表达</span></span>
+        <svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg>
+      </summary>
+      <div class="panel-body">
+        <p class="lang-en-block">No script. No word bank. Just you, speaking freely using everything from this unit.</p>
+        <p class="lang-zh-block">没有脚本，没有词汇表。用你在本单元学到的一切自由表达。</p>
+
+        <h4><span class="lang-en">Speaking prompts</span><span class="lang-zh">口语提示</span></h4>
+        <ol class="lang-en-block">
+          <li>Describe what you do for work.</li>
+          <li>Describe what 2 family members do.</li>
+          <li>If you could have any profession, what would it be and why?</li>
+          <li>Guess the profession of a person Brady describes.</li>
+        </ol>
+        <ol class="lang-zh-block">
+          <li>描述你自己的职业。</li>
+          <li>描述两位家人的职业。</li>
+          <li>如果可以拥有任何职业，你会选哪个？为什么？</li>
+          <li>根据 Brady 的描述，猜猜这个人的职业。</li>
+        </ol>
+      </div>
+    </details>
+
+    <details class="panel">
+      <summary>
+        <span class="panel-num">9</span>
+        <span class="panel-title"><span class="lang-en">Homework</span><span class="lang-zh">课后作业</span></span>
+        <svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg>
+      </summary>
+      <div class="panel-body">
+        <p class="lang-en-block">Choose <strong>one</strong> of the options below. No need to send anything — just do it before the next class.</p>
+        <p class="lang-zh-block">选择以下任一选项。无需发给老师——课前自己完成就好。</p>
+
+        <h4><span class="lang-en">Option A — Receptive</span><span class="lang-zh">选项 A — 听力输入</span></h4>
+        <p class="lang-en-block">Watch a short Spanish video about jobs or daily life. Write down any professions you hear mentioned.</p>
+        <p class="lang-zh-block">看一段关于职业或日常生活的西班牙语短视频，记下你听到的职业词。</p>
+
+        <h4><span class="lang-en">Option B — Practice exercise</span><span class="lang-zh">选项 B — 书面练习</span></h4>
+        <p class="lang-en-block">Copy the exercise below into your Google Doc and fill in the blanks. Check your answers at the bottom when you are done.</p>
+        <p class="lang-zh-block">将以下练习复制到你的 Google Doc 中并填空。完成后在下方核对答案。</p>
+
+        <div style="background:#f7f5ef; padding:16px; border-radius:8px; margin:12px 0; font-size:14px; line-height:2;">
+          <p><strong>Part 1 — Feminine forms (写出阴性形式)</strong></p>
+          <p>1. ingeniero → ___</p>
+          <p>2. músico → ___</p>
+          <p>3. abogado → ___</p>
+          <p>4. enfermero → ___</p>
+          <p>5. fotógrafo → ___</p>
+
+          <br>
+          <p><strong>Part 2 — Plural forms (写出复数形式)</strong></p>
+          <p>1. profesor → ___</p>
+          <p>2. médico → ___</p>
+          <p>3. actriz → ___</p>
+          <p>4. enfermera → ___</p>
+          <p>5. ingeniero → ___</p>
+
+          <br>
+          <p><strong>Part 3 — Article choice (选择正确的冠词)</strong></p>
+          <p>1. Soy ___ médico.</p>
+          <p>2. ___ profesora se llama Ana.</p>
+          <p>3. Necesito ___ abogado.</p>
+          <p>4. Mi madre es ___ enfermera.</p>
+          <p>5. Quiero ser ___ arquitecto.</p>
+        </div>
+
+        <details style="margin-top:8px;">
+          <summary style="cursor:pointer; color:#5a7a32; font-weight:500; font-size:13px;"><span class="lang-en">Show answers / 查看答案</span><span class="lang-zh">查看答案 / Show answers</span></summary>
+          <div style="background:#eef4e4; padding:12px; border-radius:8px; margin-top:8px; font-size:13px; line-height:2;">
+            <p><strong>Part 1:</strong> 1. ingeniera · 2. música · 3. abogada · 4. enfermera · 5. fotógrafa</p>
+            <p><strong>Part 2:</strong> 1. profesores · 2. médicos · 3. actrices · 4. enfermeras · 5. ingenieros</p>
+            <p><strong>Part 3:</strong> 1. (no article) · 2. La · 3. un · 4. (no article) · 5. (no article)</p>
+          </div>
+        </details>
+
+        <h4><span class="lang-en">Option C — Creative</span><span class="lang-zh">选项 C — 创意练习</span></h4>
+        <p class="lang-en-block">Draw or print pictures of 5 professions and label each one in Spanish, masculine and feminine.</p>
+        <p class="lang-zh-block">画出或打印 5 个职业的图片，用西班牙语标注阳性和阴性形式。</p>
+      </div>
+    </details>
+
   </div>
+
   <div class="unit-nav">
     <a class="prev" href="./unit-2.html"><span>←</span><div><span class="nav-label">Previous</span><span class="nav-title">Unit 2 · Origen</span></div></a>
     <a class="next" href="./quick-check-a.html"><div><span class="nav-label">Next</span><span class="nav-title">Quick Check A</span></div><span>→</span></a>
   </div>
 </main>
+
 <footer class="site-footer">Spanish with Brady · Private use only</footer>
+
+<script>
+function setLang(lang) {
+  if (lang === 'zh') {
+    document.body.classList.add('zh');
+    document.getElementById('btn-zh').style.background = '#5a7a32';
+    document.getElementById('btn-zh').style.color = 'white';
+    document.getElementById('btn-en').style.background = '#f7f5ef';
+    document.getElementById('btn-en').style.color = '#7a6e60';
+  } else {
+    document.body.classList.remove('zh');
+    document.getElementById('btn-en').style.background = '#5a7a32';
+    document.getElementById('btn-en').style.color = 'white';
+    document.getElementById('btn-zh').style.background = '#f7f5ef';
+    document.getElementById('btn-zh').style.color = '#7a6e60';
+  }
+  localStorage.setItem('lang', lang);
+}
+const saved = localStorage.getItem('lang');
+if (saved === 'zh') setLang('zh');
+</script>
+
 </body>
 </html>

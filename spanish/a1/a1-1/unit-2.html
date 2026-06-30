@@ -5,6 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Unit 2 · Origen · Spanish with Brady</title>
   <link rel="stylesheet" href="../../../assets/style.css">
+  <style>
+    .lang-zh { display: none; }
+    body.zh .lang-en { display: none; }
+    body.zh .lang-zh { display: inline; }
+    .lang-zh-block { display: none; }
+    body.zh .lang-zh-block { display: block; }
+    body.zh .lang-en-block { display: none; }
+  </style>
 </head>
 <body>
 
@@ -24,6 +32,13 @@
 </nav>
 
 <main>
+  <div style="display:flex; justify-content:flex-end; padding: 8px 0 0;">
+    <div style="display:flex; gap:0; border:1px solid #e2ddd4; border-radius:6px; overflow:hidden;">
+      <button id="btn-en" onclick="setLang('en')" style="padding:6px 16px; font-size:13px; font-weight:500; border:none; cursor:pointer; background:#5a7a32; color:white;">EN</button>
+      <button id="btn-zh" onclick="setLang('zh')" style="padding:6px 16px; font-size:13px; font-weight:500; border:none; cursor:pointer; background:#f7f5ef; color:#7a6e60;">中文</button>
+    </div>
+  </div>
+
   <div class="unit-header">
     <div class="unit-num">A1.1 · Unit 2</div>
     <h1>Origen</h1>
@@ -31,15 +46,342 @@
   </div>
 
   <div class="panels">
-    <details class="panel"><summary><span class="panel-num">1</span><span class="panel-title">Hook / Opener</span><svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg></summary><div class="panel-body">Content coming soon</div></details>
-    <details class="panel"><summary><span class="panel-num">2</span><span class="panel-title">Vocabulary</span><svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg></summary><div class="panel-body">Content coming soon</div></details>
-    <details class="panel"><summary><span class="panel-num">3</span><span class="panel-title">Grammar in context</span><svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg></summary><div class="panel-body">Content coming soon</div></details>
-    <details class="panel"><summary><span class="panel-num">4</span><span class="panel-title">Reading or dialogue</span><svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg></summary><div class="panel-body">Content coming soon</div></details>
-    <details class="panel"><summary><span class="panel-num">5</span><span class="panel-title">Controlled practice</span><svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg></summary><div class="panel-body">Content coming soon</div></details>
-    <details class="panel"><summary><span class="panel-num">6</span><span class="panel-title">Question formation</span><svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg></summary><div class="panel-body">Content coming soon</div></details>
-    <details class="panel"><summary><span class="panel-num">7</span><span class="panel-title">Real-life task</span><svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg></summary><div class="panel-body">Content coming soon</div></details>
-    <details class="panel"><summary><span class="panel-num">8</span><span class="panel-title">Free production</span><svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg></summary><div class="panel-body">Content coming soon</div></details>
-    <details class="panel"><summary><span class="panel-num">9</span><span class="panel-title">Homework</span><svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg></summary><div class="panel-body">Content coming soon</div></details>
+
+    <details class="panel">
+      <summary>
+        <span class="panel-num">1</span>
+        <span class="panel-title"><span class="lang-en">Hook / Opener</span><span class="lang-zh">课程导入</span></span>
+        <svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg>
+      </summary>
+      <div class="panel-body">
+        <p>📷 <em>Suggested image: a world map with pins on Spain, Mexico, China, and a few other countries.</em></p>
+        <p class="lang-en-block">Before we start, think about this: How many countries can you name in Spanish? Do you know how to say where YOU are from?</p>
+        <p class="lang-zh-block">开始之前，想一想：你能用西班牙语说出几个国家的名字？你知道怎么说自己来自哪里吗？</p>
+        <p><strong><span class="lang-en">By the end of this unit you can:</span><span class="lang-zh">完成本单元后，你能够：</span></strong> <span class="lang-en">say where someone is from, give their nationality correctly (matching gender), and talk about basic professions using SER.</span><span class="lang-zh">说出某人来自哪里、正确给出其国籍（注意阴阳性一致），并用 SER 谈论基本职业。</span></p>
+      </div>
+    </details>
+
+    <details class="panel">
+      <summary>
+        <span class="panel-num">2</span>
+        <span class="panel-title"><span class="lang-en">Vocabulary</span><span class="lang-zh">词汇</span></span>
+        <svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg>
+      </summary>
+      <div class="panel-body">
+        <h4><span class="lang-en">Spanish-speaking countries (西语国家)</span><span class="lang-zh">西语国家</span></h4>
+        <table>
+          <tr><th>Spanish</th><th>English</th><th>中文</th></tr>
+          <tr><td><strong>España</strong> — español/española</td><td>Spain</td><td>西班牙</td></tr>
+          <tr><td><strong>México</strong> — mexicano/mexicana</td><td>Mexico</td><td>墨西哥</td></tr>
+          <tr><td><strong>Argentina</strong> — argentino/argentina</td><td>Argentina</td><td>阿根廷</td></tr>
+          <tr><td><strong>Colombia</strong> — colombiano/colombiana</td><td>Colombia</td><td>哥伦比亚</td></tr>
+          <tr><td><strong>Cuba</strong> — cubano/cubana</td><td>Cuba</td><td>古巴</td></tr>
+          <tr><td><strong>Chile</strong> — chileno/chilena</td><td>Chile</td><td>智利</td></tr>
+          <tr><td><strong>Perú</strong> — peruano/peruana</td><td>Peru</td><td>秘鲁</td></tr>
+          <tr><td><strong>Venezuela</strong> — venezolano/venezolana</td><td>Venezuela</td><td>委内瑞拉</td></tr>
+        </table>
+
+        <h4><span class="lang-en">World countries (世界国家)</span><span class="lang-zh">世界国家</span></h4>
+
+        <p><strong>🇪🇺 <span class="lang-en">Europe</span><span class="lang-zh">欧洲</span></strong></p>
+        <table>
+          <tr><th>Spanish</th><th>English</th><th>中文</th></tr>
+          <tr><td><strong>Francia</strong> — francés/francesa</td><td>France</td><td>法国</td></tr>
+          <tr><td><strong>Italia</strong> — italiano/italiana</td><td>Italy</td><td>意大利</td></tr>
+          <tr><td><strong>Alemania</strong> — alemán/alemana</td><td>Germany</td><td>德国</td></tr>
+          <tr><td><strong>Reino Unido</strong> — británico/británica</td><td>United Kingdom</td><td>英国</td></tr>
+          <tr><td><strong>Portugal</strong> — portugués/portuguesa</td><td>Portugal</td><td>葡萄牙</td></tr>
+          <tr><td><strong>Países Bajos</strong> — neerlandés/neerlandesa</td><td>Netherlands</td><td>荷兰</td></tr>
+        </table>
+
+        <p><strong>🌏 <span class="lang-en">Asia</span><span class="lang-zh">亚洲</span></strong></p>
+        <table>
+          <tr><th>Spanish</th><th>English</th><th>中文</th></tr>
+          <tr><td><strong>China</strong> — chino/china</td><td>China</td><td>中国</td></tr>
+          <tr><td><strong>Japón</strong> — japonés/japonesa</td><td>Japan</td><td>日本</td></tr>
+          <tr><td><strong>India</strong> — indio/india</td><td>India</td><td>印度</td></tr>
+          <tr><td><strong>Corea del Sur</strong> — surcoreano/surcoreana</td><td>South Korea</td><td>韩国</td></tr>
+          <tr><td><strong>Tailandia</strong> — tailandés/tailandesa</td><td>Thailand</td><td>泰国</td></tr>
+        </table>
+
+        <p><strong>🌍 <span class="lang-en">Africa</span><span class="lang-zh">非洲</span></strong></p>
+        <table>
+          <tr><th>Spanish</th><th>English</th><th>中文</th></tr>
+          <tr><td><strong>Egipto</strong> — egipcio/egipcia</td><td>Egypt</td><td>埃及</td></tr>
+          <tr><td><strong>Nigeria</strong> — nigeriano/nigeriana</td><td>Nigeria</td><td>尼日利亚</td></tr>
+          <tr><td><strong>Marruecos</strong> — marroquí <span class="lang-en">(invariable)</span><span class="lang-zh">（不分阴阳性）</span></td><td>Morocco</td><td>摩洛哥</td></tr>
+          <tr><td><strong>Sudáfrica</strong> — sudafricano/sudafricana</td><td>South Africa</td><td>南非</td></tr>
+          <tr><td><strong>Kenia</strong> — keniano/keniana</td><td>Kenya</td><td>肯尼亚</td></tr>
+        </table>
+
+        <p><strong>🌎 <span class="lang-en">Americas (non-Spanish-speaking)</span><span class="lang-zh">美洲（非西语国家）</span></strong></p>
+        <table>
+          <tr><th>Spanish</th><th>English</th><th>中文</th></tr>
+          <tr><td><strong>Estados Unidos</strong> — estadounidense <span class="lang-en">(invariable)</span><span class="lang-zh">（不分阴阳性）</span></td><td>United States</td><td>美国</td></tr>
+          <tr><td><strong>Canadá</strong> — canadiense <span class="lang-en">(invariable)</span><span class="lang-zh">（不分阴阳性）</span></td><td>Canada</td><td>加拿大</td></tr>
+          <tr><td><strong>Brasil</strong> — brasileño/brasileña</td><td>Brazil</td><td>巴西</td></tr>
+        </table>
+
+        <p><strong>🇦🇺 <span class="lang-en">Oceania</span><span class="lang-zh">大洋洲</span></strong></p>
+        <table>
+          <tr><th>Spanish</th><th>English</th><th>中文</th></tr>
+          <tr><td><strong>Australia</strong> — australiano/australiana</td><td>Australia</td><td>澳大利亚</td></tr>
+        </table>
+
+        <h4><span class="lang-en">Basic professions (基本职业)</span><span class="lang-zh">基本职业</span></h4>
+        <table>
+          <tr><th>Spanish</th><th>English</th><th>中文</th></tr>
+          <tr><td><strong>estudiante</strong> <span class="lang-en">(invariable)</span><span class="lang-zh">（不分阴阳性）</span></td><td>student</td><td>学生</td></tr>
+          <tr><td><strong>profesor / profesora</strong></td><td>teacher</td><td>老师</td></tr>
+          <tr><td><strong>médico / médica</strong></td><td>doctor</td><td>医生</td></tr>
+          <tr><td><strong>abogado / abogada</strong></td><td>lawyer</td><td>律师</td></tr>
+          <tr><td><strong>ingeniero / ingeniera</strong></td><td>engineer</td><td>工程师</td></tr>
+          <tr><td><strong>enfermero / enfermera</strong></td><td>nurse</td><td>护士</td></tr>
+        </table>
+
+        <p class="lang-en-block">⚠️ Estados Unidos and Canadá don't change between masculine and feminine — estadounidense, canadiense stay the same.</p>
+        <p class="lang-zh-block">⚠️ Estados Unidos 和 Canadá 的国籍词不分阴阳性——estadounidense、canadiense 形式不变。</p>
+      </div>
+    </details>
+
+    <details class="panel">
+      <summary>
+        <span class="panel-num">3</span>
+        <span class="panel-title"><span class="lang-en">Grammar in context</span><span class="lang-zh">语法讲解</span></span>
+        <svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg>
+      </summary>
+      <div class="panel-body">
+        <p class="lang-en-block">Examples first — notice the pattern:</p>
+        <p class="lang-zh-block">先看例子——注意规律：</p>
+        <ul>
+          <li>Soy de México. — <span class="lang-en">I am from Mexico.</span><span class="lang-zh">我来自墨西哥。</span></li>
+          <li>Ella es española. — <span class="lang-en">She is Spanish.</span><span class="lang-zh">她是西班牙人。</span></li>
+          <li>Es médico. — <span class="lang-en">He is a doctor (no article!).</span><span class="lang-zh">他是医生（不用冠词！）。</span></li>
+          <li>¿De dónde eres? — <span class="lang-en">Where are you from?</span><span class="lang-zh">你来自哪里？</span></li>
+        </ul>
+
+        <h4><span class="lang-en">Three patterns with SER</span><span class="lang-zh">SER 的三种用法</span></h4>
+        <ol>
+          <li><span class="lang-en">SER + de + place = origin (出身/来源)</span><span class="lang-zh">SER + de + 地点 = 表示出身/来源</span></li>
+          <li><span class="lang-en">SER + nationality adjective (国籍形容词, lowercase always!)</span><span class="lang-zh">SER + 国籍形容词（永远小写！）</span></li>
+          <li><span class="lang-en">SER + profession (职业) — NO article: "Soy médico" NOT "Soy un médico"</span><span class="lang-zh">SER + 职业——不加冠词："Soy médico"，而不是 "Soy un médico"</span></li>
+        </ol>
+
+        <h4><span class="lang-en">Nationality endings (国籍词尾变化)</span><span class="lang-zh">国籍词尾变化</span></h4>
+        <table>
+          <tr><th><span class="lang-en">Ending pattern</span><span class="lang-zh">词尾规律</span></th><th><span class="lang-en">Example</span><span class="lang-zh">例子</span></th><th><span class="lang-en">Note</span><span class="lang-zh">注意</span></th></tr>
+          <tr><td><strong>-o / -a</strong></td><td>mexicano / mexicana</td><td><span class="lang-en">Most common pattern</span><span class="lang-zh">最常见的规律</span></td></tr>
+          <tr><td><strong>-és / -esa</strong></td><td>francés / francesa</td><td><span class="lang-en">Accent drops in feminine</span><span class="lang-zh">阴性形式重音符号消失</span></td></tr>
+          <tr><td><strong>-án / -ana</strong></td><td>alemán / alemana</td><td><span class="lang-en">Accent drops in feminine</span><span class="lang-zh">阴性形式重音符号消失</span></td></tr>
+          <tr><td><strong>-ense</strong> <span class="lang-en">(invariable)</span><span class="lang-zh">（不变）</span></td><td>estadounidense</td><td><span class="lang-en">Same for both genders</span><span class="lang-zh">阴阳性同形</span></td></tr>
+        </table>
+
+        <p class="lang-en-block">⚠️ Nationalities are lowercase in Spanish! Soy español, not Soy Español.</p>
+        <p class="lang-zh-block">⚠️ 西班牙语中国籍是小写的！Soy español，不是 Soy Español。</p>
+      </div>
+    </details>
+
+    <details class="panel">
+      <summary>
+        <span class="panel-num">4</span>
+        <span class="panel-title"><span class="lang-en">Reading or dialogue</span><span class="lang-zh">阅读与对话</span></span>
+        <svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg>
+      </summary>
+      <div class="panel-body">
+        <p>📷 <em>Suggested image: two students chatting over coffee, one Asian, one Latin American.</em></p>
+
+        <h4>En la cafetería</h4>
+        <p class="lang-en-block">Wei and Ana keep chatting — now about where they're from and what they do.</p>
+        <p class="lang-zh-block">Wei 和 Ana 继续聊天——这次聊到他们来自哪里以及做什么工作。</p>
+
+        <div class="dialogue">
+          <p><strong>Ana:</strong> Wei, ¿de dónde eres exactamente?</p>
+          <p><strong>Wei:</strong> Soy de China, de Shanghái. Soy chino.</p>
+          <p><strong>Ana:</strong> ¡Qué interesante! ¿Y a qué te dedicas?</p>
+          <p><strong>Wei:</strong> Soy estudiante. Estudio español. ¿Y tú, Ana?</p>
+          <p><strong>Ana:</strong> Yo soy española, de Madrid. Soy profesora.</p>
+          <p><strong>Wei:</strong> ¡Qué bien! ¿Eres profesora de español?</p>
+          <p><strong>Ana:</strong> No, soy profesora de matemáticas.</p>
+          <p><strong>Wei:</strong> Entiendo. Oye, mi amigo Carlos también es estudiante.</p>
+          <p><strong>Ana:</strong> ¿De dónde es Carlos?</p>
+          <p><strong>Wei:</strong> Es mexicano, de Ciudad de México.</p>
+        </div>
+
+        <h4><span class="lang-en">Comprehension questions</span><span class="lang-zh">理解问题</span></h4>
+        <ol>
+          <li>¿De dónde es Wei?</li>
+          <li>¿A qué se dedica Ana?</li>
+          <li>¿Es profesora de español Ana?</li>
+          <li>¿De dónde es Carlos?</li>
+        </ol>
+      </div>
+    </details>
+
+    <details class="panel">
+      <summary>
+        <span class="panel-num">5</span>
+        <span class="panel-title"><span class="lang-en">Controlled practice</span><span class="lang-zh">强化练习</span></span>
+        <svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg>
+      </summary>
+      <div class="panel-body">
+        <h4><span class="lang-en">Exercise 1 — Complete with the correct nationality</span><span class="lang-zh">练习一 — 填写正确的国籍</span></h4>
+        <p class="lang-en-block">Use the vocabulary from above.</p>
+        <p class="lang-zh-block">使用上面的词汇表。</p>
+        <ol>
+          <li>Carlos es de México. Carlos es ___.</li>
+          <li>Sara es de Francia. Sara es ___.</li>
+          <li>Ming es de China. Ming es ___.</li>
+          <li>Elena es de Alemania. Elena es ___.</li>
+          <li>Pablo es de Argentina. Pablo es ___.</li>
+          <li>Li es de Estados Unidos. Li es ___.</li>
+        </ol>
+
+        <h4><span class="lang-en">Exercise 2 — Complete with SER</span><span class="lang-zh">练习二 — 用 SER 填空</span></h4>
+        <ol>
+          <li>Yo ___ de China.</li>
+          <li>Tú ___ estudiante, ¿verdad?</li>
+          <li>Ella ___ médica.</li>
+          <li>Nosotros ___ de España.</li>
+          <li>Ellos ___ ingenieros.</li>
+          <li>¿Usted ___ profesor?</li>
+        </ol>
+
+        <h4><span class="lang-en">Exercise 3 — Find the error</span><span class="lang-zh">练习三 — 找出错误</span></h4>
+        <ol>
+          <li>Soy un médico. → ___</li>
+          <li>Ella es Española. → ___</li>
+          <li>Wei es china. → ___</li>
+          <li>Soy una profesora. → ___</li>
+          <li>Carlos es Mexicano. → ___</li>
+        </ol>
+      </div>
+    </details>
+
+    <details class="panel">
+      <summary>
+        <span class="panel-num">6</span>
+        <span class="panel-title"><span class="lang-en">Question formation</span><span class="lang-zh">如何提问</span></span>
+        <svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg>
+      </summary>
+      <div class="panel-body">
+        <h4><span class="lang-en">Questions for this unit</span><span class="lang-zh">本单元问句</span></h4>
+        <table>
+          <tr><th><span class="lang-en">Question</span><span class="lang-zh">问句</span></th><th><span class="lang-en">Meaning</span><span class="lang-zh">意思</span></th><th><span class="lang-en">Typical answer</span><span class="lang-zh">常见回答</span></th></tr>
+          <tr><td><strong>¿De dónde eres?</strong></td><td><span class="lang-en">Where are you from?</span><span class="lang-zh">你来自哪里？</span></td><td>Soy de China.</td></tr>
+          <tr><td><strong>¿De dónde es + name?</strong></td><td><span class="lang-en">Where is (name) from?</span><span class="lang-zh">（某人）来自哪里？</span></td><td>Carlos es de México.</td></tr>
+          <tr><td><strong>¿Cuál es tu nacionalidad?</strong></td><td><span class="lang-en">What is your nationality?</span><span class="lang-zh">你的国籍是什么？</span></td><td>Soy chino.</td></tr>
+          <tr><td><strong>¿A qué te dedicas?</strong></td><td><span class="lang-en">What do you do for work?</span><span class="lang-zh">你是做什么工作的？</span></td><td>Soy estudiante.</td></tr>
+          <tr><td><strong>¿Eres + nationality?</strong></td><td><span class="lang-en">Are you (nationality)?</span><span class="lang-zh">你是（某国籍）吗？</span></td><td>Sí, soy mexicano. / No, soy chino.</td></tr>
+        </table>
+
+        <h4><span class="lang-en">Practice — Ask the question</span><span class="lang-zh">练习 — 写出问句</span></h4>
+        <p class="lang-en-block">Look at the answer. What was the question?</p>
+        <p class="lang-zh-block">看答案，写出对应的问句。</p>
+        <ol>
+          <li>→ Soy de Perú.</li>
+          <li>→ Sara es profesora.</li>
+          <li>→ Sí, soy argentino.</li>
+          <li>→ Soy chino.</li>
+        </ol>
+      </div>
+    </details>
+
+    <details class="panel">
+      <summary>
+        <span class="panel-num">7</span>
+        <span class="panel-title"><span class="lang-en">Real-life task</span><span class="lang-zh">真实任务</span></span>
+        <svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg>
+      </summary>
+      <div class="panel-body">
+        <p>📷 <em>Suggested image: a phone showing Google Maps zoomed out to the world view.</em></p>
+
+        <h4><span class="lang-en">Task: Explore the map</span><span class="lang-zh">任务：探索地图</span></h4>
+        <p class="lang-en-block">Open Google Maps. Pick 3 countries you've never visited. For each one, say the nationality and guess one famous profession associated with that country.</p>
+        <p class="lang-zh-block">打开 Google 地图，选择 3 个你从未去过的国家。对每一个国家，说出对应的国籍词，并猜测一个与该国相关的著名职业。</p>
+        <p><em>Example: "Italia — italiano — muchos diseñadores de moda son italianos."</em></p>
+        <ul>
+          <li><span class="lang-en">Country 1: ___</span><span class="lang-zh">国家 1：___</span></li>
+          <li><span class="lang-en">Country 2: ___</span><span class="lang-zh">国家 2：___</span></li>
+          <li><span class="lang-en">Country 3: ___</span><span class="lang-zh">国家 3：___</span></li>
+        </ul>
+      </div>
+    </details>
+
+    <details class="panel">
+      <summary>
+        <span class="panel-num">8</span>
+        <span class="panel-title"><span class="lang-en">Free production</span><span class="lang-zh">自由表达</span></span>
+        <svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg>
+      </summary>
+      <div class="panel-body">
+        <p class="lang-en-block">No script. No word bank. Just you, speaking freely using everything from this unit.</p>
+        <p class="lang-zh-block">没有脚本，没有词汇表。用你在本单元学到的一切自由表达。</p>
+
+        <h4><span class="lang-en">Speaking prompts</span><span class="lang-zh">口语提示</span></h4>
+        <ol class="lang-en-block">
+          <li>Describe your own origin and nationality fully.</li>
+          <li>Describe where a family member is from.</li>
+          <li>Guess a celebrity's nationality and profession without being told.</li>
+          <li>If you could have a different nationality, which would you choose and why? (simple answer)</li>
+        </ol>
+        <ol class="lang-zh-block">
+          <li>完整描述你自己的出身和国籍。</li>
+          <li>描述一位家人来自哪里。</li>
+          <li>在没有提示的情况下，猜测一位名人的国籍和职业。</li>
+          <li>如果你可以拥有另一个国籍，你会选哪个？为什么？（简单回答即可）</li>
+        </ol>
+      </div>
+    </details>
+
+    <details class="panel">
+      <summary>
+        <span class="panel-num">9</span>
+        <span class="panel-title"><span class="lang-en">Homework</span><span class="lang-zh">课后作业</span></span>
+        <svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg>
+      </summary>
+      <div class="panel-body">
+        <p class="lang-en-block">Choose <strong>one</strong> of the options below. No need to send anything — just do it before the next class.</p>
+        <p class="lang-zh-block">选择以下任一选项。无需发给老师——课前自己完成就好。</p>
+
+        <h4><span class="lang-en">Option A — Receptive</span><span class="lang-zh">选项 A — 听力输入</span></h4>
+        <p class="lang-en-block">Watch a short Spanish video on YouTube. Write down any countries or nationalities you hear mentioned.</p>
+        <p class="lang-zh-block">在 YouTube 上看一段西班牙语短视频，记下你听到的国家或国籍词。</p>
+
+        <h4><span class="lang-en">Option B — Practice exercise</span><span class="lang-zh">选项 B — 书面练习</span></h4>
+        <p class="lang-en-block">Copy the exercise below into your Google Doc and fill in the blanks. Check your answers at the bottom when you are done.</p>
+        <p class="lang-zh-block">将以下练习复制到你的 Google Doc 中并填空。完成后在下方核对答案。</p>
+
+        <div style="background:#f7f5ef; padding:16px; border-radius:8px; margin:12px 0; font-size:14px; line-height:2;">
+          <p><strong>Part 1 — Complete with SER + nationality (用 SER + 国籍填空)</strong></p>
+          <p>1. Yo ___ (China).</p>
+          <p>2. Tú ___ (México).</p>
+          <p>3. Ella ___ (Francia).</p>
+          <p>4. Nosotros ___ (España).</p>
+          <p>5. Ellos ___ (Alemania).</p>
+          <p>6. Usted ___ (Argentina).</p>
+
+          <br>
+          <p><strong>Part 2 — Correct the mistake (找出错误并改正)</strong></p>
+          <p>1. Soy un médico. → ___</p>
+          <p>2. Ella es Española. → ___</p>
+          <p>3. Carlos es Mexicano. → ___</p>
+          <p>4. Soy una profesora. → ___</p>
+        </div>
+
+        <details style="margin-top:8px;">
+          <summary style="cursor:pointer; color:#5a7a32; font-weight:500; font-size:13px;"><span class="lang-en">Show answers / 查看答案</span><span class="lang-zh">查看答案 / Show answers</span></summary>
+          <div style="background:#eef4e4; padding:12px; border-radius:8px; margin-top:8px; font-size:13px; line-height:2;">
+            <p><strong>Part 1:</strong> 1. soy chino/china · 2. eres mexicano/mexicana · 3. es francesa · 4. somos españoles/españolas · 5. son alemanes · 6. es argentino/argentina</p>
+            <p><strong>Part 2:</strong> 1. Soy médico · 2. Ella es española · 3. Carlos es mexicano · 4. Soy profesora</p>
+          </div>
+        </details>
+
+        <h4><span class="lang-en">Option C — Creative</span><span class="lang-zh">选项 C — 创意练习</span></h4>
+        <p class="lang-en-block">Find 3 flags of Spanish-speaking countries and label them with the nationality word.</p>
+        <p class="lang-zh-block">找出 3 面西语国家的国旗，并标注对应的国籍词。</p>
+      </div>
+    </details>
+
   </div>
 
   <div class="unit-nav">
@@ -49,5 +391,27 @@
 </main>
 
 <footer class="site-footer">Spanish with Brady · Private use only</footer>
+
+<script>
+function setLang(lang) {
+  if (lang === 'zh') {
+    document.body.classList.add('zh');
+    document.getElementById('btn-zh').style.background = '#5a7a32';
+    document.getElementById('btn-zh').style.color = 'white';
+    document.getElementById('btn-en').style.background = '#f7f5ef';
+    document.getElementById('btn-en').style.color = '#7a6e60';
+  } else {
+    document.body.classList.remove('zh');
+    document.getElementById('btn-en').style.background = '#5a7a32';
+    document.getElementById('btn-en').style.color = 'white';
+    document.getElementById('btn-zh').style.background = '#f7f5ef';
+    document.getElementById('btn-zh').style.color = '#7a6e60';
+  }
+  localStorage.setItem('lang', lang);
+}
+const saved = localStorage.getItem('lang');
+if (saved === 'zh') setLang('zh');
+</script>
+
 </body>
 </html>
