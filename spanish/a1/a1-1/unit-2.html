@@ -12,6 +12,68 @@
     .lang-zh-block { display: none; }
     body.zh .lang-zh-block { display: block; }
     body.zh .lang-en-block { display: none; }
+
+    .cr-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 32px 28px;
+      max-width: 440px;
+      margin: 1.5rem auto 0;
+      text-align: center;
+      box-shadow: 0 4px 16px rgba(107,140,66,0.08);
+    }
+    .cr-card-sub {
+      font-size: 0.85rem;
+      color: var(--muted);
+      margin-bottom: 1.5rem;
+      line-height: 1.5;
+    }
+    .cr-display {
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: var(--brown);
+      min-height: 2.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.6rem;
+      margin-bottom: 1.25rem;
+      background: var(--bg);
+      border-radius: 10px;
+      padding: 0.9rem;
+    }
+    .cr-flag { font-size: 2rem; line-height: 1; }
+    .cr-btn {
+      background: var(--green);
+      color: #fff;
+      border: none;
+      padding: 0.8rem 2rem;
+      border-radius: 8px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: opacity 0.15s;
+    }
+    .cr-btn:hover { opacity: 0.88; }
+    .cr-btn:disabled { opacity: 0.6; cursor: default; }
+    .cr-questions {
+      display: none;
+      margin-top: 1.25rem;
+      text-align: left;
+      background: var(--bg);
+      border-radius: 8px;
+      padding: 1rem 1.2rem;
+    }
+    .cr-questions.show { display: block; }
+    .cr-questions ul { padding-left: 1.25rem; margin: 0; }
+    .cr-questions li {
+      font-size: 0.825rem;
+      color: var(--brown);
+      margin-bottom: 0.45rem;
+      line-height: 1.55;
+    }
+    .cr-questions li:last-child { margin-bottom: 0; }
   </style>
 </head>
 <body>
@@ -330,6 +392,23 @@
           <li>在没有提示的情况下，猜测一位名人的国籍和职业。</li>
           <li>如果你可以拥有另一个国籍，你会选哪个？为什么？（简单回答即可）</li>
         </ol>
+
+        <h4><span class="lang-en">Country randomizer</span><span class="lang-zh">国家随机抽取器</span></h4>
+        <div class="cr-card cr-widget">
+          <p class="cr-card-sub"><span class="lang-en">Spin for a random country, then answer the questions below using what you know.</span><span class="lang-zh">转一下，随机抽取一个国家，然后用你知道的内容回答下面的问题。</span></p>
+
+          <div class="cr-display"></div>
+          <button class="cr-btn">Girar país</button>
+
+          <div class="cr-questions">
+            <ul>
+              <li><span class="lang-en">What's the nationality?</span><span class="lang-zh">国籍怎么说？</span></li>
+              <li><span class="lang-en">What language do they speak?</span><span class="lang-zh">他们说什么语言？</span></li>
+              <li><span class="lang-en">Do you know anyone from this country?</span><span class="lang-zh">你认识来自这个国家的人吗？</span></li>
+              <li><span class="lang-en">What profession do you associate with it?</span><span class="lang-zh">你会联想到哪种职业？</span></li>
+            </ul>
+          </div>
+        </div>
       </div>
     </details>
 
@@ -411,6 +490,77 @@ function setLang(lang) {
 }
 const saved = localStorage.getItem('lang');
 if (saved === 'zh') setLang('zh');
+
+const crCountries = [
+  { name: "España", flag: "🇪🇸" },
+  { name: "México", flag: "🇲🇽" },
+  { name: "Argentina", flag: "🇦🇷" },
+  { name: "Colombia", flag: "🇨🇴" },
+  { name: "Cuba", flag: "🇨🇺" },
+  { name: "Chile", flag: "🇨🇱" },
+  { name: "Perú", flag: "🇵🇪" },
+  { name: "Venezuela", flag: "🇻🇪" },
+  { name: "Francia", flag: "🇫🇷" },
+  { name: "Italia", flag: "🇮🇹" },
+  { name: "Alemania", flag: "🇩🇪" },
+  { name: "Reino Unido", flag: "🇬🇧" },
+  { name: "Portugal", flag: "🇵🇹" },
+  { name: "Países Bajos", flag: "🇳🇱" },
+  { name: "China", flag: "🇨🇳" },
+  { name: "Japón", flag: "🇯🇵" },
+  { name: "India", flag: "🇮🇳" },
+  { name: "Corea del Sur", flag: "🇰🇷" },
+  { name: "Tailandia", flag: "🇹🇭" },
+  { name: "Egipto", flag: "🇪🇬" },
+  { name: "Nigeria", flag: "🇳🇬" },
+  { name: "Marruecos", flag: "🇲🇦" },
+  { name: "Sudáfrica", flag: "🇿🇦" },
+  { name: "Kenia", flag: "🇰🇪" },
+  { name: "Estados Unidos", flag: "🇺🇸" },
+  { name: "Canadá", flag: "🇨🇦" },
+  { name: "Brasil", flag: "🇧🇷" },
+  { name: "Australia", flag: "🇦🇺" }
+];
+
+function crInit(root) {
+  const btn = root.querySelector('.cr-btn');
+  const display = root.querySelector('.cr-display');
+  const questions = root.querySelector('.cr-questions');
+  let spinning = false;
+
+  function randomCountry() {
+    return crCountries[Math.floor(Math.random() * crCountries.length)];
+  }
+
+  function renderCountry(c) {
+    display.innerHTML = '<span class="cr-flag">' + c.flag + '</span><span class="cr-name">' + c.name + '</span>';
+  }
+
+  function spin() {
+    if (spinning) return;
+    spinning = true;
+    btn.disabled = true;
+    questions.classList.remove('show');
+    let elapsed = 0;
+    const tick = 60;
+    const duration = 1000;
+    const interval = setInterval(function () {
+      renderCountry(randomCountry());
+      elapsed += tick;
+      if (elapsed >= duration) {
+        clearInterval(interval);
+        renderCountry(randomCountry());
+        questions.classList.add('show');
+        btn.textContent = 'Girar de nuevo';
+        btn.disabled = false;
+        spinning = false;
+      }
+    }, tick);
+  }
+
+  btn.addEventListener('click', spin);
+}
+document.querySelectorAll('.cr-widget').forEach(crInit);
 </script>
 
 </body>

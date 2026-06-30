@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Country Randomizer · Spanish with Brady</title>
+  <link rel="stylesheet" href="../assets/style.css">
+  <style>
+    .lang-zh { display: none; }
+    body.zh .lang-en { display: none; }
+    body.zh .lang-zh { display: inline; }
+
+    body {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+    .cr-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1rem 1.5rem;
+      border-bottom: 1px solid var(--border);
+    }
+    .cr-main {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 48px 20px;
+    }
+    .cr-toggle {
+      display: flex;
+      gap: 0;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      overflow: hidden;
+    }
+    .cr-toggle button {
+      padding: 6px 16px;
+      font-size: 13px;
+      font-weight: 500;
+      border: none;
+      cursor: pointer;
+      background: var(--bg);
+      color: var(--muted);
+    }
+    .cr-toggle button.active {
+      background: var(--green);
+      color: #fff;
+    }
+.cr-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 40px 32px;
+      max-width: 440px;
+      width: 100%;
+      text-align: center;
+      box-shadow: 0 4px 16px rgba(107,140,66,0.08);
+    }
+    .cr-card-title {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--brown);
+      margin-bottom: 0.5rem;
+    }
+    .cr-card-sub {
+      font-size: 0.875rem;
+      color: var(--muted);
+      margin-bottom: 1.75rem;
+      line-height: 1.5;
+    }
+    .cr-display {
+      font-size: 1.75rem;
+      font-weight: 700;
+      color: var(--brown);
+      min-height: 2.75rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.6rem;
+      margin-bottom: 1.5rem;
+      background: var(--bg);
+      border-radius: 10px;
+      padding: 1rem;
+    }
+    .cr-flag { font-size: 2.25rem; line-height: 1; }
+    .cr-btn {
+      background: var(--green);
+      color: #fff;
+      border: none;
+      padding: 0.85rem 2.25rem;
+      border-radius: 8px;
+      font-size: 0.95rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: opacity 0.15s;
+    }
+    .cr-btn:hover { opacity: 0.88; }
+    .cr-btn:disabled { opacity: 0.6; cursor: default; }
+    .cr-questions {
+      display: none;
+      margin-top: 1.5rem;
+      text-align: left;
+      background: var(--bg);
+      border-radius: 8px;
+      padding: 1.1rem 1.3rem;
+    }
+    .cr-questions.show { display: block; }
+    .cr-questions ul {
+      padding-left: 1.25rem;
+      margin: 0;
+    }
+    .cr-questions li {
+      font-size: 0.85rem;
+      color: var(--brown);
+      margin-bottom: 0.5rem;
+      line-height: 1.55;
+    }
+    .cr-questions li:last-child { margin-bottom: 0; }
+  </style>
+</head>
+<body>
+
+<header class="cr-header">
+  <span class="site-logo">Spanish with Brady</span>
+  <div class="cr-toggle">
+    <button id="btn-en" onclick="setLang('en')" class="active">EN</button>
+    <button id="btn-zh" onclick="setLang('zh')">中文</button>
+  </div>
+</header>
+
+<main class="cr-main">
+  <div class="cr-card cr-widget">
+    <p class="cr-card-title"><span class="lang-en">Country Randomizer</span><span class="lang-zh">国家随机抽取器</span></p>
+    <p class="cr-card-sub"><span class="lang-en">Spin for a random country, then answer the questions using what you know.</span><span class="lang-zh">转一下，随机抽取一个国家，然后用你知道的内容回答问题。</span></p>
+
+    <div class="cr-display"></div>
+    <button class="cr-btn">Girar país</button>
+
+    <div class="cr-questions">
+          <ul>
+            <li><span class="lang-en">What's the nationality?</span><span class="lang-zh">国籍怎么说？</span></li>
+            <li><span class="lang-en">What language do they speak?</span><span class="lang-zh">他们说什么语言？</span></li>
+            <li><span class="lang-en">Do you know anyone from this country?</span><span class="lang-zh">你认识来自这个国家的人吗？</span></li>
+            <li><span class="lang-en">What profession do you associate with it?</span><span class="lang-zh">你会联想到哪种职业？</span></li>
+          </ul>
+        </div>
+  </div>
+</main>
+
+<script>
+function setLang(lang) {
+  if (lang === 'zh') {
+    document.body.classList.add('zh');
+    document.getElementById('btn-zh').classList.add('active');
+    document.getElementById('btn-en').classList.remove('active');
+  } else {
+    document.body.classList.remove('zh');
+    document.getElementById('btn-en').classList.add('active');
+    document.getElementById('btn-zh').classList.remove('active');
+  }
+  localStorage.setItem('lang', lang);
+}
+const savedLang = localStorage.getItem('lang');
+if (savedLang === 'zh') setLang('zh');
+
+const crCountries = [
+    { name: "España", flag: "🇪🇸" },
+    { name: "México", flag: "🇲🇽" },
+    { name: "Argentina", flag: "🇦🇷" },
+    { name: "Colombia", flag: "🇨🇴" },
+    { name: "Cuba", flag: "🇨🇺" },
+    { name: "Chile", flag: "🇨🇱" },
+    { name: "Perú", flag: "🇵🇪" },
+    { name: "Venezuela", flag: "🇻🇪" },
+    { name: "Francia", flag: "🇫🇷" },
+    { name: "Italia", flag: "🇮🇹" },
+    { name: "Alemania", flag: "🇩🇪" },
+    { name: "Reino Unido", flag: "🇬🇧" },
+    { name: "Portugal", flag: "🇵🇹" },
+    { name: "Países Bajos", flag: "🇳🇱" },
+    { name: "China", flag: "🇨🇳" },
+    { name: "Japón", flag: "🇯🇵" },
+    { name: "India", flag: "🇮🇳" },
+    { name: "Corea del Sur", flag: "🇰🇷" },
+    { name: "Tailandia", flag: "🇹🇭" },
+    { name: "Egipto", flag: "🇪🇬" },
+    { name: "Nigeria", flag: "🇳🇬" },
+    { name: "Marruecos", flag: "🇲🇦" },
+    { name: "Sudáfrica", flag: "🇿🇦" },
+    { name: "Kenia", flag: "🇰🇪" },
+    { name: "Estados Unidos", flag: "🇺🇸" },
+    { name: "Canadá", flag: "🇨🇦" },
+    { name: "Brasil", flag: "🇧🇷" },
+    { name: "Australia", flag: "🇦🇺" }
+  ];
+function crInit(root) {
+    const btn = root.querySelector('.cr-btn');
+    const display = root.querySelector('.cr-display');
+    const questions = root.querySelector('.cr-questions');
+    let spinning = false;
+
+    function randomCountry() {
+      return crCountries[Math.floor(Math.random() * crCountries.length)];
+    }
+
+    function renderCountry(c) {
+      display.innerHTML = '<span class="cr-flag">' + c.flag + '</span><span class="cr-name">' + c.name + '</span>';
+    }
+
+    function spin() {
+      if (spinning) return;
+      spinning = true;
+      btn.disabled = true;
+      questions.classList.remove('show');
+      let elapsed = 0;
+      const tick = 60;
+      const duration = 1000;
+      const interval = setInterval(function () {
+        renderCountry(randomCountry());
+        elapsed += tick;
+        if (elapsed >= duration) {
+          clearInterval(interval);
+          renderCountry(randomCountry());
+          questions.classList.add('show');
+          btn.textContent = 'Girar de nuevo';
+          btn.disabled = false;
+          spinning = false;
+        }
+      }, tick);
+    }
+
+    btn.addEventListener('click', spin);
+  }
+  document.querySelectorAll('.cr-widget').forEach(crInit);
+</script>
+
+</body>
+</html>
