@@ -5,41 +5,368 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Unit 11 · Calendario · Spanish with Brady</title>
   <link rel="stylesheet" href="../../../assets/style.css">
+  <style>
+    .lang-zh { display: none; }
+    body.zh .lang-en { display: none; }
+    body.zh .lang-zh { display: inline; }
+    .lang-zh-block { display: none; }
+    body.zh .lang-zh-block { display: block; }
+    body.zh .lang-en-block { display: none; }
+  </style>
 </head>
 <body>
+
 <header class="site-header">
   <a class="site-logo" href="../../../">Spanish with Brady</a>
-  <nav><ul class="site-nav">
-    <li><a href="../../../spanish/" class="active">Spanish</a></li>
-    <li><a href="../../../mandarin/">Mandarin</a></li>
-    <li><a href="#">English</a></li>
-  </ul></nav>
+  <nav>
+    <ul class="site-nav">
+      <li><a href="../../../spanish/" class="active">Spanish</a></li>
+      <li><a href="../../../mandarin/">Mandarin</a></li>
+      <li><a href="#">English</a></li>
+    </ul>
+  </nav>
 </header>
+
 <nav class="breadcrumb">
   <a href="../../../">Home</a><span>›</span><a href="../../../spanish/">Spanish</a><span>›</span><a href="../../../spanish/a1/">A1</a><span>›</span><a href="./index.html">A1.2</a><span>›</span>Unit 11
 </nav>
+
 <main>
+  <div style="display:flex; justify-content:flex-end; padding: 8px 0 0;">
+    <div style="display:flex; gap:0; border:1px solid #e2ddd4; border-radius:6px; overflow:hidden;">
+      <button id="btn-en" onclick="setLang('en')" style="padding:6px 16px; font-size:13px; font-weight:500; border:none; cursor:pointer; background:#5a7a32; color:white;">EN</button>
+      <button id="btn-zh" onclick="setLang('zh')" style="padding:6px 16px; font-size:13px; font-weight:500; border:none; cursor:pointer; background:#f7f5ef; color:#7a6e60;">中文</button>
+    </div>
+  </div>
+
   <div class="unit-header">
     <div class="unit-num">A1.2 · Unit 11</div>
     <h1>Calendario</h1>
     <p class="unit-subtitle">Dates, months, seasons and weather</p>
   </div>
+
   <div class="panels">
-    <details class="panel"><summary><span class="panel-num">1</span><span class="panel-title">Hook / Opener</span><svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg></summary><div class="panel-body">Content coming soon</div></details>
-    <details class="panel"><summary><span class="panel-num">2</span><span class="panel-title">Vocabulary</span><svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg></summary><div class="panel-body">Content coming soon</div></details>
-    <details class="panel"><summary><span class="panel-num">3</span><span class="panel-title">Grammar in context</span><svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg></summary><div class="panel-body">Content coming soon</div></details>
-    <details class="panel"><summary><span class="panel-num">4</span><span class="panel-title">Reading or dialogue</span><svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg></summary><div class="panel-body">Content coming soon</div></details>
-    <details class="panel"><summary><span class="panel-num">5</span><span class="panel-title">Controlled practice</span><svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg></summary><div class="panel-body">Content coming soon</div></details>
-    <details class="panel"><summary><span class="panel-num">6</span><span class="panel-title">Question formation</span><svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg></summary><div class="panel-body">Content coming soon</div></details>
-    <details class="panel"><summary><span class="panel-num">7</span><span class="panel-title">Real-life task</span><svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg></summary><div class="panel-body">Content coming soon</div></details>
-    <details class="panel"><summary><span class="panel-num">8</span><span class="panel-title">Free production</span><svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg></summary><div class="panel-body">Content coming soon</div></details>
-    <details class="panel"><summary><span class="panel-num">9</span><span class="panel-title">Homework</span><svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg></summary><div class="panel-body">Content coming soon</div></details>
+
+    <details class="panel">
+      <summary>
+        <span class="panel-num">1</span>
+        <span class="panel-title"><span class="lang-en">Hook / Opener</span><span class="lang-zh">课程导入</span></span>
+        <svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg>
+      </summary>
+      <div class="panel-body">
+        <p>📷 <em>Suggested image: a calendar with seasonal weather icons across the months.</em></p>
+        <p class="lang-en-block">Before we start, think about this: What's the date today? What's the weather like? Can you say either in Spanish?</p>
+        <p class="lang-zh-block">开始之前，想一想：今天是几号？天气怎么样？这两个你能用西班牙语说出来吗？</p>
+        <p><strong><span class="lang-en">By the end of this unit you can:</span><span class="lang-zh">完成本单元后，你能够：</span></strong> <span class="lang-en">say dates, months, seasons and weather, and make simple plans using IR + A.</span><span class="lang-zh">说出日期、月份、季节和天气，并用 IR + A 表达简单计划。</span></p>
+      </div>
+    </details>
+
+    <details class="panel">
+      <summary>
+        <span class="panel-num">2</span>
+        <span class="panel-title"><span class="lang-en">Vocabulary</span><span class="lang-zh">词汇</span></span>
+        <svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg>
+      </summary>
+      <div class="panel-body">
+        <h4><span class="lang-en">Months</span><span class="lang-zh">月份</span></h4>
+        <table>
+          <tr><th>Spanish</th><th>English</th><th>中文</th></tr>
+          <tr><td><strong>enero</strong></td><td>January</td><td>一月</td></tr>
+          <tr><td><strong>febrero</strong></td><td>February</td><td>二月</td></tr>
+          <tr><td><strong>marzo</strong></td><td>March</td><td>三月</td></tr>
+          <tr><td><strong>abril</strong></td><td>April</td><td>四月</td></tr>
+          <tr><td><strong>mayo</strong></td><td>May</td><td>五月</td></tr>
+          <tr><td><strong>junio</strong></td><td>June</td><td>六月</td></tr>
+          <tr><td><strong>julio</strong></td><td>July</td><td>七月</td></tr>
+          <tr><td><strong>agosto</strong></td><td>August</td><td>八月</td></tr>
+          <tr><td><strong>septiembre</strong></td><td>September</td><td>九月</td></tr>
+          <tr><td><strong>octubre</strong></td><td>October</td><td>十月</td></tr>
+          <tr><td><strong>noviembre</strong></td><td>November</td><td>十一月</td></tr>
+          <tr><td><strong>diciembre</strong></td><td>December</td><td>十二月</td></tr>
+        </table>
+        <p class="lang-en-block">⚠️ Months are lowercase in Spanish too!</p>
+        <p class="lang-zh-block">⚠️ 西班牙语中月份也是小写的！</p>
+
+        <h4><span class="lang-en">Seasons</span><span class="lang-zh">季节</span></h4>
+        <table>
+          <tr><th>Spanish</th><th>English</th><th>中文</th></tr>
+          <tr><td><strong>la primavera</strong></td><td>spring</td><td>春天</td></tr>
+          <tr><td><strong>el verano</strong></td><td>summer</td><td>夏天</td></tr>
+          <tr><td><strong>el otoño</strong></td><td>autumn</td><td>秋天</td></tr>
+          <tr><td><strong>el invierno</strong></td><td>winter</td><td>冬天</td></tr>
+        </table>
+
+        <h4><span class="lang-en">Weather</span><span class="lang-zh">天气</span></h4>
+        <table>
+          <tr><th>Spanish</th><th>English</th><th>中文</th></tr>
+          <tr><td><strong>hace calor</strong></td><td>it's hot</td><td>天气热</td></tr>
+          <tr><td><strong>hace frío</strong></td><td>it's cold</td><td>天气冷</td></tr>
+          <tr><td><strong>hace viento</strong></td><td>it's windy</td><td>刮风</td></tr>
+          <tr><td><strong>hace sol</strong></td><td>it's sunny</td><td>晴天</td></tr>
+          <tr><td><strong>hay niebla</strong></td><td>it's foggy</td><td>有雾</td></tr>
+          <tr><td><strong>hay nubes</strong></td><td>it's cloudy</td><td>多云</td></tr>
+          <tr><td><strong>hay tormenta</strong></td><td>there's a storm</td><td>有暴风雨</td></tr>
+          <tr><td><strong>llueve</strong></td><td>it's raining</td><td>下雨</td></tr>
+          <tr><td><strong>nieva</strong></td><td>it's snowing</td><td>下雪</td></tr>
+          <tr><td><strong>está nublado</strong></td><td>it's overcast</td><td>阴天</td></tr>
+          <tr><td><strong>está despejado</strong></td><td>it's clear</td><td>晴朗</td></tr>
+        </table>
+      </div>
+    </details>
+
+    <details class="panel">
+      <summary>
+        <span class="panel-num">3</span>
+        <span class="panel-title"><span class="lang-en">Grammar in context</span><span class="lang-zh">语法讲解</span></span>
+        <svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg>
+      </summary>
+      <div class="panel-body">
+        <h4><span class="lang-en">Dates</span><span class="lang-zh">日期</span></h4>
+        <p class="lang-en-block">Date format: día + de + mes + de + año.</p>
+        <p class="lang-zh-block">日期格式：日 + de + 月 + de + 年。</p>
+        <p><em>15 de marzo de 2026</em></p>
+        <p class="lang-en-block">⚠️ Only the 1st of the month uses an ordinal: "el primero de enero". Every other day uses the cardinal number: "el dos de enero", "el quince de marzo".</p>
+        <p class="lang-zh-block">⚠️ 只有每月 1 号用序数词："el primero de enero"。其他日期一律用基数词："el dos de enero"，"el quince de marzo"。</p>
+
+        <h4><span class="lang-en">Three weather structures</span><span class="lang-zh">三种天气句型</span></h4>
+        <table>
+          <tr><th><span class="lang-en">Structure</span><span class="lang-zh">句型</span></th><th><span class="lang-en">Example</span><span class="lang-zh">例句</span></th></tr>
+          <tr><td>HACER + <span class="lang-en">noun</span><span class="lang-zh">名词</span></td><td>Hace calor. Hace viento.</td></tr>
+          <tr><td>HAY + <span class="lang-en">noun</span><span class="lang-zh">名词</span></td><td>Hay niebla. Hay tormenta.</td></tr>
+          <tr><td>ESTAR + <span class="lang-en">adjective</span><span class="lang-zh">形容词</span></td><td>Está nublado. Está despejado.</td></tr>
+        </table>
+        <p class="lang-en-block">Llueve and nieva are impersonal verbs — they only exist in the 3rd person singular, with no subject.</p>
+        <p class="lang-zh-block">Llueve 和 nieva 是无人称动词——只有第三人称单数形式，没有主语。</p>
+
+        <h4><span class="lang-en">IR + A + infinitive (introduction)</span><span class="lang-zh">IR + A + 不定式（初步介绍）</span></h4>
+        <p class="lang-en-block">For now, just learn this as a fixed chunk for weather forecasts and simple plans: "mañana va a llover" (tomorrow it's going to rain), "voy a estudiar" (I'm going to study). The full conjugation comes in Unit 18.</p>
+        <p class="lang-zh-block">现在只需把它当作一个固定短语，用于天气预报和简单计划："mañana va a llover"（明天会下雨），"voy a estudiar"（我打算学习）。完整变位将在第 18 单元学习。</p>
+
+        <p class="lang-en-block">⚠️ Common errors: "hace nublado" is wrong → say "está nublado". "Es lloviendo" is wrong → Spanish doesn't use the progressive for weather, just say "llueve".</p>
+        <p class="lang-zh-block">⚠️ 常见错误："hace nublado" 是错的 → 应说 "está nublado"。"Es lloviendo" 是错的 → 西班牙语描述天气不用进行时，直接说 "llueve" 即可。</p>
+      </div>
+    </details>
+
+    <details class="panel">
+      <summary>
+        <span class="panel-num">4</span>
+        <span class="panel-title"><span class="lang-en">Reading or dialogue</span><span class="lang-zh">阅读与对话</span></span>
+        <svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg>
+      </summary>
+      <div class="panel-body">
+        <p>📷 <em>Suggested image: a phone weather app showing a 5-day forecast.</em></p>
+
+        <h4>El pronóstico</h4>
+        <p class="lang-en-block">Carlos and Sara talk about the weather and make a weekend plan.</p>
+        <p class="lang-zh-block">Carlos 和 Sara 聊天气，并制定周末计划。</p>
+
+        <div class="dialogue">
+          <p><strong>Sara:</strong> Carlos, ¿qué tiempo hace hoy?</p>
+          <p><strong>Carlos:</strong> Hace mucho sol, pero hace bastante frío.</p>
+          <p><strong>Sara:</strong> ¿Y mañana? Es el primero de diciembre.</p>
+          <p><strong>Carlos:</strong> Mañana va a llover, dice la aplicación.</p>
+          <p><strong>Sara:</strong> ¡Qué pena! Quería ir al parque.</p>
+          <p><strong>Carlos:</strong> Podemos ir el sábado. Va a estar despejado.</p>
+          <p><strong>Sara:</strong> ¡Perfecto! ¿Qué día es el sábado?</p>
+          <p><strong>Carlos:</strong> Es el cuatro de diciembre. Voy a preparar un picnic.</p>
+        </div>
+
+        <h4><span class="lang-en">Comprehension questions</span><span class="lang-zh">理解问题</span></h4>
+        <ol>
+          <li>¿Qué tiempo hace hoy?</li>
+          <li>¿Qué va a pasar mañana?</li>
+          <li>¿Qué día es el sábado?</li>
+          <li>¿Qué va a preparar Carlos?</li>
+        </ol>
+      </div>
+    </details>
+
+    <details class="panel">
+      <summary>
+        <span class="panel-num">5</span>
+        <span class="panel-title"><span class="lang-en">Controlled practice</span><span class="lang-zh">强化练习</span></span>
+        <svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg>
+      </summary>
+      <div class="panel-body">
+        <h4><span class="lang-en">Exercise 1 — Complete the weather expression</span><span class="lang-zh">练习一 — 补全天气表达</span></h4>
+        <ol>
+          <li>___ calor. (HACER)</li>
+          <li>___ niebla. (HAY)</li>
+          <li>___ nublado. (ESTAR)</li>
+          <li>___ mucho en abril. (llover)</li>
+          <li>___ viento hoy. (HACER)</li>
+          <li>___ nieve en las montañas. (nevar)</li>
+        </ol>
+
+        <h4><span class="lang-en">Exercise 2 — Write the date</span><span class="lang-zh">练习二 — 写出日期</span></h4>
+        <ol>
+          <li>March 15, 2026 → ___</li>
+          <li>January 1, 2026 → ___</li>
+          <li>July 4, 2026 → ___</li>
+          <li>December 25, 2026 → ___</li>
+          <li>October 31, 2026 → ___</li>
+          <li>May 9, 2026 → ___</li>
+        </ol>
+
+        <h4><span class="lang-en">Exercise 3 — Find the error</span><span class="lang-zh">练习三 — 找出错误</span></h4>
+        <ol>
+          <li>Hace nublado hoy. → ___</li>
+          <li>Es lloviendo mucho. → ___</li>
+          <li>Hoy es dos de enero de 2026, primer día del año. → ___</li>
+          <li>Mañana va llover. → ___</li>
+          <li>Hace tormenta. → ___</li>
+        </ol>
+      </div>
+    </details>
+
+    <details class="panel">
+      <summary>
+        <span class="panel-num">6</span>
+        <span class="panel-title"><span class="lang-en">Question formation</span><span class="lang-zh">如何提问</span></span>
+        <svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg>
+      </summary>
+      <div class="panel-body">
+        <h4><span class="lang-en">Questions for this unit</span><span class="lang-zh">本单元问句</span></h4>
+        <table>
+          <tr><th><span class="lang-en">Question</span><span class="lang-zh">问句</span></th><th><span class="lang-en">Meaning</span><span class="lang-zh">意思</span></th><th><span class="lang-en">Typical answer</span><span class="lang-zh">常见回答</span></th></tr>
+          <tr><td><strong>¿Qué tiempo hace?</strong></td><td><span class="lang-en">What's the weather like?</span><span class="lang-zh">天气怎么样？</span></td><td>Hace sol y calor.</td></tr>
+          <tr><td><strong>¿Qué fecha es hoy?</strong></td><td><span class="lang-en">What's today's date?</span><span class="lang-zh">今天是几号？</span></td><td>Es el quince de marzo.</td></tr>
+          <tr><td><strong>¿Cuál es tu estación favorita?</strong></td><td><span class="lang-en">What's your favorite season?</span><span class="lang-zh">你最喜欢的季节是什么？</span></td><td>Mi estación favorita es el verano.</td></tr>
+          <tr><td><strong>¿Qué vas a hacer mañana?</strong></td><td><span class="lang-en">What are you going to do tomorrow?</span><span class="lang-zh">你明天打算做什么？</span></td><td>Voy a estudiar.</td></tr>
+        </table>
+
+        <h4><span class="lang-en">Practice — Ask the question</span><span class="lang-zh">练习 — 写出问句</span></h4>
+        <p class="lang-en-block">Look at the answer. What was the question?</p>
+        <p class="lang-zh-block">看答案，写出对应的问句。</p>
+        <ol>
+          <li>→ Hace mucho frío hoy.</li>
+          <li>→ Es el dos de mayo.</li>
+          <li>→ Mi estación favorita es el otoño.</li>
+          <li>→ Voy a viajar el sábado.</li>
+        </ol>
+      </div>
+    </details>
+
+    <details class="panel">
+      <summary>
+        <span class="panel-num">7</span>
+        <span class="panel-title"><span class="lang-en">Real-life task</span><span class="lang-zh">真实任务</span></span>
+        <svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg>
+      </summary>
+      <div class="panel-body">
+        <p>📷 <em>Suggested image: a phone weather app open to a real forecast.</em></p>
+
+        <h4><span class="lang-en">Task: This week's real forecast</span><span class="lang-zh">任务：本周真实天气预报</span></h4>
+        <p class="lang-en-block">Check a real weather app for your city. Describe today's actual weather and tomorrow's forecast using "va a", plus say today's date.</p>
+        <p class="lang-zh-block">查看你所在城市的真实天气应用，描述今天的真实天气和明天的预报（用 "va a"），并说出今天的日期。</p>
+      </div>
+    </details>
+
+    <details class="panel">
+      <summary>
+        <span class="panel-num">8</span>
+        <span class="panel-title"><span class="lang-en">Free production</span><span class="lang-zh">自由表达</span></span>
+        <svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg>
+      </summary>
+      <div class="panel-body">
+        <p class="lang-en-block">No script. No word bank. Just you, speaking freely using everything from this unit.</p>
+        <p class="lang-zh-block">没有脚本，没有词汇表。用你在本单元学到的一切自由表达。</p>
+
+        <h4><span class="lang-en">Speaking prompts</span><span class="lang-zh">口语提示</span></h4>
+        <ol class="lang-en-block">
+          <li>Describe the typical weather in your city across all 4 seasons.</li>
+          <li>Say 3 important dates this year and why they matter to you.</li>
+          <li>What are you going to do this weekend?</li>
+          <li>Compare the weather today with the weather a month ago.</li>
+        </ol>
+        <ol class="lang-zh-block">
+          <li>描述你所在城市四个季节的典型天气。</li>
+          <li>说出今年 3 个对你重要的日期，并说明原因。</li>
+          <li>你这周末打算做什么？</li>
+          <li>比较今天的天气和一个月前的天气。</li>
+        </ol>
+      </div>
+    </details>
+
+    <details class="panel">
+      <summary>
+        <span class="panel-num">9</span>
+        <span class="panel-title"><span class="lang-en">Homework</span><span class="lang-zh">课后作业</span></span>
+        <svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg>
+      </summary>
+      <div class="panel-body">
+        <p class="lang-en-block">Choose <strong>one</strong> of the options below. No need to send anything — just do it before the next class.</p>
+        <p class="lang-zh-block">选择以下任一选项。无需发给老师——课前自己完成就好。</p>
+
+        <h4><span class="lang-en">Option A — Receptive</span><span class="lang-zh">选项 A — 听力输入</span></h4>
+        <p class="lang-en-block">Watch a short Spanish weather forecast video online. Write down any weather expressions or dates you hear.</p>
+        <p class="lang-zh-block">在网上看一段西班牙语天气预报短视频，记下你听到的天气表达或日期。</p>
+
+        <h4><span class="lang-en">Option B — Practice exercise</span><span class="lang-zh">选项 B — 书面练习</span></h4>
+        <p class="lang-en-block">Copy the exercise below into your Google Doc and fill in the blanks. Check your answers at the bottom when you are done.</p>
+        <p class="lang-zh-block">将以下练习复制到你的 Google Doc 中并填空。完成后在下方核对答案。</p>
+
+        <div style="background:#f7f5ef; padding:16px; border-radius:8px; margin:12px 0; font-size:14px; line-height:2;">
+          <p><strong>Part 1 — Weather expressions (天气表达)</strong></p>
+          <p>1. ___ calor. (HACER)</p>
+          <p>2. ___ nublado. (ESTAR)</p>
+          <p>3. ___ niebla. (HAY)</p>
+          <p>4. ___ mucho hoy. (llover)</p>
+          <p>5. ___ viento. (HACER)</p>
+
+          <br>
+          <p><strong>Part 2 — Write the date (写出日期)</strong></p>
+          <p>1. January 1 → ___</p>
+          <p>2. March 15 → ___</p>
+          <p>3. July 4 → ___</p>
+          <p>4. December 25 → ___</p>
+          <p>5. May 9 → ___</p>
+        </div>
+
+        <details style="margin-top:8px;">
+          <summary style="cursor:pointer; color:#5a7a32; font-weight:500; font-size:13px;"><span class="lang-en">Show answers</span><span class="lang-zh">查看答案</span></summary>
+          <div style="background:#eef4e4; padding:12px; border-radius:8px; margin-top:8px; font-size:13px; line-height:2;">
+            <p><strong>Part 1:</strong> 1. Hace · 2. Está · 3. Hay · 4. Llueve · 5. Hace</p>
+            <p><strong>Part 2:</strong> 1. el primero de enero · 2. el quince de marzo · 3. el cuatro de julio · 4. el veinticinco de diciembre · 5. el nueve de mayo</p>
+          </div>
+        </details>
+
+        <h4><span class="lang-en">Option C — Creative</span><span class="lang-zh">选项 C — 创意练习</span></h4>
+        <p class="lang-en-block">Draw a 4-panel illustration, one for each season, and label the typical weather in Spanish.</p>
+        <p class="lang-zh-block">画一幅 4 格插图，分别代表四个季节，用西班牙语标注典型天气。</p>
+      </div>
+    </details>
+
   </div>
+
   <div class="unit-nav">
     <a class="prev" href="./quick-check-b.html"><span>←</span><div><span class="nav-label">Previous</span><span class="nav-title">Quick Check B</span></div></a>
     <a class="next" href="./knowledge-check-2.html"><div><span class="nav-label">Next</span><span class="nav-title">Knowledge Check 2</span></div><span>→</span></a>
   </div>
 </main>
+
 <footer class="site-footer">Spanish with Brady · Private use only</footer>
+
+<script>
+function setLang(lang) {
+  if (lang === 'zh') {
+    document.body.classList.add('zh');
+    document.getElementById('btn-zh').style.background = '#5a7a32';
+    document.getElementById('btn-zh').style.color = 'white';
+    document.getElementById('btn-en').style.background = '#f7f5ef';
+    document.getElementById('btn-en').style.color = '#7a6e60';
+  } else {
+    document.body.classList.remove('zh');
+    document.getElementById('btn-en').style.background = '#5a7a32';
+    document.getElementById('btn-en').style.color = 'white';
+    document.getElementById('btn-zh').style.background = '#f7f5ef';
+    document.getElementById('btn-zh').style.color = '#7a6e60';
+  }
+  localStorage.setItem('lang', lang);
+}
+const saved = localStorage.getItem('lang');
+if (saved === 'zh') setLang('zh');
+</script>
+
 </body>
 </html>

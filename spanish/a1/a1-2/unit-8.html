@@ -5,41 +5,348 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Unit 8 · Estados · Spanish with Brady</title>
   <link rel="stylesheet" href="../../../assets/style.css">
+  <style>
+    .lang-zh { display: none; }
+    body.zh .lang-en { display: none; }
+    body.zh .lang-zh { display: inline; }
+    .lang-zh-block { display: none; }
+    body.zh .lang-zh-block { display: block; }
+    body.zh .lang-en-block { display: none; }
+  </style>
 </head>
 <body>
+
 <header class="site-header">
   <a class="site-logo" href="../../../">Spanish with Brady</a>
-  <nav><ul class="site-nav">
-    <li><a href="../../../spanish/" class="active">Spanish</a></li>
-    <li><a href="../../../mandarin/">Mandarin</a></li>
-    <li><a href="#">English</a></li>
-  </ul></nav>
+  <nav>
+    <ul class="site-nav">
+      <li><a href="../../../spanish/" class="active">Spanish</a></li>
+      <li><a href="../../../mandarin/">Mandarin</a></li>
+      <li><a href="#">English</a></li>
+    </ul>
+  </nav>
 </header>
+
 <nav class="breadcrumb">
   <a href="../../../">Home</a><span>›</span><a href="../../../spanish/">Spanish</a><span>›</span><a href="../../../spanish/a1/">A1</a><span>›</span><a href="./index.html">A1.2</a><span>›</span>Unit 8
 </nav>
+
 <main>
+  <div style="display:flex; justify-content:flex-end; padding: 8px 0 0;">
+    <div style="display:flex; gap:0; border:1px solid #e2ddd4; border-radius:6px; overflow:hidden;">
+      <button id="btn-en" onclick="setLang('en')" style="padding:6px 16px; font-size:13px; font-weight:500; border:none; cursor:pointer; background:#5a7a32; color:white;">EN</button>
+      <button id="btn-zh" onclick="setLang('zh')" style="padding:6px 16px; font-size:13px; font-weight:500; border:none; cursor:pointer; background:#f7f5ef; color:#7a6e60;">中文</button>
+    </div>
+  </div>
+
   <div class="unit-header">
     <div class="unit-num">A1.2 · Unit 8</div>
     <h1>Estados</h1>
     <p class="unit-subtitle">Emotions, physical states and ESTAR vs SER</p>
   </div>
+
   <div class="panels">
-    <details class="panel"><summary><span class="panel-num">1</span><span class="panel-title">Hook / Opener</span><svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg></summary><div class="panel-body">Content coming soon</div></details>
-    <details class="panel"><summary><span class="panel-num">2</span><span class="panel-title">Vocabulary</span><svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg></summary><div class="panel-body">Content coming soon</div></details>
-    <details class="panel"><summary><span class="panel-num">3</span><span class="panel-title">Grammar in context</span><svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg></summary><div class="panel-body">Content coming soon</div></details>
-    <details class="panel"><summary><span class="panel-num">4</span><span class="panel-title">Reading or dialogue</span><svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg></summary><div class="panel-body">Content coming soon</div></details>
-    <details class="panel"><summary><span class="panel-num">5</span><span class="panel-title">Controlled practice</span><svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg></summary><div class="panel-body">Content coming soon</div></details>
-    <details class="panel"><summary><span class="panel-num">6</span><span class="panel-title">Question formation</span><svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg></summary><div class="panel-body">Content coming soon</div></details>
-    <details class="panel"><summary><span class="panel-num">7</span><span class="panel-title">Real-life task</span><svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg></summary><div class="panel-body">Content coming soon</div></details>
-    <details class="panel"><summary><span class="panel-num">8</span><span class="panel-title">Free production</span><svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg></summary><div class="panel-body">Content coming soon</div></details>
-    <details class="panel"><summary><span class="panel-num">9</span><span class="panel-title">Homework</span><svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg></summary><div class="panel-body">Content coming soon</div></details>
+
+    <details class="panel">
+      <summary>
+        <span class="panel-num">1</span>
+        <span class="panel-title"><span class="lang-en">Hook / Opener</span><span class="lang-zh">课程导入</span></span>
+        <svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg>
+      </summary>
+      <div class="panel-body">
+        <p>📷 <em>Suggested image: a collage of faces showing different emotions — tired, happy, sick, stressed.</em></p>
+        <p class="lang-en-block">Before we start, think about this: How do you say "I'm tired" or "I'm happy" in Spanish? Is it the same verb for both?</p>
+        <p class="lang-zh-block">开始之前，想一想：用西班牙语怎么说"我累了"或"我很开心"？两者用的是同一个动词吗？</p>
+        <p><strong><span class="lang-en">By the end of this unit you can:</span><span class="lang-zh">完成本单元后，你能够：</span></strong> <span class="lang-en">express physical and emotional states, and handle adjectives whose meaning changes between SER and ESTAR.</span><span class="lang-zh">表达身体和情绪状态，并掌握那些在 SER 和 ESTAR 之间意思会改变的形容词。</span></p>
+      </div>
+    </details>
+
+    <details class="panel">
+      <summary>
+        <span class="panel-num">2</span>
+        <span class="panel-title"><span class="lang-en">Vocabulary</span><span class="lang-zh">词汇</span></span>
+        <svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg>
+      </summary>
+      <div class="panel-body">
+        <h4><span class="lang-en">States (with ESTAR)</span><span class="lang-zh">状态（搭配 ESTAR）</span></h4>
+        <table>
+          <tr><th>Spanish</th><th>English</th><th>中文</th></tr>
+          <tr><td><strong>cansado/a</strong></td><td>tired</td><td>累</td></tr>
+          <tr><td><strong>enfermo/a</strong></td><td>sick</td><td>生病</td></tr>
+          <tr><td><strong>agotado/a</strong></td><td>exhausted</td><td>精疲力竭</td></tr>
+          <tr><td><strong>mareado/a</strong></td><td>dizzy / nauseous</td><td>头晕</td></tr>
+          <tr><td><strong>contento/a</strong></td><td>happy</td><td>开心</td></tr>
+          <tr><td><strong>triste</strong></td><td>sad</td><td>难过</td></tr>
+          <tr><td><strong>nervioso/a</strong></td><td>nervous</td><td>紧张</td></tr>
+          <tr><td><strong>enfadado/a</strong></td><td>angry</td><td>生气</td></tr>
+          <tr><td><strong>estresado/a</strong></td><td>stressed</td><td>有压力</td></tr>
+          <tr><td><strong>preocupado/a</strong></td><td>worried</td><td>担心</td></tr>
+        </table>
+
+        <h4><span class="lang-en">Physical sensations (with TENER)</span><span class="lang-zh">身体感受（搭配 TENER）</span></h4>
+        <table>
+          <tr><th>Spanish</th><th>English</th><th>中文</th></tr>
+          <tr><td><strong>tener hambre</strong></td><td>to be hungry</td><td>饿了</td></tr>
+          <tr><td><strong>tener sed</strong></td><td>to be thirsty</td><td>渴了</td></tr>
+          <tr><td><strong>tener sueño</strong></td><td>to be sleepy</td><td>困了</td></tr>
+          <tr><td><strong>tener frío</strong></td><td>to be cold</td><td>冷</td></tr>
+          <tr><td><strong>tener calor</strong></td><td>to be hot</td><td>热</td></tr>
+          <tr><td><strong>tener miedo</strong></td><td>to be afraid</td><td>害怕</td></tr>
+          <tr><td><strong>tener dolor</strong></td><td>to be in pain</td><td>疼痛</td></tr>
+        </table>
+      </div>
+    </details>
+
+    <details class="panel">
+      <summary>
+        <span class="panel-num">3</span>
+        <span class="panel-title"><span class="lang-en">Grammar in context</span><span class="lang-zh">语法讲解</span></span>
+        <svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg>
+      </summary>
+      <div class="panel-body">
+        <h4><span class="lang-en">ESTAR + adjective for temporary states</span><span class="lang-zh">ESTAR + 形容词表示临时状态</span></h4>
+        <p class="lang-en-block">Quick test: can it change tomorrow? If yes, use ESTAR. "Estoy cansado" — tomorrow I might not be tired anymore.</p>
+        <p class="lang-zh-block">快速判断法：明天会变吗？如果会变，就用 ESTAR。"Estoy cansado"——明天我可能就不累了。</p>
+
+        <h4><span class="lang-en">Doble significado — adjectives that change meaning</span><span class="lang-zh">双重含义——随 SER/ESTAR 改变意思的形容词</span></h4>
+        <table>
+          <tr><th><span class="lang-en">Adjective</span><span class="lang-zh">形容词</span></th><th>SER</th><th>ESTAR</th></tr>
+          <tr><td><strong>aburrido/a</strong></td><td><span class="lang-en">boring</span><span class="lang-zh">无聊的（性质）</span></td><td><span class="lang-en">bored</span><span class="lang-zh">感到无聊（状态）</span></td></tr>
+          <tr><td><strong>malo/a</strong></td><td><span class="lang-en">bad (character)</span><span class="lang-zh">坏（本质）</span></td><td><span class="lang-en">sick / tastes bad right now</span><span class="lang-zh">生病了/现在味道不好</span></td></tr>
+          <tr><td><strong>bueno/a</strong></td><td><span class="lang-en">good (character)</span><span class="lang-zh">好（本质）</span></td><td><span class="lang-en">tastes good right now</span><span class="lang-zh">现在味道很好</span></td></tr>
+          <tr><td><strong>listo/a</strong></td><td><span class="lang-en">clever</span><span class="lang-zh">聪明</span></td><td><span class="lang-en">ready</span><span class="lang-zh">准备好了</span></td></tr>
+          <tr><td><strong>seguro/a</strong></td><td><span class="lang-en">safe</span><span class="lang-zh">安全的</span></td><td><span class="lang-en">sure / certain</span><span class="lang-zh">确定的</span></td></tr>
+          <tr><td><strong>rico/a</strong></td><td><span class="lang-en">rich (wealthy)</span><span class="lang-zh">富有的</span></td><td><span class="lang-en">delicious right now</span><span class="lang-zh">现在很好吃</span></td></tr>
+          <tr><td><strong>vivo/a</strong></td><td><span class="lang-en">sharp, clever</span><span class="lang-zh">机灵的</span></td><td><span class="lang-en">alive</span><span class="lang-zh">活着</span></td></tr>
+          <tr><td><strong>muerto/a</strong></td><td><span class="lang-en">(not used with SER)</span><span class="lang-zh">（不与 SER 搭配）</span></td><td><span class="lang-en">dead / exhausted (colloquial)</span><span class="lang-zh">死了/（口语）累死了</span></td></tr>
+        </table>
+
+        <p class="lang-en-block">⚠️ <strong>Important correction:</strong> "Estoy caliente" does NOT mean "I'm hot (temperature)" — it has a different, colloquial meaning. For physical heat, always say "Tengo calor".</p>
+        <p class="lang-zh-block">⚠️ <strong>重要更正：</strong>"Estoy caliente" 并不表示"我很热（气温）"——它有另一种口语含义。表达身体感觉热，永远要说 "Tengo calor"。</p>
+      </div>
+    </details>
+
+    <details class="panel">
+      <summary>
+        <span class="panel-num">4</span>
+        <span class="panel-title"><span class="lang-en">Reading or dialogue</span><span class="lang-zh">阅读与对话</span></span>
+        <svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg>
+      </summary>
+      <div class="panel-body">
+        <p>📷 <em>Suggested image: a phone screen, a text conversation between two friends.</em></p>
+
+        <h4>¿Cómo estás hoy?</h4>
+        <p class="lang-en-block">Carlos checks in on Sara, who isn't feeling well.</p>
+        <p class="lang-zh-block">Carlos 关心 Sara，她今天感觉不太好。</p>
+
+        <div class="dialogue">
+          <p><strong>Carlos:</strong> Hola Sara, ¿cómo estás hoy?</p>
+          <p><strong>Sara:</strong> Estoy un poco mareada y tengo dolor de cabeza.</p>
+          <p><strong>Carlos:</strong> ¡Vaya! ¿Estás enferma?</p>
+          <p><strong>Sara:</strong> Creo que sí. También tengo mucho sueño.</p>
+          <p><strong>Carlos:</strong> ¿Tienes hambre? Te traigo algo de comer.</p>
+          <p><strong>Sara:</strong> No, gracias, no tengo hambre ahora. Solo estoy cansada.</p>
+          <p><strong>Carlos:</strong> Vale, descansa. ¿Estás nerviosa por el examen también?</p>
+          <p><strong>Sara:</strong> Un poco, sí. Pero estoy lista para mañana.</p>
+        </div>
+
+        <h4><span class="lang-en">Comprehension questions</span><span class="lang-zh">理解问题</span></h4>
+        <ol>
+          <li>¿Cómo está Sara?</li>
+          <li>¿Qué le duele a Sara?</li>
+          <li>¿Tiene hambre Sara?</li>
+          <li>¿Está lista Sara para el examen?</li>
+        </ol>
+      </div>
+    </details>
+
+    <details class="panel">
+      <summary>
+        <span class="panel-num">5</span>
+        <span class="panel-title"><span class="lang-en">Controlled practice</span><span class="lang-zh">强化练习</span></span>
+        <svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg>
+      </summary>
+      <div class="panel-body">
+        <h4><span class="lang-en">Exercise 1 — ESTAR or TENER?</span><span class="lang-zh">练习一 — ESTAR 还是 TENER？</span></h4>
+        <ol>
+          <li>Yo ___ cansado.</li>
+          <li>Ella ___ hambre.</li>
+          <li>Nosotros ___ frío.</li>
+          <li>Tú ___ contento.</li>
+          <li>Ellos ___ sueño.</li>
+          <li>Usted ___ estresado.</li>
+        </ol>
+
+        <h4><span class="lang-en">Exercise 2 — SER or ESTAR (doble significado)</span><span class="lang-zh">练习二 — SER 还是 ESTAR（双重含义）</span></h4>
+        <ol>
+          <li>Esta película ___ muy aburrida. (boring)</li>
+          <li>Yo ___ aburrido en clase hoy. (bored)</li>
+          <li>Wei ___ muy listo, siempre saca buenas notas. (clever)</li>
+          <li>¿___ listo para salir? (ready)</li>
+          <li>Esta sopa ___ riquísima. (tastes delicious)</li>
+          <li>Mi tío ___ muy rico, tiene tres casas. (wealthy)</li>
+        </ol>
+
+        <h4><span class="lang-en">Exercise 3 — Find the error</span><span class="lang-zh">练习三 — 找出错误</span></h4>
+        <ol>
+          <li>Tengo cansado. → ___</li>
+          <li>Estoy hambre. → ___</li>
+          <li>Soy mareado hoy. → ___</li>
+          <li>Estoy caliente porque hace mucho sol. → ___</li>
+          <li>Ella tiene triste. → ___</li>
+        </ol>
+      </div>
+    </details>
+
+    <details class="panel">
+      <summary>
+        <span class="panel-num">6</span>
+        <span class="panel-title"><span class="lang-en">Question formation</span><span class="lang-zh">如何提问</span></span>
+        <svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg>
+      </summary>
+      <div class="panel-body">
+        <h4><span class="lang-en">Questions for this unit</span><span class="lang-zh">本单元问句</span></h4>
+        <table>
+          <tr><th><span class="lang-en">Question</span><span class="lang-zh">问句</span></th><th><span class="lang-en">Meaning</span><span class="lang-zh">意思</span></th><th><span class="lang-en">Typical answer</span><span class="lang-zh">常见回答</span></th></tr>
+          <tr><td><strong>¿Cómo estás?</strong></td><td><span class="lang-en">How are you (feeling)?</span><span class="lang-zh">你感觉怎么样？</span></td><td>Estoy un poco cansado.</td></tr>
+          <tr><td><strong>¿Qué te pasa?</strong></td><td><span class="lang-en">What's wrong?</span><span class="lang-zh">你怎么了？</span></td><td>Tengo dolor de cabeza.</td></tr>
+          <tr><td><strong>¿Tienes hambre/sed/sueño?</strong></td><td><span class="lang-en">Are you hungry/thirsty/sleepy?</span><span class="lang-zh">你饿/渴/困了吗？</span></td><td>Sí, tengo mucha hambre.</td></tr>
+          <tr><td><strong>¿Por qué estás...?</strong></td><td><span class="lang-en">Why are you...?</span><span class="lang-zh">你为什么……？</span></td><td>Estoy nervioso por el examen.</td></tr>
+        </table>
+
+        <h4><span class="lang-en">Practice — Ask the question</span><span class="lang-zh">练习 — 写出问句</span></h4>
+        <p class="lang-en-block">Look at the answer. What was the question?</p>
+        <p class="lang-zh-block">看答案，写出对应的问句。</p>
+        <ol>
+          <li>→ Estoy estresado por el trabajo.</li>
+          <li>→ Sí, tengo mucho frío.</li>
+          <li>→ Tengo dolor de estómago.</li>
+          <li>→ Estoy contenta, gracias.</li>
+        </ol>
+      </div>
+    </details>
+
+    <details class="panel">
+      <summary>
+        <span class="panel-num">7</span>
+        <span class="panel-title"><span class="lang-en">Real-life task</span><span class="lang-zh">真实任务</span></span>
+        <svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg>
+      </summary>
+      <div class="panel-body">
+        <p>📷 <em>Suggested image: an emoji keyboard with different facial expressions.</em></p>
+
+        <h4><span class="lang-en">Task: How do you feel right now?</span><span class="lang-zh">任务：你现在感觉如何？</span></h4>
+        <p class="lang-en-block">Right now, in this exact moment, say how you feel using at least 3 different expressions from this unit (mixing ESTAR and TENER).</p>
+        <p class="lang-zh-block">就在此刻，用本单元至少 3 种不同的表达方式（混合 ESTAR 和 TENER）说出你现在的感受。</p>
+        <p><em>Example: "Ahora mismo estoy un poco cansado, tengo sed y estoy contento porque es viernes."</em></p>
+      </div>
+    </details>
+
+    <details class="panel">
+      <summary>
+        <span class="panel-num">8</span>
+        <span class="panel-title"><span class="lang-en">Free production</span><span class="lang-zh">自由表达</span></span>
+        <svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg>
+      </summary>
+      <div class="panel-body">
+        <p class="lang-en-block">No script. No word bank. Just you, speaking freely using everything from this unit.</p>
+        <p class="lang-zh-block">没有脚本，没有词汇表。用你在本单元学到的一切自由表达。</p>
+
+        <h4><span class="lang-en">Speaking prompts</span><span class="lang-zh">口语提示</span></h4>
+        <ol class="lang-en-block">
+          <li>Describe how you usually feel on a Monday morning vs. a Friday evening.</li>
+          <li>Tell your teacher about a time you were really nervous about something.</li>
+          <li>Describe 3 doble significado adjectives and give one example sentence for each meaning.</li>
+          <li>What makes you feel stressed? What makes you feel happy?</li>
+        </ol>
+        <ol class="lang-zh-block">
+          <li>描述你周一早上和周五晚上通常的感受有什么不同。</li>
+          <li>告诉老师一次你对某事感到非常紧张的经历。</li>
+          <li>描述 3 个双重含义形容词，并为每个意思各举一个例句。</li>
+          <li>什么会让你感到有压力？什么会让你感到开心？</li>
+        </ol>
+      </div>
+    </details>
+
+    <details class="panel">
+      <summary>
+        <span class="panel-num">9</span>
+        <span class="panel-title"><span class="lang-en">Homework</span><span class="lang-zh">课后作业</span></span>
+        <svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg>
+      </summary>
+      <div class="panel-body">
+        <p class="lang-en-block">Choose <strong>one</strong> of the options below. No need to send anything — just do it before the next class.</p>
+        <p class="lang-zh-block">选择以下任一选项。无需发给老师——课前自己完成就好。</p>
+
+        <h4><span class="lang-en">Option A — Receptive</span><span class="lang-zh">选项 A — 听力输入</span></h4>
+        <p class="lang-en-block">Watch a short Spanish video where someone describes how they feel. Write down any ESTAR or TENER expressions you hear.</p>
+        <p class="lang-zh-block">看一段西班牙语视频，其中有人描述自己的感受，记下你听到的 ESTAR 或 TENER 表达。</p>
+
+        <h4><span class="lang-en">Option B — Practice exercise</span><span class="lang-zh">选项 B — 书面练习</span></h4>
+        <p class="lang-en-block">Copy the exercise below into your Google Doc and fill in the blanks. Check your answers at the bottom when you are done.</p>
+        <p class="lang-zh-block">将以下练习复制到你的 Google Doc 中并填空。完成后在下方核对答案。</p>
+
+        <div style="background:#f7f5ef; padding:16px; border-radius:8px; margin:12px 0; font-size:14px; line-height:2;">
+          <p><strong>Part 1 — ESTAR or TENER (ESTAR 还是 TENER)</strong></p>
+          <p>1. Yo ___ cansado.</p>
+          <p>2. Ella ___ hambre.</p>
+          <p>3. Nosotros ___ frío.</p>
+          <p>4. Tú ___ nervioso.</p>
+          <p>5. Ellos ___ sueño.</p>
+
+          <br>
+          <p><strong>Part 2 — Doble significado (双重含义)</strong></p>
+          <p>1. Esta clase ___ aburrida. (boring)</p>
+          <p>2. Yo ___ aburrido hoy. (bored)</p>
+          <p>3. ¿___ listo? (ready)</p>
+          <p>4. Mi abuelo ___ muy listo. (clever)</p>
+          <p>5. Esta comida ___ riquísima. (delicious)</p>
+        </div>
+
+        <details style="margin-top:8px;">
+          <summary style="cursor:pointer; color:#5a7a32; font-weight:500; font-size:13px;"><span class="lang-en">Show answers</span><span class="lang-zh">查看答案</span></summary>
+          <div style="background:#eef4e4; padding:12px; border-radius:8px; margin-top:8px; font-size:13px; line-height:2;">
+            <p><strong>Part 1:</strong> 1. estoy · 2. tiene · 3. tenemos · 4. estás · 5. tienen</p>
+            <p><strong>Part 2:</strong> 1. es · 2. estoy · 3. Estás · 4. es · 5. está</p>
+          </div>
+        </details>
+
+        <h4><span class="lang-en">Option C — Creative</span><span class="lang-zh">选项 C — 创意练习</span></h4>
+        <p class="lang-en-block">Draw 5 emoji faces and label each one with a Spanish state or feeling word.</p>
+        <p class="lang-zh-block">画 5 个表情符号，并用西班牙语标注每个对应的状态或情绪词。</p>
+      </div>
+    </details>
+
   </div>
+
   <div class="unit-nav">
     <a class="prev" href="../a1-1/knowledge-check-1.html"><span>←</span><div><span class="nav-label">Previous</span><span class="nav-title">Knowledge Check 1</span></div></a>
     <a class="next" href="./unit-9.html"><div><span class="nav-label">Next</span><span class="nav-title">Unit 9 · La Semana</span></div><span>→</span></a>
   </div>
 </main>
+
 <footer class="site-footer">Spanish with Brady · Private use only</footer>
+
+<script>
+function setLang(lang) {
+  if (lang === 'zh') {
+    document.body.classList.add('zh');
+    document.getElementById('btn-zh').style.background = '#5a7a32';
+    document.getElementById('btn-zh').style.color = 'white';
+    document.getElementById('btn-en').style.background = '#f7f5ef';
+    document.getElementById('btn-en').style.color = '#7a6e60';
+  } else {
+    document.body.classList.remove('zh');
+    document.getElementById('btn-en').style.background = '#5a7a32';
+    document.getElementById('btn-en').style.color = 'white';
+    document.getElementById('btn-zh').style.background = '#f7f5ef';
+    document.getElementById('btn-zh').style.color = '#7a6e60';
+  }
+  localStorage.setItem('lang', lang);
+}
+const saved = localStorage.getItem('lang');
+if (saved === 'zh') setLang('zh');
+</script>
+
 </body>
 </html>

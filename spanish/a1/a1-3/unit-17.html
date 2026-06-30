@@ -5,41 +5,369 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Unit 17 · Salud · Spanish with Brady</title>
   <link rel="stylesheet" href="../../../assets/style.css">
+  <style>
+    .lang-zh { display: none; }
+    body.zh .lang-en { display: none; }
+    body.zh .lang-zh { display: inline; }
+    .lang-zh-block { display: none; }
+    body.zh .lang-zh-block { display: block; }
+    body.zh .lang-en-block { display: none; }
+  </style>
 </head>
 <body>
+
 <header class="site-header">
   <a class="site-logo" href="../../../">Spanish with Brady</a>
-  <nav><ul class="site-nav">
-    <li><a href="../../../spanish/" class="active">Spanish</a></li>
-    <li><a href="../../../mandarin/">Mandarin</a></li>
-    <li><a href="#">English</a></li>
-  </ul></nav>
+  <nav>
+    <ul class="site-nav">
+      <li><a href="../../../spanish/" class="active">Spanish</a></li>
+      <li><a href="../../../mandarin/">Mandarin</a></li>
+      <li><a href="#">English</a></li>
+    </ul>
+  </nav>
 </header>
+
 <nav class="breadcrumb">
   <a href="../../../">Home</a><span>›</span><a href="../../../spanish/">Spanish</a><span>›</span><a href="../../../spanish/a1/">A1</a><span>›</span><a href="./index.html">A1.3</a><span>›</span>Unit 17
 </nav>
+
 <main>
+  <div style="display:flex; justify-content:flex-end; padding: 8px 0 0;">
+    <div style="display:flex; gap:0; border:1px solid #e2ddd4; border-radius:6px; overflow:hidden;">
+      <button id="btn-en" onclick="setLang('en')" style="padding:6px 16px; font-size:13px; font-weight:500; border:none; cursor:pointer; background:#5a7a32; color:white;">EN</button>
+      <button id="btn-zh" onclick="setLang('zh')" style="padding:6px 16px; font-size:13px; font-weight:500; border:none; cursor:pointer; background:#f7f5ef; color:#7a6e60;">中文</button>
+    </div>
+  </div>
+
   <div class="unit-header">
     <div class="unit-num">A1.3 · Unit 17</div>
     <h1>Salud</h1>
-    <p class="unit-subtitle">The body and health: the verb DOLER</p>
+    <p class="unit-subtitle">Body parts, symptoms and DOLER</p>
   </div>
+
   <div class="panels">
-    <details class="panel"><summary><span class="panel-num">1</span><span class="panel-title">Hook / Opener</span><svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg></summary><div class="panel-body">Content coming soon</div></details>
-    <details class="panel"><summary><span class="panel-num">2</span><span class="panel-title">Vocabulary</span><svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg></summary><div class="panel-body">Content coming soon</div></details>
-    <details class="panel"><summary><span class="panel-num">3</span><span class="panel-title">Grammar in context</span><svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg></summary><div class="panel-body">Content coming soon</div></details>
-    <details class="panel"><summary><span class="panel-num">4</span><span class="panel-title">Reading or dialogue</span><svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg></summary><div class="panel-body">Content coming soon</div></details>
-    <details class="panel"><summary><span class="panel-num">5</span><span class="panel-title">Controlled practice</span><svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg></summary><div class="panel-body">Content coming soon</div></details>
-    <details class="panel"><summary><span class="panel-num">6</span><span class="panel-title">Question formation</span><svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg></summary><div class="panel-body">Content coming soon</div></details>
-    <details class="panel"><summary><span class="panel-num">7</span><span class="panel-title">Real-life task</span><svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg></summary><div class="panel-body">Content coming soon</div></details>
-    <details class="panel"><summary><span class="panel-num">8</span><span class="panel-title">Free production</span><svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg></summary><div class="panel-body">Content coming soon</div></details>
-    <details class="panel"><summary><span class="panel-num">9</span><span class="panel-title">Homework</span><svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg></summary><div class="panel-body">Content coming soon</div></details>
+
+    <details class="panel">
+      <summary>
+        <span class="panel-num">1</span>
+        <span class="panel-title"><span class="lang-en">Hook / Opener</span><span class="lang-zh">课程导入</span></span>
+        <svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg>
+      </summary>
+      <div class="panel-body">
+        <p>📷 <em>Suggested image: a simple labeled diagram of a human body.</em></p>
+        <p class="lang-en-block">Before we start, think about this: How do you tell a doctor what hurts? Do you know the Spanish words for any body parts already?</p>
+        <p class="lang-zh-block">开始之前，想一想：你怎么告诉医生哪里疼？你已经知道一些身体部位的西班牙语单词了吗？</p>
+        <p><strong><span class="lang-en">By the end of this unit you can:</span><span class="lang-zh">完成本单元后，你能够：</span></strong> <span class="lang-en">name body parts, describe symptoms, and have a basic medical conversation.</span><span class="lang-zh">说出身体部位的名称，描述症状，并进行基本的就医对话。</span></p>
+      </div>
+    </details>
+
+    <details class="panel">
+      <summary>
+        <span class="panel-num">2</span>
+        <span class="panel-title"><span class="lang-en">Vocabulary</span><span class="lang-zh">词汇</span></span>
+        <svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg>
+      </summary>
+      <div class="panel-body">
+        <h4><span class="lang-en">Head zone</span><span class="lang-zh">头部</span></h4>
+        <table>
+          <tr><th>Spanish</th><th>English</th><th>中文</th></tr>
+          <tr><td><strong>la cabeza</strong></td><td>head</td><td>头</td></tr>
+          <tr><td><strong>los ojos</strong></td><td>eyes</td><td>眼睛</td></tr>
+          <tr><td><strong>la nariz</strong></td><td>nose</td><td>鼻子</td></tr>
+          <tr><td><strong>la boca</strong></td><td>mouth</td><td>嘴</td></tr>
+          <tr><td><strong>los dientes</strong></td><td>teeth</td><td>牙齿</td></tr>
+          <tr><td><strong>la garganta</strong></td><td>throat</td><td>喉咙</td></tr>
+        </table>
+
+        <h4><span class="lang-en">Torso zone</span><span class="lang-zh">躯干</span></h4>
+        <table>
+          <tr><th>Spanish</th><th>English</th><th>中文</th></tr>
+          <tr><td><strong>el hombro</strong></td><td>shoulder</td><td>肩膀</td></tr>
+          <tr><td><strong>el brazo</strong></td><td>arm</td><td>手臂</td></tr>
+          <tr><td><strong>la mano</strong></td><td>hand</td><td>手</td></tr>
+          <tr><td><strong>la espalda</strong></td><td>back</td><td>背</td></tr>
+          <tr><td><strong>el estómago</strong></td><td>stomach</td><td>胃</td></tr>
+        </table>
+
+        <h4><span class="lang-en">Legs zone</span><span class="lang-zh">腿部</span></h4>
+        <table>
+          <tr><th>Spanish</th><th>English</th><th>中文</th></tr>
+          <tr><td><strong>la pierna</strong></td><td>leg</td><td>腿</td></tr>
+          <tr><td><strong>la rodilla</strong></td><td>knee</td><td>膝盖</td></tr>
+          <tr><td><strong>el pie</strong></td><td>foot</td><td>脚</td></tr>
+        </table>
+
+        <h4><span class="lang-en">Symptoms</span><span class="lang-zh">症状</span></h4>
+        <table>
+          <tr><th>Spanish</th><th>English</th><th>中文</th></tr>
+          <tr><td><strong>dolor de cabeza</strong></td><td>headache</td><td>头疼</td></tr>
+          <tr><td><strong>fiebre</strong></td><td>fever</td><td>发烧</td></tr>
+          <tr><td><strong>tos</strong></td><td>cough</td><td>咳嗽</td></tr>
+          <tr><td><strong>catarro</strong></td><td>cold</td><td>感冒</td></tr>
+          <tr><td><strong>mareo</strong></td><td>dizziness</td><td>头晕</td></tr>
+        </table>
+      </div>
+    </details>
+
+    <details class="panel">
+      <summary>
+        <span class="panel-num">3</span>
+        <span class="panel-title"><span class="lang-en">Grammar in context</span><span class="lang-zh">语法讲解</span></span>
+        <svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg>
+      </summary>
+      <div class="panel-body">
+        <h4><span class="lang-en">DOLER — works exactly like GUSTAR</span><span class="lang-zh">DOLER——用法和 GUSTAR 完全一样</span></h4>
+        <p class="lang-en-block">💡 Great news — this is an easy win! Review Unit 12: the body part is the subject, and the person is the indirect object.</p>
+        <p class="lang-zh-block">💡 好消息——这是一个轻松就能掌握的点！复习第 12 单元：身体部位是主语，人是间接宾语。</p>
+        <table>
+          <tr><th><span class="lang-en">OI pronoun</span><span class="lang-zh">间接宾语代词</span></th><th>DUELE <span class="lang-en">(singular)</span><span class="lang-zh">（单数）</span></th><th>DUELEN <span class="lang-en">(plural)</span><span class="lang-zh">（复数）</span></th></tr>
+          <tr><td><strong>me</strong></td><td>Me duele la cabeza.</td><td>Me duelen los pies.</td></tr>
+          <tr><td><strong>te</strong></td><td>Te duele el estómago.</td><td>Te duelen las piernas.</td></tr>
+          <tr><td><strong>le</strong></td><td>Le duele la espalda.</td><td>Le duelen los ojos.</td></tr>
+          <tr><td><strong>nos</strong></td><td>Nos duele la garganta.</td><td>Nos duelen las manos.</td></tr>
+          <tr><td><strong>os</strong></td><td>Os duele la cabeza.</td><td>Os duelen los dientes.</td></tr>
+          <tr><td><strong>les</strong></td><td>Les duele el brazo.</td><td>Les duelen las rodillas.</td></tr>
+        </table>
+
+        <h4><span class="lang-en">Parallel structures for health</span><span class="lang-zh">健康表达的平行结构</span></h4>
+        <table>
+          <tr><th><span class="lang-en">Structure</span><span class="lang-zh">结构</span></th><th><span class="lang-en">Use</span><span class="lang-zh">用途</span></th><th><span class="lang-en">Example</span><span class="lang-zh">例句</span></th></tr>
+          <tr><td>ESTAR + adj</td><td><span class="lang-en">General health state</span><span class="lang-zh">总体健康状态</span></td><td>Estoy enfermo.</td></tr>
+          <tr><td>TENER + noun</td><td><span class="lang-en">Concrete symptom</span><span class="lang-zh">具体症状</span></td><td>Tengo fiebre.</td></tr>
+          <tr><td>HAY QUE / TENER QUE</td><td><span class="lang-en">Medical advice</span><span class="lang-zh">医疗建议</span></td><td>Tienes que descansar. Hay que beber agua.</td></tr>
+        </table>
+
+        <h4><span class="lang-en">Symptom duration</span><span class="lang-zh">症状持续时间</span></h4>
+        <p class="lang-en-block">Use "hace + time + que" to express how long a symptom has lasted.</p>
+        <p class="lang-zh-block">用 "hace + 时间 + que" 表达症状持续了多久。</p>
+        <table>
+          <tr><th>Spanish</th><th>English</th></tr>
+          <tr><td><strong>¿Desde cuándo te duele?</strong></td><td>Since when does it hurt?</td></tr>
+          <tr><td><strong>Hace tres días que me duele.</strong></td><td>It's hurt for three days.</td></tr>
+        </table>
+      </div>
+    </details>
+
+    <details class="panel">
+      <summary>
+        <span class="panel-num">4</span>
+        <span class="panel-title"><span class="lang-en">Reading or dialogue</span><span class="lang-zh">阅读与对话</span></span>
+        <svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg>
+      </summary>
+      <div class="panel-body">
+        <p>📷 <em>Suggested image: a video call between a patient and a doctor.</em></p>
+
+        <h4>En la consulta</h4>
+        <p class="lang-en-block">Sara doesn't feel well and talks to the doctor (Ming) over video call.</p>
+        <p class="lang-zh-block">Sara 感觉不舒服，通过视频通话与医生（Ming）交流。</p>
+
+        <div class="dialogue">
+          <p><strong>Ming (médica):</strong> Hola Sara, ¿qué le pasa?</p>
+          <p><strong>Sara:</strong> Me duele mucho la cabeza y tengo fiebre.</p>
+          <p><strong>Ming:</strong> ¿Desde cuándo le duele la cabeza?</p>
+          <p><strong>Sara:</strong> Hace dos días que me duele.</p>
+          <p><strong>Ming:</strong> ¿Tiene tos o catarro también?</p>
+          <p><strong>Sara:</strong> Sí, tengo un poco de tos.</p>
+          <p><strong>Ming:</strong> Tiene que descansar y beber mucha agua.</p>
+          <p><strong>Sara:</strong> Vale, gracias doctora. ¿Hay que tomar medicina?</p>
+        </div>
+
+        <h4><span class="lang-en">Comprehension questions</span><span class="lang-zh">理解问题</span></h4>
+        <ol>
+          <li>¿Qué le duele a Sara?</li>
+          <li>¿Desde cuándo le duele la cabeza?</li>
+          <li>¿Tiene tos Sara?</li>
+          <li>¿Qué tiene que hacer Sara?</li>
+        </ol>
+      </div>
+    </details>
+
+    <details class="panel">
+      <summary>
+        <span class="panel-num">5</span>
+        <span class="panel-title"><span class="lang-en">Controlled practice</span><span class="lang-zh">强化练习</span></span>
+        <svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg>
+      </summary>
+      <div class="panel-body">
+        <h4><span class="lang-en">Exercise 1 — Complete with duele or duelen</span><span class="lang-zh">练习一 — 用 duele 或 duelen 填空</span></h4>
+        <ol>
+          <li>Me ___ la cabeza.</li>
+          <li>Te ___ los pies.</li>
+          <li>Le ___ el estómago.</li>
+          <li>Nos ___ las piernas.</li>
+          <li>Les ___ la espalda.</li>
+          <li>Me ___ los ojos.</li>
+        </ol>
+
+        <h4><span class="lang-en">Exercise 2 — ESTAR, TENER or DOLER?</span><span class="lang-zh">练习二 — ESTAR、TENER 还是 DOLER？</span></h4>
+        <ol>
+          <li>Yo ___ enfermo.</li>
+          <li>Ella ___ fiebre.</li>
+          <li>A mí me ___ la garganta.</li>
+          <li>Nosotros ___ catarro.</li>
+          <li>A él le ___ las rodillas.</li>
+          <li>Tú ___ cansado.</li>
+        </ol>
+
+        <h4><span class="lang-en">Exercise 3 — Find the error</span><span class="lang-zh">练习三 — 找出错误</span></h4>
+        <ol>
+          <li>Me duelo la cabeza. → ___</li>
+          <li>Tengo dolor cabeza. (missing word) → ___</li>
+          <li>Te duele los pies. → ___</li>
+          <li>Ella tiene la fiebre. → ___</li>
+          <li>Hay que descansas. → ___</li>
+        </ol>
+      </div>
+    </details>
+
+    <details class="panel">
+      <summary>
+        <span class="panel-num">6</span>
+        <span class="panel-title"><span class="lang-en">Question formation</span><span class="lang-zh">如何提问</span></span>
+        <svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg>
+      </summary>
+      <div class="panel-body">
+        <h4><span class="lang-en">Questions for this unit</span><span class="lang-zh">本单元问句</span></h4>
+        <table>
+          <tr><th><span class="lang-en">Question</span><span class="lang-zh">问句</span></th><th><span class="lang-en">Meaning</span><span class="lang-zh">意思</span></th><th><span class="lang-en">Typical answer</span><span class="lang-zh">常见回答</span></th></tr>
+          <tr><td><strong>¿Qué te pasa?</strong></td><td><span class="lang-en">What's wrong?</span><span class="lang-zh">你怎么了？</span></td><td>Me duele la cabeza.</td></tr>
+          <tr><td><strong>¿Qué te duele?</strong></td><td><span class="lang-en">What hurts?</span><span class="lang-zh">哪里疼？</span></td><td>Me duele el estómago.</td></tr>
+          <tr><td><strong>¿Desde cuándo te duele?</strong></td><td><span class="lang-en">Since when has it hurt?</span><span class="lang-zh">疼多久了？</span></td><td>Hace dos días.</td></tr>
+          <tr><td><strong>¿Tienes fiebre?</strong></td><td><span class="lang-en">Do you have a fever?</span><span class="lang-zh">你发烧吗？</span></td><td>Sí, un poco.</td></tr>
+        </table>
+
+        <h4><span class="lang-en">Practice — Ask the question</span><span class="lang-zh">练习 — 写出问句</span></h4>
+        <p class="lang-en-block">Look at the answer. What was the question?</p>
+        <p class="lang-zh-block">看答案，写出对应的问句。</p>
+        <ol>
+          <li>→ Me duele mucho la garganta.</li>
+          <li>→ Hace tres días que me duele.</li>
+          <li>→ Sí, tengo bastante fiebre.</li>
+          <li>→ Tienes que descansar y beber agua.</li>
+        </ol>
+      </div>
+    </details>
+
+    <details class="panel">
+      <summary>
+        <span class="panel-num">7</span>
+        <span class="panel-title"><span class="lang-en">Real-life task</span><span class="lang-zh">真实任务</span></span>
+        <svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg>
+      </summary>
+      <div class="panel-body">
+        <p>📷 <em>Suggested image: a pharmacy storefront sign.</em></p>
+
+        <h4><span class="lang-en">Task: Describe a real symptom</span><span class="lang-zh">任务：描述一个真实的症状</span></h4>
+        <p class="lang-en-block">Think of a time you were sick. Describe what hurt, how long it lasted, and what you had to do — using DOLER, TENER, and TENER QUE.</p>
+        <p class="lang-zh-block">回想一次你生病的经历。描述哪里疼、持续了多久，以及你必须做什么——使用 DOLER、TENER 和 TENER QUE。</p>
+      </div>
+    </details>
+
+    <details class="panel">
+      <summary>
+        <span class="panel-num">8</span>
+        <span class="panel-title"><span class="lang-en">Free production</span><span class="lang-zh">自由表达</span></span>
+        <svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg>
+      </summary>
+      <div class="panel-body">
+        <p class="lang-en-block">No script. No word bank. Just you, speaking freely using everything from this unit.</p>
+        <p class="lang-zh-block">没有脚本，没有词汇表。用你在本单元学到的一切自由表达。</p>
+
+        <h4><span class="lang-en">Speaking prompts</span><span class="lang-zh">口语提示</span></h4>
+        <ol class="lang-en-block">
+          <li>Describe a common cold from start to finish, symptom by symptom.</li>
+          <li>Give 3 pieces of health advice using "hay que" or "tienes que".</li>
+          <li>Roleplay calling a doctor's office to describe your symptoms.</li>
+          <li>What do you do when you have a headache?</li>
+        </ol>
+        <ol class="lang-zh-block">
+          <li>从头到尾描述一次普通感冒，逐一描述症状。</li>
+          <li>用 "hay que" 或 "tienes que" 给出 3 条健康建议。</li>
+          <li>角色扮演打电话给诊所描述你的症状。</li>
+          <li>你头疼的时候会做什么？</li>
+        </ol>
+      </div>
+    </details>
+
+    <details class="panel">
+      <summary>
+        <span class="panel-num">9</span>
+        <span class="panel-title"><span class="lang-en">Homework</span><span class="lang-zh">课后作业</span></span>
+        <svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg>
+      </summary>
+      <div class="panel-body">
+        <p class="lang-en-block">Choose <strong>one</strong> of the options below. No need to send anything — just do it before the next class.</p>
+        <p class="lang-zh-block">选择以下任一选项。无需发给老师——课前自己完成就好。</p>
+
+        <h4><span class="lang-en">Option A — Receptive</span><span class="lang-zh">选项 A — 听力输入</span></h4>
+        <p class="lang-en-block">Watch a short Spanish video about health or a doctor's visit. Write down any body parts or symptoms you hear.</p>
+        <p class="lang-zh-block">看一段关于健康或就医的西班牙语视频，记下你听到的身体部位或症状。</p>
+
+        <h4><span class="lang-en">Option B — Practice exercise</span><span class="lang-zh">选项 B — 书面练习</span></h4>
+        <p class="lang-en-block">Copy the exercise below into your Google Doc and fill in the blanks. Check your answers at the bottom when you are done.</p>
+        <p class="lang-zh-block">将以下练习复制到你的 Google Doc 中并填空。完成后在下方核对答案。</p>
+
+        <div style="background:#f7f5ef; padding:16px; border-radius:8px; margin:12px 0; font-size:14px; line-height:2;">
+          <p><strong>Part 1 — DOLER (DOLER 填空)</strong></p>
+          <p>1. Me ___ la cabeza.</p>
+          <p>2. Te ___ los pies.</p>
+          <p>3. Le ___ el estómago.</p>
+          <p>4. Nos ___ las piernas.</p>
+          <p>5. Les ___ la espalda.</p>
+
+          <br>
+          <p><strong>Part 2 — ESTAR, TENER or DOLER (ESTAR、TENER 还是 DOLER)</strong></p>
+          <p>1. Yo ___ enfermo.</p>
+          <p>2. Ella ___ fiebre.</p>
+          <p>3. A mí me ___ la garganta.</p>
+          <p>4. Nosotros ___ catarro.</p>
+          <p>5. A él le ___ las rodillas.</p>
+        </div>
+
+        <details style="margin-top:8px;">
+          <summary style="cursor:pointer; color:#5a7a32; font-weight:500; font-size:13px;"><span class="lang-en">Show answers</span><span class="lang-zh">查看答案</span></summary>
+          <div style="background:#eef4e4; padding:12px; border-radius:8px; margin-top:8px; font-size:13px; line-height:2;">
+            <p><strong>Part 1:</strong> 1. duele · 2. duelen · 3. duele · 4. duelen · 5. duele</p>
+            <p><strong>Part 2:</strong> 1. estoy · 2. tiene · 3. duele · 4. tenemos · 5. duelen</p>
+          </div>
+        </details>
+
+        <h4><span class="lang-en">Option C — Creative</span><span class="lang-zh">选项 C — 创意练习</span></h4>
+        <p class="lang-en-block">Draw a simple body diagram and label 6 body parts in Spanish.</p>
+        <p class="lang-zh-block">画一个简单的人体示意图，用西班牙语标注 6 个身体部位。</p>
+      </div>
+    </details>
+
   </div>
+
   <div class="unit-nav">
     <a class="prev" href="./unit-16.html"><span>←</span><div><span class="nav-label">Previous</span><span class="nav-title">Unit 16 · Ciudad</span></div></a>
     <a class="next" href="./quick-check-c.html"><div><span class="nav-label">Next</span><span class="nav-title">Quick Check C</span></div><span>→</span></a>
   </div>
 </main>
+
 <footer class="site-footer">Spanish with Brady · Private use only</footer>
+
+<script>
+function setLang(lang) {
+  if (lang === 'zh') {
+    document.body.classList.add('zh');
+    document.getElementById('btn-zh').style.background = '#5a7a32';
+    document.getElementById('btn-zh').style.color = 'white';
+    document.getElementById('btn-en').style.background = '#f7f5ef';
+    document.getElementById('btn-en').style.color = '#7a6e60';
+  } else {
+    document.body.classList.remove('zh');
+    document.getElementById('btn-en').style.background = '#5a7a32';
+    document.getElementById('btn-en').style.color = 'white';
+    document.getElementById('btn-zh').style.background = '#f7f5ef';
+    document.getElementById('btn-zh').style.color = '#7a6e60';
+  }
+  localStorage.setItem('lang', lang);
+}
+const saved = localStorage.getItem('lang');
+if (saved === 'zh') setLang('zh');
+</script>
+
 </body>
 </html>

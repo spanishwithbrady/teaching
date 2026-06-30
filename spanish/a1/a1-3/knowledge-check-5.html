@@ -5,63 +5,142 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Knowledge Check 5 · Spanish with Brady</title>
   <link rel="stylesheet" href="../../../assets/style.css">
+  <style>
+    .lang-zh { display: none; }
+    body.zh .lang-en { display: none; }
+    body.zh .lang-zh { display: inline; }
+    .lang-zh-block { display: none; }
+    body.zh .lang-zh-block { display: block; }
+    body.zh .lang-en-block { display: none; }
+  </style>
 </head>
 <body>
+
 <header class="site-header">
   <a class="site-logo" href="../../../">Spanish with Brady</a>
-  <nav><ul class="site-nav">
-    <li><a href="../../../spanish/" class="active">Spanish</a></li>
-    <li><a href="../../../mandarin/">Mandarin</a></li>
-    <li><a href="#">English</a></li>
-  </ul></nav>
+  <nav>
+    <ul class="site-nav">
+      <li><a href="../../../spanish/" class="active">Spanish</a></li>
+      <li><a href="../../../mandarin/">Mandarin</a></li>
+      <li><a href="#">English</a></li>
+    </ul>
+  </nav>
 </header>
+
 <nav class="breadcrumb">
   <a href="../../../">Home</a><span>›</span><a href="../../../spanish/">Spanish</a><span>›</span><a href="../../../spanish/a1/">A1</a><span>›</span><a href="./index.html">A1.3</a><span>›</span>Knowledge Check 5
 </nav>
+
 <section class="hero" style="background:#8B5E3C;">
   <h1>Knowledge Check 5</h1>
   <p class="hero-sub">Units 15–20 · Full conversational review</p>
 </section>
+
 <main>
+  <div style="display:flex; justify-content:flex-end; padding: 8px 0 0;">
+    <div style="display:flex; gap:0; border:1px solid #e2ddd4; border-radius:6px; overflow:hidden;">
+      <button id="btn-en" onclick="setLang('en')" style="padding:6px 16px; font-size:13px; font-weight:500; border:none; cursor:pointer; background:#5a7a32; color:white;">EN</button>
+      <button id="btn-zh" onclick="setLang('zh')" style="padding:6px 16px; font-size:13px; font-weight:500; border:none; cursor:pointer; background:#f7f5ef; color:#7a6e60;">中文</button>
+    </div>
+  </div>
+
   <div class="panels">
+
     <details class="panel">
       <summary>
         <span class="panel-num">1</span>
-        <span class="panel-title">Picture prompt</span>
+        <span class="panel-title"><span class="lang-en">Picture prompt</span><span class="lang-zh">图片描述</span></span>
         <svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg>
       </summary>
-      <div class="panel-body">Add picture here — student describes what they see using vocabulary from Units 15–20</div>
+      <div class="panel-body">
+        <p>📷 <em>Suggested image: a rich, busy scene combining a city street, travel elements (suitcase, airport sign), people of different ages/professions, and a family group — for maximum vocabulary recall.</em></p>
+        <p class="lang-en-block">This is the final A1 checkpoint. Describe everything you see, pulling vocabulary from across the entire course: identity and greetings (A1.1), daily life and preferences (A1.2), and city, health and time (A1.3).</p>
+        <p class="lang-zh-block">这是 A1 阶段的最终检测。描述你看到的一切，调动整个课程的词汇：身份与问候（A1.1）、日常生活与偏好（A1.2），以及城市、健康与时间（A1.3）。</p>
+      </div>
     </details>
+
     <details class="panel">
       <summary>
         <span class="panel-num">2</span>
-        <span class="panel-title">Conversation questions</span>
+        <span class="panel-title"><span class="lang-en">Conversation questions</span><span class="lang-zh">对话问题</span></span>
         <svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg>
       </summary>
-      <div class="panel-body">Coming soon — guided oral questions covering all units in this block</div>
+      <div class="panel-body">
+        <p class="lang-en-block">Answer the following questions in Spanish — they span the full A1 course.</p>
+        <p class="lang-zh-block">用西班牙语回答以下问题——涵盖整个 A1 课程。</p>
+        <ol>
+          <li>¿Cómo te llamas y de dónde eres?</li>
+          <li>¿A qué te dedicas?</li>
+          <li>¿Cómo es tu familia?</li>
+          <li>¿Qué te gusta hacer en tu tiempo libre?</li>
+          <li>¿Qué haces normalmente los fines de semana?</li>
+          <li>¿A qué hora te levantas y te acuestas?</li>
+          <li>¿Qué tiempo hace hoy y qué fecha es?</li>
+          <li>¿Sabes cómo llegar a tu lugar favorito en tu ciudad?</li>
+          <li>¿Qué te duele cuando estás enfermo/a?</li>
+          <li>¿Qué hiciste el fin de semana pasado?</li>
+          <li>¿Qué vas a hacer la próxima semana?</li>
+          <li>¿Cuál es la diferencia entre tu vida ahora y hace un año?</li>
+        </ol>
+      </div>
     </details>
+
     <details class="panel">
       <summary>
         <span class="panel-num">3</span>
-        <span class="panel-title">Role-play task</span>
+        <span class="panel-title"><span class="lang-en">Role-play task</span><span class="lang-zh">角色扮演任务</span></span>
         <svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg>
       </summary>
-      <div class="panel-body">Coming soon — real-life scenario using all grammar covered so far</div>
+      <div class="panel-body">
+        <p class="lang-en-block"><strong>Scenario:</strong> Narrate a past trip or weekend in detail using the Pretérito, AND describe your future plans using IR + A. Naturally incorporate description (appearance/personality), preferences (GUSTAR), and at least one health- or direction-related exchange somewhere in your narration.</p>
+        <p class="lang-zh-block"><strong>情景：</strong>用过去时详细叙述一次过去的旅行或周末经历，并用 IR + A 描述你的未来计划。在叙述中自然地融入外貌/性格描述、偏好表达（GUSTAR），以及至少一次与健康或方向相关的对话。</p>
+      </div>
     </details>
+
     <details class="panel">
       <summary>
         <span class="panel-num">4</span>
-        <span class="panel-title">Teacher notes</span>
+        <span class="panel-title"><span class="lang-en">Teacher notes</span><span class="lang-zh">教师备注</span></span>
         <svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg>
       </summary>
-      <div class="panel-body">Space for notes on student performance</div>
+      <div class="panel-body">
+        <div style="background:#f7f5ef; border:1px dashed #e2ddd4; border-radius:8px; padding:24px; min-height:80px; color:#7a6e60;">
+          <p class="lang-en-block">Space for notes on overall A1 progress and readiness for A2 — strengths across the full course, grammar points to revisit, and recommendation for moving forward.</p>
+          <p class="lang-zh-block">用于记录 A1 阶段整体进展及是否准备好进入 A2 的备注空间——整个课程中的优势、需要复习的语法点，以及后续学习建议。</p>
+        </div>
+      </div>
     </details>
+
   </div>
+
   <div class="unit-nav">
     <a class="prev" href="./unit-20.html"><span>←</span><div><span class="nav-label">Previous</span><span class="nav-title">Unit 20 · Pasado II</span></div></a>
     <span class="unit-nav a empty"></span>
   </div>
 </main>
+
 <footer class="site-footer">Spanish with Brady · Private use only</footer>
+
+<script>
+function setLang(lang) {
+  if (lang === 'zh') {
+    document.body.classList.add('zh');
+    document.getElementById('btn-zh').style.background = '#5a7a32';
+    document.getElementById('btn-zh').style.color = 'white';
+    document.getElementById('btn-en').style.background = '#f7f5ef';
+    document.getElementById('btn-en').style.color = '#7a6e60';
+  } else {
+    document.body.classList.remove('zh');
+    document.getElementById('btn-en').style.background = '#5a7a32';
+    document.getElementById('btn-en').style.color = 'white';
+    document.getElementById('btn-zh').style.background = '#f7f5ef';
+    document.getElementById('btn-zh').style.color = '#7a6e60';
+  }
+  localStorage.setItem('lang', lang);
+}
+const saved = localStorage.getItem('lang');
+if (saved === 'zh') setLang('zh');
+</script>
+
 </body>
 </html>

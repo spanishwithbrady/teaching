@@ -5,41 +5,365 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Unit 9 · La Semana · Spanish with Brady</title>
   <link rel="stylesheet" href="../../../assets/style.css">
+  <style>
+    .lang-zh { display: none; }
+    body.zh .lang-en { display: none; }
+    body.zh .lang-zh { display: inline; }
+    .lang-zh-block { display: none; }
+    body.zh .lang-zh-block { display: block; }
+    body.zh .lang-en-block { display: none; }
+  </style>
 </head>
 <body>
+
 <header class="site-header">
   <a class="site-logo" href="../../../">Spanish with Brady</a>
-  <nav><ul class="site-nav">
-    <li><a href="../../../spanish/" class="active">Spanish</a></li>
-    <li><a href="../../../mandarin/">Mandarin</a></li>
-    <li><a href="#">English</a></li>
-  </ul></nav>
+  <nav>
+    <ul class="site-nav">
+      <li><a href="../../../spanish/" class="active">Spanish</a></li>
+      <li><a href="../../../mandarin/">Mandarin</a></li>
+      <li><a href="#">English</a></li>
+    </ul>
+  </nav>
 </header>
+
 <nav class="breadcrumb">
   <a href="../../../">Home</a><span>›</span><a href="../../../spanish/">Spanish</a><span>›</span><a href="../../../spanish/a1/">A1</a><span>›</span><a href="./index.html">A1.2</a><span>›</span>Unit 9
 </nav>
+
 <main>
+  <div style="display:flex; justify-content:flex-end; padding: 8px 0 0;">
+    <div style="display:flex; gap:0; border:1px solid #e2ddd4; border-radius:6px; overflow:hidden;">
+      <button id="btn-en" onclick="setLang('en')" style="padding:6px 16px; font-size:13px; font-weight:500; border:none; cursor:pointer; background:#5a7a32; color:white;">EN</button>
+      <button id="btn-zh" onclick="setLang('zh')" style="padding:6px 16px; font-size:13px; font-weight:500; border:none; cursor:pointer; background:#f7f5ef; color:#7a6e60;">中文</button>
+    </div>
+  </div>
+
   <div class="unit-header">
     <div class="unit-num">A1.2 · Unit 9</div>
     <h1>La Semana</h1>
     <p class="unit-subtitle">Weekly activities and regular -AR verbs</p>
   </div>
+
   <div class="panels">
-    <details class="panel"><summary><span class="panel-num">1</span><span class="panel-title">Hook / Opener</span><svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg></summary><div class="panel-body">Content coming soon</div></details>
-    <details class="panel"><summary><span class="panel-num">2</span><span class="panel-title">Vocabulary</span><svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg></summary><div class="panel-body">Content coming soon</div></details>
-    <details class="panel"><summary><span class="panel-num">3</span><span class="panel-title">Grammar in context</span><svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg></summary><div class="panel-body">Content coming soon</div></details>
-    <details class="panel"><summary><span class="panel-num">4</span><span class="panel-title">Reading or dialogue</span><svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg></summary><div class="panel-body">Content coming soon</div></details>
-    <details class="panel"><summary><span class="panel-num">5</span><span class="panel-title">Controlled practice</span><svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg></summary><div class="panel-body">Content coming soon</div></details>
-    <details class="panel"><summary><span class="panel-num">6</span><span class="panel-title">Question formation</span><svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg></summary><div class="panel-body">Content coming soon</div></details>
-    <details class="panel"><summary><span class="panel-num">7</span><span class="panel-title">Real-life task</span><svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg></summary><div class="panel-body">Content coming soon</div></details>
-    <details class="panel"><summary><span class="panel-num">8</span><span class="panel-title">Free production</span><svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg></summary><div class="panel-body">Content coming soon</div></details>
-    <details class="panel"><summary><span class="panel-num">9</span><span class="panel-title">Homework</span><svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg></summary><div class="panel-body">Content coming soon</div></details>
+
+    <details class="panel">
+      <summary>
+        <span class="panel-num">1</span>
+        <span class="panel-title"><span class="lang-en">Hook / Opener</span><span class="lang-zh">课程导入</span></span>
+        <svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg>
+      </summary>
+      <div class="panel-body">
+        <p>📷 <em>Suggested image: a weekly planner with activities written in each day.</em></p>
+        <p class="lang-en-block">Before we start, think about this: What do you do every week, on a regular basis? Can you say it in Spanish?</p>
+        <p class="lang-zh-block">开始之前，想一想：你每周都会做哪些常规的事情？你能用西班牙语说出来吗？</p>
+        <p><strong><span class="lang-en">By the end of this unit you can:</span><span class="lang-zh">完成本单元后，你能够：</span></strong> <span class="lang-en">describe weekly habitual activities and how often you do them, using regular -AR verbs.</span><span class="lang-zh">用规则 -AR 动词描述每周的日常活动及其频率。</span></p>
+      </div>
+    </details>
+
+    <details class="panel">
+      <summary>
+        <span class="panel-num">2</span>
+        <span class="panel-title"><span class="lang-en">Vocabulary</span><span class="lang-zh">词汇</span></span>
+        <svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg>
+      </summary>
+      <div class="panel-body">
+        <h4><span class="lang-en">Days of the week</span><span class="lang-zh">星期</span></h4>
+        <table>
+          <tr><th>Spanish</th><th>English</th><th>中文</th></tr>
+          <tr><td><strong>lunes</strong></td><td>Monday</td><td>星期一</td></tr>
+          <tr><td><strong>martes</strong></td><td>Tuesday</td><td>星期二</td></tr>
+          <tr><td><strong>miércoles</strong></td><td>Wednesday</td><td>星期三</td></tr>
+          <tr><td><strong>jueves</strong></td><td>Thursday</td><td>星期四</td></tr>
+          <tr><td><strong>viernes</strong></td><td>Friday</td><td>星期五</td></tr>
+          <tr><td><strong>sábado</strong></td><td>Saturday</td><td>星期六</td></tr>
+          <tr><td><strong>domingo</strong></td><td>Sunday</td><td>星期日</td></tr>
+        </table>
+        <p class="lang-en-block">⚠️ Days of the week are always lowercase in Spanish!</p>
+        <p class="lang-zh-block">⚠️ 西班牙语中星期几永远小写！</p>
+
+        <h4><span class="lang-en">Frequency adverbs</span><span class="lang-zh">频率副词</span></h4>
+        <table>
+          <tr><th>Spanish</th><th>English</th><th>中文</th></tr>
+          <tr><td><strong>siempre</strong></td><td>always</td><td>总是</td></tr>
+          <tr><td><strong>normalmente</strong></td><td>normally</td><td>通常</td></tr>
+          <tr><td><strong>a veces</strong></td><td>sometimes</td><td>有时</td></tr>
+          <tr><td><strong>casi nunca</strong></td><td>almost never</td><td>几乎不</td></tr>
+          <tr><td><strong>nunca</strong></td><td>never</td><td>从不</td></tr>
+        </table>
+
+        <h4><span class="lang-en">Core -AR verbs</span><span class="lang-zh">核心 -AR 动词</span></h4>
+        <table>
+          <tr><th>Spanish</th><th>English</th><th>中文</th></tr>
+          <tr><td><strong>hablar</strong></td><td>to speak</td><td>说</td></tr>
+          <tr><td><strong>trabajar</strong></td><td>to work</td><td>工作</td></tr>
+          <tr><td><strong>estudiar</strong></td><td>to study</td><td>学习</td></tr>
+          <tr><td><strong>escuchar</strong></td><td>to listen</td><td>听</td></tr>
+          <tr><td><strong>bailar</strong></td><td>to dance</td><td>跳舞</td></tr>
+          <tr><td><strong>cocinar</strong></td><td>to cook</td><td>做饭</td></tr>
+          <tr><td><strong>descansar</strong></td><td>to rest</td><td>休息</td></tr>
+          <tr><td><strong>caminar</strong></td><td>to walk</td><td>走路</td></tr>
+        </table>
+      </div>
+    </details>
+
+    <details class="panel">
+      <summary>
+        <span class="panel-num">3</span>
+        <span class="panel-title"><span class="lang-en">Grammar in context</span><span class="lang-zh">语法讲解</span></span>
+        <svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg>
+      </summary>
+      <div class="panel-body">
+        <h4><span class="lang-en">-AR conjugation (model: hablar)</span><span class="lang-zh">-AR 动词变位（以 hablar 为例）</span></h4>
+        <table>
+          <tr><th><span class="lang-en">Pronoun</span><span class="lang-zh">人称代词</span></th><th>hablar</th><th><span class="lang-en">Example</span><span class="lang-zh">例句</span></th></tr>
+          <tr><td>yo</td><td><strong>hablo</strong></td><td>Hablo español.</td></tr>
+          <tr><td>tú</td><td><strong>hablas</strong></td><td>¿Hablas chino?</td></tr>
+          <tr><td>él / ella / usted</td><td><strong>habla</strong></td><td>Ana habla inglés.</td></tr>
+          <tr><td>nosotros/as</td><td><strong>hablamos</strong></td><td>Hablamos todos los días.</td></tr>
+          <tr><td>vosotros/as</td><td><strong>habláis</strong></td><td>¿Habláis francés?</td></tr>
+          <tr><td>ellos/as / ustedes</td><td><strong>hablan</strong></td><td>Hablan mucho.</td></tr>
+        </table>
+
+        <p class="lang-en-block">💡 As before, the pronoun can be dropped since the verb ending already shows who is speaking: "Trabajo los lunes" is more natural than "Yo trabajo los lunes".</p>
+        <p class="lang-zh-block">💡 和之前一样，人称代词可以省略，因为动词词尾已经表明了主语：相比 "Yo trabajo los lunes"，"Trabajo los lunes" 更自然。</p>
+
+        <h4><span class="lang-en">También / tampoco</span><span class="lang-zh">También / tampoco</span></h4>
+        <table>
+          <tr><th></th><th><span class="lang-en">Agreeing with a positive statement</span><span class="lang-zh">同意肯定句</span></th><th><span class="lang-en">Agreeing with a negative statement</span><span class="lang-zh">同意否定句</span></th></tr>
+          <tr><td><span class="lang-en">Word</span><span class="lang-zh">用词</span></td><td>también <span class="lang-en">(also)</span><span class="lang-zh">（也）</span></td><td>tampoco <span class="lang-en">(neither)</span><span class="lang-zh">（也不）</span></td></tr>
+          <tr><td><span class="lang-en">Example</span><span class="lang-zh">例句</span></td><td>—Trabajo los lunes. —Yo también.</td><td>—No estudio los domingos. —Yo tampoco.</td></tr>
+        </table>
+
+        <p class="lang-en-block">⚠️ "Me también" is wrong! You must use the subject pronoun: "Yo también" — not the object pronoun "me".</p>
+        <p class="lang-zh-block">⚠️ "Me también" 是错误的！必须用主格人称代词 "Yo también"——而不是宾格代词 "me"。</p>
+
+        <p class="lang-en-block">💡 <strong>"los lunes" vs. "el lunes":</strong> "los lunes" means every Monday (habitual), while "el lunes" means a specific, single Monday.</p>
+        <p class="lang-zh-block">💡 <strong>"los lunes" 与 "el lunes" 的区别：</strong>"los lunes" 表示每个星期一（习惯性），而 "el lunes" 表示某一个特定的星期一。</p>
+      </div>
+    </details>
+
+    <details class="panel">
+      <summary>
+        <span class="panel-num">4</span>
+        <span class="panel-title"><span class="lang-en">Reading or dialogue</span><span class="lang-zh">阅读与对话</span></span>
+        <svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg>
+      </summary>
+      <div class="panel-body">
+        <p>📷 <em>Suggested image: two friends comparing their weekly schedules.</em></p>
+
+        <h4>Mi semana típica</h4>
+        <p class="lang-en-block">Pablo and Elena compare their weekly routines.</p>
+        <p class="lang-zh-block">Pablo 和 Elena 比较他们的每周日程。</p>
+
+        <div class="dialogue">
+          <p><strong>Pablo:</strong> Elena, ¿qué haces normalmente los lunes?</p>
+          <p><strong>Elena:</strong> Los lunes trabajo todo el día. Y por la noche estudio inglés.</p>
+          <p><strong>Pablo:</strong> Yo también trabajo los lunes. ¿Y los fines de semana?</p>
+          <p><strong>Elena:</strong> Los sábados bailo salsa con mis amigas. ¿Y tú?</p>
+          <p><strong>Pablo:</strong> Yo no bailo nunca, pero cocino mucho los domingos.</p>
+          <p><strong>Elena:</strong> ¡Qué bien! Yo casi nunca cocino.</p>
+          <p><strong>Pablo:</strong> A veces escucho música mientras cocino.</p>
+          <p><strong>Elena:</strong> Yo también escucho música siempre. ¡Es relajante!</p>
+        </div>
+
+        <h4><span class="lang-en">Comprehension questions</span><span class="lang-zh">理解问题</span></h4>
+        <ol>
+          <li>¿Qué hace Elena los lunes por la noche?</li>
+          <li>¿Quién baila los sábados?</li>
+          <li>¿Cocina mucho Elena?</li>
+          <li>¿Qué hace Pablo mientras cocina?</li>
+        </ol>
+      </div>
+    </details>
+
+    <details class="panel">
+      <summary>
+        <span class="panel-num">5</span>
+        <span class="panel-title"><span class="lang-en">Controlled practice</span><span class="lang-zh">强化练习</span></span>
+        <svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg>
+      </summary>
+      <div class="panel-body">
+        <h4><span class="lang-en">Exercise 1 — Complete with the correct -AR form</span><span class="lang-zh">练习一 — 用正确的 -AR 动词形式填空</span></h4>
+        <ol>
+          <li>Yo ___ (hablar) español.</li>
+          <li>Tú ___ (trabajar) los lunes.</li>
+          <li>Ella ___ (estudiar) chino.</li>
+          <li>Nosotros ___ (cocinar) los domingos.</li>
+          <li>Ellos ___ (bailar) salsa.</li>
+          <li>¿Usted ___ (descansar) los fines de semana?</li>
+        </ol>
+
+        <h4><span class="lang-en">Exercise 2 — También or tampoco?</span><span class="lang-zh">练习二 — También 还是 tampoco？</span></h4>
+        <ol>
+          <li>—Estudio los martes. —Yo ___.</li>
+          <li>—No trabajo los domingos. —Yo ___.</li>
+          <li>—Bailo salsa. —Yo ___.</li>
+          <li>—No cocino nunca. —Yo ___.</li>
+          <li>—Escucho música siempre. —Yo ___.</li>
+          <li>—No hablo francés. —Yo ___.</li>
+        </ol>
+
+        <h4><span class="lang-en">Exercise 3 — Find the error</span><span class="lang-zh">练习三 — 找出错误</span></h4>
+        <ol>
+          <li>Yo hablo el lunes con mi profesor cada semana. → ___</li>
+          <li>—No trabajo hoy. —Me también. → ___</li>
+          <li>Ella trabaja los Lunes. → ___</li>
+          <li>Nosotros cocinamos nunca los domingos. → ___</li>
+          <li>Tú habla muy bien español. → ___</li>
+        </ol>
+      </div>
+    </details>
+
+    <details class="panel">
+      <summary>
+        <span class="panel-num">6</span>
+        <span class="panel-title"><span class="lang-en">Question formation</span><span class="lang-zh">如何提问</span></span>
+        <svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg>
+      </summary>
+      <div class="panel-body">
+        <h4><span class="lang-en">Questions for this unit</span><span class="lang-zh">本单元问句</span></h4>
+        <table>
+          <tr><th><span class="lang-en">Question</span><span class="lang-zh">问句</span></th><th><span class="lang-en">Meaning</span><span class="lang-zh">意思</span></th><th><span class="lang-en">Typical answer</span><span class="lang-zh">常见回答</span></th></tr>
+          <tr><td><strong>¿Qué haces normalmente los...?</strong></td><td><span class="lang-en">What do you normally do on...?</span><span class="lang-zh">你通常在……做什么？</span></td><td>Normalmente trabajo.</td></tr>
+          <tr><td><strong>¿Con qué frecuencia...?</strong></td><td><span class="lang-en">How often...?</span><span class="lang-zh">多久一次……？</span></td><td>A veces, los fines de semana.</td></tr>
+          <tr><td><strong>¿Trabajas/estudias los fines de semana?</strong></td><td><span class="lang-en">Do you work/study on weekends?</span><span class="lang-zh">你周末工作/学习吗？</span></td><td>Casi nunca.</td></tr>
+          <tr><td><strong>¿Y tú?</strong></td><td><span class="lang-en">And you?</span><span class="lang-zh">那你呢？</span></td><td>Yo también. / Yo tampoco.</td></tr>
+        </table>
+
+        <h4><span class="lang-en">Practice — Ask the question</span><span class="lang-zh">练习 — 写出问句</span></h4>
+        <p class="lang-en-block">Look at the answer. What was the question?</p>
+        <p class="lang-zh-block">看答案，写出对应的问句。</p>
+        <ol>
+          <li>→ Normalmente estudio los martes.</li>
+          <li>→ Casi nunca bailo.</li>
+          <li>→ Sí, trabajo los sábados a veces.</li>
+          <li>→ Yo tampoco cocino los domingos.</li>
+        </ol>
+      </div>
+    </details>
+
+    <details class="panel">
+      <summary>
+        <span class="panel-num">7</span>
+        <span class="panel-title"><span class="lang-en">Real-life task</span><span class="lang-zh">真实任务</span></span>
+        <svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg>
+      </summary>
+      <div class="panel-body">
+        <p>📷 <em>Suggested image: a blank weekly planner template.</em></p>
+
+        <h4><span class="lang-en">Task: Your real week</span><span class="lang-zh">任务：你真实的一周</span></h4>
+        <p class="lang-en-block">Write or say one sentence for each day of the week describing what you really do, using a frequency adverb in at least 3 sentences.</p>
+        <p class="lang-zh-block">为一周中的每一天写或说一句话，描述你真实的活动，至少 3 句话要用上频率副词。</p>
+        <p><em>Example: "Los lunes siempre trabajo. Los miércoles a veces estudio español."</em></p>
+      </div>
+    </details>
+
+    <details class="panel">
+      <summary>
+        <span class="panel-num">8</span>
+        <span class="panel-title"><span class="lang-en">Free production</span><span class="lang-zh">自由表达</span></span>
+        <svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg>
+      </summary>
+      <div class="panel-body">
+        <p class="lang-en-block">No script. No word bank. Just you, speaking freely using everything from this unit.</p>
+        <p class="lang-zh-block">没有脚本，没有词汇表。用你在本单元学到的一切自由表达。</p>
+
+        <h4><span class="lang-en">Speaking prompts</span><span class="lang-zh">口语提示</span></h4>
+        <ol class="lang-en-block">
+          <li>Describe your typical week from Monday to Sunday.</li>
+          <li>Tell your teacher 3 things you never do and 3 things you always do.</li>
+          <li>Compare your week with a classmate's using también/tampoco.</li>
+          <li>What's your favorite day of the week and why?</li>
+        </ol>
+        <ol class="lang-zh-block">
+          <li>描述你从周一到周日的典型一周。</li>
+          <li>告诉老师 3 件你从不做的事和 3 件你总是做的事。</li>
+          <li>用 también/tampoco 和同学比较你们的一周。</li>
+          <li>你最喜欢一周中的哪一天？为什么？</li>
+        </ol>
+      </div>
+    </details>
+
+    <details class="panel">
+      <summary>
+        <span class="panel-num">9</span>
+        <span class="panel-title"><span class="lang-en">Homework</span><span class="lang-zh">课后作业</span></span>
+        <svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg>
+      </summary>
+      <div class="panel-body">
+        <p class="lang-en-block">Choose <strong>one</strong> of the options below. No need to send anything — just do it before the next class.</p>
+        <p class="lang-zh-block">选择以下任一选项。无需发给老师——课前自己完成就好。</p>
+
+        <h4><span class="lang-en">Option A — Receptive</span><span class="lang-zh">选项 A — 听力输入</span></h4>
+        <p class="lang-en-block">Watch a short Spanish video about someone's daily or weekly routine. Write down any -AR verbs or frequency adverbs you hear.</p>
+        <p class="lang-zh-block">看一段关于某人日常或每周作息的西班牙语视频，记下你听到的 -AR 动词或频率副词。</p>
+
+        <h4><span class="lang-en">Option B — Practice exercise</span><span class="lang-zh">选项 B — 书面练习</span></h4>
+        <p class="lang-en-block">Copy the exercise below into your Google Doc and fill in the blanks. Check your answers at the bottom when you are done.</p>
+        <p class="lang-zh-block">将以下练习复制到你的 Google Doc 中并填空。完成后在下方核对答案。</p>
+
+        <div style="background:#f7f5ef; padding:16px; border-radius:8px; margin:12px 0; font-size:14px; line-height:2;">
+          <p><strong>Part 1 — Conjugate the -AR verb (写出 -AR 动词的正确形式)</strong></p>
+          <p>1. Yo ___ (hablar) español.</p>
+          <p>2. Tú ___ (trabajar) mucho.</p>
+          <p>3. Ella ___ (estudiar) los martes.</p>
+          <p>4. Nosotros ___ (cocinar) los domingos.</p>
+          <p>5. Ellos ___ (bailar) salsa.</p>
+
+          <br>
+          <p><strong>Part 2 — También or tampoco (También 还是 tampoco)</strong></p>
+          <p>1. —Trabajo los lunes. —Yo ___.</p>
+          <p>2. —No bailo nunca. —Yo ___.</p>
+          <p>3. —Estudio chino. —Yo ___.</p>
+          <p>4. —No cocino los domingos. —Yo ___.</p>
+          <p>5. —Escucho música siempre. —Yo ___.</p>
+        </div>
+
+        <details style="margin-top:8px;">
+          <summary style="cursor:pointer; color:#5a7a32; font-weight:500; font-size:13px;"><span class="lang-en">Show answers</span><span class="lang-zh">查看答案</span></summary>
+          <div style="background:#eef4e4; padding:12px; border-radius:8px; margin-top:8px; font-size:13px; line-height:2;">
+            <p><strong>Part 1:</strong> 1. hablo · 2. trabajas · 3. estudia · 4. cocinamos · 5. bailan</p>
+            <p><strong>Part 2:</strong> 1. también · 2. tampoco · 3. también · 4. tampoco · 5. también</p>
+          </div>
+        </details>
+
+        <h4><span class="lang-en">Option C — Creative</span><span class="lang-zh">选项 C — 创意练习</span></h4>
+        <p class="lang-en-block">Draw a weekly planner and write one Spanish sentence for each day describing a real activity.</p>
+        <p class="lang-zh-block">画一张周计划表，为每一天写一句西班牙语描述真实的活动。</p>
+      </div>
+    </details>
+
   </div>
+
   <div class="unit-nav">
     <a class="prev" href="./unit-8.html"><span>←</span><div><span class="nav-label">Previous</span><span class="nav-title">Unit 8 · Estados</span></div></a>
     <a class="next" href="./unit-10.html"><div><span class="nav-label">Next</span><span class="nav-title">Unit 10 · Rutina</span></div><span>→</span></a>
   </div>
 </main>
+
 <footer class="site-footer">Spanish with Brady · Private use only</footer>
+
+<script>
+function setLang(lang) {
+  if (lang === 'zh') {
+    document.body.classList.add('zh');
+    document.getElementById('btn-zh').style.background = '#5a7a32';
+    document.getElementById('btn-zh').style.color = 'white';
+    document.getElementById('btn-en').style.background = '#f7f5ef';
+    document.getElementById('btn-en').style.color = '#7a6e60';
+  } else {
+    document.body.classList.remove('zh');
+    document.getElementById('btn-en').style.background = '#5a7a32';
+    document.getElementById('btn-en').style.color = 'white';
+    document.getElementById('btn-zh').style.background = '#f7f5ef';
+    document.getElementById('btn-zh').style.color = '#7a6e60';
+  }
+  localStorage.setItem('lang', lang);
+}
+const saved = localStorage.getItem('lang');
+if (saved === 'zh') setLang('zh');
+</script>
+
 </body>
 </html>

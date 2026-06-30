@@ -5,41 +5,350 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Unit 19 · Pasado I · Spanish with Brady</title>
   <link rel="stylesheet" href="../../../assets/style.css">
+  <style>
+    .lang-zh { display: none; }
+    body.zh .lang-en { display: none; }
+    body.zh .lang-zh { display: inline; }
+    .lang-zh-block { display: none; }
+    body.zh .lang-zh-block { display: block; }
+    body.zh .lang-en-block { display: none; }
+  </style>
 </head>
 <body>
+
 <header class="site-header">
   <a class="site-logo" href="../../../">Spanish with Brady</a>
-  <nav><ul class="site-nav">
-    <li><a href="../../../spanish/" class="active">Spanish</a></li>
-    <li><a href="../../../mandarin/">Mandarin</a></li>
-    <li><a href="#">English</a></li>
-  </ul></nav>
+  <nav>
+    <ul class="site-nav">
+      <li><a href="../../../spanish/" class="active">Spanish</a></li>
+      <li><a href="../../../mandarin/">Mandarin</a></li>
+      <li><a href="#">English</a></li>
+    </ul>
+  </nav>
 </header>
+
 <nav class="breadcrumb">
   <a href="../../../">Home</a><span>›</span><a href="../../../spanish/">Spanish</a><span>›</span><a href="../../../spanish/a1/">A1</a><span>›</span><a href="./index.html">A1.3</a><span>›</span>Unit 19
 </nav>
+
 <main>
+  <div style="display:flex; justify-content:flex-end; padding: 8px 0 0;">
+    <div style="display:flex; gap:0; border:1px solid #e2ddd4; border-radius:6px; overflow:hidden;">
+      <button id="btn-en" onclick="setLang('en')" style="padding:6px 16px; font-size:13px; font-weight:500; border:none; cursor:pointer; background:#5a7a32; color:white;">EN</button>
+      <button id="btn-zh" onclick="setLang('zh')" style="padding:6px 16px; font-size:13px; font-weight:500; border:none; cursor:pointer; background:#f7f5ef; color:#7a6e60;">中文</button>
+    </div>
+  </div>
+
   <div class="unit-header">
     <div class="unit-num">A1.3 · Unit 19</div>
     <h1>Pasado I</h1>
-    <p class="unit-subtitle">The past: regular verbs</p>
+    <p class="unit-subtitle">Narrating the past with regular preterite</p>
   </div>
+
   <div class="panels">
-    <details class="panel"><summary><span class="panel-num">1</span><span class="panel-title">Hook / Opener</span><svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg></summary><div class="panel-body">Content coming soon</div></details>
-    <details class="panel"><summary><span class="panel-num">2</span><span class="panel-title">Vocabulary</span><svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg></summary><div class="panel-body">Content coming soon</div></details>
-    <details class="panel"><summary><span class="panel-num">3</span><span class="panel-title">Grammar in context</span><svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg></summary><div class="panel-body">Content coming soon</div></details>
-    <details class="panel"><summary><span class="panel-num">4</span><span class="panel-title">Reading or dialogue</span><svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg></summary><div class="panel-body">Content coming soon</div></details>
-    <details class="panel"><summary><span class="panel-num">5</span><span class="panel-title">Controlled practice</span><svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg></summary><div class="panel-body">Content coming soon</div></details>
-    <details class="panel"><summary><span class="panel-num">6</span><span class="panel-title">Question formation</span><svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg></summary><div class="panel-body">Content coming soon</div></details>
-    <details class="panel"><summary><span class="panel-num">7</span><span class="panel-title">Real-life task</span><svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg></summary><div class="panel-body">Content coming soon</div></details>
-    <details class="panel"><summary><span class="panel-num">8</span><span class="panel-title">Free production</span><svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg></summary><div class="panel-body">Content coming soon</div></details>
-    <details class="panel"><summary><span class="panel-num">9</span><span class="panel-title">Homework</span><svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg></summary><div class="panel-body">Content coming soon</div></details>
+
+    <details class="panel">
+      <summary>
+        <span class="panel-num">1</span>
+        <span class="panel-title"><span class="lang-en">Hook / Opener</span><span class="lang-zh">课程导入</span></span>
+        <svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg>
+      </summary>
+      <div class="panel-body">
+        <p>📷 <em>Suggested image: a torn calendar page, "yesterday" circled.</em></p>
+        <p class="lang-en-block">Before we start, think about this: What did you do yesterday? This is a completely new verb form — completed actions in the past.</p>
+        <p class="lang-zh-block">开始之前，想一想：你昨天做了什么？这是一个全新的动词形式——表示过去已完成的动作。</p>
+        <p><strong><span class="lang-en">By the end of this unit you can:</span><span class="lang-zh">完成本单元后，你能够：</span></strong> <span class="lang-en">narrate completed past events using regular preterite verbs.</span><span class="lang-zh">用规则过去时（简单过去时）动词描述过去已完成的事件。</span></p>
+      </div>
+    </details>
+
+    <details class="panel">
+      <summary>
+        <span class="panel-num">2</span>
+        <span class="panel-title"><span class="lang-en">Vocabulary</span><span class="lang-zh">词汇</span></span>
+        <svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg>
+      </summary>
+      <div class="panel-body">
+        <h4><span class="lang-en">Past time markers</span><span class="lang-zh">过去时间标志词</span></h4>
+        <table>
+          <tr><th>Spanish</th><th>English</th><th>中文</th></tr>
+          <tr><td><strong>ayer</strong></td><td>yesterday</td><td>昨天</td></tr>
+          <tr><td><strong>anteayer</strong></td><td>the day before yesterday</td><td>前天</td></tr>
+          <tr><td><strong>la semana pasada</strong></td><td>last week</td><td>上周</td></tr>
+          <tr><td><strong>hace + tiempo</strong></td><td>(time) ago</td><td>……之前</td></tr>
+        </table>
+      </div>
+    </details>
+
+    <details class="panel">
+      <summary>
+        <span class="panel-num">3</span>
+        <span class="panel-title"><span class="lang-en">Grammar in context</span><span class="lang-zh">语法讲解</span></span>
+        <svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg>
+      </summary>
+      <div class="panel-body">
+        <h4><span class="lang-en">Pretérito Indefinido — the concept</span><span class="lang-zh">简单过去时（Pretérito Indefinido）——概念</span></h4>
+        <p class="lang-en-block">This tense describes a completed action at a specific past moment — contrast it with habitual present.</p>
+        <p class="lang-zh-block">这个时态描述在特定过去时刻已经完成的动作——与习惯性现在时形成对比。</p>
+        <table>
+          <tr><th><span class="lang-en">Habitual present</span><span class="lang-zh">习惯性现在时</span></th><th><span class="lang-en">Completed past</span><span class="lang-zh">已完成过去时</span></th></tr>
+          <tr><td>Los lunes estudio.</td><td>El lunes pasado estudié.</td></tr>
+        </table>
+
+        <h4><span class="lang-en">-AR verbs (model: hablar)</span><span class="lang-zh">-AR 动词（以 hablar 为例）</span></h4>
+        <table>
+          <tr><th><span class="lang-en">Pronoun</span><span class="lang-zh">人称代词</span></th><th>hablar</th><th>trabajar</th><th>llegar</th></tr>
+          <tr><td>yo</td><td><strong>hablé</strong></td><td>trabajé</td><td>llegué</td></tr>
+          <tr><td>tú</td><td><strong>hablaste</strong></td><td>trabajaste</td><td>llegaste</td></tr>
+          <tr><td>él/ella/usted</td><td><strong>habló</strong></td><td>trabajó</td><td>llegó</td></tr>
+          <tr><td>nosotros/as</td><td><strong>hablamos</strong></td><td>trabajamos</td><td>llegamos</td></tr>
+          <tr><td>vosotros/as</td><td><strong>hablasteis</strong></td><td>trabajasteis</td><td>llegasteis</td></tr>
+          <tr><td>ellos/as/ustedes</td><td><strong>hablaron</strong></td><td>trabajaron</td><td>llegaron</td></tr>
+        </table>
+
+        <h4><span class="lang-en">-ER / -IR verbs (model: comer, vivir)</span><span class="lang-zh">-ER / -IR 动词（以 comer、vivir 为例）</span></h4>
+        <table>
+          <tr><th><span class="lang-en">Pronoun</span><span class="lang-zh">人称代词</span></th><th>comer</th><th>vivir</th></tr>
+          <tr><td>yo</td><td><strong>comí</strong></td><td>viví</td></tr>
+          <tr><td>tú</td><td><strong>comiste</strong></td><td>viviste</td></tr>
+          <tr><td>él/ella/usted</td><td><strong>comió</strong></td><td>vivió</td></tr>
+          <tr><td>nosotros/as</td><td><strong>comimos</strong></td><td>vivimos</td></tr>
+          <tr><td>vosotros/as</td><td><strong>comisteis</strong></td><td>vivisteis</td></tr>
+          <tr><td>ellos/as/ustedes</td><td><strong>comieron</strong></td><td>vivieron</td></tr>
+        </table>
+
+        <h4><span class="lang-en">Spelling changes: -CAR / -GAR / -ZAR</span><span class="lang-zh">拼写变化：-CAR / -GAR / -ZAR</span></h4>
+        <table>
+          <tr><th><span class="lang-en">Ending</span><span class="lang-zh">词尾</span></th><th><span class="lang-en">Change (yo only)</span><span class="lang-zh">变化（仅第一人称单数）</span></th><th><span class="lang-en">Example</span><span class="lang-zh">例句</span></th></tr>
+          <tr><td>-car</td><td>c→qu</td><td>buscar → busqué</td></tr>
+          <tr><td>-gar</td><td>g→gu</td><td>llegar → llegué</td></tr>
+          <tr><td>-zar</td><td>z→c</td><td>empezar → empecé</td></tr>
+        </table>
+
+        <p class="lang-en-block">⚠️ <strong>Critical accent rule:</strong> "hablé" (I spoke, past) is different from "hable" (subjunctive); "habló" (he spoke) needs the accent — without it, the meaning and person change entirely. Accents are not decorative in Spanish!</p>
+        <p class="lang-zh-block">⚠️ <strong>关键重音规则：</strong>"hablé"（我说了，过去时）与 "hable"（虚拟式）不同；"habló"（他说了）必须带重音符号——没有重音符号，意思和人称会完全改变。西班牙语中的重音符号不是装饰性的！</p>
+      </div>
+    </details>
+
+    <details class="panel">
+      <summary>
+        <span class="panel-num">4</span>
+        <span class="panel-title"><span class="lang-en">Reading or dialogue</span><span class="lang-zh">阅读与对话</span></span>
+        <svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg>
+      </summary>
+      <div class="panel-body">
+        <p>📷 <em>Suggested image: a phone screen with yesterday's messages.</em></p>
+
+        <h4>¿Qué hiciste ayer?</h4>
+        <p class="lang-en-block">Carlos and Li talk about what they did yesterday.</p>
+        <p class="lang-zh-block">Carlos 和 Li 聊昨天做了什么。</p>
+
+        <div class="dialogue">
+          <p><strong>Li:</strong> Carlos, ¿qué hiciste ayer?</p>
+          <p><strong>Carlos:</strong> Trabajé toda la mañana y luego comí con mi familia.</p>
+          <p><strong>Li:</strong> ¡Qué bien! Yo estudié español por la tarde.</p>
+          <p><strong>Carlos:</strong> ¿Hablaste con tu profesor ayer también?</p>
+          <p><strong>Li:</strong> Sí, hablé con él por video llamada.</p>
+          <p><strong>Carlos:</strong> Yo llegué tarde al trabajo, ¡qué desastre!</p>
+          <p><strong>Li:</strong> ¿Por qué llegaste tarde?</p>
+          <p><strong>Carlos:</strong> Empecé a trabajar muy tarde anoche y no dormí bien.</p>
+        </div>
+
+        <h4><span class="lang-en">Comprehension questions</span><span class="lang-zh">理解问题</span></h4>
+        <ol>
+          <li>¿Qué hizo Carlos ayer por la mañana?</li>
+          <li>¿Qué estudió Li?</li>
+          <li>¿Con quién habló Li ayer?</li>
+          <li>¿Por qué llegó tarde Carlos al trabajo?</li>
+        </ol>
+      </div>
+    </details>
+
+    <details class="panel">
+      <summary>
+        <span class="panel-num">5</span>
+        <span class="panel-title"><span class="lang-en">Controlled practice</span><span class="lang-zh">强化练习</span></span>
+        <svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg>
+      </summary>
+      <div class="panel-body">
+        <h4><span class="lang-en">Exercise 1 — Complete with the preterite (-AR)</span><span class="lang-zh">练习一 — 用过去时填空（-AR 动词）</span></h4>
+        <ol>
+          <li>Yo ___ (hablar) con mi madre ayer.</li>
+          <li>Tú ___ (trabajar) mucho la semana pasada.</li>
+          <li>Ella ___ (estudiar) anoche.</li>
+          <li>Nosotros ___ (llegar) tarde.</li>
+          <li>Ellos ___ (bailar) en la fiesta.</li>
+          <li>Yo ___ (buscar) mis llaves toda la tarde.</li>
+        </ol>
+
+        <h4><span class="lang-en">Exercise 2 — Complete with the preterite (-ER/-IR)</span><span class="lang-zh">练习二 — 用过去时填空（-ER/-IR 动词）</span></h4>
+        <ol>
+          <li>Yo ___ (comer) en casa ayer.</li>
+          <li>Tú ___ (vivir) en Madrid antes.</li>
+          <li>Ella ___ (comer) paella el sábado.</li>
+          <li>Nosotros ___ (vivir) en China hace tres años.</li>
+          <li>Ellos ___ (comer) tarde anoche.</li>
+          <li>Yo ___ (empezar) a trabajar a las ocho.</li>
+        </ol>
+
+        <h4><span class="lang-en">Exercise 3 — Accent or no accent?</span><span class="lang-zh">练习三 — 加重音还是不加？</span></h4>
+        <ol>
+          <li>Yo hable / hablé con ella ayer. → ___</li>
+          <li>El habla / habló todos los días. (present habit) → ___</li>
+          <li>Ayer el comio / comió tarde. → ___</li>
+          <li>Yo trabajo / trabajé todos los lunes. (present habit) → ___</li>
+          <li>Anoche yo llegue / llegué a las diez. → ___</li>
+        </ol>
+      </div>
+    </details>
+
+    <details class="panel">
+      <summary>
+        <span class="panel-num">6</span>
+        <span class="panel-title"><span class="lang-en">Question formation</span><span class="lang-zh">如何提问</span></span>
+        <svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg>
+      </summary>
+      <div class="panel-body">
+        <h4><span class="lang-en">Questions for this unit</span><span class="lang-zh">本单元问句</span></h4>
+        <table>
+          <tr><th><span class="lang-en">Question</span><span class="lang-zh">问句</span></th><th><span class="lang-en">Meaning</span><span class="lang-zh">意思</span></th><th><span class="lang-en">Typical answer</span><span class="lang-zh">常见回答</span></th></tr>
+          <tr><td><strong>¿Qué hiciste ayer?</strong></td><td><span class="lang-en">What did you do yesterday?</span><span class="lang-zh">你昨天做了什么？</span></td><td>Trabajé y estudié.</td></tr>
+          <tr><td><strong>¿A qué hora llegaste?</strong></td><td><span class="lang-en">What time did you arrive?</span><span class="lang-zh">你几点到的？</span></td><td>Llegué a las ocho.</td></tr>
+          <tr><td><strong>¿Con quién hablaste?</strong></td><td><span class="lang-en">Who did you talk to?</span><span class="lang-zh">你跟谁说话了？</span></td><td>Hablé con mi amigo.</td></tr>
+          <tr><td><strong>¿Dónde comiste?</strong></td><td><span class="lang-en">Where did you eat?</span><span class="lang-zh">你在哪里吃的饭？</span></td><td>Comí en casa.</td></tr>
+        </table>
+
+        <h4><span class="lang-en">Practice — Ask the question</span><span class="lang-zh">练习 — 写出问句</span></h4>
+        <p class="lang-en-block">Look at the answer. What was the question?</p>
+        <p class="lang-zh-block">看答案，写出对应的问句。</p>
+        <ol>
+          <li>→ Ayer estudié toda la tarde.</li>
+          <li>→ Llegué a las nueve.</li>
+          <li>→ Hablé con mi profesora.</li>
+          <li>→ Comí en un restaurante.</li>
+        </ol>
+      </div>
+    </details>
+
+    <details class="panel">
+      <summary>
+        <span class="panel-num">7</span>
+        <span class="panel-title"><span class="lang-en">Real-life task</span><span class="lang-zh">真实任务</span></span>
+        <svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg>
+      </summary>
+      <div class="panel-body">
+        <p>📷 <em>Suggested image: a blank "yesterday" diary page.</em></p>
+
+        <h4><span class="lang-en">Task: Narrate your real yesterday</span><span class="lang-zh">任务：描述你真实的昨天</span></h4>
+        <p class="lang-en-block">Narrate 5 real things you did yesterday, using at least 3 different regular preterite verbs (mixing -AR and -ER/-IR).</p>
+        <p class="lang-zh-block">描述你昨天做的 5 件真实的事，至少使用 3 个不同的规则过去时动词（混合 -AR 和 -ER/-IR）。</p>
+      </div>
+    </details>
+
+    <details class="panel">
+      <summary>
+        <span class="panel-num">8</span>
+        <span class="panel-title"><span class="lang-en">Free production</span><span class="lang-zh">自由表达</span></span>
+        <svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg>
+      </summary>
+      <div class="panel-body">
+        <p class="lang-en-block">No script. No word bank. Just you, speaking freely using everything from this unit.</p>
+        <p class="lang-zh-block">没有脚本，没有词汇表。用你在本单元学到的一切自由表达。</p>
+
+        <h4><span class="lang-en">Speaking prompts</span><span class="lang-zh">口语提示</span></h4>
+        <ol class="lang-en-block">
+          <li>Narrate your entire day yesterday from morning to night.</li>
+          <li>Describe the last time you traveled somewhere — what did you do?</li>
+          <li>Tell your teacher about something you studied last week.</li>
+          <li>Compare what you did yesterday with what you usually do.</li>
+        </ol>
+        <ol class="lang-zh-block">
+          <li>叙述你昨天从早到晚的一整天。</li>
+          <li>描述你上次旅行的经历——你做了什么？</li>
+          <li>告诉老师你上周学习了什么。</li>
+          <li>比较你昨天做的事和你平时通常做的事。</li>
+        </ol>
+      </div>
+    </details>
+
+    <details class="panel">
+      <summary>
+        <span class="panel-num">9</span>
+        <span class="panel-title"><span class="lang-en">Homework</span><span class="lang-zh">课后作业</span></span>
+        <svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg>
+      </summary>
+      <div class="panel-body">
+        <p class="lang-en-block">Choose <strong>one</strong> of the options below. No need to send anything — just do it before the next class.</p>
+        <p class="lang-zh-block">选择以下任一选项。无需发给老师——课前自己完成就好。</p>
+
+        <h4><span class="lang-en">Option A — Receptive</span><span class="lang-zh">选项 A — 听力输入</span></h4>
+        <p class="lang-en-block">Watch a short Spanish video where someone narrates a past event. Write down any preterite verbs you hear.</p>
+        <p class="lang-zh-block">看一段西班牙语视频，其中有人叙述过去发生的事，记下你听到的过去时动词。</p>
+
+        <h4><span class="lang-en">Option B — Practice exercise</span><span class="lang-zh">选项 B — 书面练习</span></h4>
+        <p class="lang-en-block">Copy the exercise below into your Google Doc and fill in the blanks. Check your answers at the bottom when you are done.</p>
+        <p class="lang-zh-block">将以下练习复制到你的 Google Doc 中并填空。完成后在下方核对答案。</p>
+
+        <div style="background:#f7f5ef; padding:16px; border-radius:8px; margin:12px 0; font-size:14px; line-height:2;">
+          <p><strong>Part 1 — Preterite -AR (过去时 -AR 动词)</strong></p>
+          <p>1. Yo ___ (hablar) con mi madre ayer.</p>
+          <p>2. Tú ___ (trabajar) la semana pasada.</p>
+          <p>3. Ella ___ (estudiar) anoche.</p>
+          <p>4. Nosotros ___ (llegar) tarde.</p>
+          <p>5. Yo ___ (empezar) a trabajar temprano.</p>
+
+          <br>
+          <p><strong>Part 2 — Preterite -ER/-IR (过去时 -ER/-IR 动词)</strong></p>
+          <p>1. Yo ___ (comer) en casa ayer.</p>
+          <p>2. Tú ___ (vivir) en Madrid antes.</p>
+          <p>3. Ella ___ (comer) paella el sábado.</p>
+          <p>4. Nosotros ___ (vivir) en China hace tres años.</p>
+          <p>5. Ellos ___ (comer) tarde anoche.</p>
+        </div>
+
+        <details style="margin-top:8px;">
+          <summary style="cursor:pointer; color:#5a7a32; font-weight:500; font-size:13px;"><span class="lang-en">Show answers</span><span class="lang-zh">查看答案</span></summary>
+          <div style="background:#eef4e4; padding:12px; border-radius:8px; margin-top:8px; font-size:13px; line-height:2;">
+            <p><strong>Part 1:</strong> 1. hablé · 2. trabajaste · 3. estudió · 4. llegamos · 5. empecé</p>
+            <p><strong>Part 2:</strong> 1. comí · 2. viviste · 3. comió · 4. vivimos · 5. comieron</p>
+          </div>
+        </details>
+
+        <h4><span class="lang-en">Option C — Creative</span><span class="lang-zh">选项 C — 创意练习</span></h4>
+        <p class="lang-en-block">Draw a comic strip of 4 panels showing what you did yesterday, labeled in Spanish with preterite verbs.</p>
+        <p class="lang-zh-block">画一个 4 格漫画，展示你昨天做的事，用西班牙语过去时动词标注。</p>
+      </div>
+    </details>
+
   </div>
+
   <div class="unit-nav">
     <a class="prev" href="./unit-18.html"><span>←</span><div><span class="nav-label">Previous</span><span class="nav-title">Unit 18 · Futuro</span></div></a>
     <a class="next" href="./unit-20.html"><div><span class="nav-label">Next</span><span class="nav-title">Unit 20 · Pasado II</span></div><span>→</span></a>
   </div>
 </main>
+
 <footer class="site-footer">Spanish with Brady · Private use only</footer>
+
+<script>
+function setLang(lang) {
+  if (lang === 'zh') {
+    document.body.classList.add('zh');
+    document.getElementById('btn-zh').style.background = '#5a7a32';
+    document.getElementById('btn-zh').style.color = 'white';
+    document.getElementById('btn-en').style.background = '#f7f5ef';
+    document.getElementById('btn-en').style.color = '#7a6e60';
+  } else {
+    document.body.classList.remove('zh');
+    document.getElementById('btn-en').style.background = '#5a7a32';
+    document.getElementById('btn-en').style.color = 'white';
+    document.getElementById('btn-zh').style.background = '#f7f5ef';
+    document.getElementById('btn-zh').style.color = '#7a6e60';
+  }
+  localStorage.setItem('lang', lang);
+}
+const saved = localStorage.getItem('lang');
+if (saved === 'zh') setLang('zh');
+</script>
+
 </body>
 </html>

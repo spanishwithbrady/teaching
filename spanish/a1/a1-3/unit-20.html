@@ -5,41 +5,348 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Unit 20 · Pasado II · Spanish with Brady</title>
   <link rel="stylesheet" href="../../../assets/style.css">
+  <style>
+    .lang-zh { display: none; }
+    body.zh .lang-en { display: none; }
+    body.zh .lang-zh { display: inline; }
+    .lang-zh-block { display: none; }
+    body.zh .lang-zh-block { display: block; }
+    body.zh .lang-en-block { display: none; }
+  </style>
 </head>
 <body>
+
 <header class="site-header">
   <a class="site-logo" href="../../../">Spanish with Brady</a>
-  <nav><ul class="site-nav">
-    <li><a href="../../../spanish/" class="active">Spanish</a></li>
-    <li><a href="../../../mandarin/">Mandarin</a></li>
-    <li><a href="#">English</a></li>
-  </ul></nav>
+  <nav>
+    <ul class="site-nav">
+      <li><a href="../../../spanish/" class="active">Spanish</a></li>
+      <li><a href="../../../mandarin/">Mandarin</a></li>
+      <li><a href="#">English</a></li>
+    </ul>
+  </nav>
 </header>
+
 <nav class="breadcrumb">
   <a href="../../../">Home</a><span>›</span><a href="../../../spanish/">Spanish</a><span>›</span><a href="../../../spanish/a1/">A1</a><span>›</span><a href="./index.html">A1.3</a><span>›</span>Unit 20
 </nav>
+
 <main>
+  <div style="display:flex; justify-content:flex-end; padding: 8px 0 0;">
+    <div style="display:flex; gap:0; border:1px solid #e2ddd4; border-radius:6px; overflow:hidden;">
+      <button id="btn-en" onclick="setLang('en')" style="padding:6px 16px; font-size:13px; font-weight:500; border:none; cursor:pointer; background:#5a7a32; color:white;">EN</button>
+      <button id="btn-zh" onclick="setLang('zh')" style="padding:6px 16px; font-size:13px; font-weight:500; border:none; cursor:pointer; background:#f7f5ef; color:#7a6e60;">中文</button>
+    </div>
+  </div>
+
   <div class="unit-header">
     <div class="unit-num">A1.3 · Unit 20</div>
     <h1>Pasado II</h1>
-    <p class="unit-subtitle">The past: irregular verbs</p>
+    <p class="unit-subtitle">Travel stories with irregular preterite</p>
   </div>
+
   <div class="panels">
-    <details class="panel"><summary><span class="panel-num">1</span><span class="panel-title">Hook / Opener</span><svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg></summary><div class="panel-body">Content coming soon</div></details>
-    <details class="panel"><summary><span class="panel-num">2</span><span class="panel-title">Vocabulary</span><svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg></summary><div class="panel-body">Content coming soon</div></details>
-    <details class="panel"><summary><span class="panel-num">3</span><span class="panel-title">Grammar in context</span><svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg></summary><div class="panel-body">Content coming soon</div></details>
-    <details class="panel"><summary><span class="panel-num">4</span><span class="panel-title">Reading or dialogue</span><svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg></summary><div class="panel-body">Content coming soon</div></details>
-    <details class="panel"><summary><span class="panel-num">5</span><span class="panel-title">Controlled practice</span><svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg></summary><div class="panel-body">Content coming soon</div></details>
-    <details class="panel"><summary><span class="panel-num">6</span><span class="panel-title">Question formation</span><svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg></summary><div class="panel-body">Content coming soon</div></details>
-    <details class="panel"><summary><span class="panel-num">7</span><span class="panel-title">Real-life task</span><svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg></summary><div class="panel-body">Content coming soon</div></details>
-    <details class="panel"><summary><span class="panel-num">8</span><span class="panel-title">Free production</span><svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg></summary><div class="panel-body">Content coming soon</div></details>
-    <details class="panel"><summary><span class="panel-num">9</span><span class="panel-title">Homework</span><svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg></summary><div class="panel-body">Content coming soon</div></details>
+
+    <details class="panel">
+      <summary>
+        <span class="panel-num">1</span>
+        <span class="panel-title"><span class="lang-en">Hook / Opener</span><span class="lang-zh">课程导入</span></span>
+        <svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg>
+      </summary>
+      <div class="panel-body">
+        <p>📷 <em>Suggested image: a suitcase, a boarding pass, and a passport on a table.</em></p>
+        <p class="lang-en-block">Before we start, think about this: Have you ever traveled somewhere memorable? In this unit you'll learn the irregular past tense verbs you need to tell that story.</p>
+        <p class="lang-zh-block">开始之前，想一想：你有没有去过让你印象深刻的地方旅行？在本单元中，你将学习讲述这段经历所需的不规则过去时动词。</p>
+        <p><strong><span class="lang-en">By the end of this unit you can:</span><span class="lang-zh">完成本单元后，你能够：</span></strong> <span class="lang-en">narrate travel and vacation experiences using irregular preterite verbs.</span><span class="lang-zh">用不规则过去时动词描述旅行和度假经历。</span></p>
+      </div>
+    </details>
+
+    <details class="panel">
+      <summary>
+        <span class="panel-num">2</span>
+        <span class="panel-title"><span class="lang-en">Vocabulary</span><span class="lang-zh">词汇</span></span>
+        <svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg>
+      </summary>
+      <div class="panel-body">
+        <h4><span class="lang-en">Travel words</span><span class="lang-zh">旅行词汇</span></h4>
+        <table>
+          <tr><th>Spanish</th><th>English</th><th>中文</th></tr>
+          <tr><td><strong>el viaje</strong></td><td>trip</td><td>旅行</td></tr>
+          <tr><td><strong>el vuelo</strong></td><td>flight</td><td>航班</td></tr>
+          <tr><td><strong>el hotel</strong></td><td>hotel</td><td>酒店</td></tr>
+          <tr><td><strong>la maleta</strong></td><td>suitcase</td><td>行李箱</td></tr>
+          <tr><td><strong>el pasaporte</strong></td><td>passport</td><td>护照</td></tr>
+          <tr><td><strong>el monumento</strong></td><td>monument</td><td>纪念碑/古迹</td></tr>
+          <tr><td><strong>la playa</strong></td><td>beach</td><td>海滩</td></tr>
+        </table>
+
+        <h4><span class="lang-en">Narrative connectors</span><span class="lang-zh">叙事连接词</span></h4>
+        <table>
+          <tr><th>Spanish</th><th>English</th><th>中文</th></tr>
+          <tr><td><strong>primero</strong></td><td>first</td><td>首先</td></tr>
+          <tr><td><strong>luego</strong></td><td>then</td><td>然后</td></tr>
+          <tr><td><strong>después</strong></td><td>afterward</td><td>之后</td></tr>
+          <tr><td><strong>al día siguiente</strong></td><td>the next day</td><td>第二天</td></tr>
+          <tr><td><strong>finalmente</strong></td><td>finally</td><td>最后</td></tr>
+        </table>
+      </div>
+    </details>
+
+    <details class="panel">
+      <summary>
+        <span class="panel-num">3</span>
+        <span class="panel-title"><span class="lang-en">Grammar in context</span><span class="lang-zh">语法讲解</span></span>
+        <svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg>
+      </summary>
+      <div class="panel-body">
+        <h4><span class="lang-en">Irregular root preterites — special endings, never accented</span><span class="lang-zh">不规则词根过去时——特殊词尾，永远不加重音</span></h4>
+        <p class="lang-en-block">These verbs share special endings (-e, -iste, -o, -imos, -isteis, -ieron) and unlike regular verbs, they NEVER take accents.</p>
+        <p class="lang-zh-block">这些动词共享特殊词尾（-e、-iste、-o、-imos、-isteis、-ieron），并且与规则动词不同，它们永远不加重音符号。</p>
+        <table>
+          <tr><th><span class="lang-en">Verb</span><span class="lang-zh">动词</span></th><th>yo</th><th>él/ella</th><th><span class="lang-en">Note</span><span class="lang-zh">注意</span></th></tr>
+          <tr><td><strong>ir / ser</strong></td><td>fui</td><td>fue</td><td><span class="lang-en">same form for both verbs — context clarifies</span><span class="lang-zh">两个动词形式相同——靠上下文区分</span></td></tr>
+          <tr><td><strong>hacer</strong></td><td>hice</td><td>hizo</td><td><span class="lang-en">hizo has z, not c — the only exception</span><span class="lang-zh">hizo 用 z 而非 c——唯一的例外</span></td></tr>
+          <tr><td><strong>tener</strong></td><td>tuve</td><td>tuvo</td><td></td></tr>
+          <tr><td><strong>estar</strong></td><td>estuve</td><td>estuvo</td><td></td></tr>
+          <tr><td><strong>poder</strong></td><td>pude</td><td>pudo</td><td></td></tr>
+          <tr><td><strong>querer</strong></td><td>quise</td><td>quiso</td><td></td></tr>
+          <tr><td><strong>venir</strong></td><td>vine</td><td>vino</td><td></td></tr>
+          <tr><td><strong>saber</strong></td><td>supe</td><td>supo</td><td></td></tr>
+          <tr><td><strong>poner</strong></td><td>puse</td><td>puso</td><td></td></tr>
+          <tr><td><strong>decir</strong></td><td>dije</td><td>dijo</td><td></td></tr>
+        </table>
+        <p class="lang-en-block">💡 Teach these as pattern groups, not isolated memorization: notice tuve/tuvo, estuve/estuvo, pude/pudo, quise/quiso, supe/supo, puse/puso all follow the exact same -e/-o pattern.</p>
+        <p class="lang-zh-block">💡 把这些作为一组规律来学习，而不是孤立地死记硬背：注意 tuve/tuvo、estuve/estuvo、pude/pudo、quise/quiso、supe/supo、puse/puso 都遵循完全相同的 -e/-o 规律。</p>
+
+        <h4><span class="lang-en">Stem-change in 3rd person only</span><span class="lang-zh">仅第三人称的词干变化</span></h4>
+        <table>
+          <tr><th><span class="lang-en">Verb</span><span class="lang-zh">动词</span></th><th>él/ella</th><th>ellos/ellas</th></tr>
+          <tr><td><strong>pedir</strong></td><td>pidió</td><td>pidieron</td></tr>
+          <tr><td><strong>dormir</strong></td><td>durmió</td><td>durmieron</td></tr>
+        </table>
+      </div>
+    </details>
+
+    <details class="panel">
+      <summary>
+        <span class="panel-num">4</span>
+        <span class="panel-title"><span class="lang-en">Reading or dialogue</span><span class="lang-zh">阅读与对话</span></span>
+        <svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg>
+      </summary>
+      <div class="panel-body">
+        <p>📷 <em>Suggested image: a postcard from a beach destination.</em></p>
+
+        <h4>Mi viaje a la playa</h4>
+        <p class="lang-en-block">Elena tells Ming about her recent trip.</p>
+        <p class="lang-zh-block">Elena 向 Ming 讲述她最近的一次旅行。</p>
+
+        <div class="dialogue">
+          <p><strong>Ming:</strong> Elena, ¿adónde fuiste de vacaciones?</p>
+          <p><strong>Elena:</strong> Fui a la playa con mi familia. ¡Fue increíble!</p>
+          <p><strong>Ming:</strong> ¿Qué hiciste allí?</p>
+          <p><strong>Elena:</strong> Primero, estuvimos en el hotel dos días. Luego fuimos a un monumento famoso.</p>
+          <p><strong>Ming:</strong> ¿Pudiste descansar?</p>
+          <p><strong>Elena:</strong> Sí, dormí muy bien todas las noches.</p>
+          <p><strong>Ming:</strong> ¿Tuviste algún problema con el vuelo?</p>
+          <p><strong>Elena:</strong> No, todo fue perfecto. Al día siguiente, volvimos a casa.</p>
+        </div>
+
+        <h4><span class="lang-en">Comprehension questions</span><span class="lang-zh">理解问题</span></h4>
+        <ol>
+          <li>¿Adónde fue Elena de vacaciones?</li>
+          <li>¿Qué hicieron primero?</li>
+          <li>¿Durmió bien Elena?</li>
+          <li>¿Tuvo problemas con el vuelo?</li>
+        </ol>
+      </div>
+    </details>
+
+    <details class="panel">
+      <summary>
+        <span class="panel-num">5</span>
+        <span class="panel-title"><span class="lang-en">Controlled practice</span><span class="lang-zh">强化练习</span></span>
+        <svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg>
+      </summary>
+      <div class="panel-body">
+        <h4><span class="lang-en">Exercise 1 — Complete with the irregular preterite</span><span class="lang-zh">练习一 — 用不规则过去时填空</span></h4>
+        <ol>
+          <li>Yo ___ (ir) a España el año pasado.</li>
+          <li>Tú ___ (tener) un buen viaje.</li>
+          <li>Ella ___ (estar) en un hotel bonito.</li>
+          <li>Nosotros ___ (hacer) muchas fotos.</li>
+          <li>Ellos ___ (poder) visitar el museo.</li>
+          <li>Yo ___ (decir) la verdad sobre el viaje.</li>
+        </ol>
+
+        <h4><span class="lang-en">Exercise 2 — 3rd person stem-change</span><span class="lang-zh">练习二 — 第三人称词干变化</span></h4>
+        <ol>
+          <li>Ella ___ (pedir) paella en el restaurante.</li>
+          <li>Ellos ___ (dormir) ocho horas.</li>
+          <li>Él ___ (pedir) ayuda en el hotel.</li>
+          <li>Ellas ___ (dormir) en el avión.</li>
+          <li>El camarero ___ (pedir) disculpas.</li>
+          <li>Los niños ___ (dormir) toda la tarde.</li>
+        </ol>
+
+        <h4><span class="lang-en">Exercise 3 — Find the error</span><span class="lang-zh">练习三 — 找出错误</span></h4>
+        <ol>
+          <li>Yo fué a la playa. (wrong accent) → ___</li>
+          <li>Ella hació la maleta. (wrong spelling) → ___</li>
+          <li>Nosotros tuvimos / tuvimos un buen viaje. (check form) → ___</li>
+          <li>Él pidió / pedió ayuda. → ___</li>
+          <li>Ellos durmieron / dormieron bien. → ___</li>
+        </ol>
+      </div>
+    </details>
+
+    <details class="panel">
+      <summary>
+        <span class="panel-num">6</span>
+        <span class="panel-title"><span class="lang-en">Question formation</span><span class="lang-zh">如何提问</span></span>
+        <svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg>
+      </summary>
+      <div class="panel-body">
+        <h4><span class="lang-en">Questions for this unit</span><span class="lang-zh">本单元问句</span></h4>
+        <table>
+          <tr><th><span class="lang-en">Question</span><span class="lang-zh">问句</span></th><th><span class="lang-en">Meaning</span><span class="lang-zh">意思</span></th><th><span class="lang-en">Typical answer</span><span class="lang-zh">常见回答</span></th></tr>
+          <tr><td><strong>¿Adónde fuiste?</strong></td><td><span class="lang-en">Where did you go?</span><span class="lang-zh">你去哪儿了？</span></td><td>Fui a la playa.</td></tr>
+          <tr><td><strong>¿Qué hiciste allí?</strong></td><td><span class="lang-en">What did you do there?</span><span class="lang-zh">你在那里做了什么？</span></td><td>Hice muchas fotos.</td></tr>
+          <tr><td><strong>¿Cómo fue el viaje?</strong></td><td><span class="lang-en">How was the trip?</span><span class="lang-zh">旅行怎么样？</span></td><td>Fue increíble.</td></tr>
+          <tr><td><strong>¿Tuviste algún problema?</strong></td><td><span class="lang-en">Did you have any problems?</span><span class="lang-zh">你遇到什么问题了吗？</span></td><td>No, todo salió bien.</td></tr>
+        </table>
+
+        <h4><span class="lang-en">Practice — Ask the question</span><span class="lang-zh">练习 — 写出问句</span></h4>
+        <p class="lang-en-block">Look at the answer. What was the question?</p>
+        <p class="lang-zh-block">看答案，写出对应的问句。</p>
+        <ol>
+          <li>→ Fui a México el año pasado.</li>
+          <li>→ Visitamos varios monumentos.</li>
+          <li>→ Fue un viaje increíble.</li>
+          <li>→ Sí, tuve un problema con el vuelo.</li>
+        </ol>
+      </div>
+    </details>
+
+    <details class="panel">
+      <summary>
+        <span class="panel-num">7</span>
+        <span class="panel-title"><span class="lang-en">Real-life task</span><span class="lang-zh">真实任务</span></span>
+        <svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg>
+      </summary>
+      <div class="panel-body">
+        <p>📷 <em>Suggested image: real travel photos, your own if possible.</em></p>
+
+        <h4><span class="lang-en">Task: Tell a real travel story</span><span class="lang-zh">任务：讲述一次真实的旅行经历</span></h4>
+        <p class="lang-en-block">Narrate a real trip you took, using primero/luego/después/finalmente and at least 4 irregular preterite verbs.</p>
+        <p class="lang-zh-block">叙述一次你真实的旅行经历，使用 primero/luego/después/finalmente，并至少用 4 个不规则过去时动词。</p>
+      </div>
+    </details>
+
+    <details class="panel">
+      <summary>
+        <span class="panel-num">8</span>
+        <span class="panel-title"><span class="lang-en">Free production</span><span class="lang-zh">自由表达</span></span>
+        <svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg>
+      </summary>
+      <div class="panel-body">
+        <p class="lang-en-block">No script. No word bank. Just you, speaking freely using everything from this unit.</p>
+        <p class="lang-zh-block">没有脚本，没有词汇表。用你在本单元学到的一切自由表达。</p>
+
+        <h4><span class="lang-en">Speaking prompts</span><span class="lang-zh">口语提示</span></h4>
+        <ol class="lang-en-block">
+          <li>Narrate your best vacation ever, start to finish.</li>
+          <li>Describe a time something went wrong during a trip.</li>
+          <li>Tell your teacher about the last time you tried new food while traveling.</li>
+          <li>Compare two different trips you've taken.</li>
+        </ol>
+        <ol class="lang-zh-block">
+          <li>从头到尾叙述你经历过的最棒的一次假期。</li>
+          <li>描述一次旅行中出问题的经历。</li>
+          <li>告诉老师你上次旅行时尝试新食物的经历。</li>
+          <li>比较你经历过的两次不同的旅行。</li>
+        </ol>
+      </div>
+    </details>
+
+    <details class="panel">
+      <summary>
+        <span class="panel-num">9</span>
+        <span class="panel-title"><span class="lang-en">Homework</span><span class="lang-zh">课后作业</span></span>
+        <svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg>
+      </summary>
+      <div class="panel-body">
+        <p class="lang-en-block">Choose <strong>one</strong> of the options below. No need to send anything — just do it before the next class.</p>
+        <p class="lang-zh-block">选择以下任一选项。无需发给老师——课前自己完成就好。</p>
+
+        <h4><span class="lang-en">Option A — Receptive</span><span class="lang-zh">选项 A — 听力输入</span></h4>
+        <p class="lang-en-block">Watch a short Spanish travel vlog. Write down any irregular preterite verbs you hear.</p>
+        <p class="lang-zh-block">看一段西班牙语旅行 vlog，记下你听到的不规则过去时动词。</p>
+
+        <h4><span class="lang-en">Option B — Practice exercise</span><span class="lang-zh">选项 B — 书面练习</span></h4>
+        <p class="lang-en-block">Copy the exercise below into your Google Doc and fill in the blanks. Check your answers at the bottom when you are done.</p>
+        <p class="lang-zh-block">将以下练习复制到你的 Google Doc 中并填空。完成后在下方核对答案。</p>
+
+        <div style="background:#f7f5ef; padding:16px; border-radius:8px; margin:12px 0; font-size:14px; line-height:2;">
+          <p><strong>Part 1 — Irregular preterite (不规则过去时)</strong></p>
+          <p>1. Yo ___ (ir) a España el año pasado.</p>
+          <p>2. Tú ___ (tener) un buen viaje.</p>
+          <p>3. Ella ___ (estar) en un hotel bonito.</p>
+          <p>4. Nosotros ___ (hacer) muchas fotos.</p>
+          <p>5. Yo ___ (decir) la verdad.</p>
+
+          <br>
+          <p><strong>Part 2 — 3rd person stem-change (第三人称词干变化)</strong></p>
+          <p>1. Ella ___ (pedir) paella.</p>
+          <p>2. Ellos ___ (dormir) ocho horas.</p>
+          <p>3. Él ___ (pedir) ayuda.</p>
+          <p>4. Ellas ___ (dormir) en el avión.</p>
+          <p>5. Los niños ___ (dormir) toda la tarde.</p>
+        </div>
+
+        <details style="margin-top:8px;">
+          <summary style="cursor:pointer; color:#5a7a32; font-weight:500; font-size:13px;"><span class="lang-en">Show answers</span><span class="lang-zh">查看答案</span></summary>
+          <div style="background:#eef4e4; padding:12px; border-radius:8px; margin-top:8px; font-size:13px; line-height:2;">
+            <p><strong>Part 1:</strong> 1. fui · 2. tuviste · 3. estuvo · 4. hicimos · 5. dije</p>
+            <p><strong>Part 2:</strong> 1. pidió · 2. durmieron · 3. pidió · 4. durmieron · 5. durmieron</p>
+          </div>
+        </details>
+
+        <h4><span class="lang-en">Option C — Creative</span><span class="lang-zh">选项 C — 创意练习</span></h4>
+        <p class="lang-en-block">Make a simple postcard (drawn or digital) about a real or imaginary trip, with 3 sentences in the preterite.</p>
+        <p class="lang-zh-block">制作一张简单的明信片（手绘或数字），关于一次真实或想象的旅行，写 3 句过去时句子。</p>
+      </div>
+    </details>
+
   </div>
+
   <div class="unit-nav">
     <a class="prev" href="./unit-19.html"><span>←</span><div><span class="nav-label">Previous</span><span class="nav-title">Unit 19 · Pasado I</span></div></a>
     <a class="next" href="./knowledge-check-5.html"><div><span class="nav-label">Next</span><span class="nav-title">Knowledge Check 5</span></div><span>→</span></a>
   </div>
 </main>
+
 <footer class="site-footer">Spanish with Brady · Private use only</footer>
+
+<script>
+function setLang(lang) {
+  if (lang === 'zh') {
+    document.body.classList.add('zh');
+    document.getElementById('btn-zh').style.background = '#5a7a32';
+    document.getElementById('btn-zh').style.color = 'white';
+    document.getElementById('btn-en').style.background = '#f7f5ef';
+    document.getElementById('btn-en').style.color = '#7a6e60';
+  } else {
+    document.body.classList.remove('zh');
+    document.getElementById('btn-en').style.background = '#5a7a32';
+    document.getElementById('btn-en').style.color = 'white';
+    document.getElementById('btn-zh').style.background = '#f7f5ef';
+    document.getElementById('btn-zh').style.color = '#7a6e60';
+  }
+  localStorage.setItem('lang', lang);
+}
+const saved = localStorage.getItem('lang');
+if (saved === 'zh') setLang('zh');
+</script>
+
 </body>
 </html>

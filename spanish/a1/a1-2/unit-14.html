@@ -5,41 +5,351 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Unit 14 · De Compras · Spanish with Brady</title>
   <link rel="stylesheet" href="../../../assets/style.css">
+  <style>
+    .lang-zh { display: none; }
+    body.zh .lang-en { display: none; }
+    body.zh .lang-zh { display: inline; }
+    .lang-zh-block { display: none; }
+    body.zh .lang-zh-block { display: block; }
+    body.zh .lang-en-block { display: none; }
+  </style>
 </head>
 <body>
+
 <header class="site-header">
   <a class="site-logo" href="../../../">Spanish with Brady</a>
-  <nav><ul class="site-nav">
-    <li><a href="../../../spanish/" class="active">Spanish</a></li>
-    <li><a href="../../../mandarin/">Mandarin</a></li>
-    <li><a href="#">English</a></li>
-  </ul></nav>
+  <nav>
+    <ul class="site-nav">
+      <li><a href="../../../spanish/" class="active">Spanish</a></li>
+      <li><a href="../../../mandarin/">Mandarin</a></li>
+      <li><a href="#">English</a></li>
+    </ul>
+  </nav>
 </header>
+
 <nav class="breadcrumb">
   <a href="../../../">Home</a><span>›</span><a href="../../../spanish/">Spanish</a><span>›</span><a href="../../../spanish/a1/">A1</a><span>›</span><a href="./index.html">A1.2</a><span>›</span>Unit 14
 </nav>
+
 <main>
+  <div style="display:flex; justify-content:flex-end; padding: 8px 0 0;">
+    <div style="display:flex; gap:0; border:1px solid #e2ddd4; border-radius:6px; overflow:hidden;">
+      <button id="btn-en" onclick="setLang('en')" style="padding:6px 16px; font-size:13px; font-weight:500; border:none; cursor:pointer; background:#5a7a32; color:white;">EN</button>
+      <button id="btn-zh" onclick="setLang('zh')" style="padding:6px 16px; font-size:13px; font-weight:500; border:none; cursor:pointer; background:#f7f5ef; color:#7a6e60;">中文</button>
+    </div>
+  </div>
+
   <div class="unit-header">
     <div class="unit-num">A1.2 · Unit 14</div>
     <h1>De Compras</h1>
     <p class="unit-subtitle">Shopping, clothing and object pronouns</p>
   </div>
+
   <div class="panels">
-    <details class="panel"><summary><span class="panel-num">1</span><span class="panel-title">Hook / Opener</span><svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg></summary><div class="panel-body">Content coming soon</div></details>
-    <details class="panel"><summary><span class="panel-num">2</span><span class="panel-title">Vocabulary</span><svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg></summary><div class="panel-body">Content coming soon</div></details>
-    <details class="panel"><summary><span class="panel-num">3</span><span class="panel-title">Grammar in context</span><svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg></summary><div class="panel-body">Content coming soon</div></details>
-    <details class="panel"><summary><span class="panel-num">4</span><span class="panel-title">Reading or dialogue</span><svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg></summary><div class="panel-body">Content coming soon</div></details>
-    <details class="panel"><summary><span class="panel-num">5</span><span class="panel-title">Controlled practice</span><svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg></summary><div class="panel-body">Content coming soon</div></details>
-    <details class="panel"><summary><span class="panel-num">6</span><span class="panel-title">Question formation</span><svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg></summary><div class="panel-body">Content coming soon</div></details>
-    <details class="panel"><summary><span class="panel-num">7</span><span class="panel-title">Real-life task</span><svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg></summary><div class="panel-body">Content coming soon</div></details>
-    <details class="panel"><summary><span class="panel-num">8</span><span class="panel-title">Free production</span><svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg></summary><div class="panel-body">Content coming soon</div></details>
-    <details class="panel"><summary><span class="panel-num">9</span><span class="panel-title">Homework</span><svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg></summary><div class="panel-body">Content coming soon</div></details>
+
+    <details class="panel">
+      <summary>
+        <span class="panel-num">1</span>
+        <span class="panel-title"><span class="lang-en">Hook / Opener</span><span class="lang-zh">课程导入</span></span>
+        <svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg>
+      </summary>
+      <div class="panel-body">
+        <p>📷 <em>Suggested image: a clothing store rack with price tags and a "sale" sign.</em></p>
+        <p class="lang-en-block">Before we start, think about this: When you buy clothes, what do you usually ask the shop assistant? Can you say it in Spanish?</p>
+        <p class="lang-zh-block">开始之前，想一想：你买衣服时通常会问店员什么？你能用西班牙语说出来吗？</p>
+        <p><strong><span class="lang-en">By the end of this unit you can:</span><span class="lang-zh">完成本单元后，你能够：</span></strong> <span class="lang-en">complete a full shopping interaction, and use direct object pronouns to avoid repeating nouns.</span><span class="lang-zh">完成一次完整的购物互动，并用直接宾语代词避免重复名词。</span></p>
+      </div>
+    </details>
+
+    <details class="panel">
+      <summary>
+        <span class="panel-num">2</span>
+        <span class="panel-title"><span class="lang-en">Vocabulary</span><span class="lang-zh">词汇</span></span>
+        <svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg>
+      </summary>
+      <div class="panel-body">
+        <h4><span class="lang-en">Clothing items</span><span class="lang-zh">衣物</span></h4>
+        <table>
+          <tr><th>Spanish</th><th>English</th><th>中文</th></tr>
+          <tr><td><strong>la camisa</strong></td><td>shirt</td><td>衬衫</td></tr>
+          <tr><td><strong>la camiseta</strong></td><td>t-shirt</td><td>T恤</td></tr>
+          <tr><td><strong>el pantalón</strong></td><td>pants</td><td>裤子</td></tr>
+          <tr><td><strong>la falda</strong></td><td>skirt</td><td>裙子</td></tr>
+          <tr><td><strong>el vestido</strong></td><td>dress</td><td>连衣裙</td></tr>
+          <tr><td><strong>los zapatos</strong></td><td>shoes</td><td>鞋子</td></tr>
+          <tr><td><strong>la chaqueta</strong></td><td>jacket</td><td>夹克</td></tr>
+          <tr><td><strong>el abrigo</strong></td><td>coat</td><td>大衣</td></tr>
+        </table>
+
+        <h4><span class="lang-en">Shopping phrases</span><span class="lang-zh">购物用语</span></h4>
+        <table>
+          <tr><th>Spanish</th><th>English</th><th>中文</th></tr>
+          <tr><td><strong>la talla</strong></td><td>size</td><td>尺码</td></tr>
+          <tr><td><strong>¿Cuánto cuesta?</strong></td><td>How much does it cost?</td><td>多少钱？</td></tr>
+          <tr><td><strong>Me lo llevo.</strong></td><td>I'll take it.</td><td>我要了。</td></tr>
+          <tr><td><strong>Está de oferta.</strong></td><td>It's on sale.</td><td>正在打折。</td></tr>
+        </table>
+      </div>
+    </details>
+
+    <details class="panel">
+      <summary>
+        <span class="panel-num">3</span>
+        <span class="panel-title"><span class="lang-en">Grammar in context</span><span class="lang-zh">语法讲解</span></span>
+        <svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg>
+      </summary>
+      <div class="panel-body">
+        <h4><span class="lang-en">Direct object pronouns</span><span class="lang-zh">直接宾语代词</span></h4>
+        <p class="lang-en-block">Direct object pronouns replace a noun you've already mentioned, to avoid repeating it. They agree with the NOUN they replace, not the subject of the sentence.</p>
+        <p class="lang-zh-block">直接宾语代词用来替代已经提到过的名词，避免重复。它们与所替代的名词保持一致，而不是与句子的主语一致。</p>
+        <table>
+          <tr><th><span class="lang-en">Pronoun</span><span class="lang-zh">代词</span></th><th><span class="lang-en">Replaces</span><span class="lang-zh">替代</span></th><th><span class="lang-en">Example</span><span class="lang-zh">例句</span></th></tr>
+          <tr><td><strong>lo</strong></td><td><span class="lang-en">masc. singular</span><span class="lang-zh">阳性单数</span></td><td>¿El vestido? Lo quiero.</td></tr>
+          <tr><td><strong>la</strong></td><td><span class="lang-en">fem. singular</span><span class="lang-zh">阴性单数</span></td><td>¿La camisa? La quiero.</td></tr>
+          <tr><td><strong>los</strong></td><td><span class="lang-en">masc. plural</span><span class="lang-zh">阳性复数</span></td><td>¿Los zapatos? Los quiero.</td></tr>
+          <tr><td><strong>las</strong></td><td><span class="lang-en">fem. plural</span><span class="lang-zh">阴性复数</span></td><td>¿Las faldas? Las quiero.</td></tr>
+        </table>
+
+        <h4><span class="lang-en">Placement rules</span><span class="lang-zh">位置规则</span></h4>
+        <table>
+          <tr><th><span class="lang-en">Position</span><span class="lang-zh">位置</span></th><th><span class="lang-en">Example</span><span class="lang-zh">例句</span></th></tr>
+          <tr><td><span class="lang-en">Before the conjugated verb</span><span class="lang-zh">放在变位动词之前</span></td><td>Lo quiero.</td></tr>
+          <tr><td><span class="lang-en">Attached to the infinitive</span><span class="lang-zh">附着在不定式后面</span></td><td>Quiero comprarlo.</td></tr>
+        </table>
+        <p class="lang-en-block">⚠️ Never both at once: "Lo quiero comprarlo" is wrong — pick ONE position.</p>
+        <p class="lang-zh-block">⚠️ 绝不能两个位置同时用："Lo quiero comprarlo" 是错误的——只能选一个位置。</p>
+
+        <h4><span class="lang-en">COSTAR and QUEDAR</span><span class="lang-zh">COSTAR 和 QUEDAR</span></h4>
+        <table>
+          <tr><th><span class="lang-en">Verb</span><span class="lang-zh">动词</span></th><th><span class="lang-en">Change</span><span class="lang-zh">变化</span></th><th><span class="lang-en">Example</span><span class="lang-zh">例句</span></th></tr>
+          <tr><td><strong>COSTAR</strong></td><td>o→ue</td><td>¿Cuánto cuesta la camisa?</td></tr>
+          <tr><td><strong>QUEDAR</strong></td><td><span class="lang-en">works like GUSTAR</span><span class="lang-zh">用法类似 GUSTAR</span></td><td>Me queda bien. / Te queda grande.</td></tr>
+        </table>
+        <p class="lang-en-block">💡 QUEDAR works exactly like GUSTAR — the garment is the subject: "Me queda bien" (it fits me well), not "I fit it well".</p>
+        <p class="lang-zh-block">💡 QUEDAR 的用法和 GUSTAR 完全一样——衣物是句子的主语："Me queda bien"（它很合我身），而不是"我合它身"。</p>
+      </div>
+    </details>
+
+    <details class="panel">
+      <summary>
+        <span class="panel-num">4</span>
+        <span class="panel-title"><span class="lang-en">Reading or dialogue</span><span class="lang-zh">阅读与对话</span></span>
+        <svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg>
+      </summary>
+      <div class="panel-body">
+        <p>📷 <em>Suggested image: a clothing store fitting room with a mirror.</em></p>
+
+        <h4>De compras</h4>
+        <p class="lang-en-block">Li is shopping for clothes and talks to the shop assistant (Ana).</p>
+        <p class="lang-zh-block">Li 正在买衣服，和店员（Ana）对话。</p>
+
+        <div class="dialogue">
+          <p><strong>Ana (dependienta):</strong> Hola, ¿busca algo en especial?</p>
+          <p><strong>Li:</strong> Sí, me gusta esa camisa azul. ¿Cuánto cuesta?</p>
+          <p><strong>Ana:</strong> Cuesta 25 euros. Está de oferta.</p>
+          <p><strong>Li:</strong> ¿La tiene en talla mediana?</p>
+          <p><strong>Ana:</strong> Sí, aquí la tiene. ¿Quiere probársela?</p>
+          <p><strong>Li:</strong> Sí, por favor. (después) ¿Qué tal me queda?</p>
+          <p><strong>Ana:</strong> Le queda muy bien.</p>
+          <p><strong>Li:</strong> ¡Perfecto! Me la llevo.</p>
+        </div>
+
+        <h4><span class="lang-en">Comprehension questions</span><span class="lang-zh">理解问题</span></h4>
+        <ol>
+          <li>¿Qué quiere comprar Li?</li>
+          <li>¿Cuánto cuesta la camisa?</li>
+          <li>¿Qué talla pide Li?</li>
+          <li>¿Le queda bien la camisa a Li?</li>
+        </ol>
+      </div>
+    </details>
+
+    <details class="panel">
+      <summary>
+        <span class="panel-num">5</span>
+        <span class="panel-title"><span class="lang-en">Controlled practice</span><span class="lang-zh">强化练习</span></span>
+        <svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg>
+      </summary>
+      <div class="panel-body">
+        <h4><span class="lang-en">Exercise 1 — Replace with the correct OD pronoun</span><span class="lang-zh">练习一 — 用正确的直接宾语代词替换</span></h4>
+        <ol>
+          <li>¿La camisa? ___ quiero.</li>
+          <li>¿El vestido? ___ compro.</li>
+          <li>¿Los zapatos? ___ necesito.</li>
+          <li>¿Las faldas? ___ tengo.</li>
+          <li>¿El abrigo? Voy a comprar___.</li>
+          <li>¿La chaqueta? ___ quiero probar.</li>
+        </ol>
+
+        <h4><span class="lang-en">Exercise 2 — COSTAR or QUEDAR?</span><span class="lang-zh">练习二 — COSTAR 还是 QUEDAR？</span></h4>
+        <ol>
+          <li>¿Cuánto ___ esta camisa?</li>
+          <li>Esta falda me ___ pequeña.</li>
+          <li>Los zapatos ___ 40 euros.</li>
+          <li>El vestido te ___ muy bien.</li>
+          <li>¿Cuánto ___ los pantalones?</li>
+          <li>La chaqueta me ___ grande.</li>
+        </ol>
+
+        <h4><span class="lang-en">Exercise 3 — Find the error</span><span class="lang-zh">练习三 — 找出错误</span></h4>
+        <ol>
+          <li>Lo quiero comprarlo. → ___</li>
+          <li>Me gusta queda esta camisa. → ___</li>
+          <li>¿Cuesta cuánto? → ___</li>
+          <li>La voy a comprar lo. → ___</li>
+          <li>Esta camisa me queda bien a mí gusta. → ___</li>
+        </ol>
+      </div>
+    </details>
+
+    <details class="panel">
+      <summary>
+        <span class="panel-num">6</span>
+        <span class="panel-title"><span class="lang-en">Question formation</span><span class="lang-zh">如何提问</span></span>
+        <svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg>
+      </summary>
+      <div class="panel-body">
+        <h4><span class="lang-en">Questions for this unit</span><span class="lang-zh">本单元问句</span></h4>
+        <table>
+          <tr><th><span class="lang-en">Question</span><span class="lang-zh">问句</span></th><th><span class="lang-en">Meaning</span><span class="lang-zh">意思</span></th><th><span class="lang-en">Typical answer</span><span class="lang-zh">常见回答</span></th></tr>
+          <tr><td><strong>¿Cuánto cuesta?</strong></td><td><span class="lang-en">How much does it cost?</span><span class="lang-zh">多少钱？</span></td><td>Cuesta 25 euros.</td></tr>
+          <tr><td><strong>¿Tiene esto en talla...?</strong></td><td><span class="lang-en">Do you have this in size...?</span><span class="lang-zh">这件有……码的吗？</span></td><td>Sí, aquí la tiene.</td></tr>
+          <tr><td><strong>¿Qué tal me queda?</strong></td><td><span class="lang-en">How does it look on me?</span><span class="lang-zh">这件穿在我身上怎么样？</span></td><td>Te queda muy bien.</td></tr>
+          <tr><td><strong>¿Está de oferta?</strong></td><td><span class="lang-en">Is it on sale?</span><span class="lang-zh">这个打折吗？</span></td><td>Sí, está de oferta.</td></tr>
+        </table>
+
+        <h4><span class="lang-en">Practice — Ask the question</span><span class="lang-zh">练习 — 写出问句</span></h4>
+        <p class="lang-en-block">Look at the answer. What was the question?</p>
+        <p class="lang-zh-block">看答案，写出对应的问句。</p>
+        <ol>
+          <li>→ Cuesta 30 euros.</li>
+          <li>→ Sí, la tenemos en talla grande.</li>
+          <li>→ Te queda perfecto.</li>
+          <li>→ No, no está de oferta.</li>
+        </ol>
+      </div>
+    </details>
+
+    <details class="panel">
+      <summary>
+        <span class="panel-num">7</span>
+        <span class="panel-title"><span class="lang-en">Real-life task</span><span class="lang-zh">真实任务</span></span>
+        <svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg>
+      </summary>
+      <div class="panel-body">
+        <p>📷 <em>Suggested image: an online clothing store webpage.</em></p>
+
+        <h4><span class="lang-en">Task: Shop for a real item</span><span class="lang-zh">任务：购买一件真实的物品</span></h4>
+        <p class="lang-en-block">Find a real clothing item online. Describe it, ask its price, ask about the size, and say whether you'll take it — using at least one direct object pronoun.</p>
+        <p class="lang-zh-block">在网上找一件真实的衣物。描述它，询问价格，询问尺码，并说出你是否要购买——至少使用一个直接宾语代词。</p>
+      </div>
+    </details>
+
+    <details class="panel">
+      <summary>
+        <span class="panel-num">8</span>
+        <span class="panel-title"><span class="lang-en">Free production</span><span class="lang-zh">自由表达</span></span>
+        <svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg>
+      </summary>
+      <div class="panel-body">
+        <p class="lang-en-block">No script. No word bank. Just you, speaking freely using everything from this unit.</p>
+        <p class="lang-zh-block">没有脚本，没有词汇表。用你在本单元学到的一切自由表达。</p>
+
+        <h4><span class="lang-en">Speaking prompts</span><span class="lang-zh">口语提示</span></h4>
+        <ol class="lang-en-block">
+          <li>Describe what you're wearing right now.</li>
+          <li>Roleplay buying a gift for a friend — describe it and say why you're buying it.</li>
+          <li>Describe your favorite item of clothing and how it fits you.</li>
+          <li>Negotiate a price at a market (informally) using "¿Cuánto cuesta?"</li>
+        </ol>
+        <ol class="lang-zh-block">
+          <li>描述你现在穿的衣服。</li>
+          <li>角色扮演给朋友买礼物——描述这件礼物，并说明你为什么买它。</li>
+          <li>描述你最喜欢的一件衣物，以及它合不合身。</li>
+          <li>在市场上用 "¿Cuánto cuesta?" 非正式地砍价。</li>
+        </ol>
+      </div>
+    </details>
+
+    <details class="panel">
+      <summary>
+        <span class="panel-num">9</span>
+        <span class="panel-title"><span class="lang-en">Homework</span><span class="lang-zh">课后作业</span></span>
+        <svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg>
+      </summary>
+      <div class="panel-body">
+        <p class="lang-en-block">Choose <strong>one</strong> of the options below. No need to send anything — just do it before the next class.</p>
+        <p class="lang-zh-block">选择以下任一选项。无需发给老师——课前自己完成就好。</p>
+
+        <h4><span class="lang-en">Option A — Receptive</span><span class="lang-zh">选项 A — 听力输入</span></h4>
+        <p class="lang-en-block">Watch a short Spanish video of someone shopping for clothes. Write down any prices or phrases you hear.</p>
+        <p class="lang-zh-block">看一段西班牙语视频，内容是某人买衣服，记下你听到的价格或用语。</p>
+
+        <h4><span class="lang-en">Option B — Practice exercise</span><span class="lang-zh">选项 B — 书面练习</span></h4>
+        <p class="lang-en-block">Copy the exercise below into your Google Doc and fill in the blanks. Check your answers at the bottom when you are done.</p>
+        <p class="lang-zh-block">将以下练习复制到你的 Google Doc 中并填空。完成后在下方核对答案。</p>
+
+        <div style="background:#f7f5ef; padding:16px; border-radius:8px; margin:12px 0; font-size:14px; line-height:2;">
+          <p><strong>Part 1 — Direct object pronouns (直接宾语代词)</strong></p>
+          <p>1. ¿La camisa? ___ quiero.</p>
+          <p>2. ¿El vestido? ___ compro.</p>
+          <p>3. ¿Los zapatos? ___ necesito.</p>
+          <p>4. ¿Las faldas? ___ tengo.</p>
+          <p>5. ¿La chaqueta? ___ quiero probar.</p>
+
+          <br>
+          <p><strong>Part 2 — COSTAR or QUEDAR (COSTAR 还是 QUEDAR)</strong></p>
+          <p>1. ¿Cuánto ___ esta camisa?</p>
+          <p>2. Esta falda me ___ pequeña.</p>
+          <p>3. Los zapatos ___ 40 euros.</p>
+          <p>4. El vestido te ___ muy bien.</p>
+          <p>5. La chaqueta me ___ grande.</p>
+        </div>
+
+        <details style="margin-top:8px;">
+          <summary style="cursor:pointer; color:#5a7a32; font-weight:500; font-size:13px;"><span class="lang-en">Show answers</span><span class="lang-zh">查看答案</span></summary>
+          <div style="background:#eef4e4; padding:12px; border-radius:8px; margin-top:8px; font-size:13px; line-height:2;">
+            <p><strong>Part 1:</strong> 1. La · 2. Lo · 3. Los · 4. Las · 5. La</p>
+            <p><strong>Part 2:</strong> 1. cuesta · 2. queda · 3. cuestan · 4. queda · 5. queda</p>
+          </div>
+        </details>
+
+        <h4><span class="lang-en">Option C — Creative</span><span class="lang-zh">选项 C — 创意练习</span></h4>
+        <p class="lang-en-block">Design a small online shop ad for 3 clothing items with prices, labeled in Spanish.</p>
+        <p class="lang-zh-block">设计一个小型网店广告，展示 3 件标价的衣物，用西班牙语标注。</p>
+      </div>
+    </details>
+
   </div>
+
   <div class="unit-nav">
     <a class="prev" href="./unit-13.html"><span>←</span><div><span class="nav-label">Previous</span><span class="nav-title">Unit 13 · Restaurante</span></div></a>
     <a class="next" href="./knowledge-check-3.html"><div><span class="nav-label">Next</span><span class="nav-title">Knowledge Check 3</span></div><span>→</span></a>
   </div>
 </main>
+
 <footer class="site-footer">Spanish with Brady · Private use only</footer>
+
+<script>
+function setLang(lang) {
+  if (lang === 'zh') {
+    document.body.classList.add('zh');
+    document.getElementById('btn-zh').style.background = '#5a7a32';
+    document.getElementById('btn-zh').style.color = 'white';
+    document.getElementById('btn-en').style.background = '#f7f5ef';
+    document.getElementById('btn-en').style.color = '#7a6e60';
+  } else {
+    document.body.classList.remove('zh');
+    document.getElementById('btn-en').style.background = '#5a7a32';
+    document.getElementById('btn-en').style.color = 'white';
+    document.getElementById('btn-zh').style.background = '#f7f5ef';
+    document.getElementById('btn-zh').style.color = '#7a6e60';
+  }
+  localStorage.setItem('lang', lang);
+}
+const saved = localStorage.getItem('lang');
+if (saved === 'zh') setLang('zh');
+</script>
+
 </body>
 </html>

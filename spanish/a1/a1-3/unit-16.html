@@ -5,41 +5,366 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Unit 16 · Ciudad · Spanish with Brady</title>
   <link rel="stylesheet" href="../../../assets/style.css">
+  <style>
+    .lang-zh { display: none; }
+    body.zh .lang-en { display: none; }
+    body.zh .lang-zh { display: inline; }
+    .lang-zh-block { display: none; }
+    body.zh .lang-zh-block { display: block; }
+    body.zh .lang-en-block { display: none; }
+  </style>
 </head>
 <body>
+
 <header class="site-header">
   <a class="site-logo" href="../../../">Spanish with Brady</a>
-  <nav><ul class="site-nav">
-    <li><a href="../../../spanish/" class="active">Spanish</a></li>
-    <li><a href="../../../mandarin/">Mandarin</a></li>
-    <li><a href="#">English</a></li>
-  </ul></nav>
+  <nav>
+    <ul class="site-nav">
+      <li><a href="../../../spanish/" class="active">Spanish</a></li>
+      <li><a href="../../../mandarin/">Mandarin</a></li>
+      <li><a href="#">English</a></li>
+    </ul>
+  </nav>
 </header>
+
 <nav class="breadcrumb">
   <a href="../../../">Home</a><span>›</span><a href="../../../spanish/">Spanish</a><span>›</span><a href="../../../spanish/a1/">A1</a><span>›</span><a href="./index.html">A1.3</a><span>›</span>Unit 16
 </nav>
+
 <main>
+  <div style="display:flex; justify-content:flex-end; padding: 8px 0 0;">
+    <div style="display:flex; gap:0; border:1px solid #e2ddd4; border-radius:6px; overflow:hidden;">
+      <button id="btn-en" onclick="setLang('en')" style="padding:6px 16px; font-size:13px; font-weight:500; border:none; cursor:pointer; background:#5a7a32; color:white;">EN</button>
+      <button id="btn-zh" onclick="setLang('zh')" style="padding:6px 16px; font-size:13px; font-weight:500; border:none; cursor:pointer; background:#f7f5ef; color:#7a6e60;">中文</button>
+    </div>
+  </div>
+
   <div class="unit-header">
     <div class="unit-num">A1.3 · Unit 16</div>
     <h1>Ciudad</h1>
-    <p class="unit-subtitle">The city and giving directions</p>
+    <p class="unit-subtitle">Directions and the informal imperative</p>
   </div>
+
   <div class="panels">
-    <details class="panel"><summary><span class="panel-num">1</span><span class="panel-title">Hook / Opener</span><svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg></summary><div class="panel-body">Content coming soon</div></details>
-    <details class="panel"><summary><span class="panel-num">2</span><span class="panel-title">Vocabulary</span><svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg></summary><div class="panel-body">Content coming soon</div></details>
-    <details class="panel"><summary><span class="panel-num">3</span><span class="panel-title">Grammar in context</span><svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg></summary><div class="panel-body">Content coming soon</div></details>
-    <details class="panel"><summary><span class="panel-num">4</span><span class="panel-title">Reading or dialogue</span><svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg></summary><div class="panel-body">Content coming soon</div></details>
-    <details class="panel"><summary><span class="panel-num">5</span><span class="panel-title">Controlled practice</span><svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg></summary><div class="panel-body">Content coming soon</div></details>
-    <details class="panel"><summary><span class="panel-num">6</span><span class="panel-title">Question formation</span><svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg></summary><div class="panel-body">Content coming soon</div></details>
-    <details class="panel"><summary><span class="panel-num">7</span><span class="panel-title">Real-life task</span><svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg></summary><div class="panel-body">Content coming soon</div></details>
-    <details class="panel"><summary><span class="panel-num">8</span><span class="panel-title">Free production</span><svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg></summary><div class="panel-body">Content coming soon</div></details>
-    <details class="panel"><summary><span class="panel-num">9</span><span class="panel-title">Homework</span><svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg></summary><div class="panel-body">Content coming soon</div></details>
+
+    <details class="panel">
+      <summary>
+        <span class="panel-num">1</span>
+        <span class="panel-title"><span class="lang-en">Hook / Opener</span><span class="lang-zh">课程导入</span></span>
+        <svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg>
+      </summary>
+      <div class="panel-body">
+        <p>📷 <em>Suggested image: someone with a paper map, looking at street signs.</em></p>
+        <p class="lang-en-block">Before we start, think about this: Have you ever asked for directions in a foreign city? Do you know any command forms in Spanish yet?</p>
+        <p class="lang-zh-block">开始之前，想一想：你在国外城市问过路吗？你已经知道一些西班牙语的命令式了吗？</p>
+        <p><strong><span class="lang-en">By the end of this unit you can:</span><span class="lang-zh">完成本单元后，你能够：</span></strong> <span class="lang-en">ask for and give directions using the informal imperative, and distinguish SABER from CONOCER.</span><span class="lang-zh">用非正式命令式问路和指路，并区分 SABER 与 CONOCER。</span></p>
+      </div>
+    </details>
+
+    <details class="panel">
+      <summary>
+        <span class="panel-num">2</span>
+        <span class="panel-title"><span class="lang-en">Vocabulary</span><span class="lang-zh">词汇</span></span>
+        <svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg>
+      </summary>
+      <div class="panel-body">
+        <h4><span class="lang-en">Transport</span><span class="lang-zh">交通工具</span></h4>
+        <table>
+          <tr><th>Spanish</th><th>English</th><th>中文</th></tr>
+          <tr><td><strong>el coche</strong></td><td>car</td><td>汽车</td></tr>
+          <tr><td><strong>el autobús</strong></td><td>bus</td><td>公交车</td></tr>
+          <tr><td><strong>el metro</strong></td><td>subway</td><td>地铁</td></tr>
+          <tr><td><strong>el tren</strong></td><td>train</td><td>火车</td></tr>
+          <tr><td><strong>el taxi</strong></td><td>taxi</td><td>出租车</td></tr>
+        </table>
+
+        <h4><span class="lang-en">Direction vocabulary</span><span class="lang-zh">方向词汇</span></h4>
+        <table>
+          <tr><th>Spanish</th><th>English</th><th>中文</th></tr>
+          <tr><td><strong>todo recto</strong></td><td>straight ahead</td><td>一直走</td></tr>
+          <tr><td><strong>girar a la derecha</strong></td><td>turn right</td><td>右转</td></tr>
+          <tr><td><strong>girar a la izquierda</strong></td><td>turn left</td><td>左转</td></tr>
+          <tr><td><strong>cruzar la calle</strong></td><td>cross the street</td><td>过马路</td></tr>
+          <tr><td><strong>seguir</strong></td><td>to continue</td><td>继续走</td></tr>
+        </table>
+
+        <h4><span class="lang-en">Reference points</span><span class="lang-zh">参照点</span></h4>
+        <table>
+          <tr><th>Spanish</th><th>English</th><th>中文</th></tr>
+          <tr><td><strong>el semáforo</strong></td><td>traffic light</td><td>红绿灯</td></tr>
+          <tr><td><strong>el cruce</strong></td><td>intersection</td><td>路口</td></tr>
+          <tr><td><strong>la rotonda</strong></td><td>roundabout</td><td>环岛</td></tr>
+          <tr><td><strong>la esquina</strong></td><td>corner</td><td>街角</td></tr>
+          <tr><td><strong>la plaza</strong></td><td>square</td><td>广场</td></tr>
+        </table>
+      </div>
+    </details>
+
+    <details class="panel">
+      <summary>
+        <span class="panel-num">3</span>
+        <span class="panel-title"><span class="lang-en">Grammar in context</span><span class="lang-zh">语法讲解</span></span>
+        <svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg>
+      </summary>
+      <div class="panel-body">
+        <h4><span class="lang-en">Informal imperative (tú) — regular</span><span class="lang-zh">非正式命令式（tú）——规则动词</span></h4>
+        <p class="lang-en-block">For regular verbs, the affirmative tú command equals the él/ella present tense form: sigue, gira, cruza.</p>
+        <p class="lang-zh-block">规则动词的肯定 tú 命令式等于 él/ella 的现在时形式：sigue（继续）、gira（转）、cruza（过）。</p>
+        <table>
+          <tr><th><span class="lang-en">Infinitive</span><span class="lang-zh">不定式</span></th><th><span class="lang-en">Tú command</span><span class="lang-zh">Tú 命令式</span></th></tr>
+          <tr><td>seguir</td><td><strong>sigue</strong></td></tr>
+          <tr><td>girar</td><td><strong>gira</strong></td></tr>
+          <tr><td>cruzar</td><td><strong>cruza</strong></td></tr>
+        </table>
+
+        <h4><span class="lang-en">8 irregular tú imperatives</span><span class="lang-zh">8 个不规则 tú 命令式</span></h4>
+        <table>
+          <tr><th><span class="lang-en">Infinitive</span><span class="lang-zh">不定式</span></th><th><span class="lang-en">Command</span><span class="lang-zh">命令式</span></th><th><span class="lang-en">Example</span><span class="lang-zh">例句</span></th></tr>
+          <tr><td>ir</td><td><strong>ve</strong></td><td>Ve a la izquierda.</td></tr>
+          <tr><td>poner</td><td><strong>pon</strong></td><td>Pon la mochila aquí.</td></tr>
+          <tr><td>tener</td><td><strong>ten</strong></td><td>Ten cuidado en el cruce.</td></tr>
+          <tr><td>salir</td><td><strong>sal</strong></td><td>Sal por esta calle.</td></tr>
+          <tr><td>hacer</td><td><strong>haz</strong></td><td>Haz lo que digo.</td></tr>
+          <tr><td>decir</td><td><strong>di</strong></td><td>Di la verdad.</td></tr>
+          <tr><td>ser</td><td><strong>sé</strong></td><td>Sé puntual.</td></tr>
+          <tr><td>venir</td><td><strong>ven</strong></td><td>Ven conmigo.</td></tr>
+        </table>
+
+        <p class="lang-en-block">💡 A brief functional note: the formal (usted) imperative exists too (siga, gire, cruce) — you'll recognize it on signs and from strangers, even before studying it formally.</p>
+        <p class="lang-zh-block">💡 简单提一下：正式（usted）命令式也存在（siga、gire、cruce）——即使还没正式学过，你也会在标志牌或陌生人说话中认出它。</p>
+
+        <h4><span class="lang-en">SABER vs. CONOCER</span><span class="lang-zh">SABER 与 CONOCER 的区别</span></h4>
+        <p class="lang-en-block">One of the most confusing pairs for English speakers, since both translate as "to know".</p>
+        <p class="lang-zh-block">这是英语使用者最容易混淆的一对动词，因为两者都翻译成"知道/认识"。</p>
+        <table>
+          <tr><th>SABER</th><th>CONOCER</th></tr>
+          <tr><td><span class="lang-en">Learned knowledge / information</span><span class="lang-zh">习得的知识/信息</span></td><td><span class="lang-en">Familiarity with a person or place</span><span class="lang-zh">熟悉某人或某地</span></td></tr>
+          <tr><td>+ infinitivo <span class="lang-en">or</span><span class="lang-zh">或</span> que/dónde/cómo</td><td>+ <span class="lang-en">direct noun</span><span class="lang-zh">直接名词</span></td></tr>
+          <tr><td>Sé nadar. / Sé dónde está el banco.</td><td>Conozco a Carlos. / Conozco esta ciudad.</td></tr>
+        </table>
+      </div>
+    </details>
+
+    <details class="panel">
+      <summary>
+        <span class="panel-num">4</span>
+        <span class="panel-title"><span class="lang-en">Reading or dialogue</span><span class="lang-zh">阅读与对话</span></span>
+        <svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg>
+      </summary>
+      <div class="panel-body">
+        <p>📷 <em>Suggested image: someone looking lost on a street corner with a phone in hand.</em></p>
+
+        <h4>¿Cómo llego?</h4>
+        <p class="lang-en-block">Pablo is lost and asks Elena, who knows the area well, for directions.</p>
+        <p class="lang-zh-block">Pablo 迷路了，向熟悉这一带的 Elena 问路。</p>
+
+        <div class="dialogue">
+          <p><strong>Pablo:</strong> Elena, ¿sabes dónde está la estación de metro?</p>
+          <p><strong>Elena:</strong> Sí, conozco bien esta zona. Sigue todo recto.</p>
+          <p><strong>Pablo:</strong> Vale, sigo todo recto. ¿Y luego?</p>
+          <p><strong>Elena:</strong> Gira a la derecha en el semáforo.</p>
+          <p><strong>Pablo:</strong> Gira a la derecha. ¿Está lejos?</p>
+          <p><strong>Elena:</strong> No, está cerca. Cruza la calle en la esquina.</p>
+          <p><strong>Pablo:</strong> Perfecto. ¿Conoces un buen café cerca de allí también?</p>
+          <p><strong>Elena:</strong> Sí, ve a la plaza, hay uno excelente.</p>
+        </div>
+
+        <h4><span class="lang-en">Comprehension questions</span><span class="lang-zh">理解问题</span></h4>
+        <ol>
+          <li>¿Qué busca Pablo?</li>
+          <li>¿Qué tiene que hacer primero Pablo?</li>
+          <li>¿Dónde tiene que girar?</li>
+          <li>¿Qué le recomienda Elena cerca de la plaza?</li>
+        </ol>
+      </div>
+    </details>
+
+    <details class="panel">
+      <summary>
+        <span class="panel-num">5</span>
+        <span class="panel-title"><span class="lang-en">Controlled practice</span><span class="lang-zh">强化练习</span></span>
+        <svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg>
+      </summary>
+      <div class="panel-body">
+        <h4><span class="lang-en">Exercise 1 — Complete with the tú command</span><span class="lang-zh">练习一 — 用 tú 命令式填空</span></h4>
+        <ol>
+          <li>___ (seguir) todo recto.</li>
+          <li>___ (girar) a la izquierda.</li>
+          <li>___ (cruzar) la calle.</li>
+          <li>___ (ir) a la plaza.</li>
+          <li>___ (tener) cuidado.</li>
+          <li>___ (venir) conmigo.</li>
+        </ol>
+
+        <h4><span class="lang-en">Exercise 2 — SABER or CONOCER?</span><span class="lang-zh">练习二 — SABER 还是 CONOCER？</span></h4>
+        <ol>
+          <li>Yo ___ nadar.</li>
+          <li>¿Tú ___ a Carlos?</li>
+          <li>Ella ___ dónde está el banco.</li>
+          <li>Nosotros ___ esta ciudad muy bien.</li>
+          <li>Ellos no ___ cocinar.</li>
+          <li>¿Usted ___ este restaurante?</li>
+        </ol>
+
+        <h4><span class="lang-en">Exercise 3 — Find the error</span><span class="lang-zh">练习三 — 找出错误</span></h4>
+        <ol>
+          <li>Sigues todo recto. (should be a command) → ___</li>
+          <li>Va a la izquierda. (wrong command form) → ___</li>
+          <li>Conozco nadar. → ___</li>
+          <li>Sé a Carlos. → ___</li>
+          <li>Hace lo que digo. (wrong command form) → ___</li>
+        </ol>
+      </div>
+    </details>
+
+    <details class="panel">
+      <summary>
+        <span class="panel-num">6</span>
+        <span class="panel-title"><span class="lang-en">Question formation</span><span class="lang-zh">如何提问</span></span>
+        <svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg>
+      </summary>
+      <div class="panel-body">
+        <h4><span class="lang-en">Questions for this unit</span><span class="lang-zh">本单元问句</span></h4>
+        <table>
+          <tr><th><span class="lang-en">Question</span><span class="lang-zh">问句</span></th><th><span class="lang-en">Meaning</span><span class="lang-zh">意思</span></th><th><span class="lang-en">Typical answer</span><span class="lang-zh">常见回答</span></th></tr>
+          <tr><td><strong>¿Sabes dónde está...?</strong></td><td><span class="lang-en">Do you know where... is?</span><span class="lang-zh">你知道……在哪里吗？</span></td><td>Sí, está cerca.</td></tr>
+          <tr><td><strong>¿Cómo llego a...?</strong></td><td><span class="lang-en">How do I get to...?</span><span class="lang-zh">怎么去……？</span></td><td>Sigue todo recto.</td></tr>
+          <tr><td><strong>¿Conoces...?</strong></td><td><span class="lang-en">Are you familiar with...?</span><span class="lang-zh">你熟悉……吗？</span></td><td>Sí, conozco esa zona.</td></tr>
+          <tr><td><strong>¿Está lejos/cerca?</strong></td><td><span class="lang-en">Is it far/near?</span><span class="lang-zh">远吗/近吗？</span></td><td>Está bastante cerca.</td></tr>
+        </table>
+
+        <h4><span class="lang-en">Practice — Ask the question</span><span class="lang-zh">练习 — 写出问句</span></h4>
+        <p class="lang-en-block">Look at the answer. What was the question?</p>
+        <p class="lang-zh-block">看答案，写出对应的问句。</p>
+        <ol>
+          <li>→ Sí, sé dónde está la estación.</li>
+          <li>→ Gira a la derecha en el semáforo.</li>
+          <li>→ Sí, conozco muy bien esta ciudad.</li>
+          <li>→ Está bastante lejos de aquí.</li>
+        </ol>
+      </div>
+    </details>
+
+    <details class="panel">
+      <summary>
+        <span class="panel-num">7</span>
+        <span class="panel-title"><span class="lang-en">Real-life task</span><span class="lang-zh">真实任务</span></span>
+        <svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg>
+      </summary>
+      <div class="panel-body">
+        <p>📷 <em>Suggested image: Google Maps directions screen with a route highlighted.</em></p>
+
+        <h4><span class="lang-en">Task: Give real directions</span><span class="lang-zh">任务：给出真实的方向指引</span></h4>
+        <p class="lang-en-block">Using Google Maps, give directions from your home to a real place nearby, using at least 4 imperative commands and 2 reference points.</p>
+        <p class="lang-zh-block">使用 Google 地图，从你家到附近一个真实地点给出方向指引，至少使用 4 个命令式和 2 个参照点。</p>
+      </div>
+    </details>
+
+    <details class="panel">
+      <summary>
+        <span class="panel-num">8</span>
+        <span class="panel-title"><span class="lang-en">Free production</span><span class="lang-zh">自由表达</span></span>
+        <svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg>
+      </summary>
+      <div class="panel-body">
+        <p class="lang-en-block">No script. No word bank. Just you, speaking freely using everything from this unit.</p>
+        <p class="lang-zh-block">没有脚本，没有词汇表。用你在本单元学到的一切自由表达。</p>
+
+        <h4><span class="lang-en">Speaking prompts</span><span class="lang-zh">口语提示</span></h4>
+        <ol class="lang-en-block">
+          <li>Give directions from school/work to your house.</li>
+          <li>Tell a friend 3 things they should do (commands) to be a good guest in your city.</li>
+          <li>Talk about something you know how to do (saber) and a place you know well (conocer).</li>
+          <li>Roleplay being lost and asking a stranger for help.</li>
+        </ol>
+        <ol class="lang-zh-block">
+          <li>给出从学校/公司到你家的方向指引。</li>
+          <li>用命令式告诉朋友 3 件他们在你的城市做客时应该做的事。</li>
+          <li>谈谈一件你会做的事（saber）和一个你熟悉的地方（conocer）。</li>
+          <li>角色扮演迷路并向陌生人求助。</li>
+        </ol>
+      </div>
+    </details>
+
+    <details class="panel">
+      <summary>
+        <span class="panel-num">9</span>
+        <span class="panel-title"><span class="lang-en">Homework</span><span class="lang-zh">课后作业</span></span>
+        <svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg>
+      </summary>
+      <div class="panel-body">
+        <p class="lang-en-block">Choose <strong>one</strong> of the options below. No need to send anything — just do it before the next class.</p>
+        <p class="lang-zh-block">选择以下任一选项。无需发给老师——课前自己完成就好。</p>
+
+        <h4><span class="lang-en">Option A — Receptive</span><span class="lang-zh">选项 A — 听力输入</span></h4>
+        <p class="lang-en-block">Watch a short Spanish video of someone giving directions. Write down any command forms you hear.</p>
+        <p class="lang-zh-block">看一段西班牙语视频，内容是某人指路，记下你听到的命令式。</p>
+
+        <h4><span class="lang-en">Option B — Practice exercise</span><span class="lang-zh">选项 B — 书面练习</span></h4>
+        <p class="lang-en-block">Copy the exercise below into your Google Doc and fill in the blanks. Check your answers at the bottom when you are done.</p>
+        <p class="lang-zh-block">将以下练习复制到你的 Google Doc 中并填空。完成后在下方核对答案。</p>
+
+        <div style="background:#f7f5ef; padding:16px; border-radius:8px; margin:12px 0; font-size:14px; line-height:2;">
+          <p><strong>Part 1 — Tú commands (Tú 命令式)</strong></p>
+          <p>1. ___ (seguir) todo recto.</p>
+          <p>2. ___ (girar) a la izquierda.</p>
+          <p>3. ___ (ir) a la plaza.</p>
+          <p>4. ___ (tener) cuidado.</p>
+          <p>5. ___ (venir) conmigo.</p>
+
+          <br>
+          <p><strong>Part 2 — SABER or CONOCER (SABER 还是 CONOCER)</strong></p>
+          <p>1. Yo ___ nadar.</p>
+          <p>2. ¿Tú ___ a Carlos?</p>
+          <p>3. Ella ___ dónde está el banco.</p>
+          <p>4. Nosotros ___ esta ciudad.</p>
+          <p>5. Ellos no ___ cocinar.</p>
+        </div>
+
+        <details style="margin-top:8px;">
+          <summary style="cursor:pointer; color:#5a7a32; font-weight:500; font-size:13px;"><span class="lang-en">Show answers</span><span class="lang-zh">查看答案</span></summary>
+          <div style="background:#eef4e4; padding:12px; border-radius:8px; margin-top:8px; font-size:13px; line-height:2;">
+            <p><strong>Part 1:</strong> 1. Sigue · 2. Gira · 3. Ve · 4. Ten · 5. Ven</p>
+            <p><strong>Part 2:</strong> 1. sé · 2. conoces · 3. sabe · 4. conocemos · 5. saben</p>
+          </div>
+        </details>
+
+        <h4><span class="lang-en">Option C — Creative</span><span class="lang-zh">选项 C — 创意练习</span></h4>
+        <p class="lang-en-block">Draw a simple map with a route and write the directions in Spanish using commands.</p>
+        <p class="lang-zh-block">画一张带路线的简单地图，用西班牙语命令式写出方向指引。</p>
+      </div>
+    </details>
+
   </div>
+
   <div class="unit-nav">
     <a class="prev" href="./unit-15b.html"><span>←</span><div><span class="nav-label">Previous</span><span class="nav-title">Unit 15b · Obligación</span></div></a>
     <a class="next" href="./unit-17.html"><div><span class="nav-label">Next</span><span class="nav-title">Unit 17 · Salud</span></div><span>→</span></a>
   </div>
 </main>
+
 <footer class="site-footer">Spanish with Brady · Private use only</footer>
+
+<script>
+function setLang(lang) {
+  if (lang === 'zh') {
+    document.body.classList.add('zh');
+    document.getElementById('btn-zh').style.background = '#5a7a32';
+    document.getElementById('btn-zh').style.color = 'white';
+    document.getElementById('btn-en').style.background = '#f7f5ef';
+    document.getElementById('btn-en').style.color = '#7a6e60';
+  } else {
+    document.body.classList.remove('zh');
+    document.getElementById('btn-en').style.background = '#5a7a32';
+    document.getElementById('btn-en').style.color = 'white';
+    document.getElementById('btn-zh').style.background = '#f7f5ef';
+    document.getElementById('btn-zh').style.color = '#7a6e60';
+  }
+  localStorage.setItem('lang', lang);
+}
+const saved = localStorage.getItem('lang');
+if (saved === 'zh') setLang('zh');
+</script>
+
 </body>
 </html>

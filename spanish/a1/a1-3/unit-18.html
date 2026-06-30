@@ -5,41 +5,339 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Unit 18 · Futuro · Spanish with Brady</title>
   <link rel="stylesheet" href="../../../assets/style.css">
+  <style>
+    .lang-zh { display: none; }
+    body.zh .lang-en { display: none; }
+    body.zh .lang-zh { display: inline; }
+    .lang-zh-block { display: none; }
+    body.zh .lang-zh-block { display: block; }
+    body.zh .lang-en-block { display: none; }
+  </style>
 </head>
 <body>
+
 <header class="site-header">
   <a class="site-logo" href="../../../">Spanish with Brady</a>
-  <nav><ul class="site-nav">
-    <li><a href="../../../spanish/" class="active">Spanish</a></li>
-    <li><a href="../../../mandarin/">Mandarin</a></li>
-    <li><a href="#">English</a></li>
-  </ul></nav>
+  <nav>
+    <ul class="site-nav">
+      <li><a href="../../../spanish/" class="active">Spanish</a></li>
+      <li><a href="../../../mandarin/">Mandarin</a></li>
+      <li><a href="#">English</a></li>
+    </ul>
+  </nav>
 </header>
+
 <nav class="breadcrumb">
   <a href="../../../">Home</a><span>›</span><a href="../../../spanish/">Spanish</a><span>›</span><a href="../../../spanish/a1/">A1</a><span>›</span><a href="./index.html">A1.3</a><span>›</span>Unit 18
 </nav>
+
 <main>
+  <div style="display:flex; justify-content:flex-end; padding: 8px 0 0;">
+    <div style="display:flex; gap:0; border:1px solid #e2ddd4; border-radius:6px; overflow:hidden;">
+      <button id="btn-en" onclick="setLang('en')" style="padding:6px 16px; font-size:13px; font-weight:500; border:none; cursor:pointer; background:#5a7a32; color:white;">EN</button>
+      <button id="btn-zh" onclick="setLang('zh')" style="padding:6px 16px; font-size:13px; font-weight:500; border:none; cursor:pointer; background:#f7f5ef; color:#7a6e60;">中文</button>
+    </div>
+  </div>
+
   <div class="unit-header">
     <div class="unit-num">A1.3 · Unit 18</div>
     <h1>Futuro</h1>
-    <p class="unit-subtitle">Future plans: IR + A + infinitive</p>
+    <p class="unit-subtitle">Future plans with the complete IR + A</p>
   </div>
+
   <div class="panels">
-    <details class="panel"><summary><span class="panel-num">1</span><span class="panel-title">Hook / Opener</span><svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg></summary><div class="panel-body">Content coming soon</div></details>
-    <details class="panel"><summary><span class="panel-num">2</span><span class="panel-title">Vocabulary</span><svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg></summary><div class="panel-body">Content coming soon</div></details>
-    <details class="panel"><summary><span class="panel-num">3</span><span class="panel-title">Grammar in context</span><svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg></summary><div class="panel-body">Content coming soon</div></details>
-    <details class="panel"><summary><span class="panel-num">4</span><span class="panel-title">Reading or dialogue</span><svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg></summary><div class="panel-body">Content coming soon</div></details>
-    <details class="panel"><summary><span class="panel-num">5</span><span class="panel-title">Controlled practice</span><svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg></summary><div class="panel-body">Content coming soon</div></details>
-    <details class="panel"><summary><span class="panel-num">6</span><span class="panel-title">Question formation</span><svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg></summary><div class="panel-body">Content coming soon</div></details>
-    <details class="panel"><summary><span class="panel-num">7</span><span class="panel-title">Real-life task</span><svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg></summary><div class="panel-body">Content coming soon</div></details>
-    <details class="panel"><summary><span class="panel-num">8</span><span class="panel-title">Free production</span><svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg></summary><div class="panel-body">Content coming soon</div></details>
-    <details class="panel"><summary><span class="panel-num">9</span><span class="panel-title">Homework</span><svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg></summary><div class="panel-body">Content coming soon</div></details>
+
+    <details class="panel">
+      <summary>
+        <span class="panel-num">1</span>
+        <span class="panel-title"><span class="lang-en">Hook / Opener</span><span class="lang-zh">课程导入</span></span>
+        <svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg>
+      </summary>
+      <div class="panel-body">
+        <p>📷 <em>Suggested image: a calendar with future plans written on different dates.</em></p>
+        <p class="lang-en-block">Before we start, think about this: Remember the weather forecasts from Unit 11? You already used "va a llover" — now let's learn the full system for talking about the future.</p>
+        <p class="lang-zh-block">开始之前，想一想：还记得第 11 单元的天气预报吗？你已经用过 "va a llover"——现在让我们学习谈论未来的完整体系。</p>
+        <p><strong><span class="lang-en">By the end of this unit you can:</span><span class="lang-zh">完成本单元后，你能够：</span></strong> <span class="lang-en">express future plans fully using the complete IR + A paradigm.</span><span class="lang-zh">用完整的 IR + A 体系充分表达未来计划。</span></p>
+      </div>
+    </details>
+
+    <details class="panel">
+      <summary>
+        <span class="panel-num">2</span>
+        <span class="panel-title"><span class="lang-en">Vocabulary</span><span class="lang-zh">词汇</span></span>
+        <svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg>
+      </summary>
+      <div class="panel-body">
+        <h4><span class="lang-en">Future time markers</span><span class="lang-zh">未来时间标志词</span></h4>
+        <table>
+          <tr><th>Spanish</th><th>English</th><th>中文</th></tr>
+          <tr><td><strong>mañana</strong></td><td>tomorrow</td><td>明天</td></tr>
+          <tr><td><strong>la semana que viene</strong></td><td>next week</td><td>下周</td></tr>
+          <tr><td><strong>el año que viene</strong></td><td>next year</td><td>明年</td></tr>
+          <tr><td><strong>dentro de + tiempo</strong></td><td>in (time)</td><td>……之后</td></tr>
+        </table>
+      </div>
+    </details>
+
+    <details class="panel">
+      <summary>
+        <span class="panel-num">3</span>
+        <span class="panel-title"><span class="lang-en">Grammar in context</span><span class="lang-zh">语法讲解</span></span>
+        <svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg>
+      </summary>
+      <div class="panel-body">
+        <h4><span class="lang-en">IR + A + infinitive (full paradigm)</span><span class="lang-zh">IR + A + 不定式（完整变位）</span></h4>
+        <table>
+          <tr><th><span class="lang-en">Pronoun</span><span class="lang-zh">人称代词</span></th><th>IR</th><th><span class="lang-en">Example</span><span class="lang-zh">例句</span></th></tr>
+          <tr><td>yo</td><td><strong>voy</strong> a</td><td>Voy a estudiar.</td></tr>
+          <tr><td>tú</td><td><strong>vas</strong> a</td><td>¿Vas a viajar?</td></tr>
+          <tr><td>él / ella / usted</td><td><strong>va</strong> a</td><td>Ana va a trabajar.</td></tr>
+          <tr><td>nosotros/as</td><td><strong>vamos</strong> a</td><td>Vamos a cocinar.</td></tr>
+          <tr><td>vosotros/as</td><td><strong>vais</strong> a</td><td>¿Vais a salir?</td></tr>
+          <tr><td>ellos/as / ustedes</td><td><strong>van</strong> a</td><td>Van a descansar.</td></tr>
+        </table>
+
+        <p class="lang-en-block">💡 This is the same structure you first saw in Unit 11 for weather forecasts ("va a llover") — now you have the full conjugation for every subject.</p>
+        <p class="lang-zh-block">💡 这正是你在第 11 单元天气预报中第一次见到的结构（"va a llover"）——现在你掌握了所有人称的完整变位。</p>
+
+        <h4><span class="lang-en">Alternatives to IR + A</span><span class="lang-zh">IR + A 的替代表达</span></h4>
+        <table>
+          <tr><th><span class="lang-en">Structure</span><span class="lang-zh">结构</span></th><th><span class="lang-en">Meaning</span><span class="lang-zh">意思</span></th><th><span class="lang-en">Example</span><span class="lang-zh">例句</span></th></tr>
+          <tr><td>PENSAR (e→ie) + infinitivo</td><td><span class="lang-en">intention</span><span class="lang-zh">打算/意图</span></td><td>Pienso viajar este verano.</td></tr>
+          <tr><td>QUERER + infinitivo</td><td><span class="lang-en">desire, not necessarily a firm plan</span><span class="lang-zh">愿望，不一定是确定的计划</span></td><td>Quiero aprender francés.</td></tr>
+          <tr><td><span class="lang-en">simple present</span><span class="lang-zh">一般现在时</span></td><td><span class="lang-en">confirmed, fixed plan</span><span class="lang-zh">已确认的固定计划</span></td><td>El tren sale a las ocho.</td></tr>
+        </table>
+
+        <h4><span class="lang-en">Key distinction</span><span class="lang-zh">关键区别</span></h4>
+        <p class="lang-en-block">"Voy a" + infinitive = future action. "Voy a" + place (no infinitive) = movement, going somewhere. Context always clarifies which one you mean.</p>
+        <p class="lang-zh-block">"Voy a" + 不定式 = 未来动作。"Voy a" + 地点（没有不定式）= 移动，去某个地方。上下文总能帮你判断是哪种用法。</p>
+        <table>
+          <tr><th><span class="lang-en">Future action</span><span class="lang-zh">未来动作</span></th><th><span class="lang-en">Movement</span><span class="lang-zh">移动</span></th></tr>
+          <tr><td>Voy a estudiar.</td><td>Voy a la biblioteca.</td></tr>
+        </table>
+      </div>
+    </details>
+
+    <details class="panel">
+      <summary>
+        <span class="panel-num">4</span>
+        <span class="panel-title"><span class="lang-en">Reading or dialogue</span><span class="lang-zh">阅读与对话</span></span>
+        <svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg>
+      </summary>
+      <div class="panel-body">
+        <p>📷 <em>Suggested image: a phone calendar app with upcoming events.</em></p>
+
+        <h4>Planes para el futuro</h4>
+        <p class="lang-en-block">Ana and Pablo talk about their plans for next week and beyond.</p>
+        <p class="lang-zh-block">Ana 和 Pablo 聊下周以及未来的计划。</p>
+
+        <div class="dialogue">
+          <p><strong>Ana:</strong> Pablo, ¿qué vas a hacer la semana que viene?</p>
+          <p><strong>Pablo:</strong> Voy a viajar a Barcelona. ¿Y tú?</p>
+          <p><strong>Ana:</strong> Yo voy a trabajar, pero pienso descansar el fin de semana.</p>
+          <p><strong>Pablo:</strong> ¡Qué bien! ¿Vas a ir a la playa?</p>
+          <p><strong>Ana:</strong> Sí, voy a la playa el sábado. ¿Y tú, qué planes tienes para el año que viene?</p>
+          <p><strong>Pablo:</strong> Quiero aprender francés y pienso viajar más.</p>
+          <p><strong>Ana:</strong> Mi tren sale a las nueve mañana. ¡Tengo que dormir pronto!</p>
+          <p><strong>Pablo:</strong> ¡Buen viaje! Vamos a hablar pronto.</p>
+        </div>
+
+        <h4><span class="lang-en">Comprehension questions</span><span class="lang-zh">理解问题</span></h4>
+        <ol>
+          <li>¿Qué va a hacer Pablo la semana que viene?</li>
+          <li>¿Qué piensa hacer Ana el fin de semana?</li>
+          <li>¿Qué quiere aprender Pablo?</li>
+          <li>¿A qué hora sale el tren de Ana?</li>
+        </ol>
+      </div>
+    </details>
+
+    <details class="panel">
+      <summary>
+        <span class="panel-num">5</span>
+        <span class="panel-title"><span class="lang-en">Controlled practice</span><span class="lang-zh">强化练习</span></span>
+        <svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg>
+      </summary>
+      <div class="panel-body">
+        <h4><span class="lang-en">Exercise 1 — Complete with IR + A</span><span class="lang-zh">练习一 — 用 IR + A 填空</span></h4>
+        <ol>
+          <li>Yo ___ a estudiar mañana.</li>
+          <li>Tú ___ a viajar la semana que viene.</li>
+          <li>Ella ___ a trabajar hoy.</li>
+          <li>Nosotros ___ a cocinar esta noche.</li>
+          <li>Ellos ___ a descansar el domingo.</li>
+          <li>¿Usted ___ a venir a la fiesta?</li>
+        </ol>
+
+        <h4><span class="lang-en">Exercise 2 — Future action or movement?</span><span class="lang-zh">练习二 — 未来动作还是移动？</span></h4>
+        <ol>
+          <li>Voy a estudiar. → <span class="lang-en">(action/movement?)</span><span class="lang-zh">（动作/移动？）</span></li>
+          <li>Voy a la biblioteca. → <span class="lang-en">(action/movement?)</span><span class="lang-zh">（动作/移动？）</span></li>
+          <li>Vamos a cocinar. → <span class="lang-en">(action/movement?)</span><span class="lang-zh">（动作/移动？）</span></li>
+          <li>Van al parque. → <span class="lang-en">(action/movement?)</span><span class="lang-zh">（动作/移动？）</span></li>
+          <li>Vas a trabajar. → <span class="lang-en">(action/movement?)</span><span class="lang-zh">（动作/移动？）</span></li>
+          <li>Va a la playa. → <span class="lang-en">(action/movement?)</span><span class="lang-zh">（动作/移动？）</span></li>
+        </ol>
+
+        <h4><span class="lang-en">Exercise 3 — Find the error</span><span class="lang-zh">练习三 — 找出错误</span></h4>
+        <ol>
+          <li>Voy estudiar mañana. (missing word) → ___</li>
+          <li>Va a a la playa. → ___</li>
+          <li>Pienso a viajar este verano. → ___</li>
+          <li>Vamos a vamos al cine. → ___</li>
+          <li>Quiero a aprender francés. → ___</li>
+        </ol>
+      </div>
+    </details>
+
+    <details class="panel">
+      <summary>
+        <span class="panel-num">6</span>
+        <span class="panel-title"><span class="lang-en">Question formation</span><span class="lang-zh">如何提问</span></span>
+        <svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg>
+      </summary>
+      <div class="panel-body">
+        <h4><span class="lang-en">Questions for this unit</span><span class="lang-zh">本单元问句</span></h4>
+        <table>
+          <tr><th><span class="lang-en">Question</span><span class="lang-zh">问句</span></th><th><span class="lang-en">Meaning</span><span class="lang-zh">意思</span></th><th><span class="lang-en">Typical answer</span><span class="lang-zh">常见回答</span></th></tr>
+          <tr><td><strong>¿Qué vas a hacer mañana?</strong></td><td><span class="lang-en">What are you going to do tomorrow?</span><span class="lang-zh">你明天打算做什么？</span></td><td>Voy a estudiar.</td></tr>
+          <tr><td><strong>¿Tienes planes para...?</strong></td><td><span class="lang-en">Do you have plans for...?</span><span class="lang-zh">你有……的计划吗？</span></td><td>Sí, voy a viajar.</td></tr>
+          <tr><td><strong>¿Adónde vas a ir?</strong></td><td><span class="lang-en">Where are you going to go?</span><span class="lang-zh">你打算去哪里？</span></td><td>Voy a ir a la playa.</td></tr>
+          <tr><td><strong>¿Qué piensas hacer?</strong></td><td><span class="lang-en">What do you intend to do?</span><span class="lang-zh">你打算做什么？</span></td><td>Pienso descansar.</td></tr>
+        </table>
+
+        <h4><span class="lang-en">Practice — Ask the question</span><span class="lang-zh">练习 — 写出问句</span></h4>
+        <p class="lang-en-block">Look at the answer. What was the question?</p>
+        <p class="lang-zh-block">看答案，写出对应的问句。</p>
+        <ol>
+          <li>→ Voy a trabajar mañana.</li>
+          <li>→ Sí, voy a viajar el año que viene.</li>
+          <li>→ Voy a ir a Barcelona.</li>
+          <li>→ Pienso aprender francés.</li>
+        </ol>
+      </div>
+    </details>
+
+    <details class="panel">
+      <summary>
+        <span class="panel-num">7</span>
+        <span class="panel-title"><span class="lang-en">Real-life task</span><span class="lang-zh">真实任务</span></span>
+        <svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg>
+      </summary>
+      <div class="panel-body">
+        <p>📷 <em>Suggested image: a blank weekly or monthly planner.</em></p>
+
+        <h4><span class="lang-en">Task: Your real plans</span><span class="lang-zh">任务：你真实的计划</span></h4>
+        <p class="lang-en-block">Write 5 real plans for the upcoming month, using IR + A for at least 3 and PENSAR or QUERER for the rest.</p>
+        <p class="lang-zh-block">为接下来一个月写 5 个真实的计划，至少 3 个用 IR + A，其余用 PENSAR 或 QUERER。</p>
+      </div>
+    </details>
+
+    <details class="panel">
+      <summary>
+        <span class="panel-num">8</span>
+        <span class="panel-title"><span class="lang-en">Free production</span><span class="lang-zh">自由表达</span></span>
+        <svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg>
+      </summary>
+      <div class="panel-body">
+        <p class="lang-en-block">No script. No word bank. Just you, speaking freely using everything from this unit.</p>
+        <p class="lang-zh-block">没有脚本，没有词汇表。用你在本单元学到的一切自由表达。</p>
+
+        <h4><span class="lang-en">Speaking prompts</span><span class="lang-zh">口语提示</span></h4>
+        <ol class="lang-en-block">
+          <li>Describe your plans for next weekend in detail.</li>
+          <li>What do you want to learn or achieve next year?</li>
+          <li>Compare a confirmed fixed plan with a flexible intention.</li>
+          <li>Guess a classmate's plans and ask them to confirm.</li>
+        </ol>
+        <ol class="lang-zh-block">
+          <li>详细描述你下周末的计划。</li>
+          <li>你明年想学习或实现什么？</li>
+          <li>比较一个已确定的固定计划和一个灵活的打算。</li>
+          <li>猜猜同学的计划，并向他们确认。</li>
+        </ol>
+      </div>
+    </details>
+
+    <details class="panel">
+      <summary>
+        <span class="panel-num">9</span>
+        <span class="panel-title"><span class="lang-en">Homework</span><span class="lang-zh">课后作业</span></span>
+        <svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg>
+      </summary>
+      <div class="panel-body">
+        <p class="lang-en-block">Choose <strong>one</strong> of the options below. No need to send anything — just do it before the next class.</p>
+        <p class="lang-zh-block">选择以下任一选项。无需发给老师——课前自己完成就好。</p>
+
+        <h4><span class="lang-en">Option A — Receptive</span><span class="lang-zh">选项 A — 听力输入</span></h4>
+        <p class="lang-en-block">Watch a short Spanish video where someone talks about future plans. Write down any IR + A sentences you hear.</p>
+        <p class="lang-zh-block">看一段西班牙语视频，其中有人谈论未来计划，记下你听到的 IR + A 句子。</p>
+
+        <h4><span class="lang-en">Option B — Practice exercise</span><span class="lang-zh">选项 B — 书面练习</span></h4>
+        <p class="lang-en-block">Copy the exercise below into your Google Doc and fill in the blanks. Check your answers at the bottom when you are done.</p>
+        <p class="lang-zh-block">将以下练习复制到你的 Google Doc 中并填空。完成后在下方核对答案。</p>
+
+        <div style="background:#f7f5ef; padding:16px; border-radius:8px; margin:12px 0; font-size:14px; line-height:2;">
+          <p><strong>Part 1 — IR + A (IR + A 填空)</strong></p>
+          <p>1. Yo ___ a estudiar mañana.</p>
+          <p>2. Tú ___ a viajar la semana que viene.</p>
+          <p>3. Ella ___ a trabajar hoy.</p>
+          <p>4. Nosotros ___ a cocinar esta noche.</p>
+          <p>5. Ellos ___ a descansar el domingo.</p>
+
+          <br>
+          <p><strong>Part 2 — Action or movement? (动作还是移动？)</strong></p>
+          <p>1. Voy a estudiar. → ___</p>
+          <p>2. Voy a la biblioteca. → ___</p>
+          <p>3. Vamos a cocinar. → ___</p>
+          <p>4. Van al parque. → ___</p>
+          <p>5. Va a la playa. → ___</p>
+        </div>
+
+        <details style="margin-top:8px;">
+          <summary style="cursor:pointer; color:#5a7a32; font-weight:500; font-size:13px;"><span class="lang-en">Show answers</span><span class="lang-zh">查看答案</span></summary>
+          <div style="background:#eef4e4; padding:12px; border-radius:8px; margin-top:8px; font-size:13px; line-height:2;">
+            <p><strong>Part 1:</strong> 1. voy · 2. vas · 3. va · 4. vamos · 5. van</p>
+            <p><strong>Part 2:</strong> 1. action · 2. movement · 3. action · 4. movement · 5. movement</p>
+          </div>
+        </details>
+
+        <h4><span class="lang-en">Option C — Creative</span><span class="lang-zh">选项 C — 创意练习</span></h4>
+        <p class="lang-en-block">Make a vision board or simple list of 5 plans for next year, labeled in Spanish with IR + A.</p>
+        <p class="lang-zh-block">制作一个愿望板或简单清单，列出明年的 5 个计划，用西班牙语 IR + A 标注。</p>
+      </div>
+    </details>
+
   </div>
+
   <div class="unit-nav">
     <a class="prev" href="./knowledge-check-4.html"><span>←</span><div><span class="nav-label">Previous</span><span class="nav-title">Knowledge Check 4</span></div></a>
     <a class="next" href="./unit-19.html"><div><span class="nav-label">Next</span><span class="nav-title">Unit 19 · Pasado I</span></div><span>→</span></a>
   </div>
 </main>
+
 <footer class="site-footer">Spanish with Brady · Private use only</footer>
+
+<script>
+function setLang(lang) {
+  if (lang === 'zh') {
+    document.body.classList.add('zh');
+    document.getElementById('btn-zh').style.background = '#5a7a32';
+    document.getElementById('btn-zh').style.color = 'white';
+    document.getElementById('btn-en').style.background = '#f7f5ef';
+    document.getElementById('btn-en').style.color = '#7a6e60';
+  } else {
+    document.body.classList.remove('zh');
+    document.getElementById('btn-en').style.background = '#5a7a32';
+    document.getElementById('btn-en').style.color = 'white';
+    document.getElementById('btn-zh').style.background = '#f7f5ef';
+    document.getElementById('btn-zh').style.color = '#7a6e60';
+  }
+  localStorage.setItem('lang', lang);
+}
+const saved = localStorage.getItem('lang');
+if (saved === 'zh') setLang('zh');
+</script>
+
 </body>
 </html>

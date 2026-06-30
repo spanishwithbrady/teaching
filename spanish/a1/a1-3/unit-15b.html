@@ -5,41 +5,327 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Unit 15b · Obligación · Spanish with Brady</title>
   <link rel="stylesheet" href="../../../assets/style.css">
+  <style>
+    .lang-zh { display: none; }
+    body.zh .lang-en { display: none; }
+    body.zh .lang-zh { display: inline; }
+    .lang-zh-block { display: none; }
+    body.zh .lang-zh-block { display: block; }
+    body.zh .lang-en-block { display: none; }
+  </style>
 </head>
 <body>
+
 <header class="site-header">
   <a class="site-logo" href="../../../">Spanish with Brady</a>
-  <nav><ul class="site-nav">
-    <li><a href="../../../spanish/" class="active">Spanish</a></li>
-    <li><a href="../../../mandarin/">Mandarin</a></li>
-    <li><a href="#">English</a></li>
-  </ul></nav>
+  <nav>
+    <ul class="site-nav">
+      <li><a href="../../../spanish/" class="active">Spanish</a></li>
+      <li><a href="../../../mandarin/">Mandarin</a></li>
+      <li><a href="#">English</a></li>
+    </ul>
+  </nav>
 </header>
+
 <nav class="breadcrumb">
   <a href="../../../">Home</a><span>›</span><a href="../../../spanish/">Spanish</a><span>›</span><a href="../../../spanish/a1/">A1</a><span>›</span><a href="./index.html">A1.3</a><span>›</span>Unit 15b
 </nav>
+
 <main>
+  <div style="display:flex; justify-content:flex-end; padding: 8px 0 0;">
+    <div style="display:flex; gap:0; border:1px solid #e2ddd4; border-radius:6px; overflow:hidden;">
+      <button id="btn-en" onclick="setLang('en')" style="padding:6px 16px; font-size:13px; font-weight:500; border:none; cursor:pointer; background:#5a7a32; color:white;">EN</button>
+      <button id="btn-zh" onclick="setLang('zh')" style="padding:6px 16px; font-size:13px; font-weight:500; border:none; cursor:pointer; background:#f7f5ef; color:#7a6e60;">中文</button>
+    </div>
+  </div>
+
   <div class="unit-header">
     <div class="unit-num">A1.3 · Unit 15b</div>
     <h1>Obligación</h1>
-    <p class="unit-subtitle">Obligation: tener que / hay que</p>
+    <p class="unit-subtitle">Personal and impersonal obligation</p>
   </div>
+
   <div class="panels">
-    <details class="panel"><summary><span class="panel-num">1</span><span class="panel-title">Hook / Opener</span><svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg></summary><div class="panel-body">Content coming soon</div></details>
-    <details class="panel"><summary><span class="panel-num">2</span><span class="panel-title">Vocabulary</span><svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg></summary><div class="panel-body">Content coming soon</div></details>
-    <details class="panel"><summary><span class="panel-num">3</span><span class="panel-title">Grammar in context</span><svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg></summary><div class="panel-body">Content coming soon</div></details>
-    <details class="panel"><summary><span class="panel-num">4</span><span class="panel-title">Reading or dialogue</span><svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg></summary><div class="panel-body">Content coming soon</div></details>
-    <details class="panel"><summary><span class="panel-num">5</span><span class="panel-title">Controlled practice</span><svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg></summary><div class="panel-body">Content coming soon</div></details>
-    <details class="panel"><summary><span class="panel-num">6</span><span class="panel-title">Question formation</span><svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg></summary><div class="panel-body">Content coming soon</div></details>
-    <details class="panel"><summary><span class="panel-num">7</span><span class="panel-title">Real-life task</span><svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg></summary><div class="panel-body">Content coming soon</div></details>
-    <details class="panel"><summary><span class="panel-num">8</span><span class="panel-title">Free production</span><svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg></summary><div class="panel-body">Content coming soon</div></details>
-    <details class="panel"><summary><span class="panel-num">9</span><span class="panel-title">Homework</span><svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg></summary><div class="panel-body">Content coming soon</div></details>
+
+    <details class="panel">
+      <summary>
+        <span class="panel-num">1</span>
+        <span class="panel-title"><span class="lang-en">Hook / Opener</span><span class="lang-zh">课程导入</span></span>
+        <svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg>
+      </summary>
+      <div class="panel-body">
+        <p>📷 <em>Suggested image: a to-do list with checkmarks, and a sign with general rules.</em></p>
+        <p class="lang-en-block">Before we start, think about this: What do you have to do today? What does everyone have to do, in general? Are these the same kind of "have to"?</p>
+        <p class="lang-zh-block">开始之前，想一想：你今天必须做什么？大家通常都必须做什么？这两种"必须"是一回事吗？</p>
+        <p><strong><span class="lang-en">By the end of this unit you can:</span><span class="lang-zh">完成本单元后，你能够：</span></strong> <span class="lang-en">express personal and impersonal obligation correctly.</span><span class="lang-zh">正确表达个人义务和普遍/非人称义务。</span></p>
+      </div>
+    </details>
+
+    <details class="panel">
+      <summary>
+        <span class="panel-num">2</span>
+        <span class="panel-title"><span class="lang-en">Vocabulary</span><span class="lang-zh">词汇</span></span>
+        <svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg>
+      </summary>
+      <div class="panel-body">
+        <h4><span class="lang-en">Obligation expressions</span><span class="lang-zh">表达义务的短语</span></h4>
+        <table>
+          <tr><th>Spanish</th><th>English</th><th>中文</th></tr>
+          <tr><td><strong>tener que + infinitivo</strong></td><td>to have to (personal)</td><td>必须（个人）</td></tr>
+          <tr><td><strong>hay que + infinitivo</strong></td><td>one has to / it's necessary to (impersonal)</td><td>应该/必须（非人称，泛指）</td></tr>
+          <tr><td><strong>necesitar + infinitivo</strong></td><td>to need to</td><td>需要</td></tr>
+        </table>
+      </div>
+    </details>
+
+    <details class="panel">
+      <summary>
+        <span class="panel-num">3</span>
+        <span class="panel-title"><span class="lang-en">Grammar in context</span><span class="lang-zh">语法讲解</span></span>
+        <svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg>
+      </summary>
+      <div class="panel-body">
+        <h4><span class="lang-en">TENER QUE vs. HAY QUE</span><span class="lang-zh">TENER QUE 与 HAY QUE 的区别</span></h4>
+        <table>
+          <tr><th>TENER QUE</th><th>HAY QUE</th></tr>
+          <tr><td><span class="lang-en">Personal obligation — has a subject</span><span class="lang-zh">个人义务——有主语</span></td><td><span class="lang-en">General/impersonal — no subject</span><span class="lang-zh">普遍/非人称义务——没有主语</span></td></tr>
+          <tr><td>Tengo que estudiar hoy.</td><td>Hay que estudiar para aprobar.</td></tr>
+          <tr><td>Tienes que llegar a tiempo.</td><td>Hay que llegar a tiempo siempre.</td></tr>
+        </table>
+
+        <h4><span class="lang-en">NECESITAR + infinitive</span><span class="lang-zh">NECESITAR + 不定式</span></h4>
+        <p class="lang-en-block">Expresses personal need rather than obligation: "Necesito descansar" (I need to rest) — softer than "tengo que".</p>
+        <p class="lang-zh-block">表达个人需要，而非义务："Necesito descansar"（我需要休息）——比 "tengo que" 语气更柔和。</p>
+
+        <p class="lang-en-block">⚠️ <strong>Critical note:</strong> "No tienes que" does NOT mean "you must not" — it means it's not obligatory. "No tienes que venir" means coming is optional, NOT that you mustn't come. This is a very common confusion point.</p>
+        <p class="lang-zh-block">⚠️ <strong>关键提示：</strong>"No tienes que" 并不表示"你不能/不准"——它表示"不是必须的"。"No tienes que venir" 意思是"你可以不来"，而不是"你不能来"。这是一个非常容易混淆的点。</p>
+        <table>
+          <tr><th><span class="lang-en">Sentence</span><span class="lang-zh">句子</span></th><th><span class="lang-en">Meaning</span><span class="lang-zh">意思</span></th></tr>
+          <tr><td>No tienes que venir.</td><td><span class="lang-en">It's optional — you don't have to come.</span><span class="lang-zh">这是可选的——你不必来。</span></td></tr>
+          <tr><td>No debes venir.</td><td><span class="lang-en">You shouldn't / mustn't come.</span><span class="lang-zh">你不应该/不能来。</span></td></tr>
+        </table>
+      </div>
+    </details>
+
+    <details class="panel">
+      <summary>
+        <span class="panel-num">4</span>
+        <span class="panel-title"><span class="lang-en">Reading or dialogue</span><span class="lang-zh">阅读与对话</span></span>
+        <svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg>
+      </summary>
+      <div class="panel-body">
+        <p>📷 <em>Suggested image: a student looking at a long homework list.</em></p>
+
+        <h4>Obligaciones de la semana</h4>
+        <p class="lang-en-block">Carlos and Sara talk about what they have to do this week.</p>
+        <p class="lang-zh-block">Carlos 和 Sara 聊本周必须做的事。</p>
+
+        <div class="dialogue">
+          <p><strong>Sara:</strong> Carlos, ¿qué tienes que hacer hoy?</p>
+          <p><strong>Carlos:</strong> Tengo que estudiar para el examen. ¿Y tú?</p>
+          <p><strong>Sara:</strong> Necesito terminar un proyecto de trabajo.</p>
+          <p><strong>Carlos:</strong> Hay que estudiar mucho para aprobar este curso.</p>
+          <p><strong>Sara:</strong> Es verdad. Pero no tienes que estudiar todo el día.</p>
+          <p><strong>Carlos:</strong> Tienes razón. ¿Tienes que trabajar el sábado?</p>
+          <p><strong>Sara:</strong> No, no tengo que trabajar el sábado. ¡Es libre!</p>
+          <p><strong>Carlos:</strong> Qué bien. Hay que descansar también, ¿no?</p>
+        </div>
+
+        <h4><span class="lang-en">Comprehension questions</span><span class="lang-zh">理解问题</span></h4>
+        <ol>
+          <li>¿Qué tiene que hacer Carlos hoy?</li>
+          <li>¿Qué necesita terminar Sara?</li>
+          <li>¿Tiene que trabajar Sara el sábado?</li>
+          <li>¿Qué dice Carlos sobre descansar?</li>
+        </ol>
+      </div>
+    </details>
+
+    <details class="panel">
+      <summary>
+        <span class="panel-num">5</span>
+        <span class="panel-title"><span class="lang-en">Controlled practice</span><span class="lang-zh">强化练习</span></span>
+        <svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg>
+      </summary>
+      <div class="panel-body">
+        <h4><span class="lang-en">Exercise 1 — TENER QUE or HAY QUE?</span><span class="lang-zh">练习一 — TENER QUE 还是 HAY QUE？</span></h4>
+        <ol>
+          <li>Yo ___ estudiar hoy. (personal)</li>
+          <li>___ llegar a tiempo siempre. (general rule)</li>
+          <li>Tú ___ terminar tu tarea. (personal)</li>
+          <li>___ respetar las normas. (general rule)</li>
+          <li>Nosotros ___ trabajar mañana. (personal)</li>
+          <li>___ comer bien para estar sano. (general rule)</li>
+        </ol>
+
+        <h4><span class="lang-en">Exercise 2 — Complete with NECESITAR or TENER QUE</span><span class="lang-zh">练习二 — 用 NECESITAR 或 TENER QUE 填空</span></h4>
+        <ol>
+          <li>Yo ___ descansar, estoy muy cansado. (need)</li>
+          <li>Ella ___ entregar el proyecto mañana. (obligation)</li>
+          <li>Nosotros ___ más tiempo para terminar. (need)</li>
+          <li>Tú ___ estudiar para el examen. (obligation)</li>
+          <li>Ellos ___ ayuda con la tarea. (need)</li>
+          <li>Usted ___ firmar el documento. (obligation)</li>
+        </ol>
+
+        <h4><span class="lang-en">Exercise 3 — What does this sentence really mean?</span><span class="lang-zh">练习三 — 这句话到底是什么意思？</span></h4>
+        <ol>
+          <li>"No tienes que venir a la fiesta." → <span class="lang-en">(optional or forbidden?)</span><span class="lang-zh">（可选还是禁止？）</span></li>
+          <li>"No debes fumar aquí." → <span class="lang-en">(optional or forbidden?)</span><span class="lang-zh">（可选还是禁止？）</span></li>
+          <li>"No tienes que estudiar hoy si no quieres." → <span class="lang-en">(optional or forbidden?)</span><span class="lang-zh">（可选还是禁止？）</span></li>
+          <li>"No debes llegar tarde." → <span class="lang-en">(optional or forbidden?)</span><span class="lang-zh">（可选还是禁止？）</span></li>
+        </ol>
+      </div>
+    </details>
+
+    <details class="panel">
+      <summary>
+        <span class="panel-num">6</span>
+        <span class="panel-title"><span class="lang-en">Question formation</span><span class="lang-zh">如何提问</span></span>
+        <svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg>
+      </summary>
+      <div class="panel-body">
+        <h4><span class="lang-en">Questions for this unit</span><span class="lang-zh">本单元问句</span></h4>
+        <table>
+          <tr><th><span class="lang-en">Question</span><span class="lang-zh">问句</span></th><th><span class="lang-en">Meaning</span><span class="lang-zh">意思</span></th><th><span class="lang-en">Typical answer</span><span class="lang-zh">常见回答</span></th></tr>
+          <tr><td><strong>¿Qué tienes que hacer hoy?</strong></td><td><span class="lang-en">What do you have to do today?</span><span class="lang-zh">你今天必须做什么？</span></td><td>Tengo que estudiar.</td></tr>
+          <tr><td><strong>¿Qué hay que hacer para...?</strong></td><td><span class="lang-en">What does one have to do to...?</span><span class="lang-zh">要……需要做什么？</span></td><td>Hay que practicar mucho.</td></tr>
+          <tr><td><strong>¿Necesitas ayuda?</strong></td><td><span class="lang-en">Do you need help?</span><span class="lang-zh">你需要帮助吗？</span></td><td>Sí, necesito ayuda.</td></tr>
+          <tr><td><strong>¿Tienes que ir?</strong></td><td><span class="lang-en">Do you have to go?</span><span class="lang-zh">你必须去吗？</span></td><td>No, no tengo que ir.</td></tr>
+        </table>
+
+        <h4><span class="lang-en">Practice — Ask the question</span><span class="lang-zh">练习 — 写出问句</span></h4>
+        <p class="lang-en-block">Look at the answer. What was the question?</p>
+        <p class="lang-zh-block">看答案，写出对应的问句。</p>
+        <ol>
+          <li>→ Tengo que trabajar mañana.</li>
+          <li>→ Hay que practicar todos los días.</li>
+          <li>→ Sí, necesito más tiempo.</li>
+          <li>→ No, no tengo que ir a la reunión.</li>
+        </ol>
+      </div>
+    </details>
+
+    <details class="panel">
+      <summary>
+        <span class="panel-num">7</span>
+        <span class="panel-title"><span class="lang-en">Real-life task</span><span class="lang-zh">真实任务</span></span>
+        <svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg>
+      </summary>
+      <div class="panel-body">
+        <p>📷 <em>Suggested image: a real to-do list app on a phone.</em></p>
+
+        <h4><span class="lang-en">Task: Your real obligations</span><span class="lang-zh">任务：你真实的义务</span></h4>
+        <p class="lang-en-block">List 3 real things you have to do this week (tener que), 1 general rule (hay que), and 1 thing you need but isn't obligatory (necesitar).</p>
+        <p class="lang-zh-block">列出 3 件你本周必须做的真实事情（tener que）、1 条普遍规则（hay que），以及 1 件你需要但并非必须的事情（necesitar）。</p>
+      </div>
+    </details>
+
+    <details class="panel">
+      <summary>
+        <span class="panel-num">8</span>
+        <span class="panel-title"><span class="lang-en">Free production</span><span class="lang-zh">自由表达</span></span>
+        <svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg>
+      </summary>
+      <div class="panel-body">
+        <p class="lang-en-block">No script. No word bank. Just you, speaking freely using everything from this unit.</p>
+        <p class="lang-zh-block">没有脚本，没有词汇表。用你在本单元学到的一切自由表达。</p>
+
+        <h4><span class="lang-en">Speaking prompts</span><span class="lang-zh">口语提示</span></h4>
+        <ol class="lang-en-block">
+          <li>Describe everything you have to do tomorrow.</li>
+          <li>Explain a general rule at your workplace or school using "hay que".</li>
+          <li>Explain the difference between "no tienes que" and "no debes" with your own examples.</li>
+          <li>What do you need right now? Use "necesito".</li>
+        </ol>
+        <ol class="lang-zh-block">
+          <li>描述你明天必须做的所有事情。</li>
+          <li>用 "hay que" 解释你工作或学校的一条普遍规则。</li>
+          <li>用你自己的例子解释 "no tienes que" 和 "no debes" 的区别。</li>
+          <li>你现在需要什么？用 "necesito"。</li>
+        </ol>
+      </div>
+    </details>
+
+    <details class="panel">
+      <summary>
+        <span class="panel-num">9</span>
+        <span class="panel-title"><span class="lang-en">Homework</span><span class="lang-zh">课后作业</span></span>
+        <svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg>
+      </summary>
+      <div class="panel-body">
+        <p class="lang-en-block">Choose <strong>one</strong> of the options below. No need to send anything — just do it before the next class.</p>
+        <p class="lang-zh-block">选择以下任一选项。无需发给老师——课前自己完成就好。</p>
+
+        <h4><span class="lang-en">Option A — Receptive</span><span class="lang-zh">选项 A — 听力输入</span></h4>
+        <p class="lang-en-block">Watch a short Spanish video where someone talks about their obligations or rules. Write down any tener que / hay que sentences you hear.</p>
+        <p class="lang-zh-block">看一段西班牙语视频，其中有人谈论自己的义务或规则，记下你听到的 tener que / hay que 句子。</p>
+
+        <h4><span class="lang-en">Option B — Practice exercise</span><span class="lang-zh">选项 B — 书面练习</span></h4>
+        <p class="lang-en-block">Copy the exercise below into your Google Doc and fill in the blanks. Check your answers at the bottom when you are done.</p>
+        <p class="lang-zh-block">将以下练习复制到你的 Google Doc 中并填空。完成后在下方核对答案。</p>
+
+        <div style="background:#f7f5ef; padding:16px; border-radius:8px; margin:12px 0; font-size:14px; line-height:2;">
+          <p><strong>Part 1 — TENER QUE or HAY QUE (TENER QUE 还是 HAY QUE)</strong></p>
+          <p>1. Yo ___ estudiar hoy. (personal)</p>
+          <p>2. ___ llegar a tiempo siempre. (general)</p>
+          <p>3. Tú ___ terminar tu tarea. (personal)</p>
+          <p>4. ___ respetar las normas. (general)</p>
+          <p>5. Nosotros ___ trabajar mañana. (personal)</p>
+
+          <br>
+          <p><strong>Part 2 — What does it mean? (这句话是什么意思？)</strong></p>
+          <p>1. "No tienes que venir." → ___ (optional/forbidden)</p>
+          <p>2. "No debes fumar aquí." → ___ (optional/forbidden)</p>
+          <p>3. "No tienes que estudiar si no quieres." → ___ (optional/forbidden)</p>
+          <p>4. "No debes llegar tarde." → ___ (optional/forbidden)</p>
+          <p>5. "No tienes que pagar." → ___ (optional/forbidden)</p>
+        </div>
+
+        <details style="margin-top:8px;">
+          <summary style="cursor:pointer; color:#5a7a32; font-weight:500; font-size:13px;"><span class="lang-en">Show answers</span><span class="lang-zh">查看答案</span></summary>
+          <div style="background:#eef4e4; padding:12px; border-radius:8px; margin-top:8px; font-size:13px; line-height:2;">
+            <p><strong>Part 1:</strong> 1. tengo que · 2. Hay que · 3. tienes que · 4. Hay que · 5. tenemos que</p>
+            <p><strong>Part 2:</strong> 1. optional · 2. forbidden · 3. optional · 4. forbidden · 5. optional</p>
+          </div>
+        </details>
+
+        <h4><span class="lang-en">Option C — Creative</span><span class="lang-zh">选项 C — 创意练习</span></h4>
+        <p class="lang-en-block">Make a real to-do list for tomorrow in Spanish, using "tengo que" for at least 3 items.</p>
+        <p class="lang-zh-block">用西班牙语为明天列一份真实的待办清单，至少 3 项用 "tengo que"。</p>
+      </div>
+    </details>
+
   </div>
+
   <div class="unit-nav">
     <a class="prev" href="./unit-15.html"><span>←</span><div><span class="nav-label">Previous</span><span class="nav-title">Unit 15 · Comparaciones</span></div></a>
     <a class="next" href="./unit-16.html"><div><span class="nav-label">Next</span><span class="nav-title">Unit 16 · Ciudad</span></div><span>→</span></a>
   </div>
 </main>
+
 <footer class="site-footer">Spanish with Brady · Private use only</footer>
+
+<script>
+function setLang(lang) {
+  if (lang === 'zh') {
+    document.body.classList.add('zh');
+    document.getElementById('btn-zh').style.background = '#5a7a32';
+    document.getElementById('btn-zh').style.color = 'white';
+    document.getElementById('btn-en').style.background = '#f7f5ef';
+    document.getElementById('btn-en').style.color = '#7a6e60';
+  } else {
+    document.body.classList.remove('zh');
+    document.getElementById('btn-en').style.background = '#5a7a32';
+    document.getElementById('btn-en').style.color = 'white';
+    document.getElementById('btn-zh').style.background = '#f7f5ef';
+    document.getElementById('btn-zh').style.color = '#7a6e60';
+  }
+  localStorage.setItem('lang', lang);
+}
+const saved = localStorage.getItem('lang');
+if (saved === 'zh') setLang('zh');
+</script>
+
 </body>
 </html>

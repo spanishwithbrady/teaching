@@ -5,41 +5,360 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Unit 13 · Restaurante · Spanish with Brady</title>
   <link rel="stylesheet" href="../../../assets/style.css">
+  <style>
+    .lang-zh { display: none; }
+    body.zh .lang-en { display: none; }
+    body.zh .lang-zh { display: inline; }
+    .lang-zh-block { display: none; }
+    body.zh .lang-zh-block { display: block; }
+    body.zh .lang-en-block { display: none; }
+  </style>
 </head>
 <body>
+
 <header class="site-header">
   <a class="site-logo" href="../../../">Spanish with Brady</a>
-  <nav><ul class="site-nav">
-    <li><a href="../../../spanish/" class="active">Spanish</a></li>
-    <li><a href="../../../mandarin/">Mandarin</a></li>
-    <li><a href="#">English</a></li>
-  </ul></nav>
+  <nav>
+    <ul class="site-nav">
+      <li><a href="../../../spanish/" class="active">Spanish</a></li>
+      <li><a href="../../../mandarin/">Mandarin</a></li>
+      <li><a href="#">English</a></li>
+    </ul>
+  </nav>
 </header>
+
 <nav class="breadcrumb">
   <a href="../../../">Home</a><span>›</span><a href="../../../spanish/">Spanish</a><span>›</span><a href="../../../spanish/a1/">A1</a><span>›</span><a href="./index.html">A1.2</a><span>›</span>Unit 13
 </nav>
+
 <main>
+  <div style="display:flex; justify-content:flex-end; padding: 8px 0 0;">
+    <div style="display:flex; gap:0; border:1px solid #e2ddd4; border-radius:6px; overflow:hidden;">
+      <button id="btn-en" onclick="setLang('en')" style="padding:6px 16px; font-size:13px; font-weight:500; border:none; cursor:pointer; background:#5a7a32; color:white;">EN</button>
+      <button id="btn-zh" onclick="setLang('zh')" style="padding:6px 16px; font-size:13px; font-weight:500; border:none; cursor:pointer; background:#f7f5ef; color:#7a6e60;">中文</button>
+    </div>
+  </div>
+
   <div class="unit-header">
     <div class="unit-num">A1.2 · Unit 13</div>
     <h1>Restaurante</h1>
     <p class="unit-subtitle">Ordering food and navigating a restaurant</p>
   </div>
+
   <div class="panels">
-    <details class="panel"><summary><span class="panel-num">1</span><span class="panel-title">Hook / Opener</span><svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg></summary><div class="panel-body">Content coming soon</div></details>
-    <details class="panel"><summary><span class="panel-num">2</span><span class="panel-title">Vocabulary</span><svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg></summary><div class="panel-body">Content coming soon</div></details>
-    <details class="panel"><summary><span class="panel-num">3</span><span class="panel-title">Grammar in context</span><svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg></summary><div class="panel-body">Content coming soon</div></details>
-    <details class="panel"><summary><span class="panel-num">4</span><span class="panel-title">Reading or dialogue</span><svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg></summary><div class="panel-body">Content coming soon</div></details>
-    <details class="panel"><summary><span class="panel-num">5</span><span class="panel-title">Controlled practice</span><svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg></summary><div class="panel-body">Content coming soon</div></details>
-    <details class="panel"><summary><span class="panel-num">6</span><span class="panel-title">Question formation</span><svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg></summary><div class="panel-body">Content coming soon</div></details>
-    <details class="panel"><summary><span class="panel-num">7</span><span class="panel-title">Real-life task</span><svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg></summary><div class="panel-body">Content coming soon</div></details>
-    <details class="panel"><summary><span class="panel-num">8</span><span class="panel-title">Free production</span><svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg></summary><div class="panel-body">Content coming soon</div></details>
-    <details class="panel"><summary><span class="panel-num">9</span><span class="panel-title">Homework</span><svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg></summary><div class="panel-body">Content coming soon</div></details>
+
+    <details class="panel">
+      <summary>
+        <span class="panel-num">1</span>
+        <span class="panel-title"><span class="lang-en">Hook / Opener</span><span class="lang-zh">课程导入</span></span>
+        <svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg>
+      </summary>
+      <div class="panel-body">
+        <p>📷 <em>Suggested image: a table set in a Spanish restaurant with a menu.</em></p>
+        <p class="lang-en-block">Before we start, think about this: Have you ever ordered food in Spanish? Do you know how to politely ask for the bill?</p>
+        <p class="lang-zh-block">开始之前，想一想：你曾经用西班牙语点过餐吗？你知道怎么礼貌地要账单吗？</p>
+        <p><strong><span class="lang-en">By the end of this unit you can:</span><span class="lang-zh">完成本单元后，你能够：</span></strong> <span class="lang-en">complete a full restaurant interaction from start to finish, in Spanish.</span><span class="lang-zh">用西班牙语从头到尾完成一次完整的餐厅点餐互动。</span></p>
+      </div>
+    </details>
+
+    <details class="panel">
+      <summary>
+        <span class="panel-num">2</span>
+        <span class="panel-title"><span class="lang-en">Vocabulary</span><span class="lang-zh">词汇</span></span>
+        <svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg>
+      </summary>
+      <div class="panel-body">
+        <h4><span class="lang-en">Menu structure</span><span class="lang-zh">菜单结构</span></h4>
+        <table>
+          <tr><th>Spanish</th><th>English</th><th>中文</th></tr>
+          <tr><td><strong>el primer plato</strong></td><td>first course</td><td>头盘</td></tr>
+          <tr><td><strong>el plato principal</strong></td><td>main course</td><td>主菜</td></tr>
+          <tr><td><strong>el postre</strong></td><td>dessert</td><td>甜点</td></tr>
+        </table>
+
+        <h4><span class="lang-en">Spanish dishes</span><span class="lang-zh">西班牙菜肴</span></h4>
+        <table>
+          <tr><th>Spanish</th><th>English</th><th>中文</th></tr>
+          <tr><td><strong>el gazpacho</strong></td><td>cold tomato soup</td><td>西班牙凉汤</td></tr>
+          <tr><td><strong>la paella</strong></td><td>paella (rice dish)</td><td>西班牙海鲜饭</td></tr>
+          <tr><td><strong>la tortilla española</strong></td><td>Spanish potato omelette</td><td>西班牙土豆煎蛋饼</td></tr>
+        </table>
+
+        <h4><span class="lang-en">Drinks</span><span class="lang-zh">饮品</span></h4>
+        <table>
+          <tr><th>Spanish</th><th>English</th><th>中文</th></tr>
+          <tr><td><strong>el agua</strong></td><td>water</td><td>水</td></tr>
+          <tr><td><strong>el vino</strong></td><td>wine</td><td>葡萄酒</td></tr>
+          <tr><td><strong>la cerveza</strong></td><td>beer</td><td>啤酒</td></tr>
+          <tr><td><strong>el zumo / jugo</strong></td><td>juice</td><td>果汁</td></tr>
+          <tr><td><strong>el refresco</strong></td><td>soft drink</td><td>汽水</td></tr>
+        </table>
+
+        <h4><span class="lang-en">Restaurant phrases</span><span class="lang-zh">餐厅用语</span></h4>
+        <table>
+          <tr><th>Spanish</th><th>English</th><th>中文</th></tr>
+          <tr><td><strong>¿Me trae la carta?</strong></td><td>Could you bring me the menu?</td><td>能给我菜单吗？</td></tr>
+          <tr><td><strong>¿Qué recomienda?</strong></td><td>What do you recommend?</td><td>您推荐什么？</td></tr>
+          <tr><td><strong>La cuenta, por favor.</strong></td><td>The bill, please.</td><td>请结账。</td></tr>
+        </table>
+      </div>
+    </details>
+
+    <details class="panel">
+      <summary>
+        <span class="panel-num">3</span>
+        <span class="panel-title"><span class="lang-en">Grammar in context</span><span class="lang-zh">语法讲解</span></span>
+        <svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg>
+      </summary>
+      <div class="panel-body">
+        <h4><span class="lang-en">Ordering verbs</span><span class="lang-zh">点餐动词</span></h4>
+        <table>
+          <tr><th><span class="lang-en">Verb</span><span class="lang-zh">动词</span></th><th><span class="lang-en">Change</span><span class="lang-zh">变化</span></th><th><span class="lang-en">Use</span><span class="lang-zh">用途</span></th><th><span class="lang-en">Example</span><span class="lang-zh">例句</span></th></tr>
+          <tr><td><strong>QUERER</strong></td><td>e→ie</td><td><span class="lang-en">to want, for ordering</span><span class="lang-zh">想要，用于点餐</span></td><td>Quiero una paella.</td></tr>
+          <tr><td><strong>PODER</strong></td><td>o→ue</td><td><span class="lang-en">can, for polite requests</span><span class="lang-zh">能否，用于礼貌请求</span></td><td>¿Puede traerme agua?</td></tr>
+          <tr><td><strong>PEDIR</strong></td><td>e→i</td><td><span class="lang-en">to order (specific verb)</span><span class="lang-zh">点（专门用于点餐）</span></td><td>Voy a pedir el gazpacho.</td></tr>
+        </table>
+
+        <p class="lang-en-block">💡 <strong>"Quisiera"</strong> is a fixed polite chunk meaning "I would like" — more formal than "quiero". Useful for ordering: "Quisiera la tortilla española, por favor."</p>
+        <p class="lang-zh-block">💡 <strong>"Quisiera"</strong> 是一个固定的礼貌用语，意为"我想要"——比 "quiero" 更正式。常用于点餐："Quisiera la tortilla española, por favor."</p>
+
+        <h4><span class="lang-en">Article rule: general vs. specific</span><span class="lang-zh">冠词规则：泛指与特指</span></h4>
+        <table>
+          <tr><th><span class="lang-en">General preference</span><span class="lang-zh">泛指偏好</span></th><th><span class="lang-en">Ordering a specific item</span><span class="lang-zh">点某个具体的东西</span></th></tr>
+          <tr><td><span class="lang-en">definite article</span><span class="lang-zh">定冠词</span></td><td><span class="lang-en">indefinite article</span><span class="lang-zh">不定冠词</span></td></tr>
+          <tr><td>Me gusta EL café.</td><td>Quiero UN café.</td></tr>
+        </table>
+
+        <h4><span class="lang-en">ESTAR vs. SER for food (review)</span><span class="lang-zh">食物中的 ESTAR 与 SER（复习）</span></h4>
+        <p class="lang-en-block">Review from Unit 8: ESTAR + rico/bueno describes how the food tastes right now. SER describes a dish's general reputation.</p>
+        <p class="lang-zh-block">复习第 8 单元内容：ESTAR + rico/bueno 描述食物此刻尝起来的味道。SER 描述一道菜的总体声誉。</p>
+        <table>
+          <tr><th>SER</th><th>ESTAR</th></tr>
+          <tr><td>La paella es un plato típico de España.</td><td>Esta paella está riquísima.</td></tr>
+        </table>
+      </div>
+    </details>
+
+    <details class="panel">
+      <summary>
+        <span class="panel-num">4</span>
+        <span class="panel-title"><span class="lang-en">Reading or dialogue</span><span class="lang-zh">阅读与对话</span></span>
+        <svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg>
+      </summary>
+      <div class="panel-body">
+        <p>📷 <em>Suggested image: a waiter taking an order at a restaurant table.</em></p>
+
+        <h4>En el restaurante</h4>
+        <p class="lang-en-block">Pablo orders food at a restaurant, talking to the waiter (Carlos).</p>
+        <p class="lang-zh-block">Pablo 在餐厅点餐，与服务员（Carlos）对话。</p>
+
+        <div class="dialogue">
+          <p><strong>Carlos (camarero):</strong> Buenas tardes, ¿qué quiere de primer plato?</p>
+          <p><strong>Pablo:</strong> Quisiera el gazpacho, por favor.</p>
+          <p><strong>Carlos:</strong> Muy bien. ¿Y de plato principal?</p>
+          <p><strong>Pablo:</strong> ¿Qué recomienda usted?</p>
+          <p><strong>Carlos:</strong> La paella está riquísima hoy.</p>
+          <p><strong>Pablo:</strong> Perfecto, voy a pedir la paella. ¿Puede traerme también agua?</p>
+          <p><strong>Carlos:</strong> Por supuesto. ¿Algo de postre?</p>
+          <p><strong>Pablo:</strong> No, gracias. Solo la cuenta, por favor.</p>
+        </div>
+
+        <h4><span class="lang-en">Comprehension questions</span><span class="lang-zh">理解问题</span></h4>
+        <ol>
+          <li>¿Qué pide Pablo de primer plato?</li>
+          <li>¿Qué recomienda el camarero?</li>
+          <li>¿Qué pide Pablo de beber?</li>
+          <li>¿Pide postre Pablo?</li>
+        </ol>
+      </div>
+    </details>
+
+    <details class="panel">
+      <summary>
+        <span class="panel-num">5</span>
+        <span class="panel-title"><span class="lang-en">Controlled practice</span><span class="lang-zh">强化练习</span></span>
+        <svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg>
+      </summary>
+      <div class="panel-body">
+        <h4><span class="lang-en">Exercise 1 — QUERER, PODER or PEDIR?</span><span class="lang-zh">练习一 — QUERER、PODER 还是 PEDIR？</span></h4>
+        <ol>
+          <li>Yo ___ una paella. (want)</li>
+          <li>¿___ usted traerme la carta? (can you)</li>
+          <li>Ella va a ___ el gazpacho. (order)</li>
+          <li>Nosotros ___ agua, por favor. (want)</li>
+          <li>¿___ recomendarme algo? (can you)</li>
+          <li>Ellos van a ___ postre. (order)</li>
+        </ol>
+
+        <h4><span class="lang-en">Exercise 2 — Choose the correct article</span><span class="lang-zh">练习二 — 选择正确的冠词</span></h4>
+        <ol>
+          <li>Me gusta ___ café. (general)</li>
+          <li>Quiero ___ café, por favor. (ordering)</li>
+          <li>Me encanta ___ paella. (general)</li>
+          <li>Voy a pedir ___ paella. (ordering)</li>
+          <li>¿Le gusta ___ vino? (general)</li>
+          <li>Quisiera ___ vino tinto. (ordering)</li>
+        </ol>
+
+        <h4><span class="lang-en">Exercise 3 — Find the error</span><span class="lang-zh">练习三 — 找出错误</span></h4>
+        <ol>
+          <li>Quero una paella. → ___</li>
+          <li>¿Puede usted traerme un agua, por favor? (missing word) → ___</li>
+          <li>Esta sopa es muy rica ahora mismo. → ___</li>
+          <li>Voy a pido el gazpacho. → ___</li>
+          <li>La cuenta por favor, quisiera. (word order) → ___</li>
+        </ol>
+      </div>
+    </details>
+
+    <details class="panel">
+      <summary>
+        <span class="panel-num">6</span>
+        <span class="panel-title"><span class="lang-en">Question formation</span><span class="lang-zh">如何提问</span></span>
+        <svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg>
+      </summary>
+      <div class="panel-body">
+        <h4><span class="lang-en">Questions for this unit</span><span class="lang-zh">本单元问句</span></h4>
+        <table>
+          <tr><th><span class="lang-en">Question</span><span class="lang-zh">问句</span></th><th><span class="lang-en">Meaning</span><span class="lang-zh">意思</span></th><th><span class="lang-en">Typical answer</span><span class="lang-zh">常见回答</span></th></tr>
+          <tr><td><strong>¿Qué quiere/desea?</strong></td><td><span class="lang-en">What would you like?</span><span class="lang-zh">您想要点什么？</span></td><td>Quiero la paella.</td></tr>
+          <tr><td><strong>¿Qué recomienda?</strong></td><td><span class="lang-en">What do you recommend?</span><span class="lang-zh">您推荐什么？</span></td><td>La tortilla está muy buena.</td></tr>
+          <tr><td><strong>¿Me trae...?</strong></td><td><span class="lang-en">Could you bring me...?</span><span class="lang-zh">能给我拿……吗？</span></td><td>Sí, claro.</td></tr>
+          <tr><td><strong>¿Algo más?</strong></td><td><span class="lang-en">Anything else?</span><span class="lang-zh">还需要别的吗？</span></td><td>No, la cuenta por favor.</td></tr>
+        </table>
+
+        <h4><span class="lang-en">Practice — Ask the question</span><span class="lang-zh">练习 — 写出问句</span></h4>
+        <p class="lang-en-block">Look at the answer. What was the question?</p>
+        <p class="lang-zh-block">看答案，写出对应的问句。</p>
+        <ol>
+          <li>→ Quiero el gazpacho, por favor.</li>
+          <li>→ La paella está riquísima hoy.</li>
+          <li>→ Sí, claro, ahora mismo le traigo agua.</li>
+          <li>→ No, gracias, solo la cuenta.</li>
+        </ol>
+      </div>
+    </details>
+
+    <details class="panel">
+      <summary>
+        <span class="panel-num">7</span>
+        <span class="panel-title"><span class="lang-en">Real-life task</span><span class="lang-zh">真实任务</span></span>
+        <svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg>
+      </summary>
+      <div class="panel-body">
+        <p>📷 <em>Suggested image: a real restaurant menu, in Spanish if possible.</em></p>
+
+        <h4><span class="lang-en">Task: Order a full meal</span><span class="lang-zh">任务：点一整套餐</span></h4>
+        <p class="lang-en-block">Roleplay a full restaurant order with your teacher: greet the waiter, ask what they recommend, order a first course, main course, and a drink, then ask for the bill.</p>
+        <p class="lang-zh-block">和老师角色扮演一次完整的餐厅点餐：问候服务员，询问推荐菜品，点头盘、主菜和饮品，最后要账单。</p>
+      </div>
+    </details>
+
+    <details class="panel">
+      <summary>
+        <span class="panel-num">8</span>
+        <span class="panel-title"><span class="lang-en">Free production</span><span class="lang-zh">自由表达</span></span>
+        <svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg>
+      </summary>
+      <div class="panel-body">
+        <p class="lang-en-block">No script. No word bank. Just you, speaking freely using everything from this unit.</p>
+        <p class="lang-zh-block">没有脚本，没有词汇表。用你在本单元学到的一切自由表达。</p>
+
+        <h4><span class="lang-en">Speaking prompts</span><span class="lang-zh">口语提示</span></h4>
+        <ol class="lang-en-block">
+          <li>Describe your favorite restaurant and what you usually order there.</li>
+          <li>Recommend a dish to your teacher and explain why you like it.</li>
+          <li>Describe a time you tried Spanish food for the first time.</li>
+          <li>Order a full 3-course meal out loud, with a drink.</li>
+        </ol>
+        <ol class="lang-zh-block">
+          <li>描述你最喜欢的餐厅以及你通常点什么。</li>
+          <li>向老师推荐一道菜，并解释你为什么喜欢它。</li>
+          <li>描述一次你第一次尝试西班牙菜的经历。</li>
+          <li>大声点一份完整的三道菜套餐，包括饮品。</li>
+        </ol>
+      </div>
+    </details>
+
+    <details class="panel">
+      <summary>
+        <span class="panel-num">9</span>
+        <span class="panel-title"><span class="lang-en">Homework</span><span class="lang-zh">课后作业</span></span>
+        <svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg>
+      </summary>
+      <div class="panel-body">
+        <p class="lang-en-block">Choose <strong>one</strong> of the options below. No need to send anything — just do it before the next class.</p>
+        <p class="lang-zh-block">选择以下任一选项。无需发给老师——课前自己完成就好。</p>
+
+        <h4><span class="lang-en">Option A — Receptive</span><span class="lang-zh">选项 A — 听力输入</span></h4>
+        <p class="lang-en-block">Watch a short Spanish video of someone ordering food at a restaurant. Write down any phrases you hear.</p>
+        <p class="lang-zh-block">看一段西班牙语视频，内容是某人在餐厅点餐，记下你听到的用语。</p>
+
+        <h4><span class="lang-en">Option B — Practice exercise</span><span class="lang-zh">选项 B — 书面练习</span></h4>
+        <p class="lang-en-block">Copy the exercise below into your Google Doc and fill in the blanks. Check your answers at the bottom when you are done.</p>
+        <p class="lang-zh-block">将以下练习复制到你的 Google Doc 中并填空。完成后在下方核对答案。</p>
+
+        <div style="background:#f7f5ef; padding:16px; border-radius:8px; margin:12px 0; font-size:14px; line-height:2;">
+          <p><strong>Part 1 — QUERER, PODER, PEDIR (QUERER、PODER、PEDIR)</strong></p>
+          <p>1. Yo ___ una paella. (want)</p>
+          <p>2. ¿___ usted traerme agua? (can you)</p>
+          <p>3. Ella va a ___ el gazpacho. (order)</p>
+          <p>4. Nosotros ___ la cuenta. (want)</p>
+          <p>5. ¿___ recomendarme algo? (can you)</p>
+
+          <br>
+          <p><strong>Part 2 — Article choice (冠词选择)</strong></p>
+          <p>1. Me gusta ___ café. (general)</p>
+          <p>2. Quiero ___ café. (ordering)</p>
+          <p>3. Me encanta ___ paella. (general)</p>
+          <p>4. Voy a pedir ___ paella. (ordering)</p>
+          <p>5. Quisiera ___ vino tinto. (ordering)</p>
+        </div>
+
+        <details style="margin-top:8px;">
+          <summary style="cursor:pointer; color:#5a7a32; font-weight:500; font-size:13px;"><span class="lang-en">Show answers</span><span class="lang-zh">查看答案</span></summary>
+          <div style="background:#eef4e4; padding:12px; border-radius:8px; margin-top:8px; font-size:13px; line-height:2;">
+            <p><strong>Part 1:</strong> 1. quiero · 2. Puede · 3. pedir · 4. queremos · 5. Puede</p>
+            <p><strong>Part 2:</strong> 1. el · 2. un · 3. la · 4. una · 5. un</p>
+          </div>
+        </details>
+
+        <h4><span class="lang-en">Option C — Creative</span><span class="lang-zh">选项 C — 创意练习</span></h4>
+        <p class="lang-en-block">Design a simple Spanish-language menu for your own imaginary restaurant with at least 6 items.</p>
+        <p class="lang-zh-block">为你想象中的餐厅设计一份简单的西班牙语菜单，至少包含 6 道菜品。</p>
+      </div>
+    </details>
+
   </div>
+
   <div class="unit-nav">
     <a class="prev" href="./unit-12.html"><span>←</span><div><span class="nav-label">Previous</span><span class="nav-title">Unit 12 · Aficiones</span></div></a>
     <a class="next" href="./unit-14.html"><div><span class="nav-label">Next</span><span class="nav-title">Unit 14 · De Compras</span></div><span>→</span></a>
   </div>
 </main>
+
 <footer class="site-footer">Spanish with Brady · Private use only</footer>
+
+<script>
+function setLang(lang) {
+  if (lang === 'zh') {
+    document.body.classList.add('zh');
+    document.getElementById('btn-zh').style.background = '#5a7a32';
+    document.getElementById('btn-zh').style.color = 'white';
+    document.getElementById('btn-en').style.background = '#f7f5ef';
+    document.getElementById('btn-en').style.color = '#7a6e60';
+  } else {
+    document.body.classList.remove('zh');
+    document.getElementById('btn-en').style.background = '#5a7a32';
+    document.getElementById('btn-en').style.color = 'white';
+    document.getElementById('btn-zh').style.background = '#f7f5ef';
+    document.getElementById('btn-zh').style.color = '#7a6e60';
+  }
+  localStorage.setItem('lang', lang);
+}
+const saved = localStorage.getItem('lang');
+if (saved === 'zh') setLang('zh');
+</script>
+
 </body>
 </html>

@@ -5,41 +5,357 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Unit 12 · Aficiones · Spanish with Brady</title>
   <link rel="stylesheet" href="../../../assets/style.css">
+  <style>
+    .lang-zh { display: none; }
+    body.zh .lang-en { display: none; }
+    body.zh .lang-zh { display: inline; }
+    .lang-zh-block { display: none; }
+    body.zh .lang-zh-block { display: block; }
+    body.zh .lang-en-block { display: none; }
+  </style>
 </head>
 <body>
+
 <header class="site-header">
   <a class="site-logo" href="../../../">Spanish with Brady</a>
-  <nav><ul class="site-nav">
-    <li><a href="../../../spanish/" class="active">Spanish</a></li>
-    <li><a href="../../../mandarin/">Mandarin</a></li>
-    <li><a href="#">English</a></li>
-  </ul></nav>
+  <nav>
+    <ul class="site-nav">
+      <li><a href="../../../spanish/" class="active">Spanish</a></li>
+      <li><a href="../../../mandarin/">Mandarin</a></li>
+      <li><a href="#">English</a></li>
+    </ul>
+  </nav>
 </header>
+
 <nav class="breadcrumb">
   <a href="../../../">Home</a><span>›</span><a href="../../../spanish/">Spanish</a><span>›</span><a href="../../../spanish/a1/">A1</a><span>›</span><a href="./index.html">A1.2</a><span>›</span>Unit 12
 </nav>
+
 <main>
+  <div style="display:flex; justify-content:flex-end; padding: 8px 0 0;">
+    <div style="display:flex; gap:0; border:1px solid #e2ddd4; border-radius:6px; overflow:hidden;">
+      <button id="btn-en" onclick="setLang('en')" style="padding:6px 16px; font-size:13px; font-weight:500; border:none; cursor:pointer; background:#5a7a32; color:white;">EN</button>
+      <button id="btn-zh" onclick="setLang('zh')" style="padding:6px 16px; font-size:13px; font-weight:500; border:none; cursor:pointer; background:#f7f5ef; color:#7a6e60;">中文</button>
+    </div>
+  </div>
+
   <div class="unit-header">
     <div class="unit-num">A1.2 · Unit 12</div>
     <h1>Aficiones</h1>
     <p class="unit-subtitle">Hobbies, tastes and the verb GUSTAR</p>
   </div>
+
   <div class="panels">
-    <details class="panel"><summary><span class="panel-num">1</span><span class="panel-title">Hook / Opener</span><svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg></summary><div class="panel-body">Content coming soon</div></details>
-    <details class="panel"><summary><span class="panel-num">2</span><span class="panel-title">Vocabulary</span><svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg></summary><div class="panel-body">Content coming soon</div></details>
-    <details class="panel"><summary><span class="panel-num">3</span><span class="panel-title">Grammar in context</span><svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg></summary><div class="panel-body">Content coming soon</div></details>
-    <details class="panel"><summary><span class="panel-num">4</span><span class="panel-title">Reading or dialogue</span><svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg></summary><div class="panel-body">Content coming soon</div></details>
-    <details class="panel"><summary><span class="panel-num">5</span><span class="panel-title">Controlled practice</span><svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg></summary><div class="panel-body">Content coming soon</div></details>
-    <details class="panel"><summary><span class="panel-num">6</span><span class="panel-title">Question formation</span><svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg></summary><div class="panel-body">Content coming soon</div></details>
-    <details class="panel"><summary><span class="panel-num">7</span><span class="panel-title">Real-life task</span><svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg></summary><div class="panel-body">Content coming soon</div></details>
-    <details class="panel"><summary><span class="panel-num">8</span><span class="panel-title">Free production</span><svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg></summary><div class="panel-body">Content coming soon</div></details>
-    <details class="panel"><summary><span class="panel-num">9</span><span class="panel-title">Homework</span><svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg></summary><div class="panel-body">Content coming soon</div></details>
+
+    <details class="panel">
+      <summary>
+        <span class="panel-num">1</span>
+        <span class="panel-title"><span class="lang-en">Hook / Opener</span><span class="lang-zh">课程导入</span></span>
+        <svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg>
+      </summary>
+      <div class="panel-body">
+        <p>📷 <em>Suggested image: a collage of hobby icons — music notes, a book, a soccer ball, a paintbrush.</em></p>
+        <p class="lang-en-block">Before we start, think about this: What do you like to do in your free time? In Spanish, the structure for "I like" is very different from English — are you ready for a different way of thinking?</p>
+        <p class="lang-zh-block">开始之前，想一想：你空闲时间喜欢做什么？西班牙语中"我喜欢"的句子结构和英语很不一样——准备好换一种思路了吗？</p>
+        <p><strong><span class="lang-en">By the end of this unit you can:</span><span class="lang-zh">完成本单元后，你能够：</span></strong> <span class="lang-en">express likes, preferences and hobbies using the GUSTAR structure.</span><span class="lang-zh">用 GUSTAR 结构表达喜好、偏好和爱好。</span></p>
+      </div>
+    </details>
+
+    <details class="panel">
+      <summary>
+        <span class="panel-num">2</span>
+        <span class="panel-title"><span class="lang-en">Vocabulary</span><span class="lang-zh">词汇</span></span>
+        <svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg>
+      </summary>
+      <div class="panel-body">
+        <h4><span class="lang-en">Hobbies</span><span class="lang-zh">爱好</span></h4>
+        <table>
+          <tr><th>Spanish</th><th>English</th><th>中文</th></tr>
+          <tr><td><strong>bailar</strong></td><td>to dance</td><td>跳舞</td></tr>
+          <tr><td><strong>cantar</strong></td><td>to sing</td><td>唱歌</td></tr>
+          <tr><td><strong>tocar (un instrumento)</strong></td><td>to play (an instrument)</td><td>演奏（乐器）</td></tr>
+          <tr><td><strong>escuchar música</strong></td><td>to listen to music</td><td>听音乐</td></tr>
+          <tr><td><strong>leer</strong></td><td>to read</td><td>阅读</td></tr>
+          <tr><td><strong>ver series</strong></td><td>to watch series</td><td>看剧</td></tr>
+          <tr><td><strong>jugar</strong></td><td>to play (games/sports)</td><td>玩/打（游戏/运动）</td></tr>
+          <tr><td><strong>hacer deporte</strong></td><td>to play sports</td><td>做运动</td></tr>
+          <tr><td><strong>viajar</strong></td><td>to travel</td><td>旅行</td></tr>
+          <tr><td><strong>cocinar</strong></td><td>to cook</td><td>做饭</td></tr>
+          <tr><td><strong>hacer senderismo</strong></td><td>to hike</td><td>徒步</td></tr>
+        </table>
+
+        <h4><span class="lang-en">Degree words</span><span class="lang-zh">程度副词</span></h4>
+        <table>
+          <tr><th>Spanish</th><th>English</th></tr>
+          <tr><td><strong>mucho</strong></td><td>a lot</td></tr>
+          <tr><td><strong>bastante</strong></td><td>quite a bit</td></tr>
+          <tr><td><strong>un poco</strong></td><td>a little</td></tr>
+          <tr><td><strong>nada</strong></td><td>not at all</td></tr>
+        </table>
+      </div>
+    </details>
+
+    <details class="panel">
+      <summary>
+        <span class="panel-num">3</span>
+        <span class="panel-title"><span class="lang-en">Grammar in context</span><span class="lang-zh">语法讲解</span></span>
+        <svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg>
+      </summary>
+      <div class="panel-body">
+        <h4><span class="lang-en">The GUSTAR structure — a major reframe</span><span class="lang-zh">GUSTAR 结构——一次重大的思维转变</span></h4>
+        <p class="lang-en-block">In Spanish, the THING you like is the subject of the sentence, and the person is just an indirect object. Literally: "to me, [the thing] is pleasing" — not "I like [the thing]".</p>
+        <p class="lang-zh-block">在西班牙语中，你喜欢的"事物"才是句子的主语，人只是间接宾语。字面意思是"对我来说，[这件事物]是令人愉悦的"——而不是"我喜欢[这件事物]"。</p>
+        <table>
+          <tr><th><span class="lang-en">OI pronoun</span><span class="lang-zh">间接宾语代词</span></th><th>GUSTA <span class="lang-en">(singular thing)</span><span class="lang-zh">（单数事物）</span></th><th>GUSTAN <span class="lang-en">(plural things)</span><span class="lang-zh">（复数事物）</span></th></tr>
+          <tr><td><strong>me</strong></td><td>Me gusta el café.</td><td>Me gustan los libros.</td></tr>
+          <tr><td><strong>te</strong></td><td>Te gusta la música.</td><td>Te gustan las series.</td></tr>
+          <tr><td><strong>le</strong></td><td>Le gusta el fútbol.</td><td>Le gustan los deportes.</td></tr>
+          <tr><td><strong>nos</strong></td><td>Nos gusta viajar.</td><td>Nos gustan las playas.</td></tr>
+          <tr><td><strong>os</strong></td><td>Os gusta bailar.</td><td>Os gustan las fiestas.</td></tr>
+          <tr><td><strong>les</strong></td><td>Les gusta cocinar.</td><td>Les gustan los postres.</td></tr>
+        </table>
+        <p class="lang-en-block">💡 Two infinitives together still count as one singular idea: "Me gusta leer y cocinar" (gusta, not gustan).</p>
+        <p class="lang-zh-block">💡 两个不定式连在一起仍算作一个单数概念："Me gusta leer y cocinar"（用 gusta，而不是 gustan）。</p>
+
+        <h4><span class="lang-en">Similar verbs</span><span class="lang-zh">类似结构的动词</span></h4>
+        <table>
+          <tr><th>Spanish</th><th>English</th><th><span class="lang-en">Example</span><span class="lang-zh">例句</span></th></tr>
+          <tr><td><strong>encantar</strong></td><td>to love (things)</td><td>Me encanta el chocolate.</td></tr>
+          <tr><td><strong>interesar</strong></td><td>to interest</td><td>Me interesa la historia.</td></tr>
+          <tr><td><strong>aburrir</strong></td><td>to bore</td><td>Me aburren las películas largas.</td></tr>
+          <tr><td><strong>molestar</strong></td><td>to bother</td><td>Me molesta el ruido.</td></tr>
+          <tr><td><strong>fascinar</strong></td><td>to fascinate</td><td>Me fascina el arte.</td></tr>
+          <tr><td><strong>apetecer</strong></td><td>to feel like (doing)</td><td>Me apetece un café.</td></tr>
+        </table>
+
+        <p class="lang-en-block">⚠️ <strong>ODIAR (to hate)</strong> is a regular -AR verb, NOT a gustar-structure verb: "Odio el café" (I hate coffee) — the person is the subject, not an indirect object.</p>
+        <p class="lang-zh-block">⚠️ <strong>ODIAR（讨厌）</strong>是规则 -AR 动词，并不是 gustar 结构："Odio el café"（我讨厌咖啡）——这里人是主语，而不是间接宾语。</p>
+
+        <p class="lang-en-block">⚠️ <strong>Cultural note:</strong> "Me gusta" (I like it) is different from "me gustas" (I like YOU, romantically) — be careful with this distinction!</p>
+        <p class="lang-zh-block">⚠️ <strong>文化提示：</strong>"Me gusta"（我喜欢它）和 "me gustas"（我喜欢你，带有暗恋/喜欢的意味）是不同的——要注意区分！</p>
+      </div>
+    </details>
+
+    <details class="panel">
+      <summary>
+        <span class="panel-num">4</span>
+        <span class="panel-title"><span class="lang-en">Reading or dialogue</span><span class="lang-zh">阅读与对话</span></span>
+        <svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg>
+      </summary>
+      <div class="panel-body">
+        <p>📷 <em>Suggested image: two friends comparing playlists and hobbies on their phones.</em></p>
+
+        <h4>Nuestras aficiones</h4>
+        <p class="lang-en-block">Wei and Elena talk about what they like to do in their free time.</p>
+        <p class="lang-zh-block">Wei 和 Elena 聊他们空闲时间喜欢做什么。</p>
+
+        <div class="dialogue">
+          <p><strong>Elena:</strong> Wei, ¿qué te gusta hacer en tu tiempo libre?</p>
+          <p><strong>Wei:</strong> Me gusta mucho leer y escuchar música. ¿Y a ti?</p>
+          <p><strong>Elena:</strong> A mí me encanta bailar. También me gustan los deportes.</p>
+          <p><strong>Wei:</strong> ¡Qué interesante! A mí no me gusta nada el deporte.</p>
+          <p><strong>Elena:</strong> ¿En serio? ¿Y qué te apetece hacer este fin de semana?</p>
+          <p><strong>Wei:</strong> Me apetece ver una serie nueva. ¿Te interesan las series?</p>
+          <p><strong>Elena:</strong> Sí, bastante. Pero odio las series muy largas.</p>
+          <p><strong>Wei:</strong> A mí también me aburren un poco. ¡Prefiero las cortas!</p>
+        </div>
+
+        <h4><span class="lang-en">Comprehension questions</span><span class="lang-zh">理解问题</span></h4>
+        <ol>
+          <li>¿Qué le gusta hacer a Wei?</li>
+          <li>¿Qué le encanta hacer a Elena?</li>
+          <li>¿Le gusta el deporte a Wei?</li>
+          <li>¿Qué odia Elena?</li>
+        </ol>
+      </div>
+    </details>
+
+    <details class="panel">
+      <summary>
+        <span class="panel-num">5</span>
+        <span class="panel-title"><span class="lang-en">Controlled practice</span><span class="lang-zh">强化练习</span></span>
+        <svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg>
+      </summary>
+      <div class="panel-body">
+        <h4><span class="lang-en">Exercise 1 — Complete with gusta or gustan</span><span class="lang-zh">练习一 — 用 gusta 或 gustan 填空</span></h4>
+        <ol>
+          <li>Me ___ el café.</li>
+          <li>Te ___ los libros.</li>
+          <li>Le ___ bailar.</li>
+          <li>Nos ___ las películas.</li>
+          <li>Les ___ viajar.</li>
+          <li>Me ___ leer y cocinar.</li>
+        </ol>
+
+        <h4><span class="lang-en">Exercise 2 — Complete with the correct OI pronoun</span><span class="lang-zh">练习二 — 用正确的间接宾语代词填空</span></h4>
+        <ol>
+          <li>A mí ___ gusta el chocolate.</li>
+          <li>A ti ___ gusta bailar.</li>
+          <li>A Carlos ___ gusta el fútbol.</li>
+          <li>A nosotros ___ gusta viajar.</li>
+          <li>A vosotros ___ gusta cantar.</li>
+          <li>A ellos ___ gustan los deportes.</li>
+        </ol>
+
+        <h4><span class="lang-en">Exercise 3 — Find the error</span><span class="lang-zh">练习三 — 找出错误</span></h4>
+        <ol>
+          <li>Me gusto el café. → ___</li>
+          <li>Me gustan nadar. → ___</li>
+          <li>Yo gusta la música. → ___</li>
+          <li>Le gusta los libros. → ___</li>
+          <li>Odia a mí el ruido. → ___</li>
+        </ol>
+      </div>
+    </details>
+
+    <details class="panel">
+      <summary>
+        <span class="panel-num">6</span>
+        <span class="panel-title"><span class="lang-en">Question formation</span><span class="lang-zh">如何提问</span></span>
+        <svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg>
+      </summary>
+      <div class="panel-body">
+        <h4><span class="lang-en">Questions for this unit</span><span class="lang-zh">本单元问句</span></h4>
+        <table>
+          <tr><th><span class="lang-en">Question</span><span class="lang-zh">问句</span></th><th><span class="lang-en">Meaning</span><span class="lang-zh">意思</span></th><th><span class="lang-en">Typical answer</span><span class="lang-zh">常见回答</span></th></tr>
+          <tr><td><strong>¿Qué te gusta hacer?</strong></td><td><span class="lang-en">What do you like to do?</span><span class="lang-zh">你喜欢做什么？</span></td><td>Me gusta leer.</td></tr>
+          <tr><td><strong>¿Te gusta/n...?</strong></td><td><span class="lang-en">Do you like...?</span><span class="lang-zh">你喜欢……吗？</span></td><td>Sí, me encanta.</td></tr>
+          <tr><td><strong>¿Qué te apetece hacer?</strong></td><td><span class="lang-en">What do you feel like doing?</span><span class="lang-zh">你想做什么？</span></td><td>Me apetece ver una serie.</td></tr>
+          <tr><td><strong>¿Qué odias?</strong></td><td><span class="lang-en">What do you hate?</span><span class="lang-zh">你讨厌什么？</span></td><td>Odio el ruido.</td></tr>
+        </table>
+
+        <h4><span class="lang-en">Practice — Ask the question</span><span class="lang-zh">练习 — 写出问句</span></h4>
+        <p class="lang-en-block">Look at the answer. What was the question?</p>
+        <p class="lang-zh-block">看答案，写出对应的问句。</p>
+        <ol>
+          <li>→ Me gusta mucho la música.</li>
+          <li>→ Sí, me encantan los deportes.</li>
+          <li>→ Me apetece un café.</li>
+          <li>→ Odio las películas de terror.</li>
+        </ol>
+      </div>
+    </details>
+
+    <details class="panel">
+      <summary>
+        <span class="panel-num">7</span>
+        <span class="panel-title"><span class="lang-en">Real-life task</span><span class="lang-zh">真实任务</span></span>
+        <svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg>
+      </summary>
+      <div class="panel-body">
+        <p>📷 <em>Suggested image: a music streaming app playlist screen.</em></p>
+
+        <h4><span class="lang-en">Task: Your real preferences</span><span class="lang-zh">任务：你真实的偏好</span></h4>
+        <p class="lang-en-block">List 5 real things you like and 2 things you hate, using at least 3 different gustar-structure verbs (gustar, encantar, interesar, aburrir, molestar, fascinar).</p>
+        <p class="lang-zh-block">列出 5 件你真实喜欢的事和 2 件你讨厌的事，至少使用 3 个不同的 gustar 结构动词（gustar、encantar、interesar、aburrir、molestar、fascinar）。</p>
+      </div>
+    </details>
+
+    <details class="panel">
+      <summary>
+        <span class="panel-num">8</span>
+        <span class="panel-title"><span class="lang-en">Free production</span><span class="lang-zh">自由表达</span></span>
+        <svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg>
+      </summary>
+      <div class="panel-body">
+        <p class="lang-en-block">No script. No word bank. Just you, speaking freely using everything from this unit.</p>
+        <p class="lang-zh-block">没有脚本，没有词汇表。用你在本单元学到的一切自由表达。</p>
+
+        <h4><span class="lang-en">Speaking prompts</span><span class="lang-zh">口语提示</span></h4>
+        <ol class="lang-en-block">
+          <li>Describe your favorite hobby in detail and why you love it.</li>
+          <li>What do you and your best friend both like? Use "nos gusta".</li>
+          <li>Describe something you used to hate but now like, or vice versa.</li>
+          <li>Guess what your teacher likes and ask them to confirm.</li>
+        </ol>
+        <ol class="lang-zh-block">
+          <li>详细描述你最喜欢的爱好，以及你为什么喜欢它。</li>
+          <li>你和最好的朋友都喜欢什么？用 "nos gusta"。</li>
+          <li>描述一件你曾经讨厌但现在喜欢的事，或者反过来。</li>
+          <li>猜猜老师喜欢什么，并向老师确认。</li>
+        </ol>
+      </div>
+    </details>
+
+    <details class="panel">
+      <summary>
+        <span class="panel-num">9</span>
+        <span class="panel-title"><span class="lang-en">Homework</span><span class="lang-zh">课后作业</span></span>
+        <svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg>
+      </summary>
+      <div class="panel-body">
+        <p class="lang-en-block">Choose <strong>one</strong> of the options below. No need to send anything — just do it before the next class.</p>
+        <p class="lang-zh-block">选择以下任一选项。无需发给老师——课前自己完成就好。</p>
+
+        <h4><span class="lang-en">Option A — Receptive</span><span class="lang-zh">选项 A — 听力输入</span></h4>
+        <p class="lang-en-block">Watch a short Spanish video where someone talks about their hobbies. Write down any gustar-structure sentences you hear.</p>
+        <p class="lang-zh-block">看一段西班牙语视频，其中有人谈论自己的爱好，记下你听到的 gustar 结构句子。</p>
+
+        <h4><span class="lang-en">Option B — Practice exercise</span><span class="lang-zh">选项 B — 书面练习</span></h4>
+        <p class="lang-en-block">Copy the exercise below into your Google Doc and fill in the blanks. Check your answers at the bottom when you are done.</p>
+        <p class="lang-zh-block">将以下练习复制到你的 Google Doc 中并填空。完成后在下方核对答案。</p>
+
+        <div style="background:#f7f5ef; padding:16px; border-radius:8px; margin:12px 0; font-size:14px; line-height:2;">
+          <p><strong>Part 1 — Gusta or gustan (Gusta 还是 gustan)</strong></p>
+          <p>1. Me ___ el café.</p>
+          <p>2. Te ___ los libros.</p>
+          <p>3. Le ___ bailar.</p>
+          <p>4. Nos ___ las películas.</p>
+          <p>5. Me ___ leer y cocinar.</p>
+
+          <br>
+          <p><strong>Part 2 — OI pronoun (间接宾语代词)</strong></p>
+          <p>1. A mí ___ gusta el chocolate.</p>
+          <p>2. A ti ___ gusta bailar.</p>
+          <p>3. A Carlos ___ gusta el fútbol.</p>
+          <p>4. A nosotros ___ gusta viajar.</p>
+          <p>5. A ellos ___ gustan los deportes.</p>
+        </div>
+
+        <details style="margin-top:8px;">
+          <summary style="cursor:pointer; color:#5a7a32; font-weight:500; font-size:13px;"><span class="lang-en">Show answers</span><span class="lang-zh">查看答案</span></summary>
+          <div style="background:#eef4e4; padding:12px; border-radius:8px; margin-top:8px; font-size:13px; line-height:2;">
+            <p><strong>Part 1:</strong> 1. gusta · 2. gustan · 3. gusta · 4. gustan · 5. gusta</p>
+            <p><strong>Part 2:</strong> 1. me · 2. te · 3. le · 4. nos · 5. les</p>
+          </div>
+        </details>
+
+        <h4><span class="lang-en">Option C — Creative</span><span class="lang-zh">选项 C — 创意练习</span></h4>
+        <p class="lang-en-block">Make a collage or list of 5 images representing your hobbies, labeled in Spanish with gustar sentences.</p>
+        <p class="lang-zh-block">制作一张拼贴画或列表，展示 5 张代表你爱好的图片，用西班牙语 gustar 句子标注。</p>
+      </div>
+    </details>
+
   </div>
+
   <div class="unit-nav">
     <a class="prev" href="./knowledge-check-2.html"><span>←</span><div><span class="nav-label">Previous</span><span class="nav-title">Knowledge Check 2</span></div></a>
     <a class="next" href="./unit-13.html"><div><span class="nav-label">Next</span><span class="nav-title">Unit 13 · Restaurante</span></div><span>→</span></a>
   </div>
 </main>
+
 <footer class="site-footer">Spanish with Brady · Private use only</footer>
+
+<script>
+function setLang(lang) {
+  if (lang === 'zh') {
+    document.body.classList.add('zh');
+    document.getElementById('btn-zh').style.background = '#5a7a32';
+    document.getElementById('btn-zh').style.color = 'white';
+    document.getElementById('btn-en').style.background = '#f7f5ef';
+    document.getElementById('btn-en').style.color = '#7a6e60';
+  } else {
+    document.body.classList.remove('zh');
+    document.getElementById('btn-en').style.background = '#5a7a32';
+    document.getElementById('btn-en').style.color = 'white';
+    document.getElementById('btn-zh').style.background = '#f7f5ef';
+    document.getElementById('btn-zh').style.color = '#7a6e60';
+  }
+  localStorage.setItem('lang', lang);
+}
+const saved = localStorage.getItem('lang');
+if (saved === 'zh') setLang('zh');
+</script>
+
 </body>
 </html>

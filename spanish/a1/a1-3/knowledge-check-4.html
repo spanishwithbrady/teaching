@@ -5,63 +5,140 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Knowledge Check 4 · Spanish with Brady</title>
   <link rel="stylesheet" href="../../../assets/style.css">
+  <style>
+    .lang-zh { display: none; }
+    body.zh .lang-en { display: none; }
+    body.zh .lang-zh { display: inline; }
+    .lang-zh-block { display: none; }
+    body.zh .lang-zh-block { display: block; }
+    body.zh .lang-en-block { display: none; }
+  </style>
 </head>
 <body>
+
 <header class="site-header">
   <a class="site-logo" href="../../../">Spanish with Brady</a>
-  <nav><ul class="site-nav">
-    <li><a href="../../../spanish/" class="active">Spanish</a></li>
-    <li><a href="../../../mandarin/">Mandarin</a></li>
-    <li><a href="#">English</a></li>
-  </ul></nav>
+  <nav>
+    <ul class="site-nav">
+      <li><a href="../../../spanish/" class="active">Spanish</a></li>
+      <li><a href="../../../mandarin/">Mandarin</a></li>
+      <li><a href="#">English</a></li>
+    </ul>
+  </nav>
 </header>
+
 <nav class="breadcrumb">
   <a href="../../../">Home</a><span>›</span><a href="../../../spanish/">Spanish</a><span>›</span><a href="../../../spanish/a1/">A1</a><span>›</span><a href="./index.html">A1.3</a><span>›</span>Knowledge Check 4
 </nav>
+
 <section class="hero" style="background:#8B5E3C;">
   <h1>Knowledge Check 4</h1>
   <p class="hero-sub">Units 15–17 · Full conversational review</p>
 </section>
+
 <main>
+  <div style="display:flex; justify-content:flex-end; padding: 8px 0 0;">
+    <div style="display:flex; gap:0; border:1px solid #e2ddd4; border-radius:6px; overflow:hidden;">
+      <button id="btn-en" onclick="setLang('en')" style="padding:6px 16px; font-size:13px; font-weight:500; border:none; cursor:pointer; background:#5a7a32; color:white;">EN</button>
+      <button id="btn-zh" onclick="setLang('zh')" style="padding:6px 16px; font-size:13px; font-weight:500; border:none; cursor:pointer; background:#f7f5ef; color:#7a6e60;">中文</button>
+    </div>
+  </div>
+
   <div class="panels">
+
     <details class="panel">
       <summary>
         <span class="panel-num">1</span>
-        <span class="panel-title">Picture prompt</span>
+        <span class="panel-title"><span class="lang-en">Picture prompt</span><span class="lang-zh">图片描述</span></span>
         <svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg>
       </summary>
-      <div class="panel-body">Add picture here — student describes what they see using vocabulary from Units 15–17</div>
+      <div class="panel-body">
+        <p>📷 <em>Suggested image: two contrasting scenes side by side — for example two cities of different sizes, or a person at the doctor's office.</em></p>
+        <p class="lang-en-block">Describe everything you see using vocabulary from Units 15–17: comparisons between the two scenes, obligations, directions, and health/body vocabulary if a medical scene is shown.</p>
+        <p class="lang-zh-block">用第 15-17 单元学到的词汇描述你看到的一切：比较两个场景、义务、方向指引，以及如果出现医疗场景则用到的健康/身体词汇。</p>
+      </div>
     </details>
+
     <details class="panel">
       <summary>
         <span class="panel-num">2</span>
-        <span class="panel-title">Conversation questions</span>
+        <span class="panel-title"><span class="lang-en">Conversation questions</span><span class="lang-zh">对话问题</span></span>
         <svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg>
       </summary>
-      <div class="panel-body">Coming soon — guided oral questions covering all units in this block</div>
+      <div class="panel-body">
+        <p class="lang-en-block">Answer the following questions in Spanish.</p>
+        <p class="lang-zh-block">用西班牙语回答以下问题。</p>
+        <ol>
+          <li>¿Qué ciudad te gusta más, y por qué es mejor?</li>
+          <li>¿Eres más alto/a o más bajo/a que tu mejor amigo/a?</li>
+          <li>¿Qué tienes que hacer esta semana?</li>
+          <li>¿Qué hay que hacer para aprender bien un idioma?</li>
+          <li>¿Sabes cómo llegar a tu lugar favorito desde tu casa?</li>
+          <li>¿Conoces bien tu ciudad?</li>
+          <li>¿Qué te duele cuando estás enfermo/a?</li>
+          <li>¿Qué haces cuando tienes fiebre?</li>
+          <li>¿Cuál es la diferencia entre "no tienes que" y "no debes"?</li>
+          <li>¿Qué consejo le das a alguien con dolor de cabeza?</li>
+        </ol>
+      </div>
     </details>
+
     <details class="panel">
       <summary>
         <span class="panel-num">3</span>
-        <span class="panel-title">Role-play task</span>
+        <span class="panel-title"><span class="lang-en">Role-play task</span><span class="lang-zh">角色扮演任务</span></span>
         <svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg>
       </summary>
-      <div class="panel-body">Coming soon — real-life scenario using all grammar covered so far</div>
+      <div class="panel-body">
+        <p class="lang-en-block"><strong>Scenario:</strong> Choose one — either give directions to a lost tourist asking how to reach a specific place, OR roleplay a doctor-patient consultation using DOLER, ESTAR, TENER, and HAY QUE/TENER QUE for advice.</p>
+        <p class="lang-zh-block"><strong>情景：</strong>任选其一——为一位问路的迷路游客指路，或者用 DOLER、ESTAR、TENER 以及 HAY QUE/TENER QUE（给建议）角色扮演一次医患问诊。</p>
+      </div>
     </details>
+
     <details class="panel">
       <summary>
         <span class="panel-num">4</span>
-        <span class="panel-title">Teacher notes</span>
+        <span class="panel-title"><span class="lang-en">Teacher notes</span><span class="lang-zh">教师备注</span></span>
         <svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg>
       </summary>
-      <div class="panel-body">Space for notes on student performance</div>
+      <div class="panel-body">
+        <div style="background:#f7f5ef; border:1px dashed #e2ddd4; border-radius:8px; padding:24px; min-height:80px; color:#7a6e60;">
+          <p class="lang-en-block">Space for notes on student performance — strengths, areas to revisit before Unit 18.</p>
+          <p class="lang-zh-block">用于记录学生表现的备注空间——优点、第 18 单元前需要复习的内容。</p>
+        </div>
+      </div>
     </details>
+
   </div>
+
   <div class="unit-nav">
     <a class="prev" href="./quick-check-c.html"><span>←</span><div><span class="nav-label">Previous</span><span class="nav-title">Quick Check C</span></div></a>
     <a class="next" href="./unit-18.html"><div><span class="nav-label">Next</span><span class="nav-title">Unit 18 · Futuro</span></div><span>→</span></a>
   </div>
 </main>
+
 <footer class="site-footer">Spanish with Brady · Private use only</footer>
+
+<script>
+function setLang(lang) {
+  if (lang === 'zh') {
+    document.body.classList.add('zh');
+    document.getElementById('btn-zh').style.background = '#5a7a32';
+    document.getElementById('btn-zh').style.color = 'white';
+    document.getElementById('btn-en').style.background = '#f7f5ef';
+    document.getElementById('btn-en').style.color = '#7a6e60';
+  } else {
+    document.body.classList.remove('zh');
+    document.getElementById('btn-en').style.background = '#5a7a32';
+    document.getElementById('btn-en').style.color = 'white';
+    document.getElementById('btn-zh').style.background = '#f7f5ef';
+    document.getElementById('btn-zh').style.color = '#7a6e60';
+  }
+  localStorage.setItem('lang', lang);
+}
+const saved = localStorage.getItem('lang');
+if (saved === 'zh') setLang('zh');
+</script>
+
 </body>
 </html>

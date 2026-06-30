@@ -5,41 +5,360 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Unit 10 · Rutina · Spanish with Brady</title>
   <link rel="stylesheet" href="../../../assets/style.css">
+  <style>
+    .lang-zh { display: none; }
+    body.zh .lang-en { display: none; }
+    body.zh .lang-zh { display: inline; }
+    .lang-zh-block { display: none; }
+    body.zh .lang-zh-block { display: block; }
+    body.zh .lang-en-block { display: none; }
+  </style>
 </head>
 <body>
+
 <header class="site-header">
   <a class="site-logo" href="../../../">Spanish with Brady</a>
-  <nav><ul class="site-nav">
-    <li><a href="../../../spanish/" class="active">Spanish</a></li>
-    <li><a href="../../../mandarin/">Mandarin</a></li>
-    <li><a href="#">English</a></li>
-  </ul></nav>
+  <nav>
+    <ul class="site-nav">
+      <li><a href="../../../spanish/" class="active">Spanish</a></li>
+      <li><a href="../../../mandarin/">Mandarin</a></li>
+      <li><a href="#">English</a></li>
+    </ul>
+  </nav>
 </header>
+
 <nav class="breadcrumb">
   <a href="../../../">Home</a><span>›</span><a href="../../../spanish/">Spanish</a><span>›</span><a href="../../../spanish/a1/">A1</a><span>›</span><a href="./index.html">A1.2</a><span>›</span>Unit 10
 </nav>
+
 <main>
+  <div style="display:flex; justify-content:flex-end; padding: 8px 0 0;">
+    <div style="display:flex; gap:0; border:1px solid #e2ddd4; border-radius:6px; overflow:hidden;">
+      <button id="btn-en" onclick="setLang('en')" style="padding:6px 16px; font-size:13px; font-weight:500; border:none; cursor:pointer; background:#5a7a32; color:white;">EN</button>
+      <button id="btn-zh" onclick="setLang('zh')" style="padding:6px 16px; font-size:13px; font-weight:500; border:none; cursor:pointer; background:#f7f5ef; color:#7a6e60;">中文</button>
+    </div>
+  </div>
+
   <div class="unit-header">
     <div class="unit-num">A1.2 · Unit 10</div>
     <h1>Rutina</h1>
     <p class="unit-subtitle">Daily routine and reflexive verbs</p>
   </div>
+
   <div class="panels">
-    <details class="panel"><summary><span class="panel-num">1</span><span class="panel-title">Hook / Opener</span><svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg></summary><div class="panel-body">Content coming soon</div></details>
-    <details class="panel"><summary><span class="panel-num">2</span><span class="panel-title">Vocabulary</span><svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg></summary><div class="panel-body">Content coming soon</div></details>
-    <details class="panel"><summary><span class="panel-num">3</span><span class="panel-title">Grammar in context</span><svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg></summary><div class="panel-body">Content coming soon</div></details>
-    <details class="panel"><summary><span class="panel-num">4</span><span class="panel-title">Reading or dialogue</span><svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg></summary><div class="panel-body">Content coming soon</div></details>
-    <details class="panel"><summary><span class="panel-num">5</span><span class="panel-title">Controlled practice</span><svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg></summary><div class="panel-body">Content coming soon</div></details>
-    <details class="panel"><summary><span class="panel-num">6</span><span class="panel-title">Question formation</span><svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg></summary><div class="panel-body">Content coming soon</div></details>
-    <details class="panel"><summary><span class="panel-num">7</span><span class="panel-title">Real-life task</span><svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg></summary><div class="panel-body">Content coming soon</div></details>
-    <details class="panel"><summary><span class="panel-num">8</span><span class="panel-title">Free production</span><svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg></summary><div class="panel-body">Content coming soon</div></details>
-    <details class="panel"><summary><span class="panel-num">9</span><span class="panel-title">Homework</span><svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg></summary><div class="panel-body">Content coming soon</div></details>
+
+    <details class="panel">
+      <summary>
+        <span class="panel-num">1</span>
+        <span class="panel-title"><span class="lang-en">Hook / Opener</span><span class="lang-zh">课程导入</span></span>
+        <svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg>
+      </summary>
+      <div class="panel-body">
+        <p>📷 <em>Suggested image: a comic-strip style sequence of someone's morning routine.</em></p>
+        <p class="lang-en-block">Before we start, think about this: What is the first thing you do every morning? Can you describe your full daily routine?</p>
+        <p class="lang-zh-block">开始之前，想一想：你每天早上做的第一件事是什么？你能描述你完整的日常作息吗？</p>
+        <p><strong><span class="lang-en">By the end of this unit you can:</span><span class="lang-zh">完成本单元后，你能够：</span></strong> <span class="lang-en">narrate your full daily routine using reflexive verbs, and tell the time completely.</span><span class="lang-zh">用反身动词描述你完整的日常作息，并完整地报时。</span></p>
+      </div>
+    </details>
+
+    <details class="panel">
+      <summary>
+        <span class="panel-num">2</span>
+        <span class="panel-title"><span class="lang-en">Vocabulary</span><span class="lang-zh">词汇</span></span>
+        <svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg>
+      </summary>
+      <div class="panel-body">
+        <h4><span class="lang-en">Reflexive routine verbs</span><span class="lang-zh">反身日常动词</span></h4>
+        <table>
+          <tr><th>Spanish</th><th>English</th><th>中文</th></tr>
+          <tr><td><strong>despertarse</strong></td><td>to wake up</td><td>醒来</td></tr>
+          <tr><td><strong>levantarse</strong></td><td>to get up</td><td>起床</td></tr>
+          <tr><td><strong>ducharse</strong></td><td>to shower</td><td>洗澡</td></tr>
+          <tr><td><strong>lavarse</strong></td><td>to wash (oneself)</td><td>洗（自己）</td></tr>
+          <tr><td><strong>vestirse</strong></td><td>to get dressed</td><td>穿衣服</td></tr>
+          <tr><td><strong>peinarse</strong></td><td>to comb one's hair</td><td>梳头</td></tr>
+          <tr><td><strong>acostarse</strong></td><td>to go to bed</td><td>上床睡觉</td></tr>
+          <tr><td><strong>dormirse</strong></td><td>to fall asleep</td><td>入睡</td></tr>
+        </table>
+
+        <h4><span class="lang-en">Non-reflexive routine verbs</span><span class="lang-zh">非反身日常动词</span></h4>
+        <table>
+          <tr><th>Spanish</th><th>English</th><th>中文</th></tr>
+          <tr><td><strong>desayunar</strong></td><td>to have breakfast</td><td>吃早饭</td></tr>
+          <tr><td><strong>almorzar</strong></td><td>to have lunch</td><td>吃午饭</td></tr>
+          <tr><td><strong>cenar</strong></td><td>to have dinner</td><td>吃晚饭</td></tr>
+          <tr><td><strong>salir</strong></td><td>to go out / leave</td><td>出门</td></tr>
+          <tr><td><strong>volver</strong></td><td>to return / come back</td><td>回来</td></tr>
+        </table>
+      </div>
+    </details>
+
+    <details class="panel">
+      <summary>
+        <span class="panel-num">3</span>
+        <span class="panel-title"><span class="lang-en">Grammar in context</span><span class="lang-zh">语法讲解</span></span>
+        <svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg>
+      </summary>
+      <div class="panel-body">
+        <h4><span class="lang-en">Reflexive pronoun structure</span><span class="lang-zh">反身代词结构</span></h4>
+        <p class="lang-en-block">A reflexive verb means the action goes back to the subject — "I wash myself" rather than just "I wash". This is a genuinely new concept for Chinese speakers, since Chinese has no equivalent reflexive pronoun system.</p>
+        <p class="lang-zh-block">反身动词表示动作返回到主语本身——"我给自己洗"而不仅仅是"我洗"。这对中文使用者来说是一个全新的概念，因为中文没有对应的反身代词系统。</p>
+        <table>
+          <tr><th><span class="lang-en">Pronoun</span><span class="lang-zh">人称代词</span></th><th><span class="lang-en">Reflexive pronoun</span><span class="lang-zh">反身代词</span></th><th><span class="lang-en">Example (lavarse)</span><span class="lang-zh">例句（lavarse）</span></th></tr>
+          <tr><td>yo</td><td><strong>me</strong></td><td>Me lavo las manos.</td></tr>
+          <tr><td>tú</td><td><strong>te</strong></td><td>Te lavas la cara.</td></tr>
+          <tr><td>él / ella / usted</td><td><strong>se</strong></td><td>Se lava el pelo.</td></tr>
+          <tr><td>nosotros/as</td><td><strong>nos</strong></td><td>Nos lavamos los dientes.</td></tr>
+          <tr><td>vosotros/as</td><td><strong>os</strong></td><td>Os laváis las manos.</td></tr>
+          <tr><td>ellos/as / ustedes</td><td><strong>se</strong></td><td>Se lavan la cara.</td></tr>
+        </table>
+
+        <h4><span class="lang-en">Stem-changing reflexives</span><span class="lang-zh">词干变化的反身动词</span></h4>
+        <p class="lang-en-block">💡 Picture a "boot": the change happens in yo/tú/él/ellos, but NOT in nosotros/vosotros — those two stay regular, like the part of the boot left untouched.</p>
+        <p class="lang-zh-block">💡 想象一个"靴子"形状：变化发生在 yo/tú/él/ellos，但 nosotros/vosotros 不变——这两个人称就像靴子上未被触及的部分。</p>
+        <table>
+          <tr><th><span class="lang-en">Verb</span><span class="lang-zh">动词</span></th><th><span class="lang-en">Change</span><span class="lang-zh">变化</span></th><th>yo</th><th>nosotros</th></tr>
+          <tr><td><strong>despertarse</strong></td><td>e→ie</td><td>me despierto</td><td>nos despertamos</td></tr>
+          <tr><td><strong>acostarse</strong></td><td>o→ue</td><td>me acuesto</td><td>nos acostamos</td></tr>
+          <tr><td><strong>vestirse</strong></td><td>e→i</td><td>me visto</td><td>nos vestimos</td></tr>
+        </table>
+
+        <h4><span class="lang-en">Telling the time</span><span class="lang-zh">报时</span></h4>
+        <table>
+          <tr><th>Spanish</th><th>English</th></tr>
+          <tr><td><strong>Es la una.</strong></td><td>It's one o'clock.</td></tr>
+          <tr><td><strong>Son las dos.</strong></td><td>It's two o'clock.</td></tr>
+          <tr><td><strong>Son las tres y cuarto.</strong></td><td>It's a quarter past three.</td></tr>
+          <tr><td><strong>Son las cuatro y media.</strong></td><td>It's half past four.</td></tr>
+          <tr><td><strong>Son las cinco menos cuarto.</strong></td><td>It's a quarter to five.</td></tr>
+        </table>
+
+        <p class="lang-en-block">⚠️ <strong>Non-negotiable:</strong> never drop the reflexive pronoun. "Levanto a las siete" is wrong — you must say "Me levanto a las siete".</p>
+        <p class="lang-zh-block">⚠️ <strong>绝不能省略：</strong>反身代词绝不能省略。"Levanto a las siete" 是错误的——必须说 "Me levanto a las siete"。</p>
+      </div>
+    </details>
+
+    <details class="panel">
+      <summary>
+        <span class="panel-num">4</span>
+        <span class="panel-title"><span class="lang-en">Reading or dialogue</span><span class="lang-zh">阅读与对话</span></span>
+        <svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg>
+      </summary>
+      <div class="panel-body">
+        <p>📷 <em>Suggested image: a clock and a series of small icons showing a morning routine.</em></p>
+
+        <h4>Mi rutina diaria</h4>
+        <p class="lang-en-block">Ming describes her daily routine to Li.</p>
+        <p class="lang-zh-block">Ming 向 Li 描述她的日常作息。</p>
+
+        <div class="dialogue">
+          <p><strong>Li:</strong> Ming, ¿a qué hora te despiertas normalmente?</p>
+          <p><strong>Ming:</strong> Me despierto a las seis y media. Luego me ducho.</p>
+          <p><strong>Li:</strong> ¿Desayunas antes o después de vestirte?</p>
+          <p><strong>Ming:</strong> Primero me visto, y luego desayuno a las siete y cuarto.</p>
+          <p><strong>Li:</strong> ¿A qué hora sales de casa?</p>
+          <p><strong>Ming:</strong> Salgo a las ocho menos cuarto. ¿Y tú?</p>
+          <p><strong>Li:</strong> Yo me levanto más tarde, a las ocho. ¿A qué hora te acuestas?</p>
+          <p><strong>Ming:</strong> Me acuesto a las once. ¡Me duermo muy rápido!</p>
+        </div>
+
+        <h4><span class="lang-en">Comprehension questions</span><span class="lang-zh">理解问题</span></h4>
+        <ol>
+          <li>¿A qué hora se despierta Ming?</li>
+          <li>¿Qué hace primero, vestirse o desayunar?</li>
+          <li>¿A qué hora sale Ming de casa?</li>
+          <li>¿A qué hora se acuesta Ming?</li>
+        </ol>
+      </div>
+    </details>
+
+    <details class="panel">
+      <summary>
+        <span class="panel-num">5</span>
+        <span class="panel-title"><span class="lang-en">Controlled practice</span><span class="lang-zh">强化练习</span></span>
+        <svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg>
+      </summary>
+      <div class="panel-body">
+        <h4><span class="lang-en">Exercise 1 — Complete with the reflexive verb</span><span class="lang-zh">练习一 — 用反身动词填空</span></h4>
+        <ol>
+          <li>Yo ___ (despertarse) a las siete.</li>
+          <li>Tú ___ (levantarse) muy temprano.</li>
+          <li>Ella ___ (ducharse) por la mañana.</li>
+          <li>Nosotros ___ (vestirse) rápido.</li>
+          <li>Ellos ___ (acostarse) a las diez.</li>
+          <li>¿Usted ___ (peinarse) antes de salir?</li>
+        </ol>
+
+        <h4><span class="lang-en">Exercise 2 — Say the time</span><span class="lang-zh">练习二 — 说出时间</span></h4>
+        <ol>
+          <li>1:00 → ___</li>
+          <li>3:15 → ___</li>
+          <li>6:30 → ___</li>
+          <li>8:45 → ___</li>
+          <li>12:00 → ___</li>
+          <li>2:00 → ___</li>
+        </ol>
+
+        <h4><span class="lang-en">Exercise 3 — Find the error</span><span class="lang-zh">练习三 — 找出错误</span></h4>
+        <ol>
+          <li>Despierto a las siete. → ___</li>
+          <li>Me ducho me a las ocho. → ___</li>
+          <li>Nosotros se levantamos temprano. → ___</li>
+          <li>Ella visto rápido. → ___</li>
+          <li>Acuesto a las once. → ___</li>
+        </ol>
+      </div>
+    </details>
+
+    <details class="panel">
+      <summary>
+        <span class="panel-num">6</span>
+        <span class="panel-title"><span class="lang-en">Question formation</span><span class="lang-zh">如何提问</span></span>
+        <svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg>
+      </summary>
+      <div class="panel-body">
+        <h4><span class="lang-en">Questions for this unit</span><span class="lang-zh">本单元问句</span></h4>
+        <table>
+          <tr><th><span class="lang-en">Question</span><span class="lang-zh">问句</span></th><th><span class="lang-en">Meaning</span><span class="lang-zh">意思</span></th><th><span class="lang-en">Typical answer</span><span class="lang-zh">常见回答</span></th></tr>
+          <tr><td><strong>¿A qué hora te despiertas/levantas?</strong></td><td><span class="lang-en">What time do you wake up/get up?</span><span class="lang-zh">你几点醒来/起床？</span></td><td>Me despierto a las siete.</td></tr>
+          <tr><td><strong>¿Qué hora es?</strong></td><td><span class="lang-en">What time is it?</span><span class="lang-zh">现在几点？</span></td><td>Son las tres y media.</td></tr>
+          <tr><td><strong>¿A qué hora desayunas/cenas?</strong></td><td><span class="lang-en">What time do you have breakfast/dinner?</span><span class="lang-zh">你几点吃早饭/晚饭？</span></td><td>Desayuno a las ocho.</td></tr>
+          <tr><td><strong>¿A qué hora te acuestas?</strong></td><td><span class="lang-en">What time do you go to bed?</span><span class="lang-zh">你几点睡觉？</span></td><td>Me acuesto a las once.</td></tr>
+        </table>
+
+        <h4><span class="lang-en">Practice — Ask the question</span><span class="lang-zh">练习 — 写出问句</span></h4>
+        <p class="lang-en-block">Look at the answer. What was the question?</p>
+        <p class="lang-zh-block">看答案，写出对应的问句。</p>
+        <ol>
+          <li>→ Me levanto a las seis y media.</li>
+          <li>→ Son las cuatro menos cuarto.</li>
+          <li>→ Ceno a las ocho.</li>
+          <li>→ Me acuesto a las once y media.</li>
+        </ol>
+      </div>
+    </details>
+
+    <details class="panel">
+      <summary>
+        <span class="panel-num">7</span>
+        <span class="panel-title"><span class="lang-en">Real-life task</span><span class="lang-zh">真实任务</span></span>
+        <svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg>
+      </summary>
+      <div class="panel-body">
+        <p>📷 <em>Suggested image: a phone alarm clock screen.</em></p>
+
+        <h4><span class="lang-en">Task: Narrate your real routine</span><span class="lang-zh">任务：描述你真实的作息</span></h4>
+        <p class="lang-en-block">Narrate your real daily routine from waking up to going to bed, using at least 5 reflexive verbs and 3 specific times.</p>
+        <p class="lang-zh-block">描述你从醒来到睡觉的真实日常作息，至少使用 5 个反身动词和 3 个具体时间点。</p>
+        <p><em>Example: "Me despierto a las siete. Me ducho y me visto. Desayuno a las siete y media..."</em></p>
+      </div>
+    </details>
+
+    <details class="panel">
+      <summary>
+        <span class="panel-num">8</span>
+        <span class="panel-title"><span class="lang-en">Free production</span><span class="lang-zh">自由表达</span></span>
+        <svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg>
+      </summary>
+      <div class="panel-body">
+        <p class="lang-en-block">No script. No word bank. Just you, speaking freely using everything from this unit.</p>
+        <p class="lang-zh-block">没有脚本，没有词汇表。用你在本单元学到的一切自由表达。</p>
+
+        <h4><span class="lang-en">Speaking prompts</span><span class="lang-zh">口语提示</span></h4>
+        <ol class="lang-en-block">
+          <li>Describe your weekday routine vs. your weekend routine.</li>
+          <li>What time do you usually go to bed, and is it different from when you were a child?</li>
+          <li>Describe a family member's daily routine.</li>
+          <li>If you could change one part of your routine, what would it be?</li>
+        </ol>
+        <ol class="lang-zh-block">
+          <li>描述你工作日的作息和周末的作息有什么不同。</li>
+          <li>你通常几点睡觉？和你小时候相比有变化吗？</li>
+          <li>描述一位家人的日常作息。</li>
+          <li>如果可以改变作息中的一部分，你会改变什么？</li>
+        </ol>
+      </div>
+    </details>
+
+    <details class="panel">
+      <summary>
+        <span class="panel-num">9</span>
+        <span class="panel-title"><span class="lang-en">Homework</span><span class="lang-zh">课后作业</span></span>
+        <svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg>
+      </summary>
+      <div class="panel-body">
+        <p class="lang-en-block">Choose <strong>one</strong> of the options below. No need to send anything — just do it before the next class.</p>
+        <p class="lang-zh-block">选择以下任一选项。无需发给老师——课前自己完成就好。</p>
+
+        <h4><span class="lang-en">Option A — Receptive</span><span class="lang-zh">选项 A — 听力输入</span></h4>
+        <p class="lang-en-block">Watch a short Spanish video about someone's morning routine. Write down any reflexive verbs or times you hear.</p>
+        <p class="lang-zh-block">看一段关于某人早晨作息的西班牙语视频，记下你听到的反身动词或时间。</p>
+
+        <h4><span class="lang-en">Option B — Practice exercise</span><span class="lang-zh">选项 B — 书面练习</span></h4>
+        <p class="lang-en-block">Copy the exercise below into your Google Doc and fill in the blanks. Check your answers at the bottom when you are done.</p>
+        <p class="lang-zh-block">将以下练习复制到你的 Google Doc 中并填空。完成后在下方核对答案。</p>
+
+        <div style="background:#f7f5ef; padding:16px; border-radius:8px; margin:12px 0; font-size:14px; line-height:2;">
+          <p><strong>Part 1 — Reflexive verbs (反身动词)</strong></p>
+          <p>1. Yo ___ (despertarse) a las siete.</p>
+          <p>2. Tú ___ (levantarse) temprano.</p>
+          <p>3. Ella ___ (ducharse) por la mañana.</p>
+          <p>4. Nosotros ___ (vestirse) rápido.</p>
+          <p>5. Ellos ___ (acostarse) a las diez.</p>
+
+          <br>
+          <p><strong>Part 2 — Tell the time (说出时间)</strong></p>
+          <p>1. 1:00 → ___</p>
+          <p>2. 3:15 → ___</p>
+          <p>3. 6:30 → ___</p>
+          <p>4. 8:45 → ___</p>
+          <p>5. 12:00 → ___</p>
+        </div>
+
+        <details style="margin-top:8px;">
+          <summary style="cursor:pointer; color:#5a7a32; font-weight:500; font-size:13px;"><span class="lang-en">Show answers</span><span class="lang-zh">查看答案</span></summary>
+          <div style="background:#eef4e4; padding:12px; border-radius:8px; margin-top:8px; font-size:13px; line-height:2;">
+            <p><strong>Part 1:</strong> 1. me despierto · 2. te levantas · 3. se ducha · 4. nos vestimos · 5. se acuestan</p>
+            <p><strong>Part 2:</strong> 1. Es la una · 2. Son las tres y cuarto · 3. Son las seis y media · 4. Son las nueve menos cuarto · 5. Son las doce</p>
+          </div>
+        </details>
+
+        <h4><span class="lang-en">Option C — Creative</span><span class="lang-zh">选项 C — 创意练习</span></h4>
+        <p class="lang-en-block">Draw a comic strip of 5 panels showing your morning routine, labeled in Spanish with reflexive verbs.</p>
+        <p class="lang-zh-block">画一个 5 格漫画，展示你的晨间作息，用西班牙语反身动词标注。</p>
+      </div>
+    </details>
+
   </div>
+
   <div class="unit-nav">
     <a class="prev" href="./unit-9.html"><span>←</span><div><span class="nav-label">Previous</span><span class="nav-title">Unit 9 · La Semana</span></div></a>
     <a class="next" href="./quick-check-b.html"><div><span class="nav-label">Next</span><span class="nav-title">Quick Check B</span></div><span>→</span></a>
   </div>
 </main>
+
 <footer class="site-footer">Spanish with Brady · Private use only</footer>
+
+<script>
+function setLang(lang) {
+  if (lang === 'zh') {
+    document.body.classList.add('zh');
+    document.getElementById('btn-zh').style.background = '#5a7a32';
+    document.getElementById('btn-zh').style.color = 'white';
+    document.getElementById('btn-en').style.background = '#f7f5ef';
+    document.getElementById('btn-en').style.color = '#7a6e60';
+  } else {
+    document.body.classList.remove('zh');
+    document.getElementById('btn-en').style.background = '#5a7a32';
+    document.getElementById('btn-en').style.color = 'white';
+    document.getElementById('btn-zh').style.background = '#f7f5ef';
+    document.getElementById('btn-zh').style.color = '#7a6e60';
+  }
+  localStorage.setItem('lang', lang);
+}
+const saved = localStorage.getItem('lang');
+if (saved === 'zh') setLang('zh');
+</script>
+
 </body>
 </html>
