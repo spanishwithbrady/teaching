@@ -5,55 +5,131 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Quick Check C · Spanish with Brady</title>
   <link rel="stylesheet" href="../../../assets/style.css">
+  <style>
+    .lang-zh { display: none; }
+    body.zh .lang-en { display: none; }
+    body.zh .lang-zh { display: inline; }
+    .lang-zh-block { display: none; }
+    body.zh .lang-zh-block { display: block; }
+    body.zh .lang-en-block { display: none; }
+  </style>
 </head>
 <body>
+
 <header class="site-header">
   <a class="site-logo" href="../../../">Spanish with Brady</a>
-  <nav><ul class="site-nav">
-    <li><a href="../../../spanish/" class="active">Spanish</a></li>
-    <li><a href="../../../mandarin/">Mandarin</a></li>
-    <li><a href="#">English</a></li>
-  </ul></nav>
+  <nav>
+    <ul class="site-nav">
+      <li><a href="../../../spanish/" class="active">Spanish</a></li>
+      <li><a href="../../../mandarin/">Mandarin</a></li>
+      <li><a href="#">English</a></li>
+    </ul>
+  </nav>
 </header>
+
 <nav class="breadcrumb">
   <a href="../../../">Home</a><span>›</span><a href="../../../spanish/">Spanish</a><span>›</span><a href="../../../spanish/a1/">A1</a><span>›</span><a href="./index.html">A1.3</a><span>›</span>Quick Check C
 </nav>
+
 <section class="hero" style="background:#b8763a;">
   <h1>Quick Check C</h1>
   <p class="hero-sub">Units 15–17 · 10–15 minute oral recap</p>
 </section>
+
 <main>
+  <div style="display:flex; justify-content:flex-end; padding: 8px 0 0;">
+    <div style="display:flex; gap:0; border:1px solid #e2ddd4; border-radius:6px; overflow:hidden;">
+      <button id="btn-en" onclick="setLang('en')" style="padding:6px 16px; font-size:13px; font-weight:500; border:none; cursor:pointer; background:#5a7a32; color:white;">EN</button>
+      <button id="btn-zh" onclick="setLang('zh')" style="padding:6px 16px; font-size:13px; font-weight:500; border:none; cursor:pointer; background:#f7f5ef; color:#7a6e60;">中文</button>
+    </div>
+  </div>
+
   <div class="panels">
+
     <details class="panel">
       <summary>
         <span class="panel-num">1</span>
-        <span class="panel-title">Warm-up questions</span>
+        <span class="panel-title"><span class="lang-en">Warm-up questions</span><span class="lang-zh">热身问题</span></span>
         <svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg>
       </summary>
-      <div class="panel-body">Coming soon — 3 to 4 quick oral questions reviewing the last 3 units</div>
+      <div class="panel-body">
+        <p class="lang-en-block">Ask these 4 questions out loud, one at a time. Answer each in Spanish without writing anything down first.</p>
+        <p class="lang-zh-block">大声逐一提出以下 4 个问题。先不要写下来，直接用西班牙语口头回答。</p>
+        <ol>
+          <li>¿Qué es más grande, tu ciudad o Madrid?</li>
+          <li>¿Qué tienes que hacer esta semana?</li>
+          <li>¿Sabes llegar al supermercado desde tu casa?</li>
+          <li>¿Te duele algo hoy?</li>
+        </ol>
+      </div>
     </details>
+
     <details class="panel">
       <summary>
         <span class="panel-num">2</span>
-        <span class="panel-title">Flashcard round</span>
+        <span class="panel-title"><span class="lang-en">Flashcard round</span><span class="lang-zh">词卡速答</span></span>
         <svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg>
       </summary>
-      <div class="panel-body">Coming soon — key vocabulary from Units 15–17 to review orally</div>
+      <div class="panel-body">
+        <p class="lang-en-block">For each word below, say it out loud and make a short example sentence with it.</p>
+        <p class="lang-zh-block">大声说出下面每个单词，并用它造一个简短的例句。</p>
+        <ol>
+          <li><strong>más... que</strong> / <strong>menos... que</strong></li>
+          <li><strong>mejor / peor</strong></li>
+          <li><strong>tan... como</strong></li>
+          <li><strong>tener que</strong></li>
+          <li><strong>hay que</strong></li>
+          <li><strong>girar a la derecha / izquierda</strong></li>
+          <li><strong>todo recto</strong></li>
+          <li><strong>saber</strong> <span class="lang-en">vs.</span><span class="lang-zh">与</span> <strong>conocer</strong></li>
+          <li><strong>me duele la cabeza</strong></li>
+          <li><strong>tener fiebre / tener tos</strong></li>
+        </ol>
+      </div>
     </details>
+
     <details class="panel">
       <summary>
         <span class="panel-num">3</span>
-        <span class="panel-title">One quick task</span>
+        <span class="panel-title"><span class="lang-en">One quick task</span><span class="lang-zh">一个速答任务</span></span>
         <svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg>
       </summary>
-      <div class="panel-body">Coming soon — one short real-life sentence or question to produce freely</div>
+      <div class="panel-body">
+        <p class="lang-en-block"><strong>Task:</strong> Give simple directions from your home to your favorite restaurant, then say one thing you have to do today and how you're feeling physically.</p>
+        <p class="lang-zh-block"><strong>任务：</strong>给出从你家到你最喜欢的餐厅的简单方向指引，然后说一件你今天必须做的事，以及你身体的感觉如何。</p>
+      </div>
     </details>
+
   </div>
+
   <div class="unit-nav">
     <a class="prev" href="./unit-17.html"><span>←</span><div><span class="nav-label">Previous</span><span class="nav-title">Unit 17 · Salud</span></div></a>
     <a class="next" href="./knowledge-check-4.html"><div><span class="nav-label">Next</span><span class="nav-title">Knowledge Check 4</span></div><span>→</span></a>
   </div>
 </main>
+
 <footer class="site-footer">Spanish with Brady · Private use only</footer>
+
+<script>
+function setLang(lang) {
+  if (lang === 'zh') {
+    document.body.classList.add('zh');
+    document.getElementById('btn-zh').style.background = '#5a7a32';
+    document.getElementById('btn-zh').style.color = 'white';
+    document.getElementById('btn-en').style.background = '#f7f5ef';
+    document.getElementById('btn-en').style.color = '#7a6e60';
+  } else {
+    document.body.classList.remove('zh');
+    document.getElementById('btn-en').style.background = '#5a7a32';
+    document.getElementById('btn-en').style.color = 'white';
+    document.getElementById('btn-zh').style.background = '#f7f5ef';
+    document.getElementById('btn-zh').style.color = '#7a6e60';
+  }
+  localStorage.setItem('lang', lang);
+}
+const saved = localStorage.getItem('lang');
+if (saved === 'zh') setLang('zh');
+</script>
+
 </body>
 </html>
