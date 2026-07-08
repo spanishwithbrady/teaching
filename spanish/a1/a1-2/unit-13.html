@@ -12,6 +12,9 @@
     .lang-zh-block { display: none; }
     body.zh .lang-zh-block { display: block; }
     body.zh .lang-en-block { display: none; }
+    /* ── live input fields ── */
+    .exercise-block { position: relative; }
+    input.ex-input { vertical-align: middle; }
   </style>
 </head>
 <body>
@@ -164,12 +167,15 @@
         </div>
 
         <h4><span class="lang-en">Comprehension questions</span><span class="lang-zh">理解问题</span></h4>
+        <div class="exercise-block">
+        <div style="text-align:right; margin-bottom:8px;"><button onclick="this.closest('.exercise-block').querySelectorAll('input').forEach(function(i){i.value=''})" style="font-size:12px; color:#8B5E3C; background:none; border:1px solid #e2ddd4; border-radius:4px; padding:3px 10px; cursor:pointer;">Clear / 清空</button></div>
         <ol>
-          <li>¿Qué pide Pablo de primer plato?</li>
-          <li>¿Qué recomienda el camarero?</li>
-          <li>¿Qué pide Pablo de beber?</li>
-          <li>¿Pide postre Pablo?</li>
+          <li>¿Qué pide Pablo de primer plato? <input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"></li>
+          <li>¿Qué recomienda el camarero? <input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"></li>
+          <li>¿Qué pide Pablo de beber? <input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"></li>
+          <li>¿Pide postre Pablo? <input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"></li>
         </ol>
+        </div>
       </div>
     </details>
 
@@ -181,33 +187,42 @@
       </summary>
       <div class="panel-body">
         <h4><span class="lang-en">Exercise 1 — QUERER, PODER or PEDIR?</span><span class="lang-zh">练习一 — QUERER、PODER 还是 PEDIR？</span></h4>
+        <div class="exercise-block">
+        <div style="text-align:right; margin-bottom:8px;"><button onclick="this.closest('.exercise-block').querySelectorAll('input').forEach(function(i){i.value=''})" style="font-size:12px; color:#8B5E3C; background:none; border:1px solid #e2ddd4; border-radius:4px; padding:3px 10px; cursor:pointer;">Clear / 清空</button></div>
         <ol>
-          <li>Yo ___ una paella. (want)</li>
-          <li>¿___ usted traerme la carta? (can you)</li>
-          <li>Ella va a ___ el gazpacho. (order)</li>
-          <li>Nosotros ___ agua, por favor. (want)</li>
-          <li>¿___ recomendarme algo? (can you)</li>
-          <li>Ellos van a ___ postre. (order)</li>
+          <li>Yo <input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"> una paella. (want)</li>
+          <li>¿<input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"> usted traerme la carta? (can you)</li>
+          <li>Ella va a <input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"> el gazpacho. (order)</li>
+          <li>Nosotros <input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"> agua, por favor. (want)</li>
+          <li>¿<input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"> recomendarme algo? (can you)</li>
+          <li>Ellos van a <input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"> postre. (order)</li>
         </ol>
+        </div>
 
         <h4><span class="lang-en">Exercise 2 — Choose the correct article</span><span class="lang-zh">练习二 — 选择正确的冠词</span></h4>
+        <div class="exercise-block">
+        <div style="text-align:right; margin-bottom:8px;"><button onclick="this.closest('.exercise-block').querySelectorAll('input').forEach(function(i){i.value=''})" style="font-size:12px; color:#8B5E3C; background:none; border:1px solid #e2ddd4; border-radius:4px; padding:3px 10px; cursor:pointer;">Clear / 清空</button></div>
         <ol>
-          <li>Me gusta ___ café. (general)</li>
-          <li>Quiero ___ café, por favor. (ordering)</li>
-          <li>Me encanta ___ paella. (general)</li>
-          <li>Voy a pedir ___ paella. (ordering)</li>
-          <li>¿Le gusta ___ vino? (general)</li>
-          <li>Quisiera ___ vino tinto. (ordering)</li>
+          <li>Me gusta <input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"> café. (general)</li>
+          <li>Quiero <input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"> café, por favor. (ordering)</li>
+          <li>Me encanta <input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"> paella. (general)</li>
+          <li>Voy a pedir <input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"> paella. (ordering)</li>
+          <li>¿Le gusta <input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"> vino? (general)</li>
+          <li>Quisiera <input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"> vino tinto. (ordering)</li>
         </ol>
+        </div>
 
         <h4><span class="lang-en">Exercise 3 — Find the error</span><span class="lang-zh">练习三 — 找出错误</span></h4>
+        <div class="exercise-block">
+        <div style="text-align:right; margin-bottom:8px;"><button onclick="this.closest('.exercise-block').querySelectorAll('input').forEach(function(i){i.value=''})" style="font-size:12px; color:#8B5E3C; background:none; border:1px solid #e2ddd4; border-radius:4px; padding:3px 10px; cursor:pointer;">Clear / 清空</button></div>
         <ol>
-          <li>Quero una paella. → ___</li>
-          <li>¿Puede usted traerme un agua, por favor? (missing word) → ___</li>
-          <li>Esta sopa es muy rica ahora mismo. → ___</li>
-          <li>Voy a pido el gazpacho. → ___</li>
-          <li>La cuenta por favor, quisiera. (word order) → ___</li>
+          <li>Quero una paella. → <input type="text" class="ex-input" placeholder="..." style="width:220px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"></li>
+          <li>¿Puede usted traerme un agua, por favor? (missing word) → <input type="text" class="ex-input" placeholder="..." style="width:220px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"></li>
+          <li>Esta sopa es muy rica ahora mismo. → <input type="text" class="ex-input" placeholder="..." style="width:220px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"></li>
+          <li>Voy a pido el gazpacho. → <input type="text" class="ex-input" placeholder="..." style="width:220px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"></li>
+          <li>La cuenta por favor, quisiera. (word order) → <input type="text" class="ex-input" placeholder="..." style="width:220px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"></li>
         </ol>
+        </div>
       </div>
     </details>
 
@@ -230,12 +245,15 @@
         <h4><span class="lang-en">Practice — Ask the question</span><span class="lang-zh">练习 — 写出问句</span></h4>
         <p class="lang-en-block">Look at the answer. What was the question?</p>
         <p class="lang-zh-block">看答案，写出对应的问句。</p>
+        <div class="exercise-block">
+        <div style="text-align:right; margin-bottom:8px;"><button onclick="this.closest('.exercise-block').querySelectorAll('input').forEach(function(i){i.value=''})" style="font-size:12px; color:#8B5E3C; background:none; border:1px solid #e2ddd4; border-radius:4px; padding:3px 10px; cursor:pointer;">Clear / 清空</button></div>
         <ol>
-          <li>→ Quiero el gazpacho, por favor.</li>
-          <li>→ La paella está riquísima hoy.</li>
-          <li>→ Sí, claro, ahora mismo le traigo agua.</li>
-          <li>→ No, gracias, solo la cuenta.</li>
+          <li><input type="text" class="ex-input" placeholder="..." style="width:220px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'">→ Quiero el gazpacho, por favor.</li>
+          <li><input type="text" class="ex-input" placeholder="..." style="width:220px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'">→ La paella está riquísima hoy.</li>
+          <li><input type="text" class="ex-input" placeholder="..." style="width:220px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'">→ Sí, claro, ahora mismo le traigo agua.</li>
+          <li><input type="text" class="ex-input" placeholder="..." style="width:220px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'">→ No, gracias, solo la cuenta.</li>
         </ol>
+        </div>
       </div>
     </details>
 
@@ -298,21 +316,22 @@
         <p class="lang-en-block">Copy the exercise below into your Google Doc and fill in the blanks. Check your answers at the bottom when you are done.</p>
         <p class="lang-zh-block">将以下练习复制到你的 Google Doc 中并填空。完成后在下方核对答案。</p>
 
-        <div style="background:#f7f5ef; padding:16px; border-radius:8px; margin:12px 0; font-size:14px; line-height:2;">
+        <div class="exercise-block" style="background:#f7f5ef; padding:16px; border-radius:8px; margin:12px 0; font-size:14px; line-height:2;">
+          <div style="text-align:right; margin-bottom:8px;"><button onclick="this.closest('.exercise-block').querySelectorAll('input').forEach(function(i){i.value=''})" style="font-size:12px; color:#8B5E3C; background:none; border:1px solid #e2ddd4; border-radius:4px; padding:3px 10px; cursor:pointer;">Clear / 清空</button></div>
           <p><strong>Part 1 — QUERER, PODER, PEDIR (QUERER、PODER、PEDIR)</strong></p>
-          <p>1. Yo ___ una paella. (want)</p>
-          <p>2. ¿___ usted traerme agua? (can you)</p>
-          <p>3. Ella va a ___ el gazpacho. (order)</p>
-          <p>4. Nosotros ___ la cuenta. (want)</p>
-          <p>5. ¿___ recomendarme algo? (can you)</p>
+          <p>1. Yo <input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"> una paella. (want)</p>
+          <p>2. ¿<input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"> usted traerme agua? (can you)</p>
+          <p>3. Ella va a <input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"> el gazpacho. (order)</p>
+          <p>4. Nosotros <input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"> la cuenta. (want)</p>
+          <p>5. ¿<input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"> recomendarme algo? (can you)</p>
 
           <br>
           <p><strong>Part 2 — Article choice (冠词选择)</strong></p>
-          <p>1. Me gusta ___ café. (general)</p>
-          <p>2. Quiero ___ café. (ordering)</p>
-          <p>3. Me encanta ___ paella. (general)</p>
-          <p>4. Voy a pedir ___ paella. (ordering)</p>
-          <p>5. Quisiera ___ vino tinto. (ordering)</p>
+          <p>1. Me gusta <input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"> café. (general)</p>
+          <p>2. Quiero <input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"> café. (ordering)</p>
+          <p>3. Me encanta <input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"> paella. (general)</p>
+          <p>4. Voy a pedir <input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"> paella. (ordering)</p>
+          <p>5. Quisiera <input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"> vino tinto. (ordering)</p>
         </div>
 
         <details style="margin-top:8px;">

@@ -12,6 +12,9 @@
     .lang-zh-block { display: none; }
     body.zh .lang-zh-block { display: block; }
     body.zh .lang-en-block { display: none; }
+    /* ── live input fields ── */
+    .exercise-block { position: relative; }
+    input.ex-input { vertical-align: middle; }
   </style>
 </head>
 <body>
@@ -168,12 +171,15 @@
         </div>
 
         <h4><span class="lang-en">Comprehension questions</span><span class="lang-zh">理解问题</span></h4>
+        <div class="exercise-block">
+        <div style="text-align:right; margin-bottom:8px;"><button onclick="this.closest('.exercise-block').querySelectorAll('input').forEach(function(i){i.value=''})" style="font-size:12px; color:#8B5E3C; background:none; border:1px solid #e2ddd4; border-radius:4px; padding:3px 10px; cursor:pointer;">Clear / 清空</button></div>
         <ol>
-          <li>¿Qué hace Elena los lunes por la noche?</li>
-          <li>¿Quién baila los sábados?</li>
-          <li>¿Cocina mucho Elena?</li>
-          <li>¿Qué hace Pablo mientras cocina?</li>
+          <li>¿Qué hace Elena los lunes por la noche? <input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"></li>
+          <li>¿Quién baila los sábados? <input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"></li>
+          <li>¿Cocina mucho Elena? <input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"></li>
+          <li>¿Qué hace Pablo mientras cocina? <input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"></li>
         </ol>
+        </div>
       </div>
     </details>
 
@@ -185,33 +191,42 @@
       </summary>
       <div class="panel-body">
         <h4><span class="lang-en">Exercise 1 — Complete with the correct -AR form</span><span class="lang-zh">练习一 — 用正确的 -AR 动词形式填空</span></h4>
+        <div class="exercise-block">
+        <div style="text-align:right; margin-bottom:8px;"><button onclick="this.closest('.exercise-block').querySelectorAll('input').forEach(function(i){i.value=''})" style="font-size:12px; color:#8B5E3C; background:none; border:1px solid #e2ddd4; border-radius:4px; padding:3px 10px; cursor:pointer;">Clear / 清空</button></div>
         <ol>
-          <li>Yo ___ (hablar) español.</li>
-          <li>Tú ___ (trabajar) los lunes.</li>
-          <li>Ella ___ (estudiar) chino.</li>
-          <li>Nosotros ___ (cocinar) los domingos.</li>
-          <li>Ellos ___ (bailar) salsa.</li>
-          <li>¿Usted ___ (descansar) los fines de semana?</li>
+          <li>Yo <input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"> (hablar) español.</li>
+          <li>Tú <input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"> (trabajar) los lunes.</li>
+          <li>Ella <input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"> (estudiar) chino.</li>
+          <li>Nosotros <input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"> (cocinar) los domingos.</li>
+          <li>Ellos <input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"> (bailar) salsa.</li>
+          <li>¿Usted <input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"> (descansar) los fines de semana?</li>
         </ol>
+        </div>
 
         <h4><span class="lang-en">Exercise 2 — También or tampoco?</span><span class="lang-zh">练习二 — También 还是 tampoco？</span></h4>
+        <div class="exercise-block">
+        <div style="text-align:right; margin-bottom:8px;"><button onclick="this.closest('.exercise-block').querySelectorAll('input').forEach(function(i){i.value=''})" style="font-size:12px; color:#8B5E3C; background:none; border:1px solid #e2ddd4; border-radius:4px; padding:3px 10px; cursor:pointer;">Clear / 清空</button></div>
         <ol>
-          <li>—Estudio los martes. —Yo ___.</li>
-          <li>—No trabajo los domingos. —Yo ___.</li>
-          <li>—Bailo salsa. —Yo ___.</li>
-          <li>—No cocino nunca. —Yo ___.</li>
-          <li>—Escucho música siempre. —Yo ___.</li>
-          <li>—No hablo francés. —Yo ___.</li>
+          <li>—Estudio los martes. —Yo <input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'">.</li>
+          <li>—No trabajo los domingos. —Yo <input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'">.</li>
+          <li>—Bailo salsa. —Yo <input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'">.</li>
+          <li>—No cocino nunca. —Yo <input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'">.</li>
+          <li>—Escucho música siempre. —Yo <input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'">.</li>
+          <li>—No hablo francés. —Yo <input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'">.</li>
         </ol>
+        </div>
 
         <h4><span class="lang-en">Exercise 3 — Find the error</span><span class="lang-zh">练习三 — 找出错误</span></h4>
+        <div class="exercise-block">
+        <div style="text-align:right; margin-bottom:8px;"><button onclick="this.closest('.exercise-block').querySelectorAll('input').forEach(function(i){i.value=''})" style="font-size:12px; color:#8B5E3C; background:none; border:1px solid #e2ddd4; border-radius:4px; padding:3px 10px; cursor:pointer;">Clear / 清空</button></div>
         <ol>
-          <li>Yo hablo el lunes con mi profesor cada semana. → ___</li>
-          <li>—No trabajo hoy. —Me también. → ___</li>
-          <li>Ella trabaja los Lunes. → ___</li>
-          <li>Nosotros cocinamos nunca los domingos. → ___</li>
-          <li>Tú habla muy bien español. → ___</li>
+          <li>Yo hablo el lunes con mi profesor cada semana. → <input type="text" class="ex-input" placeholder="..." style="width:220px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"></li>
+          <li>—No trabajo hoy. —Me también. → <input type="text" class="ex-input" placeholder="..." style="width:220px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"></li>
+          <li>Ella trabaja los Lunes. → <input type="text" class="ex-input" placeholder="..." style="width:220px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"></li>
+          <li>Nosotros cocinamos nunca los domingos. → <input type="text" class="ex-input" placeholder="..." style="width:220px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"></li>
+          <li>Tú habla muy bien español. → <input type="text" class="ex-input" placeholder="..." style="width:220px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"></li>
         </ol>
+        </div>
       </div>
     </details>
 
@@ -234,12 +249,15 @@
         <h4><span class="lang-en">Practice — Ask the question</span><span class="lang-zh">练习 — 写出问句</span></h4>
         <p class="lang-en-block">Look at the answer. What was the question?</p>
         <p class="lang-zh-block">看答案，写出对应的问句。</p>
+        <div class="exercise-block">
+        <div style="text-align:right; margin-bottom:8px;"><button onclick="this.closest('.exercise-block').querySelectorAll('input').forEach(function(i){i.value=''})" style="font-size:12px; color:#8B5E3C; background:none; border:1px solid #e2ddd4; border-radius:4px; padding:3px 10px; cursor:pointer;">Clear / 清空</button></div>
         <ol>
-          <li>→ Normalmente estudio los martes.</li>
-          <li>→ Casi nunca bailo.</li>
-          <li>→ Sí, trabajo los sábados a veces.</li>
-          <li>→ Yo tampoco cocino los domingos.</li>
+          <li><input type="text" class="ex-input" placeholder="..." style="width:220px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'">→ Normalmente estudio los martes.</li>
+          <li><input type="text" class="ex-input" placeholder="..." style="width:220px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'">→ Casi nunca bailo.</li>
+          <li><input type="text" class="ex-input" placeholder="..." style="width:220px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'">→ Sí, trabajo los sábados a veces.</li>
+          <li><input type="text" class="ex-input" placeholder="..." style="width:220px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'">→ Yo tampoco cocino los domingos.</li>
         </ol>
+        </div>
       </div>
     </details>
 
@@ -303,21 +321,22 @@
         <p class="lang-en-block">Copy the exercise below into your Google Doc and fill in the blanks. Check your answers at the bottom when you are done.</p>
         <p class="lang-zh-block">将以下练习复制到你的 Google Doc 中并填空。完成后在下方核对答案。</p>
 
-        <div style="background:#f7f5ef; padding:16px; border-radius:8px; margin:12px 0; font-size:14px; line-height:2;">
+        <div class="exercise-block" style="background:#f7f5ef; padding:16px; border-radius:8px; margin:12px 0; font-size:14px; line-height:2;">
+          <div style="text-align:right; margin-bottom:8px;"><button onclick="this.closest('.exercise-block').querySelectorAll('input').forEach(function(i){i.value=''})" style="font-size:12px; color:#8B5E3C; background:none; border:1px solid #e2ddd4; border-radius:4px; padding:3px 10px; cursor:pointer;">Clear / 清空</button></div>
           <p><strong>Part 1 — Conjugate the -AR verb (写出 -AR 动词的正确形式)</strong></p>
-          <p>1. Yo ___ (hablar) español.</p>
-          <p>2. Tú ___ (trabajar) mucho.</p>
-          <p>3. Ella ___ (estudiar) los martes.</p>
-          <p>4. Nosotros ___ (cocinar) los domingos.</p>
-          <p>5. Ellos ___ (bailar) salsa.</p>
+          <p>1. Yo <input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"> (hablar) español.</p>
+          <p>2. Tú <input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"> (trabajar) mucho.</p>
+          <p>3. Ella <input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"> (estudiar) los martes.</p>
+          <p>4. Nosotros <input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"> (cocinar) los domingos.</p>
+          <p>5. Ellos <input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"> (bailar) salsa.</p>
 
           <br>
           <p><strong>Part 2 — También or tampoco (También 还是 tampoco)</strong></p>
-          <p>1. —Trabajo los lunes. —Yo ___.</p>
-          <p>2. —No bailo nunca. —Yo ___.</p>
-          <p>3. —Estudio chino. —Yo ___.</p>
-          <p>4. —No cocino los domingos. —Yo ___.</p>
-          <p>5. —Escucho música siempre. —Yo ___.</p>
+          <p>1. —Trabajo los lunes. —Yo <input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'">.</p>
+          <p>2. —No bailo nunca. —Yo <input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'">.</p>
+          <p>3. —Estudio chino. —Yo <input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'">.</p>
+          <p>4. —No cocino los domingos. —Yo <input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'">.</p>
+          <p>5. —Escucho música siempre. —Yo <input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'">.</p>
         </div>
 
         <details style="margin-top:8px;">

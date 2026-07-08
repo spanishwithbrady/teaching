@@ -12,6 +12,9 @@
     .lang-zh-block { display: none; }
     body.zh .lang-zh-block { display: block; }
     body.zh .lang-en-block { display: none; }
+    /* ── live input fields ── */
+    .exercise-block { position: relative; }
+    input.ex-input { vertical-align: middle; }
   </style>
 </head>
 <body>
@@ -166,12 +169,15 @@
         </div>
 
         <h4><span class="lang-en">Comprehension questions</span><span class="lang-zh">理解问题</span></h4>
+        <div class="exercise-block">
+        <div style="text-align:right; margin-bottom:8px;"><button onclick="this.closest('.exercise-block').querySelectorAll('input').forEach(function(i){i.value=''})" style="font-size:12px; color:#8B5E3C; background:none; border:1px solid #e2ddd4; border-radius:4px; padding:3px 10px; cursor:pointer;">Clear / 清空</button></div>
         <ol>
-          <li>¿De qué color tiene el pelo Sara?</li>
-          <li>¿Cómo es la personalidad de Sara?</li>
-          <li>¿Cómo es físicamente Carlos?</li>
-          <li>¿Tiene barba Carlos?</li>
+          <li>¿De qué color tiene el pelo Sara? <input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"></li>
+          <li>¿Cómo es la personalidad de Sara? <input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"></li>
+          <li>¿Cómo es físicamente Carlos? <input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"></li>
+          <li>¿Tiene barba Carlos? <input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"></li>
         </ol>
+        </div>
       </div>
     </details>
 
@@ -183,33 +189,42 @@
       </summary>
       <div class="panel-body">
         <h4><span class="lang-en">Exercise 1 — SER or TENER?</span><span class="lang-zh">练习一 — SER 还是 TENER？</span></h4>
+        <div class="exercise-block">
+        <div style="text-align:right; margin-bottom:8px;"><button onclick="this.closest('.exercise-block').querySelectorAll('input').forEach(function(i){i.value=''})" style="font-size:12px; color:#8B5E3C; background:none; border:1px solid #e2ddd4; border-radius:4px; padding:3px 10px; cursor:pointer;">Clear / 清空</button></div>
         <ol>
-          <li>Ana ___ alta.</li>
-          <li>Carlos ___ los ojos azules.</li>
-          <li>Mi madre ___ el pelo rizado.</li>
-          <li>Nosotros ___ simpáticos.</li>
-          <li>Ellos ___ barba.</li>
-          <li>Tú ___ muy inteligente.</li>
+          <li>Ana <input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"> alta.</li>
+          <li>Carlos <input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"> los ojos azules.</li>
+          <li>Mi madre <input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"> el pelo rizado.</li>
+          <li>Nosotros <input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"> simpáticos.</li>
+          <li>Ellos <input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"> barba.</li>
+          <li>Tú <input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"> muy inteligente.</li>
         </ol>
+        </div>
 
         <h4><span class="lang-en">Exercise 2 — Complete the description (match gender)</span><span class="lang-zh">练习二 — 补全描述（注意阴阳性一致）</span></h4>
+        <div class="exercise-block">
+        <div style="text-align:right; margin-bottom:8px;"><button onclick="this.closest('.exercise-block').querySelectorAll('input').forEach(function(i){i.value=''})" style="font-size:12px; color:#8B5E3C; background:none; border:1px solid #e2ddd4; border-radius:4px; padding:3px 10px; cursor:pointer;">Clear / 清空</button></div>
         <ol>
-          <li>Mi hermana es ___ (tall, fem).</li>
-          <li>Mi padre es ___ (hardworking, masc).</li>
-          <li>Sara es ___ (shy, fem).</li>
-          <li>Mis amigos son ___ (fun, masc pl).</li>
-          <li>La profesora es ___ (generous, fem).</li>
-          <li>Wei es ___ (intelligent — no change needed).</li>
+          <li>Mi hermana es <input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"> (tall, fem).</li>
+          <li>Mi padre es <input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"> (hardworking, masc).</li>
+          <li>Sara es <input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"> (shy, fem).</li>
+          <li>Mis amigos son <input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"> (fun, masc pl).</li>
+          <li>La profesora es <input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"> (generous, fem).</li>
+          <li>Wei es <input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"> (intelligent — no change needed).</li>
         </ol>
+        </div>
 
         <h4><span class="lang-en">Exercise 3 — Find the error</span><span class="lang-zh">练习三 — 找出错误</span></h4>
+        <div class="exercise-block">
+        <div style="text-align:right; margin-bottom:8px;"><button onclick="this.closest('.exercise-block').querySelectorAll('input').forEach(function(i){i.value=''})" style="font-size:12px; color:#8B5E3C; background:none; border:1px solid #e2ddd4; border-radius:4px; padding:3px 10px; cursor:pointer;">Clear / 清空</button></div>
         <ol>
-          <li>Ella tiene ojos azules. → ___</li>
-          <li>Mi hermano es tiene alto. → ___</li>
-          <li>Sara es simpático. → ___</li>
-          <li>Tiene el pelo larga. → ___</li>
-          <li>Carlos tiene muy barba. → ___</li>
+          <li>Ella tiene ojos azules. → <input type="text" class="ex-input" placeholder="..." style="width:220px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"></li>
+          <li>Mi hermano es tiene alto. → <input type="text" class="ex-input" placeholder="..." style="width:220px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"></li>
+          <li>Sara es simpático. → <input type="text" class="ex-input" placeholder="..." style="width:220px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"></li>
+          <li>Tiene el pelo larga. → <input type="text" class="ex-input" placeholder="..." style="width:220px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"></li>
+          <li>Carlos tiene muy barba. → <input type="text" class="ex-input" placeholder="..." style="width:220px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"></li>
         </ol>
+        </div>
       </div>
     </details>
 
@@ -232,12 +247,15 @@
         <h4><span class="lang-en">Practice — Ask the question</span><span class="lang-zh">练习 — 写出问句</span></h4>
         <p class="lang-en-block">Look at the answer. What was the question?</p>
         <p class="lang-zh-block">看答案，写出对应的问句。</p>
+        <div class="exercise-block">
+        <div style="text-align:right; margin-bottom:8px;"><button onclick="this.closest('.exercise-block').querySelectorAll('input').forEach(function(i){i.value=''})" style="font-size:12px; color:#8B5E3C; background:none; border:1px solid #e2ddd4; border-radius:4px; padding:3px 10px; cursor:pointer;">Clear / 清空</button></div>
         <ol>
-          <li>→ Es muy simpático y trabajador.</li>
-          <li>→ Tiene los ojos verdes.</li>
-          <li>→ Es bastante alta.</li>
-          <li>→ Tiene el pelo corto y rizado.</li>
+          <li><input type="text" class="ex-input" placeholder="..." style="width:220px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'">→ Es muy simpático y trabajador.</li>
+          <li><input type="text" class="ex-input" placeholder="..." style="width:220px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'">→ Tiene los ojos verdes.</li>
+          <li><input type="text" class="ex-input" placeholder="..." style="width:220px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'">→ Es bastante alta.</li>
+          <li><input type="text" class="ex-input" placeholder="..." style="width:220px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'">→ Tiene el pelo corto y rizado.</li>
         </ol>
+        </div>
       </div>
     </details>
 
@@ -300,21 +318,22 @@
         <p class="lang-en-block">Copy the exercise below into your Google Doc and fill in the blanks. Check your answers at the bottom when you are done.</p>
         <p class="lang-zh-block">将以下练习复制到你的 Google Doc 中并填空。完成后在下方核对答案。</p>
 
-        <div style="background:#f7f5ef; padding:16px; border-radius:8px; margin:12px 0; font-size:14px; line-height:2;">
+        <div class="exercise-block" style="background:#f7f5ef; padding:16px; border-radius:8px; margin:12px 0; font-size:14px; line-height:2;">
+          <div style="text-align:right; margin-bottom:8px;"><button onclick="this.closest('.exercise-block').querySelectorAll('input').forEach(function(i){i.value=''})" style="font-size:12px; color:#8B5E3C; background:none; border:1px solid #e2ddd4; border-radius:4px; padding:3px 10px; cursor:pointer;">Clear / 清空</button></div>
           <p><strong>Part 1 — SER vs. TENER (SER 与 TENER)</strong></p>
-          <p>1. Ana ___ alta.</p>
-          <p>2. Carlos ___ los ojos azules.</p>
-          <p>3. Mi madre ___ el pelo largo.</p>
-          <p>4. Nosotros ___ simpáticos.</p>
-          <p>5. Ellos ___ barba.</p>
+          <p>1. Ana <input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"> alta.</p>
+          <p>2. Carlos <input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"> los ojos azules.</p>
+          <p>3. Mi madre <input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"> el pelo largo.</p>
+          <p>4. Nosotros <input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"> simpáticos.</p>
+          <p>5. Ellos <input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"> barba.</p>
 
           <br>
           <p><strong>Part 2 — Adjective agreement (形容词阴阳性一致)</strong></p>
-          <p>1. Mi hermana es ___ (tall, fem).</p>
-          <p>2. Mi padre es ___ (hardworking, masc).</p>
-          <p>3. Sara es ___ (shy, fem).</p>
-          <p>4. Mis amigos son ___ (fun, masc pl).</p>
-          <p>5. La profesora es ___ (generous, fem).</p>
+          <p>1. Mi hermana es <input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"> (tall, fem).</p>
+          <p>2. Mi padre es <input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"> (hardworking, masc).</p>
+          <p>3. Sara es <input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"> (shy, fem).</p>
+          <p>4. Mis amigos son <input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"> (fun, masc pl).</p>
+          <p>5. La profesora es <input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"> (generous, fem).</p>
         </div>
 
         <details style="margin-top:8px;">

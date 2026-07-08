@@ -12,6 +12,9 @@
     .lang-zh-block { display: none; }
     body.zh .lang-zh-block { display: block; }
     body.zh .lang-en-block { display: none; }
+    /* ── live input fields ── */
+    .exercise-block { position: relative; }
+    input.ex-input { vertical-align: middle; }
   </style>
 </head>
 <body>
@@ -151,12 +154,15 @@
         </div>
 
         <h4><span class="lang-en">Comprehension questions</span><span class="lang-zh">理解问题</span></h4>
+        <div class="exercise-block">
+        <div style="text-align:right; margin-bottom:8px;"><button onclick="this.closest('.exercise-block').querySelectorAll('input').forEach(function(i){i.value=''})" style="font-size:12px; color:#8B5E3C; background:none; border:1px solid #e2ddd4; border-radius:4px; padding:3px 10px; cursor:pointer;">Clear / 清空</button></div>
         <ol>
-          <li>¿Cómo está Sara?</li>
-          <li>¿Qué le duele a Sara?</li>
-          <li>¿Tiene hambre Sara?</li>
-          <li>¿Está lista Sara para el examen?</li>
+          <li>¿Cómo está Sara? <input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"></li>
+          <li>¿Qué le duele a Sara? <input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"></li>
+          <li>¿Tiene hambre Sara? <input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"></li>
+          <li>¿Está lista Sara para el examen? <input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"></li>
         </ol>
+        </div>
       </div>
     </details>
 
@@ -168,33 +174,42 @@
       </summary>
       <div class="panel-body">
         <h4><span class="lang-en">Exercise 1 — ESTAR or TENER?</span><span class="lang-zh">练习一 — ESTAR 还是 TENER？</span></h4>
+        <div class="exercise-block">
+        <div style="text-align:right; margin-bottom:8px;"><button onclick="this.closest('.exercise-block').querySelectorAll('input').forEach(function(i){i.value=''})" style="font-size:12px; color:#8B5E3C; background:none; border:1px solid #e2ddd4; border-radius:4px; padding:3px 10px; cursor:pointer;">Clear / 清空</button></div>
         <ol>
-          <li>Yo ___ cansado.</li>
-          <li>Ella ___ hambre.</li>
-          <li>Nosotros ___ frío.</li>
-          <li>Tú ___ contento.</li>
-          <li>Ellos ___ sueño.</li>
-          <li>Usted ___ estresado.</li>
+          <li>Yo <input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"> cansado.</li>
+          <li>Ella <input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"> hambre.</li>
+          <li>Nosotros <input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"> frío.</li>
+          <li>Tú <input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"> contento.</li>
+          <li>Ellos <input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"> sueño.</li>
+          <li>Usted <input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"> estresado.</li>
         </ol>
+        </div>
 
         <h4><span class="lang-en">Exercise 2 — SER or ESTAR (doble significado)</span><span class="lang-zh">练习二 — SER 还是 ESTAR（双重含义）</span></h4>
+        <div class="exercise-block">
+        <div style="text-align:right; margin-bottom:8px;"><button onclick="this.closest('.exercise-block').querySelectorAll('input').forEach(function(i){i.value=''})" style="font-size:12px; color:#8B5E3C; background:none; border:1px solid #e2ddd4; border-radius:4px; padding:3px 10px; cursor:pointer;">Clear / 清空</button></div>
         <ol>
-          <li>Esta película ___ muy aburrida. (boring)</li>
-          <li>Yo ___ aburrido en clase hoy. (bored)</li>
-          <li>Wei ___ muy listo, siempre saca buenas notas. (clever)</li>
-          <li>¿___ listo para salir? (ready)</li>
-          <li>Esta sopa ___ riquísima. (tastes delicious)</li>
-          <li>Mi tío ___ muy rico, tiene tres casas. (wealthy)</li>
+          <li>Esta película <input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"> muy aburrida. (boring)</li>
+          <li>Yo <input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"> aburrido en clase hoy. (bored)</li>
+          <li>Wei <input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"> muy listo, siempre saca buenas notas. (clever)</li>
+          <li>¿<input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"> listo para salir? (ready)</li>
+          <li>Esta sopa <input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"> riquísima. (tastes delicious)</li>
+          <li>Mi tío <input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"> muy rico, tiene tres casas. (wealthy)</li>
         </ol>
+        </div>
 
         <h4><span class="lang-en">Exercise 3 — Find the error</span><span class="lang-zh">练习三 — 找出错误</span></h4>
+        <div class="exercise-block">
+        <div style="text-align:right; margin-bottom:8px;"><button onclick="this.closest('.exercise-block').querySelectorAll('input').forEach(function(i){i.value=''})" style="font-size:12px; color:#8B5E3C; background:none; border:1px solid #e2ddd4; border-radius:4px; padding:3px 10px; cursor:pointer;">Clear / 清空</button></div>
         <ol>
-          <li>Tengo cansado. → ___</li>
-          <li>Estoy hambre. → ___</li>
-          <li>Soy mareado hoy. → ___</li>
-          <li>Estoy caliente porque hace mucho sol. → ___</li>
-          <li>Ella tiene triste. → ___</li>
+          <li>Tengo cansado. → <input type="text" class="ex-input" placeholder="..." style="width:220px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"></li>
+          <li>Estoy hambre. → <input type="text" class="ex-input" placeholder="..." style="width:220px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"></li>
+          <li>Soy mareado hoy. → <input type="text" class="ex-input" placeholder="..." style="width:220px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"></li>
+          <li>Estoy caliente porque hace mucho sol. → <input type="text" class="ex-input" placeholder="..." style="width:220px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"></li>
+          <li>Ella tiene triste. → <input type="text" class="ex-input" placeholder="..." style="width:220px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"></li>
         </ol>
+        </div>
       </div>
     </details>
 
@@ -217,12 +232,15 @@
         <h4><span class="lang-en">Practice — Ask the question</span><span class="lang-zh">练习 — 写出问句</span></h4>
         <p class="lang-en-block">Look at the answer. What was the question?</p>
         <p class="lang-zh-block">看答案，写出对应的问句。</p>
+        <div class="exercise-block">
+        <div style="text-align:right; margin-bottom:8px;"><button onclick="this.closest('.exercise-block').querySelectorAll('input').forEach(function(i){i.value=''})" style="font-size:12px; color:#8B5E3C; background:none; border:1px solid #e2ddd4; border-radius:4px; padding:3px 10px; cursor:pointer;">Clear / 清空</button></div>
         <ol>
-          <li>→ Estoy estresado por el trabajo.</li>
-          <li>→ Sí, tengo mucho frío.</li>
-          <li>→ Tengo dolor de estómago.</li>
-          <li>→ Estoy contenta, gracias.</li>
+          <li><input type="text" class="ex-input" placeholder="..." style="width:220px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'">→ Estoy estresado por el trabajo.</li>
+          <li><input type="text" class="ex-input" placeholder="..." style="width:220px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'">→ Sí, tengo mucho frío.</li>
+          <li><input type="text" class="ex-input" placeholder="..." style="width:220px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'">→ Tengo dolor de estómago.</li>
+          <li><input type="text" class="ex-input" placeholder="..." style="width:220px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'">→ Estoy contenta, gracias.</li>
         </ol>
+        </div>
       </div>
     </details>
 
@@ -286,21 +304,22 @@
         <p class="lang-en-block">Copy the exercise below into your Google Doc and fill in the blanks. Check your answers at the bottom when you are done.</p>
         <p class="lang-zh-block">将以下练习复制到你的 Google Doc 中并填空。完成后在下方核对答案。</p>
 
-        <div style="background:#f7f5ef; padding:16px; border-radius:8px; margin:12px 0; font-size:14px; line-height:2;">
+        <div class="exercise-block" style="background:#f7f5ef; padding:16px; border-radius:8px; margin:12px 0; font-size:14px; line-height:2;">
+          <div style="text-align:right; margin-bottom:8px;"><button onclick="this.closest('.exercise-block').querySelectorAll('input').forEach(function(i){i.value=''})" style="font-size:12px; color:#8B5E3C; background:none; border:1px solid #e2ddd4; border-radius:4px; padding:3px 10px; cursor:pointer;">Clear / 清空</button></div>
           <p><strong>Part 1 — ESTAR or TENER (ESTAR 还是 TENER)</strong></p>
-          <p>1. Yo ___ cansado.</p>
-          <p>2. Ella ___ hambre.</p>
-          <p>3. Nosotros ___ frío.</p>
-          <p>4. Tú ___ nervioso.</p>
-          <p>5. Ellos ___ sueño.</p>
+          <p>1. Yo <input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"> cansado.</p>
+          <p>2. Ella <input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"> hambre.</p>
+          <p>3. Nosotros <input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"> frío.</p>
+          <p>4. Tú <input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"> nervioso.</p>
+          <p>5. Ellos <input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"> sueño.</p>
 
           <br>
           <p><strong>Part 2 — Doble significado (双重含义)</strong></p>
-          <p>1. Esta clase ___ aburrida. (boring)</p>
-          <p>2. Yo ___ aburrido hoy. (bored)</p>
-          <p>3. ¿___ listo? (ready)</p>
-          <p>4. Mi abuelo ___ muy listo. (clever)</p>
-          <p>5. Esta comida ___ riquísima. (delicious)</p>
+          <p>1. Esta clase <input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"> aburrida. (boring)</p>
+          <p>2. Yo <input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"> aburrido hoy. (bored)</p>
+          <p>3. ¿<input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"> listo? (ready)</p>
+          <p>4. Mi abuelo <input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"> muy listo. (clever)</p>
+          <p>5. Esta comida <input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"> riquísima. (delicious)</p>
         </div>
 
         <details style="margin-top:8px;">

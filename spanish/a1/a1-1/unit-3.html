@@ -12,6 +12,9 @@
     .lang-zh-block { display: none; }
     body.zh .lang-zh-block { display: block; }
     body.zh .lang-en-block { display: none; }
+    /* ── live input fields ── */
+    .exercise-block { position: relative; }
+    input.ex-input { vertical-align: middle; }
   </style>
 </head>
 <body>
@@ -147,12 +150,15 @@
         </div>
 
         <h4><span class="lang-en">Comprehension questions</span><span class="lang-zh">理解问题</span></h4>
+        <div class="exercise-block">
+        <div style="text-align:right; margin-bottom:8px;"><button onclick="this.closest('.exercise-block').querySelectorAll('input').forEach(function(i){i.value=''})" style="font-size:12px; color:#8B5E3C; background:none; border:1px solid #e2ddd4; border-radius:4px; padding:3px 10px; cursor:pointer;">Clear / 清空</button></div>
         <ol>
-          <li>¿A qué se dedica el padre de Li?</li>
-          <li>¿Cuál es la profesión de la madre de Carlos?</li>
-          <li>¿Qué hace el hermano de Li?</li>
-          <li>¿Dónde trabaja la hermana de Li?</li>
+          <li>¿A qué se dedica el padre de Li? <input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"></li>
+          <li>¿Cuál es la profesión de la madre de Carlos? <input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"></li>
+          <li>¿Qué hace el hermano de Li? <input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"></li>
+          <li>¿Dónde trabaja la hermana de Li? <input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"></li>
         </ol>
+        </div>
       </div>
     </details>
 
@@ -164,36 +170,45 @@
       </summary>
       <div class="panel-body">
         <h4><span class="lang-en">Exercise 1 — Give the feminine form</span><span class="lang-zh">练习一 — 写出阴性形式</span></h4>
+        <div class="exercise-block">
+        <div style="text-align:right; margin-bottom:8px;"><button onclick="this.closest('.exercise-block').querySelectorAll('input').forEach(function(i){i.value=''})" style="font-size:12px; color:#8B5E3C; background:none; border:1px solid #e2ddd4; border-radius:4px; padding:3px 10px; cursor:pointer;">Clear / 清空</button></div>
         <ol>
-          <li>arquitecto → ___</li>
-          <li>bombero → ___</li>
-          <li>programador → ___</li>
-          <li>veterinario → ___</li>
-          <li>psicólogo → ___</li>
-          <li>agricultor → ___</li>
+          <li>arquitecto → <input type="text" class="ex-input" placeholder="..." style="width:220px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"></li>
+          <li>bombero → <input type="text" class="ex-input" placeholder="..." style="width:220px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"></li>
+          <li>programador → <input type="text" class="ex-input" placeholder="..." style="width:220px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"></li>
+          <li>veterinario → <input type="text" class="ex-input" placeholder="..." style="width:220px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"></li>
+          <li>psicólogo → <input type="text" class="ex-input" placeholder="..." style="width:220px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"></li>
+          <li>agricultor → <input type="text" class="ex-input" placeholder="..." style="width:220px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"></li>
         </ol>
+        </div>
 
         <h4><span class="lang-en">Exercise 2 — Plural formation</span><span class="lang-zh">练习二 — 复数变化练习</span></h4>
+        <div class="exercise-block">
+        <div style="text-align:right; margin-bottom:8px;"><button onclick="this.closest('.exercise-block').querySelectorAll('input').forEach(function(i){i.value=''})" style="font-size:12px; color:#8B5E3C; background:none; border:1px solid #e2ddd4; border-radius:4px; padding:3px 10px; cursor:pointer;">Clear / 清空</button></div>
         <ol>
-          <li>médico → ___</li>
-          <li>profesor → ___</li>
-          <li>actriz → ___</li>
-          <li>enfermera → ___</li>
-          <li>ingeniero → ___</li>
-          <li>luz → ___</li>
+          <li>médico → <input type="text" class="ex-input" placeholder="..." style="width:220px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"></li>
+          <li>profesor → <input type="text" class="ex-input" placeholder="..." style="width:220px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"></li>
+          <li>actriz → <input type="text" class="ex-input" placeholder="..." style="width:220px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"></li>
+          <li>enfermera → <input type="text" class="ex-input" placeholder="..." style="width:220px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"></li>
+          <li>ingeniero → <input type="text" class="ex-input" placeholder="..." style="width:220px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"></li>
+          <li>luz → <input type="text" class="ex-input" placeholder="..." style="width:220px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"></li>
         </ol>
+        </div>
 
         <h4><span class="lang-en">Exercise 3 — Choose the right article</span><span class="lang-zh">练习三 — 选择正确的冠词</span></h4>
         <p class="lang-en-block">Choose el / la / un / una / no article.</p>
         <p class="lang-zh-block">选择 el / la / un / una / 不用冠词。</p>
+        <div class="exercise-block">
+        <div style="text-align:right; margin-bottom:8px;"><button onclick="this.closest('.exercise-block').querySelectorAll('input').forEach(function(i){i.value=''})" style="font-size:12px; color:#8B5E3C; background:none; border:1px solid #e2ddd4; border-radius:4px; padding:3px 10px; cursor:pointer;">Clear / 清空</button></div>
         <ol>
-          <li>Soy ___ médico.</li>
-          <li>___ profesora de mi escuela se llama Ana.</li>
-          <li>Necesito ___ abogado para este caso.</li>
-          <li>Mi madre es ___ enfermera.</li>
-          <li>___ policía de mi barrio es muy simpático.</li>
-          <li>Quiero ser ___ arquitecta en el futuro.</li>
+          <li>Soy <input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"> médico.</li>
+          <li><input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"> profesora de mi escuela se llama Ana.</li>
+          <li>Necesito <input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"> abogado para este caso.</li>
+          <li>Mi madre es <input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"> enfermera.</li>
+          <li><input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"> policía de mi barrio es muy simpático.</li>
+          <li>Quiero ser <input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"> arquitecta en el futuro.</li>
         </ol>
+        </div>
       </div>
     </details>
 
@@ -216,12 +231,15 @@
         <h4><span class="lang-en">Practice — Ask the question</span><span class="lang-zh">练习 — 写出问句</span></h4>
         <p class="lang-en-block">Look at the answer. What was the question?</p>
         <p class="lang-zh-block">看答案，写出对应的问句。</p>
+        <div class="exercise-block">
+        <div style="text-align:right; margin-bottom:8px;"><button onclick="this.closest('.exercise-block').querySelectorAll('input').forEach(function(i){i.value=''})" style="font-size:12px; color:#8B5E3C; background:none; border:1px solid #e2ddd4; border-radius:4px; padding:3px 10px; cursor:pointer;">Clear / 清空</button></div>
         <ol>
-          <li>→ Mi madre es psicóloga.</li>
-          <li>→ Trabaja en una escuela.</li>
-          <li>→ Sí, le gusta mucho su trabajo.</li>
-          <li>→ Sara es fotógrafa.</li>
+          <li><input type="text" class="ex-input" placeholder="..." style="width:220px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'">→ Mi madre es psicóloga.</li>
+          <li><input type="text" class="ex-input" placeholder="..." style="width:220px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'">→ Trabaja en una escuela.</li>
+          <li><input type="text" class="ex-input" placeholder="..." style="width:220px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'">→ Sí, le gusta mucho su trabajo.</li>
+          <li><input type="text" class="ex-input" placeholder="..." style="width:220px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'">→ Sara es fotógrafa.</li>
         </ol>
+        </div>
       </div>
     </details>
 
@@ -238,9 +256,9 @@
         <p class="lang-en-block">Think of 3 real people you know (family, friends). Write one sentence about each person's profession using SER, with correct gender. Then describe where they work using "Trabaja en..."</p>
         <p class="lang-zh-block">想三个你认识的真实的人（家人、朋友）。用 SER 为每个人写一句话描述其职业，注意阴阳性正确。然后用 "Trabaja en..." 描述他们在哪里工作。</p>
         <ul>
-          <li><span class="lang-en">Person 1: ___</span><span class="lang-zh">第一人：___</span></li>
-          <li><span class="lang-en">Person 2: ___</span><span class="lang-zh">第二人：___</span></li>
-          <li><span class="lang-en">Person 3: ___</span><span class="lang-zh">第三人：___</span></li>
+          <li><span class="lang-en">Person 1: <input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"></span><span class="lang-zh">第一人：<input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"></span></li>
+          <li><span class="lang-en">Person 2: <input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"></span><span class="lang-zh">第二人：<input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"></span></li>
+          <li><span class="lang-en">Person 3: <input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"></span><span class="lang-zh">第三人：<input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"></span></li>
         </ul>
       </div>
     </details>
@@ -289,29 +307,30 @@
         <p class="lang-en-block">Copy the exercise below into your Google Doc and fill in the blanks. Check your answers at the bottom when you are done.</p>
         <p class="lang-zh-block">将以下练习复制到你的 Google Doc 中并填空。完成后在下方核对答案。</p>
 
-        <div style="background:#f7f5ef; padding:16px; border-radius:8px; margin:12px 0; font-size:14px; line-height:2;">
+        <div class="exercise-block" style="background:#f7f5ef; padding:16px; border-radius:8px; margin:12px 0; font-size:14px; line-height:2;">
+          <div style="text-align:right; margin-bottom:8px;"><button onclick="this.closest('.exercise-block').querySelectorAll('input').forEach(function(i){i.value=''})" style="font-size:12px; color:#8B5E3C; background:none; border:1px solid #e2ddd4; border-radius:4px; padding:3px 10px; cursor:pointer;">Clear / 清空</button></div>
           <p><strong>Part 1 — Feminine forms (写出阴性形式)</strong></p>
-          <p>1. ingeniero → ___</p>
-          <p>2. músico → ___</p>
-          <p>3. abogado → ___</p>
-          <p>4. enfermero → ___</p>
-          <p>5. fotógrafo → ___</p>
+          <p>1. ingeniero → <input type="text" class="ex-input" placeholder="..." style="width:220px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"></p>
+          <p>2. músico → <input type="text" class="ex-input" placeholder="..." style="width:220px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"></p>
+          <p>3. abogado → <input type="text" class="ex-input" placeholder="..." style="width:220px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"></p>
+          <p>4. enfermero → <input type="text" class="ex-input" placeholder="..." style="width:220px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"></p>
+          <p>5. fotógrafo → <input type="text" class="ex-input" placeholder="..." style="width:220px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"></p>
 
           <br>
           <p><strong>Part 2 — Plural forms (写出复数形式)</strong></p>
-          <p>1. profesor → ___</p>
-          <p>2. médico → ___</p>
-          <p>3. actriz → ___</p>
-          <p>4. enfermera → ___</p>
-          <p>5. ingeniero → ___</p>
+          <p>1. profesor → <input type="text" class="ex-input" placeholder="..." style="width:220px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"></p>
+          <p>2. médico → <input type="text" class="ex-input" placeholder="..." style="width:220px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"></p>
+          <p>3. actriz → <input type="text" class="ex-input" placeholder="..." style="width:220px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"></p>
+          <p>4. enfermera → <input type="text" class="ex-input" placeholder="..." style="width:220px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"></p>
+          <p>5. ingeniero → <input type="text" class="ex-input" placeholder="..." style="width:220px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"></p>
 
           <br>
           <p><strong>Part 3 — Article choice (选择正确的冠词)</strong></p>
-          <p>1. Soy ___ médico.</p>
-          <p>2. ___ profesora se llama Ana.</p>
-          <p>3. Necesito ___ abogado.</p>
-          <p>4. Mi madre es ___ enfermera.</p>
-          <p>5. Quiero ser ___ arquitecto.</p>
+          <p>1. Soy <input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"> médico.</p>
+          <p>2. <input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"> profesora se llama Ana.</p>
+          <p>3. Necesito <input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"> abogado.</p>
+          <p>4. Mi madre es <input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"> enfermera.</p>
+          <p>5. Quiero ser <input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"> arquitecto.</p>
         </div>
 
         <details style="margin-top:8px;">
