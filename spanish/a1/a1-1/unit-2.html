@@ -147,6 +147,21 @@
       margin-bottom: 0.75rem;
     }
 
+    /* ── live input fields ── */
+    .ex-block { position: relative; }
+    .ex-clear-btn {
+      float: right;
+      background: none;
+      border: 1px solid #8B5E3C;
+      color: #8B5E3C;
+      border-radius: 5px;
+      padding: 3px 10px;
+      font-size: 12px;
+      cursor: pointer;
+      margin-bottom: 8px;
+    }
+    .ex-clear-btn:hover { background: #f7f0eb; }
+    input.ex-input { vertical-align: middle; }
   </style>
 </head>
 <body>
@@ -229,16 +244,19 @@
           <h4><span class="lang-en">Exercise 1 — Match the country to its nationality</span><span class="lang-zh">练习 1 — 匹配国家与国籍</span></h4>
           <p class="lang-en-block">Write the correct nationality. Remember: does it need masculine or feminine form?</p>
           <p class="lang-zh-block">写出正确的国籍词。注意：需要阳性还是阴性形式？</p>
+          <div class="ex-block">
+          <button class="ex-clear-btn" onclick="this.closest('.ex-block').querySelectorAll('input').forEach(function(i){i.value=''})">Clear / 清空</button>
           <ol>
-            <li>Sofía es de Argentina. Sofía es ___</li>
-            <li>Carlos es de México. Carlos es ___</li>
-            <li>Ana es de España. Ana es ___</li>
-            <li>Wei es de Cuba. Wei es ___</li>
-            <li>Pablo es de Chile. Pablo es ___</li>
-            <li>Sara es de Venezuela. Sara es ___</li>
-            <li>Ming es de Perú. Ming es ___</li>
-            <li>Elena es de Colombia. Elena es ___</li>
+            <li>Sofía es de Argentina. Sofía es <input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#fff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"></li>
+            <li>Carlos es de México. Carlos es <input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#fff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"></li>
+            <li>Ana es de España. Ana es <input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#fff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"></li>
+            <li>Wei es de Cuba. Wei es <input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#fff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"></li>
+            <li>Pablo es de Chile. Pablo es <input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#fff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"></li>
+            <li>Sara es de Venezuela. Sara es <input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#fff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"></li>
+            <li>Ming es de Perú. Ming es <input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#fff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"></li>
+            <li>Elena es de Colombia. Elena es <input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#fff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"></li>
           </ol>
+          </div>
           <details style="margin-top:8px;">
             <summary style="cursor:pointer; color:#5a7a32; font-weight:500; font-size:13px;"><span class="lang-en">Show answers</span><span class="lang-zh">查看答案</span></summary>
             <div style="background:#eef4e4; padding:12px; border-radius:8px; margin-top:8px; font-size:13px; line-height:2;">
@@ -290,16 +308,19 @@
           <h4><span class="lang-en">Exercise 1 — Accent or no accent?</span><span class="lang-zh">练习 1 — 有重音还是没有？</span></h4>
           <p class="lang-en-block">Write the correct nationality form. Watch the accents carefully.</p>
           <p class="lang-zh-block">写出正确的国籍形式，注意重音符号。</p>
+          <div class="ex-block">
+          <button class="ex-clear-btn" onclick="this.closest('.ex-block').querySelectorAll('input').forEach(function(i){i.value=''})">Clear / 清空</button>
           <ol>
-            <li>Marie es de Francia. Marie es ___</li>
-            <li>Hans es de Alemania. Hans es ___</li>
-            <li>Yuki es de Japón. Yuki es ___</li>
-            <li>Li es de China. Li es ___</li>
-            <li>Emma es de Reino Unido. Emma es ___</li>
-            <li>João es de Portugal. João es ___</li>
-            <li>Min es de Corea del Sur. Min es ___</li>
-            <li>Priya es de India. Priya es ___</li>
+            <li>Marie es de Francia. Marie es <input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#fff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"></li>
+            <li>Hans es de Alemania. Hans es <input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#fff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"></li>
+            <li>Yuki es de Japón. Yuki es <input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#fff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"></li>
+            <li>Li es de China. Li es <input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#fff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"></li>
+            <li>Emma es de Reino Unido. Emma es <input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#fff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"></li>
+            <li>João es de Portugal. João es <input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#fff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"></li>
+            <li>Min es de Corea del Sur. Min es <input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#fff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"></li>
+            <li>Priya es de India. Priya es <input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#fff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"></li>
           </ol>
+          </div>
           <details style="margin-top:8px;">
             <summary style="cursor:pointer; color:#5a7a32; font-weight:500; font-size:13px;"><span class="lang-en">Show answers</span><span class="lang-zh">查看答案</span></summary>
             <div style="background:#eef4e4; padding:12px; border-radius:8px; margin-top:8px; font-size:13px; line-height:2;">
@@ -350,16 +371,19 @@
           <h4><span class="lang-en">Exercise 1 — Invariable or variable?</span><span class="lang-zh">练习 1 — 变化还是不变化？</span></h4>
           <p class="lang-en-block">Write the correct nationality. Some of these are invariable — be careful!</p>
           <p class="lang-zh-block">写出正确的国籍词。有些是不变化的——小心！</p>
+          <div class="ex-block">
+          <button class="ex-clear-btn" onclick="this.closest('.ex-block').querySelectorAll('input').forEach(function(i){i.value=''})">Clear / 清空</button>
           <ol>
-            <li>Amara es de Nigeria. Amara es ___</li>
-            <li>John es de Estados Unidos. John es ___</li>
-            <li>Fatima es de Marruecos. Fatima es ___</li>
-            <li>Lucas es de Brasil. Lucas es ___</li>
-            <li>Sarah es de Canadá. Sarah es ___</li>
-            <li>Omar es de Egipto. Omar es ___</li>
-            <li>Lily es de Australia. Lily es ___</li>
-            <li>Zara es de Kenia. Zara es ___</li>
+            <li>Amara es de Nigeria. Amara es <input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#fff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"></li>
+            <li>John es de Estados Unidos. John es <input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#fff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"></li>
+            <li>Fatima es de Marruecos. Fatima es <input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#fff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"></li>
+            <li>Lucas es de Brasil. Lucas es <input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#fff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"></li>
+            <li>Sarah es de Canadá. Sarah es <input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#fff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"></li>
+            <li>Omar es de Egipto. Omar es <input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#fff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"></li>
+            <li>Lily es de Australia. Lily es <input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#fff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"></li>
+            <li>Zara es de Kenia. Zara es <input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#fff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"></li>
           </ol>
+          </div>
           <details style="margin-top:8px;">
             <summary style="cursor:pointer; color:#5a7a32; font-weight:500; font-size:13px;"><span class="lang-en">Show answers</span><span class="lang-zh">查看答案</span></summary>
             <div style="background:#eef4e4; padding:12px; border-radius:8px; margin-top:8px; font-size:13px; line-height:2;">
@@ -462,12 +486,15 @@
         </div>
 
         <h4><span class="lang-en">Comprehension questions</span><span class="lang-zh">理解问题</span></h4>
+        <div class="ex-block">
+        <button class="ex-clear-btn" onclick="this.closest('.ex-block').querySelectorAll('input').forEach(function(i){i.value=''})">Clear / 清空</button>
         <ol>
-          <li>¿De dónde es Wei?</li>
-          <li>¿A qué se dedica Ana?</li>
-          <li>¿Es profesora de español Ana?</li>
-          <li>¿De dónde es Carlos?</li>
+          <li>¿De dónde es Wei? <input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#fff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"></li>
+          <li>¿A qué se dedica Ana? <input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#fff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"></li>
+          <li>¿Es profesora de español Ana? <input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#fff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"></li>
+          <li>¿De dónde es Carlos? <input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#fff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"></li>
         </ol>
+        </div>
       </div>
     </details>
 
@@ -481,33 +508,42 @@
         <h4><span class="lang-en">Exercise 1 — Complete with the correct nationality</span><span class="lang-zh">练习一 — 填写正确的国籍</span></h4>
         <p class="lang-en-block">Use the vocabulary from above.</p>
         <p class="lang-zh-block">使用上面的词汇表。</p>
+        <div class="ex-block">
+        <button class="ex-clear-btn" onclick="this.closest('.ex-block').querySelectorAll('input').forEach(function(i){i.value=''})">Clear / 清空</button>
         <ol>
-          <li>Carlos es de México. Carlos es ___.</li>
-          <li>Sara es de Francia. Sara es ___.</li>
-          <li>Ming es de China. Ming es ___.</li>
-          <li>Elena es de Alemania. Elena es ___.</li>
-          <li>Pablo es de Argentina. Pablo es ___.</li>
-          <li>Li es de Estados Unidos. Li es ___.</li>
+          <li>Carlos es de México. Carlos es <input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#fff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'">.</li>
+          <li>Sara es de Francia. Sara es <input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#fff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'">.</li>
+          <li>Ming es de China. Ming es <input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#fff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'">.</li>
+          <li>Elena es de Alemania. Elena es <input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#fff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'">.</li>
+          <li>Pablo es de Argentina. Pablo es <input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#fff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'">.</li>
+          <li>Li es de Estados Unidos. Li es <input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#fff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'">.</li>
         </ol>
+        </div>
 
         <h4><span class="lang-en">Exercise 2 — Complete with SER</span><span class="lang-zh">练习二 — 用 SER 填空</span></h4>
+        <div class="ex-block">
+        <button class="ex-clear-btn" onclick="this.closest('.ex-block').querySelectorAll('input').forEach(function(i){i.value=''})">Clear / 清空</button>
         <ol>
-          <li>Yo ___ de China.</li>
-          <li>Tú ___ estudiante, ¿verdad?</li>
-          <li>Ella ___ médica.</li>
-          <li>Nosotros ___ de España.</li>
-          <li>Ellos ___ ingenieros.</li>
-          <li>¿Usted ___ profesor?</li>
+          <li>Yo <input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#fff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"> de China.</li>
+          <li>Tú <input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#fff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"> estudiante, ¿verdad?</li>
+          <li>Ella <input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#fff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"> médica.</li>
+          <li>Nosotros <input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#fff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"> de España.</li>
+          <li>Ellos <input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#fff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"> ingenieros.</li>
+          <li>¿Usted <input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#fff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"> profesor?</li>
         </ol>
+        </div>
 
         <h4><span class="lang-en">Exercise 3 — Find the error</span><span class="lang-zh">练习三 — 找出错误</span></h4>
+        <div class="ex-block">
+        <button class="ex-clear-btn" onclick="this.closest('.ex-block').querySelectorAll('input').forEach(function(i){i.value=''})">Clear / 清空</button>
         <ol>
-          <li>Soy un médico. → ___</li>
-          <li>Ella es Española. → ___</li>
-          <li>Wei es china. → ___</li>
-          <li>Soy una profesora. → ___</li>
-          <li>Carlos es Mexicano. → ___</li>
+          <li>Soy un médico. → <input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#fff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"></li>
+          <li>Ella es Española. → <input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#fff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"></li>
+          <li>Wei es china. → <input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#fff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"></li>
+          <li>Soy una profesora. → <input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#fff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"></li>
+          <li>Carlos es Mexicano. → <input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#fff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"></li>
         </ol>
+        </div>
       </div>
     </details>
 
@@ -531,12 +567,15 @@
         <h4><span class="lang-en">Practice — Ask the question</span><span class="lang-zh">练习 — 写出问句</span></h4>
         <p class="lang-en-block">Look at the answer. What was the question?</p>
         <p class="lang-zh-block">看答案，写出对应的问句。</p>
+        <div class="ex-block">
+        <button class="ex-clear-btn" onclick="this.closest('.ex-block').querySelectorAll('input').forEach(function(i){i.value=''})">Clear / 清空</button>
         <ol>
-          <li>→ Soy de Perú.</li>
-          <li>→ Sara es profesora.</li>
-          <li>→ Sí, soy argentino.</li>
-          <li>→ Soy chino.</li>
+          <li><input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#fff; margin-left:0; margin-right:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'">→ Soy de Perú.</li>
+          <li><input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#fff; margin-left:0; margin-right:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'">→ Sara es profesora.</li>
+          <li><input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#fff; margin-left:0; margin-right:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'">→ Sí, soy argentino.</li>
+          <li><input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#fff; margin-left:0; margin-right:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'">→ Soy chino.</li>
         </ol>
+        </div>
       </div>
     </details>
 
@@ -605,21 +644,22 @@
         <p class="lang-en-block">Copy the exercise below into your Google Doc and fill in the blanks. Check your answers at the bottom when you are done.</p>
         <p class="lang-zh-block">将以下练习复制到你的 Google Doc 中并填空。完成后在下方核对答案。</p>
 
-        <div style="background:#f7f5ef; padding:16px; border-radius:8px; margin:12px 0; font-size:14px; line-height:2;">
+        <div class="ex-block" style="background:#f7f5ef; padding:16px; border-radius:8px; margin:12px 0; font-size:14px; line-height:2;">
+          <button class="ex-clear-btn" onclick="this.closest('.ex-block').querySelectorAll('input').forEach(function(i){i.value=''})">Clear / 清空</button>
           <p><strong>Part 1 — Complete with SER + nationality (用 SER + 国籍填空)</strong></p>
-          <p>1. Yo ___ (China).</p>
-          <p>2. Tú ___ (México).</p>
-          <p>3. Ella ___ (Francia).</p>
-          <p>4. Nosotros ___ (España).</p>
-          <p>5. Ellos ___ (Alemania).</p>
-          <p>6. Usted ___ (Argentina).</p>
+          <p>1. Yo <input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#fff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"> (China).</p>
+          <p>2. Tú <input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#fff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"> (México).</p>
+          <p>3. Ella <input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#fff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"> (Francia).</p>
+          <p>4. Nosotros <input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#fff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"> (España).</p>
+          <p>5. Ellos <input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#fff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"> (Alemania).</p>
+          <p>6. Usted <input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#fff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"> (Argentina).</p>
 
           <br>
           <p><strong>Part 2 — Correct the mistake (找出错误并改正)</strong></p>
-          <p>1. Soy un médico. → ___</p>
-          <p>2. Ella es Española. → ___</p>
-          <p>3. Carlos es Mexicano. → ___</p>
-          <p>4. Soy una profesora. → ___</p>
+          <p>1. Soy un médico. → <input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#fff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"></p>
+          <p>2. Ella es Española. → <input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#fff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"></p>
+          <p>3. Carlos es Mexicano. → <input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#fff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"></p>
+          <p>4. Soy una profesora. → <input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#fff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"></p>
         </div>
 
         <details style="margin-top:8px;">

@@ -102,6 +102,21 @@
     }
     .chain-next-btn:hover { opacity: 0.88; }
 
+    /* ── live input fields ── */
+    .ex-block { position: relative; }
+    .ex-clear-btn {
+      float: right;
+      background: none;
+      border: 1px solid #8B5E3C;
+      color: #8B5E3C;
+      border-radius: 5px;
+      padding: 3px 10px;
+      font-size: 12px;
+      cursor: pointer;
+      margin-bottom: 8px;
+    }
+    .ex-clear-btn:hover { background: #f7f0eb; }
+    input.ex-input { vertical-align: middle; }
   </style>
 </head>
 <body>
@@ -186,16 +201,19 @@
           <h4><span class="lang-en">Exercise 1 — Complete the sentence</span><span class="lang-zh">练习 1 — 完成句子</span></h4>
           <p class="lang-en-block">Fill in the correct family member word.</p>
           <p class="lang-zh-block">填入正确的家庭成员词。</p>
+          <div class="ex-block">
+          <button class="ex-clear-btn" onclick="this.closest('.ex-block').querySelectorAll('input').forEach(function(i){i.value=''})">Clear / 清空</button>
           <ol>
-            <li>La ___ de mi padre es mi madre. <span class="lang-en">(wife)</span><span class="lang-zh">（妻子）</span></li>
-            <li>El ___ de mis padres soy yo. <span class="lang-en">(son)</span><span class="lang-zh">（儿子）</span></li>
-            <li>Mi ___ tiene 15 años. Es el hijo de mis padres. <span class="lang-en">(brother)</span><span class="lang-zh">（兄弟）</span></li>
-            <li>Los ___ de Ana son María y José. <span class="lang-en">(parents)</span><span class="lang-zh">（父母）</span></li>
-            <li>Tengo una ___. Se llama Sara. <span class="lang-en">(sister)</span><span class="lang-zh">（姐妹）</span></li>
-            <li>El ___ de mi madre se llama Carlos. <span class="lang-en">(husband)</span><span class="lang-zh">（丈夫）</span></li>
-            <li>Mi ___ tiene 8 años. Es la hija de mis padres. <span class="lang-en">(sister)</span><span class="lang-zh">（姐妹）</span></li>
-            <li>Los ___ de Pablo son tres — dos niños y una niña. <span class="lang-en">(children)</span><span class="lang-zh">（子女）</span></li>
+            <li>La <input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#fff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"> de mi padre es mi madre. <span class="lang-en">(wife)</span><span class="lang-zh">（妻子）</span></li>
+            <li>El <input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#fff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"> de mis padres soy yo. <span class="lang-en">(son)</span><span class="lang-zh">（儿子）</span></li>
+            <li>Mi <input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#fff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"> tiene 15 años. Es el hijo de mis padres. <span class="lang-en">(brother)</span><span class="lang-zh">（兄弟）</span></li>
+            <li>Los <input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#fff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"> de Ana son María y José. <span class="lang-en">(parents)</span><span class="lang-zh">（父母）</span></li>
+            <li>Tengo una <input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#fff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'">. Se llama Sara. <span class="lang-en">(sister)</span><span class="lang-zh">（姐妹）</span></li>
+            <li>El <input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#fff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"> de mi madre se llama Carlos. <span class="lang-en">(husband)</span><span class="lang-zh">（丈夫）</span></li>
+            <li>Mi <input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#fff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"> tiene 8 años. Es la hija de mis padres. <span class="lang-en">(sister)</span><span class="lang-zh">（姐妹）</span></li>
+            <li>Los <input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#fff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"> de Pablo son tres — dos niños y una niña. <span class="lang-en">(children)</span><span class="lang-zh">（子女）</span></li>
           </ol>
+          </div>
           <details style="margin-top:8px;">
             <summary style="cursor:pointer; color:#5a7a32; font-weight:500; font-size:13px;"><span class="lang-en">Show answers</span><span class="lang-zh">查看答案</span></summary>
             <div style="background:#eef4e4; padding:12px; border-radius:8px; margin-top:8px; font-size:13px; line-height:2;">
@@ -249,16 +267,19 @@
           <h4><span class="lang-en">Exercise 1 — Who is it?</span><span class="lang-zh">练习 1 — 这是谁？</span></h4>
           <p class="lang-en-block">Read the description. Who is this person?</p>
           <p class="lang-zh-block">读描述，这个人是谁？</p>
+          <div class="ex-block">
+          <button class="ex-clear-btn" onclick="this.closest('.ex-block').querySelectorAll('input').forEach(function(i){i.value=''})">Clear / 清空</button>
           <ol>
-            <li>El padre de mi padre es mi ___</li>
-            <li>La hija de mi tío es mi ___</li>
-            <li>El hijo de mi hermana es mi ___</li>
-            <li>La madre de mi madre es mi ___</li>
-            <li>Los hijos de mis tíos son mis ___</li>
-            <li>La hija de mi hermano es mi ___</li>
-            <li>El hijo de mis abuelos es mi ___</li>
-            <li>Los hijos de mis hijos son mis ___</li>
+            <li>El padre de mi padre es mi <input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#fff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"></li>
+            <li>La hija de mi tío es mi <input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#fff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"></li>
+            <li>El hijo de mi hermana es mi <input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#fff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"></li>
+            <li>La madre de mi madre es mi <input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#fff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"></li>
+            <li>Los hijos de mis tíos son mis <input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#fff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"></li>
+            <li>La hija de mi hermano es mi <input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#fff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"></li>
+            <li>El hijo de mis abuelos es mi <input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#fff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"></li>
+            <li>Los hijos de mis hijos son mis <input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#fff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"></li>
           </ol>
+          </div>
           <details style="margin-top:8px;">
             <summary style="cursor:pointer; color:#5a7a32; font-weight:500; font-size:13px;"><span class="lang-en">Show answers</span><span class="lang-zh">查看答案</span></summary>
             <div style="background:#eef4e4; padding:12px; border-radius:8px; margin-top:8px; font-size:13px; line-height:2;">
@@ -337,12 +358,15 @@
         </div>
 
         <h4><span class="lang-en">Comprehension questions</span><span class="lang-zh">理解问题</span></h4>
+        <div class="ex-block">
+        <button class="ex-clear-btn" onclick="this.closest('.ex-block').querySelectorAll('input').forEach(function(i){i.value=''})">Clear / 清空</button>
         <ol>
-          <li>¿Cómo se llama el hermano de Elena?</li>
-          <li>¿Cuántos años tiene la madre de Elena?</li>
-          <li>¿Cuántas primas tiene Elena?</li>
-          <li>¿Qué mascota tiene la familia de Pablo?</li>
+          <li>¿Cómo se llama el hermano de Elena? <input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#fff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"></li>
+          <li>¿Cuántos años tiene la madre de Elena? <input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#fff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"></li>
+          <li>¿Cuántas primas tiene Elena? <input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#fff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"></li>
+          <li>¿Qué mascota tiene la familia de Pablo? <input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#fff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"></li>
         </ol>
+        </div>
       </div>
     </details>
 
@@ -354,33 +378,42 @@
       </summary>
       <div class="panel-body">
         <h4><span class="lang-en">Exercise 1 — Complete with the correct possessive</span><span class="lang-zh">练习一 — 用正确的物主代词填空</span></h4>
+        <div class="ex-block">
+        <button class="ex-clear-btn" onclick="this.closest('.ex-block').querySelectorAll('input').forEach(function(i){i.value=''})">Clear / 清空</button>
         <ol>
-          <li>(my) ___ madre tiene 50 años.</li>
-          <li>(your, informal) ¿Cómo se llama ___ padre?</li>
-          <li>(his) ___ hermana es médica.</li>
-          <li>(our) ___ abuelo vive en México.</li>
-          <li>(their) ___ primos son simpáticos.</li>
-          <li>(her) ___ hijos están en la escuela.</li>
+          <li>(my) <input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#fff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"> madre tiene 50 años.</li>
+          <li>(your, informal) ¿Cómo se llama <input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#fff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"> padre?</li>
+          <li>(his) <input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#fff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"> hermana es médica.</li>
+          <li>(our) <input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#fff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"> abuelo vive en México.</li>
+          <li>(their) <input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#fff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"> primos son simpáticos.</li>
+          <li>(her) <input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#fff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"> hijos están en la escuela.</li>
         </ol>
+        </div>
 
         <h4><span class="lang-en">Exercise 2 — Complete with TENER</span><span class="lang-zh">练习二 — 用 TENER 填空</span></h4>
+        <div class="ex-block">
+        <button class="ex-clear-btn" onclick="this.closest('.ex-block').querySelectorAll('input').forEach(function(i){i.value=''})">Clear / 清空</button>
         <ol>
-          <li>Yo ___ 30 años.</li>
-          <li>¿Tú ___ hermanos?</li>
-          <li>Mi padre ___ 60 años.</li>
-          <li>Nosotros ___ una mascota.</li>
-          <li>Ellos ___ dos hijos.</li>
-          <li>¿Usted ___ nietos?</li>
+          <li>Yo <input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#fff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"> 30 años.</li>
+          <li>¿Tú <input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#fff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"> hermanos?</li>
+          <li>Mi padre <input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#fff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"> 60 años.</li>
+          <li>Nosotros <input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#fff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"> una mascota.</li>
+          <li>Ellos <input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#fff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"> dos hijos.</li>
+          <li>¿Usted <input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#fff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"> nietos?</li>
         </ol>
+        </div>
 
         <h4><span class="lang-en">Exercise 3 — Find the error</span><span class="lang-zh">练习三 — 找出错误</span></h4>
+        <div class="ex-block">
+        <button class="ex-clear-btn" onclick="this.closest('.ex-block').querySelectorAll('input').forEach(function(i){i.value=''})">Clear / 清空</button>
         <ol>
-          <li>Su madre de Carlos es profesora. → ___</li>
-          <li>Yo tiene 25 años. → ___</li>
-          <li>Mis hermano son altos. → ___</li>
-          <li>Ella tienes una hija. → ___</li>
-          <li>Sus madre se llama Ana. → ___</li>
+          <li>Su madre de Carlos es profesora. → <input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#fff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"></li>
+          <li>Yo tiene 25 años. → <input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#fff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"></li>
+          <li>Mis hermano son altos. → <input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#fff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"></li>
+          <li>Ella tienes una hija. → <input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#fff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"></li>
+          <li>Sus madre se llama Ana. → <input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#fff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"></li>
         </ol>
+        </div>
       </div>
     </details>
 
@@ -403,12 +436,15 @@
         <h4><span class="lang-en">Practice — Ask the question</span><span class="lang-zh">练习 — 写出问句</span></h4>
         <p class="lang-en-block">Look at the answer. What was the question?</p>
         <p class="lang-zh-block">看答案，写出对应的问句。</p>
+        <div class="ex-block">
+        <button class="ex-clear-btn" onclick="this.closest('.ex-block').querySelectorAll('input').forEach(function(i){i.value=''})">Clear / 清空</button>
         <ol>
-          <li>→ Sí, tengo dos hermanos.</li>
-          <li>→ Mi madre tiene 48 años.</li>
-          <li>→ Se llama Toby.</li>
-          <li>→ No, no tengo mascotas.</li>
+          <li><input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#fff; margin-left:0; margin-right:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'">→ Sí, tengo dos hermanos.</li>
+          <li><input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#fff; margin-left:0; margin-right:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'">→ Mi madre tiene 48 años.</li>
+          <li><input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#fff; margin-left:0; margin-right:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'">→ Se llama Toby.</li>
+          <li><input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#fff; margin-left:0; margin-right:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'">→ No, no tengo mascotas.</li>
         </ol>
+        </div>
       </div>
     </details>
 
@@ -472,21 +508,22 @@
         <p class="lang-en-block">Copy the exercise below into your Google Doc and fill in the blanks. Check your answers at the bottom when you are done.</p>
         <p class="lang-zh-block">将以下练习复制到你的 Google Doc 中并填空。完成后在下方核对答案。</p>
 
-        <div style="background:#f7f5ef; padding:16px; border-radius:8px; margin:12px 0; font-size:14px; line-height:2;">
+        <div class="ex-block" style="background:#f7f5ef; padding:16px; border-radius:8px; margin:12px 0; font-size:14px; line-height:2;">
+          <button class="ex-clear-btn" onclick="this.closest('.ex-block').querySelectorAll('input').forEach(function(i){i.value=''})">Clear / 清空</button>
           <p><strong>Part 1 — Possessives (物主代词)</strong></p>
-          <p>1. (my) ___ padre es alto.</p>
-          <p>2. (your, informal) ¿Dónde está ___ mochila?</p>
-          <p>3. (her) ___ hermano es médico.</p>
-          <p>4. (our) ___ casa es pequeña.</p>
-          <p>5. (their) ___ abuela vive en España.</p>
+          <p>1. (my) <input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#fff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"> padre es alto.</p>
+          <p>2. (your, informal) ¿Dónde está <input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#fff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"> mochila?</p>
+          <p>3. (her) <input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#fff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"> hermano es médico.</p>
+          <p>4. (our) <input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#fff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"> casa es pequeña.</p>
+          <p>5. (their) <input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#fff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"> abuela vive en España.</p>
 
           <br>
           <p><strong>Part 2 — TENER (用 TENER 填空)</strong></p>
-          <p>1. Yo ___ 28 años.</p>
-          <p>2. ¿Tú ___ hermanas?</p>
-          <p>3. Mi abuelo ___ 80 años.</p>
-          <p>4. Nosotros ___ un gato.</p>
-          <p>5. Ellos ___ tres hijos.</p>
+          <p>1. Yo <input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#fff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"> 28 años.</p>
+          <p>2. ¿Tú <input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#fff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"> hermanas?</p>
+          <p>3. Mi abuelo <input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#fff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"> 80 años.</p>
+          <p>4. Nosotros <input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#fff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"> un gato.</p>
+          <p>5. Ellos <input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#fff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"> tres hijos.</p>
         </div>
 
         <details style="margin-top:8px;">
