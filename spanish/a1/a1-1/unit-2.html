@@ -88,6 +88,65 @@
       line-height: 1.55;
     }
     .cr-questions li:last-child { margin-bottom: 0; }
+
+    /* ── mini-practice section ── */
+    .mini-prac {
+      background: var(--green-tint);
+      border: 1px solid #c8ddb0;
+      border-radius: 10px;
+      padding: 18px 20px 20px;
+      margin: 20px 0 4px;
+    }
+    .mini-prac h4 { margin-top: 0; }
+    /* ── note box ── */
+    .note-box {
+      background: var(--warm-tint);
+      border-left: 3px solid var(--warm-brown);
+      border-radius: 0 8px 8px 0;
+      padding: 10px 14px;
+      margin: 12px 0 0;
+      font-size: 0.9rem;
+      line-height: 1.6;
+    }
+    /* ── flash card tool ── */
+    .fc-tool {
+      background: var(--card-bg);
+      border: 2px solid var(--green);
+      border-radius: var(--radius);
+      padding: 24px 20px;
+      max-width: 320px;
+      margin: 14px auto 0;
+      text-align: center;
+    }
+    .fc-card-name {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--brown);
+      margin-bottom: 1.25rem;
+    }
+    .fc-reveal { display: none; margin-bottom: 1rem; }
+    .fc-reveal.show { display: block; }
+    .fc-flag-img {
+      width: 80px;
+      height: auto;
+      border-radius: 4px;
+      margin-bottom: 0.5rem;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .fc-nat {
+      font-size: 1rem;
+      color: var(--green);
+      font-weight: 600;
+      margin-top: 0.4rem;
+    }
+    .fc-counter {
+      font-size: 0.8rem;
+      color: var(--muted);
+      margin-bottom: 0.75rem;
+    }
+
   </style>
 </head>
 <body>
@@ -144,7 +203,9 @@
         <svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg>
       </summary>
       <div class="panel-body">
-        <h4><span class="lang-en">Spanish-speaking countries</span><span class="lang-zh">西语国家</span></h4>
+
+        <!-- ═══ CHUNK 1: Spanish-speaking countries ═══ -->
+        <h4><span class="lang-en">Part 1 — Spanish-speaking countries</span><span class="lang-zh">第一部分 — 西语国家</span></h4>
         <table>
           <tr><th>Spanish</th><th>English</th><th>中文</th></tr>
           <tr><td>🇪🇸 <strong>España</strong> — español/española</td><td>Spain</td><td>西班牙</td></tr>
@@ -156,10 +217,53 @@
           <tr><td>🇵🇪 <strong>Perú</strong> — peruano/peruana</td><td>Peru</td><td>秘鲁</td></tr>
           <tr><td>🇻🇪 <strong>Venezuela</strong> — venezolano/venezolana</td><td>Venezuela</td><td>委内瑞拉</td></tr>
         </table>
+        <div class="note-box">
+          <p class="lang-en-block">All Spanish-speaking nationalities are written <strong>lowercase</strong> — español, not Español.</p>
+          <p class="lang-zh-block">所有国籍词都要用<strong>小写</strong>——español，不是 Español。</p>
+        </div>
 
-        <h4><span class="lang-en">World countries</span><span class="lang-zh">世界国家</span></h4>
+        <!-- ── MINI-PRACTICE A ── -->
+        <div class="mini-prac">
+          <h4><span class="lang-en">Quick practice — Spanish-speaking world</span><span class="lang-zh">快速练习 — 西语世界</span></h4>
 
-        <p><strong>🇪🇺 <span class="lang-en">Europe</span><span class="lang-zh">欧洲</span></strong></p>
+          <h4><span class="lang-en">Exercise 1 — Match the country to its nationality</span><span class="lang-zh">练习 1 — 匹配国家与国籍</span></h4>
+          <p class="lang-en-block">Write the correct nationality. Remember: does it need masculine or feminine form?</p>
+          <p class="lang-zh-block">写出正确的国籍词。注意：需要阳性还是阴性形式？</p>
+          <ol>
+            <li>Sofía es de Argentina. Sofía es ___</li>
+            <li>Carlos es de México. Carlos es ___</li>
+            <li>Ana es de España. Ana es ___</li>
+            <li>Wei es de Cuba. Wei es ___</li>
+            <li>Pablo es de Chile. Pablo es ___</li>
+            <li>Sara es de Venezuela. Sara es ___</li>
+            <li>Ming es de Perú. Ming es ___</li>
+            <li>Elena es de Colombia. Elena es ___</li>
+          </ol>
+          <details style="margin-top:8px;">
+            <summary style="cursor:pointer; color:#5a7a32; font-weight:500; font-size:13px;"><span class="lang-en">Show answers</span><span class="lang-zh">查看答案</span></summary>
+            <div style="background:#eef4e4; padding:12px; border-radius:8px; margin-top:8px; font-size:13px; line-height:2;">
+              <p>1. argentina &nbsp;2. mexicano &nbsp;3. española &nbsp;4. cubano &nbsp;5. chileno &nbsp;6. venezolana &nbsp;7. peruano &nbsp;8. colombiana</p>
+            </div>
+          </details>
+
+          <h4 style="margin-top:20px;"><span class="lang-en">Exercise 2 — Country randomizer round 1</span><span class="lang-zh">练习 2 — 国家随机抽取器（第一轮）</span></h4>
+          <p class="lang-en-block">Spin the randomizer. When it lands on a Spanish-speaking country, say the nationality in both masculine and feminine form.</p>
+          <p class="lang-zh-block">转动随机器。当它停在一个西语国家时，说出阳性和阴性两种国籍形式。</p>
+          <div class="cr-card cr-widget" style="max-width:360px; padding:24px 20px; margin:14px auto 0;">
+            <p class="cr-card-sub" style="margin-bottom:1.25rem;"><span class="lang-en">Spin for a random country.</span><span class="lang-zh">转一下，随机抽取一个国家。</span></p>
+            <div class="cr-display"><span class="cr-flag-placeholder">?</span></div>
+            <button class="cr-btn">Girar país</button>
+            <div class="cr-questions">
+              <ul>
+                <li><span class="lang-en">What's the nationality? (give both m/f forms)</span><span class="lang-zh">国籍怎么说？（给出阳性和阴性两种形式）</span></li>
+                <li><span class="lang-en">Is it a Spanish-speaking country?</span><span class="lang-zh">这是一个西语国家吗？</span></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- ═══ CHUNK 2: Europe and Asia ═══ -->
+        <h4 style="margin-top:28px;"><span class="lang-en">Part 2 — Europe and Asia</span><span class="lang-zh">第二部分 — 欧洲与亚洲</span></h4>
         <table>
           <tr><th>Spanish</th><th>English</th><th>中文</th></tr>
           <tr><td>🇫🇷 <strong>Francia</strong> — francés/francesa</td><td>France</td><td>法国</td></tr>
@@ -168,19 +272,60 @@
           <tr><td>🇬🇧 <strong>Reino Unido</strong> — británico/británica</td><td>United Kingdom</td><td>英国</td></tr>
           <tr><td>🇵🇹 <strong>Portugal</strong> — portugués/portuguesa</td><td>Portugal</td><td>葡萄牙</td></tr>
           <tr><td>🇳🇱 <strong>Países Bajos</strong> — neerlandés/neerlandesa</td><td>Netherlands</td><td>荷兰</td></tr>
-        </table>
-
-        <p><strong>🌏 <span class="lang-en">Asia</span><span class="lang-zh">亚洲</span></strong></p>
-        <table>
-          <tr><th>Spanish</th><th>English</th><th>中文</th></tr>
           <tr><td>🇨🇳 <strong>China</strong> — chino/china</td><td>China</td><td>中国</td></tr>
           <tr><td>🇯🇵 <strong>Japón</strong> — japonés/japonesa</td><td>Japan</td><td>日本</td></tr>
           <tr><td>🇮🇳 <strong>India</strong> — indio/india</td><td>India</td><td>印度</td></tr>
           <tr><td>🇰🇷 <strong>Corea del Sur</strong> — surcoreano/surcoreana</td><td>South Korea</td><td>韩国</td></tr>
           <tr><td>🇹🇭 <strong>Tailandia</strong> — tailandés/tailandesa</td><td>Thailand</td><td>泰国</td></tr>
         </table>
+        <div class="note-box">
+          <p class="lang-en-block">⚠️ <strong>Accents and endings:</strong> francés loses its accent in feminine → francesa. Same for alemán → alemana, japonés → japonesa, portugués → portuguesa.</p>
+          <p class="lang-zh-block">⚠️ <strong>重音符号与词尾：</strong>francés 变阴性时去掉重音 → francesa。alemán → alemana，japonés → japonesa，portugués → portuguesa 同理。</p>
+        </div>
 
-        <p><strong>🌍 <span class="lang-en">Africa</span><span class="lang-zh">非洲</span></strong></p>
+        <!-- ── MINI-PRACTICE B ── -->
+        <div class="mini-prac">
+          <h4><span class="lang-en">Quick practice — Europe and Asia</span><span class="lang-zh">快速练习 — 欧洲与亚洲</span></h4>
+
+          <h4><span class="lang-en">Exercise 1 — Accent or no accent?</span><span class="lang-zh">练习 1 — 有重音还是没有？</span></h4>
+          <p class="lang-en-block">Write the correct nationality form. Watch the accents carefully.</p>
+          <p class="lang-zh-block">写出正确的国籍形式，注意重音符号。</p>
+          <ol>
+            <li>Marie es de Francia. Marie es ___</li>
+            <li>Hans es de Alemania. Hans es ___</li>
+            <li>Yuki es de Japón. Yuki es ___</li>
+            <li>Li es de China. Li es ___</li>
+            <li>Emma es de Reino Unido. Emma es ___</li>
+            <li>João es de Portugal. João es ___</li>
+            <li>Min es de Corea del Sur. Min es ___</li>
+            <li>Priya es de India. Priya es ___</li>
+          </ol>
+          <details style="margin-top:8px;">
+            <summary style="cursor:pointer; color:#5a7a32; font-weight:500; font-size:13px;"><span class="lang-en">Show answers</span><span class="lang-zh">查看答案</span></summary>
+            <div style="background:#eef4e4; padding:12px; border-radius:8px; margin-top:8px; font-size:13px; line-height:2;">
+              <p>1. francesa &nbsp;2. alemán &nbsp;3. japonés &nbsp;4. chino &nbsp;5. británica &nbsp;6. portugués &nbsp;7. surcoreano &nbsp;8. india</p>
+            </div>
+          </details>
+
+          <h4 style="margin-top:20px;"><span class="lang-en">Exercise 2 — Country flash cards</span><span class="lang-zh">练习 2 — 国家闪卡</span></h4>
+          <p class="lang-en-block">Click "Reveal" to see the flag and nationality. Then click "Next" for the next country.</p>
+          <p class="lang-zh-block">点击"查看"显示国旗和国籍词，然后点击"下一个"进入下一个国家。</p>
+          <div class="fc-tool" id="fc-tool">
+            <div class="fc-counter" id="fc-counter">1 / 8</div>
+            <div class="fc-card-name" id="fc-card-name">España</div>
+            <div class="fc-reveal" id="fc-reveal">
+              <img class="fc-flag-img" id="fc-flag-img" src="" alt="flag">
+              <div class="fc-nat" id="fc-nat"></div>
+            </div>
+            <div style="display:flex; gap:10px; justify-content:center; flex-wrap:wrap; margin-top:12px;">
+              <button class="cr-btn" id="fc-reveal-btn" style="padding:0.65rem 1.5rem; font-size:0.875rem;"><span class="lang-en">Reveal</span><span class="lang-zh">查看</span></button>
+              <button class="cr-btn" id="fc-next-btn" style="display:none; padding:0.65rem 1.5rem; font-size:0.875rem; background:var(--warm-brown);"><span class="lang-en">Next</span><span class="lang-zh">下一个</span></button>
+            </div>
+          </div>
+        </div>
+
+        <!-- ═══ CHUNK 3: Africa, Americas and Oceania ═══ -->
+        <h4 style="margin-top:28px;"><span class="lang-en">Part 3 — Africa, Americas and Oceania</span><span class="lang-zh">第三部分 — 非洲、美洲与大洋洲</span></h4>
         <table>
           <tr><th>Spanish</th><th>English</th><th>中文</th></tr>
           <tr><td>🇪🇬 <strong>Egipto</strong> — egipcio/egipcia</td><td>Egypt</td><td>埃及</td></tr>
@@ -188,23 +333,58 @@
           <tr><td>🇲🇦 <strong>Marruecos</strong> — marroquí <span class="lang-en">(invariable)</span><span class="lang-zh">（不分阴阳性）</span></td><td>Morocco</td><td>摩洛哥</td></tr>
           <tr><td>🇿🇦 <strong>Sudáfrica</strong> — sudafricano/sudafricana</td><td>South Africa</td><td>南非</td></tr>
           <tr><td>🇰🇪 <strong>Kenia</strong> — keniano/keniana</td><td>Kenya</td><td>肯尼亚</td></tr>
-        </table>
-
-        <p><strong>🌎 <span class="lang-en">Americas (non-Spanish-speaking)</span><span class="lang-zh">美洲（非西语国家）</span></strong></p>
-        <table>
-          <tr><th>Spanish</th><th>English</th><th>中文</th></tr>
           <tr><td>🇺🇸 <strong>Estados Unidos</strong> — estadounidense <span class="lang-en">(invariable)</span><span class="lang-zh">（不分阴阳性）</span></td><td>United States</td><td>美国</td></tr>
           <tr><td>🇨🇦 <strong>Canadá</strong> — canadiense <span class="lang-en">(invariable)</span><span class="lang-zh">（不分阴阳性）</span></td><td>Canada</td><td>加拿大</td></tr>
           <tr><td>🇧🇷 <strong>Brasil</strong> — brasileño/brasileña</td><td>Brazil</td><td>巴西</td></tr>
-        </table>
-
-        <p><strong>🇦🇺 <span class="lang-en">Oceania</span><span class="lang-zh">大洋洲</span></strong></p>
-        <table>
-          <tr><th>Spanish</th><th>English</th><th>中文</th></tr>
           <tr><td>🇦🇺 <strong>Australia</strong> — australiano/australiana</td><td>Australia</td><td>澳大利亚</td></tr>
         </table>
+        <div class="note-box">
+          <p class="lang-en-block">⚠️ <strong>Invariable nationalities</strong> — these never change form: marroquí, estadounidense, canadiense. They are identical for masculine and feminine. Only the article changes: <em>el/la estadounidense</em>.</p>
+          <p class="lang-zh-block">⚠️ <strong>不变化的国籍词</strong>——这些词阴阳性相同：marroquí、estadounidense、canadiense。只有冠词会变化：<em>el/la estadounidense</em>。</p>
+        </div>
 
-        <h4><span class="lang-en">Basic professions</span><span class="lang-zh">基本职业</span></h4>
+        <!-- ── MINI-PRACTICE C ── -->
+        <div class="mini-prac">
+          <h4><span class="lang-en">Quick practice — Africa, Americas and Oceania</span><span class="lang-zh">快速练习 — 非洲、美洲与大洋洲</span></h4>
+
+          <h4><span class="lang-en">Exercise 1 — Invariable or variable?</span><span class="lang-zh">练习 1 — 变化还是不变化？</span></h4>
+          <p class="lang-en-block">Write the correct nationality. Some of these are invariable — be careful!</p>
+          <p class="lang-zh-block">写出正确的国籍词。有些是不变化的——小心！</p>
+          <ol>
+            <li>Amara es de Nigeria. Amara es ___</li>
+            <li>John es de Estados Unidos. John es ___</li>
+            <li>Fatima es de Marruecos. Fatima es ___</li>
+            <li>Lucas es de Brasil. Lucas es ___</li>
+            <li>Sarah es de Canadá. Sarah es ___</li>
+            <li>Omar es de Egipto. Omar es ___</li>
+            <li>Lily es de Australia. Lily es ___</li>
+            <li>Zara es de Kenia. Zara es ___</li>
+          </ol>
+          <details style="margin-top:8px;">
+            <summary style="cursor:pointer; color:#5a7a32; font-weight:500; font-size:13px;"><span class="lang-en">Show answers</span><span class="lang-zh">查看答案</span></summary>
+            <div style="background:#eef4e4; padding:12px; border-radius:8px; margin-top:8px; font-size:13px; line-height:2;">
+              <p>1. nigeriana &nbsp;2. estadounidense &nbsp;3. marroquí &nbsp;4. brasileño &nbsp;5. canadiense &nbsp;6. egipcio &nbsp;7. australiana &nbsp;8. keniana</p>
+            </div>
+          </details>
+
+          <h4 style="margin-top:20px;"><span class="lang-en">Exercise 2 — Country randomizer round 2</span><span class="lang-zh">练习 2 — 国家随机抽取器（第二轮）</span></h4>
+          <p class="lang-en-block">Spin again. This time for any country — say the nationality AND which continent it belongs to.</p>
+          <p class="lang-zh-block">再转一次。这次针对任何国家——说出国籍词，以及它属于哪个洲。</p>
+          <div class="cr-card cr-widget" style="max-width:360px; padding:24px 20px; margin:14px auto 0;">
+            <p class="cr-card-sub" style="margin-bottom:1.25rem;"><span class="lang-en">Spin for a random country.</span><span class="lang-zh">转一下，随机抽取一个国家。</span></p>
+            <div class="cr-display"><span class="cr-flag-placeholder">?</span></div>
+            <button class="cr-btn">Girar país</button>
+            <div class="cr-questions">
+              <ul>
+                <li><span class="lang-en">What's the nationality?</span><span class="lang-zh">国籍怎么说？</span></li>
+                <li><span class="lang-en">Which continent?</span><span class="lang-zh">属于哪个洲？</span></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- ═══ BASIC PROFESSIONS ═══ -->
+        <h4 style="margin-top:28px;"><span class="lang-en">Basic professions</span><span class="lang-zh">基本职业</span></h4>
         <table>
           <tr><th>Spanish</th><th>English</th><th>中文</th></tr>
           <tr><td>📚 <strong>estudiante</strong> <span class="lang-en">(invariable)</span><span class="lang-zh">（不分阴阳性）</span></td><td>student</td><td>学生</td></tr>
@@ -215,8 +395,6 @@
           <tr><td>💉 <strong>enfermero / enfermera</strong></td><td>nurse</td><td>护士</td></tr>
         </table>
 
-        <p class="lang-en-block">⚠️ Estados Unidos and Canadá don't change between masculine and feminine — estadounidense, canadiense stay the same.</p>
-        <p class="lang-zh-block">⚠️ Estados Unidos 和 Canadá 的国籍词不分阴阳性——estadounidense、canadiense 形式不变。</p>
       </div>
     </details>
 
@@ -406,23 +584,6 @@
           <li>在没有提示的情况下，猜测一位名人的国籍和职业。</li>
           <li>如果你可以拥有另一个国籍，你会选哪个？为什么？（简单回答即可）</li>
         </ol>
-
-        <h4><span class="lang-en">Country randomizer</span><span class="lang-zh">国家随机抽取器</span></h4>
-        <div class="cr-card cr-widget">
-          <p class="cr-card-sub"><span class="lang-en">Spin for a random country, then answer the questions below using what you know.</span><span class="lang-zh">转一下，随机抽取一个国家，然后用你知道的内容回答下面的问题。</span></p>
-
-          <div class="cr-display"><span class="cr-flag-placeholder">?</span></div>
-          <button class="cr-btn">Girar país</button>
-
-          <div class="cr-questions">
-            <ul>
-              <li><span class="lang-en">What's the nationality?</span><span class="lang-zh">国籍怎么说？</span></li>
-              <li><span class="lang-en">What language do they speak?</span><span class="lang-zh">他们说什么语言？</span></li>
-              <li><span class="lang-en">Do you know anyone from this country?</span><span class="lang-zh">你认识来自这个国家的人吗？</span></li>
-              <li><span class="lang-en">What profession do you associate with it?</span><span class="lang-zh">你会联想到哪种职业？</span></li>
-            </ul>
-          </div>
-        </div>
       </div>
     </details>
 
@@ -575,6 +736,53 @@ function crInit(root) {
   btn.addEventListener('click', spin);
 }
 document.querySelectorAll('.cr-widget').forEach(crInit);
+
+// ── Flash card tool ──
+(function () {
+  var fcData = [
+    { name: 'España',      code: 'es', nat: 'español / española' },
+    { name: 'México',      code: 'mx', nat: 'mexicano / mexicana' },
+    { name: 'Argentina',   code: 'ar', nat: 'argentino / argentina' },
+    { name: 'Francia',     code: 'fr', nat: 'francés / francesa' },
+    { name: 'Alemania',    code: 'de', nat: 'alemán / alemana' },
+    { name: 'China',       code: 'cn', nat: 'chino / china' },
+    { name: 'Japón',       code: 'jp', nat: 'japonés / japonesa' },
+    { name: 'Reino Unido', code: 'gb', nat: 'británico / británica' }
+  ];
+  var fcIdx = 0;
+  var nameEl    = document.getElementById('fc-card-name');
+  var revealEl  = document.getElementById('fc-reveal');
+  var flagImg   = document.getElementById('fc-flag-img');
+  var natEl     = document.getElementById('fc-nat');
+  var revealBtn = document.getElementById('fc-reveal-btn');
+  var nextBtn   = document.getElementById('fc-next-btn');
+  var counter   = document.getElementById('fc-counter');
+
+  function showCard(i) {
+    nameEl.textContent = fcData[i].name;
+    counter.textContent = (i + 1) + ' / ' + fcData.length;
+    revealEl.classList.remove('show');
+    revealBtn.style.display = 'inline-block';
+    nextBtn.style.display = 'none';
+  }
+
+  revealBtn.addEventListener('click', function () {
+    var c = fcData[fcIdx];
+    flagImg.src = 'https://flagcdn.com/w80/' + c.code + '.png';
+    flagImg.alt = c.name;
+    natEl.textContent = c.nat;
+    revealEl.classList.add('show');
+    revealBtn.style.display = 'none';
+    nextBtn.style.display = 'inline-block';
+  });
+
+  nextBtn.addEventListener('click', function () {
+    fcIdx = (fcIdx + 1) % fcData.length;
+    showCard(fcIdx);
+  });
+
+  showCard(0);
+})();
 </script>
 
 </body>

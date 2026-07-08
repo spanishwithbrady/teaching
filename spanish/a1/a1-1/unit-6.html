@@ -12,6 +12,96 @@
     .lang-zh-block { display: none; }
     body.zh .lang-zh-block { display: block; }
     body.zh .lang-en-block { display: none; }
+
+    /* ── mini-practice section ── */
+    .mini-prac {
+      background: var(--green-tint);
+      border: 1px solid #c8ddb0;
+      border-radius: 10px;
+      padding: 18px 20px 20px;
+      margin: 20px 0 4px;
+    }
+    .mini-prac h4 { margin-top: 0; }
+    /* ── note box ── */
+    .note-box {
+      background: var(--warm-tint);
+      border-left: 3px solid var(--warm-brown);
+      border-radius: 0 8px 8px 0;
+      padding: 10px 14px;
+      margin: 12px 0 0;
+      font-size: 0.9rem;
+      line-height: 1.6;
+    }
+    /* ── family chain tool ── */
+    .chain-tool {
+      background: var(--card-bg);
+      border: 2px solid var(--green);
+      border-radius: var(--radius);
+      padding: 24px 20px;
+      max-width: 360px;
+      margin: 14px auto 0;
+      text-align: center;
+    }
+    .chain-text {
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--brown);
+      line-height: 1.55;
+      margin-bottom: 1.25rem;
+      min-height: 3rem;
+    }
+    .chain-answer {
+      display: none;
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--green);
+      margin-bottom: 0.5rem;
+    }
+    .chain-note {
+      display: none;
+      font-size: 0.875rem;
+      color: var(--muted);
+      margin-bottom: 0.75rem;
+      font-style: italic;
+    }
+    .chain-counter {
+      font-size: 0.8rem;
+      color: var(--muted);
+      margin-bottom: 0.75rem;
+    }
+    .chain-btn-row {
+      display: flex;
+      gap: 10px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-top: 12px;
+    }
+    .chain-reveal-btn {
+      background: var(--warm-brown);
+      color: #fff;
+      border: none;
+      padding: 0.65rem 1.5rem;
+      border-radius: 8px;
+      font-size: 0.875rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: opacity 0.15s;
+    }
+    .chain-reveal-btn:hover { opacity: 0.88; }
+    .chain-next-btn {
+      background: var(--green);
+      color: #fff;
+      border: none;
+      padding: 0.65rem 1.5rem;
+      border-radius: 8px;
+      font-size: 0.875rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: opacity 0.15s;
+      display: none;
+    }
+    .chain-next-btn:hover { opacity: 0.88; }
+
   </style>
 </head>
 <body>
@@ -68,21 +158,120 @@
         <svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg>
       </summary>
       <div class="panel-body">
-        <h4><span class="lang-en">Family</span><span class="lang-zh">家庭成员</span></h4>
+
+        <!-- ═══ CHUNK 1: Nuclear family ═══ -->
+        <h4><span class="lang-en">Part 1 — The immediate family</span><span class="lang-zh">第一部分 — 核心家庭成员</span></h4>
         <table>
           <tr><th>Spanish</th><th>English</th><th>中文</th></tr>
-          <tr><td>👪 <strong>el padre / la madre</strong></td><td>father / mother</td><td>父亲/母亲</td></tr>
-          <tr><td>👦 <strong>el hermano / la hermana</strong></td><td>brother / sister</td><td>兄弟/姐妹</td></tr>
-          <tr><td>👶 <strong>el hijo / la hija</strong></td><td>son / daughter</td><td>儿子/女儿</td></tr>
-          <tr><td>💑 <strong>el esposo / la esposa</strong></td><td>husband / wife</td><td>丈夫/妻子</td></tr>
-          <tr><td>👴 <strong>el abuelo / la abuela</strong></td><td>grandfather / grandmother</td><td>祖父/祖母</td></tr>
-          <tr><td><strong>el tío / la tía</strong></td><td>uncle / aunt</td><td>叔叔(舅舅)/阿姨(姑姑)</td></tr>
-          <tr><td>🧑 <strong>el primo / la prima</strong></td><td>cousin (m/f)</td><td>表/堂兄弟姐妹</td></tr>
-          <tr><td>🧒 <strong>el sobrino / la sobrina</strong></td><td>nephew / niece</td><td>侄子(外甥)/侄女(外甥女)</td></tr>
-          <tr><td>👶 <strong>el nieto / la nieta</strong></td><td>grandson / granddaughter</td><td>孙子/孙女</td></tr>
-          <tr><td>💕 <strong>el novio / la novia</strong></td><td>boyfriend / girlfriend</td><td>男朋友/女朋友</td></tr>
-          <tr><td>🐾 <strong>la mascota</strong></td><td>pet</td><td>宠物</td></tr>
+          <tr><td>👨 <strong>padre</strong></td><td>father</td><td>父亲</td></tr>
+          <tr><td>👩 <strong>madre</strong></td><td>mother</td><td>母亲</td></tr>
+          <tr><td>👦 <strong>hermano</strong></td><td>brother</td><td>兄弟</td></tr>
+          <tr><td>👧 <strong>hermana</strong></td><td>sister</td><td>姐妹</td></tr>
+          <tr><td>👶 <strong>hijo</strong></td><td>son</td><td>儿子</td></tr>
+          <tr><td>👶 <strong>hija</strong></td><td>daughter</td><td>女儿</td></tr>
+          <tr><td>💑 <strong>esposo</strong></td><td>husband</td><td>丈夫</td></tr>
+          <tr><td>💑 <strong>esposa</strong></td><td>wife</td><td>妻子</td></tr>
+          <tr><td>💕 <strong>novio</strong></td><td>boyfriend</td><td>男朋友</td></tr>
+          <tr><td>💕 <strong>novia</strong></td><td>girlfriend</td><td>女朋友</td></tr>
         </table>
+        <div class="note-box">
+          <p class="lang-en-block">In Spanish, a mixed group always uses the <strong>masculine plural</strong>: <em>los padres</em> = parents (not just fathers), <em>los hermanos</em> = siblings, <em>los hijos</em> = children.</p>
+          <p class="lang-zh-block">西班牙语中，混合性别的群体总是用<strong>阳性复数</strong>：<em>los padres</em> = 父母（不只是父亲），<em>los hermanos</em> = 兄弟姐妹，<em>los hijos</em> = 子女。</p>
+        </div>
+
+        <!-- ── MINI-PRACTICE A ── -->
+        <div class="mini-prac">
+          <h4><span class="lang-en">Quick practice — immediate family</span><span class="lang-zh">快速练习 — 核心家庭</span></h4>
+
+          <h4><span class="lang-en">Exercise 1 — Complete the sentence</span><span class="lang-zh">练习 1 — 完成句子</span></h4>
+          <p class="lang-en-block">Fill in the correct family member word.</p>
+          <p class="lang-zh-block">填入正确的家庭成员词。</p>
+          <ol>
+            <li>La ___ de mi padre es mi madre. <span class="lang-en">(wife)</span><span class="lang-zh">（妻子）</span></li>
+            <li>El ___ de mis padres soy yo. <span class="lang-en">(son)</span><span class="lang-zh">（儿子）</span></li>
+            <li>Mi ___ tiene 15 años. Es el hijo de mis padres. <span class="lang-en">(brother)</span><span class="lang-zh">（兄弟）</span></li>
+            <li>Los ___ de Ana son María y José. <span class="lang-en">(parents)</span><span class="lang-zh">（父母）</span></li>
+            <li>Tengo una ___. Se llama Sara. <span class="lang-en">(sister)</span><span class="lang-zh">（姐妹）</span></li>
+            <li>El ___ de mi madre se llama Carlos. <span class="lang-en">(husband)</span><span class="lang-zh">（丈夫）</span></li>
+            <li>Mi ___ tiene 8 años. Es la hija de mis padres. <span class="lang-en">(sister)</span><span class="lang-zh">（姐妹）</span></li>
+            <li>Los ___ de Pablo son tres — dos niños y una niña. <span class="lang-en">(children)</span><span class="lang-zh">（子女）</span></li>
+          </ol>
+          <details style="margin-top:8px;">
+            <summary style="cursor:pointer; color:#5a7a32; font-weight:500; font-size:13px;"><span class="lang-en">Show answers</span><span class="lang-zh">查看答案</span></summary>
+            <div style="background:#eef4e4; padding:12px; border-radius:8px; margin-top:8px; font-size:13px; line-height:2;">
+              <p>1. esposa &nbsp;2. hijo &nbsp;3. hermano &nbsp;4. padres &nbsp;5. hermana &nbsp;6. esposo &nbsp;7. hermana &nbsp;8. hijos</p>
+            </div>
+          </details>
+
+          <h4 style="margin-top:20px;"><span class="lang-en">Exercise 2 — Family chain puzzle</span><span class="lang-zh">练习 2 — 家庭关系链谜题</span></h4>
+          <p class="lang-en-block">Can you work it out? Read the chain, think of the answer, then click Reveal.</p>
+          <p class="lang-zh-block">你能解出来吗？读出关系链，想好答案，然后点击查看。</p>
+          <div class="chain-tool" id="chain-tool">
+            <div class="chain-counter" id="chain-counter">1 / 8</div>
+            <div class="chain-text" id="chain-text"></div>
+            <div class="chain-answer" id="chain-answer"></div>
+            <div class="chain-note" id="chain-note"></div>
+            <div class="chain-btn-row">
+              <button class="chain-reveal-btn" id="chain-reveal-btn">
+                <span class="lang-en">Reveal answer</span><span class="lang-zh">查看答案</span>
+              </button>
+              <button class="chain-next-btn" id="chain-next-btn">
+                <span class="lang-en">Next</span><span class="lang-zh">下一个</span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- ═══ CHUNK 2: Extended family + pets ═══ -->
+        <h4 style="margin-top:28px;"><span class="lang-en">Part 2 — Extended family and pets</span><span class="lang-zh">第二部分 — 大家庭与宠物</span></h4>
+        <table>
+          <tr><th>Spanish</th><th>English</th><th>中文</th></tr>
+          <tr><td>👴 <strong>abuelo</strong></td><td>grandfather</td><td>祖父/外祖父</td></tr>
+          <tr><td>👵 <strong>abuela</strong></td><td>grandmother</td><td>祖母/外祖母</td></tr>
+          <tr><td>👨 <strong>tío</strong></td><td>uncle</td><td>叔叔/舅舅</td></tr>
+          <tr><td>👩 <strong>tía</strong></td><td>aunt</td><td>姑姑/阿姨</td></tr>
+          <tr><td>🧑 <strong>primo / prima</strong></td><td>cousin (m/f)</td><td>表/堂兄弟姐妹</td></tr>
+          <tr><td>🧒 <strong>sobrino / sobrina</strong></td><td>nephew / niece</td><td>侄子/侄女</td></tr>
+          <tr><td>👶 <strong>nieto / nieta</strong></td><td>grandson / granddaughter</td><td>孙子/孙女</td></tr>
+          <tr><td>🐾 <strong>mascota</strong></td><td>pet</td><td>宠物</td></tr>
+          <tr><td>🐶 <strong>perro</strong></td><td>dog</td><td>狗</td></tr>
+          <tr><td>🐱 <strong>gato</strong></td><td>cat</td><td>猫</td></tr>
+        </table>
+        <div class="note-box">
+          <p class="lang-en-block"><em>los abuelos</em> = grandparents &nbsp;·&nbsp; <em>los tíos</em> = aunt and uncle &nbsp;·&nbsp; <em>los primos</em> = cousins (mixed group). The masculine plural covers everyone.</p>
+          <p class="lang-zh-block"><em>los abuelos</em> = 祖父母 &nbsp;·&nbsp; <em>los tíos</em> = 叔叔和阿姨 &nbsp;·&nbsp; <em>los primos</em> = 表兄弟姐妹（混合群体）。阳性复数涵盖所有人。</p>
+        </div>
+
+        <!-- ── MINI-PRACTICE B ── -->
+        <div class="mini-prac">
+          <h4><span class="lang-en">Quick practice — extended family</span><span class="lang-zh">快速练习 — 大家庭</span></h4>
+
+          <h4><span class="lang-en">Exercise 1 — Who is it?</span><span class="lang-zh">练习 1 — 这是谁？</span></h4>
+          <p class="lang-en-block">Read the description. Who is this person?</p>
+          <p class="lang-zh-block">读描述，这个人是谁？</p>
+          <ol>
+            <li>El padre de mi padre es mi ___</li>
+            <li>La hija de mi tío es mi ___</li>
+            <li>El hijo de mi hermana es mi ___</li>
+            <li>La madre de mi madre es mi ___</li>
+            <li>Los hijos de mis tíos son mis ___</li>
+            <li>La hija de mi hermano es mi ___</li>
+            <li>El hijo de mis abuelos es mi ___</li>
+            <li>Los hijos de mis hijos son mis ___</li>
+          </ol>
+          <details style="margin-top:8px;">
+            <summary style="cursor:pointer; color:#5a7a32; font-weight:500; font-size:13px;"><span class="lang-en">Show answers</span><span class="lang-zh">查看答案</span></summary>
+            <div style="background:#eef4e4; padding:12px; border-radius:8px; margin-top:8px; font-size:13px; line-height:2;">
+              <p>1. abuelo &nbsp;2. prima &nbsp;3. sobrino &nbsp;4. abuela &nbsp;5. primos &nbsp;6. sobrina &nbsp;7. tío (o padre) &nbsp;8. nietos</p>
+            </div>
+          </details>
+
+          <h4 style="margin-top:20px;"><span class="lang-en">Exercise 2 — Describe a real or famous family</span><span class="lang-zh">练习 2 — 描述一个真实或名人家庭</span></h4>
+          <p class="lang-en-block">Think of a real family you know or a famous family (a celebrity, a royal family, a TV family). Describe 3 relationships using the vocabulary from both parts.</p>
+          <p class="lang-zh-block">想一个你认识的真实家庭或名人家庭。用两个部分的词汇描述 3 种家庭关系。</p>
+          <p><em><span class="lang-en">Example: "Kim es la hermana de Khloé. Kris es la madre de Kim."</span><span class="lang-zh">例如："Kim 是 Khloé 的姐妹。Kris 是 Kim 的妈妈。"</span></em></p>
+        </div>
+
       </div>
     </details>
 
@@ -93,6 +282,8 @@
         <svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg>
       </summary>
       <div class="panel-body">
+        <p class="lang-en-block" style="color:var(--muted); font-style:italic; margin-bottom:16px;">Now we have the vocabulary — let's talk about how to describe these relationships using TENER and possessives.</p>
+        <p class="lang-zh-block" style="color:var(--muted); font-style:italic; margin-bottom:16px;">现在我们有了词汇——让我们学习如何用 TENER 和所有格来描述这些家庭关系。</p>
         <h4><span class="lang-en">Possessives</span><span class="lang-zh">物主代词</span></h4>
         <table>
           <tr><th><span class="lang-en">Possessive</span><span class="lang-zh">物主代词</span></th><th><span class="lang-en">Meaning</span><span class="lang-zh">意思</span></th><th><span class="lang-en">Example</span><span class="lang-zh">例句</span></th></tr>
@@ -341,6 +532,79 @@ function setLang(lang) {
 }
 const saved = localStorage.getItem('lang');
 if (saved === 'zh') setLang('zh');
+
+// ── Family chain puzzle ──
+(function () {
+  var chains = [
+    { text: 'La hermana de mi madre es mi ___',   answer: 'tía',           note: '' },
+    { text: 'El hijo de mi tío es mi ___',         answer: 'primo',         note: '' },
+    { text: 'La madre de mi esposo es mi ___',     answer: 'suegra',        note: '(suegra = mother-in-law — bonus word! / 岳母/婆婆——加分词！)' },
+    { text: 'El hermano de mi padre es mi ___',    answer: 'tío',           note: '' },
+    { text: 'Los hijos de mis tíos son mis ___',   answer: 'primos',        note: '' },
+    { text: 'La hija de mis abuelos es mi ___',    answer: 'madre (o tía)', note: '¡Correcto! Puede ser tu madre o tu tía. / 正确！可以是你的母亲或阿姨。' },
+    { text: 'El padre de mi madre es mi ___',      answer: 'abuelo',        note: '' },
+    { text: 'La hija de mi hermano es mi ___',     answer: 'sobrina',       note: '' }
+  ];
+
+  var order = [];
+  var idx = 0;
+
+  var textEl    = document.getElementById('chain-text');
+  var answerEl  = document.getElementById('chain-answer');
+  var noteEl    = document.getElementById('chain-note');
+  var revealBtn = document.getElementById('chain-reveal-btn');
+  var nextBtn   = document.getElementById('chain-next-btn');
+  var counter   = document.getElementById('chain-counter');
+
+  function shuffle(arr) {
+    var a = arr.slice();
+    for (var i = a.length - 1; i > 0; i--) {
+      var j = Math.floor(Math.random() * (i + 1));
+      var tmp = a[i]; a[i] = a[j]; a[j] = tmp;
+    }
+    return a;
+  }
+
+  function resetOrder() {
+    order = shuffle(Array.from ? Array.from({length: chains.length}, function(_, i) { return i; })
+                               : [0,1,2,3,4,5,6,7]);
+    idx = 0;
+  }
+
+  function showChain() {
+    var c = chains[order[idx]];
+    counter.textContent = (idx + 1) + ' / ' + chains.length;
+    textEl.textContent = c.text;
+    answerEl.style.display = 'none';
+    noteEl.style.display = 'none';
+    revealBtn.style.display = 'inline-block';
+    nextBtn.style.display = 'none';
+  }
+
+  revealBtn.addEventListener('click', function () {
+    var c = chains[order[idx]];
+    answerEl.textContent = '→ ' + c.answer;
+    answerEl.style.display = 'block';
+    if (c.note) {
+      noteEl.textContent = c.note;
+      noteEl.style.display = 'block';
+    } else {
+      noteEl.textContent = '¿Lo tenías? / 你答对了吗？';
+      noteEl.style.display = 'block';
+    }
+    revealBtn.style.display = 'none';
+    nextBtn.style.display = 'inline-block';
+  });
+
+  nextBtn.addEventListener('click', function () {
+    idx++;
+    if (idx >= order.length) { resetOrder(); }
+    showChain();
+  });
+
+  resetOrder();
+  showChain();
+})();
 </script>
 
 </body>
