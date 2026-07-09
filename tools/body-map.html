@@ -4,70 +4,43 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Body Map · Spanish with Brady</title>
-
   <style>
-    :root{--bg:#f7f5ef;--green:#6b8c42;--brown:#2e2416;--card:#ffffff;
-      --border:#e2ddd4;--muted:#7a6e60;--warm:#8B5E3C;--radius:12px;
-      --gtint:#eef4e4;--wtint:#f5ede0;}
-    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
-    body{font-family:system-ui,-apple-system,sans-serif;background:var(--bg);
-      color:var(--brown);display:flex;flex-direction:column;min-height:100vh;}
-    a{color:inherit;text-decoration:none;}
-    .lang-zh{display:none;}
-    body.zh .lang-en{display:none;}
-    body.zh .lang-zh{display:inline;}
-    .lang-zh-block{display:none;}
-    body.zh .lang-zh-block{display:block;}
-    body.zh .lang-en-block{display:none;}
-    .t-hdr{display:flex;align-items:center;justify-content:space-between;
-      padding:10px 18px;border-bottom:1px solid var(--border);background:var(--card);}
-    .t-logo{font-size:.9rem;font-weight:700;color:var(--brown);}
-    .t-tog{display:flex;border:1px solid var(--border);border-radius:6px;overflow:hidden;}
-    .t-tog button{padding:5px 13px;font-size:12px;font-weight:500;border:none;
-      cursor:pointer;background:var(--bg);color:var(--muted);}
-    .t-tog button.act{background:var(--green);color:#fff;}
-    main{flex:1;padding:20px 18px;max-width:580px;margin:0 auto;width:100%;}
-    .card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);
-      padding:22px 20px;margin-bottom:16px;}
-    .card-title{font-size:1rem;font-weight:700;color:var(--warm);margin-bottom:6px;}
-    .card-sub{font-size:.85rem;color:var(--muted);margin-bottom:16px;line-height:1.5;}
-    .btn{background:var(--green);color:#fff;border:none;padding:.7rem 1.8rem;
-      border-radius:8px;font-size:.9rem;font-weight:600;cursor:pointer;transition:opacity .15s;}
-    .btn:hover{opacity:.88;}
-    .btn-sec{background:transparent;color:var(--green);border:1.5px solid var(--green);
-      padding:.6rem 1.4rem;border-radius:8px;font-size:.85rem;font-weight:600;cursor:pointer;}
-    .btn-sec:hover{background:var(--gtint);}
-    .display{background:var(--bg);border-radius:10px;padding:16px;text-align:center;margin-bottom:14px;}
-    .ans-box{background:var(--gtint);border:1px solid #c8ddb0;border-radius:8px;
-      padding:12px 14px;margin-top:12px;display:none;font-size:.9rem;line-height:1.6;}
-    .note{background:var(--wtint);border-left:3px solid var(--warm);
-      border-radius:0 8px 8px 0;padding:10px 14px;margin-top:12px;
-      font-size:.85rem;line-height:1.6;color:var(--brown);}
-  </style>
-  <style>
-    main{max-width:600px;}
-    .body-layout{display:flex;gap:20px;align-items:flex-start;flex-wrap:wrap;}
-    .body-svg-wrap{flex:0 0 auto;}
-    svg.body{cursor:default;user-select:none;}
-    .body-part{fill:#f5ede0;stroke:#e2ddd4;stroke-width:1.5;cursor:pointer;
-      transition:fill .15s,stroke .15s;}
-    .body-part:hover{fill:#d4ebb0;stroke:var(--green);}
-    .body-part.active{fill:#6b8c42;fill-opacity:.35;stroke:var(--green);stroke-width:2.5;}
-    .body-info{flex:1;min-width:180px;}
-    .part-name{font-size:1.5rem;font-weight:700;color:var(--green);min-height:2rem;
-      margin-bottom:6px;}
-    .doler-sent{font-size:1rem;color:var(--brown);font-style:italic;min-height:1.5rem;
-      margin-bottom:12px;}
-    .rand-btns{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:14px;}
-    .espalda-btn{display:block;background:var(--wtint);border:1.5px solid var(--border);
-      border-radius:8px;padding:8px 14px;font-size:.85rem;cursor:pointer;
-      text-align:left;width:100%;margin-bottom:6px;}
-    .espalda-btn:hover,.espalda-btn.active{background:var(--gtint);border-color:var(--green);}
-    .body-parts-list{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px;}
-    .part-btn{background:var(--bg);border:1px solid var(--border);border-radius:16px;
-      padding:4px 11px;font-size:.8rem;cursor:pointer;color:var(--brown);}
-    .part-btn:hover{border-color:var(--green);background:var(--gtint);}
-    .part-btn.active{background:var(--green);color:#fff;border-color:var(--green);}
+    :root {
+      --bg:#f7f5ef; --green:#6b8c42; --brown:#2e2416;
+      --card:#ffffff; --border:#e2ddd4; --muted:#7a6e60;
+      --warm:#8B5E3C; --radius:12px; --gtint:#eef4e4;
+    }
+    *, *::before, *::after { box-sizing:border-box; margin:0; padding:0; }
+    body { font-family:system-ui,-apple-system,sans-serif;
+      background:var(--bg); color:var(--brown);
+      display:flex; flex-direction:column; min-height:100vh; }
+    a { color:inherit; text-decoration:none; }
+    .lang-zh { display:none; }
+    body.zh .lang-en { display:none; }
+    body.zh .lang-zh { display:inline; }
+    .t-hdr { display:flex; align-items:center; justify-content:space-between;
+      padding:10px 18px; border-bottom:1px solid var(--border);
+      background:var(--card); }
+    .t-logo { font-size:.9rem; font-weight:700; color:var(--brown); }
+    .t-tog { display:flex; border:1px solid var(--border);
+      border-radius:6px; overflow:hidden; }
+    .t-tog button { padding:5px 13px; font-size:12px; font-weight:500;
+      border:none; cursor:pointer; background:var(--bg); color:var(--muted); }
+    .t-tog button.act { background:var(--green); color:#fff; }
+    main { flex:1; padding:20px 18px;
+      max-width:480px; margin:0 auto; width:100%; }
+    .card { background:var(--card); border:1px solid var(--border);
+      border-radius:var(--radius); padding:20px 18px; }
+    .card-title { font-size:1rem; font-weight:700; color:var(--warm);
+      margin-bottom:4px; }
+    .card-sub { font-size:.85rem; color:var(--muted);
+      margin-bottom:16px; line-height:1.5; }
+    .body-container { position:relative; display:inline-block;
+      max-width:280px; width:100%; }
+    .body-container img { width:100%; display:block; }
+    .note { background:#f5ede0; border-left:3px solid var(--warm);
+      border-radius:0 8px 8px 0; padding:10px 14px; margin-top:14px;
+      font-size:.82rem; line-height:1.6; }
   </style>
 </head>
 <body>
@@ -79,173 +52,156 @@
     </div>
   </header>
   <main>
-
     <div class="card">
       <div class="card-title">
-        <span class="lang-en">🫀 Body Map</span><span class="lang-zh">🫀 身体部位图</span>
+        <span class="lang-en">🫀 Body Map</span>
+        <span class="lang-zh">🫀 身体部位图</span>
       </div>
       <p class="card-sub">
         <span class="lang-en">Click a body part — then say what hurts using DOLER.</span>
         <span class="lang-zh">点击一个身体部位——然后用 DOLER 说哪里疼。</span>
       </p>
-      <div class="body-layout">
-        <div class="body-svg-wrap">
-          <svg class="body" id="body-svg" width="160" height="370" viewBox="0 0 160 370">
-            <!-- Head -->
-            <ellipse id="bp-cabeza" class="body-part" cx="80" cy="44" rx="34" ry="38" data-part="cabeza"/>
-            <!-- Eyes -->
-            <ellipse id="bp-ojos-l" class="body-part" cx="66" cy="34" rx="8" ry="6" data-part="ojos"/>
-            <ellipse id="bp-ojos-r" class="body-part" cx="94" cy="34" rx="8" ry="6" data-part="ojos"/>
-            <!-- Nose -->
-            <ellipse id="bp-nariz" class="body-part" cx="80" cy="47" rx="5" ry="6" data-part="nariz"/>
-            <!-- Mouth -->
-            <ellipse id="bp-boca" class="body-part" cx="80" cy="62" rx="12" ry="6" data-part="boca"/>
-            <!-- Neck/Throat -->
-            <rect id="bp-garganta" class="body-part" x="68" y="82" width="24" height="20" rx="4" data-part="garganta"/>
-            <!-- Left shoulder -->
-            <ellipse id="bp-hombro-l" class="body-part" cx="44" cy="112" rx="20" ry="14" data-part="hombros"/>
-            <!-- Right shoulder -->
-            <ellipse id="bp-hombro-r" class="body-part" cx="116" cy="112" rx="20" ry="14" data-part="hombros"/>
-            <!-- Chest -->
-            <rect id="bp-pecho" class="body-part" x="55" y="102" width="50" height="56" rx="6" data-part="pecho"/>
-            <!-- Stomach -->
-            <rect id="bp-estomago" class="body-part" x="55" y="158" width="50" height="48" rx="6" data-part="estómago"/>
-            <!-- Left arm -->
-            <rect id="bp-brazo-l" class="body-part" x="26" y="126" width="20" height="78" rx="8" data-part="brazo"/>
-            <!-- Right arm -->
-            <rect id="bp-brazo-r" class="body-part" x="114" y="126" width="20" height="78" rx="8" data-part="brazo"/>
-            <!-- Left hand -->
-            <ellipse id="bp-mano-l" class="body-part" cx="36" cy="218" rx="15" ry="10" data-part="mano"/>
-            <!-- Right hand -->
-            <ellipse id="bp-mano-r" class="body-part" cx="124" cy="218" rx="15" ry="10" data-part="mano"/>
-            <!-- Left leg -->
-            <rect id="bp-pierna-l" class="body-part" x="56" y="206" width="24" height="110" rx="8" data-part="pierna"/>
-            <!-- Right leg -->
-            <rect id="bp-pierna-r" class="body-part" x="80" y="206" width="24" height="110" rx="8" data-part="pierna"/>
-            <!-- Left knee -->
-            <ellipse id="bp-rodilla-l" class="body-part" cx="68" cy="274" rx="14" ry="10" data-part="rodilla"/>
-            <!-- Right knee -->
-            <ellipse id="bp-rodilla-r" class="body-part" cx="92" cy="274" rx="14" ry="10" data-part="rodilla"/>
-            <!-- Left foot -->
-            <ellipse id="bp-pie-l" class="body-part" cx="64" cy="326" rx="20" ry="11" data-part="pie"/>
-            <!-- Right foot -->
-            <ellipse id="bp-pie-r" class="body-part" cx="96" cy="326" rx="20" ry="11" data-part="pie"/>
-          </svg>
-        </div>
-        <div class="body-info">
-          <div class="part-name" id="part-name">—</div>
-          <div class="doler-sent" id="doler-sent"></div>
-          <div class="rand-btns">
-            <button class="btn" onclick="randomPart()">
-              <span class="lang-en">Random</span><span class="lang-zh">随机</span>
-            </button>
-            <button class="btn-sec" onclick="clearParts()">
-              <span class="lang-en">Clear</span><span class="lang-zh">清空</span>
-            </button>
-          </div>
-          <div>
-            <button class="espalda-btn" id="bp-espalda-btn" onclick="selectEspalda()">
-              <strong>la espalda</strong> — the back
-            </button>
-          </div>
-          <div class="note" style="margin-top:10px;font-size:.82rem;">
-            <span class="lang-en"><strong>DOLER</strong> = works like GUSTAR.<br>
-              Me <strong>duele</strong> la cabeza (singular).<br>
-              Me <strong>duelen</strong> los pies (plural).</span>
-            <span class="lang-zh"><strong>DOLER</strong> = 用法同 GUSTAR。<br>
-              Me <strong>duele</strong> la cabeza（单数）。<br>
-              Me <strong>duelen</strong> los pies（复数）。</span>
-          </div>
+
+      <div style="display:flex; justify-content:center; margin-bottom:16px;">
+        <div class="body-container">
+          <img src="../assets/Human_body_outline.png" alt="Human body outline">
+  <div id="bm-cabeza" class="bm-hotspot" data-part="cabeza" style="position:absolute;top:2%;left:35%;width:30%;height:12%;border-radius:50%;cursor:pointer;background:transparent;transition:background 0.2s,border 0.2s;" onclick="bmSelectPart('cabeza')"></div>
+  <div id="bm-cuello" class="bm-hotspot" data-part="cuello" style="position:absolute;top:13%;left:40%;width:20%;height:5%;border-radius:50%;cursor:pointer;background:transparent;transition:background 0.2s,border 0.2s;" onclick="bmSelectPart('cuello')"></div>
+  <div id="bm-hombro-izquierdo" class="bm-hotspot" data-part="hombro izquierdo" style="position:absolute;top:17%;left:15%;width:18%;height:8%;border-radius:50%;cursor:pointer;background:transparent;transition:background 0.2s,border 0.2s;" onclick="bmSelectPart('hombro izquierdo')"></div>
+  <div id="bm-hombro-derecho" class="bm-hotspot" data-part="hombro derecho" style="position:absolute;top:17%;left:67%;width:18%;height:8%;border-radius:50%;cursor:pointer;background:transparent;transition:background 0.2s,border 0.2s;" onclick="bmSelectPart('hombro derecho')"></div>
+  <div id="bm-brazo-izquierdo" class="bm-hotspot" data-part="brazo izquierdo" style="position:absolute;top:25%;left:10%;width:14%;height:18%;border-radius:50%;cursor:pointer;background:transparent;transition:background 0.2s,border 0.2s;" onclick="bmSelectPart('brazo izquierdo')"></div>
+  <div id="bm-brazo-derecho" class="bm-hotspot" data-part="brazo derecho" style="position:absolute;top:25%;left:76%;width:14%;height:18%;border-radius:50%;cursor:pointer;background:transparent;transition:background 0.2s,border 0.2s;" onclick="bmSelectPart('brazo derecho')"></div>
+  <div id="bm-mano-izquierda" class="bm-hotspot" data-part="mano izquierda" style="position:absolute;top:42%;left:8%;width:13%;height:8%;border-radius:50%;cursor:pointer;background:transparent;transition:background 0.2s,border 0.2s;" onclick="bmSelectPart('mano izquierda')"></div>
+  <div id="bm-mano-derecha" class="bm-hotspot" data-part="mano derecha" style="position:absolute;top:42%;left:79%;width:13%;height:8%;border-radius:50%;cursor:pointer;background:transparent;transition:background 0.2s,border 0.2s;" onclick="bmSelectPart('mano derecha')"></div>
+  <div id="bm-pecho" class="bm-hotspot" data-part="pecho" style="position:absolute;top:18%;left:33%;width:34%;height:10%;border-radius:50%;cursor:pointer;background:transparent;transition:background 0.2s,border 0.2s;" onclick="bmSelectPart('pecho')"></div>
+  <div id="bm-estómago" class="bm-hotspot" data-part="estómago" style="position:absolute;top:28%;left:33%;width:34%;height:10%;border-radius:50%;cursor:pointer;background:transparent;transition:background 0.2s,border 0.2s;" onclick="bmSelectPart('estómago')"></div>
+  <div id="bm-cadera" class="bm-hotspot" data-part="cadera" style="position:absolute;top:38%;left:30%;width:40%;height:8%;border-radius:50%;cursor:pointer;background:transparent;transition:background 0.2s,border 0.2s;" onclick="bmSelectPart('cadera')"></div>
+  <div id="bm-pierna-izquierda" class="bm-hotspot" data-part="pierna izquierda" style="position:absolute;top:46%;left:25%;width:18%;height:25%;border-radius:50%;cursor:pointer;background:transparent;transition:background 0.2s,border 0.2s;" onclick="bmSelectPart('pierna izquierda')"></div>
+  <div id="bm-pierna-derecha" class="bm-hotspot" data-part="pierna derecha" style="position:absolute;top:46%;left:57%;width:18%;height:25%;border-radius:50%;cursor:pointer;background:transparent;transition:background 0.2s,border 0.2s;" onclick="bmSelectPart('pierna derecha')"></div>
+  <div id="bm-rodilla-izquierda" class="bm-hotspot" data-part="rodilla izquierda" style="position:absolute;top:62%;left:25%;width:18%;height:8%;border-radius:50%;cursor:pointer;background:transparent;transition:background 0.2s,border 0.2s;" onclick="bmSelectPart('rodilla izquierda')"></div>
+  <div id="bm-rodilla-derecha" class="bm-hotspot" data-part="rodilla derecha" style="position:absolute;top:62%;left:57%;width:18%;height:8%;border-radius:50%;cursor:pointer;background:transparent;transition:background 0.2s,border 0.2s;" onclick="bmSelectPart('rodilla derecha')"></div>
+  <div id="bm-pie-izquierdo" class="bm-hotspot" data-part="pie izquierdo" style="position:absolute;top:85%;left:23%;width:20%;height:8%;border-radius:50%;cursor:pointer;background:transparent;transition:background 0.2s,border 0.2s;" onclick="bmSelectPart('pie izquierdo')"></div>
+  <div id="bm-pie-derecho" class="bm-hotspot" data-part="pie derecho" style="position:absolute;top:85%;left:57%;width:20%;height:8%;border-radius:50%;cursor:pointer;background:transparent;transition:background 0.2s,border 0.2s;" onclick="bmSelectPart('pie derecho')"></div>
         </div>
       </div>
+
+      <div id="bm-result" style="text-align:center; margin-top:16px; min-height:60px;">
+        <div id="bm-part-name" style="font-size:22px; font-weight:500;
+          color:#2e2416; transition:opacity 0.3s;"></div>
+        <div id="bm-sentence" style="font-size:15px; color:#6b8c42;
+          margin-top:4px; opacity:0;"></div>
+      </div>
+
+      <div style="display:flex; gap:8px; justify-content:center;
+        margin-top:12px; flex-wrap:wrap;">
+        <button onclick="bmRandomPart()"
+          style="padding:8px 16px; background:#6b8c42; color:white;
+          border:none; border-radius:6px; cursor:pointer; font-size:13px;">
+          Aleatorio / Random
+        </button>
+        <button onclick="bmShowSentence()"
+          style="padding:8px 16px; background:#f7f5ef; color:#8B5E3C;
+          border:1px solid #e2ddd4; border-radius:6px;
+          cursor:pointer; font-size:13px;">
+          Mostrar frase / Show sentence
+        </button>
+        <button onclick="bmClearAll()"
+          style="padding:8px 16px; background:#f7f5ef; color:#7a6e60;
+          border:1px solid #e2ddd4; border-radius:6px;
+          cursor:pointer; font-size:13px;">
+          Limpiar / Clear
+        </button>
+      </div>
     </div>
-  
+
+    <div class="note">
+      <span class="lang-en"><strong>DOLER</strong> works like GUSTAR —<br>
+        Me <strong>duele</strong> la cabeza (singular) ·
+        Me <strong>duelen</strong> los pies (plural)</span>
+      <span class="lang-zh"><strong>DOLER</strong> 用法同 GUSTAR —<br>
+        Me <strong>duele</strong> la cabeza（单数）·
+        Me <strong>duelen</strong> los pies（复数）</span>
+    </div>
   </main>
-
   <script>
-    function setLang(l){
-      document.body.classList.toggle('zh',l==='zh');
-      document.getElementById('en-btn').classList.toggle('act',l==='en');
-      document.getElementById('zh-btn').classList.toggle('act',l==='zh');
+    function setLang(l) {
+      document.body.classList.toggle('zh', l === 'zh');
+      document.getElementById('en-btn').classList.toggle('act', l === 'en');
+      document.getElementById('zh-btn').classList.toggle('act', l === 'zh');
     }
-  </script>
-  <script>
-    const PARTS_DATA = {
-      'cabeza':   {es:'la cabeza',    doler:'Me duele la cabeza.'},
-      'ojos':     {es:'los ojos',     doler:'Me duelen los ojos.'},
-      'nariz':    {es:'la nariz',     doler:'Me duele la nariz.'},
-      'boca':     {es:'la boca',      doler:'Me duele la boca.'},
-      'garganta': {es:'la garganta',  doler:'Me duele la garganta.'},
-      'hombros':  {es:'el hombro',    doler:'Me duele el hombro.'},
-      'pecho':    {es:'el pecho',     doler:'Me duele el pecho.'},
-      'estómago': {es:'el estómago',  doler:'Me duele el estómago.'},
-      'brazo':    {es:'el brazo',     doler:'Me duele el brazo.'},
-      'mano':     {es:'la mano',      doler:'Me duele la mano.'},
-      'pierna':   {es:'la pierna',    doler:'Me duele la pierna.'},
-      'rodilla':  {es:'la rodilla',   doler:'Me duele la rodilla.'},
-      'pie':      {es:'el pie',       doler:'Me duele el pie.'},
-      'espalda':  {es:'la espalda',   doler:'Me duele la espalda.'},
-    };
 
-    let dolerTimer=null;
+    const bmParts = {
+  "cabeza":            { es: "la cabeza",    sentence: "Me duele la cabeza." },
+  "cuello":            { es: "el cuello",    sentence: "Me duele el cuello." },
+  "hombro izquierdo":  { es: "el hombro",   sentence: "Me duele el hombro." },
+  "hombro derecho":    { es: "el hombro",   sentence: "Me duele el hombro." },
+  "brazo izquierdo":   { es: "el brazo",    sentence: "Me duele el brazo." },
+  "brazo derecho":     { es: "el brazo",    sentence: "Me duele el brazo." },
+  "mano izquierda":    { es: "la mano",     sentence: "Me duele la mano." },
+  "mano derecha":      { es: "la mano",     sentence: "Me duele la mano." },
+  "pecho":             { es: "el pecho",    sentence: "Me duele el pecho." },
+  "estómago":          { es: "el estómago", sentence: "Me duele el estómago." },
+  "cadera":            { es: "la cadera",   sentence: "Me duele la cadera." },
+  "pierna izquierda":  { es: "la pierna",   sentence: "Me duelen las piernas." },
+  "pierna derecha":    { es: "la pierna",   sentence: "Me duelen las piernas." },
+  "rodilla izquierda": { es: "la rodilla",  sentence: "Me duelen las rodillas." },
+  "rodilla derecha":   { es: "la rodilla",  sentence: "Me duelen las rodillas." },
+  "pie izquierdo":     { es: "el pie",      sentence: "Me duelen los pies." },
+  "pie derecho":       { es: "el pie",      sentence: "Me duelen los pies." }
+};
+    let bmCurrent = null;
+    let bmSentenceVisible = false;
 
-    document.querySelectorAll('.body-part').forEach(el=>{
-      el.addEventListener('click',()=>{
-        const key=el.dataset.part;
-        selectPart(key,el);
+    function bmSelectPart(key) {
+      bmCurrent = key;
+      bmSentenceVisible = false;
+      document.querySelectorAll('.bm-hotspot').forEach(el => {
+        if (el.dataset.part === key) {
+          el.style.background = 'rgba(90,122,50,0.35)';
+          el.style.border = '2px solid #6b8c42';
+          el.style.borderRadius = '50%';
+        } else {
+          el.style.background = 'transparent';
+          el.style.border = 'none';
+        }
       });
-    });
-
-    function selectPart(key,triggerEl){
-      clearTimeout(dolerTimer);
-      // Deactivate all
-      document.querySelectorAll('.body-part').forEach(e=>e.classList.remove('active'));
-      document.getElementById('bp-espalda-btn').classList.remove('active');
-      // Activate matching parts
-      if(triggerEl) {
-        document.querySelectorAll(`[data-part="${key}"]`).forEach(e=>e.classList.add('active'));
-      }
-      const data=PARTS_DATA[key];
-      document.getElementById('part-name').textContent=data?data.es:'—';
-      document.getElementById('doler-sent').textContent='';
-      if(data){
-        dolerTimer=setTimeout(()=>{
-          document.getElementById('doler-sent').textContent=data.doler;
-        },1800);
-      }
+      const data = bmParts[key];
+      document.getElementById('bm-part-name').textContent = data ? data.es : '';
+      document.getElementById('bm-sentence').textContent = '';
+      document.getElementById('bm-sentence').style.opacity = '0';
     }
 
-    function selectEspalda(){
-      clearTimeout(dolerTimer);
-      document.querySelectorAll('.body-part').forEach(e=>e.classList.remove('active'));
-      const btn=document.getElementById('bp-espalda-btn');
-      btn.classList.toggle('active');
-      if(btn.classList.contains('active')){
-        const d=PARTS_DATA['espalda'];
-        document.getElementById('part-name').textContent=d.es;
-        document.getElementById('doler-sent').textContent='';
-        dolerTimer=setTimeout(()=>{document.getElementById('doler-sent').textContent=d.doler;},1800);
-      } else {
-        document.getElementById('part-name').textContent='—';
-        document.getElementById('doler-sent').textContent='';
+    function bmRandomPart() {
+      const keys = Object.keys(bmParts);
+      const key = keys[Math.floor(Math.random() * keys.length)];
+      bmSelectPart(key);
+    }
+
+    function bmShowSentence() {
+      if (!bmCurrent) return;
+      const data = bmParts[bmCurrent];
+      if (data) {
+        const el = document.getElementById('bm-sentence');
+        el.textContent = data.sentence;
+        el.style.transition = 'opacity 0.4s';
+        el.style.opacity = '1';
+        bmSentenceVisible = true;
       }
     }
 
-    function randomPart(){
-      const keys=Object.keys(PARTS_DATA);
-      const key=keys[Math.floor(Math.random()*keys.length)];
-      if(key==='espalda'){selectEspalda();return;}
-      const els=document.querySelectorAll(`[data-part="${key}"]`);
-      if(els.length) selectPart(key,els[0]);
+    function bmClearAll() {
+      bmCurrent = null;
+      bmSentenceVisible = false;
+      document.querySelectorAll('.bm-hotspot').forEach(el => {
+        el.style.background = 'transparent';
+        el.style.border = 'none';
+      });
+      document.getElementById('bm-part-name').textContent = '';
+      const sentEl = document.getElementById('bm-sentence');
+      sentEl.textContent = '';
+      sentEl.style.opacity = '0';
     }
 
-    function clearParts(){
-      clearTimeout(dolerTimer);
-      document.querySelectorAll('.body-part').forEach(e=>e.classList.remove('active'));
-      document.getElementById('bp-espalda-btn').classList.remove('active');
-      document.getElementById('part-name').textContent='—';
-      document.getElementById('doler-sent').textContent='';
-    }
   </script>
 </body>
 </html>

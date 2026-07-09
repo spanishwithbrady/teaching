@@ -443,19 +443,68 @@
         <p class="lang-en-block">Think of a time you were sick. Describe what hurt, how long it lasted, and what you had to do — using DOLER, TENER, and TENER QUE.</p>
         <p class="lang-zh-block">回想一次你生病的经历。描述哪里疼、持续了多久，以及你必须做什么——使用 DOLER、TENER 和 TENER QUE。</p>
 
+
         <div style="margin-top:24px;border-top:1px solid #e2ddd4;padding-top:20px;">
           <p class="lang-en-block" style="color:#7a6e60;font-size:.88rem;margin-bottom:10px;">🫀 Click a body part — then say what hurts using DOLER.</p>
           <p class="lang-zh-block" style="color:#7a6e60;font-size:.88rem;margin-bottom:10px;">🫀 点击一个身体部位——然后用 DOLER 说哪里疼。</p>
-          <div style="border:1px solid #e2ddd4;border-radius:12px;overflow:hidden;
-               box-shadow:0 2px 8px rgba(107,140,66,.06);">
-            <iframe src="../../../tools/body-map.html" style="width:100%;height:480px;border:none;"
-              frameborder="0" loading="lazy"></iframe>
+
+          <div style="background:#ffffff;border:1px solid #e2ddd4;border-radius:12px;
+               padding:20px;box-shadow:0 2px 8px rgba(107,140,66,.06);">
+
+            <div style="display:flex;justify-content:center;margin-bottom:16px;">
+              <div style="position:relative;display:inline-block;max-width:260px;width:100%;">
+                <img src="../../../assets/Human_body_outline.png"
+                  alt="Human body outline" style="width:100%;display:block;">
+  <div id="u17-cabeza" class="u17-hotspot" data-part="cabeza" style="position:absolute;top:2%;left:35%;width:30%;height:12%;border-radius:50%;cursor:pointer;background:transparent;transition:background 0.2s,border 0.2s;" onclick="u17SelectPart('cabeza')"></div>
+  <div id="u17-cuello" class="u17-hotspot" data-part="cuello" style="position:absolute;top:13%;left:40%;width:20%;height:5%;border-radius:50%;cursor:pointer;background:transparent;transition:background 0.2s,border 0.2s;" onclick="u17SelectPart('cuello')"></div>
+  <div id="u17-hombro-izquierdo" class="u17-hotspot" data-part="hombro izquierdo" style="position:absolute;top:17%;left:15%;width:18%;height:8%;border-radius:50%;cursor:pointer;background:transparent;transition:background 0.2s,border 0.2s;" onclick="u17SelectPart('hombro izquierdo')"></div>
+  <div id="u17-hombro-derecho" class="u17-hotspot" data-part="hombro derecho" style="position:absolute;top:17%;left:67%;width:18%;height:8%;border-radius:50%;cursor:pointer;background:transparent;transition:background 0.2s,border 0.2s;" onclick="u17SelectPart('hombro derecho')"></div>
+  <div id="u17-brazo-izquierdo" class="u17-hotspot" data-part="brazo izquierdo" style="position:absolute;top:25%;left:10%;width:14%;height:18%;border-radius:50%;cursor:pointer;background:transparent;transition:background 0.2s,border 0.2s;" onclick="u17SelectPart('brazo izquierdo')"></div>
+  <div id="u17-brazo-derecho" class="u17-hotspot" data-part="brazo derecho" style="position:absolute;top:25%;left:76%;width:14%;height:18%;border-radius:50%;cursor:pointer;background:transparent;transition:background 0.2s,border 0.2s;" onclick="u17SelectPart('brazo derecho')"></div>
+  <div id="u17-mano-izquierda" class="u17-hotspot" data-part="mano izquierda" style="position:absolute;top:42%;left:8%;width:13%;height:8%;border-radius:50%;cursor:pointer;background:transparent;transition:background 0.2s,border 0.2s;" onclick="u17SelectPart('mano izquierda')"></div>
+  <div id="u17-mano-derecha" class="u17-hotspot" data-part="mano derecha" style="position:absolute;top:42%;left:79%;width:13%;height:8%;border-radius:50%;cursor:pointer;background:transparent;transition:background 0.2s,border 0.2s;" onclick="u17SelectPart('mano derecha')"></div>
+  <div id="u17-pecho" class="u17-hotspot" data-part="pecho" style="position:absolute;top:18%;left:33%;width:34%;height:10%;border-radius:50%;cursor:pointer;background:transparent;transition:background 0.2s,border 0.2s;" onclick="u17SelectPart('pecho')"></div>
+  <div id="u17-estómago" class="u17-hotspot" data-part="estómago" style="position:absolute;top:28%;left:33%;width:34%;height:10%;border-radius:50%;cursor:pointer;background:transparent;transition:background 0.2s,border 0.2s;" onclick="u17SelectPart('estómago')"></div>
+  <div id="u17-cadera" class="u17-hotspot" data-part="cadera" style="position:absolute;top:38%;left:30%;width:40%;height:8%;border-radius:50%;cursor:pointer;background:transparent;transition:background 0.2s,border 0.2s;" onclick="u17SelectPart('cadera')"></div>
+  <div id="u17-pierna-izquierda" class="u17-hotspot" data-part="pierna izquierda" style="position:absolute;top:46%;left:25%;width:18%;height:25%;border-radius:50%;cursor:pointer;background:transparent;transition:background 0.2s,border 0.2s;" onclick="u17SelectPart('pierna izquierda')"></div>
+  <div id="u17-pierna-derecha" class="u17-hotspot" data-part="pierna derecha" style="position:absolute;top:46%;left:57%;width:18%;height:25%;border-radius:50%;cursor:pointer;background:transparent;transition:background 0.2s,border 0.2s;" onclick="u17SelectPart('pierna derecha')"></div>
+  <div id="u17-rodilla-izquierda" class="u17-hotspot" data-part="rodilla izquierda" style="position:absolute;top:62%;left:25%;width:18%;height:8%;border-radius:50%;cursor:pointer;background:transparent;transition:background 0.2s,border 0.2s;" onclick="u17SelectPart('rodilla izquierda')"></div>
+  <div id="u17-rodilla-derecha" class="u17-hotspot" data-part="rodilla derecha" style="position:absolute;top:62%;left:57%;width:18%;height:8%;border-radius:50%;cursor:pointer;background:transparent;transition:background 0.2s,border 0.2s;" onclick="u17SelectPart('rodilla derecha')"></div>
+  <div id="u17-pie-izquierdo" class="u17-hotspot" data-part="pie izquierdo" style="position:absolute;top:85%;left:23%;width:20%;height:8%;border-radius:50%;cursor:pointer;background:transparent;transition:background 0.2s,border 0.2s;" onclick="u17SelectPart('pie izquierdo')"></div>
+  <div id="u17-pie-derecho" class="u17-hotspot" data-part="pie derecho" style="position:absolute;top:85%;left:57%;width:20%;height:8%;border-radius:50%;cursor:pointer;background:transparent;transition:background 0.2s,border 0.2s;" onclick="u17SelectPart('pie derecho')"></div>
+              </div>
+            </div>
+
+            <div style="text-align:center;margin-top:8px;min-height:60px;">
+              <div id="u17-part-name" style="font-size:22px;font-weight:500;color:#2e2416;"></div>
+              <div id="u17-sentence" style="font-size:15px;color:#6b8c42;margin-top:4px;opacity:0;"></div>
+            </div>
+
+            <div style="display:flex;gap:8px;justify-content:center;margin-top:12px;flex-wrap:wrap;">
+              <button onclick="u17RandomPart()"
+                style="padding:8px 16px;background:#6b8c42;color:white;
+                border:none;border-radius:6px;cursor:pointer;font-size:13px;">
+                Aleatorio / Random
+              </button>
+              <button onclick="u17ShowSentence()"
+                style="padding:8px 16px;background:#f7f5ef;color:#8B5E3C;
+                border:1px solid #e2ddd4;border-radius:6px;cursor:pointer;font-size:13px;">
+                Mostrar frase / Show sentence
+              </button>
+              <button onclick="u17ClearAll()"
+                style="padding:8px 16px;background:#f7f5ef;color:#7a6e60;
+                border:1px solid #e2ddd4;border-radius:6px;cursor:pointer;font-size:13px;">
+                Limpiar / Clear
+              </button>
+            </div>
           </div>
+
           <p style="text-align:right;margin-top:6px;font-size:11px;">
             <a href="../../../tools/body-map.html" target="_blank" style="color:#8B5E3C;">
               ↗ <span class="lang-en">Open as standalone</span><span class="lang-zh">单独打开</span>
             </a>
           </p>
+        </div>
         </div>
       </div>
     </details>
@@ -567,5 +616,78 @@ const saved = localStorage.getItem('lang');
 if (saved === 'zh') setLang('zh');
 </script>
 
+<script>
+    const u17Parts = {
+  "cabeza":            { es: "la cabeza",    sentence: "Me duele la cabeza." },
+  "cuello":            { es: "el cuello",    sentence: "Me duele el cuello." },
+  "hombro izquierdo":  { es: "el hombro",   sentence: "Me duele el hombro." },
+  "hombro derecho":    { es: "el hombro",   sentence: "Me duele el hombro." },
+  "brazo izquierdo":   { es: "el brazo",    sentence: "Me duele el brazo." },
+  "brazo derecho":     { es: "el brazo",    sentence: "Me duele el brazo." },
+  "mano izquierda":    { es: "la mano",     sentence: "Me duele la mano." },
+  "mano derecha":      { es: "la mano",     sentence: "Me duele la mano." },
+  "pecho":             { es: "el pecho",    sentence: "Me duele el pecho." },
+  "estómago":          { es: "el estómago", sentence: "Me duele el estómago." },
+  "cadera":            { es: "la cadera",   sentence: "Me duele la cadera." },
+  "pierna izquierda":  { es: "la pierna",   sentence: "Me duelen las piernas." },
+  "pierna derecha":    { es: "la pierna",   sentence: "Me duelen las piernas." },
+  "rodilla izquierda": { es: "la rodilla",  sentence: "Me duelen las rodillas." },
+  "rodilla derecha":   { es: "la rodilla",  sentence: "Me duelen las rodillas." },
+  "pie izquierdo":     { es: "el pie",      sentence: "Me duelen los pies." },
+  "pie derecho":       { es: "el pie",      sentence: "Me duelen los pies." }
+};
+    let u17Current = null;
+    let u17SentenceVisible = false;
+
+    function u17SelectPart(key) {
+      u17Current = key;
+      u17SentenceVisible = false;
+      document.querySelectorAll('.u17-hotspot').forEach(el => {
+        if (el.dataset.part === key) {
+          el.style.background = 'rgba(90,122,50,0.35)';
+          el.style.border = '2px solid #6b8c42';
+          el.style.borderRadius = '50%';
+        } else {
+          el.style.background = 'transparent';
+          el.style.border = 'none';
+        }
+      });
+      const data = u17Parts[key];
+      document.getElementById('u17-part-name').textContent = data ? data.es : '';
+      document.getElementById('u17-sentence').textContent = '';
+      document.getElementById('u17-sentence').style.opacity = '0';
+    }
+
+    function u17RandomPart() {
+      const keys = Object.keys(u17Parts);
+      const key = keys[Math.floor(Math.random() * keys.length)];
+      u17SelectPart(key);
+    }
+
+    function u17ShowSentence() {
+      if (!u17Current) return;
+      const data = u17Parts[u17Current];
+      if (data) {
+        const el = document.getElementById('u17-sentence');
+        el.textContent = data.sentence;
+        el.style.transition = 'opacity 0.4s';
+        el.style.opacity = '1';
+        u17SentenceVisible = true;
+      }
+    }
+
+    function u17ClearAll() {
+      u17Current = null;
+      u17SentenceVisible = false;
+      document.querySelectorAll('.u17-hotspot').forEach(el => {
+        el.style.background = 'transparent';
+        el.style.border = 'none';
+      });
+      document.getElementById('u17-part-name').textContent = '';
+      const sentEl = document.getElementById('u17-sentence');
+      sentEl.textContent = '';
+      sentEl.style.opacity = '0';
+    }
+</script>
 </body>
 </html>
