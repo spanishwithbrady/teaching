@@ -15,6 +15,24 @@
     /* ── live input fields ── */
     .exercise-block { position: relative; }
     input.ex-input { vertical-align: middle; }
+
+    .mini-prac {
+      background: var(--green-tint);
+      border: 1px solid #c8ddb0;
+      border-radius: 10px;
+      padding: 18px 20px 20px;
+      margin: 20px 0 4px;
+    }
+    .mini-prac h4 { margin-top: 0; }
+    .note-box {
+      background: var(--warm-tint);
+      border-left: 3px solid var(--warm-brown);
+      border-radius: 0 8px 8px 0;
+      padding: 10px 14px;
+      margin: 12px 0 0;
+      font-size: 0.9rem;
+      line-height: 1.6;
+    }
   </style>
 </head>
 <body>
@@ -71,7 +89,8 @@
         <svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg>
       </summary>
       <div class="panel-body">
-        <h4><span class="lang-en">Hair &amp; eyes</span><span class="lang-zh">头发与眼睛</span></h4>
+
+        <h4><span class="lang-en">Part 1 — Hair</span><span class="lang-zh">第一部分 — 头发</span></h4>
         <table>
           <tr><th>Spanish</th><th>English</th><th>中文</th></tr>
           <tr><td>👱 <strong>rubio/a</strong></td><td>blond</td><td>金发</td></tr>
@@ -83,12 +102,42 @@
           <tr><td>〰️ <strong>liso/a</strong></td><td>straight</td><td>直（发）</td></tr>
           <tr><td>🌀 <strong>ondulado/a</strong></td><td>wavy</td><td>卷曲（波浪状）</td></tr>
           <tr><td>🌀 <strong>rizado/a</strong></td><td>curly</td><td>卷（发）</td></tr>
-          <tr><td><strong>azules / verdes / marrones / negros</strong></td><td>blue / green / brown / black (eyes)</td><td>蓝色/绿色/棕色/黑色（眼睛）</td></tr>
         </table>
 
-        <h4><span class="lang-en">Height &amp; build</span><span class="lang-zh">身高与体型</span></h4>
+        <div class="note-box">
+          <p><strong><span class="lang-en">💡 How to describe hair:</span><span class="lang-zh">💡 如何描述头发：</span></strong>
+          <span class="lang-en">Use <strong>TENER + el pelo + colour/style</strong>: <em>Tiene el pelo rubio.</em> / <em>Tiene el pelo corto y liso.</em></span>
+          <span class="lang-zh">使用 <strong>TENER + el pelo + 颜色/样式</strong>：<em>Tiene el pelo rubio。</em> / <em>Tiene el pelo corto y liso。</em></span></p>
+        </div>
+
+        <div class="mini-prac">
+          <h4><span class="lang-en">🟢 Mini-Practice A — Hair</span><span class="lang-zh">🟢 迷你练习 A — 头发</span></h4>
+          <h4 style="margin-top:12px;"><span class="lang-en">Exercise 1 — Describe the hair using TENER.</span><span class="lang-zh">练习一 — 用 TENER 描述头发。</span></h4>
+          <div class="exercise-block">
+            <div style="text-align:right; margin-bottom:8px;"><button onclick="this.closest('.exercise-block').querySelectorAll('input').forEach(function(i){i.value=''})" style="font-size:12px; color:#8B5E3C; background:none; border:1px solid #e2ddd4; border-radius:4px; padding:3px 10px; cursor:pointer;">Clear / 清空</button></div>
+            <ol>
+              <li>Wei: short, straight, black hair. → <input type="text" class="ex-input" placeholder="..." style="width:280px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"></li>
+              <li>Ana: long, curly, brown hair. → <input type="text" class="ex-input" placeholder="..." style="width:280px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"></li>
+              <li>Carlos: no hair (bald — calvo). → <input type="text" class="ex-input" placeholder="..." style="width:280px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"></li>
+              <li>Sara: short, wavy, blonde hair. → <input type="text" class="ex-input" placeholder="..." style="width:280px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"></li>
+              <li>Ming: long, straight, black hair. → <input type="text" class="ex-input" placeholder="..." style="width:280px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"></li>
+            </ol>
+          </div>
+          <details><summary><span class="lang-en">Show answers</span><span class="lang-zh">查看答案</span></summary>
+            <div style="padding:8px 0 4px;"><ol>
+              <li>Wei tiene el pelo corto, liso y negro.</li>
+              <li>Ana tiene el pelo largo, rizado y castaño.</li>
+              <li>Carlos es calvo.</li>
+              <li>Sara tiene el pelo corto, ondulado y rubio.</li>
+              <li>Ming tiene el pelo largo, liso y negro.</li>
+            </ol></div>
+          </details>
+        </div>
+
+        <h4><span class="lang-en">Part 2 — Eyes, height &amp; build</span><span class="lang-zh">第二部分 — 眼睛、身高与体型</span></h4>
         <table>
           <tr><th>Spanish</th><th>English</th><th>中文</th></tr>
+          <tr><td><strong>azules / verdes / marrones / negros / grises</strong></td><td>blue / green / brown / black / grey (eyes)</td><td>蓝色/绿色/棕色/黑色/灰色（眼睛）</td></tr>
           <tr><td>📐 <strong>alto/a</strong></td><td>tall</td><td>高</td></tr>
           <tr><td>🔽 <strong>bajo/a</strong></td><td>short</td><td>矮</td></tr>
           <tr><td>🪶 <strong>delgado/a</strong></td><td>slim</td><td>瘦</td></tr>
@@ -97,7 +146,50 @@
           <tr><td><strong>bonito/a</strong></td><td>pretty / nice-looking</td><td>好看</td></tr>
         </table>
 
-        <h4><span class="lang-en">Personality</span><span class="lang-zh">性格</span></h4>
+        <div class="note-box">
+          <p><strong><span class="lang-en">💡 Two patterns:</span><span class="lang-zh">💡 两种句型：</span></strong>
+          <span class="lang-en"><strong>Eyes:</strong> <em>Tiene los ojos azules.</em> — always use LOS, never un/una with eyes. <strong>Height &amp; build:</strong> use SER — <em>Es alto y delgado.</em></span>
+          <span class="lang-zh"><strong>眼睛：</strong><em>Tiene los ojos azules。</em>——永远用 LOS，眼睛不用 un/una。<strong>身高与体型：</strong>用 SER——<em>Es alto y delgado。</em></span></p>
+        </div>
+
+        <div class="mini-prac">
+          <h4><span class="lang-en">🟢 Mini-Practice B — Eyes, height &amp; build</span><span class="lang-zh">🟢 迷你练习 B — 眼睛、身高与体型</span></h4>
+          <h4 style="margin-top:12px;"><span class="lang-en">Exercise 1 — SER or TENER?</span><span class="lang-zh">练习一 — SER 还是 TENER？</span></h4>
+          <div class="exercise-block">
+            <div style="text-align:right; margin-bottom:8px;"><button onclick="this.closest('.exercise-block').querySelectorAll('input').forEach(function(i){i.value=''})" style="font-size:12px; color:#8B5E3C; background:none; border:1px solid #e2ddd4; border-radius:4px; padding:3px 10px; cursor:pointer;">Clear / 清空</button></div>
+            <ol>
+              <li><input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"> los ojos verdes. <span class="lang-en">(She)</span><span class="lang-zh">（她）</span></li>
+              <li><input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"> alta y delgada. <span class="lang-en">(She)</span><span class="lang-zh">（她）</span></li>
+              <li><input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"> el pelo corto. <span class="lang-en">(He)</span><span class="lang-zh">（他）</span></li>
+              <li><input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"> muy guapo. <span class="lang-en">(He)</span><span class="lang-zh">（他）</span></li>
+              <li><input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"> los ojos marrones. <span class="lang-en">(They)</span><span class="lang-zh">（他们）</span></li>
+              <li><input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"> bajo pero fuerte. <span class="lang-en">(He)</span><span class="lang-zh">（他）</span></li>
+            </ol>
+          </div>
+          <details><summary><span class="lang-en">Show answers</span><span class="lang-zh">查看答案</span></summary>
+            <div style="padding:8px 0 4px;"><ol>
+              <li>Tiene</li>
+              <li>Es</li>
+              <li>Tiene</li>
+              <li>Es</li>
+              <li>Tienen</li>
+              <li>Es</li>
+            </ol></div>
+          </details>
+          <h4 style="margin-top:16px;"><span class="lang-en">Exercise 2 — Describe a famous person.</span><span class="lang-zh">练习二 — 描述一个名人。</span></h4>
+          <p class="lang-en-block">Think of a famous person. Write 3 sentences about their appearance using SER and TENER.</p>
+          <p class="lang-zh-block">想一个名人。用 SER 和 TENER 写 3 句话描述他/她的外貌。</p>
+          <div class="exercise-block">
+            <div style="text-align:right; margin-bottom:8px;"><button onclick="this.closest('.exercise-block').querySelectorAll('input').forEach(function(i){i.value=''})" style="font-size:12px; color:#8B5E3C; background:none; border:1px solid #e2ddd4; border-radius:4px; padding:3px 10px; cursor:pointer;">Clear / 清空</button></div>
+            <ol>
+              <li><input type="text" class="ex-input" placeholder="..." style="width:280px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"></li>
+              <li><input type="text" class="ex-input" placeholder="..." style="width:280px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"></li>
+              <li><input type="text" class="ex-input" placeholder="..." style="width:280px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"></li>
+            </ol>
+          </div>
+        </div>
+
+        <h4><span class="lang-en">Part 3 — Personality</span><span class="lang-zh">第三部分 — 性格</span></h4>
         <table>
           <tr><th>Spanish</th><th>English</th><th>中文</th></tr>
           <tr><td>😊 <strong>simpático/a</strong></td><td>nice, friendly</td><td>友善</td></tr>
@@ -112,6 +204,49 @@
           <tr><td>🎉 <strong>extrovertido/a</strong></td><td>outgoing</td><td>外向</td></tr>
           <tr><td>🎁 <strong>generoso/a</strong></td><td>generous</td><td>慷慨</td></tr>
         </table>
+
+        <div class="note-box">
+          <p><strong><span class="lang-en">💡 Personality uses SER:</span><span class="lang-zh">💡 性格用 SER：</span></strong>
+          <span class="lang-en">These are permanent traits — always use SER: <em>Es muy simpático.</em> / <em>Es bastante serio.</em></span>
+          <span class="lang-zh">这些是固定特征——始终使用 SER：<em>Es muy simpático。</em> / <em>Es bastante serio。</em></span></p>
+        </div>
+
+        <div class="mini-prac">
+          <h4><span class="lang-en">🟢 Mini-Practice C — Personality</span><span class="lang-zh">🟢 迷你练习 C — 性格</span></h4>
+          <h4 style="margin-top:12px;"><span class="lang-en">Exercise 1 — Opposite adjectives.</span><span class="lang-zh">练习一 — 写出反义词。</span></h4>
+          <div class="exercise-block">
+            <div style="text-align:right; margin-bottom:8px;"><button onclick="this.closest('.exercise-block').querySelectorAll('input').forEach(function(i){i.value=''})" style="font-size:12px; color:#8B5E3C; background:none; border:1px solid #e2ddd4; border-radius:4px; padding:3px 10px; cursor:pointer;">Clear / 清空</button></div>
+            <ol>
+              <li>simpático → <input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"></li>
+              <li>trabajador → <input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"></li>
+              <li>tímido → <input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"></li>
+              <li>serio → <input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"></li>
+              <li>generoso → <input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"></li>
+            </ol>
+          </div>
+          <details><summary><span class="lang-en">Show answers</span><span class="lang-zh">查看答案</span></summary>
+            <div style="padding:8px 0 4px;"><ol>
+              <li>antipático</li>
+              <li>perezoso</li>
+              <li>extrovertido</li>
+              <li>divertido</li>
+              <li>egoísta / tacaño</li>
+            </ol></div>
+          </details>
+          <h4 style="margin-top:16px;"><span class="lang-en">Exercise 2 — Describe someone you know.</span><span class="lang-zh">练习二 — 描述你认识的人。</span></h4>
+          <p class="lang-en-block">Choose a person in your life — friend, family member, colleague. Write 4 sentences: 2 about appearance, 2 about personality.</p>
+          <p class="lang-zh-block">选一个你生活中的人——朋友、家人或同事。写 4 句话：2 句描述外貌，2 句描述性格。</p>
+          <div class="exercise-block">
+            <div style="text-align:right; margin-bottom:8px;"><button onclick="this.closest('.exercise-block').querySelectorAll('input').forEach(function(i){i.value=''})" style="font-size:12px; color:#8B5E3C; background:none; border:1px solid #e2ddd4; border-radius:4px; padding:3px 10px; cursor:pointer;">Clear / 清空</button></div>
+            <ol>
+              <li><span class="lang-en">(appearance)</span><span class="lang-zh">（外貌）</span> <input type="text" class="ex-input" placeholder="..." style="width:280px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"></li>
+              <li><span class="lang-en">(appearance)</span><span class="lang-zh">（外貌）</span> <input type="text" class="ex-input" placeholder="..." style="width:280px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"></li>
+              <li><span class="lang-en">(personality)</span><span class="lang-zh">（性格）</span> <input type="text" class="ex-input" placeholder="..." style="width:280px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"></li>
+              <li><span class="lang-en">(personality)</span><span class="lang-zh">（性格）</span> <input type="text" class="ex-input" placeholder="..." style="width:280px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"></li>
+            </ol>
+          </div>
+        </div>
+
       </div>
     </details>
 

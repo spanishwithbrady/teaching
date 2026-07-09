@@ -15,6 +15,24 @@
     /* ── live input fields ── */
     .exercise-block { position: relative; }
     input.ex-input { vertical-align: middle; }
+
+    .mini-prac {
+      background: var(--green-tint);
+      border: 1px solid #c8ddb0;
+      border-radius: 10px;
+      padding: 18px 20px 20px;
+      margin: 20px 0 4px;
+    }
+    .mini-prac h4 { margin-top: 0; }
+    .note-box {
+      background: var(--warm-tint);
+      border-left: 3px solid var(--warm-brown);
+      border-radius: 0 8px 8px 0;
+      padding: 10px 14px;
+      margin: 12px 0 0;
+      font-size: 0.9rem;
+      line-height: 1.6;
+    }
   </style>
 </head>
 <body>
@@ -71,7 +89,8 @@
         <svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg>
       </summary>
       <div class="panel-body">
-        <h4><span class="lang-en">Places in a city</span><span class="lang-zh">城市场所</span></h4>
+
+        <h4><span class="lang-en">Part 1 — Places in a city</span><span class="lang-zh">第一部分 — 城市场所</span></h4>
         <table>
           <tr><th>Spanish</th><th>English</th><th>中文</th></tr>
           <tr><td>🏦 <strong>el banco</strong></td><td>bank</td><td>银行</td></tr>
@@ -88,7 +107,57 @@
           <tr><td>📮 <strong>el correo</strong></td><td>post office</td><td>邮局</td></tr>
         </table>
 
-        <h4><span class="lang-en">Prepositions of place</span><span class="lang-zh">地点介词</span></h4>
+        <div class="mini-prac">
+          <h4><span class="lang-en">🟢 Mini-Practice A — City places</span><span class="lang-zh">🟢 迷你练习 A — 城市场所</span></h4>
+          <h4 style="margin-top:12px;"><span class="lang-en">Exercise 1 — Where do you go?</span><span class="lang-zh">练习一 — 你去哪里？</span></h4>
+          <p class="lang-en-block">Where would you go in each situation?</p>
+          <p class="lang-zh-block">在每种情况下你会去哪里？</p>
+          <div class="exercise-block">
+            <div style="text-align:right; margin-bottom:8px;"><button onclick="this.closest('.exercise-block').querySelectorAll('input').forEach(function(i){i.value=''})" style="font-size:12px; color:#8B5E3C; background:none; border:1px solid #e2ddd4; border-radius:4px; padding:3px 10px; cursor:pointer;">Clear / 清空</button></div>
+            <ol>
+              <li>You need medicine. → <input type="text" class="ex-input" placeholder="..." style="width:220px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"></li>
+              <li>You want to read books for free. → <input type="text" class="ex-input" placeholder="..." style="width:220px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"></li>
+              <li>You need to catch a train. → <input type="text" class="ex-input" placeholder="..." style="width:220px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"></li>
+              <li>You want to see paintings. → <input type="text" class="ex-input" placeholder="..." style="width:220px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"></li>
+              <li>You need to send a package. → <input type="text" class="ex-input" placeholder="..." style="width:220px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"></li>
+              <li>You feel very sick. → <input type="text" class="ex-input" placeholder="..." style="width:220px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"></li>
+            </ol>
+          </div>
+          <details><summary><span class="lang-en">Show answers</span><span class="lang-zh">查看答案</span></summary>
+            <div style="padding:8px 0 4px;"><ol>
+              <li>la farmacia</li>
+              <li>la biblioteca</li>
+              <li>la estación</li>
+              <li>el museo</li>
+              <li>el correo</li>
+              <li>el hospital</li>
+            </ol></div>
+          </details>
+          <h4 style="margin-top:16px;"><span class="lang-en">Exercise 2 — El or La?</span><span class="lang-zh">练习二 — El 还是 La？</span></h4>
+          <div class="exercise-block">
+            <div style="text-align:right; margin-bottom:8px;"><button onclick="this.closest('.exercise-block').querySelectorAll('input').forEach(function(i){i.value=''})" style="font-size:12px; color:#8B5E3C; background:none; border:1px solid #e2ddd4; border-radius:4px; padding:3px 10px; cursor:pointer;">Clear / 清空</button></div>
+            <ol>
+              <li><input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"> banco</li>
+              <li><input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"> farmacia</li>
+              <li><input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"> aeropuerto</li>
+              <li><input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"> iglesia</li>
+              <li><input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"> supermercado</li>
+              <li><input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"> biblioteca</li>
+            </ol>
+          </div>
+          <details><summary><span class="lang-en">Show answers</span><span class="lang-zh">查看答案</span></summary>
+            <div style="padding:8px 0 4px;"><ol>
+              <li>el</li>
+              <li>la</li>
+              <li>el</li>
+              <li>la</li>
+              <li>el</li>
+              <li>la</li>
+            </ol></div>
+          </details>
+        </div>
+
+        <h4><span class="lang-en">Part 2 — Prepositions of place</span><span class="lang-zh">第二部分 — 地点介词</span></h4>
         <table>
           <tr><th>Spanish</th><th>English</th><th><span class="lang-en">Example</span><span class="lang-zh">例句</span></th></tr>
           <tr><td><strong>en</strong></td><td>in / at / on</td><td>Estoy en el banco.</td></tr>
@@ -108,8 +177,49 @@
           <tr><td>⬅️ <strong>a la izquierda de</strong></td><td>to the left of</td><td>El museo está a la izquierda de la iglesia.</td></tr>
         </table>
 
-        <p class="lang-en-block">⚠️ Mandatory contractions: a + el = al, de + el = del — never "a el" or "de el".</p>
-        <p class="lang-zh-block">⚠️ 强制缩合：a + el = al，de + el = del——绝不能说 "a el" 或 "de el"。</p>
+        <div class="note-box">
+          <p><strong><span class="lang-en">⚠️ Mandatory contractions:</span><span class="lang-zh">⚠️ 强制缩合：</span></strong>
+          <span class="lang-en">a + el = <strong>al</strong>, de + el = <strong>del</strong> — never write "a el" or "de el".</span>
+          <span class="lang-zh">a + el = <strong>al</strong>，de + el = <strong>del</strong>——绝不能写 "a el" 或 "de el"。</span></p>
+        </div>
+
+        <div class="mini-prac">
+          <h4><span class="lang-en">🟢 Mini-Practice B — Prepositions</span><span class="lang-zh">🟢 迷你练习 B — 地点介词</span></h4>
+          <h4 style="margin-top:12px;"><span class="lang-en">Exercise 1 — Complete with the right preposition.</span><span class="lang-zh">练习一 — 填入正确的介词。</span></h4>
+          <div class="exercise-block">
+            <div style="text-align:right; margin-bottom:8px;"><button onclick="this.closest('.exercise-block').querySelectorAll('input').forEach(function(i){i.value=''})" style="font-size:12px; color:#8B5E3C; background:none; border:1px solid #e2ddd4; border-radius:4px; padding:3px 10px; cursor:pointer;">Clear / 清空</button></div>
+            <ol>
+              <li>El banco está <input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"> la farmacia. <span class="lang-en">(next to)</span><span class="lang-zh">（旁边）</span></li>
+              <li>El parque está <input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"> el hospital. <span class="lang-en">(in front of)</span><span class="lang-zh">（正对面）</span></li>
+              <li>La biblioteca está <input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"> el museo y el correo. <span class="lang-en">(between)</span><span class="lang-zh">（之间）</span></li>
+              <li>El supermercado está <input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"> la iglesia. <span class="lang-en">(behind)</span><span class="lang-zh">（后面）</span></li>
+              <li>El aeropuerto está <input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"> del centro. <span class="lang-en">(far from)</span><span class="lang-zh">（远离）</span></li>
+              <li>La estación está <input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"> del hotel. <span class="lang-en">(near)</span><span class="lang-zh">（附近）</span></li>
+            </ol>
+          </div>
+          <details><summary><span class="lang-en">Show answers</span><span class="lang-zh">查看答案</span></summary>
+            <div style="padding:8px 0 4px;"><ol>
+              <li>al lado de</li>
+              <li>enfrente de</li>
+              <li>entre</li>
+              <li>detrás de</li>
+              <li>lejos</li>
+              <li>cerca</li>
+            </ol></div>
+          </details>
+          <h4 style="margin-top:16px;"><span class="lang-en">Exercise 2 — Describe your real room.</span><span class="lang-zh">练习二 — 描述你身边的环境。</span></h4>
+          <p class="lang-en-block">Look around you right now. Write 3 sentences describing where things are using prepositions from this unit.</p>
+          <p class="lang-zh-block">环顾四周，用本单元的介词写 3 个句子描述物品的位置。</p>
+          <div class="exercise-block">
+            <div style="text-align:right; margin-bottom:8px;"><button onclick="this.closest('.exercise-block').querySelectorAll('input').forEach(function(i){i.value=''})" style="font-size:12px; color:#8B5E3C; background:none; border:1px solid #e2ddd4; border-radius:4px; padding:3px 10px; cursor:pointer;">Clear / 清空</button></div>
+            <ol>
+              <li><span class="lang-en">Sentence 1:</span><span class="lang-zh">句子一：</span> <input type="text" class="ex-input" placeholder="..." style="width:280px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"></li>
+              <li><span class="lang-en">Sentence 2:</span><span class="lang-zh">句子二：</span> <input type="text" class="ex-input" placeholder="..." style="width:280px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"></li>
+              <li><span class="lang-en">Sentence 3:</span><span class="lang-zh">句子三：</span> <input type="text" class="ex-input" placeholder="..." style="width:280px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"></li>
+            </ol>
+          </div>
+        </div>
+
       </div>
     </details>
 

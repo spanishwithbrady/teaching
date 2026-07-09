@@ -15,6 +15,24 @@
     /* ── live input fields ── */
     .exercise-block { position: relative; }
     input.ex-input { vertical-align: middle; }
+
+    .mini-prac {
+      background: var(--green-tint);
+      border: 1px solid #c8ddb0;
+      border-radius: 10px;
+      padding: 18px 20px 20px;
+      margin: 20px 0 4px;
+    }
+    .mini-prac h4 { margin-top: 0; }
+    .note-box {
+      background: var(--warm-tint);
+      border-left: 3px solid var(--warm-brown);
+      border-radius: 0 8px 8px 0;
+      padding: 10px 14px;
+      margin: 12px 0 0;
+      font-size: 0.9rem;
+      line-height: 1.6;
+    }
   </style>
 </head>
 <body>
@@ -71,22 +89,131 @@
         <svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg>
       </summary>
       <div class="panel-body">
-        <h4><span class="lang-en">Professions</span><span class="lang-zh">职业</span></h4>
+
+        <h4><span class="lang-en">Part 1 — Core professions</span><span class="lang-zh">第一部分 — 核心职业词汇</span></h4>
         <table>
           <tr><th>Spanish</th><th>English</th><th>中文</th></tr>
           <tr><td>🏗️ <strong>arquitecto / arquitecta</strong></td><td>architect</td><td>建筑师</td></tr>
           <tr><td>🚒 <strong>bombero / bombera</strong></td><td>firefighter</td><td>消防员</td></tr>
-          <tr><td>👮 <strong>policía</strong> <span class="lang-en">(invariable)</span><span class="lang-zh">（不分阴阳性）</span></td><td>police officer</td><td>警察</td></tr>
-          <tr><td>🌾 <strong>agricultor / agricultora</strong></td><td>farmer</td><td>农民</td></tr>
-          <tr><td>🎵 <strong>músico / música</strong></td><td>musician</td><td>音乐家</td></tr>
-          <tr><td>📷 <strong>fotógrafo / fotógrafa</strong></td><td>photographer</td><td>摄影师</td></tr>
+          <tr><td>💉 <strong>enfermero / enfermera</strong></td><td>nurse</td><td>护士</td></tr>
+          <tr><td>🩺 <strong>médico / médica</strong></td><td>doctor</td><td>医生</td></tr>
+          <tr><td>👨‍🏫 <strong>profesor / profesora</strong></td><td>teacher</td><td>老师</td></tr>
           <tr><td>💻 <strong>programador / programadora</strong></td><td>programmer</td><td>程序员</td></tr>
           <tr><td>🐾 <strong>veterinario / veterinaria</strong></td><td>veterinarian</td><td>兽医</td></tr>
           <tr><td>🧠 <strong>psicólogo / psicóloga</strong></td><td>psychologist</td><td>心理学家</td></tr>
         </table>
 
-        <p class="lang-en-block">Some professions never change form: el/la policía, el/la piloto, el/la periodista. Only the article changes.</p>
-        <p class="lang-zh-block">有些职业词不分阴阳性：el/la policía, el/la piloto, el/la periodista。只有冠词会变化。</p>
+        <div class="mini-prac">
+          <h4><span class="lang-en">🟢 Mini-Practice A — Gender forms</span><span class="lang-zh">🟢 迷你练习 A — 阴阳性变化</span></h4>
+          <h4 style="margin-top:12px;"><span class="lang-en">Exercise 1 — Give the feminine form.</span><span class="lang-zh">练习一 — 写出阴性形式。</span></h4>
+          <div class="exercise-block">
+            <div style="text-align:right; margin-bottom:8px;"><button onclick="this.closest('.exercise-block').querySelectorAll('input').forEach(function(i){i.value=''})" style="font-size:12px; color:#8B5E3C; background:none; border:1px solid #e2ddd4; border-radius:4px; padding:3px 10px; cursor:pointer;">Clear / 清空</button></div>
+            <ol>
+              <li>el arquitecto → la <input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"></li>
+              <li>el bombero → la <input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"></li>
+              <li>el enfermero → la <input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"></li>
+              <li>el programador → la <input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"></li>
+              <li>el veterinario → la <input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"></li>
+              <li>el psicólogo → la <input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"></li>
+            </ol>
+          </div>
+          <details><summary><span class="lang-en">Show answers</span><span class="lang-zh">查看答案</span></summary>
+            <div style="padding:8px 0 4px;"><ol>
+              <li>arquitecta</li>
+              <li>bombera</li>
+              <li>enfermera</li>
+              <li>programadora</li>
+              <li>veterinaria</li>
+              <li>psicóloga</li>
+            </ol></div>
+          </details>
+          <h4 style="margin-top:16px;"><span class="lang-en">Exercise 2 — Complete with the right profession.</span><span class="lang-zh">练习二 — 根据情境填写职业。</span></h4>
+          <div class="exercise-block">
+            <div style="text-align:right; margin-bottom:8px;"><button onclick="this.closest('.exercise-block').querySelectorAll('input').forEach(function(i){i.value=''})" style="font-size:12px; color:#8B5E3C; background:none; border:1px solid #e2ddd4; border-radius:4px; padding:3px 10px; cursor:pointer;">Clear / 清空</button></div>
+            <ol>
+              <li>Trabaja en un hospital con animales. Es <input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"> <span class="lang-en">(male)</span><span class="lang-zh">（男）</span></li>
+              <li>Diseña edificios. Es <input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"> <span class="lang-en">(female)</span><span class="lang-zh">（女）</span></li>
+              <li>Apaga incendios. Es <input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"> <span class="lang-en">(male)</span><span class="lang-zh">（男）</span></li>
+              <li>Escribe código. Es <input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"> <span class="lang-en">(female)</span><span class="lang-zh">（女）</span></li>
+              <li>Cuida a los pacientes en el hospital. Es <input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"> <span class="lang-en">(female)</span><span class="lang-zh">（女）</span></li>
+            </ol>
+          </div>
+          <details><summary><span class="lang-en">Show answers</span><span class="lang-zh">查看答案</span></summary>
+            <div style="padding:8px 0 4px;"><ol>
+              <li>veterinario</li>
+              <li>arquitecta</li>
+              <li>bombero</li>
+              <li>programadora</li>
+              <li>enfermera</li>
+            </ol></div>
+          </details>
+        </div>
+
+        <h4><span class="lang-en">Part 2 — Invariable professions &amp; special cases</span><span class="lang-zh">第二部分 — 不分阴阳性的职业及其他</span></h4>
+        <table>
+          <tr><th>Spanish</th><th>English</th><th>中文</th></tr>
+          <tr><td>👮 <strong>policía</strong> <span class="lang-en">(invariable)</span><span class="lang-zh">（不分阴阳性）</span></td><td>police officer</td><td>警察</td></tr>
+          <tr><td>✈️ <strong>piloto</strong> <span class="lang-en">(invariable)</span><span class="lang-zh">（不分阴阳性）</span></td><td>pilot</td><td>飞行员</td></tr>
+          <tr><td>📰 <strong>periodista</strong> <span class="lang-en">(invariable)</span><span class="lang-zh">（不分阴阳性）</span></td><td>journalist</td><td>记者</td></tr>
+          <tr><td>🎵 <strong>músico / música</strong></td><td>musician</td><td>音乐家</td></tr>
+          <tr><td>📷 <strong>fotógrafo / fotógrafa</strong></td><td>photographer</td><td>摄影师</td></tr>
+          <tr><td>🌾 <strong>agricultor / agricultora</strong></td><td>farmer</td><td>农民</td></tr>
+        </table>
+
+        <div class="note-box">
+          <p><strong><span class="lang-en">⚠️ Note:</span><span class="lang-zh">⚠️ 注意：</span></strong>
+          <span class="lang-en">Policía, piloto, and periodista use the same form for male and female — only the article changes: <em>el policía / la policía</em>, <em>el piloto / la piloto</em>, <em>el periodista / la periodista</em>.</span>
+          <span class="lang-zh">Policía、piloto 和 periodista 阴阳性形式相同——只有冠词变化：<em>el policía / la policía</em>，<em>el piloto / la piloto</em>，<em>el periodista / la periodista</em>。</span></p>
+        </div>
+
+        <div class="mini-prac">
+          <h4><span class="lang-en">🟢 Mini-Practice B — Articles &amp; plurals</span><span class="lang-zh">🟢 迷你练习 B — 冠词与复数</span></h4>
+          <h4 style="margin-top:12px;"><span class="lang-en">Exercise 1 — El or La?</span><span class="lang-zh">练习一 — El 还是 La？</span></h4>
+          <div class="exercise-block">
+            <div style="text-align:right; margin-bottom:8px;"><button onclick="this.closest('.exercise-block').querySelectorAll('input').forEach(function(i){i.value=''})" style="font-size:12px; color:#8B5E3C; background:none; border:1px solid #e2ddd4; border-radius:4px; padding:3px 10px; cursor:pointer;">Clear / 清空</button></div>
+            <ol>
+              <li><input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"> policía <span class="lang-en">(female officer)</span><span class="lang-zh">（女警察）</span></li>
+              <li><input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"> piloto <span class="lang-en">(male pilot)</span><span class="lang-zh">（男飞行员）</span></li>
+              <li><input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"> periodista <span class="lang-en">(female journalist)</span><span class="lang-zh">（女记者）</span></li>
+              <li><input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"> músico <span class="lang-en">(male musician)</span><span class="lang-zh">（男音乐家）</span></li>
+              <li><input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"> fotógrafa <span class="lang-en">(female photographer)</span><span class="lang-zh">（女摄影师）</span></li>
+              <li><input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"> agricultor <span class="lang-en">(male farmer)</span><span class="lang-zh">（男农民）</span></li>
+            </ol>
+          </div>
+          <details><summary><span class="lang-en">Show answers</span><span class="lang-zh">查看答案</span></summary>
+            <div style="padding:8px 0 4px;"><ol>
+              <li>la</li>
+              <li>el</li>
+              <li>la</li>
+              <li>el</li>
+              <li>la</li>
+              <li>el</li>
+            </ol></div>
+          </details>
+          <h4 style="margin-top:16px;"><span class="lang-en">Exercise 2 — Plurals.</span><span class="lang-zh">练习二 — 复数变化。</span></h4>
+          <div class="exercise-block">
+            <div style="text-align:right; margin-bottom:8px;"><button onclick="this.closest('.exercise-block').querySelectorAll('input').forEach(function(i){i.value=''})" style="font-size:12px; color:#8B5E3C; background:none; border:1px solid #e2ddd4; border-radius:4px; padding:3px 10px; cursor:pointer;">Clear / 清空</button></div>
+            <ol>
+              <li>el médico → <input type="text" class="ex-input" placeholder="..." style="width:220px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"></li>
+              <li>la enfermera → <input type="text" class="ex-input" placeholder="..." style="width:220px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"></li>
+              <li>el arquitecto → <input type="text" class="ex-input" placeholder="..." style="width:220px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"></li>
+              <li>la policía → <input type="text" class="ex-input" placeholder="..." style="width:220px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"></li>
+              <li>el actor → <input type="text" class="ex-input" placeholder="..." style="width:220px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"></li>
+              <li>el juez → <input type="text" class="ex-input" placeholder="..." style="width:220px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"></li>
+            </ol>
+          </div>
+          <details><summary><span class="lang-en">Show answers</span><span class="lang-zh">查看答案</span></summary>
+            <div style="padding:8px 0 4px;"><ol>
+              <li>los médicos</li>
+              <li>las enfermeras</li>
+              <li>los arquitectos</li>
+              <li>las policías</li>
+              <li>los actores</li>
+              <li>los jueces</li>
+            </ol></div>
+          </details>
+        </div>
+
       </div>
     </details>
 

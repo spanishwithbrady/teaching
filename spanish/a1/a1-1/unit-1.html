@@ -15,6 +15,24 @@
     /* ── live input fields ── */
     .exercise-block { position: relative; }
     input.ex-input { vertical-align: middle; }
+
+    .mini-prac {
+      background: var(--green-tint);
+      border: 1px solid #c8ddb0;
+      border-radius: 10px;
+      padding: 18px 20px 20px;
+      margin: 20px 0 4px;
+    }
+    .mini-prac h4 { margin-top: 0; }
+    .note-box {
+      background: var(--warm-tint);
+      border-left: 3px solid var(--warm-brown);
+      border-radius: 0 8px 8px 0;
+      padding: 10px 14px;
+      margin: 12px 0 0;
+      font-size: 0.9rem;
+      line-height: 1.6;
+    }
   </style>
 </head>
 <body>
@@ -84,7 +102,8 @@
         <svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg>
       </summary>
       <div class="panel-body">
-        <h4><span class="lang-en">Greetings (问候语)</span><span class="lang-zh">问候语</span></h4>
+
+        <h4><span class="lang-en">Part 1 — Greetings (问候语)</span><span class="lang-zh">第一部分 — 问候语</span></h4>
         <table>
           <tr><th>Spanish</th><th>English</th><th><span class="lang-en">When to use</span><span class="lang-zh">使用时机</span></th></tr>
           <tr><td>👋 <strong>Hola</strong></td><td>Hi / Hello</td><td><span class="lang-en">Any time, any situation</span><span class="lang-zh">任何时间、任何场合</span></td></tr>
@@ -94,7 +113,34 @@
           <tr><td>👋 <strong>Buenas</strong></td><td>Hi (casual shortcut)</td><td><span class="lang-en">Any time — very common in Spain</span><span class="lang-zh">任何时间——在西班牙非常常见</span></td></tr>
         </table>
 
-        <h4><span class="lang-en">Farewells (告别语)</span><span class="lang-zh">告别语</span></h4>
+        <div class="mini-prac">
+          <h4><span class="lang-en">🟢 Mini-Practice A — Greetings</span><span class="lang-zh">🟢 迷你练习 A — 问候语</span></h4>
+          <h4 style="margin-top:12px;"><span class="lang-en">Exercise 1 — What time is it? Choose the right greeting.</span><span class="lang-zh">练习一 — 现在几点？选择正确的问候语。</span></h4>
+          <div class="exercise-block">
+            <div style="text-align:right; margin-bottom:8px;"><button onclick="this.closest('.exercise-block').querySelectorAll('input').forEach(function(i){i.value=''})" style="font-size:12px; color:#8B5E3C; background:none; border:1px solid #e2ddd4; border-radius:4px; padding:3px 10px; cursor:pointer;">Clear / 清空</button></div>
+            <ol>
+              <li>It is 8:00 a.m. You start your lesson. → <input type="text" class="ex-input" placeholder="..." style="width:220px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"></li>
+              <li>It is 2:30 p.m. You see a friend. → <input type="text" class="ex-input" placeholder="..." style="width:220px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"></li>
+              <li>It is 9:00 p.m. You arrive home. → <input type="text" class="ex-input" placeholder="..." style="width:220px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"></li>
+              <li>You don't know what time it is. Safe option? → <input type="text" class="ex-input" placeholder="..." style="width:220px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"></li>
+              <li>It is 11:45 a.m. Almost lunchtime. → <input type="text" class="ex-input" placeholder="..." style="width:220px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"></li>
+            </ol>
+          </div>
+          <details><summary><span class="lang-en">Show answers</span><span class="lang-zh">查看答案</span></summary>
+            <div style="padding:8px 0 4px;"><ol>
+              <li>Buenos días</li>
+              <li>Buenas tardes</li>
+              <li>Buenas noches</li>
+              <li>Buenas / Hola</li>
+              <li>Buenos días</li>
+            </ol></div>
+          </details>
+          <h4 style="margin-top:16px;"><span class="lang-en">Exercise 2 — Quick production (oral)</span><span class="lang-zh">练习二 — 快速口头练习</span></h4>
+          <p class="lang-en-block">Say the correct greeting for RIGHT NOW. What time is it where you are?</p>
+          <p class="lang-zh-block">说出当前时间对应的问候语。你那里现在几点？</p>
+        </div>
+
+        <h4><span class="lang-en">Part 2 — Farewells (告别语)</span><span class="lang-zh">第二部分 — 告别语</span></h4>
         <table>
           <tr><th>Spanish</th><th>English</th><th><span class="lang-en">Note</span><span class="lang-zh">注意</span></th></tr>
           <tr><td>👋 <strong>Adiós</strong></td><td>Goodbye</td><td><span class="lang-en">Final farewell</span><span class="lang-zh">正式告别</span></td></tr>
@@ -105,7 +151,31 @@
           <tr><td>👋 <strong>Chao / Chau</strong></td><td>Bye</td><td><span class="lang-en">Informal — very common</span><span class="lang-zh">非正式——非常常见</span></td></tr>
         </table>
 
-        <h4><span class="lang-en">Polite expressions (礼貌用语)</span><span class="lang-zh">礼貌用语</span></h4>
+        <div class="mini-prac">
+          <h4><span class="lang-en">🟢 Mini-Practice B — Farewells</span><span class="lang-zh">🟢 迷你练习 B — 告别语</span></h4>
+          <h4 style="margin-top:12px;"><span class="lang-en">Exercise 1 — Choose the right farewell.</span><span class="lang-zh">练习一 — 选择正确的告别语。</span></h4>
+          <div class="exercise-block">
+            <div style="text-align:right; margin-bottom:8px;"><button onclick="this.closest('.exercise-block').querySelectorAll('input').forEach(function(i){i.value=''})" style="font-size:12px; color:#8B5E3C; background:none; border:1px solid #e2ddd4; border-radius:4px; padding:3px 10px; cursor:pointer;">Clear / 清空</button></div>
+            <ol>
+              <li>You will see this person tomorrow. → <input type="text" class="ex-input" placeholder="..." style="width:220px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"></li>
+              <li>You will see this person again soon but don't know when exactly. → <input type="text" class="ex-input" placeholder="..." style="width:220px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"></li>
+              <li>You are saying a final goodbye at the airport. → <input type="text" class="ex-input" placeholder="..." style="width:220px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"></li>
+              <li>Informal, casual goodbye to a friend. → <input type="text" class="ex-input" placeholder="..." style="width:220px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"></li>
+              <li>You will see them later today. → <input type="text" class="ex-input" placeholder="..." style="width:220px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"></li>
+            </ol>
+          </div>
+          <details><summary><span class="lang-en">Show answers</span><span class="lang-zh">查看答案</span></summary>
+            <div style="padding:8px 0 4px;"><ol>
+              <li>Hasta mañana</li>
+              <li>Hasta pronto</li>
+              <li>Adiós</li>
+              <li>Chao / Nos vemos</li>
+              <li>Hasta luego</li>
+            </ol></div>
+          </details>
+        </div>
+
+        <h4><span class="lang-en">Part 3 — Polite expressions (礼貌用语)</span><span class="lang-zh">第三部分 — 礼貌用语</span></h4>
         <table>
           <tr><th>Spanish</th><th>English</th><th><span class="lang-en">Note</span><span class="lang-zh">注意</span></th></tr>
           <tr><td>🙏 <strong>Por favor</strong></td><td>Please</td><td></td></tr>
@@ -118,8 +188,58 @@
           <tr><td>😊 <strong>Encantado/a</strong></td><td>Pleased to meet you</td><td><span class="lang-en">Encantado (male) / Encantada (female)</span><span class="lang-zh">Encantado（男性用）/ Encantada（女性用）</span></td></tr>
           <tr><td><strong>Igualmente</strong></td><td>Likewise / Same here</td><td><span class="lang-en">Response to mucho gusto</span><span class="lang-zh">回应 mucho gusto 时使用</span></td></tr>
         </table>
-
         <p>⚠️ <strong><span class="lang-en">Pronunciation tip:</span><span class="lang-zh">发音提示：</span></strong> <span class="lang-en">The H in Spanish is always silent. <em>Hola</em> = OH-la, not HOH-la.</span><span class="lang-zh">西班牙语中的 H 永远不发音。<em>Hola</em> = OH-la，不读 HOH-la。</span></p>
+
+        <div class="mini-prac">
+          <h4><span class="lang-en">🟢 Mini-Practice C — Polite expressions</span><span class="lang-zh">🟢 迷你练习 C — 礼貌用语</span></h4>
+          <h4 style="margin-top:12px;"><span class="lang-en">Exercise 1 — What do you say?</span><span class="lang-zh">练习一 — 你会怎么说？</span></h4>
+          <div class="exercise-block">
+            <div style="text-align:right; margin-bottom:8px;"><button onclick="this.closest('.exercise-block').querySelectorAll('input').forEach(function(i){i.value=''})" style="font-size:12px; color:#8B5E3C; background:none; border:1px solid #e2ddd4; border-radius:4px; padding:3px 10px; cursor:pointer;">Clear / 清空</button></div>
+            <ol>
+              <li>Someone holds the door for you. → <input type="text" class="ex-input" placeholder="..." style="width:220px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"></li>
+              <li>You bump into someone accidentally. → <input type="text" class="ex-input" placeholder="..." style="width:220px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"></li>
+              <li>Someone says gracias to you. → <input type="text" class="ex-input" placeholder="..." style="width:220px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"></li>
+              <li>You meet someone for the first time. → <input type="text" class="ex-input" placeholder="..." style="width:220px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"></li>
+              <li>They reply mucho gusto to you (you are female). → <input type="text" class="ex-input" placeholder="..." style="width:220px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"></li>
+              <li>You need to pass someone in a crowd. → <input type="text" class="ex-input" placeholder="..." style="width:220px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"></li>
+            </ol>
+          </div>
+          <details><summary><span class="lang-en">Show answers</span><span class="lang-zh">查看答案</span></summary>
+            <div style="padding:8px 0 4px;"><ol>
+              <li>Gracias</li>
+              <li>Perdón</li>
+              <li>De nada</li>
+              <li>Mucho gusto</li>
+              <li>Encantada</li>
+              <li>Con permiso</li>
+            </ol></div>
+          </details>
+          <h4 style="margin-top:16px;"><span class="lang-en">Exercise 2 — Tú or Usted?</span><span class="lang-zh">练习二 — 用 Tú 还是 Usted？</span></h4>
+          <p class="lang-en-block">For each person, write <em>tú</em> or <em>usted</em>.</p>
+          <p class="lang-zh-block">为以下每个人，写出应使用 tú 还是 usted。</p>
+          <div class="exercise-block">
+            <div style="text-align:right; margin-bottom:8px;"><button onclick="this.closest('.exercise-block').querySelectorAll('input').forEach(function(i){i.value=''})" style="font-size:12px; color:#8B5E3C; background:none; border:1px solid #e2ddd4; border-radius:4px; padding:3px 10px; cursor:pointer;">Clear / 清空</button></div>
+            <ol>
+              <li>Your Spanish teacher <input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"></li>
+              <li>Your classmate Wei <input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"></li>
+              <li>The doctor at the clinic <input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"></li>
+              <li>Your best friend Sara <input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"></li>
+              <li>A shop assistant (formal situation) <input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"></li>
+              <li>Your younger sister <input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"></li>
+            </ol>
+          </div>
+          <details><summary><span class="lang-en">Show answers</span><span class="lang-zh">查看答案</span></summary>
+            <div style="padding:8px 0 4px;"><ol>
+              <li>usted</li>
+              <li>tú</li>
+              <li>usted</li>
+              <li>tú</li>
+              <li>usted</li>
+              <li>tú</li>
+            </ol></div>
+          </details>
+        </div>
+
       </div>
     </details>
 

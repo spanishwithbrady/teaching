@@ -15,6 +15,24 @@
     /* ── live input fields ── */
     .exercise-block { position: relative; }
     input.ex-input { vertical-align: middle; }
+
+    .mini-prac {
+      background: var(--green-tint);
+      border: 1px solid #c8ddb0;
+      border-radius: 10px;
+      padding: 18px 20px 20px;
+      margin: 20px 0 4px;
+    }
+    .mini-prac h4 { margin-top: 0; }
+    .note-box {
+      background: var(--warm-tint);
+      border-left: 3px solid var(--warm-brown);
+      border-radius: 0 8px 8px 0;
+      padding: 10px 14px;
+      margin: 12px 0 0;
+      font-size: 0.9rem;
+      line-height: 1.6;
+    }
   </style>
 </head>
 <body>
@@ -71,7 +89,8 @@
         <svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg>
       </summary>
       <div class="panel-body">
-        <h4><span class="lang-en">Everyday objects</span><span class="lang-zh">日常物品</span></h4>
+
+        <h4><span class="lang-en">Part 1 — Classroom &amp; study objects</span><span class="lang-zh">第一部分 — 课堂与学习用品</span></h4>
         <table>
           <tr><th>Spanish</th><th>English</th><th>中文</th></tr>
           <tr><td>📖 <strong>el libro</strong></td><td>book</td><td>书</td></tr>
@@ -83,6 +102,48 @@
           <tr><td>📱 <strong>el teléfono / móvil</strong></td><td>phone / cellphone</td><td>电话/手机</td></tr>
           <tr><td>💻 <strong>el ordenador</strong></td><td>computer</td><td>电脑</td></tr>
           <tr><td>🎒 <strong>la mochila</strong></td><td>backpack</td><td>背包</td></tr>
+        </table>
+
+        <div class="mini-prac">
+          <h4><span class="lang-en">🟢 Mini-Practice A — Classroom objects</span><span class="lang-zh">🟢 迷你练习 A — 课堂用品</span></h4>
+          <h4 style="margin-top:12px;"><span class="lang-en">Exercise 1 — Hay or Está/Están?</span><span class="lang-zh">练习一 — 用 Hay 还是 Está/Están？</span></h4>
+          <div class="exercise-block">
+            <div style="text-align:right; margin-bottom:8px;"><button onclick="this.closest('.exercise-block').querySelectorAll('input').forEach(function(i){i.value=''})" style="font-size:12px; color:#8B5E3C; background:none; border:1px solid #e2ddd4; border-radius:4px; padding:3px 10px; cursor:pointer;">Clear / 清空</button></div>
+            <ol>
+              <li><input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"> un libro en la mesa.</li>
+              <li><input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"> la mochila debajo de la silla.</li>
+              <li><input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"> dos bolígrafos en mi estuche.</li>
+              <li><input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"> el ordenador encima de la mesa.</li>
+              <li><input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"> unos cuadernos en la mochila.</li>
+              <li><input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"> la silla al lado de la mesa.</li>
+            </ol>
+          </div>
+          <details><summary><span class="lang-en">Show answers</span><span class="lang-zh">查看答案</span></summary>
+            <div style="padding:8px 0 4px;"><ol>
+              <li>Hay</li>
+              <li>Está</li>
+              <li>Hay</li>
+              <li>Está</li>
+              <li>Hay</li>
+              <li>Está</li>
+            </ol></div>
+          </details>
+          <h4 style="margin-top:16px;"><span class="lang-en">Exercise 2 — What's in your bag?</span><span class="lang-zh">练习二 — 你的包里有什么？</span></h4>
+          <p class="lang-en-block">Write 3 things that are in your bag right now using HAY.</p>
+          <p class="lang-zh-block">用 HAY 写出你包里现在有的 3 样东西。</p>
+          <div class="exercise-block">
+            <div style="text-align:right; margin-bottom:8px;"><button onclick="this.closest('.exercise-block').querySelectorAll('input').forEach(function(i){i.value=''})" style="font-size:12px; color:#8B5E3C; background:none; border:1px solid #e2ddd4; border-radius:4px; padding:3px 10px; cursor:pointer;">Clear / 清空</button></div>
+            <ol>
+              <li>En mi mochila hay <input type="text" class="ex-input" placeholder="..." style="width:220px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"></li>
+              <li>En mi mochila hay <input type="text" class="ex-input" placeholder="..." style="width:220px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"></li>
+              <li>En mi mochila hay <input type="text" class="ex-input" placeholder="..." style="width:220px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"></li>
+            </ol>
+          </div>
+        </div>
+
+        <h4><span class="lang-en">Part 2 — Personal &amp; tech objects</span><span class="lang-zh">第二部分 — 个人与科技用品</span></h4>
+        <table>
+          <tr><th>Spanish</th><th>English</th><th>中文</th></tr>
           <tr><td>🔑 <strong>la llave / las llaves</strong></td><td>key / keys</td><td>钥匙</td></tr>
           <tr><td>🥛 <strong>el vaso</strong></td><td>glass</td><td>杯子</td></tr>
           <tr><td>🍶 <strong>la botella</strong></td><td>bottle</td><td>瓶子</td></tr>
@@ -94,6 +155,46 @@
           <tr><td>🔌 <strong>el cargador</strong></td><td>charger</td><td>充电器</td></tr>
           <tr><td>🔗 <strong>el cable</strong></td><td>cable</td><td>数据线</td></tr>
         </table>
+
+        <div class="mini-prac">
+          <h4><span class="lang-en">🟢 Mini-Practice B — Personal &amp; tech objects</span><span class="lang-zh">🟢 迷你练习 B — 个人与科技用品</span></h4>
+          <h4 style="margin-top:12px;"><span class="lang-en">Exercise 1 — Demonstratives.</span><span class="lang-zh">练习一 — 指示代词。</span></h4>
+          <p class="lang-en-block">Choose the correct demonstrative based on distance.</p>
+          <p class="lang-zh-block">根据距离选择正确的指示代词。</p>
+          <div class="exercise-block">
+            <div style="text-align:right; margin-bottom:8px;"><button onclick="this.closest('.exercise-block').querySelectorAll('input').forEach(function(i){i.value=''})" style="font-size:12px; color:#8B5E3C; background:none; border:1px solid #e2ddd4; border-radius:4px; padding:3px 10px; cursor:pointer;">Clear / 清空</button></div>
+            <ol>
+              <li><input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"> reloj <span class="lang-en">(this watch, near me)</span><span class="lang-zh">（这块手表，在我旁边）</span></li>
+              <li><input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"> llaves <span class="lang-en">(these keys, near me)</span><span class="lang-zh">（这些钥匙，在我旁边）</span></li>
+              <li><input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"> botella <span class="lang-en">(that bottle, near you)</span><span class="lang-zh">（那个瓶子，在你旁边）</span></li>
+              <li><input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"> auriculares <span class="lang-en">(those headphones, near you)</span><span class="lang-zh">（那些耳机，在你旁边）</span></li>
+              <li><input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"> cartera <span class="lang-en">(that wallet, far from both)</span><span class="lang-zh">（那个钱包，距离我们都远）</span></li>
+              <li><input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"> cables <span class="lang-en">(those cables, far from both)</span><span class="lang-zh">（那些数据线，距离我们都远）</span></li>
+            </ol>
+          </div>
+          <details><summary><span class="lang-en">Show answers</span><span class="lang-zh">查看答案</span></summary>
+            <div style="padding:8px 0 4px;"><ol>
+              <li>Este</li>
+              <li>Estas</li>
+              <li>Esa</li>
+              <li>Esos</li>
+              <li>Aquella</li>
+              <li>Aquellos</li>
+            </ol></div>
+          </details>
+          <h4 style="margin-top:16px;"><span class="lang-en">Exercise 2 — Quick description.</span><span class="lang-zh">练习二 — 快速描述。</span></h4>
+          <p class="lang-en-block">Pick 3 objects you can see right now. For each one write: [demonstrative] + [object] + está/están + [preposition] + [location].</p>
+          <p class="lang-zh-block">选 3 个你现在能看到的物品。每个写：[指示代词] + [物品] + está/están + [介词] + [位置]。</p>
+          <div class="exercise-block">
+            <div style="text-align:right; margin-bottom:8px;"><button onclick="this.closest('.exercise-block').querySelectorAll('input').forEach(function(i){i.value=''})" style="font-size:12px; color:#8B5E3C; background:none; border:1px solid #e2ddd4; border-radius:4px; padding:3px 10px; cursor:pointer;">Clear / 清空</button></div>
+            <ol>
+              <li><input type="text" class="ex-input" placeholder="..." style="width:280px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"></li>
+              <li><input type="text" class="ex-input" placeholder="..." style="width:280px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"></li>
+              <li><input type="text" class="ex-input" placeholder="..." style="width:280px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"></li>
+            </ol>
+          </div>
+        </div>
+
       </div>
     </details>
 
