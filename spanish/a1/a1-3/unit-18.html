@@ -15,6 +15,33 @@
     /* ── live input fields ── */
     .exercise-block { position: relative; }
     input.ex-input { vertical-align: middle; }
+
+    .mini-prac {
+      background: var(--green-tint);
+      border: 1px solid #c8ddb0;
+      border-radius: 10px;
+      padding: 18px 20px 20px;
+      margin: 20px 0 4px;
+    }
+    .mini-prac h4 { margin-top: 0; }
+    .note-box {
+      background: var(--warm-tint);
+      border-left: 3px solid var(--warm-brown);
+      border-radius: 0 8px 8px 0;
+      padding: 10px 14px;
+      margin: 12px 0 0;
+      font-size: 0.9rem;
+      line-height: 1.6;
+    }
+    .warn-box {
+      background: #fff8f0;
+      border-left: 3px solid #c0392b;
+      border-radius: 0 8px 8px 0;
+      padding: 10px 14px;
+      margin: 12px 0 0;
+      font-size: 0.9rem;
+      line-height: 1.6;
+    }
   </style>
 </head>
 <body>
@@ -71,14 +98,129 @@
         <svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg>
       </summary>
       <div class="panel-body">
-        <h4><span class="lang-en">Future time markers</span><span class="lang-zh">未来时间标志词</span></h4>
+
+        <h4><span class="lang-en">Part 1 — Future time markers</span><span class="lang-zh">第一部分 — 未来时间标志词</span></h4>
         <table>
           <tr><th>Spanish</th><th>English</th><th>中文</th></tr>
           <tr><td>📅 <strong>mañana</strong></td><td>tomorrow</td><td>明天</td></tr>
+          <tr><td>📅 <strong>pasado mañana</strong></td><td>the day after tomorrow</td><td>后天</td></tr>
+          <tr><td>🌅 <strong>esta tarde</strong></td><td>this afternoon</td><td>今天下午</td></tr>
+          <tr><td>🌙 <strong>esta noche</strong></td><td>tonight</td><td>今晚</td></tr>
+          <tr><td>📆 <strong>esta semana</strong></td><td>this week</td><td>这周</td></tr>
+          <tr><td>📆 <strong>el fin de semana que viene</strong></td><td>next weekend</td><td>下个周末</td></tr>
           <tr><td>📆 <strong>la semana que viene</strong></td><td>next week</td><td>下周</td></tr>
-          <tr><td>🗓️ <strong>el año que viene</strong></td><td>next year</td><td>明年</td></tr>
-          <tr><td>⏳ <strong>dentro de + tiempo</strong></td><td>in (time)</td><td>……之后</td></tr>
+          <tr><td>📆 <strong>el mes que viene</strong></td><td>next month</td><td>下个月</td></tr>
+          <tr><td>📆 <strong>el año que viene</strong></td><td>next year</td><td>明年</td></tr>
+          <tr><td>⏱️ <strong>dentro de</strong> + time</td><td>in (X amount of time)</td><td>在……之内</td></tr>
+          <tr><td>🔜 <strong>pronto</strong></td><td>soon</td><td>很快</td></tr>
+          <tr><td>🌟 <strong>algún día</strong></td><td>someday</td><td>有朝一日</td></tr>
         </table>
+
+        <div class="mini-prac">
+          <h4><span class="lang-en">🟢 Mini-Practice A — Future time markers</span><span class="lang-zh">🟢 迷你练习 A — 未来时间标志词</span></h4>
+          <h4 style="margin-top:12px;"><span class="lang-en">Exercise 1 — Put these time expressions in order from soonest to furthest.</span><span class="lang-zh">练习一 — 将这些时间表达从最近到最远排列。</span></h4>
+          <p class="lang-en-block">Arrange: <em>el año que viene / mañana / dentro de una hora / la semana que viene / pasado mañana / esta tarde</em></p>
+          <p class="lang-zh-block">排列：<em>el año que viene / mañana / dentro de una hora / la semana que viene / pasado mañana / esta tarde</em></p>
+          <div class="exercise-block">
+            <div style="text-align:right; margin-bottom:8px;"><button onclick="this.closest('.exercise-block').querySelectorAll('input').forEach(function(i){i.value=''})" style="font-size:12px; color:#8B5E3C; background:none; border:1px solid #e2ddd4; border-radius:4px; padding:3px 10px; cursor:pointer;">Clear / 清空</button></div>
+            <ol>
+              <li>1st: <input type="text" class="ex-input" placeholder="..." style="width:220px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"></li>
+              <li>2nd: <input type="text" class="ex-input" placeholder="..." style="width:220px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"></li>
+              <li>3rd: <input type="text" class="ex-input" placeholder="..." style="width:220px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"></li>
+              <li>4th: <input type="text" class="ex-input" placeholder="..." style="width:220px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"></li>
+              <li>5th: <input type="text" class="ex-input" placeholder="..." style="width:220px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"></li>
+              <li>6th: <input type="text" class="ex-input" placeholder="..." style="width:220px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"></li>
+            </ol>
+          </div>
+          <details><<summary style="cursor:pointer; color:#5a7a32; font-weight:500; font-size:13px;"><span class="lang-en">Show answers</span><span class="lang-zh">查看答案</span></summary>
+            <div style="padding:8px 0 4px;">
+              <ol>
+                <li>dentro de una hora</li>
+                <li>esta tarde</li>
+                <li>mañana</li>
+                <li>pasado mañana</li>
+                <li>la semana que viene</li>
+                <li>el año que viene</li>
+              </ol>
+            </div>
+          </details>
+
+          <h4 style="margin-top:16px;"><span class="lang-en">Exercise 2 — Complete with a time marker about yourself.</span><span class="lang-zh">练习二 — 用时间标志词描述你自己的计划。</span></h4>
+          <div class="exercise-block">
+            <div style="text-align:right; margin-bottom:8px;"><button onclick="this.closest('.exercise-block').querySelectorAll('input').forEach(function(i){i.value=''})" style="font-size:12px; color:#8B5E3C; background:none; border:1px solid #e2ddd4; border-radius:4px; padding:3px 10px; cursor:pointer;">Clear / 清空</button></div>
+            <ol>
+              <li>Voy a estudiar <input type="text" class="ex-input" placeholder="..." style="width:220px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"></li>
+              <li>Voy a ver a mi familia <input type="text" class="ex-input" placeholder="..." style="width:220px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"></li>
+              <li>Voy a ir de vacaciones <input type="text" class="ex-input" placeholder="..." style="width:220px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"></li>
+              <li>Voy a aprender a <input type="text" class="ex-input" placeholder="..." style="width:220px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"> algún día.</li>
+              <li>Esta noche voy a <input type="text" class="ex-input" placeholder="..." style="width:220px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"></li>
+            </ol>
+          </div>
+        </div>
+
+        <h4><span class="lang-en">Part 2 — IR + A + infinitive &amp; expressing intentions</span><span class="lang-zh">第二部分 — IR + A + 不定式与表达意图</span></h4>
+        <table>
+          <tr><th><span class="lang-en">Subject</span><span class="lang-zh">主语</span></th><th>IR + A + infinitive</th><th><span class="lang-en">Example</span><span class="lang-zh">例子</span></th></tr>
+          <tr><td>yo</td><td><strong>voy a</strong></td><td>Voy a estudiar esta tarde.</td></tr>
+          <tr><td>tú</td><td><strong>vas a</strong></td><td>Vas a llamar a tu madre.</td></tr>
+          <tr><td>él / ella / usted</td><td><strong>va a</strong></td><td>Va a viajar el verano que viene.</td></tr>
+          <tr><td>nosotros/as</td><td><strong>vamos a</strong></td><td>Vamos a cenar juntos.</td></tr>
+          <tr><td>vosotros/as</td><td><strong>vais a</strong></td><td>Vais a llegar tarde.</td></tr>
+          <tr><td>ellos/as / ustedes</td><td><strong>van a</strong></td><td>Van a abrir un restaurante.</td></tr>
+        </table>
+
+        <div class="note-box">
+          <p><strong><span class="lang-en">💡 IR + A + place vs IR + A + infinitive:</span><span class="lang-zh">💡 IR + A + 地点 vs IR + A + 不定式：</span></strong>
+          <span class="lang-en"><em>Voy a Madrid</em> = I'm going to Madrid (movement). <em>Voy a estudiar</em> = I'm going to study (future action). Context clarifies — a noun follows the first, a verb follows the second.</span>
+          <span class="lang-zh"><em>Voy a Madrid</em> = 我去马德里（移动）。<em>Voy a estudiar</em> = 我要学习（未来行为）。语境总是能区分——第一个后面跟名词，第二个后面跟动词。</span></p>
+        </div>
+
+        <div class="note-box">
+          <p><strong><span class="lang-en">💡 Three ways to talk about the future:</span><span class="lang-zh">💡 谈论未来的三种方式：</span></strong>
+          <span class="lang-en"><em>Voy a estudiar</em> (plan/intention — most common at A1). <em>Pienso estudiar</em> (thinking about it — less certain). <em>Quiero estudiar</em> (desire — not necessarily a plan).</span>
+          <span class="lang-zh"><em>Voy a estudiar</em>（计划/意图——A1 阶段最常用）。<em>Pienso estudiar</em>（在考虑中——不太确定）。<em>Quiero estudiar</em>（愿望——不一定是计划）。</span></p>
+        </div>
+
+        <div class="mini-prac">
+          <h4><span class="lang-en">🟢 Mini-Practice B — IR + A plans</span><span class="lang-zh">🟢 迷你练习 B — IR + A 计划</span></h4>
+          <h4 style="margin-top:12px;"><span class="lang-en">Exercise 1 — Conjugate IR + A.</span><span class="lang-zh">练习一 — 变位 IR + A。</span></h4>
+          <div class="exercise-block">
+            <div style="text-align:right; margin-bottom:8px;"><button onclick="this.closest('.exercise-block').querySelectorAll('input').forEach(function(i){i.value=''})" style="font-size:12px; color:#8B5E3C; background:none; border:1px solid #e2ddd4; border-radius:4px; padding:3px 10px; cursor:pointer;">Clear / 清空</button></div>
+            <ol>
+              <li>Yo <input type="text" class="ex-input" placeholder="..." style="width:220px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"> estudiar esta noche.</li>
+              <li>Ella <input type="text" class="ex-input" placeholder="..." style="width:220px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"> llamar a su madre mañana.</li>
+              <li>Nosotros <input type="text" class="ex-input" placeholder="..." style="width:220px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"> viajar el verano que viene.</li>
+              <li>¿Tú <input type="text" class="ex-input" placeholder="..." style="width:220px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"> venir a la fiesta?</li>
+              <li>Ellos <input type="text" class="ex-input" placeholder="..." style="width:220px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"> abrir un restaurante el año que viene.</li>
+              <li>Vosotros <input type="text" class="ex-input" placeholder="..." style="width:220px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"> llegar tarde si no salís ahora.</li>
+            </ol>
+          </div>
+          <details><<summary style="cursor:pointer; color:#5a7a32; font-weight:500; font-size:13px;"><span class="lang-en">Show answers</span><span class="lang-zh">查看答案</span></summary>
+            <div style="padding:8px 0 4px;"><ol>
+              <li>voy a</li>
+              <li>va a</li>
+              <li>vamos a</li>
+              <li>vas a</li>
+              <li>van a</li>
+              <li>vais a</li>
+            </ol></div>
+          </details>
+
+          <h4 style="margin-top:16px;"><span class="lang-en">Exercise 2 — Your real plans for next week.</span><span class="lang-zh">练习二 — 你下周的真实计划。</span></h4>
+          <p class="lang-en-block">Write 5 real plans using IR + A + infinitive.</p>
+          <p class="lang-zh-block">用 IR + A + 不定式写出5个真实计划。</p>
+          <div class="exercise-block">
+            <div style="text-align:right; margin-bottom:8px;"><button onclick="this.closest('.exercise-block').querySelectorAll('input').forEach(function(i){i.value=''})" style="font-size:12px; color:#8B5E3C; background:none; border:1px solid #e2ddd4; border-radius:4px; padding:3px 10px; cursor:pointer;">Clear / 清空</button></div>
+            <ol>
+              <li>Esta semana voy a <input type="text" class="ex-input" placeholder="..." style="width:280px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"></li>
+              <li>El fin de semana voy a <input type="text" class="ex-input" placeholder="..." style="width:280px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"></li>
+              <li>Mañana voy a <input type="text" class="ex-input" placeholder="..." style="width:280px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"></li>
+              <li>Pronto voy a <input type="text" class="ex-input" placeholder="..." style="width:280px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"></li>
+              <li>Algún día voy a <input type="text" class="ex-input" placeholder="..." style="width:280px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"></li>
+            </ol>
+          </div>
+        </div>
+
       </div>
     </details>
 

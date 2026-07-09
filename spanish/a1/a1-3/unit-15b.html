@@ -15,6 +15,33 @@
     /* ── live input fields ── */
     .exercise-block { position: relative; }
     input.ex-input { vertical-align: middle; }
+
+    .mini-prac {
+      background: var(--green-tint);
+      border: 1px solid #c8ddb0;
+      border-radius: 10px;
+      padding: 18px 20px 20px;
+      margin: 20px 0 4px;
+    }
+    .mini-prac h4 { margin-top: 0; }
+    .note-box {
+      background: var(--warm-tint);
+      border-left: 3px solid var(--warm-brown);
+      border-radius: 0 8px 8px 0;
+      padding: 10px 14px;
+      margin: 12px 0 0;
+      font-size: 0.9rem;
+      line-height: 1.6;
+    }
+    .warn-box {
+      background: #fff8f0;
+      border-left: 3px solid #c0392b;
+      border-radius: 0 8px 8px 0;
+      padding: 10px 14px;
+      margin: 12px 0 0;
+      font-size: 0.9rem;
+      line-height: 1.6;
+    }
   </style>
 </head>
 <body>
@@ -67,17 +94,147 @@
     <details class="panel">
       <summary>
         <span class="panel-num">2</span>
-        <span class="panel-title"><span class="lang-en">Vocabulary</span><span class="lang-zh">词汇</span></span>
+        <span class="panel-title"><span class="lang-en">Grammar</span><span class="lang-zh">语法</span></span>
         <svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg>
       </summary>
       <div class="panel-body">
-        <h4><span class="lang-en">Obligation expressions</span><span class="lang-zh">表达义务的短语</span></h4>
+
+        <h4><span class="lang-en">Part 1 — TENER QUE + infinitive (personal obligation)</span><span class="lang-zh">第一部分 — TENER QUE + 不定式（个人义务）</span></h4>
         <table>
-          <tr><th>Spanish</th><th>English</th><th>中文</th></tr>
-          <tr><td><strong>tener que + infinitivo</strong></td><td>to have to (personal)</td><td>必须（个人）</td></tr>
-          <tr><td><strong>hay que + infinitivo</strong></td><td>one has to / it's necessary to (impersonal)</td><td>应该/必须（非人称，泛指）</td></tr>
-          <tr><td><strong>necesitar + infinitivo</strong></td><td>to need to</td><td>需要</td></tr>
+          <tr><th><span class="lang-en">Subject</span><span class="lang-zh">主语</span></th><th>TENER QUE + infinitive</th><th><span class="lang-en">Example</span><span class="lang-zh">例子</span></th></tr>
+          <tr><td>yo</td><td><strong>tengo que</strong></td><td>Tengo que estudiar.</td></tr>
+          <tr><td>tú</td><td><strong>tienes que</strong></td><td>Tienes que llamar.</td></tr>
+          <tr><td>él / ella / usted</td><td><strong>tiene que</strong></td><td>Tiene que trabajar.</td></tr>
+          <tr><td>nosotros/as</td><td><strong>tenemos que</strong></td><td>Tenemos que salir.</td></tr>
+          <tr><td>vosotros/as</td><td><strong>tenéis que</strong></td><td>Tenéis que esperar.</td></tr>
+          <tr><td>ellos/as / ustedes</td><td><strong>tienen que</strong></td><td>Tienen que venir.</td></tr>
         </table>
+
+        <div class="note-box">
+          <p><strong><span class="lang-en">💡 TENER QUE + infinitive = personal obligation.</span><span class="lang-zh">💡 TENER QUE + 不定式 = 个人义务。</span></strong>
+          <span class="lang-en">The subject is always clear. <em>Tengo que estudiar</em> = I have to study. <em>Ella tiene que trabajar</em> = She has to work. Use this when YOU specifically must do something.</span>
+          <span class="lang-zh">主语始终明确。<em>Tengo que estudiar</em> = 我必须学习。<em>Ella tiene que trabajar</em> = 她必须工作。当某个特定的人必须做某事时使用这个结构。</span></p>
+        </div>
+
+        <div class="warn-box">
+          <p><strong><span class="lang-en">⚠️ No tienes que ≠ No debes.</span><span class="lang-zh">⚠️ No tienes que ≠ No debes。</span></strong>
+          <span class="lang-en"><em>No tienes que venir</em> = You don't have to come (it's not obligatory — your choice). NOT "You mustn't come." To say "You mustn't," use <em>no debes</em> or <em>no puedes</em>. This is one of the most common translation errors.</span>
+          <span class="lang-zh"><em>No tienes que venir</em> = 你不必来（不是义务——你可以选择）。不是"你不准来"。要说"你不准来"，要用 <em>no debes</em> 或 <em>no puedes</em>。这是最常见的翻译错误之一。</span></p>
+        </div>
+
+        <div class="mini-prac">
+          <h4><span class="lang-en">🟢 Mini-Practice A — TENER QUE</span><span class="lang-zh">🟢 迷你练习 A — TENER QUE</span></h4>
+          <h4 style="margin-top:12px;"><span class="lang-en">Exercise 1 — Complete with the right form of TENER QUE.</span><span class="lang-zh">练习一 — 用 TENER QUE 的正确形式完成句子。</span></h4>
+          <div class="exercise-block">
+            <div style="text-align:right; margin-bottom:8px;"><button onclick="this.closest('.exercise-block').querySelectorAll('input').forEach(function(i){i.value=''})" style="font-size:12px; color:#8B5E3C; background:none; border:1px solid #e2ddd4; border-radius:4px; padding:3px 10px; cursor:pointer;">Clear / 清空</button></div>
+            <ol>
+              <li>Yo <input type="text" class="ex-input" placeholder="..." style="width:220px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"> estudiar más.</li>
+              <li>Ella <input type="text" class="ex-input" placeholder="..." style="width:220px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"> ir al médico.</li>
+              <li>Nosotros <input type="text" class="ex-input" placeholder="..." style="width:220px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"> llegar a tiempo.</li>
+              <li>¿Tú <input type="text" class="ex-input" placeholder="..." style="width:220px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"> trabajar el sábado?</li>
+              <li>Ellos <input type="text" class="ex-input" placeholder="..." style="width:220px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"> terminar el proyecto.</li>
+              <li>Usted <input type="text" class="ex-input" placeholder="..." style="width:220px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"> descansar más.</li>
+            </ol>
+          </div>
+          <details><<summary style="cursor:pointer; color:#5a7a32; font-weight:500; font-size:13px;"><span class="lang-en">Show answers</span><span class="lang-zh">查看答案</span></summary>
+            <div style="padding:8px 0 4px;"><ol>
+              <li>tengo que</li>
+              <li>tiene que</li>
+              <li>tenemos que</li>
+              <li>tienes que</li>
+              <li>tienen que</li>
+              <li>tiene que</li>
+            </ol></div>
+          </details>
+
+          <h4 style="margin-top:16px;"><span class="lang-en">Exercise 2 — Obligation or no obligation? Translate carefully.</span><span class="lang-zh">练习二 — 义务还是非义务？仔细翻译。</span></h4>
+          <p class="lang-en-block">Watch the difference between <em>tener que</em> and <em>no tener que</em>.</p>
+          <p class="lang-zh-block">注意 <em>tener que</em> 和 <em>no tener que</em> 的区别。</p>
+          <div class="exercise-block">
+            <div style="text-align:right; margin-bottom:8px;"><button onclick="this.closest('.exercise-block').querySelectorAll('input').forEach(function(i){i.value=''})" style="font-size:12px; color:#8B5E3C; background:none; border:1px solid #e2ddd4; border-radius:4px; padding:3px 10px; cursor:pointer;">Clear / 清空</button></div>
+            <ol>
+              <li><span class="lang-en">You have to call me.</span><span class="lang-zh">你必须给我打电话。</span> → <input type="text" class="ex-input" placeholder="..." style="width:280px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"></li>
+              <li><span class="lang-en">You don't have to call me (it's not necessary).</span><span class="lang-zh">你不必给我打电话（不是必须的）。</span> → <input type="text" class="ex-input" placeholder="..." style="width:280px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"></li>
+              <li><span class="lang-en">She has to finish today.</span><span class="lang-zh">她今天必须完成。</span> → <input type="text" class="ex-input" placeholder="..." style="width:280px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"></li>
+              <li><span class="lang-en">They don't have to come early.</span><span class="lang-zh">他们不必早来。</span> → <input type="text" class="ex-input" placeholder="..." style="width:280px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"></li>
+            </ol>
+          </div>
+          <details><<summary style="cursor:pointer; color:#5a7a32; font-weight:500; font-size:13px;"><span class="lang-en">Show answers</span><span class="lang-zh">查看答案</span></summary>
+            <div style="padding:8px 0 4px;"><ol>
+              <li>Tienes que llamarme.</li>
+              <li>No tienes que llamarme.</li>
+              <li>Ella tiene que terminar hoy.</li>
+              <li>No tienen que venir pronto.</li>
+            </ol></div>
+          </details>
+        </div>
+
+        <h4><span class="lang-en">Part 2 — HAY QUE + infinitive (impersonal obligation) &amp; NECESITAR</span><span class="lang-zh">第二部分 — HAY QUE + 不定式（非人称义务）与 NECESITAR</span></h4>
+        <table>
+          <tr><th>Structure</th><th>English</th><th>中文</th></tr>
+          <tr><td><strong>Hay que</strong> + infinitive</td><td>One must / You have to (general)</td><td>必须（一般性）</td></tr>
+          <tr><td><strong>Necesitar</strong> + infinitive</td><td>to need to</td><td>需要</td></tr>
+          <tr><td><em>No hay que</em> + infinitive</td><td>It's not necessary to</td><td>不必</td></tr>
+        </table>
+
+        <div class="note-box">
+          <p><strong><span class="lang-en">💡 HAY QUE + infinitive = general/impersonal obligation.</span><span class="lang-zh">💡 HAY QUE + 不定式 = 一般性/非人称义务。</span></strong>
+          <span class="lang-en">No subject — it applies to everyone. <em>Hay que estudiar</em> = One must study / You have to study (in general). HAY QUE <strong>never changes form</strong> — it is always <em>hay que</em>, regardless of who you are talking about.</span>
+          <span class="lang-zh">没有主语——适用于所有人。<em>Hay que estudiar</em> = 必须学习（一般性的）。HAY QUE <strong>形式永远不变</strong>——无论谈论谁，始终是 <em>hay que</em>。</span></p>
+        </div>
+
+        <div class="mini-prac">
+          <h4><span class="lang-en">🟢 Mini-Practice B — HAY QUE vs TENER QUE</span><span class="lang-zh">🟢 迷你练习 B — HAY QUE vs TENER QUE</span></h4>
+          <h4 style="margin-top:12px;"><span class="lang-en">Exercise 1 — Personal or general obligation?</span><span class="lang-zh">练习一 — 个人义务还是一般性义务？</span></h4>
+          <p class="lang-en-block">Use TENER QUE (personal) or HAY QUE (general rule).</p>
+          <p class="lang-zh-block">用 TENER QUE（个人义务）或 HAY QUE（一般规则）。</p>
+          <div class="exercise-block">
+            <div style="text-align:right; margin-bottom:8px;"><button onclick="this.closest('.exercise-block').querySelectorAll('input').forEach(function(i){i.value=''})" style="font-size:12px; color:#8B5E3C; background:none; border:1px solid #e2ddd4; border-radius:4px; padding:3px 10px; cursor:pointer;">Clear / 清空</button></div>
+            <ol>
+              <li><input type="text" class="ex-input" placeholder="..." style="width:220px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"> respetar las normas. <span class="lang-en">(general rule)</span><span class="lang-zh">（一般规则）</span></li>
+              <li>Yo <input type="text" class="ex-input" placeholder="..." style="width:220px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"> llamar a mi madre hoy. <span class="lang-en">(personal)</span><span class="lang-zh">（个人义务）</span></li>
+              <li>En España <input type="text" class="ex-input" placeholder="..." style="width:220px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"> llevar el pasaporte. <span class="lang-en">(general rule for everyone)</span><span class="lang-zh">（对所有人的一般规则）</span></li>
+              <li>Wei <input type="text" class="ex-input" placeholder="..." style="width:220px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"> estudiar más el subjuntivo. <span class="lang-en">(personal)</span><span class="lang-zh">（个人义务）</span></li>
+              <li><input type="text" class="ex-input" placeholder="..." style="width:220px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"> comer bien para estar sano. <span class="lang-en">(general health advice)</span><span class="lang-zh">（一般健康建议）</span></li>
+              <li>Nosotros <input type="text" class="ex-input" placeholder="..." style="width:220px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"> entregar el proyecto el viernes. <span class="lang-en">(personal deadline)</span><span class="lang-zh">（个人截止日期）</span></li>
+            </ol>
+          </div>
+          <details><<summary style="cursor:pointer; color:#5a7a32; font-weight:500; font-size:13px;"><span class="lang-en">Show answers</span><span class="lang-zh">查看答案</span></summary>
+            <div style="padding:8px 0 4px;"><ol>
+              <li>Hay que</li>
+              <li>tengo que</li>
+              <li>hay que</li>
+              <li>tiene que</li>
+              <li>Hay que</li>
+              <li>tenemos que</li>
+            </ol></div>
+          </details>
+
+          <h4 style="margin-top:16px;"><span class="lang-en">Exercise 2 — Give impersonal advice using HAY QUE.</span><span class="lang-zh">练习二 — 用 HAY QUE 给出非人称建议。</span></h4>
+          <p class="lang-en-block">A friend has these problems. What is your advice?</p>
+          <p class="lang-zh-block">一个朋友有这些问题。你的建议是什么？</p>
+          <div class="exercise-block">
+            <div style="text-align:right; margin-bottom:8px;"><button onclick="this.closest('.exercise-block').querySelectorAll('input').forEach(function(i){i.value=''})" style="font-size:12px; color:#8B5E3C; background:none; border:1px solid #e2ddd4; border-radius:4px; padding:3px 10px; cursor:pointer;">Clear / 清空</button></div>
+            <ol>
+              <li>"Estoy muy cansado." → Hay que <input type="text" class="ex-input" placeholder="..." style="width:220px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"></li>
+              <li>"No hablo bien español." → Hay que <input type="text" class="ex-input" placeholder="..." style="width:220px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"></li>
+              <li>"Siempre llego tarde." → Hay que <input type="text" class="ex-input" placeholder="..." style="width:220px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"></li>
+              <li>"Tengo mucho estrés." → Hay que <input type="text" class="ex-input" placeholder="..." style="width:220px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"></li>
+            </ol>
+          </div>
+          <details><<summary style="cursor:pointer; color:#5a7a32; font-weight:500; font-size:13px;"><span class="lang-en">Show answers</span><span class="lang-zh">查看答案</span></summary>
+            <div style="padding:8px 0 4px;">
+              <p><span class="lang-en">Suggested answers:</span><span class="lang-zh">参考答案：</span></p>
+              <ol>
+                <li>descansar más</li>
+                <li>practicar más</li>
+                <li>levantarse antes</li>
+                <li>relajarse / hacer ejercicio</li>
+              </ol>
+            </div>
+          </details>
+        </div>
+
       </div>
     </details>
 

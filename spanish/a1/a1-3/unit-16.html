@@ -15,6 +15,33 @@
     /* ── live input fields ── */
     .exercise-block { position: relative; }
     input.ex-input { vertical-align: middle; }
+
+    .mini-prac {
+      background: var(--green-tint);
+      border: 1px solid #c8ddb0;
+      border-radius: 10px;
+      padding: 18px 20px 20px;
+      margin: 20px 0 4px;
+    }
+    .mini-prac h4 { margin-top: 0; }
+    .note-box {
+      background: var(--warm-tint);
+      border-left: 3px solid var(--warm-brown);
+      border-radius: 0 8px 8px 0;
+      padding: 10px 14px;
+      margin: 12px 0 0;
+      font-size: 0.9rem;
+      line-height: 1.6;
+    }
+    .warn-box {
+      background: #fff8f0;
+      border-left: 3px solid #c0392b;
+      border-radius: 0 8px 8px 0;
+      padding: 10px 14px;
+      margin: 12px 0 0;
+      font-size: 0.9rem;
+      line-height: 1.6;
+    }
   </style>
 </head>
 <body>
@@ -71,35 +98,161 @@
         <svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg>
       </summary>
       <div class="panel-body">
-        <h4><span class="lang-en">Transport</span><span class="lang-zh">交通工具</span></h4>
+
+        <h4><span class="lang-en">Part 1 — Transport &amp; city reference points</span><span class="lang-zh">第一部分 — 交通与城市参考点</span></h4>
         <table>
           <tr><th>Spanish</th><th>English</th><th>中文</th></tr>
           <tr><td>🚗 <strong>el coche</strong></td><td>car</td><td>汽车</td></tr>
-          <tr><td>🚌 <strong>el autobús</strong></td><td>bus</td><td>公交车</td></tr>
-          <tr><td>🚇 <strong>el metro</strong></td><td>subway</td><td>地铁</td></tr>
-          <tr><td>🚂 <strong>el tren</strong></td><td>train</td><td>火车</td></tr>
+          <tr><td>🚌 <strong>el autobús</strong></td><td>bus</td><td>公共汽车</td></tr>
+          <tr><td>🚇 <strong>el metro</strong></td><td>underground / subway</td><td>地铁</td></tr>
+          <tr><td>🚆 <strong>el tren</strong></td><td>train</td><td>火车</td></tr>
           <tr><td>🚕 <strong>el taxi</strong></td><td>taxi</td><td>出租车</td></tr>
-        </table>
-
-        <h4><span class="lang-en">Direction vocabulary</span><span class="lang-zh">方向词汇</span></h4>
-        <table>
-          <tr><th>Spanish</th><th>English</th><th>中文</th></tr>
-          <tr><td>⬆️ <strong>todo recto</strong></td><td>straight ahead</td><td>一直走</td></tr>
-          <tr><td>↪️ <strong>girar a la derecha</strong></td><td>turn right</td><td>右转</td></tr>
-          <tr><td>↩️ <strong>girar a la izquierda</strong></td><td>turn left</td><td>左转</td></tr>
-          <tr><td>🔀 <strong>cruzar la calle</strong></td><td>cross the street</td><td>过马路</td></tr>
-          <tr><td><strong>seguir</strong></td><td>to continue</td><td>继续走</td></tr>
-        </table>
-
-        <h4><span class="lang-en">Reference points</span><span class="lang-zh">参照点</span></h4>
-        <table>
-          <tr><th>Spanish</th><th>English</th><th>中文</th></tr>
-          <tr><td>🚦 <strong>el semáforo</strong></td><td>traffic light</td><td>红绿灯</td></tr>
-          <tr><td>✖️ <strong>el cruce</strong></td><td>intersection</td><td>路口</td></tr>
-          <tr><td>🔄 <strong>la rotonda</strong></td><td>roundabout</td><td>环岛</td></tr>
+          <tr><td>🚲 <strong>la bicicleta</strong></td><td>bicycle</td><td>自行车</td></tr>
+          <tr><td>🚶 <strong>a pie</strong></td><td>on foot</td><td>步行</td></tr>
+          <tr><td>🚦 <strong>el semáforo</strong></td><td>traffic lights</td><td>红绿灯</td></tr>
+          <tr><td>✚ <strong>el cruce</strong></td><td>crossroads / junction</td><td>十字路口</td></tr>
+          <tr><td>⭕ <strong>la rotonda</strong></td><td>roundabout</td><td>环形交叉路口</td></tr>
           <tr><td>📐 <strong>la esquina</strong></td><td>corner</td><td>街角</td></tr>
-          <tr><td>🏛️ <strong>la plaza</strong></td><td>square</td><td>广场</td></tr>
+          <tr><td>🏛️ <strong>la plaza</strong></td><td>square / plaza</td><td>广场</td></tr>
+          <tr><td>📍 <strong>la calle</strong></td><td>street</td><td>街道</td></tr>
+          <tr><td>🛣️ <strong>la avenida</strong></td><td>avenue</td><td>大道</td></tr>
         </table>
+
+        <div class="note-box">
+          <p><strong><span class="lang-en">💡 Transport prepositions:</span><span class="lang-zh">💡 交通介词：</span></strong>
+          <span class="lang-en">Use <strong>EN</strong> for vehicles: <em>en coche, en autobús, en metro, en taxi</em>. Exception: <strong>a pie</strong> (on foot) — no vehicle, so no <em>en</em>. Also: <em>en bicicleta</em> is the norm, though some say <em>en bici</em>.</span>
+          <span class="lang-zh">交通工具用 <strong>EN</strong>：<em>en coche, en autobús, en metro, en taxi</em>。例外：<strong>a pie</strong>（步行）——不是交通工具，所以不用 <em>en</em>。另外：<em>en bicicleta</em> 是标准说法，也可以说 <em>en bici</em>。</span></p>
+        </div>
+
+        <div class="mini-prac">
+          <h4><span class="lang-en">🟢 Mini-Practice A — Transport &amp; city</span><span class="lang-zh">🟢 迷你练习 A — 交通与城市</span></h4>
+          <h4 style="margin-top:12px;"><span class="lang-en">Exercise 1 — En or A?</span><span class="lang-zh">练习一 — En 还是 A？</span></h4>
+          <div class="exercise-block">
+            <div style="text-align:right; margin-bottom:8px;"><button onclick="this.closest('.exercise-block').querySelectorAll('input').forEach(function(i){i.value=''})" style="font-size:12px; color:#8B5E3C; background:none; border:1px solid #e2ddd4; border-radius:4px; padding:3px 10px; cursor:pointer;">Clear / 清空</button></div>
+            <ol>
+              <li>Voy al trabajo <input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"> metro.</li>
+              <li>Vengo <input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"> pie — vivo muy cerca.</li>
+              <li>Ella va al aeropuerto <input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"> taxi.</li>
+              <li>Nosotros viajamos <input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"> tren.</li>
+              <li>¿Vas <input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"> bicicleta o <input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"> autobús?</li>
+              <li>Prefiero ir <input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"> coche cuando llueve.</li>
+            </ol>
+          </div>
+          <details><<summary style="cursor:pointer; color:#5a7a32; font-weight:500; font-size:13px;"><span class="lang-en">Show answers</span><span class="lang-zh">查看答案</span></summary>
+            <div style="padding:8px 0 4px;"><ol>
+              <li>en</li>
+              <li>a</li>
+              <li>en</li>
+              <li>en</li>
+              <li>en / en</li>
+              <li>en</li>
+            </ol></div>
+          </details>
+
+          <h4 style="margin-top:16px;"><span class="lang-en">Exercise 2 — Which city reference point?</span><span class="lang-zh">练习二 — 这是哪个城市参考点？</span></h4>
+          <div class="exercise-block">
+            <div style="text-align:right; margin-bottom:8px;"><button onclick="this.closest('.exercise-block').querySelectorAll('input').forEach(function(i){i.value=''})" style="font-size:12px; color:#8B5E3C; background:none; border:1px solid #e2ddd4; border-radius:4px; padding:3px 10px; cursor:pointer;">Clear / 清空</button></div>
+            <ol>
+              <li><span class="lang-en">Where two or more streets meet</span><span class="lang-zh">两条或多条街道交汇处</span> → <input type="text" class="ex-input" placeholder="..." style="width:220px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"></li>
+              <li><span class="lang-en">A circular junction — you go around it</span><span class="lang-zh">圆形交叉路口——绕着走</span> → <input type="text" class="ex-input" placeholder="..." style="width:220px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"></li>
+              <li><span class="lang-en">The corner of a building or street</span><span class="lang-zh">建筑物或街道的转角</span> → <input type="text" class="ex-input" placeholder="..." style="width:220px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"></li>
+              <li><span class="lang-en">Red means stop, green means go</span><span class="lang-zh">红色停，绿色行</span> → <input type="text" class="ex-input" placeholder="..." style="width:220px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"></li>
+              <li><span class="lang-en">A large open space in the city centre</span><span class="lang-zh">城市中心的大型开放空间</span> → <input type="text" class="ex-input" placeholder="..." style="width:220px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"></li>
+            </ol>
+          </div>
+          <details><<summary style="cursor:pointer; color:#5a7a32; font-weight:500; font-size:13px;"><span class="lang-en">Show answers</span><span class="lang-zh">查看答案</span></summary>
+            <div style="padding:8px 0 4px;"><ol>
+              <li>el cruce</li>
+              <li>la rotonda</li>
+              <li>la esquina</li>
+              <li>el semáforo</li>
+              <li>la plaza</li>
+            </ol></div>
+          </details>
+        </div>
+
+        <h4><span class="lang-en">Part 2 — Direction verbs, imperative &amp; SABER vs CONOCER</span><span class="lang-zh">第二部分 — 方向动词、命令式与 SABER vs CONOCER</span></h4>
+        <table>
+          <tr><th>Infinitive</th><th>English</th><th>¡Tú! (imperative)</th></tr>
+          <tr><td><strong>seguir</strong></td><td>to continue / follow</td><td>¡sigue!</td></tr>
+          <tr><td><strong>girar</strong></td><td>to turn</td><td>¡gira!</td></tr>
+          <tr><td><strong>cruzar</strong></td><td>to cross</td><td>¡cruza!</td></tr>
+          <tr><td><strong>continuar</strong></td><td>to continue</td><td>¡continúa!</td></tr>
+          <tr><td><strong>tomar</strong></td><td>to take (a street/turn)</td><td>¡toma!</td></tr>
+          <tr><td><strong>bajar</strong></td><td>to go down</td><td>¡baja!</td></tr>
+          <tr><td><strong>subir</strong></td><td>to go up</td><td>¡sube!</td></tr>
+        </table>
+
+        <h4 style="margin-top:16px;"><span class="lang-en">Irregular tú imperatives</span><span class="lang-zh">不规则命令式（tú）</span></h4>
+        <table>
+          <tr><th>Infinitive</th><th>¡Tú! form</th><th>Infinitive</th><th>¡Tú! form</th></tr>
+          <tr><td>ir</td><td><strong>¡ve!</strong></td><td>hacer</td><td><strong>¡haz!</strong></td></tr>
+          <tr><td>poner</td><td><strong>¡pon!</strong></td><td>decir</td><td><strong>¡di!</strong></td></tr>
+          <tr><td>tener</td><td><strong>¡ten!</strong></td><td>ser</td><td><strong>¡sé!</strong></td></tr>
+          <tr><td>salir</td><td><strong>¡sal!</strong></td><td>venir</td><td><strong>¡ven!</strong></td></tr>
+        </table>
+
+        <div class="note-box">
+          <p><strong><span class="lang-en">💡 Tú imperative rule:</span><span class="lang-zh">💡 tú 命令式规则：</span></strong>
+          <span class="lang-en">-AR verbs → drop <em>-as</em>: caminas → ¡camina! -ER/-IR verbs → drop <em>-es</em>: sigues → ¡sigue! The 8 irregulars above must be memorised — they do not follow the pattern.</span>
+          <span class="lang-zh">-AR 动词 → 去掉 <em>-as</em>：caminas → ¡camina！-ER/-IR 动词 → 去掉 <em>-es</em>：sigues → ¡sigue！以上8个不规则形式必须记忆——它们不遵循规律。</span></p>
+        </div>
+
+        <div class="note-box">
+          <p><strong><span class="lang-en">💡 SABER vs CONOCER:</span><span class="lang-zh">💡 SABER vs CONOCER：</span></strong>
+          <span class="lang-en">SABER = to know facts / information / how to do something (+ infinitive or que/dónde/cómo). CONOCER = to be familiar with a person or place (+ direct noun). <em>¿Sabes dónde está el banco?</em> ✅ <em>¿Conoces Madrid?</em> ✅ <em>¿Sabes Madrid?</em> ❌</span>
+          <span class="lang-zh">SABER = 知道事实/信息/如何做某事（+不定式或 que/dónde/cómo）。CONOCER = 熟悉某人或某地（+直接名词）。<em>¿Sabes dónde está el banco?</em> ✅ <em>¿Conoces Madrid?</em> ✅ <em>¿Sabes Madrid?</em> ❌</span></p>
+        </div>
+
+        <div class="mini-prac">
+          <h4><span class="lang-en">🟢 Mini-Practice B — Directions &amp; SABER/CONOCER</span><span class="lang-zh">🟢 迷你练习 B — 方向指引与 SABER/CONOCER</span></h4>
+          <h4 style="margin-top:12px;"><span class="lang-en">Exercise 1 — Give directions using the informal imperative.</span><span class="lang-zh">练习一 — 用非正式命令式给出方向指引。</span></h4>
+          <p class="lang-en-block">Someone asks how to get to the pharmacy.</p>
+          <p class="lang-zh-block">有人问如何去药店。</p>
+          <div class="exercise-block">
+            <div style="text-align:right; margin-bottom:8px;"><button onclick="this.closest('.exercise-block').querySelectorAll('input').forEach(function(i){i.value=''})" style="font-size:12px; color:#8B5E3C; background:none; border:1px solid #e2ddd4; border-radius:4px; padding:3px 10px; cursor:pointer;">Clear / 清空</button></div>
+            <ol>
+              <li><span class="lang-en">Go straight ahead →</span><span class="lang-zh">直走 →</span> <input type="text" class="ex-input" placeholder="..." style="width:280px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"></li>
+              <li><span class="lang-en">Turn left at the traffic lights →</span><span class="lang-zh">在红绿灯处左转 →</span> <input type="text" class="ex-input" placeholder="..." style="width:280px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"></li>
+              <li><span class="lang-en">Cross the street →</span><span class="lang-zh">穿过街道 →</span> <input type="text" class="ex-input" placeholder="..." style="width:280px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"></li>
+              <li><span class="lang-en">Continue until the roundabout →</span><span class="lang-zh">继续走到环形路口 →</span> <input type="text" class="ex-input" placeholder="..." style="width:280px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"></li>
+              <li><span class="lang-en">Take the first right →</span><span class="lang-zh">走第一个右转 →</span> <input type="text" class="ex-input" placeholder="..." style="width:280px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"></li>
+            </ol>
+          </div>
+          <details><<summary style="cursor:pointer; color:#5a7a32; font-weight:500; font-size:13px;"><span class="lang-en">Show answers</span><span class="lang-zh">查看答案</span></summary>
+            <div style="padding:8px 0 4px;"><ol>
+              <li>Sigue todo recto.</li>
+              <li>Gira a la izquierda en el semáforo.</li>
+              <li>Cruza la calle.</li>
+              <li>Continúa hasta la rotonda.</li>
+              <li>Toma la primera a la derecha.</li>
+            </ol></div>
+          </details>
+
+          <h4 style="margin-top:16px;"><span class="lang-en">Exercise 2 — SABER or CONOCER?</span><span class="lang-zh">练习二 — SABER 还是 CONOCER？</span></h4>
+          <div class="exercise-block">
+            <div style="text-align:right; margin-bottom:8px;"><button onclick="this.closest('.exercise-block').querySelectorAll('input').forEach(function(i){i.value=''})" style="font-size:12px; color:#8B5E3C; background:none; border:1px solid #e2ddd4; border-radius:4px; padding:3px 10px; cursor:pointer;">Clear / 清空</button></div>
+            <ol>
+              <li>¿<input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"> dónde está la estación? (tú)</li>
+              <li>¿<input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"> a mi amiga Ana? (tú)</li>
+              <li>Yo no <input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"> hablar chino.</li>
+              <li>Ella <input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"> muy bien Barcelona.</li>
+              <li>¿<input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"> usted si hay farmacia cerca?</li>
+              <li>Nosotros <input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"> al director del colegio.</li>
+            </ol>
+          </div>
+          <details><<summary style="cursor:pointer; color:#5a7a32; font-weight:500; font-size:13px;"><span class="lang-en">Show answers</span><span class="lang-zh">查看答案</span></summary>
+            <div style="padding:8px 0 4px;"><ol>
+              <li>Sabes</li>
+              <li>Conoces</li>
+              <li>sé</li>
+              <li>conoce</li>
+              <li>Sabe</li>
+              <li>conocemos</li>
+            </ol></div>
+          </details>
+        </div>
+
       </div>
     </details>
 

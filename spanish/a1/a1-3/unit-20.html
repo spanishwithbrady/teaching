@@ -15,6 +15,33 @@
     /* ── live input fields ── */
     .exercise-block { position: relative; }
     input.ex-input { vertical-align: middle; }
+
+    .mini-prac {
+      background: var(--green-tint);
+      border: 1px solid #c8ddb0;
+      border-radius: 10px;
+      padding: 18px 20px 20px;
+      margin: 20px 0 4px;
+    }
+    .mini-prac h4 { margin-top: 0; }
+    .note-box {
+      background: var(--warm-tint);
+      border-left: 3px solid var(--warm-brown);
+      border-radius: 0 8px 8px 0;
+      padding: 10px 14px;
+      margin: 12px 0 0;
+      font-size: 0.9rem;
+      line-height: 1.6;
+    }
+    .warn-box {
+      background: #fff8f0;
+      border-left: 3px solid #c0392b;
+      border-radius: 0 8px 8px 0;
+      padding: 10px 14px;
+      margin: 12px 0 0;
+      font-size: 0.9rem;
+      line-height: 1.6;
+    }
   </style>
 </head>
 <body>
@@ -67,31 +94,179 @@
     <details class="panel">
       <summary>
         <span class="panel-num">2</span>
-        <span class="panel-title"><span class="lang-en">Vocabulary</span><span class="lang-zh">词汇</span></span>
+        <span class="panel-title"><span class="lang-en">Vocabulary &amp; Grammar</span><span class="lang-zh">词汇与语法</span></span>
         <svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg>
       </summary>
       <div class="panel-body">
-        <h4><span class="lang-en">Travel words</span><span class="lang-zh">旅行词汇</span></h4>
+
+        <h4><span class="lang-en">Part 1 — Travel vocabulary &amp; narrative connectors</span><span class="lang-zh">第一部分 — 旅行词汇与叙事连接词</span></h4>
         <table>
           <tr><th>Spanish</th><th>English</th><th>中文</th></tr>
-          <tr><td>✈️ <strong>el viaje</strong></td><td>trip</td><td>旅行</td></tr>
+          <tr><td>✈️ <strong>el viaje</strong></td><td>trip / journey</td><td>旅行</td></tr>
           <tr><td>🛫 <strong>el vuelo</strong></td><td>flight</td><td>航班</td></tr>
           <tr><td>🏨 <strong>el hotel</strong></td><td>hotel</td><td>酒店</td></tr>
           <tr><td>🧳 <strong>la maleta</strong></td><td>suitcase</td><td>行李箱</td></tr>
-          <tr><td>🛂 <strong>el pasaporte</strong></td><td>passport</td><td>护照</td></tr>
-          <tr><td>🗿 <strong>el monumento</strong></td><td>monument</td><td>纪念碑/古迹</td></tr>
+          <tr><td>📘 <strong>el pasaporte</strong></td><td>passport</td><td>护照</td></tr>
+          <tr><td>🏛️ <strong>el monumento</strong></td><td>monument / landmark</td><td>纪念碑/名胜</td></tr>
           <tr><td>🏖️ <strong>la playa</strong></td><td>beach</td><td>海滩</td></tr>
+          <tr><td>⛰️ <strong>la montaña</strong></td><td>mountain</td><td>山</td></tr>
+          <tr><td>🏛️ <strong>el museo</strong></td><td>museum</td><td>博物馆</td></tr>
+          <tr><td>🚌 <strong>la excursión</strong></td><td>excursion / day trip</td><td>短途旅行</td></tr>
+          <tr><td>🎁 <strong>el recuerdo</strong></td><td>souvenir</td><td>纪念品</td></tr>
+          <tr><td>🏠 <strong>el alojamiento</strong></td><td>accommodation</td><td>住宿</td></tr>
         </table>
 
-        <h4><span class="lang-en">Narrative connectors</span><span class="lang-zh">叙事连接词</span></h4>
+        <h4 style="margin-top:16px;"><span class="lang-en">Narrative connectors</span><span class="lang-zh">叙事连接词</span></h4>
         <table>
           <tr><th>Spanish</th><th>English</th><th>中文</th></tr>
-          <tr><td>1️⃣ <strong>primero</strong></td><td>first</td><td>首先</td></tr>
-          <tr><td>➡️ <strong>luego</strong></td><td>then</td><td>然后</td></tr>
-          <tr><td>⏭️ <strong>después</strong></td><td>afterward</td><td>之后</td></tr>
+          <tr><td><strong>primero</strong></td><td>first</td><td>首先</td></tr>
+          <tr><td><strong>luego</strong></td><td>then / next</td><td>然后</td></tr>
+          <tr><td><strong>después</strong></td><td>afterwards / then</td><td>之后</td></tr>
+          <tr><td><strong>más tarde</strong></td><td>later</td><td>稍后</td></tr>
           <tr><td><strong>al día siguiente</strong></td><td>the next day</td><td>第二天</td></tr>
-          <tr><td>🏁 <strong>finalmente</strong></td><td>finally</td><td>最后</td></tr>
+          <tr><td><strong>por la mañana</strong></td><td>in the morning</td><td>早上</td></tr>
+          <tr><td><strong>por la tarde</strong></td><td>in the afternoon</td><td>下午</td></tr>
+          <tr><td><strong>por la noche</strong></td><td>in the evening / at night</td><td>晚上</td></tr>
+          <tr><td><strong>finalmente</strong></td><td>finally</td><td>最终</td></tr>
+          <tr><td><strong>al final</strong></td><td>in the end</td><td>最后</td></tr>
+          <tr><td><strong>por último</strong></td><td>lastly</td><td>最后一点</td></tr>
         </table>
+
+        <div class="mini-prac">
+          <h4><span class="lang-en">🟢 Mini-Practice A — Travel vocabulary &amp; connectors</span><span class="lang-zh">🟢 迷你练习 A — 旅行词汇与连接词</span></h4>
+          <h4 style="margin-top:12px;"><span class="lang-en">Exercise 1 — Complete with the right word.</span><span class="lang-zh">练习一 — 用正确的词完成句子。</span></h4>
+          <div class="exercise-block">
+            <div style="text-align:right; margin-bottom:8px;"><button onclick="this.closest('.exercise-block').querySelectorAll('input').forEach(function(i){i.value=''})" style="font-size:12px; color:#8B5E3C; background:none; border:1px solid #e2ddd4; border-radius:4px; padding:3px 10px; cursor:pointer;">Clear / 清空</button></div>
+            <ol>
+              <li><span class="lang-en">Before travelling I need my</span><span class="lang-zh">出发前我需要我的</span> <input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"> <span class="lang-en">and my</span><span class="lang-zh">和我的</span> <input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"></li>
+              <li>El <input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"> salía a las 8 de la mañana del aeropuerto.</li>
+              <li>Visitamos un <input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"> muy antiguo en el centro de la ciudad.</li>
+              <li>El <input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"> estaba cerca de la playa.</li>
+              <li>Compré unos <input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"> para mis amigos.</li>
+              <li>Hicimos una <input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"> al campo.</li>
+            </ol>
+          </div>
+          <details><<summary style="cursor:pointer; color:#5a7a32; font-weight:500; font-size:13px;"><span class="lang-en">Show answers</span><span class="lang-zh">查看答案</span></summary>
+            <div style="padding:8px 0 4px;"><ol>
+              <li>pasaporte / maleta</li>
+              <li>vuelo</li>
+              <li>monumento</li>
+              <li>hotel</li>
+              <li>recuerdos</li>
+              <li>excursión</li>
+            </ol></div>
+          </details>
+
+          <h4 style="margin-top:16px;"><span class="lang-en">Exercise 2 — Put the travel story in order using connectors.</span><span class="lang-zh">练习二 — 用连接词将旅行故事排序。</span></h4>
+          <p class="lang-en-block">Use the connectors in brackets to rewrite the story in logical order.</p>
+          <p class="lang-zh-block">用括号中的连接词按逻辑顺序改写这个故事。</p>
+          <div class="exercise-block">
+            <div style="text-align:right; margin-bottom:8px;"><button onclick="this.closest('.exercise-block').querySelectorAll('input').forEach(function(i){i.value=''})" style="font-size:12px; color:#8B5E3C; background:none; border:1px solid #e2ddd4; border-radius:4px; padding:3px 10px; cursor:pointer;">Clear / 清空</button></div>
+            <ol style="list-style:none; padding-left:0;">
+              <li>Primero <input type="text" class="ex-input" placeholder="..." style="width:280px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"></li>
+              <li>Luego <input type="text" class="ex-input" placeholder="..." style="width:280px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"></li>
+              <li>Después <input type="text" class="ex-input" placeholder="..." style="width:280px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"></li>
+              <li>Por la tarde <input type="text" class="ex-input" placeholder="..." style="width:280px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"></li>
+              <li>Finalmente <input type="text" class="ex-input" placeholder="..." style="width:280px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"></li>
+            </ol>
+          </div>
+          <details><<summary style="cursor:pointer; color:#5a7a32; font-weight:500; font-size:13px;"><span class="lang-en">Show answers</span><span class="lang-zh">查看答案</span></summary>
+            <div style="padding:8px 0 4px;">
+              <p><span class="lang-en">Story fragments to order: A=llegamos a Barcelona por la noche / B=visitamos la Sagrada Familia / C=comimos en un restaurante cerca del mar / D=fuimos a la playa / E=volvimos al hotel muy cansados</span><span class="lang-zh">故事片段：A=llegamos a Barcelona por la noche / B=visitamos la Sagrada Familia / C=comimos en un restaurante cerca del mar / D=fuimos a la playa / E=volvimos al hotel muy cansados</span></p>
+              <ol style="list-style:none; padding-left:0;">
+                <li>Primero llegamos a Barcelona por la noche.</li>
+                <li>Luego visitamos la Sagrada Familia.</li>
+                <li>Después comimos en un restaurante cerca del mar.</li>
+                <li>Por la tarde fuimos a la playa.</li>
+                <li>Finalmente volvimos al hotel muy cansados.</li>
+              </ol>
+            </div>
+          </details>
+        </div>
+
+        <h4><span class="lang-en">Part 2 — Irregular preterite verbs</span><span class="lang-zh">第二部分 — 不规则过去时动词</span></h4>
+
+        <h4 style="margin-top:8px;"><span class="lang-en">Group 1 — Special irregular stems (no accents)</span><span class="lang-zh">第一组 — 特殊不规则词干（无重音符号）</span></h4>
+        <table>
+          <tr><th>Infinitive</th><th>Stem</th><th>yo</th><th>él/ella</th><th>ellos</th></tr>
+          <tr><td><strong>tener</strong></td><td>tuv-</td><td>tuve</td><td>tuvo</td><td>tuvieron</td></tr>
+          <tr><td><strong>estar</strong></td><td>estuv-</td><td>estuve</td><td>estuvo</td><td>estuvieron</td></tr>
+          <tr><td><strong>poder</strong></td><td>pud-</td><td>pude</td><td>pudo</td><td>pudieron</td></tr>
+          <tr><td><strong>querer</strong></td><td>quis-</td><td>quise</td><td>quiso</td><td>quisieron</td></tr>
+          <tr><td><strong>venir</strong></td><td>vin-</td><td>vine</td><td>vino</td><td>vinieron</td></tr>
+          <tr><td><strong>saber</strong></td><td>sup-</td><td>supe</td><td>supo</td><td>supieron</td></tr>
+          <tr><td><strong>poner</strong></td><td>pus-</td><td>puse</td><td>puso</td><td>pusieron</td></tr>
+          <tr><td><strong>hacer</strong></td><td>hic-</td><td>hice</td><td><strong>hizo</strong></td><td>hicieron</td></tr>
+          <tr><td><strong>decir</strong></td><td>dij-</td><td>dije</td><td>dijo</td><td>dijeron</td></tr>
+        </table>
+
+        <h4 style="margin-top:16px;"><span class="lang-en">Group 2 — IR and SER (identical in preterite)</span><span class="lang-zh">第二组 — IR 和 SER（过去时形式完全相同）</span></h4>
+        <table>
+          <tr><th><span class="lang-en">Pronoun</span><span class="lang-zh">主语</span></th><th>IR / SER</th></tr>
+          <tr><td>yo</td><td><strong>fui</strong></td></tr>
+          <tr><td>tú</td><td><strong>fuiste</strong></td></tr>
+          <tr><td>él / ella / usted</td><td><strong>fue</strong></td></tr>
+          <tr><td>nosotros/as</td><td><strong>fuimos</strong></td></tr>
+          <tr><td>vosotros/as</td><td><strong>fuisteis</strong></td></tr>
+          <tr><td>ellos/as / ustedes</td><td><strong>fueron</strong></td></tr>
+        </table>
+
+        <div class="note-box">
+          <p><strong><span class="lang-en">💡 FUI — IR or SER?</span><span class="lang-zh">💡 FUI——IR 还是 SER？</span></strong>
+          <span class="lang-en"><em>Fui a Madrid</em> = I went to Madrid (IR). <em>Fui estudiante</em> = I was a student (SER). They are IDENTICAL in the preterite — context always makes it clear.</span>
+          <span class="lang-zh"><em>Fui a Madrid</em> = 我去了马德里（IR）。<em>Fui estudiante</em> = 我曾是学生（SER）。它们在过去时中完全相同——语境总是能区分。</span></p>
+        </div>
+
+        <div class="note-box">
+          <p><strong><span class="lang-en">💡 HACER is the only one that changes spelling in 3rd person:</span><span class="lang-zh">💡 HACER 是唯一在第三人称改变拼写的动词：</span></strong>
+          <span class="lang-en">hice → <strong>hizo</strong> (not <em>hicó</em> — the z prevents a double-c sound).</span>
+          <span class="lang-zh">hice → <strong>hizo</strong>（不是 <em>hicó</em>——z 防止双 c 发音）。</span></p>
+        </div>
+
+        <div class="mini-prac">
+          <h4><span class="lang-en">🟢 Mini-Practice B — Irregular preterite</span><span class="lang-zh">🟢 迷你练习 B — 不规则过去时</span></h4>
+          <h4 style="margin-top:12px;"><span class="lang-en">Exercise 1 — Irregular preterite forms.</span><span class="lang-zh">练习一 — 不规则过去时形式。</span></h4>
+          <div class="exercise-block">
+            <div style="text-align:right; margin-bottom:8px;"><button onclick="this.closest('.exercise-block').querySelectorAll('input').forEach(function(i){i.value=''})" style="font-size:12px; color:#8B5E3C; background:none; border:1px solid #e2ddd4; border-radius:4px; padding:3px 10px; cursor:pointer;">Clear / 清空</button></div>
+            <ol>
+              <li>Ayer yo <input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"> en casa todo el día. <span class="lang-en">(estar)</span></li>
+              <li>Ella <input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"> un pastel para la fiesta. <span class="lang-en">(hacer)</span></li>
+              <li>Nosotros <input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"> que coger el tren a las 9. <span class="lang-en">(tener)</span></li>
+              <li>¿Tú <input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"> hablar con el director? <span class="lang-en">(poder)</span></li>
+              <li>Ellos <input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"> a Madrid en avión. <span class="lang-en">(ir)</span></li>
+              <li>Yo <input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"> la verdad al final. <span class="lang-en">(decir)</span></li>
+              <li>Wei <input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"> muy nervioso en el examen. <span class="lang-en">(estar)</span></li>
+              <li>Ana y Carlos <input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"> juntos a la fiesta. <span class="lang-en">(venir)</span></li>
+            </ol>
+          </div>
+          <details><<summary style="cursor:pointer; color:#5a7a32; font-weight:500; font-size:13px;"><span class="lang-en">Show answers</span><span class="lang-zh">查看答案</span></summary>
+            <div style="padding:8px 0 4px;"><ol>
+              <li>estuve</li>
+              <li>hizo</li>
+              <li>tuvimos</li>
+              <li>pudiste</li>
+              <li>fueron</li>
+              <li>dije</li>
+              <li>estuvo</li>
+              <li>vinieron</li>
+            </ol></div>
+          </details>
+
+          <h4 style="margin-top:16px;"><span class="lang-en">Exercise 2 — Tell a past trip.</span><span class="lang-zh">练习二 — 讲述一次过去的旅行。</span></h4>
+          <p class="lang-en-block">Write 5 sentences about a real trip using travel vocabulary, irregular preterites, and connectors.</p>
+          <p class="lang-zh-block">用旅行词汇、不规则过去时和连接词写5句话描述你的一次真实旅行。</p>
+          <div class="exercise-block">
+            <div style="text-align:right; margin-bottom:8px;"><button onclick="this.closest('.exercise-block').querySelectorAll('input').forEach(function(i){i.value=''})" style="font-size:12px; color:#8B5E3C; background:none; border:1px solid #e2ddd4; border-radius:4px; padding:3px 10px; cursor:pointer;">Clear / 清空</button></div>
+            <ol>
+              <li>Primero <input type="text" class="ex-input" placeholder="..." style="width:280px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"></li>
+              <li>Luego <input type="text" class="ex-input" placeholder="..." style="width:280px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"></li>
+              <li>Después <input type="text" class="ex-input" placeholder="..." style="width:280px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"></li>
+              <li>También <input type="text" class="ex-input" placeholder="..." style="width:280px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"></li>
+              <li>Finalmente <input type="text" class="ex-input" placeholder="..." style="width:280px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"></li>
+            </ol>
+          </div>
+        </div>
+
       </div>
     </details>
 
