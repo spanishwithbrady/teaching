@@ -15,6 +15,33 @@
     /* ── live input fields ── */
     .exercise-block { position: relative; }
     input.ex-input { vertical-align: middle; }
+
+    .mini-prac {
+      background: var(--green-tint);
+      border: 1px solid #c8ddb0;
+      border-radius: 10px;
+      padding: 18px 20px 20px;
+      margin: 20px 0 4px;
+    }
+    .mini-prac h4 { margin-top: 0; }
+    .note-box {
+      background: var(--warm-tint);
+      border-left: 3px solid var(--warm-brown);
+      border-radius: 0 8px 8px 0;
+      padding: 10px 14px;
+      margin: 12px 0 0;
+      font-size: 0.9rem;
+      line-height: 1.6;
+    }
+    .warn-box {
+      background: #fff8f0;
+      border-left: 3px solid #c0392b;
+      border-radius: 0 8px 8px 0;
+      padding: 10px 14px;
+      margin: 12px 0 0;
+      font-size: 0.9rem;
+      line-height: 1.6;
+    }
   </style>
 </head>
 <body>
@@ -71,27 +98,149 @@
         <svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg>
       </summary>
       <div class="panel-body">
-        <h4><span class="lang-en">Clothing items</span><span class="lang-zh">衣物</span></h4>
+
+        <h4><span class="lang-en">Part 1 — Clothing vocabulary</span><span class="lang-zh">第一部分 — 服装词汇</span></h4>
         <table>
           <tr><th>Spanish</th><th>English</th><th>中文</th></tr>
-          <tr><td>👔 <strong>la camisa</strong></td><td>shirt</td><td>衬衫</td></tr>
-          <tr><td>👕 <strong>la camiseta</strong></td><td>t-shirt</td><td>T恤</td></tr>
-          <tr><td>👖 <strong>el pantalón</strong></td><td>pants</td><td>裤子</td></tr>
-          <tr><td>👗 <strong>la falda</strong></td><td>skirt</td><td>裙子</td></tr>
+          <tr><td>👕 <strong>la camiseta</strong></td><td>T-shirt</td><td>T恤</td></tr>
+          <tr><td>👖 <strong>el pantalón</strong></td><td>trousers</td><td>裤子</td></tr>
           <tr><td>👗 <strong>el vestido</strong></td><td>dress</td><td>连衣裙</td></tr>
+          <tr><td>👘 <strong>la falda</strong></td><td>skirt</td><td>裙子</td></tr>
           <tr><td>👟 <strong>los zapatos</strong></td><td>shoes</td><td>鞋子</td></tr>
-          <tr><td><strong>la chaqueta</strong></td><td>jacket</td><td>夹克</td></tr>
-          <tr><td>🧥 <strong>el abrigo</strong></td><td>coat</td><td>大衣</td></tr>
+          <tr><td>🧥 <strong>el abrigo</strong></td><td>coat</td><td>外套</td></tr>
+          <tr><td>👜 <strong>el bolso</strong></td><td>handbag</td><td>手提包</td></tr>
+          <tr><td>🧦 <strong>los calcetines</strong></td><td>socks</td><td>袜子</td></tr>
+          <tr><td>🧥 <strong>la chaqueta</strong></td><td>jacket</td><td>夹克</td></tr>
+          <tr><td>🧶 <strong>el jersey</strong></td><td>jumper / sweater</td><td>毛衣</td></tr>
+          <tr><td>📏 <strong>la talla</strong></td><td>size (clothing)</td><td>尺码</td></tr>
+          <tr><td>💰 <strong>el precio</strong></td><td>price</td><td>价格</td></tr>
         </table>
 
-        <h4><span class="lang-en">Shopping phrases</span><span class="lang-zh">购物用语</span></h4>
+        <div class="note-box">
+          <p><strong><span class="lang-en">💡 Sizes in Spain:</span><span class="lang-zh">💡 西班牙的尺码：</span></strong>
+          <span class="lang-en">XS / S / M / L / XL — or numbers for shoes (37, 38, 39...). <em>¿Qué talla usas?</em> = What size do you wear?</span>
+          <span class="lang-zh">XS / S / M / L / XL——或鞋码数字（37, 38, 39...）。<em>¿Qué talla usas?</em> = 你穿几号？</span></p>
+        </div>
+
+        <div class="mini-prac">
+          <h4><span class="lang-en">🟢 Mini-Practice A — Clothing</span><span class="lang-zh">🟢 迷你练习 A — 服装</span></h4>
+          <h4 style="margin-top:12px;"><span class="lang-en">Exercise 1 — El or La? (or Los / Las for plurals)</span><span class="lang-zh">练习一 — El 还是 La？（复数用 Los / Las）</span></h4>
+          <div class="exercise-block">
+            <div style="text-align:right; margin-bottom:8px;"><button onclick="this.closest('.exercise-block').querySelectorAll('input').forEach(function(i){i.value=''})" style="font-size:12px; color:#8B5E3C; background:none; border:1px solid #e2ddd4; border-radius:4px; padding:3px 10px; cursor:pointer;">Clear / 清空</button></div>
+            <ol>
+              <li><input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"> camiseta</li>
+              <li><input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"> pantalón</li>
+              <li><input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"> vestido</li>
+              <li><input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"> zapatos</li>
+              <li><input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"> abrigo</li>
+              <li><input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"> falda</li>
+            </ol>
+          </div>
+          <details><<summary style="cursor:pointer; color:#5a7a32; font-weight:500; font-size:13px;"><span class="lang-en">Show answers</span><span class="lang-zh">查看答案</span></summary>
+            <div style="padding:8px 0 4px;"><ol>
+              <li>la</li>
+              <li>el</li>
+              <li>el</li>
+              <li>los</li>
+              <li>el</li>
+              <li>la</li>
+            </ol></div>
+          </details>
+
+          <h4 style="margin-top:16px;"><span class="lang-en">Exercise 2 — Shopping questions.</span><span class="lang-zh">练习二 — 购物问题。</span></h4>
+          <p class="lang-en-block">How do you ask these questions in a shop?</p>
+          <p class="lang-zh-block">在商店里怎么问这些问题？</p>
+          <div class="exercise-block">
+            <div style="text-align:right; margin-bottom:8px;"><button onclick="this.closest('.exercise-block').querySelectorAll('input').forEach(function(i){i.value=''})" style="font-size:12px; color:#8B5E3C; background:none; border:1px solid #e2ddd4; border-radius:4px; padding:3px 10px; cursor:pointer;">Clear / 清空</button></div>
+            <ol>
+              <li>How much does it cost? → <input type="text" class="ex-input" placeholder="..." style="width:220px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"></li>
+              <li>Do you have this in size M? → <input type="text" class="ex-input" placeholder="..." style="width:220px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"></li>
+              <li>Can I try it on? → <input type="text" class="ex-input" placeholder="..." style="width:220px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"></li>
+              <li>Where are the changing rooms? → <input type="text" class="ex-input" placeholder="..." style="width:220px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"></li>
+              <li>I'll take it. → <input type="text" class="ex-input" placeholder="..." style="width:220px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"></li>
+            </ol>
+          </div>
+          <details><<summary style="cursor:pointer; color:#5a7a32; font-weight:500; font-size:13px;"><span class="lang-en">Show answers</span><span class="lang-zh">查看答案</span></summary>
+            <div style="padding:8px 0 4px;"><ol>
+              <li>¿Cuánto cuesta?</li>
+              <li>¿Tiene esto en talla M?</li>
+              <li>¿Me lo puedo probar?</li>
+              <li>¿Dónde están los probadores?</li>
+              <li>Me lo llevo.</li>
+            </ol></div>
+          </details>
+        </div>
+
+        <h4><span class="lang-en">Part 2 — Direct object pronouns, QUEDAR &amp; COSTAR</span><span class="lang-zh">第二部分 — 直接宾语代词、QUEDAR 与 COSTAR</span></h4>
         <table>
-          <tr><th>Spanish</th><th>English</th><th>中文</th></tr>
-          <tr><td>📏 <strong>la talla</strong></td><td>size</td><td>尺码</td></tr>
-          <tr><td><strong>¿Cuánto cuesta?</strong></td><td>How much does it cost?</td><td>多少钱？</td></tr>
-          <tr><td><strong>Me lo llevo.</strong></td><td>I'll take it.</td><td>我要了。</td></tr>
-          <tr><td><strong>Está de oferta.</strong></td><td>It's on sale.</td><td>正在打折。</td></tr>
+          <tr><th><span class="lang-en">Gender / Number</span><span class="lang-zh">性/数</span></th><th><span class="lang-en">OD pronoun</span><span class="lang-zh">宾语代词</span></th><th><span class="lang-en">Example</span><span class="lang-zh">例子</span></th></tr>
+          <tr><td><span class="lang-en">Masc. singular</span><span class="lang-zh">阳性单数</span></td><td><strong>lo</strong></td><td>El vestido → Lo quiero en azul.</td></tr>
+          <tr><td><span class="lang-en">Fem. singular</span><span class="lang-zh">阴性单数</span></td><td><strong>la</strong></td><td>La falda → La quiero en negro.</td></tr>
+          <tr><td><span class="lang-en">Masc. plural</span><span class="lang-zh">阳性复数</span></td><td><strong>los</strong></td><td>Los zapatos → Los quiero en talla 40.</td></tr>
+          <tr><td><span class="lang-en">Fem. plural</span><span class="lang-zh">阴性复数</span></td><td><strong>las</strong></td><td>Las camisetas → Las quiero en talla M.</td></tr>
         </table>
+
+        <div class="note-box">
+          <p><strong><span class="lang-en">💡 OD pronouns:</span><span class="lang-zh">💡 直接宾语代词：</span></strong>
+          <span class="lang-en">The pronoun replaces the noun and must agree in gender and number. Placement: <strong>before</strong> a conjugated verb OR <strong>attached to</strong> an infinitive. Never both at once.</span>
+          <span class="lang-zh">代词替换名词，必须与其性数一致。位置：在变位动词<strong>之前</strong>，或<strong>附加在</strong>不定式后面。不能同时用两种！</span></p>
+        </div>
+
+        <div class="note-box">
+          <p><strong><span class="lang-en">💡 QUEDAR works like GUSTAR:</span><span class="lang-zh">💡 QUEDAR 像 GUSTAR 一样：</span></strong>
+          <span class="lang-en">The garment is the subject: <em>Me queda bien/mal/grande/pequeño.</em> Plural: <em>Me quedan bien estos zapatos.</em></span>
+          <span class="lang-zh">衣物是主语：<em>Me queda bien/mal/grande/pequeño。</em> 复数：<em>Me quedan bien estos zapatos。</em></span></p>
+        </div>
+
+        <div class="mini-prac">
+          <h4><span class="lang-en">🟢 Mini-Practice B — OD pronouns &amp; QUEDAR</span><span class="lang-zh">🟢 迷你练习 B — 宾语代词与 QUEDAR</span></h4>
+          <h4 style="margin-top:12px;"><span class="lang-en">Exercise 1 — Replace with the OD pronoun.</span><span class="lang-zh">练习一 — 用宾语代词替换。</span></h4>
+          <div class="exercise-block">
+            <div style="text-align:right; margin-bottom:8px;"><button onclick="this.closest('.exercise-block').querySelectorAll('input').forEach(function(i){i.value=''})" style="font-size:12px; color:#8B5E3C; background:none; border:1px solid #e2ddd4; border-radius:4px; padding:3px 10px; cursor:pointer;">Clear / 清空</button></div>
+            <ol>
+              <li>Quiero comprar el abrigo. → Quiero comprar <input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"></li>
+              <li>Voy a probar la falda. → Voy a probar <input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"></li>
+              <li>No me gustan los zapatos. → No <input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"> quiero.</li>
+              <li>¿Tienes la camiseta en azul? → ¿<input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"> tienes en azul?</li>
+              <li>Voy a llevar los pantalones. → Voy a llevar <input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"></li>
+              <li>No quiero comprar el bolso. → No <input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"> quiero comprar.</li>
+            </ol>
+          </div>
+          <details><<summary style="cursor:pointer; color:#5a7a32; font-weight:500; font-size:13px;"><span class="lang-en">Show answers</span><span class="lang-zh">查看答案</span></summary>
+            <div style="padding:8px 0 4px;"><ol>
+              <li>comprarlo</li>
+              <li>probarla</li>
+              <li>los</li>
+              <li>La</li>
+              <li>llevarlos</li>
+              <li>lo</li>
+            </ol></div>
+          </details>
+
+          <h4 style="margin-top:16px;"><span class="lang-en">Exercise 2 — QUEDAR practice.</span><span class="lang-zh">练习二 — QUEDAR 练习。</span></h4>
+          <p class="lang-en-block">How does the clothing fit? Complete with the right form of QUEDAR.</p>
+          <p class="lang-zh-block">衣服合不合身？用 QUEDAR 的正确形式完成句子。</p>
+          <div class="exercise-block">
+            <div style="text-align:right; margin-bottom:8px;"><button onclick="this.closest('.exercise-block').querySelectorAll('input').forEach(function(i){i.value=''})" style="font-size:12px; color:#8B5E3C; background:none; border:1px solid #e2ddd4; border-radius:4px; padding:3px 10px; cursor:pointer;">Clear / 清空</button></div>
+            <ol>
+              <li>Este vestido me <input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"> grande.</li>
+              <li>Estos zapatos me <input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"> perfectos.</li>
+              <li>La chaqueta te <input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"> muy bien.</li>
+              <li>Estos pantalones te <input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"> pequeños.</li>
+              <li>¿Cómo te <input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"> la camiseta?</li>
+            </ol>
+          </div>
+          <details><<summary style="cursor:pointer; color:#5a7a32; font-weight:500; font-size:13px;"><span class="lang-en">Show answers</span><span class="lang-zh">查看答案</span></summary>
+            <div style="padding:8px 0 4px;"><ol>
+              <li>queda</li>
+              <li>quedan</li>
+              <li>queda</li>
+              <li>quedan</li>
+              <li>queda</li>
+            </ol></div>
+          </details>
+        </div>
+
       </div>
     </details>
 

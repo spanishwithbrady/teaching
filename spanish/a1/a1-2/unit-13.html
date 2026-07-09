@@ -15,6 +15,33 @@
     /* ── live input fields ── */
     .exercise-block { position: relative; }
     input.ex-input { vertical-align: middle; }
+
+    .mini-prac {
+      background: var(--green-tint);
+      border: 1px solid #c8ddb0;
+      border-radius: 10px;
+      padding: 18px 20px 20px;
+      margin: 20px 0 4px;
+    }
+    .mini-prac h4 { margin-top: 0; }
+    .note-box {
+      background: var(--warm-tint);
+      border-left: 3px solid var(--warm-brown);
+      border-radius: 0 8px 8px 0;
+      padding: 10px 14px;
+      margin: 12px 0 0;
+      font-size: 0.9rem;
+      line-height: 1.6;
+    }
+    .warn-box {
+      background: #fff8f0;
+      border-left: 3px solid #c0392b;
+      border-radius: 0 8px 8px 0;
+      padding: 10px 14px;
+      margin: 12px 0 0;
+      font-size: 0.9rem;
+      line-height: 1.6;
+    }
   </style>
 </head>
 <body>
@@ -71,39 +98,147 @@
         <svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg>
       </summary>
       <div class="panel-body">
-        <h4><span class="lang-en">Menu structure</span><span class="lang-zh">菜单结构</span></h4>
+
+        <h4><span class="lang-en">Part 1 — Menu vocabulary &amp; dishes</span><span class="lang-zh">第一部分 — 菜单与菜肴</span></h4>
         <table>
           <tr><th>Spanish</th><th>English</th><th>中文</th></tr>
-          <tr><td>🥗 <strong>el primer plato</strong></td><td>first course</td><td>头盘</td></tr>
-          <tr><td>🍖 <strong>el plato principal</strong></td><td>main course</td><td>主菜</td></tr>
+          <tr><td>📋 <strong>la carta</strong></td><td>the menu (what you order from)</td><td>菜单</td></tr>
+          <tr><td>🍽️ <strong>el menú</strong></td><td>set menu (fixed price)</td><td>套餐</td></tr>
+          <tr><td>🥗 <strong>el primer plato</strong></td><td>first course / starter</td><td>前菜</td></tr>
+          <tr><td>🥩 <strong>el plato principal</strong></td><td>main course</td><td>主菜</td></tr>
           <tr><td>🍮 <strong>el postre</strong></td><td>dessert</td><td>甜点</td></tr>
+          <tr><td>🍅 <strong>gazpacho</strong></td><td>cold tomato soup</td><td>西班牙冷汤</td></tr>
+          <tr><td>🥘 <strong>paella</strong></td><td>rice dish with seafood / meat</td><td>海鲜饭</td></tr>
+          <tr><td>🥚 <strong>tortilla española</strong></td><td>potato omelette</td><td>土豆蛋饼</td></tr>
+          <tr><td>💧 <strong>agua</strong></td><td>water</td><td>水</td></tr>
+          <tr><td>🍷 <strong>vino</strong></td><td>wine</td><td>葡萄酒</td></tr>
+          <tr><td>🍺 <strong>cerveza</strong></td><td>beer</td><td>啤酒</td></tr>
+          <tr><td>🍊 <strong>zumo</strong></td><td>juice</td><td>果汁</td></tr>
+          <tr><td>☕ <strong>café</strong></td><td>coffee</td><td>咖啡</td></tr>
         </table>
 
-        <h4><span class="lang-en">Spanish dishes</span><span class="lang-zh">西班牙菜肴</span></h4>
+        <div class="note-box">
+          <p><strong><span class="lang-en">💡 La carta vs. el menú:</span><span class="lang-zh">💡 La carta 与 el menú：</span></strong>
+          <span class="lang-en"><em>La carta</em> = the menu (what you ask for to order). <em>El menú</em> = set menu (fixed price, usually 3 courses). In Spain, these are two different things!</span>
+          <span class="lang-zh"><em>La carta</em> = 菜单（你点菜用的）。<em>El menú</em> = 套餐（固定价格，通常3道菜）。在西班牙，这是两种不同的东西！</span></p>
+        </div>
+
+        <div class="mini-prac">
+          <h4><span class="lang-en">🟢 Mini-Practice A — Menu &amp; dishes</span><span class="lang-zh">🟢 迷你练习 A — 菜单与菜肴</span></h4>
+          <h4 style="margin-top:12px;"><span class="lang-en">Exercise 1 — Which course?</span><span class="lang-zh">练习一 — 这是哪道菜？</span></h4>
+          <p class="lang-en-block">Is this a primer plato, plato principal, or postre?</p>
+          <p class="lang-zh-block">这是前菜、主菜还是甜点？</p>
+          <div class="exercise-block">
+            <div style="text-align:right; margin-bottom:8px;"><button onclick="this.closest('.exercise-block').querySelectorAll('input').forEach(function(i){i.value=''})" style="font-size:12px; color:#8B5E3C; background:none; border:1px solid #e2ddd4; border-radius:4px; padding:3px 10px; cursor:pointer;">Clear / 清空</button></div>
+            <ol>
+              <li>gazpacho → <input type="text" class="ex-input" placeholder="..." style="width:220px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"></li>
+              <li>paella → <input type="text" class="ex-input" placeholder="..." style="width:220px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"></li>
+              <li>flan → <input type="text" class="ex-input" placeholder="..." style="width:220px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"></li>
+              <li>ensalada → <input type="text" class="ex-input" placeholder="..." style="width:220px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"></li>
+              <li>filete de ternera → <input type="text" class="ex-input" placeholder="..." style="width:220px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"></li>
+              <li>helado → <input type="text" class="ex-input" placeholder="..." style="width:220px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"></li>
+            </ol>
+          </div>
+          <details><<summary style="cursor:pointer; color:#5a7a32; font-weight:500; font-size:13px;"><span class="lang-en">Show answers</span><span class="lang-zh">查看答案</span></summary>
+            <div style="padding:8px 0 4px;"><ol>
+              <li>primer plato</li>
+              <li>plato principal</li>
+              <li>postre</li>
+              <li>primer plato</li>
+              <li>plato principal</li>
+              <li>postre</li>
+            </ol></div>
+          </details>
+
+          <h4 style="margin-top:16px;"><span class="lang-en">Exercise 2 — Drink or food?</span><span class="lang-zh">练习二 — 饮品还是食物？</span></h4>
+          <div class="exercise-block">
+            <div style="text-align:right; margin-bottom:8px;"><button onclick="this.closest('.exercise-block').querySelectorAll('input').forEach(function(i){i.value=''})" style="font-size:12px; color:#8B5E3C; background:none; border:1px solid #e2ddd4; border-radius:4px; padding:3px 10px; cursor:pointer;">Clear / 清空</button></div>
+            <ol>
+              <li>agua → <input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"></li>
+              <li>tortilla española → <input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"></li>
+              <li>cerveza → <input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"></li>
+              <li>paella → <input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"></li>
+              <li>zumo de naranja → <input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"></li>
+            </ol>
+          </div>
+          <details><<summary style="cursor:pointer; color:#5a7a32; font-weight:500; font-size:13px;"><span class="lang-en">Show answers</span><span class="lang-zh">查看答案</span></summary>
+            <div style="padding:8px 0 4px;"><ol>
+              <li>bebida</li>
+              <li>comida</li>
+              <li>bebida</li>
+              <li>comida</li>
+              <li>bebida</li>
+            </ol></div>
+          </details>
+        </div>
+
+        <h4><span class="lang-en">Part 2 — Restaurant phrases &amp; ordering verbs</span><span class="lang-zh">第二部分 — 餐厅用语与点餐动词</span></h4>
         <table>
           <tr><th>Spanish</th><th>English</th><th>中文</th></tr>
-          <tr><td>🥣 <strong>el gazpacho</strong></td><td>cold tomato soup</td><td>西班牙凉汤</td></tr>
-          <tr><td>🥘 <strong>la paella</strong></td><td>paella (rice dish)</td><td>西班牙海鲜饭</td></tr>
-          <tr><td>🍳 <strong>la tortilla española</strong></td><td>Spanish potato omelette</td><td>西班牙土豆煎蛋饼</td></tr>
+          <tr><td><strong>quisiera</strong></td><td>I would like (most polite)</td><td>我想要（最礼貌）</td></tr>
+          <tr><td><strong>quiero</strong></td><td>I want (direct)</td><td>我要</td></tr>
+          <tr><td><strong>¿Me puede traer...?</strong></td><td>Can you bring me...?</td><td>您能给我拿...吗？</td></tr>
+          <tr><td><strong>la cuenta</strong></td><td>the bill</td><td>账单</td></tr>
+          <tr><td><strong>PEDIR</strong> <em>(e→i)</em></td><td>to order / ask for</td><td>点（菜）</td></tr>
+          <tr><td><strong>QUERER</strong> <em>(e→ie)</em></td><td>to want</td><td>想要</td></tr>
+          <tr><td><strong>PODER</strong> <em>(o→ue)</em></td><td>to be able / can</td><td>能</td></tr>
         </table>
 
-        <h4><span class="lang-en">Drinks</span><span class="lang-zh">饮品</span></h4>
-        <table>
-          <tr><th>Spanish</th><th>English</th><th>中文</th></tr>
-          <tr><td>💧 <strong>el agua</strong></td><td>water</td><td>水</td></tr>
-          <tr><td>🍷 <strong>el vino</strong></td><td>wine</td><td>葡萄酒</td></tr>
-          <tr><td>🍺 <strong>la cerveza</strong></td><td>beer</td><td>啤酒</td></tr>
-          <tr><td>🧃 <strong>el zumo / jugo</strong></td><td>juice</td><td>果汁</td></tr>
-          <tr><td><strong>el refresco</strong></td><td>soft drink</td><td>汽水</td></tr>
-        </table>
+        <div class="note-box">
+          <p><strong><span class="lang-en">💡 Three verbs for ordering:</span><span class="lang-zh">💡 三个点餐动词：</span></strong>
+          <span class="lang-en"><strong>QUERER</strong> (e→ie): <em>quiero un café.</em> <strong>PEDIR</strong> (e→i): <em>pido la carta.</em> <strong>PODER</strong> (o→ue): <em>¿puede traerme agua?</em> QUISIERA is the politest option — treat it as a fixed chunk for now.</span>
+          <span class="lang-zh"><strong>QUERER</strong>（e→ie）：<em>quiero un café。</em> <strong>PEDIR</strong>（e→i）：<em>pido la carta。</em> <strong>PODER</strong>（o→ue）：<em>¿puede traerme agua?</em> QUISIERA 是最礼貌的选项——现在把它当作固定用语。</span></p>
+        </div>
 
-        <h4><span class="lang-en">Restaurant phrases</span><span class="lang-zh">餐厅用语</span></h4>
-        <table>
-          <tr><th>Spanish</th><th>English</th><th>中文</th></tr>
-          <tr><td><strong>¿Me trae la carta?</strong></td><td>Could you bring me the menu?</td><td>能给我菜单吗？</td></tr>
-          <tr><td><strong>¿Qué recomienda?</strong></td><td>What do you recommend?</td><td>您推荐什么？</td></tr>
-          <tr><td><strong>La cuenta, por favor.</strong></td><td>The bill, please.</td><td>请结账。</td></tr>
-        </table>
+        <div class="note-box">
+          <p><strong><span class="lang-en">💡 Articles when ordering:</span><span class="lang-zh">💡 点餐时的冠词：</span></strong>
+          <span class="lang-en">General preference → definite article: <em>Me gusta EL café.</em> Ordering a specific item → indefinite: <em>Quiero UN café.</em></span>
+          <span class="lang-zh">表达一般喜好 → 定冠词：<em>Me gusta EL café。</em> 点具体的东西 → 不定冠词：<em>Quiero UN café。</em></span></p>
+        </div>
+
+        <div class="mini-prac">
+          <h4><span class="lang-en">🟢 Mini-Practice B — Restaurant phrases</span><span class="lang-zh">🟢 迷你练习 B — 餐厅用语</span></h4>
+          <h4 style="margin-top:12px;"><span class="lang-en">Exercise 1 — Complete the restaurant conversation.</span><span class="lang-zh">练习一 — 完成餐厅对话。</span></h4>
+          <div class="exercise-block">
+            <div style="text-align:right; margin-bottom:8px;"><button onclick="this.closest('.exercise-block').querySelectorAll('input').forEach(function(i){i.value=''})" style="font-size:12px; color:#8B5E3C; background:none; border:1px solid #e2ddd4; border-radius:4px; padding:3px 10px; cursor:pointer;">Clear / 清空</button></div>
+            <ol>
+              <li>Waiter: Buenas tardes. ¿Qué <input type="text" class="ex-input" placeholder="..." style="width:220px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"> usted? <span class="lang-en">(PEDIR)</span></li>
+              <li>Customer: <input type="text" class="ex-input" placeholder="..." style="width:220px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"> la carta, por favor. <span class="lang-en">(PODER — polite request)</span></li>
+              <li>Waiter: Aquí tiene. ¿Ya sabe qué <input type="text" class="ex-input" placeholder="..." style="width:220px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'">? <span class="lang-en">(QUERER)</span></li>
+              <li>Customer: Sí. <input type="text" class="ex-input" placeholder="..." style="width:220px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"> una paella y de beber, <input type="text" class="ex-input" placeholder="..." style="width:220px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"> una cerveza. <span class="lang-en">(QUISIERA × 2)</span></li>
+              <li>Waiter: ¿Y de postre? — Customer: No, gracias. <input type="text" class="ex-input" placeholder="..." style="width:220px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"> la cuenta, por favor. <span class="lang-en">(PODER — polite)</span></li>
+            </ol>
+          </div>
+          <details><<summary style="cursor:pointer; color:#5a7a32; font-weight:500; font-size:13px;"><span class="lang-en">Show answers</span><span class="lang-zh">查看答案</span></summary>
+            <div style="padding:8px 0 4px;"><ol>
+              <li>va a pedir</li>
+              <li>¿Puede traerme</li>
+              <li>quiere</li>
+              <li>Quisiera / quisiera</li>
+              <li>¿Puede traerme</li>
+            </ol></div>
+          </details>
+
+          <h4 style="margin-top:16px;"><span class="lang-en">Exercise 2 — Rewrite more politely.</span><span class="lang-zh">练习二 — 改写得更礼貌。</span></h4>
+          <div class="exercise-block">
+            <div style="text-align:right; margin-bottom:8px;"><button onclick="this.closest('.exercise-block').querySelectorAll('input').forEach(function(i){i.value=''})" style="font-size:12px; color:#8B5E3C; background:none; border:1px solid #e2ddd4; border-radius:4px; padding:3px 10px; cursor:pointer;">Clear / 清空</button></div>
+            <ol>
+              <li>Quiero agua. → <input type="text" class="ex-input" placeholder="..." style="width:220px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"></li>
+              <li>Dame la carta. → <input type="text" class="ex-input" placeholder="..." style="width:220px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"></li>
+              <li>La cuenta. → <input type="text" class="ex-input" placeholder="..." style="width:220px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"></li>
+              <li>Quiero paella. → <input type="text" class="ex-input" placeholder="..." style="width:220px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"></li>
+            </ol>
+          </div>
+          <details><<summary style="cursor:pointer; color:#5a7a32; font-weight:500; font-size:13px;"><span class="lang-en">Show answers</span><span class="lang-zh">查看答案</span></summary>
+            <div style="padding:8px 0 4px;"><ol>
+              <li>Quisiera agua, por favor.</li>
+              <li>¿Me puede traer la carta, por favor?</li>
+              <li>¿Me puede traer la cuenta, por favor?</li>
+              <li>Quisiera una paella, por favor.</li>
+            </ol></div>
+          </details>
+        </div>
+
       </div>
     </details>
 

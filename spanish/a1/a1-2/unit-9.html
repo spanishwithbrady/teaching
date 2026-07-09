@@ -15,6 +15,33 @@
     /* ── live input fields ── */
     .exercise-block { position: relative; }
     input.ex-input { vertical-align: middle; }
+
+    .mini-prac {
+      background: var(--green-tint);
+      border: 1px solid #c8ddb0;
+      border-radius: 10px;
+      padding: 18px 20px 20px;
+      margin: 20px 0 4px;
+    }
+    .mini-prac h4 { margin-top: 0; }
+    .note-box {
+      background: var(--warm-tint);
+      border-left: 3px solid var(--warm-brown);
+      border-radius: 0 8px 8px 0;
+      padding: 10px 14px;
+      margin: 12px 0 0;
+      font-size: 0.9rem;
+      line-height: 1.6;
+    }
+    .warn-box {
+      background: #fff8f0;
+      border-left: 3px solid #c0392b;
+      border-radius: 0 8px 8px 0;
+      padding: 10px 14px;
+      margin: 12px 0 0;
+      font-size: 0.9rem;
+      line-height: 1.6;
+    }
   </style>
 </head>
 <body>
@@ -71,42 +98,178 @@
         <svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg>
       </summary>
       <div class="panel-body">
-        <h4><span class="lang-en">Days of the week</span><span class="lang-zh">星期</span></h4>
-        <table>
-          <tr><th>Spanish</th><th>English</th><th>中文</th></tr>
-          <tr><td>1️⃣ <strong>lunes</strong></td><td>Monday</td><td>星期一</td></tr>
-          <tr><td>2️⃣ <strong>martes</strong></td><td>Tuesday</td><td>星期二</td></tr>
-          <tr><td>3️⃣ <strong>miércoles</strong></td><td>Wednesday</td><td>星期三</td></tr>
-          <tr><td>4️⃣ <strong>jueves</strong></td><td>Thursday</td><td>星期四</td></tr>
-          <tr><td>5️⃣ <strong>viernes</strong></td><td>Friday</td><td>星期五</td></tr>
-          <tr><td>6️⃣ <strong>sábado</strong></td><td>Saturday</td><td>星期六</td></tr>
-          <tr><td>7️⃣ <strong>domingo</strong></td><td>Sunday</td><td>星期日</td></tr>
-        </table>
-        <p class="lang-en-block">⚠️ Days of the week are always lowercase in Spanish!</p>
-        <p class="lang-zh-block">⚠️ 西班牙语中星期几永远小写！</p>
 
-        <h4><span class="lang-en">Frequency adverbs</span><span class="lang-zh">频率副词</span></h4>
+        <h4><span class="lang-en">Part 1 — Days of the week</span><span class="lang-zh">第一部分 — 星期</span></h4>
         <table>
           <tr><th>Spanish</th><th>English</th><th>中文</th></tr>
-          <tr><td>♾️ <strong>siempre</strong></td><td>always</td><td>总是</td></tr>
-          <tr><td>🔄 <strong>normalmente</strong></td><td>normally</td><td>通常</td></tr>
-          <tr><td>🎲 <strong>a veces</strong></td><td>sometimes</td><td>有时</td></tr>
-          <tr><td>🔕 <strong>casi nunca</strong></td><td>almost never</td><td>几乎不</td></tr>
-          <tr><td>❌ <strong>nunca</strong></td><td>never</td><td>从不</td></tr>
+          <tr><td><strong>lunes</strong></td><td>Monday</td><td>周一</td></tr>
+          <tr><td><strong>martes</strong></td><td>Tuesday</td><td>周二</td></tr>
+          <tr><td><strong>miércoles</strong></td><td>Wednesday</td><td>周三</td></tr>
+          <tr><td><strong>jueves</strong></td><td>Thursday</td><td>周四</td></tr>
+          <tr><td><strong>viernes</strong></td><td>Friday</td><td>周五</td></tr>
+          <tr><td><strong>sábado</strong></td><td>Saturday</td><td>周六</td></tr>
+          <tr><td><strong>domingo</strong></td><td>Sunday</td><td>周日</td></tr>
         </table>
 
-        <h4><span class="lang-en">Core -AR verbs</span><span class="lang-zh">核心 -AR 动词</span></h4>
+        <div class="note-box">
+          <p><strong><span class="lang-en">💡 Key rules:</span><span class="lang-zh">💡 关键规则：</span></strong>
+          <span class="lang-en">Days of the week are always <strong>lowercase</strong> in Spanish. <em>El lunes</em> = this Monday (specific). <em>Los lunes</em> = every Monday (habitual).</span>
+          <span class="lang-zh">星期几在西班牙语中永远<strong>小写</strong>。<em>El lunes</em> = 这个周一（特定）。<em>Los lunes</em> = 每周一（习惯性）。</span></p>
+        </div>
+
+        <div class="mini-prac">
+          <h4><span class="lang-en">🟢 Mini-Practice A — Days of the week</span><span class="lang-zh">🟢 迷你练习 A — 星期</span></h4>
+          <h4 style="margin-top:12px;"><span class="lang-en">Exercise 1 — El lunes or Los lunes?</span><span class="lang-zh">练习一 — El lunes 还是 Los lunes？</span></h4>
+          <div class="exercise-block">
+            <div style="text-align:right; margin-bottom:8px;"><button onclick="this.closest('.exercise-block').querySelectorAll('input').forEach(function(i){i.value=''})" style="font-size:12px; color:#8B5E3C; background:none; border:1px solid #e2ddd4; border-radius:4px; padding:3px 10px; cursor:pointer;">Clear / 清空</button></div>
+            <ol>
+              <li><input type="text" class="ex-input" placeholder="..." style="width:220px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"> tengo clase de español. <span class="lang-en">(every Monday)</span><span class="lang-zh">（每周一）</span></li>
+              <li><input type="text" class="ex-input" placeholder="..." style="width:220px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"> pasado fui al médico. <span class="lang-en">(last Monday)</span><span class="lang-zh">（上周一）</span></li>
+              <li><input type="text" class="ex-input" placeholder="..." style="width:220px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"> y <input type="text" class="ex-input" placeholder="..." style="width:220px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"> trabajo desde casa. <span class="lang-en">(every Tuesday and Thursday)</span><span class="lang-zh">（每周二和周四）</span></li>
+              <li><input type="text" class="ex-input" placeholder="..." style="width:220px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"> que viene es mi cumpleaños. <span class="lang-en">(next Wednesday)</span><span class="lang-zh">（下周三）</span></li>
+              <li><input type="text" class="ex-input" placeholder="..." style="width:220px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"> no trabajo. <span class="lang-en">(every Saturday)</span><span class="lang-zh">（每周六）</span></li>
+              <li><input type="text" class="ex-input" placeholder="..." style="width:220px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"> por la mañana fui al gimnasio. <span class="lang-en">(last Sunday)</span><span class="lang-zh">（上周日）</span></li>
+            </ol>
+          </div>
+          <details><<summary style="cursor:pointer; color:#5a7a32; font-weight:500; font-size:13px;"><span class="lang-en">Show answers</span><span class="lang-zh">查看答案</span></summary>
+            <div style="padding:8px 0 4px;"><ol>
+              <li>Los lunes</li>
+              <li>El lunes</li>
+              <li>Los martes / los jueves</li>
+              <li>El miércoles</li>
+              <li>Los sábados</li>
+              <li>El domingo</li>
+            </ol></div>
+          </details>
+        </div>
+
+        <h4><span class="lang-en">Part 2 — Frequency adverbs</span><span class="lang-zh">第二部分 — 频率副词</span></h4>
         <table>
           <tr><th>Spanish</th><th>English</th><th>中文</th></tr>
-          <tr><td>💬 <strong>hablar</strong></td><td>to speak</td><td>说</td></tr>
-          <tr><td>💼 <strong>trabajar</strong></td><td>to work</td><td>工作</td></tr>
-          <tr><td>📖 <strong>estudiar</strong></td><td>to study</td><td>学习</td></tr>
-          <tr><td>🎧 <strong>escuchar</strong></td><td>to listen</td><td>听</td></tr>
-          <tr><td>💃 <strong>bailar</strong></td><td>to dance</td><td>跳舞</td></tr>
-          <tr><td>🍳 <strong>cocinar</strong></td><td>to cook</td><td>做饭</td></tr>
-          <tr><td>🛌 <strong>descansar</strong></td><td>to rest</td><td>休息</td></tr>
-          <tr><td>🚶 <strong>caminar</strong></td><td>to walk</td><td>走路</td></tr>
+          <tr><td><strong>siempre</strong></td><td>always</td><td>总是</td></tr>
+          <tr><td><strong>normalmente</strong></td><td>usually</td><td>通常</td></tr>
+          <tr><td><strong>a veces</strong></td><td>sometimes</td><td>有时</td></tr>
+          <tr><td><strong>casi nunca</strong></td><td>almost never</td><td>几乎从不</td></tr>
+          <tr><td><strong>nunca</strong></td><td>never</td><td>从不</td></tr>
+          <tr><td><strong>todos los días</strong></td><td>every day</td><td>每天</td></tr>
+          <tr><td><strong>una vez a la semana</strong></td><td>once a week</td><td>每周一次</td></tr>
+          <tr><td><strong>dos veces al mes</strong></td><td>twice a month</td><td>每月两次</td></tr>
         </table>
+
+        <div class="mini-prac">
+          <h4><span class="lang-en">🟢 Mini-Practice B — Frequency adverbs</span><span class="lang-zh">🟢 迷你练习 B — 频率副词</span></h4>
+          <h4 style="margin-top:12px;"><span class="lang-en">Exercise 1 — Put in order from most to least frequent.</span><span class="lang-zh">练习一 — 从最频繁到最不频繁排列。</span></h4>
+          <p class="lang-en-block">Order these words: a veces / siempre / casi nunca / normalmente / nunca</p>
+          <p class="lang-zh-block">将这些词排列：a veces / siempre / casi nunca / normalmente / nunca</p>
+          <div class="exercise-block">
+            <div style="text-align:right; margin-bottom:8px;"><button onclick="this.closest('.exercise-block').querySelectorAll('input').forEach(function(i){i.value=''})" style="font-size:12px; color:#8B5E3C; background:none; border:1px solid #e2ddd4; border-radius:4px; padding:3px 10px; cursor:pointer;">Clear / 清空</button></div>
+            <ol>
+              <li><input type="text" class="ex-input" placeholder="..." style="width:280px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"></li>
+            </ol>
+          </div>
+          <details><<summary style="cursor:pointer; color:#5a7a32; font-weight:500; font-size:13px;"><span class="lang-en">Show answers</span><span class="lang-zh">查看答案</span></summary>
+            <div style="padding:8px 0 4px;">
+              <p>siempre → normalmente → a veces → casi nunca → nunca</p>
+            </div>
+          </details>
+
+          <h4 style="margin-top:16px;"><span class="lang-en">Exercise 2 — Complete about yourself.</span><span class="lang-zh">练习二 — 描述你自己的习惯。</span></h4>
+          <p class="lang-en-block">Use a frequency adverb to complete each sentence about yourself.</p>
+          <p class="lang-zh-block">用频率副词完成关于你自己的句子。</p>
+          <div class="exercise-block">
+            <div style="text-align:right; margin-bottom:8px;"><button onclick="this.closest('.exercise-block').querySelectorAll('input').forEach(function(i){i.value=''})" style="font-size:12px; color:#8B5E3C; background:none; border:1px solid #e2ddd4; border-radius:4px; padding:3px 10px; cursor:pointer;">Clear / 清空</button></div>
+            <ol>
+              <li><input type="text" class="ex-input" placeholder="..." style="width:220px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"> estudio español.</li>
+              <li><input type="text" class="ex-input" placeholder="..." style="width:220px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"> cocino en casa.</li>
+              <li><input type="text" class="ex-input" placeholder="..." style="width:220px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"> veo la televisión.</li>
+              <li><input type="text" class="ex-input" placeholder="..." style="width:220px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"> hago ejercicio.</li>
+              <li><input type="text" class="ex-input" placeholder="..." style="width:220px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"> llego tarde al trabajo/clase.</li>
+            </ol>
+          </div>
+        </div>
+
+        <h4><span class="lang-en">Part 3 — Regular -AR verbs</span><span class="lang-zh">第三部分 — 规则 -AR 动词</span></h4>
+        <table>
+          <tr><th>Spanish</th><th>English</th><th>中文</th></tr>
+          <tr><td><strong>hablar</strong></td><td>to speak</td><td>说</td></tr>
+          <tr><td><strong>trabajar</strong></td><td>to work</td><td>工作</td></tr>
+          <tr><td><strong>estudiar</strong></td><td>to study</td><td>学习</td></tr>
+          <tr><td><strong>escuchar</strong></td><td>to listen</td><td>听</td></tr>
+          <tr><td><strong>bailar</strong></td><td>to dance</td><td>跳舞</td></tr>
+          <tr><td><strong>cocinar</strong></td><td>to cook</td><td>做饭</td></tr>
+          <tr><td><strong>descansar</strong></td><td>to rest</td><td>休息</td></tr>
+          <tr><td><strong>caminar</strong></td><td>to walk</td><td>走路</td></tr>
+          <tr><td><strong>practicar</strong></td><td>to practise</td><td>练习</td></tr>
+        </table>
+
+        <h4 style="margin-top:16px;"><span class="lang-en">-AR verb conjugation — HABLAR (to speak)</span><span class="lang-zh">-AR 动词变位 — HABLAR（说）</span></h4>
+        <table>
+          <tr><th><span class="lang-en">Pronoun</span><span class="lang-zh">人称</span></th><th>HABLAR</th><th><span class="lang-en">Ending</span><span class="lang-zh">词尾</span></th></tr>
+          <tr><td>yo</td><td><strong>hablo</strong></td><td>-o</td></tr>
+          <tr><td>tú</td><td><strong>hablas</strong></td><td>-as</td></tr>
+          <tr><td>él / ella / usted</td><td><strong>habla</strong></td><td>-a</td></tr>
+          <tr><td>nosotros/as</td><td><strong>hablamos</strong></td><td>-amos</td></tr>
+          <tr><td>vosotros/as</td><td><strong>habláis</strong></td><td>-áis</td></tr>
+          <tr><td>ellos/as / ustedes</td><td><strong>hablan</strong></td><td>-an</td></tr>
+        </table>
+
+        <div class="note-box">
+          <p><strong><span class="lang-en">💡 También vs. Tampoco:</span><span class="lang-zh">💡 También 与 Tampoco：</span></strong>
+          <span class="lang-en">Use <em>también</em> to agree with a positive statement. Use <em>tampoco</em> to agree with a negative statement. Never say "me también" — it must be "yo también."</span>
+          <span class="lang-zh">用 <em>también</em> 同意肯定陈述。用 <em>tampoco</em> 同意否定陈述。永远不说"me también"——必须是"yo también"。</span></p>
+        </div>
+
+        <div class="mini-prac">
+          <h4><span class="lang-en">🟢 Mini-Practice C — -AR verbs</span><span class="lang-zh">🟢 迷你练习 C — -AR 动词</span></h4>
+          <h4 style="margin-top:12px;"><span class="lang-en">Exercise 1 — Conjugate the verb.</span><span class="lang-zh">练习一 — 变位动词。</span></h4>
+          <div class="exercise-block">
+            <div style="text-align:right; margin-bottom:8px;"><button onclick="this.closest('.exercise-block').querySelectorAll('input').forEach(function(i){i.value=''})" style="font-size:12px; color:#8B5E3C; background:none; border:1px solid #e2ddd4; border-radius:4px; padding:3px 10px; cursor:pointer;">Clear / 清空</button></div>
+            <ol>
+              <li>Yo <input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"> español todos los días. <span class="lang-en">(estudiar)</span></li>
+              <li>Ella <input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"> en una oficina. <span class="lang-en">(trabajar)</span></li>
+              <li>Nosotros <input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"> música juntos. <span class="lang-en">(escuchar)</span></li>
+              <li>¿Tú <input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"> los fines de semana? <span class="lang-en">(trabajar)</span></li>
+              <li>Ellos <input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"> en el parque por las mañanas. <span class="lang-en">(caminar)</span></li>
+              <li>Yo no <input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"> muy bien. ¿Y tú? <span class="lang-en">(cocinar)</span></li>
+              <li>Vosotros <input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"> flamenco los viernes. <span class="lang-en">(bailar)</span></li>
+              <li>Usted <input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"> mucho en el trabajo. <span class="lang-en">(descansar)</span></li>
+            </ol>
+          </div>
+          <details><<summary style="cursor:pointer; color:#5a7a32; font-weight:500; font-size:13px;"><span class="lang-en">Show answers</span><span class="lang-zh">查看答案</span></summary>
+            <div style="padding:8px 0 4px;"><ol>
+              <li>estudio</li>
+              <li>trabaja</li>
+              <li>escuchamos</li>
+              <li>trabajas</li>
+              <li>caminan</li>
+              <li>cocino</li>
+              <li>bailáis</li>
+              <li>descansa</li>
+            </ol></div>
+          </details>
+
+          <h4 style="margin-top:16px;"><span class="lang-en">Exercise 2 — También or Tampoco?</span><span class="lang-zh">练习二 — También 还是 Tampoco？</span></h4>
+          <div class="exercise-block">
+            <div style="text-align:right; margin-bottom:8px;"><button onclick="this.closest('.exercise-block').querySelectorAll('input').forEach(function(i){i.value=''})" style="font-size:12px; color:#8B5E3C; background:none; border:1px solid #e2ddd4; border-radius:4px; padding:3px 10px; cursor:pointer;">Clear / 清空</button></div>
+            <ol>
+              <li>Yo estudio español. ¿Y tú? — Yo <input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"> <span class="lang-en">(agree)</span></li>
+              <li>Yo no trabajo los domingos. ¿Y tú? — Yo <input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"> <span class="lang-en">(agree)</span></li>
+              <li>A mí no me gusta cocinar. ¿Y a ti? — A mí <input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"> <span class="lang-en">(agree)</span></li>
+              <li>Yo camino al trabajo. ¿Y tú? — Yo <input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"> <span class="lang-en">(agree)</span></li>
+              <li>Yo nunca bailo. ¿Y tú? — Yo <input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"> <span class="lang-en">(agree)</span></li>
+            </ol>
+          </div>
+          <details><<summary style="cursor:pointer; color:#5a7a32; font-weight:500; font-size:13px;"><span class="lang-en">Show answers</span><span class="lang-zh">查看答案</span></summary>
+            <div style="padding:8px 0 4px;"><ol>
+              <li>también</li>
+              <li>tampoco</li>
+              <li>tampoco</li>
+              <li>también</li>
+              <li>tampoco</li>
+            </ol></div>
+          </details>
+        </div>
+
       </div>
     </details>
 

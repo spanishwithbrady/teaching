@@ -15,6 +15,33 @@
     /* ── live input fields ── */
     .exercise-block { position: relative; }
     input.ex-input { vertical-align: middle; }
+
+    .mini-prac {
+      background: var(--green-tint);
+      border: 1px solid #c8ddb0;
+      border-radius: 10px;
+      padding: 18px 20px 20px;
+      margin: 20px 0 4px;
+    }
+    .mini-prac h4 { margin-top: 0; }
+    .note-box {
+      background: var(--warm-tint);
+      border-left: 3px solid var(--warm-brown);
+      border-radius: 0 8px 8px 0;
+      padding: 10px 14px;
+      margin: 12px 0 0;
+      font-size: 0.9rem;
+      line-height: 1.6;
+    }
+    .warn-box {
+      background: #fff8f0;
+      border-left: 3px solid #c0392b;
+      border-radius: 0 8px 8px 0;
+      padding: 10px 14px;
+      margin: 12px 0 0;
+      font-size: 0.9rem;
+      line-height: 1.6;
+    }
   </style>
 </head>
 <body>
@@ -71,49 +98,184 @@
         <svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg>
       </summary>
       <div class="panel-body">
-        <h4><span class="lang-en">Months</span><span class="lang-zh">月份</span></h4>
-        <table>
-          <tr><th>Spanish</th><th>English</th><th>中文</th></tr>
-          <tr><td>❄️ <strong>enero</strong></td><td>January</td><td>一月</td></tr>
-          <tr><td>💝 <strong>febrero</strong></td><td>February</td><td>二月</td></tr>
-          <tr><td>🌱 <strong>marzo</strong></td><td>March</td><td>三月</td></tr>
-          <tr><td>🌸 <strong>abril</strong></td><td>April</td><td>四月</td></tr>
-          <tr><td>🌻 <strong>mayo</strong></td><td>May</td><td>五月</td></tr>
-          <tr><td>☀️ <strong>junio</strong></td><td>June</td><td>六月</td></tr>
-          <tr><td>🏖️ <strong>julio</strong></td><td>July</td><td>七月</td></tr>
-          <tr><td>🌊 <strong>agosto</strong></td><td>August</td><td>八月</td></tr>
-          <tr><td>🍂 <strong>septiembre</strong></td><td>September</td><td>九月</td></tr>
-          <tr><td>🎃 <strong>octubre</strong></td><td>October</td><td>十月</td></tr>
-          <tr><td>🍁 <strong>noviembre</strong></td><td>November</td><td>十一月</td></tr>
-          <tr><td>🎄 <strong>diciembre</strong></td><td>December</td><td>十二月</td></tr>
-        </table>
-        <p class="lang-en-block">⚠️ Months are lowercase in Spanish too!</p>
-        <p class="lang-zh-block">⚠️ 西班牙语中月份也是小写的！</p>
 
-        <h4><span class="lang-en">Seasons</span><span class="lang-zh">季节</span></h4>
+        <h4><span class="lang-en">Part 1 — Months, dates &amp; seasons</span><span class="lang-zh">第一部分 — 月份、日期与季节</span></h4>
         <table>
           <tr><th>Spanish</th><th>English</th><th>中文</th></tr>
+          <tr><td><strong>enero</strong></td><td>January</td><td>一月</td></tr>
+          <tr><td><strong>febrero</strong></td><td>February</td><td>二月</td></tr>
+          <tr><td><strong>marzo</strong></td><td>March</td><td>三月</td></tr>
+          <tr><td><strong>abril</strong></td><td>April</td><td>四月</td></tr>
+          <tr><td><strong>mayo</strong></td><td>May</td><td>五月</td></tr>
+          <tr><td><strong>junio</strong></td><td>June</td><td>六月</td></tr>
+          <tr><td><strong>julio</strong></td><td>July</td><td>七月</td></tr>
+          <tr><td><strong>agosto</strong></td><td>August</td><td>八月</td></tr>
+          <tr><td><strong>septiembre</strong></td><td>September</td><td>九月</td></tr>
+          <tr><td><strong>octubre</strong></td><td>October</td><td>十月</td></tr>
+          <tr><td><strong>noviembre</strong></td><td>November</td><td>十一月</td></tr>
+          <tr><td><strong>diciembre</strong></td><td>December</td><td>十二月</td></tr>
+        </table>
+
+        <h4 style="margin-top:16px;"><span class="lang-en">Seasons</span><span class="lang-zh">季节</span></h4>
+        <table>
+          <tr><th>Spanish</th><th>English</th><th>中文</th></tr>
+          <tr><td>❄️ <strong>el invierno</strong></td><td>winter</td><td>冬天</td></tr>
           <tr><td>🌸 <strong>la primavera</strong></td><td>spring</td><td>春天</td></tr>
           <tr><td>☀️ <strong>el verano</strong></td><td>summer</td><td>夏天</td></tr>
-          <tr><td>🍂 <strong>el otoño</strong></td><td>autumn</td><td>秋天</td></tr>
-          <tr><td>❄️ <strong>el invierno</strong></td><td>winter</td><td>冬天</td></tr>
+          <tr><td>🍂 <strong>el otoño</strong></td><td>autumn / fall</td><td>秋天</td></tr>
         </table>
 
-        <h4><span class="lang-en">Weather</span><span class="lang-zh">天气</span></h4>
+        <div class="note-box">
+          <p><strong><span class="lang-en">💡 Dates in Spanish:</span><span class="lang-zh">💡 西班牙语日期：</span></strong>
+          <span class="lang-en">Months are always <strong>lowercase</strong>. Format: <em>el + number + de + month</em>. Only the 1st uses an ordinal: <em>el primero de enero</em>. All others use cardinal numbers: <em>el dos, el quince, el treinta...</em></span>
+          <span class="lang-zh">月份永远<strong>小写</strong>。格式：<em>el + 数字 + de + 月份</em>。只有1号用序数词：<em>el primero de enero</em>。其他日期用基数词：<em>el dos, el quince...</em></span></p>
+        </div>
+
+        <div class="mini-prac">
+          <h4><span class="lang-en">🟢 Mini-Practice A — Months, dates &amp; seasons</span><span class="lang-zh">🟢 迷你练习 A — 月份、日期与季节</span></h4>
+          <h4 style="margin-top:12px;"><span class="lang-en">Exercise 1 — Write the date in Spanish.</span><span class="lang-zh">练习一 — 用西班牙语写出日期。</span></h4>
+          <div class="exercise-block">
+            <div style="text-align:right; margin-bottom:8px;"><button onclick="this.closest('.exercise-block').querySelectorAll('input').forEach(function(i){i.value=''})" style="font-size:12px; color:#8B5E3C; background:none; border:1px solid #e2ddd4; border-radius:4px; padding:3px 10px; cursor:pointer;">Clear / 清空</button></div>
+            <ol>
+              <li>January 1st → <input type="text" class="ex-input" placeholder="..." style="width:220px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"></li>
+              <li>March 15th → <input type="text" class="ex-input" placeholder="..." style="width:220px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"></li>
+              <li>July 4th → <input type="text" class="ex-input" placeholder="..." style="width:220px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"></li>
+              <li>October 31st → <input type="text" class="ex-input" placeholder="..." style="width:220px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"></li>
+              <li>December 25th → <input type="text" class="ex-input" placeholder="..." style="width:220px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"></li>
+              <li><span class="lang-en">Your birthday →</span><span class="lang-zh">你的生日 →</span> <input type="text" class="ex-input" placeholder="..." style="width:220px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"></li>
+            </ol>
+          </div>
+          <details><<summary style="cursor:pointer; color:#5a7a32; font-weight:500; font-size:13px;"><span class="lang-en">Show answers</span><span class="lang-zh">查看答案</span></summary>
+            <div style="padding:8px 0 4px;"><ol>
+              <li>el primero de enero</li>
+              <li>el quince de marzo</li>
+              <li>el cuatro de julio</li>
+              <li>el treinta y uno de octubre</li>
+              <li>el veinticinco de diciembre</li>
+              <li><span class="lang-en">(personal answer)</span><span class="lang-zh">（个人答案）</span></li>
+            </ol></div>
+          </details>
+
+          <h4 style="margin-top:16px;"><span class="lang-en">Exercise 2 — Which season?</span><span class="lang-zh">练习二 — 这是什么季节？</span></h4>
+          <p class="lang-en-block">Which season is it in Spain?</p>
+          <p class="lang-zh-block">在西班牙，这是什么季节？</p>
+          <div class="exercise-block">
+            <div style="text-align:right; margin-bottom:8px;"><button onclick="this.closest('.exercise-block').querySelectorAll('input').forEach(function(i){i.value=''})" style="font-size:12px; color:#8B5E3C; background:none; border:1px solid #e2ddd4; border-radius:4px; padding:3px 10px; cursor:pointer;">Clear / 清空</button></div>
+            <ol>
+              <li>December, January, February → <input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"></li>
+              <li>March, April, May → <input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"></li>
+              <li>June, July, August → <input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"></li>
+              <li>September, October, November → <input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"></li>
+            </ol>
+          </div>
+          <details><<summary style="cursor:pointer; color:#5a7a32; font-weight:500; font-size:13px;"><span class="lang-en">Show answers</span><span class="lang-zh">查看答案</span></summary>
+            <div style="padding:8px 0 4px;"><ol>
+              <li>el invierno</li>
+              <li>la primavera</li>
+              <li>el verano</li>
+              <li>el otoño</li>
+            </ol></div>
+          </details>
+        </div>
+
+        <h4><span class="lang-en">Part 2 — Weather expressions</span><span class="lang-zh">第二部分 — 天气表达</span></h4>
         <table>
           <tr><th>Spanish</th><th>English</th><th>中文</th></tr>
-          <tr><td>🌡️ <strong>hace calor</strong></td><td>it's hot</td><td>天气热</td></tr>
+          <tr><td>🥵 <strong>hace calor</strong></td><td>it's hot</td><td>天气热</td></tr>
           <tr><td>🥶 <strong>hace frío</strong></td><td>it's cold</td><td>天气冷</td></tr>
-          <tr><td>💨 <strong>hace viento</strong></td><td>it's windy</td><td>刮风</td></tr>
-          <tr><td>☀️ <strong>hace sol</strong></td><td>it's sunny</td><td>晴天</td></tr>
+          <tr><td>💨 <strong>hace viento</strong></td><td>it's windy</td><td>有风</td></tr>
+          <tr><td>☀️ <strong>hace sol</strong></td><td>it's sunny</td><td>有太阳</td></tr>
           <tr><td>🌫️ <strong>hay niebla</strong></td><td>it's foggy</td><td>有雾</td></tr>
-          <tr><td>☁️ <strong>hay nubes</strong></td><td>it's cloudy</td><td>多云</td></tr>
+          <tr><td>☁️ <strong>hay nubes</strong></td><td>it's cloudy</td><td>有云</td></tr>
           <tr><td>⛈️ <strong>hay tormenta</strong></td><td>there's a storm</td><td>有暴风雨</td></tr>
-          <tr><td>🌧️ <strong>llueve</strong></td><td>it's raining</td><td>下雨</td></tr>
-          <tr><td>❄️ <strong>nieva</strong></td><td>it's snowing</td><td>下雪</td></tr>
-          <tr><td>☁️ <strong>está nublado</strong></td><td>it's overcast</td><td>阴天</td></tr>
+          <tr><td>🌧️ <strong>llueve</strong></td><td>it rains / it's raining</td><td>下雨</td></tr>
+          <tr><td>❄️ <strong>nieva</strong></td><td>it snows / it's snowing</td><td>下雪</td></tr>
+          <tr><td>☁️ <strong>está nublado</strong></td><td>it's cloudy / overcast</td><td>阴天</td></tr>
           <tr><td>🌤️ <strong>está despejado</strong></td><td>it's clear</td><td>晴朗</td></tr>
         </table>
+
+        <div class="note-box">
+          <p><strong><span class="lang-en">💡 Three weather systems:</span><span class="lang-zh">💡 三种天气表达系统：</span></strong>
+          <span class="lang-en"><strong>HACER + noun</strong>: hace calor, hace frío, hace viento. <strong>HAY + noun</strong>: hay niebla, hay nubes, hay tormenta. <strong>Impersonal verbs</strong>: llueve, nieva — only ever 3rd person singular, no subject needed.</span>
+          <span class="lang-zh"><strong>HACER + 名词</strong>：hace calor, hace frío。<strong>HAY + 名词</strong>：hay niebla, hay nubes。<strong>无主语动词</strong>：llueve, nieva——永远只用第三人称单数，不需要主语。</span></p>
+        </div>
+
+        <div class="warn-box">
+          <p><strong><span class="lang-en">⚠️ Common mistakes:</span><span class="lang-zh">⚠️ 常见错误：</span></strong><br>
+          "Hace nublado" ❌ → "Está nublado" ✅<br>
+          "Es lloviendo" ❌ → "Llueve" ✅<br>
+          "Hay calor" ❌ → "Hace calor" ✅</p>
+        </div>
+
+        <div class="mini-prac">
+          <h4><span class="lang-en">🟢 Mini-Practice B — Weather</span><span class="lang-zh">🟢 迷你练习 B — 天气</span></h4>
+          <h4 style="margin-top:12px;"><span class="lang-en">Exercise 1 — Correct the error.</span><span class="lang-zh">练习一 — 改正错误。</span></h4>
+          <div class="exercise-block">
+            <div style="text-align:right; margin-bottom:8px;"><button onclick="this.closest('.exercise-block').querySelectorAll('input').forEach(function(i){i.value=''})" style="font-size:12px; color:#8B5E3C; background:none; border:1px solid #e2ddd4; border-radius:4px; padding:3px 10px; cursor:pointer;">Clear / 清空</button></div>
+            <ol>
+              <li>Hace nublado hoy. → <input type="text" class="ex-input" placeholder="..." style="width:220px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"></li>
+              <li>Es lloviendo mucho. → <input type="text" class="ex-input" placeholder="..." style="width:220px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"></li>
+              <li>Hay mucho calor. → <input type="text" class="ex-input" placeholder="..." style="width:220px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"></li>
+              <li>Está viento. → <input type="text" class="ex-input" placeholder="..." style="width:220px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"></li>
+              <li>Hace niebla en la ciudad. → <input type="text" class="ex-input" placeholder="..." style="width:220px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"></li>
+              <li>Es nevando en las montañas. → <input type="text" class="ex-input" placeholder="..." style="width:220px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"></li>
+            </ol>
+          </div>
+          <details><<summary style="cursor:pointer; color:#5a7a32; font-weight:500; font-size:13px;"><span class="lang-en">Show answers</span><span class="lang-zh">查看答案</span></summary>
+            <div style="padding:8px 0 4px;"><ol>
+              <li>Está nublado hoy.</li>
+              <li>Llueve mucho.</li>
+              <li>Hace mucho calor.</li>
+              <li>Hay viento. / Hace viento.</li>
+              <li>Hay niebla en la ciudad.</li>
+              <li>Nieva en las montañas.</li>
+            </ol></div>
+          </details>
+        </div>
+
+        <h4><span class="lang-en">Part 3 — Near future with IR + A</span><span class="lang-zh">第三部分 — 用 IR + A 表达近期计划</span></h4>
+        <table>
+          <tr><th><span class="lang-en">Pronoun</span><span class="lang-zh">主语</span></th><th>IR + A + infinitive</th><th><span class="lang-en">Example</span><span class="lang-zh">例子</span></th></tr>
+          <tr><td>yo</td><td><strong>voy a</strong></td><td>Voy a estudiar.</td></tr>
+          <tr><td>tú</td><td><strong>vas a</strong></td><td>Vas a trabajar.</td></tr>
+          <tr><td>él / ella / usted</td><td><strong>va a</strong></td><td>Va a cenar.</td></tr>
+          <tr><td>nosotros/as</td><td><strong>vamos a</strong></td><td>Vamos a ver una película.</td></tr>
+          <tr><td>vosotros/as</td><td><strong>vais a</strong></td><td>Vais a descansar.</td></tr>
+          <tr><td>ellos/as / ustedes</td><td><strong>van a</strong></td><td>Van a salir.</td></tr>
+        </table>
+
+        <div class="note-box">
+          <p><strong><span class="lang-en">💡 IR + A + infinitive = future plan.</span><span class="lang-zh">💡 IR + A + 不定式 = 未来计划。</span></strong>
+          <span class="lang-en">For now focus on: <em>voy a, vas a, va a, vamos a</em>. The full table appears above. We will practise this more in Unit 18.</span>
+          <span class="lang-zh">现在重点学习：<em>voy a, vas a, va a, vamos a</em>。完整表格见上方。我们将在第 18 单元进一步练习。</span></p>
+        </div>
+
+        <div class="mini-prac">
+          <h4><span class="lang-en">🟢 Mini-Practice C — Near future</span><span class="lang-zh">🟢 迷你练习 C — 近期计划</span></h4>
+          <h4 style="margin-top:12px;"><span class="lang-en">Exercise 1 — Make a plan.</span><span class="lang-zh">练习一 — 写出计划。</span></h4>
+          <p class="lang-en-block">Write what these people are going to do using IR + A + infinitive.</p>
+          <p class="lang-zh-block">用 IR + A + 不定式写出这些人打算做什么。</p>
+          <div class="exercise-block">
+            <div style="text-align:right; margin-bottom:8px;"><button onclick="this.closest('.exercise-block').querySelectorAll('input').forEach(function(i){i.value=''})" style="font-size:12px; color:#8B5E3C; background:none; border:1px solid #e2ddd4; border-radius:4px; padding:3px 10px; cursor:pointer;">Clear / 清空</button></div>
+            <ol>
+              <li>Wei / estudiar esta tarde → <input type="text" class="ex-input" placeholder="..." style="width:220px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"></li>
+              <li>Ana y Carlos / cenar juntos / mañana → <input type="text" class="ex-input" placeholder="..." style="width:220px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"></li>
+              <li>Nosotros / ver una película / el viernes → <input type="text" class="ex-input" placeholder="..." style="width:220px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"></li>
+              <li>Tú / descansar / este fin de semana → <input type="text" class="ex-input" placeholder="..." style="width:220px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"></li>
+              <li><span class="lang-en">Yo / (write your own real plan) →</span><span class="lang-zh">Yo / （写出你自己的真实计划）→</span> <input type="text" class="ex-input" placeholder="..." style="width:280px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"></li>
+            </ol>
+          </div>
+          <details><<summary style="cursor:pointer; color:#5a7a32; font-weight:500; font-size:13px;"><span class="lang-en">Show answers</span><span class="lang-zh">查看答案</span></summary>
+            <div style="padding:8px 0 4px;"><ol>
+              <li>Wei va a estudiar esta tarde.</li>
+              <li>Ana y Carlos van a cenar juntos mañana.</li>
+              <li>Nosotros vamos a ver una película el viernes.</li>
+              <li>Vas a descansar este fin de semana.</li>
+              <li><span class="lang-en">(personal answer)</span><span class="lang-zh">（个人答案）</span></li>
+            </ol></div>
+          </details>
+        </div>
+
       </div>
     </details>
 

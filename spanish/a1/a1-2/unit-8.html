@@ -15,6 +15,33 @@
     /* ── live input fields ── */
     .exercise-block { position: relative; }
     input.ex-input { vertical-align: middle; }
+
+    .mini-prac {
+      background: var(--green-tint);
+      border: 1px solid #c8ddb0;
+      border-radius: 10px;
+      padding: 18px 20px 20px;
+      margin: 20px 0 4px;
+    }
+    .mini-prac h4 { margin-top: 0; }
+    .note-box {
+      background: var(--warm-tint);
+      border-left: 3px solid var(--warm-brown);
+      border-radius: 0 8px 8px 0;
+      padding: 10px 14px;
+      margin: 12px 0 0;
+      font-size: 0.9rem;
+      line-height: 1.6;
+    }
+    .warn-box {
+      background: #fff8f0;
+      border-left: 3px solid #c0392b;
+      border-radius: 0 8px 8px 0;
+      padding: 10px 14px;
+      margin: 12px 0 0;
+      font-size: 0.9rem;
+      line-height: 1.6;
+    }
   </style>
 </head>
 <body>
@@ -71,32 +98,142 @@
         <svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg>
       </summary>
       <div class="panel-body">
-        <h4><span class="lang-en">States (with ESTAR)</span><span class="lang-zh">状态（搭配 ESTAR）</span></h4>
+
+        <h4><span class="lang-en">Part 1 — Emotional states with ESTAR</span><span class="lang-zh">第一部分 — 用 ESTAR 表达情绪状态</span></h4>
         <table>
           <tr><th>Spanish</th><th>English</th><th>中文</th></tr>
           <tr><td>😴 <strong>cansado/a</strong></td><td>tired</td><td>累</td></tr>
-          <tr><td>🤒 <strong>enfermo/a</strong></td><td>sick</td><td>生病</td></tr>
-          <tr><td>💤 <strong>agotado/a</strong></td><td>exhausted</td><td>精疲力竭</td></tr>
-          <tr><td>😵 <strong>mareado/a</strong></td><td>dizzy / nauseous</td><td>头晕</td></tr>
-          <tr><td>😊 <strong>contento/a</strong></td><td>happy</td><td>开心</td></tr>
-          <tr><td>😢 <strong>triste</strong></td><td>sad</td><td>难过</td></tr>
-          <tr><td>😰 <strong>nervioso/a</strong></td><td>nervous</td><td>紧张</td></tr>
-          <tr><td>😠 <strong>enfadado/a</strong></td><td>angry</td><td>生气</td></tr>
-          <tr><td>😫 <strong>estresado/a</strong></td><td>stressed</td><td>有压力</td></tr>
+          <tr><td>😩 <strong>agotado/a</strong></td><td>exhausted</td><td>精疲力竭</td></tr>
+          <tr><td>😊 <strong>contento/a</strong></td><td>happy, pleased</td><td>高兴</td></tr>
+          <tr><td>😢 <strong>triste</strong></td><td>sad</td><td>悲伤</td></tr>
+          <tr><td>😬 <strong>nervioso/a</strong></td><td>nervous</td><td>紧张</td></tr>
+          <tr><td>😡 <strong>enfadado/a</strong></td><td>angry</td><td>生气</td></tr>
+          <tr><td>😤 <strong>estresado/a</strong></td><td>stressed</td><td>有压力</td></tr>
           <tr><td>😟 <strong>preocupado/a</strong></td><td>worried</td><td>担心</td></tr>
+          <tr><td>🤢 <strong>mareado/a</strong></td><td>dizzy, nauseous</td><td>晕眩</td></tr>
         </table>
 
-        <h4><span class="lang-en">Physical sensations (with TENER)</span><span class="lang-zh">身体感受（搭配 TENER）</span></h4>
+        <div class="note-box">
+          <p><strong><span class="lang-en">💡 These are temporary states — use ESTAR, not SER.</span><span class="lang-zh">💡 这些是暂时状态——用 ESTAR，不用 SER。</span></strong>
+          <span class="lang-en">Ask yourself: can it change tomorrow? If yes → ESTAR.</span>
+          <span class="lang-zh">问自己：明天会变吗？如果会 → ESTAR。</span></p>
+        </div>
+
+        <div class="mini-prac">
+          <h4><span class="lang-en">🟢 Mini-Practice A — Emotional states</span><span class="lang-zh">🟢 迷你练习 A — 情绪状态</span></h4>
+          <h4 style="margin-top:12px;"><span class="lang-en">Exercise 1 — Complete with ESTAR + the right adjective.</span><span class="lang-zh">练习一 — 用 ESTAR 加正确的形容词完成句子。</span></h4>
+          <p class="lang-en-block">How does this person feel? Complete the sentence.</p>
+          <p class="lang-zh-block">这个人感觉怎么样？完成句子。</p>
+          <div class="exercise-block">
+            <div style="text-align:right; margin-bottom:8px;"><button onclick="this.closest('.exercise-block').querySelectorAll('input').forEach(function(i){i.value=''})" style="font-size:12px; color:#8B5E3C; background:none; border:1px solid #e2ddd4; border-radius:4px; padding:3px 10px; cursor:pointer;">Clear / 清空</button></div>
+            <ol>
+              <li>Ana hasn't slept in 2 days. Ana <input type="text" class="ex-input" placeholder="..." style="width:220px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"></li>
+              <li>Wei has an exam tomorrow. Wei <input type="text" class="ex-input" placeholder="..." style="width:220px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"></li>
+              <li>Carlos just got good news. Carlos <input type="text" class="ex-input" placeholder="..." style="width:220px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"></li>
+              <li>Sara argued with her friend. Sara <input type="text" class="ex-input" placeholder="..." style="width:220px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"></li>
+              <li>Ming has too much work. Ming <input type="text" class="ex-input" placeholder="..." style="width:220px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"></li>
+              <li>Pablo is on a boat in rough seas. Pablo <input type="text" class="ex-input" placeholder="..." style="width:220px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"></li>
+            </ol>
+          </div>
+          <details><<summary style="cursor:pointer; color:#5a7a32; font-weight:500; font-size:13px;"><span class="lang-en">Show answers</span><span class="lang-zh">查看答案</span></summary>
+            <div style="padding:8px 0 4px;"><ol>
+              <li>está muy agotada</li>
+              <li>está nervioso</li>
+              <li>está muy contento</li>
+              <li>está enfadada</li>
+              <li>está estresado</li>
+              <li>está mareado</li>
+            </ol></div>
+          </details>
+
+          <h4 style="margin-top:16px;"><span class="lang-en">Exercise 2 — SER or ESTAR?</span><span class="lang-zh">练习二 — SER 还是 ESTAR？</span></h4>
+          <p class="lang-en-block">Decide — permanent character or temporary state?</p>
+          <p class="lang-zh-block">判断——是固定性格还是暂时状态？</p>
+          <div class="exercise-block">
+            <div style="text-align:right; margin-bottom:8px;"><button onclick="this.closest('.exercise-block').querySelectorAll('input').forEach(function(i){i.value=''})" style="font-size:12px; color:#8B5E3C; background:none; border:1px solid #e2ddd4; border-radius:4px; padding:3px 10px; cursor:pointer;">Clear / 清空</button></div>
+            <ol>
+              <li>Wei <input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"> muy trabajador. <span class="lang-en">(always hardworking)</span><span class="lang-zh">（一贯如此）</span></li>
+              <li>Hoy Ana <input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"> muy cansada.</li>
+              <li>Carlos <input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"> simpático. <span class="lang-en">(always friendly)</span><span class="lang-zh">（一贯如此）</span></li>
+              <li>Sara <input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"> estresada esta semana.</li>
+              <li>Ming <input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"> nervioso antes del examen.</li>
+              <li>Elena <input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"> muy seria. <span class="lang-en">(always serious)</span><span class="lang-zh">（一贯如此）</span></li>
+            </ol>
+          </div>
+          <details><<summary style="cursor:pointer; color:#5a7a32; font-weight:500; font-size:13px;"><span class="lang-en">Show answers</span><span class="lang-zh">查看答案</span></summary>
+            <div style="padding:8px 0 4px;"><ol>
+              <li>es</li>
+              <li>está</li>
+              <li>es</li>
+              <li>está</li>
+              <li>está</li>
+              <li>es</li>
+            </ol></div>
+          </details>
+        </div>
+
+        <h4><span class="lang-en">Part 2 — Physical sensations with TENER</span><span class="lang-zh">第二部分 — 用 TENER 表达身体感受</span></h4>
         <table>
           <tr><th>Spanish</th><th>English</th><th>中文</th></tr>
-          <tr><td>🍔 <strong>tener hambre</strong></td><td>to be hungry</td><td>饿了</td></tr>
-          <tr><td>💧 <strong>tener sed</strong></td><td>to be thirsty</td><td>渴了</td></tr>
-          <tr><td>😴 <strong>tener sueño</strong></td><td>to be sleepy</td><td>困了</td></tr>
+          <tr><td>🍽️ <strong>tener hambre</strong></td><td>to be hungry</td><td>饿</td></tr>
+          <tr><td>💧 <strong>tener sed</strong></td><td>to be thirsty</td><td>渴</td></tr>
+          <tr><td>😴 <strong>tener sueño</strong></td><td>to be sleepy</td><td>困</td></tr>
           <tr><td>🥶 <strong>tener frío</strong></td><td>to be cold</td><td>冷</td></tr>
           <tr><td>🥵 <strong>tener calor</strong></td><td>to be hot</td><td>热</td></tr>
-          <tr><td>😨 <strong>tener miedo</strong></td><td>to be afraid</td><td>害怕</td></tr>
+          <tr><td>😨 <strong>tener miedo</strong></td><td>to be scared</td><td>害怕</td></tr>
           <tr><td>🤕 <strong>tener dolor</strong></td><td>to be in pain</td><td>疼痛</td></tr>
         </table>
+
+        <div class="note-box">
+          <p><strong><span class="lang-en">💡 Physical sensations:</span><span class="lang-zh">💡 身体感受：</span></strong>
+          <span class="lang-en">Use TENER + noun, not ESTAR + adjective. This is like Chinese 我饿了 — a verb phrase rather than a state description.</span>
+          <span class="lang-zh">用 TENER + 名词，不用 ESTAR + 形容词。这和中文的"我饿了"类似——用动词短语而非状态描述。</span></p>
+        </div>
+
+        <div class="warn-box">
+          <p><strong><span class="lang-en">⚠️ Warning:</span><span class="lang-zh">⚠️ 警告：</span></strong>
+          <span class="lang-en"><em>Estoy caliente</em> sounds strange in most Spanish-speaking countries — it has a different meaning. Always say <em>tengo calor</em> for "I am hot."</span>
+          <span class="lang-zh"><em>Estoy caliente</em> 在大多数西语国家听起来很奇怪——它有另一种含义。表示"我热了"永远用 <em>tengo calor</em>。</span></p>
+        </div>
+
+        <div class="mini-prac">
+          <h4><span class="lang-en">🟢 Mini-Practice B — Physical sensations</span><span class="lang-zh">🟢 迷你练习 B — 身体感受</span></h4>
+          <h4 style="margin-top:12px;"><span class="lang-en">Exercise 1 — TENER or ESTAR?</span><span class="lang-zh">练习一 — TENER 还是 ESTAR？</span></h4>
+          <div class="exercise-block">
+            <div style="text-align:right; margin-bottom:8px;"><button onclick="this.closest('.exercise-block').querySelectorAll('input').forEach(function(i){i.value=''})" style="font-size:12px; color:#8B5E3C; background:none; border:1px solid #e2ddd4; border-radius:4px; padding:3px 10px; cursor:pointer;">Clear / 清空</button></div>
+            <ol>
+              <li><input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"> mucho frío. <span class="lang-en">(I'm very cold)</span><span class="lang-zh">（我很冷）</span></li>
+              <li><input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"> muy cansada. <span class="lang-en">(She's very tired)</span><span class="lang-zh">（她很累）</span></li>
+              <li><input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"> sed. <span class="lang-en">(We're thirsty)</span><span class="lang-zh">（我们口渴）</span></li>
+              <li><input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"> enfadado. <span class="lang-en">(He's angry)</span><span class="lang-zh">（他生气了）</span></li>
+              <li><input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"> miedo. <span class="lang-en">(They're scared)</span><span class="lang-zh">（他们害怕）</span></li>
+              <li><input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"> estresada. <span class="lang-en">(You're stressed)</span><span class="lang-zh">（你有压力）</span></li>
+            </ol>
+          </div>
+          <details><<summary style="cursor:pointer; color:#5a7a32; font-weight:500; font-size:13px;"><span class="lang-en">Show answers</span><span class="lang-zh">查看答案</span></summary>
+            <div style="padding:8px 0 4px;"><ol>
+              <li>Tengo</li>
+              <li>Está</li>
+              <li>Tenemos</li>
+              <li>Está</li>
+              <li>Tienen</li>
+              <li>Estás</li>
+            </ol></div>
+          </details>
+
+          <h4 style="margin-top:16px;"><span class="lang-en">Exercise 2 — How are you right now?</span><span class="lang-zh">练习二 — 你现在感觉怎么样？</span></h4>
+          <p class="lang-en-block">Write 3 sentences about how you feel RIGHT NOW using ESTAR or TENER.</p>
+          <p class="lang-zh-block">用 ESTAR 或 TENER 写 3 句话描述你现在的感受。</p>
+          <div class="exercise-block">
+            <div style="text-align:right; margin-bottom:8px;"><button onclick="this.closest('.exercise-block').querySelectorAll('input').forEach(function(i){i.value=''})" style="font-size:12px; color:#8B5E3C; background:none; border:1px solid #e2ddd4; border-radius:4px; padding:3px 10px; cursor:pointer;">Clear / 清空</button></div>
+            <ol>
+              <li>Ahora mismo <input type="text" class="ex-input" placeholder="..." style="width:280px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"></li>
+              <li>También <input type="text" class="ex-input" placeholder="..." style="width:280px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"></li>
+              <li>Y un poco <input type="text" class="ex-input" placeholder="..." style="width:280px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"></li>
+            </ol>
+          </div>
+        </div>
+
       </div>
     </details>
 
