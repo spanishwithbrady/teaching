@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Verb Conjugator · Spanish with Brady</title>
+  <style>
+
+    :root{--bg:#f7f5ef;--green:#6b8c42;--brown:#2e2416;--card:#ffffff;
+      --border:#e2ddd4;--muted:#7a6e60;--warm:#8B5E3C;--radius:12px;
+      --gtint:#eef4e4;--wtint:#f5ede0;}
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+    body{font-family:system-ui,-apple-system,sans-serif;
+      background:var(--bg);color:var(--brown);
+      display:flex;flex-direction:column;min-height:100vh;}
+    a{text-decoration:none;color:inherit;}
+    .lang-zh{display:none;}
+    body.zh .lang-en{display:none;}
+    body.zh .lang-zh{display:inline;}
+    .lang-zh-block{display:none;}
+    body.zh .lang-zh-block{display:block;}
+    body.zh .lang-en-block{display:none;}
+    .t-hdr{display:flex;align-items:center;justify-content:space-between;
+      padding:10px 18px;border-bottom:1px solid var(--border);
+      background:var(--card);gap:12px;}
+    .t-logo{font-size:.9rem;font-weight:700;color:var(--brown);}
+    .t-back{font-size:.8rem;color:var(--warm);}
+    .t-back:hover{text-decoration:underline;}
+    .t-tog{display:flex;border:1px solid var(--border);border-radius:6px;overflow:hidden;flex-shrink:0;}
+    .t-tog button{padding:5px 13px;font-size:12px;font-weight:500;border:none;
+      cursor:pointer;background:var(--bg);color:var(--muted);}
+    .t-tog button.act{background:var(--green);color:#fff;}
+    main{flex:1;padding:20px 18px;max-width:640px;margin:0 auto;width:100%;}
+    .card{background:var(--card);border:1px solid var(--border);
+      border-radius:var(--radius);padding:22px 20px;margin-bottom:16px;}
+    .card-title{font-size:1rem;font-weight:700;color:var(--warm);margin-bottom:6px;}
+    .card-sub{font-size:.85rem;color:var(--muted);margin-bottom:14px;line-height:1.5;}
+    .btn{background:var(--green);color:#fff;border:none;padding:.65rem 1.6rem;
+      border-radius:8px;font-size:.88rem;font-weight:600;cursor:pointer;transition:opacity .15s;}
+    .btn:hover{opacity:.88;}
+    .btn:disabled{opacity:.5;cursor:default;}
+    .btn-sec{background:transparent;color:var(--green);border:1.5px solid var(--green);
+      padding:.55rem 1.2rem;border-radius:8px;font-size:.85rem;font-weight:600;cursor:pointer;}
+    .btn-sec:hover{background:var(--gtint);}
+    .btn-warm{background:var(--warm);color:#fff;border:none;padding:.6rem 1.4rem;
+      border-radius:8px;font-size:.85rem;font-weight:600;cursor:pointer;}
+    .btn-warm:hover{opacity:.88;}
+    select,input[type=text]{border:1px solid var(--border);border-radius:8px;
+      padding:7px 12px;font-size:.9rem;background:var(--card);color:var(--brown);
+      outline:none;transition:border-color .15s;width:100%;}
+    select:focus,input[type=text]:focus{border-color:var(--green);}
+    .note{background:var(--wtint);border-left:3px solid var(--warm);
+      border-radius:0 8px 8px 0;padding:10px 14px;margin-top:10px;
+      font-size:.85rem;line-height:1.6;}
+    .row{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px;}
+    label{font-size:.85rem;color:var(--muted);display:block;margin-bottom:4px;}
+
+
+  </style>
+</head>
+<body>
+<header class="t-hdr">
+  <a class="t-back" href="index.html">← <span class="lang-en">Back to tools</span><span class="lang-zh">返回工具页</span></a>
+  <a class="t-logo" href="../">Spanish with Brady</a>
+  <div class="t-tog">
+    <button id="en-btn" class="act" onclick="setLang('en')">EN</button>
+    <button id="zh-btn" onclick="setLang('zh')">中文</button>
+  </div>
+</header>
+<main>
+
+<div class="card">
+  <div class="card-title">🔤 <span class="lang-en">Verb Conjugator</span><span class="lang-zh">动词变位</span></div>
+  <p class="card-sub lang-en-block">Type a Spanish verb, pick a tense, and view the full conjugation table — or switch to Practice mode to fill in the forms yourself.</p>
+  <p class="card-sub lang-zh-block">输入一个西班牙语动词，选择时态，查看完整变位表——或切换到练习模式自己填写。</p>
+
+  <div style="display:flex;gap:0;margin-bottom:18px;border:1px solid var(--border);border-radius:8px;overflow:hidden;">
+    <button id="tab-ref" onclick="switchTab('ref')" style="flex:1;padding:9px;font-size:.88rem;font-weight:600;border:none;cursor:pointer;background:var(--green);color:#fff;transition:background .15s;">
+      <span class="lang-en">Reference</span><span class="lang-zh">参考</span>
+    </button>
+    <button id="tab-prac" onclick="switchTab('prac')" style="flex:1;padding:9px;font-size:.88rem;font-weight:600;border:none;cursor:pointer;background:var(--bg);color:var(--muted);transition:background .15s;">
+      <span class="lang-en">Practice</span><span class="lang-zh">练习</span>
+    </button>
+  </div>
+
+  <div style="display:flex;gap:10px;align-items:flex-end;flex-wrap:wrap;margin-bottom:14px;">
+    <div style="flex:1;min-width:130px;">
+      <label><span class="lang-en">Verb</span><span class="lang-zh">动词</span></label>
+      <input type="text" id="verb-input" placeholder="e.g. hablar" style="width:100%;">
+    </div>
+    <div style="flex:1;min-width:160px;">
+      <label><span class="lang-en">Tense</span><span class="lang-zh">时态</span></label>
+      <select id="tense-sel" style="width:100%;">
+        <option value="presente">Presente (Present)</option>
+        <option value="preterito">Pretérito Indefinido (Past)</option>
+        <option value="irA">Futuro con IR+A (Near Future)</option>
+        <option value="imperativo">Imperativo (Imperative)</option>
+      </select>
+    </div>
+    <button class="btn" id="go-btn" onclick="goVerb()">
+      <span class="lang-en">Go</span><span class="lang-zh">查看</span>
+    </button>
+  </div>
+
+  <div id="verb-result"></div>
+</div>
+<div class="note">
+  <strong><span class="lang-en">Verbs in database:</span><span class="lang-zh">数据库动词：</span></strong><br>
+  hablar · comer · vivir · trabajar · estudiar · escuchar · bailar · cocinar · descansar · caminar · beber · leer · ver · escribir · ser · estar · tener · ir · hacer · poder · querer · gustar · doler · llamarse · levantarse · salir · venir · decir · poner
+</div>
+
+</main>
+<script>
+function setLang(l){
+  document.body.classList.toggle('zh',l==='zh');
+  document.getElementById('en-btn').classList.toggle('act',l==='en');
+  document.getElementById('zh-btn').classList.toggle('act',l==='zh');
+}
+const VERBS = {
+  "hablar": {
+    label:"HABLAR", note:"regular -AR",
+    presente:["hablo", "hablas", "habla", "hablamos", "habl\u00e1is", "hablan"],
+    preterito:["habl\u00e9", "hablaste", "habl\u00f3", "hablamos", "hablasteis", "hablaron"],
+    irA:["voy a hablar", "vas a hablar", "va a hablar", "vamos a hablar", "vais a hablar", "van a hablar"],
+    imperativo:["-", "habla", "hable", "hablemos", "hablad", "hablen"],
+  },
+  "trabajar": {
+    label:"TRABAJAR", note:"regular -AR",
+    presente:["trabajo", "trabajas", "trabaja", "trabajamos", "trabaj\u00e1is", "trabajan"],
+    preterito:["trabaj\u00e9", "trabajaste", "trabaj\u00f3", "trabajamos", "trabajasteis", "trabajaron"],
+    irA:["voy a trabajar", "vas a trabajar", "va a trabajar", "vamos a trabajar", "vais a trabajar", "van a trabajar"],
+    imperativo:["-", "trabaja", "trabaje", "trabajemos", "trabajad", "trabajen"],
+  },
+  "estudiar": {
+    label:"ESTUDIAR", note:"regular -AR",
+    presente:["estudio", "estudias", "estudia", "estudiamos", "estudi\u00e1is", "estudian"],
+    preterito:["estudi\u00e9", "estudiaste", "estudi\u00f3", "estudiamos", "estudiasteis", "estudiaron"],
+    irA:["voy a estudiar", "vas a estudiar", "va a estudiar", "vamos a estudiar", "vais a estudiar", "van a estudiar"],
+    imperativo:["-", "estudia", "estudie", "estudiemos", "estudiad", "estudien"],
+  },
+  "escuchar": {
+    label:"ESCUCHAR", note:"regular -AR",
+    presente:["escucho", "escuchas", "escucha", "escuchamos", "escuch\u00e1is", "escuchan"],
+    preterito:["escuch\u00e9", "escuchaste", "escuch\u00f3", "escuchamos", "escuchasteis", "escucharon"],
+    irA:["voy a escuchar", "vas a escuchar", "va a escuchar", "vamos a escuchar", "vais a escuchar", "van a escuchar"],
+    imperativo:["-", "escucha", "escuche", "escuchemos", "escuchad", "escuchen"],
+  },
+  "bailar": {
+    label:"BAILAR", note:"regular -AR",
+    presente:["bailo", "bailas", "baila", "bailamos", "bail\u00e1is", "bailan"],
+    preterito:["bail\u00e9", "bailaste", "bail\u00f3", "bailamos", "bailasteis", "bailaron"],
+    irA:["voy a bailar", "vas a bailar", "va a bailar", "vamos a bailar", "vais a bailar", "van a bailar"],
+    imperativo:["-", "baila", "baile", "bailemos", "bailad", "bailen"],
+  },
+  "cocinar": {
+    label:"COCINAR", note:"regular -AR",
+    presente:["cocino", "cocinas", "cocina", "cocinamos", "cocin\u00e1is", "cocinan"],
+    preterito:["cocin\u00e9", "cocinaste", "cocin\u00f3", "cocinamos", "cocinasteis", "cocinaron"],
+    irA:["voy a cocinar", "vas a cocinar", "va a cocinar", "vamos a cocinar", "vais a cocinar", "van a cocinar"],
+    imperativo:["-", "cocina", "cocine", "cocinemos", "cocinad", "cocinen"],
+  },
+  "descansar": {
+    label:"DESCANSAR", note:"regular -AR",
+    presente:["descanso", "descansas", "descansa", "descansamos", "descans\u00e1is", "descansan"],
+    preterito:["descans\u00e9", "descansaste", "descans\u00f3", "descansamos", "descansasteis", "descansaron"],
+    irA:["voy a descansar", "vas a descansar", "va a descansar", "vamos a descansar", "vais a descansar", "van a descansar"],
+    imperativo:["-", "descansa", "descanse", "descansemos", "descansad", "descansen"],
+  },
+  "caminar": {
+    label:"CAMINAR", note:"regular -AR",
+    presente:["camino", "caminas", "camina", "caminamos", "camin\u00e1is", "caminan"],
+    preterito:["camin\u00e9", "caminaste", "camin\u00f3", "caminamos", "caminasteis", "caminaron"],
+    irA:["voy a caminar", "vas a caminar", "va a caminar", "vamos a caminar", "vais a caminar", "van a caminar"],
+    imperativo:["-", "camina", "camine", "caminemos", "caminad", "caminen"],
+  },
+  "comer": {
+    label:"COMER", note:"regular -ER",
+    presente:["como", "comes", "come", "comemos", "com\u00e9is", "comen"],
+    preterito:["com\u00ed", "comiste", "comi\u00f3", "comimos", "comisteis", "comieron"],
+    irA:["voy a comer", "vas a comer", "va a comer", "vamos a comer", "vais a comer", "van a comer"],
+    imperativo:["-", "come", "coma", "comamos", "comed", "coman"],
+  },
+  "beber": {
+    label:"BEBER", note:"regular -ER",
+    presente:["bebo", "bebes", "bebe", "bebemos", "beb\u00e9is", "beben"],
+    preterito:["beb\u00ed", "bebiste", "bebi\u00f3", "bebimos", "bebisteis", "bebieron"],
+    irA:["voy a beber", "vas a beber", "va a beber", "vamos a beber", "vais a beber", "van a beber"],
+    imperativo:["-", "bebe", "beba", "bebamos", "bebed", "beban"],
+  },
+  "vivir": {
+    label:"VIVIR", note:"regular -IR",
+    presente:["vivo", "vives", "vive", "vivimos", "viv\u00eds", "viven"],
+    preterito:["viv\u00ed", "viviste", "vivi\u00f3", "vivimos", "vivisteis", "vivieron"],
+    irA:["voy a vivir", "vas a vivir", "va a vivir", "vamos a vivir", "vais a vivir", "van a vivir"],
+    imperativo:["-", "vive", "viva", "vivamos", "vivid", "vivan"],
+  },
+  "escribir": {
+    label:"ESCRIBIR", note:"regular -IR",
+    presente:["escribo", "escribes", "escribe", "escribimos", "escrib\u00eds", "escriben"],
+    preterito:["escrib\u00ed", "escribiste", "escribi\u00f3", "escribimos", "escribisteis", "escribieron"],
+    irA:["voy a escribir", "vas a escribir", "va a escribir", "vamos a escribir", "vais a escribir", "van a escribir"],
+    imperativo:["-", "escribe", "escriba", "escribamos", "escribid", "escriban"],
+  },
+  "leer": {
+    label:"LEER", note:"regular -ER (ley\u00f3)",
+    presente:["leo", "lees", "lee", "leemos", "le\u00e9is", "leen"],
+    preterito:["le\u00ed", "le\u00edste", "ley\u00f3", "le\u00edmos", "le\u00edsteis", "leyeron"],
+    irA:["voy a leer", "vas a leer", "va a leer", "vamos a leer", "vais a leer", "van a leer"],
+    imperativo:["-", "lee", "lea", "leamos", "leed", "lean"],
+  },
+  "ver": {
+    label:"VER", note:"irregular",
+    presente:["veo", "ves", "ve", "vemos", "veis", "ven"],
+    preterito:["vi", "viste", "vio", "vimos", "visteis", "vieron"],
+    irA:["voy a ver", "vas a ver", "va a ver", "vamos a ver", "vais a ver", "van a ver"],
+    imperativo:["-", "ve", "vea", "veamos", "ved", "vean"],
+  },
+  "ser": {
+    label:"SER", note:"very irregular",
+    presente:["soy", "eres", "es", "somos", "sois", "son"],
+    preterito:["fui", "fuiste", "fue", "fuimos", "fuisteis", "fueron"],
+    irA:["voy a ser", "vas a ser", "va a ser", "vamos a ser", "vais a ser", "van a ser"],
+    imperativo:["-", "s\u00e9", "sea", "seamos", "sed", "sean"],
+  },
+  "estar": {
+    label:"ESTAR", note:"irregular",
+    presente:["estoy", "est\u00e1s", "est\u00e1", "estamos", "est\u00e1is", "est\u00e1n"],
+    preterito:["estuve", "estuviste", "estuvo", "estuvimos", "estuvisteis", "estuvieron"],
+    irA:["voy a estar", "vas a estar", "va a estar", "vamos a estar", "vais a estar", "van a estar"],
+    imperativo:["-", "est\u00e1", "est\u00e9", "estemos", "estad", "est\u00e9n"],
+  },
+  "tener": {
+    label:"TENER", note:"irregular (yo: tengo)",
+    presente:["tengo", "tienes", "tiene", "tenemos", "ten\u00e9is", "tienen"],
+    preterito:["tuve", "tuviste", "tuvo", "tuvimos", "tuvisteis", "tuvieron"],
+    irA:["voy a tener", "vas a tener", "va a tener", "vamos a tener", "vais a tener", "van a tener"],
+    imperativo:["-", "ten", "tenga", "tengamos", "tened", "tengan"],
+  },
+  "ir": {
+    label:"IR", note:"very irregular",
+    presente:["voy", "vas", "va", "vamos", "vais", "van"],
+    preterito:["fui", "fuiste", "fue", "fuimos", "fuisteis", "fueron"],
+    irA:["voy a ir", "vas a ir", "va a ir", "vamos a ir", "vais a ir", "van a ir"],
+    imperativo:["-", "ve", "vaya", "vayamos", "id", "vayan"],
+  },
+  "hacer": {
+    label:"HACER", note:"irregular (yo: hago)",
+    presente:["hago", "haces", "hace", "hacemos", "hac\u00e9is", "hacen"],
+    preterito:["hice", "hiciste", "hizo", "hicimos", "hicisteis", "hicieron"],
+    irA:["voy a hacer", "vas a hacer", "va a hacer", "vamos a hacer", "vais a hacer", "van a hacer"],
+    imperativo:["-", "haz", "haga", "hagamos", "haced", "hagan"],
+  },
+  "poder": {
+    label:"PODER", note:"stem-change o\u2192ue",
+    presente:["puedo", "puedes", "puede", "podemos", "pod\u00e9is", "pueden"],
+    preterito:["pude", "pudiste", "pudo", "pudimos", "pudisteis", "pudieron"],
+    irA:["voy a poder", "vas a poder", "va a poder", "vamos a poder", "vais a poder", "van a poder"],
+    imperativo:["-", "puede", "pueda", "podamos", "poded", "puedan"],
+  },
+  "querer": {
+    label:"QUERER", note:"stem-change e\u2192ie",
+    presente:["quiero", "quieres", "quiere", "queremos", "quer\u00e9is", "quieren"],
+    preterito:["quise", "quisiste", "quiso", "quisimos", "quisisteis", "quisieron"],
+    irA:["voy a querer", "vas a querer", "va a querer", "vamos a querer", "vais a querer", "van a querer"],
+    imperativo:["-", "quiere", "quiera", "queramos", "quered", "quieran"],
+  },
+  "gustar": {
+    label:"GUSTAR", note:"special \u2014 indirect object (like GUSTAR)",
+    presente:["me gusta(n)", "te gusta(n)", "le gusta(n)", "nos gusta(n)", "os gusta(n)", "les gusta(n)"],
+    preterito:["me gust\u00f3/gustaron", "te gust\u00f3/gustaron", "le gust\u00f3/gustaron", "nos gust\u00f3/gustaron", "os gust\u00f3/gustaron", "les gust\u00f3/gustaron"],
+    irA:["me va a gustar", "te va a gustar", "le va a gustar", "nos va a gustar", "os va a gustar", "les va a gustar"],
+    imperativo:["N/A", "N/A", "N/A", "N/A", "N/A", "N/A"],
+    special:true,
+  },
+  "doler": {
+    label:"DOLER", note:"special \u2014 like GUSTAR",
+    presente:["me duele(n)", "te duele(n)", "le duele(n)", "nos duele(n)", "os duele(n)", "les duele(n)"],
+    preterito:["me doli\u00f3/dolieron", "te doli\u00f3/dolieron", "le doli\u00f3/dolieron", "nos doli\u00f3/dolieron", "os doli\u00f3/dolieron", "les doli\u00f3/dolieron"],
+    irA:["me va a doler", "te va a doler", "le va a doler", "nos va a doler", "os va a doler", "les va a doler"],
+    imperativo:["N/A", "N/A", "N/A", "N/A", "N/A", "N/A"],
+    special:true,
+  },
+  "llamarse": {
+    label:"LLAMARSE", note:"reflexive",
+    presente:["me llamo", "te llamas", "se llama", "nos llamamos", "os llam\u00e1is", "se llaman"],
+    preterito:["me llam\u00e9", "te llamaste", "se llam\u00f3", "nos llamamos", "os llamasteis", "se llamaron"],
+    irA:["me voy a llamar", "te vas a llamar", "se va a llamar", "nos vamos a llamar", "os vais a llamar", "se van a llamar"],
+    imperativo:["-", "ll\u00e1mame", "ll\u00e1mese", "llam\u00e9monos", "llamaos", "ll\u00e1mense"],
+  },
+  "levantarse": {
+    label:"LEVANTARSE", note:"reflexive",
+    presente:["me levanto", "te levantas", "se levanta", "nos levantamos", "os levant\u00e1is", "se levantan"],
+    preterito:["me levant\u00e9", "te levantaste", "se levant\u00f3", "nos levantamos", "os levantasteis", "se levantaron"],
+    irA:["me voy a levantar", "te vas a levantar", "se va a levantar", "nos vamos a levantar", "os vais a levantar", "se van a levantar"],
+    imperativo:["-", "lev\u00e1ntate", "lev\u00e1ntese", "levant\u00e9monos", "levantaos", "lev\u00e1ntense"],
+  },
+  "salir": {
+    label:"SALIR", note:"irregular (yo: salgo)",
+    presente:["salgo", "sales", "sale", "salimos", "sal\u00eds", "salen"],
+    preterito:["sal\u00ed", "saliste", "sali\u00f3", "salimos", "salisteis", "salieron"],
+    irA:["voy a salir", "vas a salir", "va a salir", "vamos a salir", "vais a salir", "van a salir"],
+    imperativo:["-", "sal", "salga", "salgamos", "salid", "salgan"],
+  },
+  "venir": {
+    label:"VENIR", note:"irregular (yo: vengo)",
+    presente:["vengo", "vienes", "viene", "venimos", "ven\u00eds", "vienen"],
+    preterito:["vine", "viniste", "vino", "vinimos", "vinisteis", "vinieron"],
+    irA:["voy a venir", "vas a venir", "va a venir", "vamos a venir", "vais a venir", "van a venir"],
+    imperativo:["-", "ven", "venga", "vengamos", "venid", "vengan"],
+  },
+  "decir": {
+    label:"DECIR", note:"irregular (yo: digo)",
+    presente:["digo", "dices", "dice", "decimos", "dec\u00eds", "dicen"],
+    preterito:["dije", "dijiste", "dijo", "dijimos", "dijisteis", "dijeron"],
+    irA:["voy a decir", "vas a decir", "va a decir", "vamos a decir", "vais a decir", "van a decir"],
+    imperativo:["-", "di", "diga", "digamos", "decid", "digan"],
+  },
+  "poner": {
+    label:"PONER", note:"irregular (yo: pongo)",
+    presente:["pongo", "pones", "pone", "ponemos", "pon\u00e9is", "ponen"],
+    preterito:["puse", "pusiste", "puso", "pusimos", "pusisteis", "pusieron"],
+    irA:["voy a poner", "vas a poner", "va a poner", "vamos a poner", "vais a poner", "van a poner"],
+    imperativo:["-", "pon", "ponga", "pongamos", "poned", "pongan"],
+  },
+};
+
+const PRONOUNS = ['yo','tú','él/ella/usted','nosotros/as','vosotros/as','ellos/ellas/ustedes'];
+const TENSE_LABELS = {
+  presente:'Presente',preterito:'Pretérito Indefinido',
+  irA:'Futuro (IR+A)',imperativo:'Imperativo'
+};
+
+let curMode = 'ref';
+function switchTab(mode){
+  curMode = mode;
+  const isRef = mode==='ref';
+  document.getElementById('tab-ref').style.background = isRef?'var(--green)':'var(--bg)';
+  document.getElementById('tab-ref').style.color = isRef?'#fff':'var(--muted)';
+  document.getElementById('tab-prac').style.background = !isRef?'var(--green)':'var(--bg)';
+  document.getElementById('tab-prac').style.color = !isRef?'#fff':'var(--muted)';
+  document.getElementById('verb-result').innerHTML='';
+  document.getElementById('go-btn').querySelector('.lang-en').textContent=isRef?'Go':'Start practice';
+  document.getElementById('go-btn').querySelector('.lang-zh').textContent=isRef?'查看':'开始练习';
+}
+
+function normalize(s){
+  return s.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'').trim();
+}
+
+function goVerb(){
+  const v = document.getElementById('verb-input').value.trim().toLowerCase();
+  const t = document.getElementById('tense-sel').value;
+  const data = VERBS[v];
+  if(!data){
+    document.getElementById('verb-result').innerHTML =
+      '<div class="note"><span class="lang-en">Verb not in database yet — coming soon 🔜</span><span class="lang-zh">动词暂未收录，敬请期待 🔜</span></div>';
+    return;
+  }
+  curMode==='ref'?showReference(data,t):showPractice(data,t);
+}
+
+function showReference(data,t){
+  const forms = data[t];
+  let rows = PRONOUNS.map((p,i)=>
+    '<tr style="background:'+( i%2===0?'var(--bg)':'var(--card)')+';">' +
+    '<td style="padding:9px 14px;font-weight:600;font-size:.88rem;color:var(--muted);width:44%;">'+p+'</td>'+
+    '<td style="padding:9px 14px;font-size:.92rem;color:var(--brown);">'+forms[i]+'</td></tr>'
+  ).join('');
+  document.getElementById('verb-result').innerHTML =
+    '<div style="margin-bottom:8px;"><span style="font-size:1.3rem;font-weight:700;color:var(--brown);">'+data.label+'</span> ' +
+    '<span style="font-size:.78rem;color:var(--muted);">('+data.note+')</span></div>' +
+    '<div style="font-size:.82rem;font-weight:600;color:var(--green);margin-bottom:8px;text-transform:uppercase;letter-spacing:.05em;">'+TENSE_LABELS[t]+'</div>' +
+    (data.special?'<div class="note" style="margin-bottom:10px;"><span class="lang-en">⚠️ This verb uses indirect object pronouns (me/te/le/nos/os/les), not subject pronouns.</span><span class="lang-zh">⚠️ 此动词使用间接宾语人称代词，不用主语代词。</span></div>':'')+
+    '<div style="overflow-x:auto;"><table style="width:100%;border-collapse:collapse;border:1px solid var(--border);border-radius:8px;overflow:hidden;">'+
+    '<tr style="background:var(--green);"><th style="padding:9px 14px;text-align:left;color:#fff;font-size:.85rem;">Pronombre</th>'+
+    '<th style="padding:9px 14px;text-align:left;color:#fff;font-size:.85rem;">Forma</th></tr>'+rows+'</table></div>';
+}
+
+function showPractice(data,t){
+  if(data.special){
+    showReference(data,t);
+    document.getElementById('verb-result').innerHTML += '<div class="note" style="margin-top:10px;"><span class="lang-en">Practice mode not available for special verbs — use Reference mode above.</span><span class="lang-zh">特殊动词不支持练习模式，请使用上方参考模式。</span></div>';
+    return;
+  }
+  let rows = PRONOUNS.map((p,i)=>
+    '<tr style="background:'+(i%2===0?'var(--bg)':'var(--card)')+';">'+
+    '<td style="padding:8px 12px;font-weight:600;font-size:.87rem;color:var(--muted);width:44%;">'+p+'</td>'+
+    '<td style="padding:6px 12px;"><input type="text" data-idx="'+i+'" style="width:100%;border:1px solid var(--border);border-radius:6px;padding:5px 10px;font-size:.9rem;background:#fff;outline:none;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='var(--border)'"></td>'+
+    '<td style="padding:8px 6px;width:30px;" id="pf-'+i+'"></td></tr>'
+  ).join('');
+  document.getElementById('verb-result').innerHTML =
+    '<div style="margin-bottom:8px;"><span style="font-size:1.3rem;font-weight:700;color:var(--brown);">'+data.label+'</span> '+
+    '<span style="font-size:.78rem;color:var(--muted);">('+data.note+')</span></div>'+
+    '<div style="font-size:.82rem;font-weight:600;color:var(--green);margin-bottom:8px;text-transform:uppercase;letter-spacing:.05em;">'+TENSE_LABELS[t]+'</div>'+
+    '<div style="overflow-x:auto;"><table style="width:100%;border-collapse:collapse;">'+rows+'</table></div>'+
+    '<div class="row" style="margin-top:14px;">'+
+    '<button class="btn" onclick="checkPractice()" data-verb="'+document.getElementById('verb-input').value.trim().toLowerCase()+'" data-tense="'+t+'"><span class="lang-en">Check</span><span class="lang-zh">检查</span></button>'+
+    '<button class="btn-sec" onclick="clearPractice()"><span class="lang-en">Try again</span><span class="lang-zh">再试一次</span></button>'+
+    '<button class="btn-warm" onclick="goVerb()"><span class="lang-en">New verb</span><span class="lang-zh">换动词</span></button>'+
+    '</div><div id="prac-score" style="margin-top:10px;font-weight:600;font-size:.9rem;"></div>';
+}
+
+function checkPractice(){
+  const v = document.getElementById('verb-input').value.trim().toLowerCase();
+  const t = document.getElementById('tense-sel').value;
+  const data = VERBS[v];
+  if(!data)return;
+  const forms = data[t];
+  let correct = 0;
+  document.querySelectorAll('#verb-result input[data-idx]').forEach(inp => {
+    const i = parseInt(inp.dataset.idx);
+    const expected = forms[i];
+    const given = inp.value.trim();
+    const fb = document.getElementById('pf-'+i);
+    const exact = given === expected;
+    const accentless = normalize(given) === normalize(expected);
+    if(exact){
+      inp.style.borderColor='#6b8c42';inp.style.background='#eef4e4';
+      fb.innerHTML='<span style="color:#6b8c42;">✓</span>';
+      correct++;
+    } else if(accentless && given.length>0){
+      inp.style.borderColor='#6b8c42';inp.style.background='#eef4e4';
+      fb.innerHTML='<span style="color:#6b8c42;" title="Remember the accent!">✓*</span>';
+      inp.title='✓ Correct! Remember the accent: '+expected;
+      correct++;
+    } else {
+      inp.style.borderColor='#c0392b';inp.style.background='#fff5f5';
+      fb.innerHTML='<span style="color:#c0392b;">✗</span>';
+      if(given.length>0) inp.title='Correct: '+expected;
+      inp.placeholder=expected;
+    }
+  });
+  document.getElementById('prac-score').innerHTML =
+    '<span style="color:'+(correct===6?'var(--green)':'var(--warm)')+';">'+correct+' / 6 correct ✓</span>'+
+    (correct<6?'<span style="color:var(--muted);font-size:.82rem;margin-left:8px;">— Incorrect answers shown in red · hover for correct form</span>':'');
+}
+
+function clearPractice(){
+  document.querySelectorAll('#verb-result input[data-idx]').forEach(inp=>{
+    inp.value='';inp.style.borderColor='var(--border)';inp.style.background='#fff';inp.title='';inp.placeholder='';
+  });
+  document.querySelectorAll('[id^=pf-]').forEach(el=>el.innerHTML='');
+  document.getElementById('prac-score').innerHTML='';
+}
+
+document.getElementById('verb-input').addEventListener('keydown',e=>{if(e.key==='Enter')goVerb();});
+
+</script>
+</body>
+</html>

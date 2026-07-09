@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Student Picker · Spanish with Brady</title>
+  <style>
+
+    :root{--bg:#f7f5ef;--green:#6b8c42;--brown:#2e2416;--card:#ffffff;
+      --border:#e2ddd4;--muted:#7a6e60;--warm:#8B5E3C;--radius:12px;
+      --gtint:#eef4e4;--wtint:#f5ede0;}
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+    body{font-family:system-ui,-apple-system,sans-serif;
+      background:var(--bg);color:var(--brown);
+      display:flex;flex-direction:column;min-height:100vh;}
+    a{text-decoration:none;color:inherit;}
+    .lang-zh{display:none;}
+    body.zh .lang-en{display:none;}
+    body.zh .lang-zh{display:inline;}
+    .lang-zh-block{display:none;}
+    body.zh .lang-zh-block{display:block;}
+    body.zh .lang-en-block{display:none;}
+    .t-hdr{display:flex;align-items:center;justify-content:space-between;
+      padding:10px 18px;border-bottom:1px solid var(--border);
+      background:var(--card);gap:12px;}
+    .t-logo{font-size:.9rem;font-weight:700;color:var(--brown);}
+    .t-back{font-size:.8rem;color:var(--warm);}
+    .t-back:hover{text-decoration:underline;}
+    .t-tog{display:flex;border:1px solid var(--border);border-radius:6px;overflow:hidden;flex-shrink:0;}
+    .t-tog button{padding:5px 13px;font-size:12px;font-weight:500;border:none;
+      cursor:pointer;background:var(--bg);color:var(--muted);}
+    .t-tog button.act{background:var(--green);color:#fff;}
+    main{flex:1;padding:20px 18px;max-width:640px;margin:0 auto;width:100%;}
+    .card{background:var(--card);border:1px solid var(--border);
+      border-radius:var(--radius);padding:22px 20px;margin-bottom:16px;}
+    .card-title{font-size:1rem;font-weight:700;color:var(--warm);margin-bottom:6px;}
+    .card-sub{font-size:.85rem;color:var(--muted);margin-bottom:14px;line-height:1.5;}
+    .btn{background:var(--green);color:#fff;border:none;padding:.65rem 1.6rem;
+      border-radius:8px;font-size:.88rem;font-weight:600;cursor:pointer;transition:opacity .15s;}
+    .btn:hover{opacity:.88;}
+    .btn:disabled{opacity:.5;cursor:default;}
+    .btn-sec{background:transparent;color:var(--green);border:1.5px solid var(--green);
+      padding:.55rem 1.2rem;border-radius:8px;font-size:.85rem;font-weight:600;cursor:pointer;}
+    .btn-sec:hover{background:var(--gtint);}
+    .btn-warm{background:var(--warm);color:#fff;border:none;padding:.6rem 1.4rem;
+      border-radius:8px;font-size:.85rem;font-weight:600;cursor:pointer;}
+    .btn-warm:hover{opacity:.88;}
+    select,input[type=text]{border:1px solid var(--border);border-radius:8px;
+      padding:7px 12px;font-size:.9rem;background:var(--card);color:var(--brown);
+      outline:none;transition:border-color .15s;width:100%;}
+    select:focus,input[type=text]:focus{border-color:var(--green);}
+    .note{background:var(--wtint);border-left:3px solid var(--warm);
+      border-radius:0 8px 8px 0;padding:10px 14px;margin-top:10px;
+      font-size:.85rem;line-height:1.6;}
+    .row{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px;}
+    label{font-size:.85rem;color:var(--muted);display:block;margin-bottom:4px;}
+
+
+    .name-inputs{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:14px;}
+    .name-inputs input{font-size:.9rem;padding:7px 12px;}
+    .student-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(110px,1fr));gap:10px;margin:16px 0;}
+    .s-card{background:var(--bg);border:2px solid var(--border);border-radius:10px;
+      padding:14px 8px;text-align:center;font-size:.88rem;font-weight:600;color:var(--brown);
+      transition:all .2s;cursor:default;position:relative;user-select:none;}
+    .s-card.active{background:var(--gtint);border-color:var(--green);
+      box-shadow:0 0 0 3px rgba(107,140,66,.2);}
+    .s-card.picked{background:var(--green);border-color:var(--green);color:#fff;
+      transform:scale(1.06);box-shadow:0 0 0 4px rgba(107,140,66,.25);}
+    .s-card.removed{opacity:.3;text-decoration:line-through;}
+    .s-card.flash{animation:flash .4s;}
+    @keyframes flash{0%,100%{background:var(--bg);}50%{background:var(--gtint);}}
+    .picked-name{font-size:1.8rem;font-weight:700;color:var(--green);
+      text-align:center;min-height:2.4rem;margin:10px 0 4px;}
+
+  </style>
+</head>
+<body>
+<header class="t-hdr">
+  <a class="t-back" href="index.html">← <span class="lang-en">Back to tools</span><span class="lang-zh">返回工具页</span></a>
+  <a class="t-logo" href="../">Spanish with Brady</a>
+  <div class="t-tog">
+    <button id="en-btn" class="act" onclick="setLang('en')">EN</button>
+    <button id="zh-btn" onclick="setLang('zh')">中文</button>
+  </div>
+</header>
+<main>
+
+<div class="card">
+  <div class="card-title">🎯 <span class="lang-en">Random Student Picker</span><span class="lang-zh">随机选学生</span></div>
+  <p class="card-sub">
+    <span class="lang-en">Enter up to 8 student names, then spin to pick one at a time.</span>
+    <span class="lang-zh">输入最多8个学生姓名，然后随机选一个。</span>
+  </p>
+
+  <!-- Setup section -->
+  <div id="setup-sec">
+    <div class="name-inputs" id="name-inputs-grid"></div>
+    <button class="btn" onclick="saveGroup()">
+      <span class="lang-en">Save group</span><span class="lang-zh">保存小组</span>
+    </button>
+  </div>
+
+  <!-- Spinner section -->
+  <div id="spinner-sec" style="display:none;">
+    <div class="student-grid" id="student-grid"></div>
+    <div class="picked-name" id="picked-name"></div>
+    <div class="row" style="justify-content:center;">
+      <button class="btn" id="pick-btn" onclick="pickStudent()">
+        <span class="lang-en">Pick a student</span><span class="lang-zh">选一个学生</span>
+      </button>
+      <button class="btn-sec" onclick="removePickedStudent()">
+        <span class="lang-en">Remove this student</span><span class="lang-zh">移除此学生</span>
+      </button>
+      <button class="btn-warm" onclick="resetStudents()">
+        <span class="lang-en">Reset</span><span class="lang-zh">重置</span>
+      </button>
+    </div>
+    <p style="text-align:right;margin-top:10px;font-size:.8rem;color:var(--muted);">
+      <button onclick="editGroup()" style="background:none;border:none;cursor:pointer;color:var(--muted);font-size:.8rem;text-decoration:underline;">
+        <span class="lang-en">Edit names</span><span class="lang-zh">修改姓名</span>
+      </button>
+    </p>
+  </div>
+</div>
+
+</main>
+<script>
+function setLang(l){
+  document.body.classList.toggle('zh',l==='zh');
+  document.getElementById('en-btn').classList.toggle('act',l==='en');
+  document.getElementById('zh-btn').classList.toggle('act',l==='zh');
+}
+
+let allStudents=[], remaining=[], picked=null;
+
+(function buildInputs(){
+  const g = document.getElementById('name-inputs-grid');
+  for(let i=0;i<8;i++){
+    const inp=document.createElement('input');
+    inp.type='text'; inp.placeholder='Student '+(i+1);
+    inp.addEventListener('keydown',e=>{if(e.key==='Enter')saveGroup();});
+    g.appendChild(inp);
+  }
+})();
+
+function saveGroup(){
+  const names=[...document.querySelectorAll('#name-inputs-grid input')]
+    .map(i=>i.value.trim()).filter(Boolean);
+  if(names.length<2){alert('Please enter at least 2 student names.');return;}
+  allStudents=names; remaining=[...names]; picked=null;
+  document.getElementById('setup-sec').style.display='none';
+  document.getElementById('spinner-sec').style.display='block';
+  renderGrid();
+}
+
+function renderGrid(){
+  const g=document.getElementById('student-grid'); g.innerHTML='';
+  allStudents.forEach(name=>{
+    const d=document.createElement('div');
+    d.className='s-card'+(remaining.includes(name)?'':' removed')+(name===picked?' picked':'');
+    d.id='sc-'+name.replace(/\s+/g,'_');
+    d.textContent=name;
+    g.appendChild(d);
+  });
+  document.getElementById('picked-name').textContent=picked||'';
+  document.getElementById('pick-btn').disabled=remaining.length===0;
+}
+
+function pickStudent(){
+  if(remaining.length===0)return;
+  let count=0, total=24+Math.floor(Math.random()*12);
+  document.querySelectorAll('.s-card:not(.removed)').forEach(c=>{c.classList.add('flash');setTimeout(()=>c.classList.remove('flash'),400);});
+  function tick(){
+    const idx=Math.floor(Math.random()*remaining.length);
+    if(count<total){
+      count++;
+      setTimeout(tick, count<total*.6?60:count<total*.85?130:280);
+    } else {
+      picked=remaining[idx];
+      renderGrid();
+    }
+  }
+  tick();
+}
+
+function removePickedStudent(){
+  if(!picked)return;
+  remaining=remaining.filter(s=>s!==picked);
+  const old=picked; picked=null;
+  renderGrid();
+  if(remaining.length===0){
+    document.getElementById('picked-name').textContent='';
+    setTimeout(()=>alert('Everyone has been picked! Press Reset to start again.'),100);
+  }
+}
+
+function resetStudents(){remaining=[...allStudents];picked=null;renderGrid();}
+function editGroup(){
+  document.getElementById('setup-sec').style.display='block';
+  document.getElementById('spinner-sec').style.display='none';
+}
+
+</script>
+</body>
+</html>

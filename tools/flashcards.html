@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Flashcard Mode · Spanish with Brady</title>
+  <style>
+
+    :root{--bg:#f7f5ef;--green:#6b8c42;--brown:#2e2416;--card:#ffffff;
+      --border:#e2ddd4;--muted:#7a6e60;--warm:#8B5E3C;--radius:12px;
+      --gtint:#eef4e4;--wtint:#f5ede0;}
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+    body{font-family:system-ui,-apple-system,sans-serif;
+      background:var(--bg);color:var(--brown);
+      display:flex;flex-direction:column;min-height:100vh;}
+    a{text-decoration:none;color:inherit;}
+    .lang-zh{display:none;}
+    body.zh .lang-en{display:none;}
+    body.zh .lang-zh{display:inline;}
+    .lang-zh-block{display:none;}
+    body.zh .lang-zh-block{display:block;}
+    body.zh .lang-en-block{display:none;}
+    .t-hdr{display:flex;align-items:center;justify-content:space-between;
+      padding:10px 18px;border-bottom:1px solid var(--border);
+      background:var(--card);gap:12px;}
+    .t-logo{font-size:.9rem;font-weight:700;color:var(--brown);}
+    .t-back{font-size:.8rem;color:var(--warm);}
+    .t-back:hover{text-decoration:underline;}
+    .t-tog{display:flex;border:1px solid var(--border);border-radius:6px;overflow:hidden;flex-shrink:0;}
+    .t-tog button{padding:5px 13px;font-size:12px;font-weight:500;border:none;
+      cursor:pointer;background:var(--bg);color:var(--muted);}
+    .t-tog button.act{background:var(--green);color:#fff;}
+    main{flex:1;padding:20px 18px;max-width:640px;margin:0 auto;width:100%;}
+    .card{background:var(--card);border:1px solid var(--border);
+      border-radius:var(--radius);padding:22px 20px;margin-bottom:16px;}
+    .card-title{font-size:1rem;font-weight:700;color:var(--warm);margin-bottom:6px;}
+    .card-sub{font-size:.85rem;color:var(--muted);margin-bottom:14px;line-height:1.5;}
+    .btn{background:var(--green);color:#fff;border:none;padding:.65rem 1.6rem;
+      border-radius:8px;font-size:.88rem;font-weight:600;cursor:pointer;transition:opacity .15s;}
+    .btn:hover{opacity:.88;}
+    .btn:disabled{opacity:.5;cursor:default;}
+    .btn-sec{background:transparent;color:var(--green);border:1.5px solid var(--green);
+      padding:.55rem 1.2rem;border-radius:8px;font-size:.85rem;font-weight:600;cursor:pointer;}
+    .btn-sec:hover{background:var(--gtint);}
+    .btn-warm{background:var(--warm);color:#fff;border:none;padding:.6rem 1.4rem;
+      border-radius:8px;font-size:.85rem;font-weight:600;cursor:pointer;}
+    .btn-warm:hover{opacity:.88;}
+    select,input[type=text]{border:1px solid var(--border);border-radius:8px;
+      padding:7px 12px;font-size:.9rem;background:var(--card);color:var(--brown);
+      outline:none;transition:border-color .15s;width:100%;}
+    select:focus,input[type=text]:focus{border-color:var(--green);}
+    .note{background:var(--wtint);border-left:3px solid var(--warm);
+      border-radius:0 8px 8px 0;padding:10px 14px;margin-top:10px;
+      font-size:.85rem;line-height:1.6;}
+    .row{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px;}
+    label{font-size:.85rem;color:var(--muted);display:block;margin-bottom:4px;}
+
+
+    .fc-setup{padding:4px 0;}
+    .fc-setup .row{margin-top:12px;align-items:flex-end;}
+    .fc-setup select{width:100%;margin-top:4px;}
+    .fc-scene{display:none;}
+    .progress-bar-wrap{background:var(--border);border-radius:10px;height:6px;margin-bottom:16px;overflow:hidden;}
+    .progress-bar-fill{height:6px;background:var(--green);border-radius:10px;transition:width .3s;}
+    .progress-lbl{font-size:.82rem;color:var(--muted);margin-bottom:8px;text-align:right;}
+    .flip-card-outer{perspective:900px;width:100%;max-width:380px;height:220px;margin:0 auto 20px;cursor:pointer;}
+    .flip-card-inner{width:100%;height:100%;transition:transform .5s;transform-style:preserve-3d;position:relative;}
+    .flip-card-inner.flipped{transform:rotateY(180deg);}
+    .flip-face{position:absolute;width:100%;height:100%;backface-visibility:hidden;
+      border-radius:var(--radius);border:2px solid var(--border);
+      display:flex;flex-direction:column;align-items:center;justify-content:center;padding:24px;}
+    .flip-front{background:var(--bg);}
+    .flip-back{background:var(--card);transform:rotateY(180deg);}
+    .fc-lang-label{font-size:.7rem;font-weight:700;letter-spacing:.08em;
+      text-transform:uppercase;color:var(--muted);margin-bottom:8px;}
+    .fc-word{font-size:1.6rem;font-weight:700;color:var(--brown);text-align:center;}
+    .fc-emoji{font-size:2rem;margin-bottom:4px;}
+    .fc-ans{font-size:1.1rem;font-weight:600;color:var(--green);text-align:center;}
+    .fc-sub{font-size:.85rem;color:var(--muted);margin-top:6px;text-align:center;}
+    .fc-hint{font-size:.78rem;color:var(--muted);text-align:center;margin-bottom:12px;}
+    .score-display{font-size:1.4rem;font-weight:700;color:var(--green);text-align:center;margin:20px 0 8px;}
+
+  </style>
+</head>
+<body>
+<header class="t-hdr">
+  <a class="t-back" href="index.html">← <span class="lang-en">Back to tools</span><span class="lang-zh">返回工具页</span></a>
+  <a class="t-logo" href="../">Spanish with Brady</a>
+  <div class="t-tog">
+    <button id="en-btn" class="act" onclick="setLang('en')">EN</button>
+    <button id="zh-btn" onclick="setLang('zh')">中文</button>
+  </div>
+</header>
+<main>
+
+<div class="card">
+  <div class="card-title">🃏 <span class="lang-en">Flashcard Mode</span><span class="lang-zh">闪卡模式</span></div>
+
+  <!-- Setup -->
+  <div class="fc-setup" id="fc-setup">
+    <div style="margin-bottom:10px;">
+      <label><span class="lang-en">Unit:</span><span class="lang-zh">单元：</span></label>
+      <select id="fc-unit"><option value="all">All units / 所有单元</option>
+<option value="1">Unit 1 — Saludos</option>
+<option value="2">Unit 2 — Origen</option>
+<option value="3">Unit 3 — Profesiones</option>
+<option value="4">Unit 4 — Ubicación</option>
+<option value="5">Unit 5 — Objetos</option>
+<option value="6">Unit 6 — Familia</option>
+<option value="7">Unit 7 — Descripción</option>
+<option value="8">Unit 8 — Estados</option>
+<option value="9">Unit 9 — La Semana</option>
+<option value="10">Unit 10 — Rutina</option>
+<option value="11">Unit 11 — Calendario</option>
+<option value="12">Unit 12 — Aficiones</option>
+<option value="13">Unit 13 — Restaurante</option>
+<option value="14">Unit 14 — De Compras</option>
+<option value="15">Unit 15 — Comparaciones</option>
+<option value="15b">Unit 15b — Obligación</option>
+<option value="16">Unit 16 — Ciudad</option>
+<option value="17">Unit 17 — Salud</option>
+<option value="18">Unit 18 — Futuro</option>
+<option value="19">Unit 19 — Pasado I</option>
+<option value="20">Unit 20 — Pasado II</option></select>
+    </div>
+    <div style="margin-bottom:10px;">
+      <label><span class="lang-en">Direction:</span><span class="lang-zh">方向：</span></label>
+      <select id="fc-dir">
+        <option value="es-en">Spanish → English + 中文</option>
+        <option value="en-es">English → Spanish</option>
+        <option value="zh-es">中文 → Spanish</option>
+      </select>
+    </div>
+    <div style="margin-bottom:14px;">
+      <label><span class="lang-en">Cards:</span><span class="lang-zh">卡片数量：</span></label>
+      <select id="fc-count">
+        <option value="10">10 cards</option>
+        <option value="20">20 cards</option>
+        <option value="all">All cards</option>
+      </select>
+    </div>
+    <button class="btn" onclick="startFC()">
+      <span class="lang-en">Start</span><span class="lang-zh">开始</span>
+    </button>
+  </div>
+
+  <!-- Card scene -->
+  <div class="fc-scene" id="fc-scene">
+    <div class="progress-lbl" id="fc-progress"></div>
+    <div class="progress-bar-wrap"><div class="progress-bar-fill" id="fc-bar" style="width:0%"></div></div>
+
+    <div class="flip-card-outer" onclick="flipCard()">
+      <div class="flip-card-inner" id="fc-inner">
+        <div class="flip-face flip-front">
+          <div class="fc-lang-label" id="fc-front-label"></div>
+          <div class="fc-emoji" id="fc-emoji"></div>
+          <div class="fc-word" id="fc-front-word"></div>
+        </div>
+        <div class="flip-face flip-back">
+          <div class="fc-lang-label" id="fc-back-label"></div>
+          <div class="fc-ans" id="fc-back-word"></div>
+          <div class="fc-sub" id="fc-back-sub"></div>
+        </div>
+      </div>
+    </div>
+    <p class="fc-hint">
+      <span class="lang-en">Click card to flip</span>
+      <span class="lang-zh">点击卡片翻转</span>
+    </p>
+
+    <div id="fc-flip-btns" style="display:none;">
+      <div class="row" style="justify-content:center;">
+        <button class="btn" onclick="markCard(true)">✓ <span class="lang-en">Got it</span><span class="lang-zh">记住了</span></button>
+        <button class="btn-warm" onclick="markCard(false)">✗ <span class="lang-en">Again</span><span class="lang-zh">再来</span></button>
+      </div>
+    </div>
+
+    <div class="score-display" id="fc-score" style="display:none;"></div>
+    <div id="fc-end-btns" style="display:none;">
+      <div class="row" style="justify-content:center;">
+        <button class="btn" onclick="startFC()"><span class="lang-en">Play again</span><span class="lang-zh">再玩一次</span></button>
+        <button class="btn-sec" onclick="resetFC()"><span class="lang-en">Setup</span><span class="lang-zh">重新设置</span></button>
+      </div>
+    </div>
+  </div>
+</div>
+
+</main>
+<script>
+function setLang(l){
+  document.body.classList.toggle('zh',l==='zh');
+  document.getElementById('en-btn').classList.toggle('act',l==='en');
+  document.getElementById('zh-btn').classList.toggle('act',l==='zh');
+}
+const VOCAB = [{"unit": "1", "spanish": "hola", "english": "hello / hi", "chinese": "你好", "emoji": "👋"}, {"unit": "1", "spanish": "adiós", "english": "goodbye", "chinese": "再见", "emoji": "👋"}, {"unit": "1", "spanish": "buenos días", "english": "good morning", "chinese": "早上好", "emoji": "🌅"}, {"unit": "1", "spanish": "buenas tardes", "english": "good afternoon", "chinese": "下午好", "emoji": "☀️"}, {"unit": "1", "spanish": "buenas noches", "english": "good evening / night", "chinese": "晚上好", "emoji": "🌙"}, {"unit": "1", "spanish": "gracias", "english": "thank you", "chinese": "谢谢", "emoji": "🙏"}, {"unit": "1", "spanish": "por favor", "english": "please", "chinese": "请", "emoji": "🙏"}, {"unit": "1", "spanish": "¿cómo estás?", "english": "how are you?", "chinese": "你好吗？", "emoji": "😊"}, {"unit": "1", "spanish": "muy bien", "english": "very well", "chinese": "很好", "emoji": "😊"}, {"unit": "1", "spanish": "perdona", "english": "excuse me / sorry", "chinese": "对不起", "emoji": "😅"}, {"unit": "1", "spanish": "me llamo...", "english": "my name is...", "chinese": "我叫……", "emoji": "📛"}, {"unit": "1", "spanish": "¿cómo te llamas?", "english": "what's your name?", "chinese": "你叫什么名字？", "emoji": "📛"}, {"unit": "2", "spanish": "España", "english": "Spain", "chinese": "西班牙", "emoji": "🇪🇸"}, {"unit": "2", "spanish": "México", "english": "Mexico", "chinese": "墨西哥", "emoji": "🇲🇽"}, {"unit": "2", "spanish": "soy de...", "english": "I am from...", "chinese": "我来自……", "emoji": ""}, {"unit": "2", "spanish": "¿de dónde eres?", "english": "where are you from?", "chinese": "你来自哪里？", "emoji": "🌍"}, {"unit": "2", "spanish": "español / española", "english": "Spanish (m/f)", "chinese": "西班牙人", "emoji": ""}, {"unit": "2", "spanish": "mexicano / mexicana", "english": "Mexican (m/f)", "chinese": "墨西哥人", "emoji": ""}, {"unit": "2", "spanish": "argentino / argentina", "english": "Argentine (m/f)", "chinese": "阿根廷人", "emoji": ""}, {"unit": "2", "spanish": "el país", "english": "the country", "chinese": "国家", "emoji": "🌍"}, {"unit": "2", "spanish": "la ciudad", "english": "the city", "chinese": "城市", "emoji": "🏙️"}, {"unit": "2", "spanish": "inglés / inglesa", "english": "English (m/f)", "chinese": "英国人", "emoji": "🇬🇧"}, {"unit": "3", "spanish": "el médico", "english": "the doctor", "chinese": "医生", "emoji": "🩺"}, {"unit": "3", "spanish": "la profesora", "english": "the teacher (f)", "chinese": "老师（女）", "emoji": "📚"}, {"unit": "3", "spanish": "el abogado", "english": "the lawyer", "chinese": "律师", "emoji": "⚖️"}, {"unit": "3", "spanish": "el enfermero", "english": "the nurse (m)", "chinese": "护士（男）", "emoji": "🏥"}, {"unit": "3", "spanish": "el estudiante", "english": "the student", "chinese": "学生", "emoji": "🎓"}, {"unit": "3", "spanish": "el arquitecto", "english": "the architect", "chinese": "建筑师", "emoji": "🏛️"}, {"unit": "3", "spanish": "el cocinero", "english": "the chef", "chinese": "厨师", "emoji": "👨‍🍳"}, {"unit": "3", "spanish": "trabajar", "english": "to work", "chinese": "工作", "emoji": "💼"}, {"unit": "3", "spanish": "el trabajo", "english": "work / job", "chinese": "工作", "emoji": "💼"}, {"unit": "3", "spanish": "la profesión", "english": "the profession", "chinese": "职业", "emoji": ""}, {"unit": "4", "spanish": "está", "english": "it is (location)", "chinese": "在", "emoji": ""}, {"unit": "4", "spanish": "cerca de", "english": "near / close to", "chinese": "靠近", "emoji": "📍"}, {"unit": "4", "spanish": "lejos de", "english": "far from", "chinese": "远离", "emoji": "📍"}, {"unit": "4", "spanish": "a la derecha", "english": "to the right", "chinese": "在右边", "emoji": "➡️"}, {"unit": "4", "spanish": "a la izquierda", "english": "to the left", "chinese": "在左边", "emoji": "⬅️"}, {"unit": "4", "spanish": "enfrente de", "english": "opposite / in front of", "chinese": "在对面", "emoji": ""}, {"unit": "4", "spanish": "detrás de", "english": "behind", "chinese": "在后面", "emoji": ""}, {"unit": "4", "spanish": "al lado de", "english": "next to", "chinese": "在旁边", "emoji": ""}, {"unit": "4", "spanish": "el banco", "english": "the bank", "chinese": "银行", "emoji": "🏦"}, {"unit": "4", "spanish": "el hospital", "english": "the hospital", "chinese": "医院", "emoji": "🏥"}, {"unit": "5", "spanish": "hay", "english": "there is / there are", "chinese": "有", "emoji": ""}, {"unit": "5", "spanish": "no hay", "english": "there is no / there are no", "chinese": "没有", "emoji": ""}, {"unit": "5", "spanish": "el libro", "english": "the book", "chinese": "书", "emoji": "📖"}, {"unit": "5", "spanish": "la mesa", "english": "the table", "chinese": "桌子", "emoji": "🪑"}, {"unit": "5", "spanish": "la silla", "english": "the chair", "chinese": "椅子", "emoji": "🪑"}, {"unit": "5", "spanish": "este / esta", "english": "this (m/f)", "chinese": "这个", "emoji": ""}, {"unit": "5", "spanish": "ese / esa", "english": "that (m/f)", "chinese": "那个", "emoji": ""}, {"unit": "5", "spanish": "aquel / aquella", "english": "that over there", "chinese": "那边那个", "emoji": ""}, {"unit": "5", "spanish": "¿hay...?", "english": "is there...? / are there...?", "chinese": "有……吗？", "emoji": ""}, {"unit": "5", "spanish": "el aula", "english": "the classroom", "chinese": "教室", "emoji": "🏫"}, {"unit": "6", "spanish": "el padre", "english": "the father", "chinese": "父亲", "emoji": "👨"}, {"unit": "6", "spanish": "la madre", "english": "the mother", "chinese": "母亲", "emoji": "👩"}, {"unit": "6", "spanish": "el hermano", "english": "the brother", "chinese": "兄弟", "emoji": "👦"}, {"unit": "6", "spanish": "la hermana", "english": "the sister", "chinese": "姐妹", "emoji": "👧"}, {"unit": "6", "spanish": "el hijo", "english": "the son", "chinese": "儿子", "emoji": ""}, {"unit": "6", "spanish": "la hija", "english": "the daughter", "chinese": "女儿", "emoji": ""}, {"unit": "6", "spanish": "el abuelo", "english": "the grandfather", "chinese": "祖父", "emoji": "👴"}, {"unit": "6", "spanish": "la abuela", "english": "the grandmother", "chinese": "祖母", "emoji": "👵"}, {"unit": "6", "spanish": "tengo...", "english": "I have...", "chinese": "我有……", "emoji": ""}, {"unit": "6", "spanish": "mi familia", "english": "my family", "chinese": "我的家人", "emoji": "👨‍👩‍👧‍👦"}, {"unit": "7", "spanish": "alto / alta", "english": "tall (m/f)", "chinese": "高的", "emoji": ""}, {"unit": "7", "spanish": "bajo / baja", "english": "short (m/f)", "chinese": "矮的", "emoji": ""}, {"unit": "7", "spanish": "rubio / rubia", "english": "blonde (m/f)", "chinese": "金发的", "emoji": ""}, {"unit": "7", "spanish": "moreno / morena", "english": "dark-haired (m/f)", "chinese": "黑发的", "emoji": ""}, {"unit": "7", "spanish": "los ojos azules", "english": "blue eyes", "chinese": "蓝眼睛", "emoji": "👁️"}, {"unit": "7", "spanish": "el pelo largo", "english": "long hair", "chinese": "长发", "emoji": ""}, {"unit": "7", "spanish": "simpático / simpática", "english": "friendly (m/f)", "chinese": "友好的", "emoji": "😊"}, {"unit": "7", "spanish": "inteligente", "english": "intelligent", "chinese": "聪明的", "emoji": "🧠"}, {"unit": "7", "spanish": "serio / seria", "english": "serious (m/f)", "chinese": "严肃的", "emoji": ""}, {"unit": "7", "spanish": "¿cómo es?", "english": "what is he/she like?", "chinese": "他/她长什么样？", "emoji": ""}, {"unit": "8", "spanish": "estoy cansado/a", "english": "I am tired", "chinese": "我很累", "emoji": "😴"}, {"unit": "8", "spanish": "estoy feliz", "english": "I am happy", "chinese": "我很开心", "emoji": "😄"}, {"unit": "8", "spanish": "estoy triste", "english": "I am sad", "chinese": "我很难过", "emoji": "😢"}, {"unit": "8", "spanish": "estoy nervioso/a", "english": "I am nervous", "chinese": "我很紧张", "emoji": "😰"}, {"unit": "8", "spanish": "tengo hambre", "english": "I am hungry", "chinese": "我饿了", "emoji": "🍔"}, {"unit": "8", "spanish": "tengo sed", "english": "I am thirsty", "chinese": "我渴了", "emoji": "💧"}, {"unit": "8", "spanish": "tengo frío", "english": "I am cold", "chinese": "我冷", "emoji": "🥶"}, {"unit": "8", "spanish": "tengo calor", "english": "I am hot", "chinese": "我热", "emoji": "🥵"}, {"unit": "8", "spanish": "tengo sueño", "english": "I am sleepy", "chinese": "我困了", "emoji": "😴"}, {"unit": "8", "spanish": "¿cómo estás?", "english": "how are you?", "chinese": "你怎么样？", "emoji": ""}, {"unit": "9", "spanish": "los lunes", "english": "on Mondays", "chinese": "每周一", "emoji": ""}, {"unit": "9", "spanish": "los viernes", "english": "on Fridays", "chinese": "每周五", "emoji": ""}, {"unit": "9", "spanish": "siempre", "english": "always", "chinese": "总是", "emoji": ""}, {"unit": "9", "spanish": "nunca", "english": "never", "chinese": "从不", "emoji": ""}, {"unit": "9", "spanish": "a veces", "english": "sometimes", "chinese": "有时候", "emoji": ""}, {"unit": "9", "spanish": "normalmente", "english": "normally / usually", "chinese": "通常", "emoji": ""}, {"unit": "9", "spanish": "trabajo", "english": "I work", "chinese": "我工作", "emoji": ""}, {"unit": "9", "spanish": "estudio", "english": "I study", "chinese": "我学习", "emoji": "📚"}, {"unit": "9", "spanish": "la mañana", "english": "the morning", "chinese": "早晨", "emoji": ""}, {"unit": "9", "spanish": "por las tardes", "english": "in the afternoons", "chinese": "在下午", "emoji": ""}, {"unit": "10", "spanish": "me levanto", "english": "I get up", "chinese": "我起床", "emoji": ""}, {"unit": "10", "spanish": "me ducho", "english": "I have a shower", "chinese": "我淋浴", "emoji": "🚿"}, {"unit": "10", "spanish": "me visto", "english": "I get dressed", "chinese": "我穿衣服", "emoji": ""}, {"unit": "10", "spanish": "desayuno", "english": "I have breakfast", "chinese": "我吃早餐", "emoji": "🍳"}, {"unit": "10", "spanish": "voy al trabajo", "english": "I go to work", "chinese": "我去上班", "emoji": ""}, {"unit": "10", "spanish": "me acuesto", "english": "I go to bed", "chinese": "我上床睡觉", "emoji": "🛏️"}, {"unit": "10", "spanish": "a las ocho", "english": "at eight o'clock", "chinese": "八点", "emoji": ""}, {"unit": "10", "spanish": "por la mañana", "english": "in the morning", "chinese": "在早上", "emoji": ""}, {"unit": "10", "spanish": "después de", "english": "after", "chinese": "在……之后", "emoji": ""}, {"unit": "10", "spanish": "antes de", "english": "before", "chinese": "在……之前", "emoji": ""}, {"unit": "11", "spanish": "hace calor", "english": "it's hot", "chinese": "天气热", "emoji": ""}, {"unit": "11", "spanish": "hace frío", "english": "it's cold", "chinese": "天气冷", "emoji": "❄️"}, {"unit": "11", "spanish": "llueve", "english": "it's raining", "chinese": "下雨", "emoji": "🌧️"}, {"unit": "11", "spanish": "nieva", "english": "it's snowing", "chinese": "下雪", "emoji": "❄️"}, {"unit": "11", "spanish": "hace viento", "english": "it's windy", "chinese": "刮风", "emoji": "💨"}, {"unit": "11", "spanish": "está nublado", "english": "it's cloudy", "chinese": "多云", "emoji": "☁️"}, {"unit": "11", "spanish": "en enero", "english": "in January", "chinese": "在一月", "emoji": ""}, {"unit": "11", "spanish": "la primavera", "english": "spring", "chinese": "春天", "emoji": "🌸"}, {"unit": "11", "spanish": "el verano", "english": "summer", "chinese": "夏天", "emoji": "☀️"}, {"unit": "11", "spanish": "el otoño", "english": "autumn", "chinese": "秋天", "emoji": "🍂"}, {"unit": "12", "spanish": "me gusta", "english": "I like", "chinese": "我喜欢", "emoji": ""}, {"unit": "12", "spanish": "me encanta", "english": "I love", "chinese": "我非常喜欢", "emoji": "❤️"}, {"unit": "12", "spanish": "me da igual", "english": "I don't mind", "chinese": "无所谓", "emoji": ""}, {"unit": "12", "spanish": "no me gusta nada", "english": "I don't like at all", "chinese": "我一点都不喜欢", "emoji": ""}, {"unit": "12", "spanish": "bailar", "english": "to dance", "chinese": "跳舞", "emoji": "💃"}, {"unit": "12", "spanish": "cocinar", "english": "to cook", "chinese": "烹饪", "emoji": "🍳"}, {"unit": "12", "spanish": "leer", "english": "to read", "chinese": "阅读", "emoji": "📖"}, {"unit": "12", "spanish": "el fútbol", "english": "football / soccer", "chinese": "足球", "emoji": "⚽"}, {"unit": "12", "spanish": "la música", "english": "music", "chinese": "音乐", "emoji": "🎵"}, {"unit": "12", "spanish": "las aficiones", "english": "hobbies", "chinese": "爱好", "emoji": ""}, {"unit": "13", "spanish": "quisiera", "english": "I would like", "chinese": "我想要", "emoji": ""}, {"unit": "13", "spanish": "el primer plato", "english": "the starter", "chinese": "第一道菜", "emoji": ""}, {"unit": "13", "spanish": "el plato principal", "english": "the main course", "chinese": "主菜", "emoji": ""}, {"unit": "13", "spanish": "el postre", "english": "dessert", "chinese": "甜点", "emoji": "🍮"}, {"unit": "13", "spanish": "la bebida", "english": "the drink", "chinese": "饮料", "emoji": "🥤"}, {"unit": "13", "spanish": "el camarero", "english": "the waiter", "chinese": "服务员", "emoji": ""}, {"unit": "13", "spanish": "la cuenta", "english": "the bill", "chinese": "账单", "emoji": "💳"}, {"unit": "13", "spanish": "la carta", "english": "the menu", "chinese": "菜单", "emoji": "📋"}, {"unit": "13", "spanish": "¿qué desea?", "english": "what would you like?", "chinese": "您想要什么？", "emoji": ""}, {"unit": "13", "spanish": "el restaurante", "english": "the restaurant", "chinese": "餐厅", "emoji": "🍽️"}, {"unit": "14", "spanish": "la camisa", "english": "the shirt", "chinese": "衬衫", "emoji": "👔"}, {"unit": "14", "spanish": "los pantalones", "english": "the trousers", "chinese": "裤子", "emoji": ""}, {"unit": "14", "spanish": "el vestido", "english": "the dress", "chinese": "连衣裙", "emoji": "👗"}, {"unit": "14", "spanish": "los zapatos", "english": "the shoes", "chinese": "鞋子", "emoji": "👟"}, {"unit": "14", "spanish": "¿cuánto cuesta?", "english": "how much does it cost?", "chinese": "多少钱？", "emoji": "💰"}, {"unit": "14", "spanish": "la talla", "english": "the size", "chinese": "尺码", "emoji": ""}, {"unit": "14", "spanish": "me queda bien", "english": "it fits me well", "chinese": "我穿着合适", "emoji": ""}, {"unit": "14", "spanish": "la tienda", "english": "the shop / store", "chinese": "商店", "emoji": "🏪"}, {"unit": "14", "spanish": "de moda", "english": "fashionable", "chinese": "时髦的", "emoji": ""}, {"unit": "14", "spanish": "el precio", "english": "the price", "chinese": "价格", "emoji": "💰"}, {"unit": "15", "spanish": "más que", "english": "more than", "chinese": "比……多", "emoji": ""}, {"unit": "15", "spanish": "menos que", "english": "less than", "chinese": "比……少", "emoji": ""}, {"unit": "15", "spanish": "tan... como", "english": "as... as", "chinese": "像……一样……", "emoji": ""}, {"unit": "15", "spanish": "mejor que", "english": "better than", "chinese": "比……好", "emoji": ""}, {"unit": "15", "spanish": "peor que", "english": "worse than", "chinese": "比……差", "emoji": ""}, {"unit": "15", "spanish": "el más alto", "english": "the tallest", "chinese": "最高的", "emoji": ""}, {"unit": "15", "spanish": "muy interesante", "english": "very interesting", "chinese": "非常有趣", "emoji": ""}, {"unit": "15", "spanish": "interesantísimo", "english": "extremely interesting", "chinese": "极其有趣", "emoji": ""}, {"unit": "15", "spanish": "¿qué prefieres?", "english": "which do you prefer?", "chinese": "你更喜欢哪个？", "emoji": ""}, {"unit": "15", "spanish": "la comparación", "english": "the comparison", "chinese": "比较", "emoji": ""}, {"unit": "15b", "spanish": "tener que + inf", "english": "to have to (do)", "chinese": "必须要（做）…", "emoji": ""}, {"unit": "15b", "spanish": "hay que + inf", "english": "one must / you have to", "chinese": "必须", "emoji": ""}, {"unit": "15b", "spanish": "necesitar", "english": "to need", "chinese": "需要", "emoji": ""}, {"unit": "15b", "spanish": "deber", "english": "should / ought to", "chinese": "应该", "emoji": ""}, {"unit": "15b", "spanish": "es importante", "english": "it's important", "chinese": "很重要", "emoji": ""}, {"unit": "15b", "spanish": "es necesario", "english": "it's necessary", "chinese": "有必要", "emoji": ""}, {"unit": "15b", "spanish": "no puedo", "english": "I can't", "chinese": "我不能", "emoji": ""}, {"unit": "15b", "spanish": "tengo que trabajar", "english": "I have to work", "chinese": "我必须工作", "emoji": ""}, {"unit": "16", "spanish": "girar a la derecha", "english": "turn right", "chinese": "向右转", "emoji": "➡️"}, {"unit": "16", "spanish": "seguir todo recto", "english": "go straight on", "chinese": "一直走", "emoji": "⬆️"}, {"unit": "16", "spanish": "cruzar la calle", "english": "cross the street", "chinese": "过马路", "emoji": ""}, {"unit": "16", "spanish": "el semáforo", "english": "the traffic light", "chinese": "红绿灯", "emoji": "🚦"}, {"unit": "16", "spanish": "la parada de metro", "english": "the metro stop", "chinese": "地铁站", "emoji": "🚇"}, {"unit": "16", "spanish": "coger el autobús", "english": "to take the bus", "chinese": "坐公共汽车", "emoji": "🚌"}, {"unit": "16", "spanish": "¿cómo llego a...?", "english": "how do I get to...?", "chinese": "我怎么去……？", "emoji": ""}, {"unit": "16", "spanish": "cerca de aquí", "english": "near here", "chinese": "在附近", "emoji": ""}, {"unit": "16", "spanish": "el mapa", "english": "the map", "chinese": "地图", "emoji": "🗺️"}, {"unit": "16", "spanish": "a mano derecha", "english": "on the right-hand side", "chinese": "在右手边", "emoji": ""}, {"unit": "17", "spanish": "me duele la cabeza", "english": "my head hurts", "chinese": "我头疼", "emoji": ""}, {"unit": "17", "spanish": "me duele el estómago", "english": "my stomach hurts", "chinese": "我胃疼", "emoji": ""}, {"unit": "17", "spanish": "tengo fiebre", "english": "I have a fever", "chinese": "我发烧", "emoji": "🤒"}, {"unit": "17", "spanish": "tengo tos", "english": "I have a cough", "chinese": "我咳嗽", "emoji": ""}, {"unit": "17", "spanish": "el médico", "english": "the doctor", "chinese": "医生", "emoji": "🩺"}, {"unit": "17", "spanish": "la farmacia", "english": "the pharmacy", "chinese": "药店", "emoji": "💊"}, {"unit": "17", "spanish": "¿qué te pasa?", "english": "what's the matter?", "chinese": "你怎么了？", "emoji": ""}, {"unit": "17", "spanish": "estoy enfermo/a", "english": "I am ill", "chinese": "我生病了", "emoji": "🤒"}, {"unit": "17", "spanish": "me duelen los pies", "english": "my feet hurt", "chinese": "我脚疼", "emoji": ""}, {"unit": "17", "spanish": "la cabeza", "english": "the head", "chinese": "头", "emoji": ""}, {"unit": "18", "spanish": "voy a viajar", "english": "I'm going to travel", "chinese": "我要去旅行", "emoji": "✈️"}, {"unit": "18", "spanish": "voy a estudiar", "english": "I'm going to study", "chinese": "我要去学习", "emoji": "📚"}, {"unit": "18", "spanish": "el año que viene", "english": "next year", "chinese": "明年", "emoji": ""}, {"unit": "18", "spanish": "la semana que viene", "english": "next week", "chinese": "下周", "emoji": ""}, {"unit": "18", "spanish": "mañana", "english": "tomorrow", "chinese": "明天", "emoji": ""}, {"unit": "18", "spanish": "pasado mañana", "english": "the day after tomorrow", "chinese": "后天", "emoji": ""}, {"unit": "18", "spanish": "el fin de semana", "english": "the weekend", "chinese": "周末", "emoji": "🗓️"}, {"unit": "18", "spanish": "tengo planes", "english": "I have plans", "chinese": "我有计划", "emoji": ""}, {"unit": "18", "spanish": "¿qué vas a hacer?", "english": "what are you going to do?", "chinese": "你打算做什么？", "emoji": ""}, {"unit": "18", "spanish": "en el futuro", "english": "in the future", "chinese": "在未来", "emoji": ""}, {"unit": "19", "spanish": "ayer", "english": "yesterday", "chinese": "昨天", "emoji": ""}, {"unit": "19", "spanish": "la semana pasada", "english": "last week", "chinese": "上周", "emoji": ""}, {"unit": "19", "spanish": "el año pasado", "english": "last year", "chinese": "去年", "emoji": ""}, {"unit": "19", "spanish": "hablé", "english": "I spoke", "chinese": "我说了", "emoji": ""}, {"unit": "19", "spanish": "comí", "english": "I ate", "chinese": "我吃了", "emoji": ""}, {"unit": "19", "spanish": "fui", "english": "I went", "chinese": "我去了", "emoji": ""}, {"unit": "19", "spanish": "salí", "english": "I went out", "chinese": "我出去了", "emoji": ""}, {"unit": "19", "spanish": "estuve", "english": "I was", "chinese": "我在（过）", "emoji": ""}, {"unit": "19", "spanish": "¿qué hiciste?", "english": "what did you do?", "chinese": "你做了什么？", "emoji": ""}, {"unit": "19", "spanish": "el pretérito indefinido", "english": "the preterite tense", "chinese": "不定过去时", "emoji": ""}, {"unit": "20", "spanish": "fui a...", "english": "I went to...", "chinese": "我去了……", "emoji": "✈️"}, {"unit": "20", "spanish": "estuve en...", "english": "I was in...", "chinese": "我在……（过）", "emoji": ""}, {"unit": "20", "spanish": "hice senderismo", "english": "I went hiking", "chinese": "我去徒步", "emoji": ""}, {"unit": "20", "spanish": "visité", "english": "I visited", "chinese": "我参观了", "emoji": ""}, {"unit": "20", "spanish": "probé", "english": "I tried / tasted", "chinese": "我尝试了", "emoji": ""}, {"unit": "20", "spanish": "conocí a", "english": "I met", "chinese": "我认识了", "emoji": ""}, {"unit": "20", "spanish": "lo pasé muy bien", "english": "I had a great time", "chinese": "我玩得很开心", "emoji": ""}, {"unit": "20", "spanish": "las vacaciones", "english": "the holidays", "chinese": "假期", "emoji": "🏖️"}, {"unit": "20", "spanish": "el viaje", "english": "the trip / journey", "chinese": "旅行", "emoji": "✈️"}, {"unit": "20", "spanish": "el verano pasado", "english": "last summer", "chinese": "去年夏天", "emoji": ""}];
+let fcDeck=[], fcIdx=0, fcCorrect=0, fcDir='es-en', fcFlipped=false;
+
+function shuffle(arr){for(let i=arr.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[arr[i],arr[j]]=[arr[j],arr[i]];}return arr;}
+
+function startFC(){
+  const unit=document.getElementById('fc-unit').value;
+  fcDir=document.getElementById('fc-dir').value;
+  const cnt=document.getElementById('fc-count').value;
+  let pool=unit==='all'?[...VOCAB]:VOCAB.filter(c=>c.unit===unit);
+  shuffle(pool);
+  if(cnt!=='all') pool=pool.slice(0,parseInt(cnt));
+  fcDeck=pool; fcIdx=0; fcCorrect=0; fcFlipped=false;
+  document.getElementById('fc-setup').style.display='none';
+  document.getElementById('fc-scene').style.display='block';
+  document.getElementById('fc-score').style.display='none';
+  document.getElementById('fc-end-btns').style.display='none';
+  showCard();
+}
+
+function showCard(){
+  if(fcIdx>=fcDeck.length){endFC();return;}
+  const c=fcDeck[fcIdx];
+  const total=fcDeck.length;
+  fcFlipped=false;
+  document.getElementById('fc-inner').classList.remove('flipped');
+  document.getElementById('fc-flip-btns').style.display='none';
+  document.getElementById('fc-progress').textContent='Card '+(fcIdx+1)+' of '+total;
+  document.getElementById('fc-bar').style.width=(fcIdx/total*100)+'%';
+  document.getElementById('fc-emoji').textContent=c.emoji||'';
+  if(fcDir==='es-en'){
+    document.getElementById('fc-front-label').textContent='ES';
+    document.getElementById('fc-front-word').textContent=c.spanish;
+    document.getElementById('fc-back-label').textContent='EN / 中文';
+    document.getElementById('fc-back-word').textContent=c.english;
+    document.getElementById('fc-back-sub').textContent=c.chinese;
+  } else if(fcDir==='en-es'){
+    document.getElementById('fc-front-label').textContent='EN';
+    document.getElementById('fc-front-word').textContent=c.english;
+    document.getElementById('fc-back-label').textContent='ES';
+    document.getElementById('fc-back-word').textContent=c.spanish;
+    document.getElementById('fc-back-sub').textContent=c.chinese;
+  } else {
+    document.getElementById('fc-front-label').textContent='中文';
+    document.getElementById('fc-front-word').textContent=c.chinese;
+    document.getElementById('fc-back-label').textContent='ES';
+    document.getElementById('fc-back-word').textContent=c.spanish;
+    document.getElementById('fc-back-sub').textContent=c.english;
+  }
+}
+
+function flipCard(){
+  if(fcFlipped)return;
+  fcFlipped=true;
+  document.getElementById('fc-inner').classList.add('flipped');
+  setTimeout(()=>{document.getElementById('fc-flip-btns').style.display='block';},300);
+}
+
+function markCard(correct){
+  if(correct){fcCorrect++; fcIdx++;}
+  else{const c=fcDeck.splice(fcIdx,1)[0]; fcDeck.push(c);}
+  document.getElementById('fc-flip-btns').style.display='none';
+  showCard();
+}
+
+function endFC(){
+  const total=fcDeck.length+fcCorrect;
+  document.getElementById('fc-inner').style.display='none';
+  document.querySelector('.fc-hint').style.display='none';
+  document.getElementById('fc-score').style.display='block';
+  document.getElementById('fc-score').innerHTML=
+    fcCorrect+' / '+total+' <span style="font-size:.9rem;color:var(--muted);">cards correct</span>';
+  document.getElementById('fc-end-btns').style.display='block';
+  document.getElementById('fc-progress').textContent='Done!';
+  document.getElementById('fc-bar').style.width='100%';
+}
+
+function resetFC(){
+  document.getElementById('fc-setup').style.display='block';
+  document.getElementById('fc-scene').style.display='none';
+  document.getElementById('fc-inner').style.display='block';
+  document.querySelector('.fc-hint').style.display='block';
+}
+
+</script>
+</body>
+</html>

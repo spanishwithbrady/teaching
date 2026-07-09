@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Question Dice · Spanish with Brady</title>
+  <style>
+
+    :root{--bg:#f7f5ef;--green:#6b8c42;--brown:#2e2416;--card:#ffffff;
+      --border:#e2ddd4;--muted:#7a6e60;--warm:#8B5E3C;--radius:12px;
+      --gtint:#eef4e4;--wtint:#f5ede0;}
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+    body{font-family:system-ui,-apple-system,sans-serif;
+      background:var(--bg);color:var(--brown);
+      display:flex;flex-direction:column;min-height:100vh;}
+    a{text-decoration:none;color:inherit;}
+    .lang-zh{display:none;}
+    body.zh .lang-en{display:none;}
+    body.zh .lang-zh{display:inline;}
+    .lang-zh-block{display:none;}
+    body.zh .lang-zh-block{display:block;}
+    body.zh .lang-en-block{display:none;}
+    .t-hdr{display:flex;align-items:center;justify-content:space-between;
+      padding:10px 18px;border-bottom:1px solid var(--border);
+      background:var(--card);gap:12px;}
+    .t-logo{font-size:.9rem;font-weight:700;color:var(--brown);}
+    .t-back{font-size:.8rem;color:var(--warm);}
+    .t-back:hover{text-decoration:underline;}
+    .t-tog{display:flex;border:1px solid var(--border);border-radius:6px;overflow:hidden;flex-shrink:0;}
+    .t-tog button{padding:5px 13px;font-size:12px;font-weight:500;border:none;
+      cursor:pointer;background:var(--bg);color:var(--muted);}
+    .t-tog button.act{background:var(--green);color:#fff;}
+    main{flex:1;padding:20px 18px;max-width:640px;margin:0 auto;width:100%;}
+    .card{background:var(--card);border:1px solid var(--border);
+      border-radius:var(--radius);padding:22px 20px;margin-bottom:16px;}
+    .card-title{font-size:1rem;font-weight:700;color:var(--warm);margin-bottom:6px;}
+    .card-sub{font-size:.85rem;color:var(--muted);margin-bottom:14px;line-height:1.5;}
+    .btn{background:var(--green);color:#fff;border:none;padding:.65rem 1.6rem;
+      border-radius:8px;font-size:.88rem;font-weight:600;cursor:pointer;transition:opacity .15s;}
+    .btn:hover{opacity:.88;}
+    .btn:disabled{opacity:.5;cursor:default;}
+    .btn-sec{background:transparent;color:var(--green);border:1.5px solid var(--green);
+      padding:.55rem 1.2rem;border-radius:8px;font-size:.85rem;font-weight:600;cursor:pointer;}
+    .btn-sec:hover{background:var(--gtint);}
+    .btn-warm{background:var(--warm);color:#fff;border:none;padding:.6rem 1.4rem;
+      border-radius:8px;font-size:.85rem;font-weight:600;cursor:pointer;}
+    .btn-warm:hover{opacity:.88;}
+    select,input[type=text]{border:1px solid var(--border);border-radius:8px;
+      padding:7px 12px;font-size:.9rem;background:var(--card);color:var(--brown);
+      outline:none;transition:border-color .15s;width:100%;}
+    select:focus,input[type=text]:focus{border-color:var(--green);}
+    .note{background:var(--wtint);border-left:3px solid var(--warm);
+      border-radius:0 8px 8px 0;padding:10px 14px;margin-top:10px;
+      font-size:.85rem;line-height:1.6;}
+    .row{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px;}
+    label{font-size:.85rem;color:var(--muted);display:block;margin-bottom:4px;}
+
+
+    .dice-face{width:160px;height:160px;background:var(--card);border:3px solid var(--border);
+      border-radius:20px;display:flex;flex-direction:column;align-items:center;
+      justify-content:center;margin:0 auto 16px;box-shadow:0 4px 16px rgba(107,140,66,.1);
+      transition:border-color .2s,box-shadow .2s;cursor:default;user-select:none;}
+    .dice-face.rolling{border-color:var(--green);box-shadow:0 0 0 4px rgba(107,140,66,.15);}
+    .dice-q{font-size:1.9rem;font-weight:700;color:var(--green);text-align:center;}
+    .dice-en{font-size:1rem;color:var(--muted);margin-top:4px;}
+    .dice-num{font-size:.7rem;color:var(--border);margin-top:8px;}
+    .prompt-box{background:var(--gtint);border:1px solid #c8ddb0;border-radius:10px;
+      padding:14px 16px;margin-top:14px;font-size:.9rem;line-height:1.6;}
+
+  </style>
+</head>
+<body>
+<header class="t-hdr">
+  <a class="t-back" href="index.html">← <span class="lang-en">Back to tools</span><span class="lang-zh">返回工具页</span></a>
+  <a class="t-logo" href="../">Spanish with Brady</a>
+  <div class="t-tog">
+    <button id="en-btn" class="act" onclick="setLang('en')">EN</button>
+    <button id="zh-btn" onclick="setLang('zh')">中文</button>
+  </div>
+</header>
+<main>
+<div class="card"><div class="card-title">🎲 <span class="lang-en">Question Dice</span><span class="lang-zh">问题骰子</span></div><p class="card-sub"><span class="lang-en">Roll for a question word — then form a complete question about the topic.</span><span class="lang-zh">摇出一个疑问词——然后围绕话题造一个完整的问句。</span></p><div style="margin-bottom:16px;"><label><span class="lang-en">Select unit topic:</span><span class="lang-zh">选择单元话题：</span></label><select id="unit-sel" style="width:100%;margin-top:4px;"><option value="1">Unit 1 — Saludos</option>
+<option value="2">Unit 2  — Origen</option>
+<option value="3">Unit 3  — Profesiones</option>
+<option value="4">Unit 4  — Ubicación</option>
+<option value="5">Unit 5  — Objetos</option>
+<option value="6">Unit 6  — Familia</option>
+<option value="7">Unit 7  — Descripción</option>
+<option value="8">Unit 8  — Estados</option>
+<option value="9">Unit 9  — La Semana</option>
+<option value="10">Unit 10  — Rutina</option>
+<option value="11">Unit 11  — Calendario</option>
+<option value="12">Unit 12  — Aficiones</option>
+<option value="13">Unit 13  — Restaurante</option>
+<option value="14">Unit 14  — De Compras</option>
+<option value="15">Unit 15  — Comparaciones</option>
+<option value="15b">Unit 15b — Obligación</option>
+<option value="16">Unit 16  — Ciudad</option>
+<option value="17">Unit 17  — Salud</option>
+<option value="18">Unit 18  — Futuro</option>
+<option value="19">Unit 19  — Pasado I</option>
+<option value="20">Unit 20  — Pasado II</option>
+</select></div><div class="dice-face" id="dice-face"><div class="dice-q" id="dice-q">?</div><div class="dice-en" id="dice-en"><span class="lang-en">Press Roll</span><span class="lang-zh">按下摇动</span></div><div class="dice-num" id="dice-num"></div></div><div style="text-align:center;margin-bottom:14px;"><button class="btn" onclick="rollDice()" style="font-size:1rem;padding:.75rem 2.5rem;"><span class="lang-en">🎲 Roll</span><span class="lang-zh">🎲 摇骰子</span></button></div><div class="prompt-box" id="prompt-box" style="display:none;"></div></div>
+</main>
+<script>
+function setLang(l){
+  document.body.classList.toggle('zh',l==='zh');
+  document.getElementById('en-btn').classList.toggle('act',l==='en');
+  document.getElementById('zh-btn').classList.toggle('act',l==='zh');
+}
+const QUESTIONS = [{"q": "¿Qué?", "en": "What?", "zh": "什么？"}, {"q": "¿Dónde?", "en": "Where?", "zh": "在哪里？"}, {"q": "¿Cuándo?", "en": "When?", "zh": "什么时候？"}, {"q": "¿Cómo?", "en": "How?", "zh": "怎么样？"}, {"q": "¿Por qué?", "en": "Why?", "zh": "为什么？"}, {"q": "¿Quién?", "en": "Who?", "zh": "谁？"}];
+const TOPICS = {"1": [["greetings and farewells", "问候与道别"], ["your name and how you spell it", "你的名字和拼写"], ["alphabet and pronunciation", "字母表与发音"]], "2": [["where you are from", "你来自哪里"], ["nationalities and countries", "国籍和国家"], ["someone's origin", "某人的出身"]], "3": [["jobs and professions", "工作和职业"], ["where people work", "人们在哪里工作"], ["your job or study", "你的工作或学习"]], "4": [["where a place is in the city", "城市中某地点的位置"], ["how far something is", "距离某处多远"], ["prepositions of place", "方位介词"]], "5": [["objects in the classroom", "教室里的物品"], ["things in your home", "家里的东西"], ["what there is / there isn't", "有什么/没有什么"]], "6": [["your family members", "你的家庭成员"], ["family relationships", "家庭关系"], ["ages in your family", "家人的年龄"]], "7": [["physical appearance", "外貌描述"], ["personality and character", "性格和性格"], ["someone you know", "你认识的某人"]], "8": [["how you feel today", "你今天感觉如何"], ["states and emotions", "状态和情绪"], ["why someone feels a certain way", "某人为何有那种感受"]], "9": [["your weekly habits", "你每周的习惯"], ["what you do on specific days", "特定日子你做什么"], ["frequency of activities", "活动频率"]], "10": [["your morning routine", "你的早晨日常"], ["what time you do things", "你几点做某事"], ["daily schedule", "日常时间表"]], "11": [["the weather in your city", "你所在城市的天气"], ["your plans for the weekend", "你的周末计划"], ["seasons and months", "季节和月份"]], "12": [["your hobbies and interests", "你的爱好和兴趣"], ["what you like / don't like", "你喜欢/不喜欢什么"], ["your favourite activity", "你最喜欢的活动"]], "13": [["what you want to order", "你想点什么"], ["a dish or drink on the menu", "菜单上的菜肴或饮料"], ["the waiter or customer", "服务员或顾客"]], "14": [["a piece of clothing", "一件衣服"], ["prices and sizes", "价格和尺码"], ["where you like to shop", "你喜欢在哪里购物"]], "15": [["comparing two things or people", "比较两件事或两个人"], ["the best or worst option", "最好或最差的选项"], ["your opinion about something", "你对某事的看法"]], "15b": [["an obligation you have", "你的义务"], ["rules or things you must do", "规定或必须做的事"], ["advice for a friend", "给朋友的建议"]], "16": [["how to get somewhere", "如何到达某地"], ["types of transport", "交通方式"], ["the city layout", "城市布局"]], "17": [["a symptom or ailment", "症状或疾病"], ["a body part that hurts", "疼痛的身体部位"], ["advice for someone who is ill", "对生病者的建议"]], "18": [["your plans for next week", "你下周的计划"], ["what you want to do in the future", "你未来想做什么"], ["weekend intentions", "周末打算"]], "19": [["what you did yesterday", "你昨天做了什么"], ["a past experience", "一次过去的经历"], ["last weekend's activities", "上周末的活动"]], "20": [["a past trip or holiday", "一次过去的旅行或假期"], ["an interesting experience abroad", "一次有趣的海外经历"], ["where you went and what you did", "你去了哪里，做了什么"]]};
+let rolling=false, curQ=null;
+function rollDice(){
+  if(rolling)return;
+  rolling=true;
+  const face=document.getElementById('dice-face');
+  face.classList.add('rolling');
+  document.getElementById('prompt-box').style.display='none';
+  const target=Math.floor(Math.random()*QUESTIONS.length);
+  let count=0,total=28+Math.floor(Math.random()*10);
+  function tick(){
+    const idx=Math.floor(Math.random()*QUESTIONS.length);
+    const q=QUESTIONS[idx];
+    document.getElementById('dice-q').textContent=q.q;
+    document.getElementById('dice-en').innerHTML='<span class="lang-en">'+q.en+'</span><span class="lang-zh">'+q.zh+'</span>';
+    count++;
+    if(count<total){
+      const d=count<total*.55?50:count<total*.8?110:260;
+      setTimeout(tick,d);
+    } else {
+      curQ=QUESTIONS[target];
+      document.getElementById('dice-q').textContent=curQ.q;
+      document.getElementById('dice-en').innerHTML='<span class="lang-en">'+curQ.en+'</span><span class="lang-zh">'+curQ.zh+'</span>';
+      document.getElementById('dice-num').textContent='';
+      face.classList.remove('rolling');
+      rolling=false;
+      showPrompt();
+    }
+  }
+  tick();
+}
+function showPrompt(){
+  const unit=document.getElementById('unit-sel').value;
+  const unitTopics=TOPICS[unit]||TOPICS['1'];
+  const tp=unitTopics[Math.floor(Math.random()*unitTopics.length)];
+  const pb=document.getElementById('prompt-box');
+  pb.innerHTML='<strong><span class="lang-en">Form a question about:</span><span class="lang-zh">围绕以下主题提问：</span></strong><br>'+
+    '<span style="font-size:.95rem;color:var(--brown);"><span class="lang-en">'+tp[0]+'</span><span class="lang-zh">'+tp[1]+'</span></span>';
+  pb.style.display='block';
+}
+
+</script>
+</body>
+</html>

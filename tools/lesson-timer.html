@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Lesson Timer · Spanish with Brady</title>
+  <style>
+
+    :root{--bg:#f7f5ef;--green:#6b8c42;--brown:#2e2416;--card:#ffffff;
+      --border:#e2ddd4;--muted:#7a6e60;--warm:#8B5E3C;--radius:12px;
+      --gtint:#eef4e4;--wtint:#f5ede0;}
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+    body{font-family:system-ui,-apple-system,sans-serif;
+      background:var(--bg);color:var(--brown);
+      display:flex;flex-direction:column;min-height:100vh;}
+    a{text-decoration:none;color:inherit;}
+    .lang-zh{display:none;}
+    body.zh .lang-en{display:none;}
+    body.zh .lang-zh{display:inline;}
+    .lang-zh-block{display:none;}
+    body.zh .lang-zh-block{display:block;}
+    body.zh .lang-en-block{display:none;}
+    .t-hdr{display:flex;align-items:center;justify-content:space-between;
+      padding:10px 18px;border-bottom:1px solid var(--border);
+      background:var(--card);gap:12px;}
+    .t-logo{font-size:.9rem;font-weight:700;color:var(--brown);}
+    .t-back{font-size:.8rem;color:var(--warm);}
+    .t-back:hover{text-decoration:underline;}
+    .t-tog{display:flex;border:1px solid var(--border);border-radius:6px;overflow:hidden;flex-shrink:0;}
+    .t-tog button{padding:5px 13px;font-size:12px;font-weight:500;border:none;
+      cursor:pointer;background:var(--bg);color:var(--muted);}
+    .t-tog button.act{background:var(--green);color:#fff;}
+    main{flex:1;padding:20px 18px;max-width:640px;margin:0 auto;width:100%;}
+    .card{background:var(--card);border:1px solid var(--border);
+      border-radius:var(--radius);padding:22px 20px;margin-bottom:16px;}
+    .card-title{font-size:1rem;font-weight:700;color:var(--warm);margin-bottom:6px;}
+    .card-sub{font-size:.85rem;color:var(--muted);margin-bottom:14px;line-height:1.5;}
+    .btn{background:var(--green);color:#fff;border:none;padding:.65rem 1.6rem;
+      border-radius:8px;font-size:.88rem;font-weight:600;cursor:pointer;transition:opacity .15s;}
+    .btn:hover{opacity:.88;}
+    .btn:disabled{opacity:.5;cursor:default;}
+    .btn-sec{background:transparent;color:var(--green);border:1.5px solid var(--green);
+      padding:.55rem 1.2rem;border-radius:8px;font-size:.85rem;font-weight:600;cursor:pointer;}
+    .btn-sec:hover{background:var(--gtint);}
+    .btn-warm{background:var(--warm);color:#fff;border:none;padding:.6rem 1.4rem;
+      border-radius:8px;font-size:.85rem;font-weight:600;cursor:pointer;}
+    .btn-warm:hover{opacity:.88;}
+    select,input[type=text]{border:1px solid var(--border);border-radius:8px;
+      padding:7px 12px;font-size:.9rem;background:var(--card);color:var(--brown);
+      outline:none;transition:border-color .15s;width:100%;}
+    select:focus,input[type=text]:focus{border-color:var(--green);}
+    .note{background:var(--wtint);border-left:3px solid var(--warm);
+      border-radius:0 8px 8px 0;padding:10px 14px;margin-top:10px;
+      font-size:.85rem;line-height:1.6;}
+    .row{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px;}
+    label{font-size:.85rem;color:var(--muted);display:block;margin-bottom:4px;}
+
+
+    .timer-big{font-size:4rem;font-weight:700;color:var(--green);
+      text-align:center;letter-spacing:.02em;font-variant-numeric:tabular-nums;
+      line-height:1;}
+    .timer-seg-name{font-size:1.3rem;font-weight:600;color:var(--warm);
+      text-align:center;margin:8px 0 4px;}
+    .timer-next{font-size:.85rem;color:var(--muted);text-align:center;min-height:1.2rem;}
+    .seg-bar-wrap{background:var(--border);border-radius:10px;height:8px;
+      margin:14px 0;overflow:hidden;}
+    .seg-bar{height:8px;background:var(--green);border-radius:10px;
+      transition:width .5s linear;}
+    @keyframes pulse-border{0%,100%{box-shadow:0 0 0 0 rgba(107,140,66,.4);}
+      50%{box-shadow:0 0 0 8px rgba(107,140,66,0);}}
+    .pulsing{animation:pulse-border 1.2s ease-out 3;}
+    .ctrl-row{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-top:12px;}
+    .ctrl-btn{background:var(--card);border:1.5px solid var(--border);border-radius:8px;
+      padding:8px 16px;font-size:1rem;cursor:pointer;transition:border-color .15s,background .15s;}
+    .ctrl-btn:hover{border-color:var(--green);background:var(--gtint);}
+    .seg-list{font-size:.83rem;margin-top:8px;}
+    .seg-item{display:flex;justify-content:space-between;padding:5px 8px;
+      border-radius:6px;color:var(--muted);}
+    .seg-item.cur{background:var(--gtint);color:var(--brown);font-weight:600;}
+    .seg-item.done{text-decoration:line-through;opacity:.5;}
+    .custom-row{display:flex;gap:8px;margin-bottom:8px;align-items:center;}
+    .custom-row input[type=text]{flex:1;}
+    .custom-row input[type=number]{width:70px;flex:none;}
+
+  </style>
+</head>
+<body>
+<header class="t-hdr">
+  <a class="t-back" href="index.html">← <span class="lang-en">Back to tools</span><span class="lang-zh">返回工具页</span></a>
+  <a class="t-logo" href="../">Spanish with Brady</a>
+  <div class="t-tog">
+    <button id="en-btn" class="act" onclick="setLang('en')">EN</button>
+    <button id="zh-btn" onclick="setLang('zh')">中文</button>
+  </div>
+</header>
+<main>
+
+<div class="card" id="setup-card">
+  <div class="card-title">⏱ <span class="lang-en">Lesson Timer</span><span class="lang-zh">课程计时器</span></div>
+  <p class="card-sub">
+    <span class="lang-en">Choose a preset or build a custom lesson structure.</span>
+    <span class="lang-zh">选择预设方案或创建自定义课程结构。</span>
+  </p>
+  <div style="margin-bottom:14px;">
+    <label><span class="lang-en">Preset:</span><span class="lang-zh">预设：</span></label>
+    <select id="preset-sel" onchange="loadPreset(this.value)" style="width:100%;margin-top:4px;">
+      <option value="">— Custom / 自定义 —</option>
+      <option value="1on1-60">1-on-1 60 min</option>
+      <option value="group-90">Group 90 min</option>
+      <option value="review-30">Quick Review 30 min</option>
+    </select>
+  </div>
+  <div id="custom-segs" style="margin-bottom:14px;">
+    <div style="display:flex;justify-content:space-between;margin-bottom:6px;">
+      <label><span class="lang-en">Segments (name + minutes):</span><span class="lang-zh">课程段（名称+分钟）：</span></label>
+    </div>
+    <div id="seg-inputs"></div>
+    <button class="btn-sec" onclick="addSegRow()" style="margin-top:6px;font-size:.8rem;padding:5px 12px;">
+      + <span class="lang-en">Add segment</span><span class="lang-zh">添加段落</span>
+    </button>
+  </div>
+  <button class="btn" onclick="startTimer()">
+    <span class="lang-en">▶ Start lesson</span><span class="lang-zh">▶ 开始课程</span>
+  </button>
+</div>
+
+<div class="card" id="timer-card" style="display:none;">
+  <div class="timer-seg-name" id="t-seg-name"></div>
+  <div class="timer-big" id="t-display">00:00</div>
+  <div class="seg-bar-wrap"><div class="seg-bar" id="t-bar" style="width:100%"></div></div>
+  <div class="timer-next" id="t-next"></div>
+
+  <div class="ctrl-row">
+    <button class="ctrl-btn" id="play-btn" onclick="togglePlay()">▶</button>
+    <button class="ctrl-btn" onclick="stopTimer()">⏹</button>
+    <button class="ctrl-btn" onclick="prevSeg()">←</button>
+    <button class="ctrl-btn" onclick="nextSeg()">→</button>
+  </div>
+
+  <div style="margin-top:16px;">
+    <div style="font-size:.8rem;font-weight:600;color:var(--muted);margin-bottom:6px;
+      text-transform:uppercase;letter-spacing:.05em;">
+      <span class="lang-en">Segments</span><span class="lang-zh">课程段</span>
+    </div>
+    <div class="seg-list" id="seg-list"></div>
+  </div>
+</div>
+
+</main>
+<script>
+function setLang(l){
+  document.body.classList.toggle('zh',l==='zh');
+  document.getElementById('en-btn').classList.toggle('act',l==='en');
+  document.getElementById('zh-btn').classList.toggle('act',l==='zh');
+}
+const PRESETS = {"1on1-60": {"label": "1-on-1 60 min", "zh": "一对一60分钟", "segs": [["Warm-up", "热身", 5], ["Vocabulary", "词汇", 10], ["Grammar", "语法", 10], ["Practice", "练习", 15], ["Speaking", "口语", 15], ["Wrap-up", "总结", 5]]}, "group-90": {"label": "Group 90 min", "zh": "小组90分钟", "segs": [["Warm-up", "热身", 5], ["Vocabulary", "词汇", 15], ["Grammar", "语法", 15], ["Reading", "阅读", 10], ["Practice", "练习", 20], ["Speaking", "口语", 20], ["Wrap-up", "总结", 5]]}, "review-30": {"label": "Quick Review 30 min", "zh": "快速复习30分钟", "segs": [["Review", "复习", 10], ["Practice", "练习", 10], ["Speaking", "口语", 10]]}};
+let segments=[], segIdx=0, remaining=0, total=0, ticker=null, running=false;
+
+function addSegRow(name='',mins=''){
+  const row=document.createElement('div');
+  row.className='custom-row';
+  row.innerHTML='<input type="text" placeholder="Segment name" value="'+name+'" style="width:auto;flex:1;">'+
+    '<input type="number" min="1" max="120" value="'+(mins||'')+'" placeholder="min" style="width:70px;">'+
+    '<button onclick="this.parentNode.remove()" style="background:none;border:none;cursor:pointer;color:var(--muted);font-size:1.1rem;">✕</button>';
+  document.getElementById('seg-inputs').appendChild(row);
+}
+
+function loadPreset(key){
+  document.getElementById('seg-inputs').innerHTML='';
+  if(!key){addSegRow();return;}
+  const p=PRESETS[key];
+  if(!p)return;
+  p.segs.forEach(s=>addSegRow(s[0],s[2]));
+}
+
+function startTimer(){
+  const rows=document.querySelectorAll('#seg-inputs .custom-row');
+  segments=[];
+  rows.forEach(r=>{
+    const inputs=r.querySelectorAll('input');
+    const name=inputs[0].value.trim();
+    const mins=parseInt(inputs[1].value)||0;
+    if(name&&mins>0) segments.push({name,secs:mins*60});
+  });
+  if(segments.length===0){alert('Please add at least one segment.');return;}
+  segIdx=0; running=false;
+  document.getElementById('setup-card').style.display='none';
+  document.getElementById('timer-card').style.display='block';
+  loadSeg(0);
+}
+
+function loadSeg(idx){
+  if(idx>=segments.length){endTimer();return;}
+  segIdx=idx;
+  total=segments[idx].secs;
+  remaining=total;
+  renderSeg();
+  renderList();
+}
+
+function renderSeg(){
+  const s=segments[segIdx];
+  const m=Math.floor(remaining/60), sec=remaining%60;
+  document.getElementById('t-display').textContent=
+    (m<10?'0':'')+m+':'+(sec<10?'0':'')+sec;
+  document.getElementById('t-seg-name').innerHTML=
+    '<span class="lang-en">'+s.name+'</span>';
+  const next=segments[segIdx+1];
+  document.getElementById('t-next').innerHTML=next?
+    'Next: <span class="lang-en">'+next.name+'</span> ('+Math.round(next.secs/60)+' min)':'';
+  document.getElementById('t-bar').style.width=(remaining/total*100)+'%';
+}
+
+function renderList(){
+  const el=document.getElementById('seg-list'); el.innerHTML='';
+  segments.forEach((s,i)=>{
+    const d=document.createElement('div');
+    d.className='seg-item'+(i===segIdx?' cur':i<segIdx?' done':'');
+    d.innerHTML='<span>'+s.name+'</span><span>'+Math.round(s.secs/60)+' min</span>';
+    el.appendChild(d);
+  });
+}
+
+function togglePlay(){
+  running=!running;
+  document.getElementById('play-btn').textContent=running?'⏸':'▶';
+  if(running) tick();
+  else clearTimeout(ticker);
+}
+
+function tick(){
+  if(!running)return;
+  remaining--;
+  renderSeg();
+  if(remaining<=0){
+    running=false;
+    document.getElementById('play-btn').textContent='▶';
+    document.getElementById('timer-card').classList.add('pulsing');
+    setTimeout(()=>document.getElementById('timer-card').classList.remove('pulsing'),4000);
+    setTimeout(()=>{if(segIdx+1<segments.length){loadSeg(segIdx+1);togglePlay();}else endTimer();},1200);
+  } else {
+    ticker=setTimeout(tick,1000);
+  }
+}
+
+function stopTimer(){
+  clearTimeout(ticker); running=false;
+  document.getElementById('setup-card').style.display='block';
+  document.getElementById('timer-card').style.display='none';
+}
+
+function prevSeg(){clearTimeout(ticker);running=false;document.getElementById('play-btn').textContent='▶';loadSeg(Math.max(0,segIdx-1));}
+function nextSeg(){clearTimeout(ticker);running=false;document.getElementById('play-btn').textContent='▶';loadSeg(Math.min(segments.length-1,segIdx+1));}
+function endTimer(){clearTimeout(ticker);running=false;document.getElementById('t-display').textContent='Done!';document.getElementById('t-bar').style.width='100%';document.getElementById('play-btn').textContent='▶';}
+
+// Init default segment rows
+addSegRow(); addSegRow();
+
+</script>
+</body>
+</html>
