@@ -130,6 +130,19 @@
       <li><a href="#">English</a></li>
       <li><a href="../../../tools/">Tools</a></li>
     </ul>
+    <div style="position:relative;">
+      <input
+        type="text"
+        id="site-search"
+        placeholder="Search units... / 搜索单元..."
+        oninput="runSearch(this.value)"
+        onfocus="showResults(); this.style.borderColor='#6b8c42'"
+        onblur="setTimeout(hideResults,200); this.style.borderColor='#e2ddd4'"
+        style="width:200px;padding:6px 12px 6px 32px;border:1px solid #e2ddd4;border-radius:20px;font-size:13px;background:#f7f5ef;outline:none;transition:border-color .15s;"
+      >
+      <span style="position:absolute;left:10px;top:50%;transform:translateY(-50%);color:#a09880;font-size:14px;">🔍</span>
+      <div id="search-results" style="display:none;position:absolute;top:calc(100% + 6px);right:0;width:280px;background:#ffffff;border:1px solid #e2ddd4;border-radius:10px;box-shadow:0 4px 12px rgba(0,0,0,0.08);z-index:1000;max-height:320px;overflow-y:auto;"></div>
+    </div>
   </nav>
 </header>
 
@@ -336,44 +349,6 @@
     <details class="panel">
       <summary>
         <span class="panel-num">4</span>
-        <span class="panel-title"><span class="lang-en">Reading or dialogue</span><span class="lang-zh">阅读与对话</span></span>
-        <svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg>
-      </summary>
-      <div class="panel-body">
-        <p>📷 <em>Suggested image: a video call screen with family photos in the background.</em></p>
-
-        <h4>Mi familia</h4>
-        <p class="lang-en-block">Elena introduces her family to Pablo over a video call.</p>
-        <p class="lang-zh-block">Elena 在视频通话中向 Pablo 介绍她的家人。</p>
-
-        <div class="dialogue">
-          <p><strong>Pablo:</strong> Elena, ¿tienes hermanos?</p>
-          <p><strong>Elena:</strong> Sí, tengo un hermano. Se llama Diego.</p>
-          <p><strong>Pablo:</strong> ¿Cuántos años tiene tu hermano?</p>
-          <p><strong>Elena:</strong> Tiene 20 años. Y mi madre tiene 52 años.</p>
-          <p><strong>Pablo:</strong> ¿Y tu padre?</p>
-          <p><strong>Elena:</strong> Mi padre tiene 55 años. Tengo también dos primas.</p>
-          <p><strong>Pablo:</strong> ¡Qué familia tan grande! ¿Tienes mascotas?</p>
-          <p><strong>Elena:</strong> Sí, tenemos un perro. Se llama Toby. ¿Y tu familia?</p>
-          <p><strong>Pablo:</strong> Mi familia es pequeña. Tengo una hermana y nuestro gato.</p>
-        </div>
-
-        <h4><span class="lang-en">Comprehension questions</span><span class="lang-zh">理解问题</span></h4>
-        <div class="ex-block">
-        <button class="ex-clear-btn" onclick="this.closest('.ex-block').querySelectorAll('input').forEach(function(i){i.value=''})">Clear / 清空</button>
-        <ol>
-          <li>¿Cómo se llama el hermano de Elena? <input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#fff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"></li>
-          <li>¿Cuántos años tiene la madre de Elena? <input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#fff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"></li>
-          <li>¿Cuántas primas tiene Elena? <input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#fff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"></li>
-          <li>¿Qué mascota tiene la familia de Pablo? <input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#fff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"></li>
-        </ol>
-        </div>
-      </div>
-    </details>
-
-    <details class="panel">
-      <summary>
-        <span class="panel-num">5</span>
         <span class="panel-title"><span class="lang-en">Controlled practice</span><span class="lang-zh">强化练习</span></span>
         <svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg>
       </summary>
@@ -413,6 +388,44 @@
           <li>Mis hermano son altos. → <input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#fff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"></li>
           <li>Ella tienes una hija. → <input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#fff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"></li>
           <li>Sus madre se llama Ana. → <input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#fff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"></li>
+        </ol>
+        </div>
+      </div>
+    </details>
+
+    <details class="panel">
+      <summary>
+        <span class="panel-num">5</span>
+        <span class="panel-title"><span class="lang-en">Reading or dialogue</span><span class="lang-zh">阅读与对话</span></span>
+        <svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg>
+      </summary>
+      <div class="panel-body">
+        <p>📷 <em>Suggested image: a video call screen with family photos in the background.</em></p>
+
+        <h4>Mi familia</h4>
+        <p class="lang-en-block">Elena introduces her family to Pablo over a video call.</p>
+        <p class="lang-zh-block">Elena 在视频通话中向 Pablo 介绍她的家人。</p>
+
+        <div class="dialogue">
+          <p><strong>Pablo:</strong> Elena, ¿tienes hermanos?</p>
+          <p><strong>Elena:</strong> Sí, tengo un hermano. Se llama Diego.</p>
+          <p><strong>Pablo:</strong> ¿Cuántos años tiene tu hermano?</p>
+          <p><strong>Elena:</strong> Tiene 20 años. Y mi madre tiene 52 años.</p>
+          <p><strong>Pablo:</strong> ¿Y tu padre?</p>
+          <p><strong>Elena:</strong> Mi padre tiene 55 años. Tengo también dos primas.</p>
+          <p><strong>Pablo:</strong> ¡Qué familia tan grande! ¿Tienes mascotas?</p>
+          <p><strong>Elena:</strong> Sí, tenemos un perro. Se llama Toby. ¿Y tu familia?</p>
+          <p><strong>Pablo:</strong> Mi familia es pequeña. Tengo una hermana y nuestro gato.</p>
+        </div>
+
+        <h4><span class="lang-en">Comprehension questions</span><span class="lang-zh">理解问题</span></h4>
+        <div class="ex-block">
+        <button class="ex-clear-btn" onclick="this.closest('.ex-block').querySelectorAll('input').forEach(function(i){i.value=''})">Clear / 清空</button>
+        <ol>
+          <li>¿Cómo se llama el hermano de Elena? <input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#fff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"></li>
+          <li>¿Cuántos años tiene la madre de Elena? <input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#fff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"></li>
+          <li>¿Cuántas primas tiene Elena? <input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#fff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"></li>
+          <li>¿Qué mascota tiene la familia de Pablo? <input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#fff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"></li>
         </ol>
         </div>
       </div>
@@ -645,5 +658,6 @@ if (saved === 'zh') setLang('zh');
 })();
 </script>
 
+<script src="../../../assets/search.js"></script>
 </body>
 </html>

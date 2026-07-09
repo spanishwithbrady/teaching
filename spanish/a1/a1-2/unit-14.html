@@ -55,6 +55,19 @@
       <li><a href="#">English</a></li>
       <li><a href="../../../tools/">Tools</a></li>
     </ul>
+    <div style="position:relative;">
+      <input
+        type="text"
+        id="site-search"
+        placeholder="Search units... / 搜索单元..."
+        oninput="runSearch(this.value)"
+        onfocus="showResults(); this.style.borderColor='#6b8c42'"
+        onblur="setTimeout(hideResults,200); this.style.borderColor='#e2ddd4'"
+        style="width:200px;padding:6px 12px 6px 32px;border:1px solid #e2ddd4;border-radius:20px;font-size:13px;background:#f7f5ef;outline:none;transition:border-color .15s;"
+      >
+      <span style="position:absolute;left:10px;top:50%;transform:translateY(-50%);color:#a09880;font-size:14px;">🔍</span>
+      <div id="search-results" style="display:none;position:absolute;top:calc(100% + 6px);right:0;width:280px;background:#ffffff;border:1px solid #e2ddd4;border-radius:10px;box-shadow:0 4px 12px rgba(0,0,0,0.08);z-index:1000;max-height:320px;overflow-y:auto;"></div>
+    </div>
   </nav>
 </header>
 
@@ -286,43 +299,6 @@
     <details class="panel">
       <summary>
         <span class="panel-num">4</span>
-        <span class="panel-title"><span class="lang-en">Reading or dialogue</span><span class="lang-zh">阅读与对话</span></span>
-        <svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg>
-      </summary>
-      <div class="panel-body">
-        <p>📷 <em>Suggested image: a clothing store fitting room with a mirror.</em></p>
-
-        <h4>De compras</h4>
-        <p class="lang-en-block">Li is shopping for clothes and talks to the shop assistant (Ana).</p>
-        <p class="lang-zh-block">Li 正在买衣服，和店员（Ana）对话。</p>
-
-        <div class="dialogue">
-          <p><strong>Ana (dependienta):</strong> Hola, ¿busca algo en especial?</p>
-          <p><strong>Li:</strong> Sí, me gusta esa camisa azul. ¿Cuánto cuesta?</p>
-          <p><strong>Ana:</strong> Cuesta 25 euros. Está de oferta.</p>
-          <p><strong>Li:</strong> ¿La tiene en talla mediana?</p>
-          <p><strong>Ana:</strong> Sí, aquí la tiene. ¿Quiere probársela?</p>
-          <p><strong>Li:</strong> Sí, por favor. (después) ¿Qué tal me queda?</p>
-          <p><strong>Ana:</strong> Le queda muy bien.</p>
-          <p><strong>Li:</strong> ¡Perfecto! Me la llevo.</p>
-        </div>
-
-        <h4><span class="lang-en">Comprehension questions</span><span class="lang-zh">理解问题</span></h4>
-        <div class="exercise-block">
-        <div style="text-align:right; margin-bottom:8px;"><button onclick="this.closest('.exercise-block').querySelectorAll('input').forEach(function(i){i.value=''})" style="font-size:12px; color:#8B5E3C; background:none; border:1px solid #e2ddd4; border-radius:4px; padding:3px 10px; cursor:pointer;">Clear / 清空</button></div>
-        <ol>
-          <li>¿Qué quiere comprar Li? <input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"></li>
-          <li>¿Cuánto cuesta la camisa? <input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"></li>
-          <li>¿Qué talla pide Li? <input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"></li>
-          <li>¿Le queda bien la camisa a Li? <input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"></li>
-        </ol>
-        </div>
-      </div>
-    </details>
-
-    <details class="panel">
-      <summary>
-        <span class="panel-num">5</span>
         <span class="panel-title"><span class="lang-en">Controlled practice</span><span class="lang-zh">强化练习</span></span>
         <svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg>
       </summary>
@@ -362,6 +338,43 @@
           <li>¿Cuesta cuánto? → <input type="text" class="ex-input" placeholder="..." style="width:220px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"></li>
           <li>La voy a comprar lo. → <input type="text" class="ex-input" placeholder="..." style="width:220px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"></li>
           <li>Esta camisa me queda bien a mí gusta. → <input type="text" class="ex-input" placeholder="..." style="width:220px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"></li>
+        </ol>
+        </div>
+      </div>
+    </details>
+
+    <details class="panel">
+      <summary>
+        <span class="panel-num">5</span>
+        <span class="panel-title"><span class="lang-en">Reading or dialogue</span><span class="lang-zh">阅读与对话</span></span>
+        <svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg>
+      </summary>
+      <div class="panel-body">
+        <p>📷 <em>Suggested image: a clothing store fitting room with a mirror.</em></p>
+
+        <h4>De compras</h4>
+        <p class="lang-en-block">Li is shopping for clothes and talks to the shop assistant (Ana).</p>
+        <p class="lang-zh-block">Li 正在买衣服，和店员（Ana）对话。</p>
+
+        <div class="dialogue">
+          <p><strong>Ana (dependienta):</strong> Hola, ¿busca algo en especial?</p>
+          <p><strong>Li:</strong> Sí, me gusta esa camisa azul. ¿Cuánto cuesta?</p>
+          <p><strong>Ana:</strong> Cuesta 25 euros. Está de oferta.</p>
+          <p><strong>Li:</strong> ¿La tiene en talla mediana?</p>
+          <p><strong>Ana:</strong> Sí, aquí la tiene. ¿Quiere probársela?</p>
+          <p><strong>Li:</strong> Sí, por favor. (después) ¿Qué tal me queda?</p>
+          <p><strong>Ana:</strong> Le queda muy bien.</p>
+          <p><strong>Li:</strong> ¡Perfecto! Me la llevo.</p>
+        </div>
+
+        <h4><span class="lang-en">Comprehension questions</span><span class="lang-zh">理解问题</span></h4>
+        <div class="exercise-block">
+        <div style="text-align:right; margin-bottom:8px;"><button onclick="this.closest('.exercise-block').querySelectorAll('input').forEach(function(i){i.value=''})" style="font-size:12px; color:#8B5E3C; background:none; border:1px solid #e2ddd4; border-radius:4px; padding:3px 10px; cursor:pointer;">Clear / 清空</button></div>
+        <ol>
+          <li>¿Qué quiere comprar Li? <input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"></li>
+          <li>¿Cuánto cuesta la camisa? <input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"></li>
+          <li>¿Qué talla pide Li? <input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"></li>
+          <li>¿Le queda bien la camisa a Li? <input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"></li>
         </ol>
         </div>
       </div>
@@ -520,5 +533,6 @@ const saved = localStorage.getItem('lang');
 if (saved === 'zh') setLang('zh');
 </script>
 
+<script src="../../../assets/search.js"></script>
 </body>
 </html>

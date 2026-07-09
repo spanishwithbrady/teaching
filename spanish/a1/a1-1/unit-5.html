@@ -46,6 +46,19 @@
       <li><a href="#">English</a></li>
       <li><a href="../../../tools/">Tools</a></li>
     </ul>
+    <div style="position:relative;">
+      <input
+        type="text"
+        id="site-search"
+        placeholder="Search units... / 搜索单元..."
+        oninput="runSearch(this.value)"
+        onfocus="showResults(); this.style.borderColor='#6b8c42'"
+        onblur="setTimeout(hideResults,200); this.style.borderColor='#e2ddd4'"
+        style="width:200px;padding:6px 12px 6px 32px;border:1px solid #e2ddd4;border-radius:20px;font-size:13px;background:#f7f5ef;outline:none;transition:border-color .15s;"
+      >
+      <span style="position:absolute;left:10px;top:50%;transform:translateY(-50%);color:#a09880;font-size:14px;">🔍</span>
+      <div id="search-results" style="display:none;position:absolute;top:calc(100% + 6px);right:0;width:280px;background:#ffffff;border:1px solid #e2ddd4;border-radius:10px;box-shadow:0 4px 12px rgba(0,0,0,0.08);z-index:1000;max-height:320px;overflow-y:auto;"></div>
+    </div>
   </nav>
 </header>
 
@@ -233,43 +246,6 @@
     <details class="panel">
       <summary>
         <span class="panel-num">4</span>
-        <span class="panel-title"><span class="lang-en">Reading or dialogue</span><span class="lang-zh">阅读与对话</span></span>
-        <svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg>
-      </summary>
-      <div class="panel-body">
-        <p>📷 <em>Suggested image: two people on a video call, each showing their desk to the camera.</em></p>
-
-        <h4>Preparando el estudio</h4>
-        <p class="lang-en-block">Wei and Sara are setting up for an online study session and describe what's around them.</p>
-        <p class="lang-zh-block">Wei 和 Sara 准备在线学习，互相描述自己周围的东西。</p>
-
-        <div class="dialogue">
-          <p><strong>Sara:</strong> Wei, ¿tienes tu cuaderno? Hay un examen mañana.</p>
-          <p><strong>Wei:</strong> Sí, está aquí, al lado de mi ordenador.</p>
-          <p><strong>Sara:</strong> Perfecto. ¿Qué hay encima de tu mesa?</p>
-          <p><strong>Wei:</strong> Hay un libro, dos bolígrafos y mi móvil. ¿Y en tu mesa?</p>
-          <p><strong>Sara:</strong> Hay una botella de agua y mis auriculares. Este cable es nuevo.</p>
-          <p><strong>Wei:</strong> ¿Ese cable es de tu cargador?</p>
-          <p><strong>Sara:</strong> Sí, exacto. Bueno, ¿dónde están tus llaves? Las necesitas luego.</p>
-          <p><strong>Wei:</strong> Están dentro de mi mochila. ¡Todo listo!</p>
-        </div>
-
-        <h4><span class="lang-en">Comprehension questions</span><span class="lang-zh">理解问题</span></h4>
-        <div class="exercise-block">
-        <div style="text-align:right; margin-bottom:8px;"><button onclick="this.closest('.exercise-block').querySelectorAll('input').forEach(function(i){i.value=''})" style="font-size:12px; color:#8B5E3C; background:none; border:1px solid #e2ddd4; border-radius:4px; padding:3px 10px; cursor:pointer;">Clear / 清空</button></div>
-        <ol>
-          <li>¿Qué hay encima de la mesa de Wei? <input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"></li>
-          <li>¿Qué hay encima de la mesa de Sara? <input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"></li>
-          <li>¿De quién es el cargador? <input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"></li>
-          <li>¿Dónde están las llaves de Wei? <input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"></li>
-        </ol>
-        </div>
-      </div>
-    </details>
-
-    <details class="panel">
-      <summary>
-        <span class="panel-num">5</span>
         <span class="panel-title"><span class="lang-en">Controlled practice</span><span class="lang-zh">强化练习</span></span>
         <svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg>
       </summary>
@@ -314,6 +290,43 @@
           <li><input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"> llaves</li>
           <li><input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"> pantalla</li>
           <li><input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"> lápices</li>
+        </ol>
+        </div>
+      </div>
+    </details>
+
+    <details class="panel">
+      <summary>
+        <span class="panel-num">5</span>
+        <span class="panel-title"><span class="lang-en">Reading or dialogue</span><span class="lang-zh">阅读与对话</span></span>
+        <svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg>
+      </summary>
+      <div class="panel-body">
+        <p>📷 <em>Suggested image: two people on a video call, each showing their desk to the camera.</em></p>
+
+        <h4>Preparando el estudio</h4>
+        <p class="lang-en-block">Wei and Sara are setting up for an online study session and describe what's around them.</p>
+        <p class="lang-zh-block">Wei 和 Sara 准备在线学习，互相描述自己周围的东西。</p>
+
+        <div class="dialogue">
+          <p><strong>Sara:</strong> Wei, ¿tienes tu cuaderno? Hay un examen mañana.</p>
+          <p><strong>Wei:</strong> Sí, está aquí, al lado de mi ordenador.</p>
+          <p><strong>Sara:</strong> Perfecto. ¿Qué hay encima de tu mesa?</p>
+          <p><strong>Wei:</strong> Hay un libro, dos bolígrafos y mi móvil. ¿Y en tu mesa?</p>
+          <p><strong>Sara:</strong> Hay una botella de agua y mis auriculares. Este cable es nuevo.</p>
+          <p><strong>Wei:</strong> ¿Ese cable es de tu cargador?</p>
+          <p><strong>Sara:</strong> Sí, exacto. Bueno, ¿dónde están tus llaves? Las necesitas luego.</p>
+          <p><strong>Wei:</strong> Están dentro de mi mochila. ¡Todo listo!</p>
+        </div>
+
+        <h4><span class="lang-en">Comprehension questions</span><span class="lang-zh">理解问题</span></h4>
+        <div class="exercise-block">
+        <div style="text-align:right; margin-bottom:8px;"><button onclick="this.closest('.exercise-block').querySelectorAll('input').forEach(function(i){i.value=''})" style="font-size:12px; color:#8B5E3C; background:none; border:1px solid #e2ddd4; border-radius:4px; padding:3px 10px; cursor:pointer;">Clear / 清空</button></div>
+        <ol>
+          <li>¿Qué hay encima de la mesa de Wei? <input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"></li>
+          <li>¿Qué hay encima de la mesa de Sara? <input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"></li>
+          <li>¿De quién es el cargador? <input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"></li>
+          <li>¿Dónde están las llaves de Wei? <input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"></li>
         </ol>
         </div>
       </div>
@@ -473,5 +486,6 @@ const saved = localStorage.getItem('lang');
 if (saved === 'zh') setLang('zh');
 </script>
 
+<script src="../../../assets/search.js"></script>
 </body>
 </html>

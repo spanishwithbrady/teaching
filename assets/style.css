@@ -565,3 +565,10 @@ details.panel[open] .panel-chevron { transform: rotate(180deg); }
   .card-grid { grid-template-columns: 1fr; }
   .site-nav { gap: 1rem; }
 }
+
+/* Search bar in nav */
+.site-header nav {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}

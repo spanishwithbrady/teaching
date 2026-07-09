@@ -55,6 +55,19 @@
       <li><a href="#">English</a></li>
       <li><a href="../../../tools/">Tools</a></li>
     </ul>
+    <div style="position:relative;">
+      <input
+        type="text"
+        id="site-search"
+        placeholder="Search units... / 搜索单元..."
+        oninput="runSearch(this.value)"
+        onfocus="showResults(); this.style.borderColor='#6b8c42'"
+        onblur="setTimeout(hideResults,200); this.style.borderColor='#e2ddd4'"
+        style="width:200px;padding:6px 12px 6px 32px;border:1px solid #e2ddd4;border-radius:20px;font-size:13px;background:#f7f5ef;outline:none;transition:border-color .15s;"
+      >
+      <span style="position:absolute;left:10px;top:50%;transform:translateY(-50%);color:#a09880;font-size:14px;">🔍</span>
+      <div id="search-results" style="display:none;position:absolute;top:calc(100% + 6px);right:0;width:280px;background:#ffffff;border:1px solid #e2ddd4;border-radius:10px;box-shadow:0 4px 12px rgba(0,0,0,0.08);z-index:1000;max-height:320px;overflow-y:auto;"></div>
+    </div>
   </nav>
 </header>
 
@@ -299,43 +312,6 @@
     <details class="panel">
       <summary>
         <span class="panel-num">4</span>
-        <span class="panel-title"><span class="lang-en">Reading or dialogue</span><span class="lang-zh">阅读与对话</span></span>
-        <svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg>
-      </summary>
-      <div class="panel-body">
-        <p>📷 <em>Suggested image: two cafés side by side, one modern, one traditional.</em></p>
-
-        <h4>¿Cuál es mejor?</h4>
-        <p class="lang-en-block">Sara and Ming compare two cafés they both know.</p>
-        <p class="lang-zh-block">Sara 和 Ming 比较他们都知道的两家咖啡馆。</p>
-
-        <div class="dialogue">
-          <p><strong>Sara:</strong> Ming, ¿cuál café te gusta más, el moderno o el antiguo?</p>
-          <p><strong>Ming:</strong> Para mí, el moderno es mejor. Es más bonito.</p>
-          <p><strong>Sara:</strong> Pero el antiguo es más barato que el moderno.</p>
-          <p><strong>Ming:</strong> Es verdad, pero el café del moderno es buenísimo.</p>
-          <p><strong>Sara:</strong> En mi opinión, los dos son tan buenos como el otro.</p>
-          <p><strong>Ming:</strong> Tal vez, pero el moderno está más cerca que el antiguo.</p>
-          <p><strong>Sara:</strong> Eso es verdad. Es menos lejos de mi casa.</p>
-          <p><strong>Ming:</strong> Entonces, ¡vamos al moderno!</p>
-        </div>
-
-        <h4><span class="lang-en">Comprehension questions</span><span class="lang-zh">理解问题</span></h4>
-        <div class="exercise-block">
-        <div style="text-align:right; margin-bottom:8px;"><button onclick="this.closest('.exercise-block').querySelectorAll('input').forEach(function(i){i.value=''})" style="font-size:12px; color:#8B5E3C; background:none; border:1px solid #e2ddd4; border-radius:4px; padding:3px 10px; cursor:pointer;">Clear / 清空</button></div>
-        <ol>
-          <li>¿Cuál café prefiere Ming? <input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"></li>
-          <li>¿Cuál café es más barato? <input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"></li>
-          <li>¿Qué opina Sara sobre los dos cafés? <input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"></li>
-          <li>¿A qué café van a ir finalmente? <input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"></li>
-        </ol>
-        </div>
-      </div>
-    </details>
-
-    <details class="panel">
-      <summary>
-        <span class="panel-num">5</span>
         <span class="panel-title"><span class="lang-en">Controlled practice</span><span class="lang-zh">强化练习</span></span>
         <svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg>
       </summary>
@@ -375,6 +351,43 @@
           <li>Tengo tanto dinero como tú. (check agreement) → <input type="text" class="ex-input" placeholder="..." style="width:220px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"></li>
           <li>Esta ciudad es más grande de esa. → <input type="text" class="ex-input" placeholder="..." style="width:220px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"></li>
           <li>Es la mas buena estudiante de la clase. → <input type="text" class="ex-input" placeholder="..." style="width:220px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"></li>
+        </ol>
+        </div>
+      </div>
+    </details>
+
+    <details class="panel">
+      <summary>
+        <span class="panel-num">5</span>
+        <span class="panel-title"><span class="lang-en">Reading or dialogue</span><span class="lang-zh">阅读与对话</span></span>
+        <svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg>
+      </summary>
+      <div class="panel-body">
+        <p>📷 <em>Suggested image: two cafés side by side, one modern, one traditional.</em></p>
+
+        <h4>¿Cuál es mejor?</h4>
+        <p class="lang-en-block">Sara and Ming compare two cafés they both know.</p>
+        <p class="lang-zh-block">Sara 和 Ming 比较他们都知道的两家咖啡馆。</p>
+
+        <div class="dialogue">
+          <p><strong>Sara:</strong> Ming, ¿cuál café te gusta más, el moderno o el antiguo?</p>
+          <p><strong>Ming:</strong> Para mí, el moderno es mejor. Es más bonito.</p>
+          <p><strong>Sara:</strong> Pero el antiguo es más barato que el moderno.</p>
+          <p><strong>Ming:</strong> Es verdad, pero el café del moderno es buenísimo.</p>
+          <p><strong>Sara:</strong> En mi opinión, los dos son tan buenos como el otro.</p>
+          <p><strong>Ming:</strong> Tal vez, pero el moderno está más cerca que el antiguo.</p>
+          <p><strong>Sara:</strong> Eso es verdad. Es menos lejos de mi casa.</p>
+          <p><strong>Ming:</strong> Entonces, ¡vamos al moderno!</p>
+        </div>
+
+        <h4><span class="lang-en">Comprehension questions</span><span class="lang-zh">理解问题</span></h4>
+        <div class="exercise-block">
+        <div style="text-align:right; margin-bottom:8px;"><button onclick="this.closest('.exercise-block').querySelectorAll('input').forEach(function(i){i.value=''})" style="font-size:12px; color:#8B5E3C; background:none; border:1px solid #e2ddd4; border-radius:4px; padding:3px 10px; cursor:pointer;">Clear / 清空</button></div>
+        <ol>
+          <li>¿Cuál café prefiere Ming? <input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"></li>
+          <li>¿Cuál café es más barato? <input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"></li>
+          <li>¿Qué opina Sara sobre los dos cafés? <input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"></li>
+          <li>¿A qué café van a ir finalmente? <input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"></li>
         </ol>
         </div>
       </div>
@@ -533,5 +546,6 @@ const saved = localStorage.getItem('lang');
 if (saved === 'zh') setLang('zh');
 </script>
 
+<script src="../../../assets/search.js"></script>
 </body>
 </html>

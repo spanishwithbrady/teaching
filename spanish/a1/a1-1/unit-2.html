@@ -175,6 +175,19 @@
       <li><a href="#">English</a></li>
       <li><a href="../../../tools/">Tools</a></li>
     </ul>
+    <div style="position:relative;">
+      <input
+        type="text"
+        id="site-search"
+        placeholder="Search units... / 搜索单元..."
+        oninput="runSearch(this.value)"
+        onfocus="showResults(); this.style.borderColor='#6b8c42'"
+        onblur="setTimeout(hideResults,200); this.style.borderColor='#e2ddd4'"
+        style="width:200px;padding:6px 12px 6px 32px;border:1px solid #e2ddd4;border-radius:20px;font-size:13px;background:#f7f5ef;outline:none;transition:border-color .15s;"
+      >
+      <span style="position:absolute;left:10px;top:50%;transform:translateY(-50%);color:#a09880;font-size:14px;">🔍</span>
+      <div id="search-results" style="display:none;position:absolute;top:calc(100% + 6px);right:0;width:280px;background:#ffffff;border:1px solid #e2ddd4;border-radius:10px;box-shadow:0 4px 12px rgba(0,0,0,0.08);z-index:1000;max-height:320px;overflow-y:auto;"></div>
+    </div>
   </nav>
 </header>
 
@@ -463,45 +476,6 @@
     <details class="panel">
       <summary>
         <span class="panel-num">4</span>
-        <span class="panel-title"><span class="lang-en">Reading or dialogue</span><span class="lang-zh">阅读与对话</span></span>
-        <svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg>
-      </summary>
-      <div class="panel-body">
-        <p>📷 <em>Suggested image: two students chatting over coffee, one Asian, one Latin American.</em></p>
-
-        <h4>En la cafetería</h4>
-        <p class="lang-en-block">Wei and Ana keep chatting — now about where they're from and what they do.</p>
-        <p class="lang-zh-block">Wei 和 Ana 继续聊天——这次聊到他们来自哪里以及做什么工作。</p>
-
-        <div class="dialogue">
-          <p><strong>Ana:</strong> Wei, ¿de dónde eres exactamente?</p>
-          <p><strong>Wei:</strong> Soy de China, de Shanghái. Soy chino.</p>
-          <p><strong>Ana:</strong> ¡Qué interesante! ¿Y a qué te dedicas?</p>
-          <p><strong>Wei:</strong> Soy estudiante. Estudio español. ¿Y tú, Ana?</p>
-          <p><strong>Ana:</strong> Yo soy española, de Madrid. Soy profesora.</p>
-          <p><strong>Wei:</strong> ¡Qué bien! ¿Eres profesora de español?</p>
-          <p><strong>Ana:</strong> No, soy profesora de matemáticas.</p>
-          <p><strong>Wei:</strong> Entiendo. Oye, mi amigo Carlos también es estudiante.</p>
-          <p><strong>Ana:</strong> ¿De dónde es Carlos?</p>
-          <p><strong>Wei:</strong> Es mexicano, de Ciudad de México.</p>
-        </div>
-
-        <h4><span class="lang-en">Comprehension questions</span><span class="lang-zh">理解问题</span></h4>
-        <div class="ex-block">
-        <button class="ex-clear-btn" onclick="this.closest('.ex-block').querySelectorAll('input').forEach(function(i){i.value=''})">Clear / 清空</button>
-        <ol>
-          <li>¿De dónde es Wei? <input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#fff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"></li>
-          <li>¿A qué se dedica Ana? <input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#fff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"></li>
-          <li>¿Es profesora de español Ana? <input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#fff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"></li>
-          <li>¿De dónde es Carlos? <input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#fff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"></li>
-        </ol>
-        </div>
-      </div>
-    </details>
-
-    <details class="panel">
-      <summary>
-        <span class="panel-num">5</span>
         <span class="panel-title"><span class="lang-en">Controlled practice</span><span class="lang-zh">强化练习</span></span>
         <svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg>
       </summary>
@@ -543,6 +517,45 @@
           <li>Wei es china. → <input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#fff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"></li>
           <li>Soy una profesora. → <input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#fff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"></li>
           <li>Carlos es Mexicano. → <input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#fff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"></li>
+        </ol>
+        </div>
+      </div>
+    </details>
+
+    <details class="panel">
+      <summary>
+        <span class="panel-num">5</span>
+        <span class="panel-title"><span class="lang-en">Reading or dialogue</span><span class="lang-zh">阅读与对话</span></span>
+        <svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg>
+      </summary>
+      <div class="panel-body">
+        <p>📷 <em>Suggested image: two students chatting over coffee, one Asian, one Latin American.</em></p>
+
+        <h4>En la cafetería</h4>
+        <p class="lang-en-block">Wei and Ana keep chatting — now about where they're from and what they do.</p>
+        <p class="lang-zh-block">Wei 和 Ana 继续聊天——这次聊到他们来自哪里以及做什么工作。</p>
+
+        <div class="dialogue">
+          <p><strong>Ana:</strong> Wei, ¿de dónde eres exactamente?</p>
+          <p><strong>Wei:</strong> Soy de China, de Shanghái. Soy chino.</p>
+          <p><strong>Ana:</strong> ¡Qué interesante! ¿Y a qué te dedicas?</p>
+          <p><strong>Wei:</strong> Soy estudiante. Estudio español. ¿Y tú, Ana?</p>
+          <p><strong>Ana:</strong> Yo soy española, de Madrid. Soy profesora.</p>
+          <p><strong>Wei:</strong> ¡Qué bien! ¿Eres profesora de español?</p>
+          <p><strong>Ana:</strong> No, soy profesora de matemáticas.</p>
+          <p><strong>Wei:</strong> Entiendo. Oye, mi amigo Carlos también es estudiante.</p>
+          <p><strong>Ana:</strong> ¿De dónde es Carlos?</p>
+          <p><strong>Wei:</strong> Es mexicano, de Ciudad de México.</p>
+        </div>
+
+        <h4><span class="lang-en">Comprehension questions</span><span class="lang-zh">理解问题</span></h4>
+        <div class="ex-block">
+        <button class="ex-clear-btn" onclick="this.closest('.ex-block').querySelectorAll('input').forEach(function(i){i.value=''})">Clear / 清空</button>
+        <ol>
+          <li>¿De dónde es Wei? <input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#fff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"></li>
+          <li>¿A qué se dedica Ana? <input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#fff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"></li>
+          <li>¿Es profesora de español Ana? <input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#fff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"></li>
+          <li>¿De dónde es Carlos? <input type="text" class="ex-input" placeholder="..." style="width:140px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#fff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"></li>
         </ol>
         </div>
       </div>
@@ -826,5 +839,6 @@ document.querySelectorAll('.cr-widget').forEach(crInit);
 })();
 </script>
 
+<script src="../../../assets/search.js"></script>
 </body>
 </html>
