@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Clock Time Trainer · Spanish with Brady</title>
+
+  <style>
+    :root{--bg:#f7f5ef;--green:#6b8c42;--brown:#2e2416;--card:#ffffff;
+      --border:#e2ddd4;--muted:#7a6e60;--warm:#8B5E3C;--radius:12px;
+      --gtint:#eef4e4;--wtint:#f5ede0;}
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+    body{font-family:system-ui,-apple-system,sans-serif;background:var(--bg);
+      color:var(--brown);display:flex;flex-direction:column;min-height:100vh;}
+    a{color:inherit;text-decoration:none;}
+    .lang-zh{display:none;}
+    body.zh .lang-en{display:none;}
+    body.zh .lang-zh{display:inline;}
+    .lang-zh-block{display:none;}
+    body.zh .lang-zh-block{display:block;}
+    body.zh .lang-en-block{display:none;}
+    .t-hdr{display:flex;align-items:center;justify-content:space-between;
+      padding:10px 18px;border-bottom:1px solid var(--border);background:var(--card);}
+    .t-logo{font-size:.9rem;font-weight:700;color:var(--brown);}
+    .t-tog{display:flex;border:1px solid var(--border);border-radius:6px;overflow:hidden;}
+    .t-tog button{padding:5px 13px;font-size:12px;font-weight:500;border:none;
+      cursor:pointer;background:var(--bg);color:var(--muted);}
+    .t-tog button.act{background:var(--green);color:#fff;}
+    main{flex:1;padding:20px 18px;max-width:580px;margin:0 auto;width:100%;}
+    .card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);
+      padding:22px 20px;margin-bottom:16px;}
+    .card-title{font-size:1rem;font-weight:700;color:var(--warm);margin-bottom:6px;}
+    .card-sub{font-size:.85rem;color:var(--muted);margin-bottom:16px;line-height:1.5;}
+    .btn{background:var(--green);color:#fff;border:none;padding:.7rem 1.8rem;
+      border-radius:8px;font-size:.9rem;font-weight:600;cursor:pointer;transition:opacity .15s;}
+    .btn:hover{opacity:.88;}
+    .btn-sec{background:transparent;color:var(--green);border:1.5px solid var(--green);
+      padding:.6rem 1.4rem;border-radius:8px;font-size:.85rem;font-weight:600;cursor:pointer;}
+    .btn-sec:hover{background:var(--gtint);}
+    .display{background:var(--bg);border-radius:10px;padding:16px;text-align:center;margin-bottom:14px;}
+    .ans-box{background:var(--gtint);border:1px solid #c8ddb0;border-radius:8px;
+      padding:12px 14px;margin-top:12px;display:none;font-size:.9rem;line-height:1.6;}
+    .note{background:var(--wtint);border-left:3px solid var(--warm);
+      border-radius:0 8px 8px 0;padding:10px 14px;margin-top:12px;
+      font-size:.85rem;line-height:1.6;color:var(--brown);}
+  </style>
+  <style>
+    .clock-wrap{display:flex;justify-content:center;margin:10px 0 16px;}
+    svg.clock-face circle.face{fill:#fdfcf8;stroke:var(--border);stroke-width:2;}
+    svg.clock-face text{font-family:system-ui;font-size:11px;fill:var(--green);font-weight:600;}
+    svg.clock-face .tick{stroke:var(--border);stroke-width:1.5;}
+    svg.clock-face .tick-major{stroke:var(--muted);stroke-width:2.5;}
+    svg.clock-face .hand-hour{stroke:var(--warm);stroke-width:5;stroke-linecap:round;}
+    svg.clock-face .hand-min{stroke:var(--green);stroke-width:3;stroke-linecap:round;}
+    svg.clock-face .center{fill:var(--warm);}
+    .time-big{font-size:2rem;font-weight:700;text-align:center;color:var(--brown);
+      margin-bottom:6px;letter-spacing:.04em;}
+    .btns{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-bottom:14px;}
+  </style>
+</head>
+<body>
+  <header class="t-hdr">
+    <a class="t-logo" href="../">Spanish with Brady</a>
+    <div class="t-tog">
+      <button id="en-btn" class="act" onclick="setLang('en')">EN</button>
+      <button id="zh-btn" onclick="setLang('zh')">中文</button>
+    </div>
+  </header>
+  <main>
+
+    <div class="card">
+      <div class="card-title">
+        <span class="lang-en">🕐 Clock Time Trainer</span>
+        <span class="lang-zh">🕐 钟表练习</span>
+      </div>
+      <p class="card-sub">
+        <span class="lang-en">What time is it? Say it in Spanish before clicking Show answer.</span>
+        <span class="lang-zh">几点了？在点击"查看答案"之前先用西班牙语说出来。</span>
+      </p>
+      <div class="clock-wrap">
+        <svg class="clock-face" id="clock" width="200" height="200" viewBox="0 0 200 200">
+          <circle class="face" cx="100" cy="100" r="95"/>
+          <g id="ticks"></g>
+          <g id="nums"></g>
+          <line id="hour-hand" class="hand-hour" x1="100" y1="100" x2="100" y2="45"/>
+          <line id="min-hand" class="hand-min" x1="100" y1="100" x2="100" y2="30"/>
+          <circle class="center" cx="100" cy="100" r="5"/>
+        </svg>
+      </div>
+      <div class="time-big" id="time-display">--:--</div>
+      <div class="btns">
+        <button class="btn" onclick="newTime()">
+          <span class="lang-en">New time</span><span class="lang-zh">新时间</span>
+        </button>
+        <button class="btn-sec" onclick="showClockAnswer()">
+          <span class="lang-en">Show answer</span><span class="lang-zh">查看答案</span>
+        </button>
+      </div>
+      <div class="ans-box" id="clock-ans"></div>
+    </div>
+    <div class="note">
+      <span class="lang-en">
+        <strong>Remember:</strong> Es la una... / Son las dos... |
+        y cuarto (15) · y media (30) · menos cuarto (45) |
+        y diez · y veinte · menos veinte · menos diez
+      </span>
+      <span class="lang-zh">
+        <strong>记住：</strong> Es la una... / Son las dos... |
+        y cuarto (15分) · y media (30分) · menos cuarto (45分) |
+        y diez · y veinte · menos veinte · menos diez
+      </span>
+    </div>
+  
+  </main>
+
+  <script>
+    function setLang(l){
+      document.body.classList.toggle('zh',l==='zh');
+      document.getElementById('en-btn').classList.toggle('act',l==='en');
+      document.getElementById('zh-btn').classList.toggle('act',l==='zh');
+    }
+  </script>
+  <script>
+    const NUMS = {1:'una',2:'dos',3:'tres',4:'cuatro',5:'cinco',6:'seis',
+      7:'siete',8:'ocho',9:'nueve',10:'diez',11:'once',12:'doce'};
+    const MINS = [0,10,15,20,30,40,45,50];
+    let curH=0,curM=0;
+
+    // Draw tick marks and number labels
+    (function buildClock(){
+      const ticks = document.getElementById('ticks');
+      const nums = document.getElementById('nums');
+      for(let i=0;i<60;i++){
+        const a=(i*6-90)*Math.PI/180;
+        const major = i%5===0;
+        const r1=major?78:82, r2=91;
+        ticks.innerHTML+=`<line class="${major?'tick-major':'tick'}"
+          x1="${100+r1*Math.cos(a)}" y1="${100+r1*Math.sin(a)}"
+          x2="${100+r2*Math.cos(a)}" y2="${100+r2*Math.sin(a)}"/>`;
+      }
+      const labels={12:100,3:145,6:100,9:55};
+      [[12,100,18],[3,180,100],[6,100,182],[9,20,100]].forEach(([n,x,y])=>{
+        nums.innerHTML+=`<text x="${x}" y="${y+4}" text-anchor="middle">${n}</text>`;
+      });
+    })();
+
+    function setHands(h,m){
+      const ha=(((h%12)+m/60)*30-90)*Math.PI/180;
+      const ma=(m*6-90)*Math.PI/180;
+      const hl=52,ml=65;
+      document.getElementById('hour-hand').setAttribute('x2',100+hl*Math.cos(ha));
+      document.getElementById('hour-hand').setAttribute('y2',100+hl*Math.sin(ha));
+      document.getElementById('min-hand').setAttribute('x2',100+ml*Math.cos(ma));
+      document.getElementById('min-hand').setAttribute('y2',100+ml*Math.sin(ma));
+    }
+
+    function timeToSpanish(h,m){
+      const hr=h%12||12;
+      const nhr=(hr%12)+1; // for "menos" forms
+      const nhrW=NUMS[nhr>12?1:nhr];
+      const isOne=hr===1;
+      const es=isOne?'Es la una':'Son las '+NUMS[hr];
+      if(m===0) return es+' en punto.';
+      if(m===15) return es+' y cuarto.';
+      if(m===30) return es+' y media.';
+      if(m===45) return (nhr===1?'Es la una':'Son las '+(nhr>12?NUMS[1]:NUMS[nhr]))+' menos cuarto.';
+      if(m===10) return es+' y diez.';
+      if(m===20) return es+' y veinte.';
+      if(m===40) return (nhr===1?'Es la una':'Son las '+(nhr>12?NUMS[1]:NUMS[nhr]))+' menos veinte.';
+      if(m===50) return (nhr===1?'Es la una':'Son las '+(nhr>12?NUMS[1]:NUMS[nhr]))+' menos diez.';
+      return es+' y '+m+'.';
+    }
+
+    function newTime(){
+      curH=Math.floor(Math.random()*12)+1;
+      curM=MINS[Math.floor(Math.random()*MINS.length)];
+      setHands(curH,curM);
+      document.getElementById('time-display').textContent=
+        curH+':'+(curM<10?'0':'')+curM;
+      const ab=document.getElementById('clock-ans');
+      ab.style.display='none';ab.innerHTML='';
+    }
+
+    function showClockAnswer(){
+      if(!curH)return;
+      const ab=document.getElementById('clock-ans');
+      ab.innerHTML=`<strong style="font-size:1.1rem;">${timeToSpanish(curH,curM)}</strong>`;
+      ab.style.display='block';
+    }
+
+    newTime();
+  </script>
+</body>
+</html>

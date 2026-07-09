@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Trip Randomizer · Spanish with Brady</title>
+
+  <style>
+    :root{--bg:#f7f5ef;--green:#6b8c42;--brown:#2e2416;--card:#ffffff;
+      --border:#e2ddd4;--muted:#7a6e60;--warm:#8B5E3C;--radius:12px;
+      --gtint:#eef4e4;--wtint:#f5ede0;}
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+    body{font-family:system-ui,-apple-system,sans-serif;background:var(--bg);
+      color:var(--brown);display:flex;flex-direction:column;min-height:100vh;}
+    a{color:inherit;text-decoration:none;}
+    .lang-zh{display:none;}
+    body.zh .lang-en{display:none;}
+    body.zh .lang-zh{display:inline;}
+    .lang-zh-block{display:none;}
+    body.zh .lang-zh-block{display:block;}
+    body.zh .lang-en-block{display:none;}
+    .t-hdr{display:flex;align-items:center;justify-content:space-between;
+      padding:10px 18px;border-bottom:1px solid var(--border);background:var(--card);}
+    .t-logo{font-size:.9rem;font-weight:700;color:var(--brown);}
+    .t-tog{display:flex;border:1px solid var(--border);border-radius:6px;overflow:hidden;}
+    .t-tog button{padding:5px 13px;font-size:12px;font-weight:500;border:none;
+      cursor:pointer;background:var(--bg);color:var(--muted);}
+    .t-tog button.act{background:var(--green);color:#fff;}
+    main{flex:1;padding:20px 18px;max-width:580px;margin:0 auto;width:100%;}
+    .card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);
+      padding:22px 20px;margin-bottom:16px;}
+    .card-title{font-size:1rem;font-weight:700;color:var(--warm);margin-bottom:6px;}
+    .card-sub{font-size:.85rem;color:var(--muted);margin-bottom:16px;line-height:1.5;}
+    .btn{background:var(--green);color:#fff;border:none;padding:.7rem 1.8rem;
+      border-radius:8px;font-size:.9rem;font-weight:600;cursor:pointer;transition:opacity .15s;}
+    .btn:hover{opacity:.88;}
+    .btn-sec{background:transparent;color:var(--green);border:1.5px solid var(--green);
+      padding:.6rem 1.4rem;border-radius:8px;font-size:.85rem;font-weight:600;cursor:pointer;}
+    .btn-sec:hover{background:var(--gtint);}
+    .display{background:var(--bg);border-radius:10px;padding:16px;text-align:center;margin-bottom:14px;}
+    .ans-box{background:var(--gtint);border:1px solid #c8ddb0;border-radius:8px;
+      padding:12px 14px;margin-top:12px;display:none;font-size:.9rem;line-height:1.6;}
+    .note{background:var(--wtint);border-left:3px solid var(--warm);
+      border-radius:0 8px 8px 0;padding:10px 14px;margin-top:12px;
+      font-size:.85rem;line-height:1.6;color:var(--brown);}
+  </style>
+  <style>
+    .trip-card{background:var(--bg);border-radius:10px;padding:14px 16px;margin-bottom:10px;}
+    .trip-label{font-size:.75rem;color:var(--muted);text-transform:uppercase;
+      letter-spacing:.05em;margin-bottom:2px;}
+    .trip-value{font-size:1rem;font-weight:600;color:var(--brown);}
+    .trip-activities{display:flex;flex-direction:column;gap:4px;margin-top:4px;}
+    .trip-activity{font-size:.88rem;color:var(--brown);}
+    .trip-event{background:var(--wtint);border-left:3px solid var(--warm);
+      border-radius:0 8px 8px 0;padding:8px 12px;margin-top:8px;font-size:.88rem;}
+    .city-flag{height:22px;border-radius:2px;margin-right:6px;vertical-align:middle;}
+    .model-narr{background:var(--gtint);border:1px solid #c8ddb0;border-radius:8px;
+      padding:14px 16px;margin-top:12px;display:none;font-size:.9rem;
+      line-height:1.8;font-style:italic;}
+    .model-narr strong{font-style:normal;}
+  </style>
+</head>
+<body>
+  <header class="t-hdr">
+    <a class="t-logo" href="../">Spanish with Brady</a>
+    <div class="t-tog">
+      <button id="en-btn" class="act" onclick="setLang('en')">EN</button>
+      <button id="zh-btn" onclick="setLang('zh')">中文</button>
+    </div>
+  </header>
+  <main>
+
+    <div class="card">
+      <div class="card-title">
+        <span class="lang-en">✈️ Trip Randomizer</span>
+        <span class="lang-zh">✈️ 旅行随机器</span>
+      </div>
+      <p class="card-sub">
+        <span class="lang-en">Generate a past trip and narrate it using the preterite.</span>
+        <span class="lang-zh">生成一次过去的旅行，用过去时讲述它。</span>
+      </p>
+      <div class="display" id="trip-display">
+        <p style="color:var(--muted);font-size:.9rem;">
+          <span class="lang-en">Press the button to generate your trip.</span>
+          <span class="lang-zh">按下按钮生成你的旅行。</span>
+        </p>
+      </div>
+      <div class="btns" style="display:flex;gap:10px;flex-wrap:wrap;margin-top:4px;">
+        <button class="btn" onclick="newTrip()">
+          <span class="lang-en">New trip</span><span class="lang-zh">新旅行</span>
+        </button>
+        <button class="btn-sec" id="trip-model-btn" onclick="showTripModel()" style="display:none;">
+          <span class="lang-en">Show model</span><span class="lang-zh">查看示例</span>
+        </button>
+      </div>
+      <div class="model-narr" id="trip-model"></div>
+    </div>
+    <div class="note">
+      <span class="lang-en"><strong>Key irregular preterites:</strong>
+        fui · estuve · tuve que · pude · hice · vi · vine · dije · puse</span>
+      <span class="lang-zh"><strong>关键不规则过去时：</strong>
+        fui · estuve · tuve que · pude · hice · vi · vine · dije · puse</span>
+    </div>
+  
+  </main>
+
+  <script>
+    function setLang(l){
+      document.body.classList.toggle('zh',l==='zh');
+      document.getElementById('en-btn').classList.toggle('act',l==='en');
+      document.getElementById('zh-btn').classList.toggle('act',l==='zh');
+    }
+  </script>
+  <script>
+    const DEST = [
+      {n:'Madrid',code:'es'},{n:'Barcelona',code:'es'},{n:'Sevilla',code:'es'},
+      {n:'Lisboa',code:'pt'},{n:'París',code:'fr'},{n:'Roma',code:'it'},
+      {n:'Londres',code:'gb'},{n:'Ámsterdam',code:'nl'},{n:'Berlín',code:'de'},
+      {n:'Buenos Aires',code:'ar'},{n:'Ciudad de México',code:'mx'},{n:'Lima',code:'pe'},
+      {n:'Bogotá',code:'co'},{n:'Santiago',code:'cl'},{n:'La Habana',code:'cu'},
+      {n:'Tokio',code:'jp'},{n:'Bangkok',code:'th'},{n:'Nueva York',code:'us'},
+      {n:'Marrakech',code:'ma'},{n:'Estambul',code:'tr'},{n:'Dubái',code:'ae'},
+      {n:'Singapur',code:'sg'},{n:'Sydney',code:'au'},{n:'Quito',code:'ec'},
+    ];
+    const COMPANIONS = [
+      {es:'solo/a',en:'alone'},{es:'con mi familia',en:'with my family'},
+      {es:'con amigos',en:'with friends'},{es:'con mi pareja',en:'with my partner'},
+      {es:'con mis compañeros de trabajo',en:'with colleagues'},
+    ];
+    const DURATIONS = [
+      'un fin de semana','tres días','una semana','diez días','dos semanas'
+    ];
+    const ACTIVITIES = [
+      'visitar un museo','ir a la playa','comer en un restaurante local',
+      'hacer senderismo','ver un espectáculo','comprar recuerdos',
+      'ir de excursión','ver monumentos históricos','probar la comida típica',
+      'hablar con los locales','ir a un mercado','ver la puesta de sol',
+      'hacer fotos','bañarse en el mar','visitar una catedral',
+      'ir a un parque','ver un partido de fútbol','bailar en una discoteca',
+      'visitar un castillo','hacer una ruta en bici','ir en barco',
+      'ver una exposición de arte','probar el vino local','hacer surf',
+      'visitar una bodega','ir al teatro','hacer una visita guiada',
+      'ir a los mercados','ver los fuegos artificiales','pasear por el casco antiguo',
+    ];
+    const EVENTS = [
+      {es:'perdimos el pasaporte',luck:false,adv:'Desafortunadamente'},
+      {es:'perdimos el vuelo',luck:false,adv:'Desafortunadamente'},
+      {es:'encontramos un restaurante increíble',luck:true,adv:'Por suerte'},
+      {es:'conocimos a gente muy interesante',luck:true,adv:'Por suerte'},
+      {es:'llovió todo el día',luck:false,adv:'Desafortunadamente'},
+      {es:'perdimos la maleta',luck:false,adv:'Desafortunadamente'},
+      {es:'encontramos un mercado especial',luck:true,adv:'Por suerte'},
+      {es:'el hotel estaba completo',luck:false,adv:'Desafortunadamente'},
+      {es:'encontramos una fiesta local increíble',luck:true,adv:'Por suerte'},
+      {es:'hizo demasiado calor',luck:false,adv:'Desafortunadamente'},
+    ];
+    const FEELINGS = ['muy bien','genial','fatal','regular','estupendamente'];
+
+    let curTrip=null;
+
+    function pick(arr,n=1){
+      const a=[...arr];
+      const res=[];
+      for(let i=0;i<n;i++){
+        const idx=Math.floor(Math.random()*a.length);
+        res.push(a.splice(idx,1)[0]);
+      }
+      return n===1?res[0]:res;
+    }
+
+    function newTrip(){
+      const dest=pick(DEST);
+      const comp=pick(COMPANIONS);
+      const dur=pick(DURATIONS);
+      const acts=pick(ACTIVITIES,3);
+      const event=pick(EVENTS);
+      const feel=pick(FEELINGS);
+      curTrip={dest,comp,dur,acts,event,feel};
+
+      document.getElementById('trip-display').innerHTML=`
+        <div class="trip-card">
+          <div class="trip-label"><span class="lang-en">Destination</span><span class="lang-zh">目的地</span></div>
+          <div class="trip-value">
+            <img class="city-flag" src="https://flagcdn.com/w40/${dest.code}.png" alt="">
+            ${dest.n}
+          </div>
+        </div>
+        <div class="trip-card">
+          <div class="trip-label"><span class="lang-en">With</span><span class="lang-zh">与谁</span></div>
+          <div class="trip-value">${comp.es}</div>
+        </div>
+        <div class="trip-card">
+          <div class="trip-label"><span class="lang-en">Duration</span><span class="lang-zh">时长</span></div>
+          <div class="trip-value">${dur}</div>
+        </div>
+        <div class="trip-card">
+          <div class="trip-label"><span class="lang-en">Activities</span><span class="lang-zh">活动</span></div>
+          <div class="trip-activities">
+            ${acts.map(a=>`<div class="trip-activity">• ${a}</div>`).join('')}
+          </div>
+        </div>
+        <div class="trip-event">
+          <span style="font-weight:600;">${event.adv}:</span> ${event.es}
+        </div>`;
+
+      document.getElementById('trip-model').style.display='none';
+      document.getElementById('trip-model-btn').style.display='inline-block';
+    }
+
+    function showTripModel(){
+      if(!curTrip)return;
+      const {dest,comp,dur,acts,event,feel}=curTrip;
+      const m=document.getElementById('trip-model');
+      m.innerHTML=`
+        <div><strong>
+          <span class="lang-en">Model narration:</span>
+          <span class="lang-zh">示例叙述：</span>
+        </strong></div>
+        <div style="margin-top:8px;">
+          El año pasado fui a <strong>${dest.n}</strong> ${comp.es} durante ${dur}.
+          Primero ${acts[0]}.
+          Luego ${acts[1]}.
+          También ${acts[2]}.
+          ${event.adv}, ${event.es}.
+          Lo pasé <strong>${feel}</strong>.
+        </div>`;
+      m.style.display='block';
+    }
+  </script>
+</body>
+</html>

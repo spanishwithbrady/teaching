@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>City Locator · Spanish with Brady</title>
+
+  <style>
+    :root{--bg:#f7f5ef;--green:#6b8c42;--brown:#2e2416;--card:#ffffff;
+      --border:#e2ddd4;--muted:#7a6e60;--warm:#8B5E3C;--radius:12px;
+      --gtint:#eef4e4;--wtint:#f5ede0;}
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+    body{font-family:system-ui,-apple-system,sans-serif;background:var(--bg);
+      color:var(--brown);display:flex;flex-direction:column;min-height:100vh;}
+    a{color:inherit;text-decoration:none;}
+    .lang-zh{display:none;}
+    body.zh .lang-en{display:none;}
+    body.zh .lang-zh{display:inline;}
+    .lang-zh-block{display:none;}
+    body.zh .lang-zh-block{display:block;}
+    body.zh .lang-en-block{display:none;}
+    .t-hdr{display:flex;align-items:center;justify-content:space-between;
+      padding:10px 18px;border-bottom:1px solid var(--border);background:var(--card);}
+    .t-logo{font-size:.9rem;font-weight:700;color:var(--brown);}
+    .t-tog{display:flex;border:1px solid var(--border);border-radius:6px;overflow:hidden;}
+    .t-tog button{padding:5px 13px;font-size:12px;font-weight:500;border:none;
+      cursor:pointer;background:var(--bg);color:var(--muted);}
+    .t-tog button.act{background:var(--green);color:#fff;}
+    main{flex:1;padding:20px 18px;max-width:580px;margin:0 auto;width:100%;}
+    .card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);
+      padding:22px 20px;margin-bottom:16px;}
+    .card-title{font-size:1rem;font-weight:700;color:var(--warm);margin-bottom:6px;}
+    .card-sub{font-size:.85rem;color:var(--muted);margin-bottom:16px;line-height:1.5;}
+    .btn{background:var(--green);color:#fff;border:none;padding:.7rem 1.8rem;
+      border-radius:8px;font-size:.9rem;font-weight:600;cursor:pointer;transition:opacity .15s;}
+    .btn:hover{opacity:.88;}
+    .btn-sec{background:transparent;color:var(--green);border:1.5px solid var(--green);
+      padding:.6rem 1.4rem;border-radius:8px;font-size:.85rem;font-weight:600;cursor:pointer;}
+    .btn-sec:hover{background:var(--gtint);}
+    .display{background:var(--bg);border-radius:10px;padding:16px;text-align:center;margin-bottom:14px;}
+    .ans-box{background:var(--gtint);border:1px solid #c8ddb0;border-radius:8px;
+      padding:12px 14px;margin-top:12px;display:none;font-size:.9rem;line-height:1.6;}
+    .note{background:var(--wtint);border-left:3px solid var(--warm);
+      border-radius:0 8px 8px 0;padding:10px 14px;margin-top:12px;
+      font-size:.85rem;line-height:1.6;color:var(--brown);}
+  </style>
+  <style>
+    .city-name{font-size:1.6rem;font-weight:700;color:var(--brown);margin:6px 0 2px;}
+    .city-country{font-size:.9rem;color:var(--muted);margin-bottom:8px;}
+    .city-flag{height:32px;border-radius:3px;box-shadow:0 1px 3px rgba(0,0,0,.15);}
+    .model{font-size:.95rem;color:var(--brown);font-style:italic;margin-top:4px;}
+    .btns{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px;}
+  </style>
+</head>
+<body>
+  <header class="t-hdr">
+    <a class="t-logo" href="../">Spanish with Brady</a>
+    <div class="t-tog">
+      <button id="en-btn" class="act" onclick="setLang('en')">EN</button>
+      <button id="zh-btn" onclick="setLang('zh')">中文</button>
+    </div>
+  </header>
+  <main>
+
+    <div class="card">
+      <div class="card-title">
+        <span class="lang-en">📍 City Locator</span>
+        <span class="lang-zh">📍 城市定位</span>
+      </div>
+      <p class="card-sub">
+        <span class="lang-en">Where is it? Describe the city's location using prepositions.</span>
+        <span class="lang-zh">它在哪里？用介词描述这个城市的位置。</span>
+      </p>
+      <div class="display" id="city-display">
+        <p style="color:var(--muted);font-size:.9rem;">
+          <span class="lang-en">Press the button to get a city.</span>
+          <span class="lang-zh">按下按钮获取一个城市。</span>
+        </p>
+      </div>
+      <div class="btns">
+        <button class="btn" onclick="newCity()">
+          <span class="lang-en">New city</span><span class="lang-zh">新城市</span>
+        </button>
+        <button class="btn-sec" id="show-btn" onclick="showAnswer()" style="display:none;">
+          <span class="lang-en">Show answer</span><span class="lang-zh">查看答案</span>
+        </button>
+      </div>
+      <div class="ans-box" id="ans-box"></div>
+    </div>
+    <div class="note">
+      <span class="lang-en">🔑 Key prepositions: <em>en el centro de, en el norte/sur/este/oeste de, en el noreste/noroeste/sureste/suroeste de, cerca de, lejos de, en la costa, en las montañas</em></span>
+      <span class="lang-zh">🔑 关键介词：<em>en el centro de, en el norte/sur/este/oeste de, en el noreste de, cerca de, lejos de, en la costa, en las montañas</em></span>
+    </div>
+  
+  </main>
+
+  <script>
+    function setLang(l){
+      document.body.classList.toggle('zh',l==='zh');
+      document.getElementById('en-btn').classList.toggle('act',l==='en');
+      document.getElementById('zh-btn').classList.toggle('act',l==='zh');
+    }
+  </script>
+  <script>
+    const CITIES = [
+      {n:'Madrid',c:'España',code:'es',hint:'en el centro de España, lejos de la costa',
+       model:'Madrid está en el centro de España. Está lejos de la costa.'},
+      {n:'Barcelona',c:'España',code:'es',hint:'en el noreste de España, cerca del mar Mediterráneo',
+       model:'Barcelona está en el noreste de España, cerca del mar Mediterráneo.'},
+      {n:'Sevilla',c:'España',code:'es',hint:'en el sur de España, cerca de Portugal',
+       model:'Sevilla está en el sur de España, cerca de Portugal.'},
+      {n:'Valencia',c:'España',code:'es',hint:'en el este de España, en la costa mediterránea',
+       model:'Valencia está en el este de España, en la costa mediterránea.'},
+      {n:'Bilbao',c:'España',code:'es',hint:'en el norte de España, cerca del mar Cantábrico',
+       model:'Bilbao está en el norte de España, cerca del mar Cantábrico.'},
+      {n:'México D.F.',c:'México',code:'mx',hint:'en el centro de México, en un altiplano',
+       model:'Ciudad de México está en el centro de México, en un altiplano.'},
+      {n:'Guadalajara',c:'México',code:'mx',hint:'al oeste de México D.F.',
+       model:'Guadalajara está al oeste de Ciudad de México.'},
+      {n:'Buenos Aires',c:'Argentina',code:'ar',hint:'en el este de Argentina, cerca del Río de la Plata',
+       model:'Buenos Aires está en el este de Argentina, cerca del Río de la Plata.'},
+      {n:'Medellín',c:'Colombia',code:'co',hint:'en el noroeste de Colombia, en un valle',
+       model:'Medellín está en el noroeste de Colombia, en un valle de los Andes.'},
+      {n:'Lima',c:'Perú',code:'pe',hint:'en la costa oeste de Perú',
+       model:'Lima está en la costa oeste de Perú.'},
+      {n:'Santiago',c:'Chile',code:'cl',hint:'en el centro de Chile, cerca de los Andes',
+       model:'Santiago está en el centro de Chile, cerca de los Andes.'},
+      {n:'Bogotá',c:'Colombia',code:'co',hint:'en el centro de Colombia, en las montañas',
+       model:'Bogotá está en el centro de Colombia, en las montañas.'},
+      {n:'La Habana',c:'Cuba',code:'cu',hint:'en el norte de Cuba',
+       model:'La Habana está en el norte de Cuba, en el mar Caribe.'},
+      {n:'Caracas',c:'Venezuela',code:'ve',hint:'en el norte de Venezuela',
+       model:'Caracas está en el norte de Venezuela, cerca del mar Caribe.'},
+      {n:'Montevideo',c:'Uruguay',code:'uy',hint:'en el sur de Uruguay, en la costa',
+       model:'Montevideo está en el sur de Uruguay, en la costa del Río de la Plata.'},
+      {n:'Quito',c:'Ecuador',code:'ec',hint:'en el centro de Ecuador, en los Andes',
+       model:'Quito está en el centro de Ecuador, en los Andes.'},
+      {n:'La Paz',c:'Bolivia',code:'bo',hint:'en el oeste de Bolivia, en las montañas',
+       model:'La Paz está en el oeste de Bolivia, en las montañas.'},
+      {n:'Asunción',c:'Paraguay',code:'py',hint:'en el sur de Paraguay, cerca del río Paraguay',
+       model:'Asunción está en el sur de Paraguay, cerca del río Paraguay.'},
+      {n:'San José',c:'Costa Rica',code:'cr',hint:'en el centro de Costa Rica',
+       model:'San José está en el centro de Costa Rica.'},
+      {n:'Managua',c:'Nicaragua',code:'ni',hint:'en el oeste de Nicaragua, cerca del lago Managua',
+       model:'Managua está en el oeste de Nicaragua, cerca del lago Managua.'},
+    ];
+    let cur = null;
+    function newCity(){
+      cur = CITIES[Math.floor(Math.random()*CITIES.length)];
+      document.getElementById('city-display').innerHTML =
+        `<img class="city-flag" src="https://flagcdn.com/w40/${cur.code}.png" alt="${cur.c}">
+         <div class="city-name">${cur.n}</div>
+         <div class="city-country">${cur.c}</div>`;
+      const ab = document.getElementById('ans-box');
+      ab.style.display='none'; ab.innerHTML='';
+      document.getElementById('show-btn').style.display='inline-block';
+    }
+    function showAnswer(){
+      if(!cur)return;
+      const ab = document.getElementById('ans-box');
+      ab.innerHTML = `<p><strong><span class="lang-en">Hint:</span><span class="lang-zh">提示：</span></strong> ${cur.hint}</p>
+        <p class="model" style="margin-top:8px;"><strong><span class="lang-en">Model:</span><span class="lang-zh">示例：</span></strong> <em>${cur.model}</em></p>`;
+      ab.style.display='block';
+    }
+  </script>
+</body>
+</html>

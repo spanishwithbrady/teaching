@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Interactive Restaurant Menu · Spanish with Brady</title>
+
+  <style>
+    :root{--bg:#f7f5ef;--green:#6b8c42;--brown:#2e2416;--card:#ffffff;
+      --border:#e2ddd4;--muted:#7a6e60;--warm:#8B5E3C;--radius:12px;
+      --gtint:#eef4e4;--wtint:#f5ede0;}
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+    body{font-family:system-ui,-apple-system,sans-serif;background:var(--bg);
+      color:var(--brown);display:flex;flex-direction:column;min-height:100vh;}
+    a{color:inherit;text-decoration:none;}
+    .lang-zh{display:none;}
+    body.zh .lang-en{display:none;}
+    body.zh .lang-zh{display:inline;}
+    .lang-zh-block{display:none;}
+    body.zh .lang-zh-block{display:block;}
+    body.zh .lang-en-block{display:none;}
+    .t-hdr{display:flex;align-items:center;justify-content:space-between;
+      padding:10px 18px;border-bottom:1px solid var(--border);background:var(--card);}
+    .t-logo{font-size:.9rem;font-weight:700;color:var(--brown);}
+    .t-tog{display:flex;border:1px solid var(--border);border-radius:6px;overflow:hidden;}
+    .t-tog button{padding:5px 13px;font-size:12px;font-weight:500;border:none;
+      cursor:pointer;background:var(--bg);color:var(--muted);}
+    .t-tog button.act{background:var(--green);color:#fff;}
+    main{flex:1;padding:20px 18px;max-width:580px;margin:0 auto;width:100%;}
+    .card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);
+      padding:22px 20px;margin-bottom:16px;}
+    .card-title{font-size:1rem;font-weight:700;color:var(--warm);margin-bottom:6px;}
+    .card-sub{font-size:.85rem;color:var(--muted);margin-bottom:16px;line-height:1.5;}
+    .btn{background:var(--green);color:#fff;border:none;padding:.7rem 1.8rem;
+      border-radius:8px;font-size:.9rem;font-weight:600;cursor:pointer;transition:opacity .15s;}
+    .btn:hover{opacity:.88;}
+    .btn-sec{background:transparent;color:var(--green);border:1.5px solid var(--green);
+      padding:.6rem 1.4rem;border-radius:8px;font-size:.85rem;font-weight:600;cursor:pointer;}
+    .btn-sec:hover{background:var(--gtint);}
+    .display{background:var(--bg);border-radius:10px;padding:16px;text-align:center;margin-bottom:14px;}
+    .ans-box{background:var(--gtint);border:1px solid #c8ddb0;border-radius:8px;
+      padding:12px 14px;margin-top:12px;display:none;font-size:.9rem;line-height:1.6;}
+    .note{background:var(--wtint);border-left:3px solid var(--warm);
+      border-radius:0 8px 8px 0;padding:10px 14px;margin-top:12px;
+      font-size:.85rem;line-height:1.6;color:var(--brown);}
+  </style>
+  <style>
+    main{max-width:640px;}
+    .menu-card{background:var(--card);border:1px solid var(--border);
+      border-radius:var(--radius);padding:0;overflow:hidden;margin-bottom:14px;}
+    .menu-banner{background:var(--green);color:#fff;text-align:center;padding:14px 16px;}
+    .menu-banner h2{font-size:1.2rem;font-weight:700;letter-spacing:.06em;}
+    .menu-banner p{font-size:.8rem;opacity:.85;margin-top:2px;}
+    .menu-section{padding:14px 16px 6px;}
+    .menu-section-title{font-size:.85rem;font-weight:700;color:var(--warm);
+      letter-spacing:.04em;text-transform:uppercase;margin-bottom:10px;
+      padding-bottom:6px;border-bottom:1px solid var(--border);}
+    .menu-item{display:flex;justify-content:space-between;align-items:flex-start;
+      padding:7px 10px;border-radius:7px;cursor:pointer;transition:background .12s;
+      margin-bottom:4px;border:1.5px solid transparent;}
+    .menu-item:hover{background:var(--gtint);}
+    .menu-item.selected{background:var(--gtint);border-color:var(--green);}
+    .menu-item .item-name{font-size:.88rem;color:var(--brown);flex:1;}
+    .menu-item .item-price{font-size:.88rem;color:var(--warm);font-weight:600;
+      white-space:nowrap;margin-left:12px;}
+    .menu-item .item-check{width:18px;height:18px;border-radius:4px;
+      border:1.5px solid var(--border);margin-right:8px;flex-shrink:0;
+      display:flex;align-items:center;justify-content:center;font-size:.7rem;
+      color:var(--green);}
+    .menu-item.selected .item-check{background:var(--green);border-color:var(--green);color:#fff;}
+    .order-bar{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);
+      padding:14px 16px;margin-bottom:14px;position:sticky;bottom:10px;
+      box-shadow:0 2px 12px rgba(107,140,66,.12);}
+    .order-total{font-size:1.1rem;font-weight:700;color:var(--brown);margin-bottom:10px;}
+    .order-list{font-size:.83rem;color:var(--muted);min-height:18px;margin-bottom:10px;
+      line-height:1.6;}
+    .receipt{background:var(--wtint);border:1px solid var(--border);border-radius:10px;
+      padding:16px;margin-top:10px;display:none;font-size:.85rem;line-height:1.8;}
+    .receipt h4{text-align:center;font-size:.9rem;font-weight:700;color:var(--warm);
+      margin-bottom:8px;border-bottom:1px dashed var(--border);padding-bottom:8px;}
+    .receipt .r-total{font-weight:700;color:var(--brown);border-top:1px solid var(--border);
+      padding-top:8px;margin-top:4px;}
+    .conv-box{background:var(--wtint);border:1px solid var(--border);border-radius:10px;
+      padding:12px 14px;margin-bottom:14px;font-size:.85rem;line-height:1.7;}
+  </style>
+</head>
+<body>
+  <header class="t-hdr">
+    <a class="t-logo" href="../">Spanish with Brady</a>
+    <div class="t-tog">
+      <button id="en-btn" class="act" onclick="setLang('en')">EN</button>
+      <button id="zh-btn" onclick="setLang('zh')">中文</button>
+    </div>
+  </header>
+  <main>
+
+    <div class="conv-box">
+      <strong>
+        <span class="lang-en">🎭 Brady is the waiter. Order your meal!</span>
+        <span class="lang-zh">🎭 Brady 扮演服务员。开始点餐！</span>
+      </strong>
+      <div style="margin-top:8px;">
+        <span class="lang-en">Waiter: "¿Qué van a tomar?" — Use: <em>Quisiera… / Para mí… / Me trae… / Quiero…</em></span>
+        <span class="lang-zh">服务员："¿Qué van a tomar?" — 用：<em>Quisiera… / Para mí… / Me trae… / Quiero…</em></span>
+      </div>
+    </div>
+    <div class="menu-card">
+      <div class="menu-banner">
+        <h2>🍽️ Restaurante El Rincón</h2>
+        <p>Cocina española tradicional</p>
+      </div>
+      <div id="menu-sections"></div>
+    </div>
+    <div class="order-bar">
+      <div class="order-total">
+        <span class="lang-en">Your order:</span><span class="lang-zh">你的点单：</span>
+        <span id="total-display" style="float:right;">0,00 €</span>
+      </div>
+      <div class="order-list" id="order-list">
+        <em style="color:var(--muted);">
+          <span class="lang-en">Click items above to add them.</span>
+          <span class="lang-zh">点击上方菜品添加。</span>
+        </em>
+      </div>
+      <div style="display:flex;gap:8px;flex-wrap:wrap;">
+        <button class="btn" onclick="pedirCuenta()">
+          <span class="lang-en">Ask for the bill</span><span class="lang-zh">要账单</span>
+        </button>
+        <button class="btn-sec" onclick="clearOrder()">
+          <span class="lang-en">Clear</span><span class="lang-zh">清空</span>
+        </button>
+      </div>
+      <div class="receipt" id="receipt"></div>
+    </div>
+  
+  </main>
+
+  <script>
+    function setLang(l){
+      document.body.classList.toggle('zh',l==='zh');
+      document.getElementById('en-btn').classList.toggle('act',l==='en');
+      document.getElementById('zh-btn').classList.toggle('act',l==='zh');
+    }
+  </script>
+  <script>
+    const MENU = [
+      {section:'🥗 Primer Plato', zh:'前菜', items:[
+        {n:'Gazpacho andaluz',p:6.50},
+        {n:'Ensalada mixta',p:5.00},
+        {n:'Croquetas de jamón',p:7.00},
+        {n:'Sopa de ajo',p:5.50},
+        {n:'Tortilla española',p:6.00},
+      ]},
+      {section:'🍖 Plato Principal', zh:'主菜', items:[
+        {n:'Paella valenciana',p:14.00},
+        {n:'Filete de ternera',p:16.50},
+        {n:'Merluza a la plancha',p:13.00},
+        {n:'Pollo asado',p:12.00},
+        {n:'Cocido madrileño',p:11.50},
+      ]},
+      {section:'🍮 Postre', zh:'甜点', items:[
+        {n:'Flan casero',p:4.00},
+        {n:'Helado (vainilla / chocolate / fresa)',p:3.50},
+        {n:'Tarta de queso',p:4.50},
+        {n:'Fruta del tiempo',p:3.00},
+        {n:'Churros con chocolate',p:5.00},
+      ]},
+      {section:'🥤 Bebidas', zh:'饮品', items:[
+        {n:'Agua (sin / con gas)',p:2.00},
+        {n:'Vino tinto / blanco / rosado (copa)',p:3.50},
+        {n:'Cerveza',p:2.50},
+        {n:'Zumo de naranja',p:3.00},
+        {n:'Café solo / con leche',p:2.00},
+        {n:'Refrescos',p:2.50},
+      ]},
+    ];
+
+    let order=[];
+
+    function fmt(p){return p.toFixed(2).replace('.',',');}
+
+    function buildMenu(){
+      const wrap=document.getElementById('menu-sections');
+      MENU.forEach(sec=>{
+        const div=document.createElement('div');
+        div.className='menu-section';
+        div.innerHTML=`<div class="menu-section-title">
+          <span class="lang-en">${sec.section}</span>
+          <span class="lang-zh">${sec.section} ${sec.zh}</span>
+        </div>`;
+        sec.items.forEach((item,i)=>{
+          const d=document.createElement('div');
+          d.className='menu-item';
+          d.id=`item-${sec.section}-${i}`;
+          d.innerHTML=`<div class="item-check">✓</div>
+            <div class="item-name">${item.n}</div>
+            <div class="item-price">${fmt(item.p)} €</div>`;
+          d.onclick=()=>toggleItem(item,d);
+          div.appendChild(d);
+        });
+        wrap.appendChild(div);
+      });
+    }
+
+    function toggleItem(item,el){
+      const idx=order.findIndex(o=>o.n===item.n);
+      if(idx===-1){
+        order.push(item);
+        el.classList.add('selected');
+      } else {
+        order.splice(idx,1);
+        el.classList.remove('selected');
+      }
+      updateOrder();
+    }
+
+    function updateOrder(){
+      const total=order.reduce((s,i)=>s+i.p,0);
+      document.getElementById('total-display').textContent=fmt(total)+' €';
+      const ol=document.getElementById('order-list');
+      if(order.length===0){
+        ol.innerHTML='<em style="color:var(--muted);"><span class="lang-en">Click items above to add them.</span><span class="lang-zh">点击上方菜品添加。</span></em>';
+      } else {
+        ol.innerHTML=order.map(i=>`<span>• ${i.n} — ${fmt(i.p)} €</span>`).join('<br>');
+      }
+      document.getElementById('receipt').style.display='none';
+    }
+
+    function pedirCuenta(){
+      const total=order.reduce((s,i)=>s+i.p,0);
+      const r=document.getElementById('receipt');
+      if(order.length===0){
+        r.style.display='block';
+        r.innerHTML='<p style="text-align:center;color:var(--muted);"><em><span class="lang-en">No items ordered yet!</span><span class="lang-zh">还没有点任何菜！</span></em></p>';
+        return;
+      }
+      let rows=order.map(i=>`<div style="display:flex;justify-content:space-between;"><span>${i.n}</span><span>${fmt(i.p)} €</span></div>`).join('');
+      r.innerHTML=`<h4>🧾 Restaurante El Rincón</h4>
+        ${rows}
+        <div class="r-total" style="display:flex;justify-content:space-between;margin-top:8px;">
+          <span>TOTAL</span><span>${fmt(total)} €</span>
+        </div>
+        <p style="text-align:center;margin-top:10px;font-size:.8rem;color:var(--muted);">
+          <em>¡Muchas gracias! Que aproveche.</em>
+        </p>`;
+      r.style.display='block';
+    }
+
+    function clearOrder(){
+      order=[];
+      document.querySelectorAll('.menu-item.selected').forEach(el=>el.classList.remove('selected'));
+      updateOrder();
+    }
+
+    buildMenu();
+  </script>
+</body>
+</html>

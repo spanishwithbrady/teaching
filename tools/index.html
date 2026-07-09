@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Teaching Tools · Spanish with Brady</title>
+  <link rel="stylesheet" href="../assets/style.css">
+  <style>
+    .lang-zh { display: none; }
+    body.zh .lang-en { display: none; }
+    body.zh .lang-zh { display: inline; }
+    .tools-hero {
+      background: var(--green); color: #fff; padding: 44px 2rem 40px; text-align: center;
+    }
+    .tools-hero h1 { font-size: 2rem; font-weight: 700; margin-bottom: 6px; }
+    .tools-hero p { font-size: 1rem; opacity: .9; }
+    .tools-grid {
+      display: grid; grid-template-columns: repeat(auto-fill,minmax(260px,1fr));
+      gap: 18px; padding: 32px 2rem; max-width: 900px; margin: 0 auto;
+    }
+    .tool-card {
+      background: var(--card-bg); border: 1px solid var(--border);
+      border-radius: var(--radius); padding: 20px 18px;
+      transition: border-color .15s, box-shadow .15s;
+    }
+    .tool-card:hover { border-color: var(--green); box-shadow: 0 4px 16px rgba(107,140,66,.1); }
+    .tool-emoji { font-size: 2rem; margin-bottom: 8px; }
+    .tool-name { font-size: 1rem; font-weight: 700; color: var(--brown); margin-bottom: 2px; }
+    .tool-unit { font-size: .78rem; color: var(--muted); margin-bottom: 6px;
+      font-weight: 500; text-transform: uppercase; letter-spacing: .04em; }
+    .tool-desc { font-size: .85rem; color: var(--muted); line-height: 1.5; margin-bottom: 14px; }
+    .tool-link {
+      display: inline-block; background: var(--green); color: #fff;
+      padding: 7px 18px; border-radius: 8px; font-size: .83rem; font-weight: 600;
+      transition: opacity .15s;
+    }
+    .tool-link:hover { opacity: .88; }
+  </style>
+</head>
+<body>
+<header class="site-header">
+  <a class="site-logo" href="../">Spanish with Brady</a>
+  <nav>
+    <ul class="site-nav">
+      <li><a href="../spanish/">Spanish</a></li>
+      <li><a href="../mandarin/">Mandarin</a></li>
+      <li><a href="#">English</a></li>
+      <li><a href="./" class="active">Tools</a></li>
+    </ul>
+  </nav>
+</header>
+<div class="tools-hero">
+  <h1>
+    <span class="lang-en">Teaching Tools</span>
+    <span class="lang-zh">教学工具</span>
+  </h1>
+  <p>
+    <span class="lang-en">Interactive practice — open any tool during a lesson</span>
+    <span class="lang-zh">互动练习——可在课堂中随时打开任何工具</span>
+  </p>
+</div>
+<div style="display:flex;justify-content:flex-end;padding:12px 2rem 0;">
+  <div style="display:flex;border:1px solid var(--border);border-radius:6px;overflow:hidden;">
+    <button id="en-btn" onclick="setLang('en')"
+      style="padding:5px 14px;font-size:12px;font-weight:500;border:none;cursor:pointer;background:var(--green);color:#fff;">EN</button>
+    <button id="zh-btn" onclick="setLang('zh')"
+      style="padding:5px 14px;font-size:12px;font-weight:500;border:none;cursor:pointer;background:var(--bg);color:var(--muted);">中文</button>
+  </div>
+</div>
+<div class="tools-grid">
+
+  <div class="tool-card">
+    <div class="tool-emoji">🌍</div>
+    <div class="tool-name"><span class="lang-en">Country Randomizer</span><span class="lang-zh">国家随机器</span></div>
+    <div class="tool-unit">Unit 2</div>
+    <div class="tool-desc">
+      <span class="lang-en">Spin for a random country and practice nationalities and SER.</span>
+      <span class="lang-zh">随机抽取一个国家，练习国籍和 SER 动词。</span>
+    </div>
+    <a class="tool-link" href="country-randomizer.html">
+      <span class="lang-en">Open tool</span><span class="lang-zh">打开工具</span>
+    </a>
+  </div>
+
+  <div class="tool-card">
+    <div class="tool-emoji">📍</div>
+    <div class="tool-name"><span class="lang-en">City Locator</span><span class="lang-zh">城市定位</span></div>
+    <div class="tool-unit">Unit 4</div>
+    <div class="tool-desc">
+      <span class="lang-en">Describe where Spanish-speaking cities are using prepositions of place.</span>
+      <span class="lang-zh">用方位介词描述西语国家城市的位置。</span>
+    </div>
+    <a class="tool-link" href="city-locator.html">
+      <span class="lang-en">Open tool</span><span class="lang-zh">打开工具</span>
+    </a>
+  </div>
+
+  <div class="tool-card">
+    <div class="tool-emoji">👨‍👩‍👧</div>
+    <div class="tool-name"><span class="lang-en">Family Chain Puzzle</span><span class="lang-zh">家庭关系谜题</span></div>
+    <div class="tool-unit">Unit 6</div>
+    <div class="tool-desc">
+      <span class="lang-en">Work out family relationships step by step using possessives.</span>
+      <span class="lang-zh">用物主代词逐步推导家庭关系。</span>
+    </div>
+    <a class="tool-link" href="../spanish/a1/a1-1/unit-6.html">
+      <span class="lang-en">Open unit</span><span class="lang-zh">打开单元</span>
+    </a>
+  </div>
+
+  <div class="tool-card">
+    <div class="tool-emoji">📅</div>
+    <div class="tool-name"><span class="lang-en">Weekly Schedule Builder</span><span class="lang-zh">一周日程表</span></div>
+    <div class="tool-unit">Unit 9</div>
+    <div class="tool-desc">
+      <span class="lang-en">Build your week in Spanish using -AR verbs and frequency adverbs.</span>
+      <span class="lang-zh">用 -AR 动词和频率副词规划你的一周。</span>
+    </div>
+    <a class="tool-link" href="weekly-schedule.html">
+      <span class="lang-en">Open tool</span><span class="lang-zh">打开工具</span>
+    </a>
+  </div>
+
+  <div class="tool-card">
+    <div class="tool-emoji">🕐</div>
+    <div class="tool-name"><span class="lang-en">Clock Time Trainer</span><span class="lang-zh">钟表练习</span></div>
+    <div class="tool-unit">Unit 10</div>
+    <div class="tool-desc">
+      <span class="lang-en">Practice telling the time in Spanish with a random clock face.</span>
+      <span class="lang-zh">用随机时钟练习用西班牙语报时。</span>
+    </div>
+    <a class="tool-link" href="clock-trainer.html">
+      <span class="lang-en">Open tool</span><span class="lang-zh">打开工具</span>
+    </a>
+  </div>
+
+  <div class="tool-card">
+    <div class="tool-emoji">🌤️</div>
+    <div class="tool-name"><span class="lang-en">Weather City Randomizer</span><span class="lang-zh">天气城市随机器</span></div>
+    <div class="tool-unit">Unit 11</div>
+    <div class="tool-desc">
+      <span class="lang-en">Describe weather conditions for random cities worldwide.</span>
+      <span class="lang-zh">描述全球随机城市的天气状况。</span>
+    </div>
+    <a class="tool-link" href="weather-randomizer.html">
+      <span class="lang-en">Open tool</span><span class="lang-zh">打开工具</span>
+    </a>
+  </div>
+
+  <div class="tool-card">
+    <div class="tool-emoji">🎯</div>
+    <div class="tool-name"><span class="lang-en">Hobby Spinner</span><span class="lang-zh">爱好转盘</span></div>
+    <div class="tool-unit">Unit 12</div>
+    <div class="tool-desc">
+      <span class="lang-en">Spin for a hobby and react using GUSTAR-type vocabulary.</span>
+      <span class="lang-zh">转动转盘获得爱好，用 GUSTAR 类词汇表达看法。</span>
+    </div>
+    <a class="tool-link" href="hobby-spinner.html">
+      <span class="lang-en">Open tool</span><span class="lang-zh">打开工具</span>
+    </a>
+  </div>
+
+  <div class="tool-card">
+    <div class="tool-emoji">🍽️</div>
+    <div class="tool-name"><span class="lang-en">Restaurant Menu</span><span class="lang-zh">餐厅菜单</span></div>
+    <div class="tool-unit">Unit 13</div>
+    <div class="tool-desc">
+      <span class="lang-en">Order a full Spanish meal — click items, get a total, ask for the bill.</span>
+      <span class="lang-zh">点一顿完整的西班牙餐——点菜、合计、要账单。</span>
+    </div>
+    <a class="tool-link" href="restaurant-menu.html">
+      <span class="lang-en">Open tool</span><span class="lang-zh">打开工具</span>
+    </a>
+  </div>
+
+  <div class="tool-card">
+    <div class="tool-emoji">🫀</div>
+    <div class="tool-name"><span class="lang-en">Body Map</span><span class="lang-zh">身体部位图</span></div>
+    <div class="tool-unit">Unit 17</div>
+    <div class="tool-desc">
+      <span class="lang-en">Click body parts and practice DOLER sentences.</span>
+      <span class="lang-zh">点击身体部位，练习 DOLER 句子。</span>
+    </div>
+    <a class="tool-link" href="body-map.html">
+      <span class="lang-en">Open tool</span><span class="lang-zh">打开工具</span>
+    </a>
+  </div>
+
+  <div class="tool-card">
+    <div class="tool-emoji">✈️</div>
+    <div class="tool-name"><span class="lang-en">Trip Randomizer</span><span class="lang-zh">旅行随机器</span></div>
+    <div class="tool-unit">Unit 20</div>
+    <div class="tool-desc">
+      <span class="lang-en">Generate a past trip and narrate it using irregular preterites.</span>
+      <span class="lang-zh">生成一次过去的旅行，用不规则过去时讲述它。</span>
+    </div>
+    <a class="tool-link" href="trip-randomizer.html">
+      <span class="lang-en">Open tool</span><span class="lang-zh">打开工具</span>
+    </a>
+  </div>
+
+</div>
+<script>
+  function setLang(l){
+    document.body.classList.toggle('zh',l==='zh');
+    document.getElementById('en-btn').style.background=l==='en'?'var(--green)':'var(--bg)';
+    document.getElementById('en-btn').style.color=l==='en'?'#fff':'var(--muted)';
+    document.getElementById('zh-btn').style.background=l==='zh'?'var(--green)':'var(--bg)';
+    document.getElementById('zh-btn').style.color=l==='zh'?'#fff':'var(--muted)';
+  }
+</script>
+</body>
+</html>
