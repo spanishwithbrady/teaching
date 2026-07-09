@@ -131,30 +131,49 @@
       'un fin de semana','tres días','una semana','diez días','dos semanas'
     ];
     const ACTIVITIES = [
-      'visitar un museo','ir a la playa','comer en un restaurante local',
-      'hacer senderismo','ver un espectáculo','comprar recuerdos',
-      'ir de excursión','ver monumentos históricos','probar la comida típica',
-      'hablar con los locales','ir a un mercado','ver la puesta de sol',
-      'hacer fotos','bañarse en el mar','visitar una catedral',
-      'ir a un parque','ver un partido de fútbol','bailar en una discoteca',
-      'visitar un castillo','hacer una ruta en bici','ir en barco',
-      'ver una exposición de arte','probar el vino local','hacer surf',
-      'visitar una bodega','ir al teatro','hacer una visita guiada',
-      'ir a los mercados','ver los fuegos artificiales','pasear por el casco antiguo',
+      'visité un museo increíble',
+      'fui a la playa',
+      'comí en un restaurante local',
+      'hice senderismo por las montañas',
+      'vi un espectáculo en directo',
+      'compré recuerdos para mi familia',
+      'fui de excursión al campo',
+      'vi monumentos históricos',
+      'probé la comida típica del lugar',
+      'hablé con gente local',
+      'fui a un mercado tradicional',
+      'vi la puesta de sol desde un mirador',
+      'hice muchas fotos',
+      'me bañé en el mar',
+      'visité una catedral antigua',
+      'fui a un parque natural',
+      'vi un partido de fútbol',
+      'bailé en una discoteca local',
+      'visité un castillo medieval',
+      'hice una ruta en bicicleta',
+      'fui en barco por la costa',
+      'vi una exposición de arte',
+      'probé el vino de la región',
+      'hice surf por primera vez',
+      'visité una bodega histórica',
+      'fui al teatro',
+      'hice una visita guiada por la ciudad',
+      'fui a los mercados navideños',
+      'vi los fuegos artificiales desde la plaza',
     ];
     const EVENTS = [
-      {es:'perdimos el pasaporte',luck:false,adv:'Desafortunadamente'},
-      {es:'perdimos el vuelo',luck:false,adv:'Desafortunadamente'},
-      {es:'encontramos un restaurante increíble',luck:true,adv:'Por suerte'},
-      {es:'conocimos a gente muy interesante',luck:true,adv:'Por suerte'},
-      {es:'llovió todo el día',luck:false,adv:'Desafortunadamente'},
-      {es:'perdimos la maleta',luck:false,adv:'Desafortunadamente'},
-      {es:'encontramos un mercado especial',luck:true,adv:'Por suerte'},
-      {es:'el hotel estaba completo',luck:false,adv:'Desafortunadamente'},
-      {es:'encontramos una fiesta local increíble',luck:true,adv:'Por suerte'},
-      {es:'hizo demasiado calor',luck:false,adv:'Desafortunadamente'},
+      {es:'perdí el pasaporte y tuve que ir a la embajada',adv:'Desafortunadamente'},
+      {es:'perdí el vuelo y tuve que esperar seis horas',adv:'Desafortunadamente'},
+      {es:'encontré un restaurante increíble por casualidad',adv:'Por suerte'},
+      {es:'conocí a gente muy interesante en el hotel',adv:'Por suerte'},
+      {es:'llovió todo el día pero lo pasé bien igual',adv:'Desafortunadamente'},
+      {es:'perdí la maleta en el aeropuerto',adv:'Desafortunadamente'},
+      {es:'encontré un mercado especial lleno de artesanía',adv:'Por suerte'},
+      {es:'el hotel estaba completo y tuve que buscar otro',adv:'Desafortunadamente'},
+      {es:'me encontré con una fiesta local en la plaza',adv:'Por suerte'},
+      {es:'hizo tanto calor que no pude salir al mediodía',adv:'Desafortunadamente'},
     ];
-    const FEELINGS = ['muy bien','genial','fatal','regular','estupendamente'];
+    const FEELINGS = ['muy bien','genial','fenomenal','fatal','estupendamente'];
 
     let curTrip=null;
 
@@ -218,11 +237,11 @@
         </strong></div>
         <div style="margin-top:8px;">
           El año pasado fui a <strong>${dest.n}</strong> ${comp.es} durante ${dur}.
-          Primero ${acts[0]}.
-          Luego ${acts[1]}.
-          También ${acts[2]}.
+          Primero, ${acts[0]}.
+          Luego, ${acts[1]}.
+          También, ${acts[2]}.
           ${event.adv}, ${event.es}.
-          Lo pasé <strong>${feel}</strong>.
+          En general, lo pasé <strong>${feel}</strong>.
         </div>`;
       m.style.display='block';
     }
