@@ -159,14 +159,16 @@
       {n:'San Salvador',c:'El Salvador',code:'sv'},{n:'Tegucigalpa',c:'Honduras',code:'hn'},
     ];
     const CONDITIONS = [
-      {key:'sunny',emoji:'☀️',en:'Sunny',es:'Hace sol y está despejado.'},
-      {key:'cloudy',emoji:'☁️',en:'Cloudy',es:'Está muy nublado.'},
-      {key:'rainy',emoji:'🌧️',en:'Rainy',es:'Llueve.'},
-      {key:'windy',emoji:'💨',en:'Windy',es:'Hace mucho viento.'},
-      {key:'foggy',emoji:'🌫️',en:'Foggy',es:'Hay niebla.'},
-      {key:'stormy',emoji:'⛈️',en:'Stormy',es:'Hay tormenta.'},
-      {key:'snowy',emoji:'❄️',en:'Snowy',es:'Nieva.',cold:true},
-      {key:'partly',emoji:'🌤️',en:'Partly cloudy',es:'Hay algunas nubes.'},
+      {key:'sunny',emoji:'☀️',en:'Sunny',zh:'晴天',es:'Hace sol y está despejado.'},
+      {key:'cloudy',emoji:'☁️',en:'Cloudy',zh:'多云',es:'Está muy nublado.'},
+      {key:'rainy',emoji:'🌧️',en:'Rainy',zh:'下雨',es:'Llueve.'},
+      {key:'stormy',emoji:'⛈️',en:'Stormy',zh:'暴风雨',es:'Hay tormenta.'},
+      {key:'snowy',emoji:'❄️',en:'Snowy',zh:'下雪',es:'Nieva.',cold:true},
+      {key:'windy',emoji:'💨',en:'Windy',zh:'大风',es:'Hace mucho viento.'},
+      {key:'foggy',emoji:'🌫️',en:'Foggy',zh:'有雾',es:'Hay niebla.'},
+      {key:'partly',emoji:'⛅',en:'Partly cloudy',zh:'局部多云',es:'Hay algunas nubes.'},
+      {key:'humid',emoji:'🌡️',en:'Hot and humid',zh:'炎热潮湿',es:'Hace calor y hay humedad.'},
+      {key:'cold-clear',emoji:'🌤️',en:'Clear and cold',zh:'晴冷',es:'Está despejado y hace frío.',cold:true},
     ];
     let curW=null;
     function newWeather(){

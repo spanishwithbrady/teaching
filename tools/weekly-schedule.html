@@ -100,6 +100,27 @@
         </button>
       </div>
     </div>
+    <div style="margin-top:24px;border-top:1px solid #e2ddd4;padding-top:20px;">
+      <h4 style="color:#8B5E3C;font-size:13px;font-weight:500;letter-spacing:.05em;text-transform:uppercase;margin-bottom:12px;">
+        <span class="lang-en">Write your full routine</span>
+        <span class="lang-zh">写出你完整的日程描述</span>
+      </h4>
+      <p style="font-size:13px;color:#7a6e60;margin-bottom:12px;">
+        <span class="lang-en">Write full sentences using frequency adverbs and time expressions. Example: "Los lunes a las 9 de la mañana me levanto y desayuno en casa. Normalmente trabajo de 10 a 6..."</span>
+        <span class="lang-zh">用频率副词和时间表达写完整的句子。例如："Los lunes a las 9 de la mañana me levanto y desayuno en casa. Normalmente trabajo de 10 a 6..."</span>
+      </p>
+      <textarea id="routine-text" placeholder="Los lunes a las ___ de la mañana yo..."
+        style="width:100%;min-height:160px;border:1px solid #e2ddd4;border-radius:8px;padding:12px;font-size:14px;font-family:inherit;color:#2e2416;background:#ffffff;resize:vertical;line-height:1.6;"
+        onfocus="this.style.borderColor='#6b8c42'"
+        onblur="this.style.borderColor='#e2ddd4'"
+      ></textarea>
+      <div style="text-align:right;margin-top:8px;">
+        <button onclick="document.getElementById('routine-text').value=''"
+          style="font-size:12px;color:#8B5E3C;background:none;border:1px solid #e2ddd4;border-radius:4px;padding:3px 10px;cursor:pointer;">
+          Clear / 清空
+        </button>
+      </div>
+    </div>
     <div class="prompt-box">
       <p><strong>
         <span class="lang-en">Now describe your week using frequency adverbs:</span>

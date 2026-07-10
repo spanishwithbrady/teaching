@@ -104,45 +104,65 @@
   <script>
     const CITIES = [
       {n:'Madrid',c:'España',code:'es',hint:'en el centro de España, lejos de la costa',
-       model:'Madrid está en el centro de España. Está lejos de la costa.'},
+       model:'Madrid está en el centro de España. Está lejos de la costa.',
+       mapsUrl:'https://maps.google.com/?q=Madrid,Spain'},
       {n:'Barcelona',c:'España',code:'es',hint:'en el noreste de España, cerca del mar Mediterráneo',
-       model:'Barcelona está en el noreste de España, cerca del mar Mediterráneo.'},
+       model:'Barcelona está en el noreste de España, cerca del mar Mediterráneo.',
+       mapsUrl:'https://maps.google.com/?q=Barcelona,Spain'},
       {n:'Sevilla',c:'España',code:'es',hint:'en el sur de España, cerca de Portugal',
-       model:'Sevilla está en el sur de España, cerca de Portugal.'},
+       model:'Sevilla está en el sur de España, cerca de Portugal.',
+       mapsUrl:'https://maps.google.com/?q=Seville,Spain'},
       {n:'Valencia',c:'España',code:'es',hint:'en el este de España, en la costa mediterránea',
-       model:'Valencia está en el este de España, en la costa mediterránea.'},
+       model:'Valencia está en el este de España, en la costa mediterránea.',
+       mapsUrl:'https://maps.google.com/?q=Valencia,Spain'},
       {n:'Bilbao',c:'España',code:'es',hint:'en el norte de España, cerca del mar Cantábrico',
-       model:'Bilbao está en el norte de España, cerca del mar Cantábrico.'},
+       model:'Bilbao está en el norte de España, cerca del mar Cantábrico.',
+       mapsUrl:'https://maps.google.com/?q=Bilbao,Spain'},
       {n:'México D.F.',c:'México',code:'mx',hint:'en el centro de México, en un altiplano',
-       model:'Ciudad de México está en el centro de México, en un altiplano.'},
+       model:'Ciudad de México está en el centro de México, en un altiplano.',
+       mapsUrl:'https://maps.google.com/?q=Mexico+City,Mexico'},
       {n:'Guadalajara',c:'México',code:'mx',hint:'al oeste de México D.F.',
-       model:'Guadalajara está al oeste de Ciudad de México.'},
+       model:'Guadalajara está al oeste de Ciudad de México.',
+       mapsUrl:'https://maps.google.com/?q=Guadalajara,Mexico'},
       {n:'Buenos Aires',c:'Argentina',code:'ar',hint:'en el este de Argentina, cerca del Río de la Plata',
-       model:'Buenos Aires está en el este de Argentina, cerca del Río de la Plata.'},
+       model:'Buenos Aires está en el este de Argentina, cerca del Río de la Plata.',
+       mapsUrl:'https://maps.google.com/?q=Buenos+Aires,Argentina'},
       {n:'Medellín',c:'Colombia',code:'co',hint:'en el noroeste de Colombia, en un valle',
-       model:'Medellín está en el noroeste de Colombia, en un valle de los Andes.'},
+       model:'Medellín está en el noroeste de Colombia, en un valle de los Andes.',
+       mapsUrl:'https://maps.google.com/?q=Medellín,Colombia'},
       {n:'Lima',c:'Perú',code:'pe',hint:'en la costa oeste de Perú',
-       model:'Lima está en la costa oeste de Perú.'},
+       model:'Lima está en la costa oeste de Perú.',
+       mapsUrl:'https://maps.google.com/?q=Lima,Peru'},
       {n:'Santiago',c:'Chile',code:'cl',hint:'en el centro de Chile, cerca de los Andes',
-       model:'Santiago está en el centro de Chile, cerca de los Andes.'},
+       model:'Santiago está en el centro de Chile, cerca de los Andes.',
+       mapsUrl:'https://maps.google.com/?q=Santiago,Chile'},
       {n:'Bogotá',c:'Colombia',code:'co',hint:'en el centro de Colombia, en las montañas',
-       model:'Bogotá está en el centro de Colombia, en las montañas.'},
+       model:'Bogotá está en el centro de Colombia, en las montañas.',
+       mapsUrl:'https://maps.google.com/?q=Bogotá,Colombia'},
       {n:'La Habana',c:'Cuba',code:'cu',hint:'en el norte de Cuba',
-       model:'La Habana está en el norte de Cuba, en el mar Caribe.'},
+       model:'La Habana está en el norte de Cuba, en el mar Caribe.',
+       mapsUrl:'https://maps.google.com/?q=Havana,Cuba'},
       {n:'Caracas',c:'Venezuela',code:'ve',hint:'en el norte de Venezuela',
-       model:'Caracas está en el norte de Venezuela, cerca del mar Caribe.'},
+       model:'Caracas está en el norte de Venezuela, cerca del mar Caribe.',
+       mapsUrl:'https://maps.google.com/?q=Caracas,Venezuela'},
       {n:'Montevideo',c:'Uruguay',code:'uy',hint:'en el sur de Uruguay, en la costa',
-       model:'Montevideo está en el sur de Uruguay, en la costa del Río de la Plata.'},
+       model:'Montevideo está en el sur de Uruguay, en la costa del Río de la Plata.',
+       mapsUrl:'https://maps.google.com/?q=Montevideo,Uruguay'},
       {n:'Quito',c:'Ecuador',code:'ec',hint:'en el centro de Ecuador, en los Andes',
-       model:'Quito está en el centro de Ecuador, en los Andes.'},
+       model:'Quito está en el centro de Ecuador, en los Andes.',
+       mapsUrl:'https://maps.google.com/?q=Quito,Ecuador'},
       {n:'La Paz',c:'Bolivia',code:'bo',hint:'en el oeste de Bolivia, en las montañas',
-       model:'La Paz está en el oeste de Bolivia, en las montañas.'},
+       model:'La Paz está en el oeste de Bolivia, en las montañas.',
+       mapsUrl:'https://maps.google.com/?q=La+Paz,Bolivia'},
       {n:'Asunción',c:'Paraguay',code:'py',hint:'en el sur de Paraguay, cerca del río Paraguay',
-       model:'Asunción está en el sur de Paraguay, cerca del río Paraguay.'},
+       model:'Asunción está en el sur de Paraguay, cerca del río Paraguay.',
+       mapsUrl:'https://maps.google.com/?q=Asunción,Paraguay'},
       {n:'San José',c:'Costa Rica',code:'cr',hint:'en el centro de Costa Rica',
-       model:'San José está en el centro de Costa Rica.'},
+       model:'San José está en el centro de Costa Rica.',
+       mapsUrl:'https://maps.google.com/?q=San+José,Costa+Rica'},
       {n:'Managua',c:'Nicaragua',code:'ni',hint:'en el oeste de Nicaragua, cerca del lago Managua',
-       model:'Managua está en el oeste de Nicaragua, cerca del lago Managua.'},
+       model:'Managua está en el oeste de Nicaragua, cerca del lago Managua.',
+       mapsUrl:'https://maps.google.com/?q=Managua,Nicaragua'},
     ];
     let cur = null;
     function newCity(){
@@ -150,7 +170,11 @@
       document.getElementById('city-display').innerHTML =
         `<img class="city-flag" src="https://flagcdn.com/w40/${cur.code}.png" alt="${cur.c}">
          <div class="city-name">${cur.n}</div>
-         <div class="city-country">${cur.c}</div>`;
+         <div class="city-country">${cur.c}</div>
+         <a href="${cur.mapsUrl}" target="_blank" rel="noopener"
+           style="display:inline-block;margin-top:10px;padding:6px 14px;background:#f7f5ef;color:#6b8c42;border:1px solid #6b8c42;border-radius:6px;font-size:12px;text-decoration:none;">
+           🗺️ <span class="lang-en">View on Google Maps</span><span class="lang-zh" style="display:none;">在谷歌地图查看</span>
+         </a>`;
       const ab = document.getElementById('ans-box');
       ab.style.display='none'; ab.innerHTML='';
       document.getElementById('show-btn').style.display='inline-block';

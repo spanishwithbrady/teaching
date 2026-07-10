@@ -123,55 +123,57 @@
       {n:'Singapur',code:'sg'},{n:'Sydney',code:'au'},{n:'Quito',code:'ec'},
     ];
     const COMPANIONS = [
-      {es:'solo/a',en:'alone'},{es:'con mi familia',en:'with my family'},
-      {es:'con amigos',en:'with friends'},{es:'con mi pareja',en:'with my partner'},
-      {es:'con mis compañeros de trabajo',en:'with colleagues'},
+      {en:'alone',zh:'独自',es:'solo/a'},
+      {en:'with my family',zh:'与家人',es:'con mi familia'},
+      {en:'with friends',zh:'与朋友',es:'con amigos'},
+      {en:'with my partner',zh:'与伴侣',es:'con mi pareja'},
+      {en:'with colleagues',zh:'与同事',es:'con mis compañeros'},
     ];
     const DURATIONS = [
-      'un fin de semana','tres días','una semana','diez días','dos semanas'
+      {en:'a weekend',zh:'一个周末',es:'un fin de semana'},
+      {en:'three days',zh:'三天',es:'tres días'},
+      {en:'one week',zh:'一周',es:'una semana'},
+      {en:'ten days',zh:'十天',es:'diez días'},
+      {en:'one month',zh:'一个月',es:'un mes'},
     ];
     const ACTIVITIES = [
-      'visité un museo increíble',
-      'fui a la playa',
-      'comí en un restaurante local',
-      'hice senderismo por las montañas',
-      'vi un espectáculo en directo',
-      'compré recuerdos para mi familia',
-      'fui de excursión al campo',
-      'vi monumentos históricos',
-      'probé la comida típica del lugar',
-      'hablé con gente local',
-      'fui a un mercado tradicional',
-      'vi la puesta de sol desde un mirador',
-      'hice muchas fotos',
-      'me bañé en el mar',
-      'visité una catedral antigua',
-      'fui a un parque natural',
-      'vi un partido de fútbol',
-      'bailé en una discoteca local',
-      'visité un castillo medieval',
-      'hice una ruta en bicicleta',
-      'fui en barco por la costa',
-      'vi una exposición de arte',
-      'probé el vino de la región',
-      'hice surf por primera vez',
-      'visité una bodega histórica',
-      'fui al teatro',
-      'hice una visita guiada por la ciudad',
-      'fui a los mercados navideños',
-      'vi los fuegos artificiales desde la plaza',
+      {en:'visit a museum',es_inf:'visitar un museo',es_conj:'visité un museo increíble'},
+      {en:'go to the beach',es_inf:'ir a la playa',es_conj:'fui a la playa'},
+      {en:'eat at a local restaurant',es_inf:'comer en un restaurante local',es_conj:'comí en un restaurante local'},
+      {en:'go hiking',es_inf:'hacer senderismo',es_conj:'hice senderismo por las montañas'},
+      {en:'see a live show',es_inf:'ver un espectáculo en directo',es_conj:'vi un espectáculo en directo'},
+      {en:'buy souvenirs',es_inf:'comprar recuerdos',es_conj:'compré recuerdos para mi familia'},
+      {en:'go on an excursion',es_inf:'hacer una excursión',es_conj:'fui de excursión al campo'},
+      {en:'see historical monuments',es_inf:'ver monumentos históricos',es_conj:'vi monumentos históricos'},
+      {en:'try the local food',es_inf:'probar la comida típica',es_conj:'probé la comida típica del lugar'},
+      {en:'talk to locals',es_inf:'hablar con gente local',es_conj:'hablé con gente local'},
+      {en:'go to a traditional market',es_inf:'ir a un mercado tradicional',es_conj:'fui a un mercado tradicional'},
+      {en:'watch the sunset',es_inf:'ver la puesta de sol',es_conj:'vi la puesta de sol desde un mirador'},
+      {en:'take lots of photos',es_inf:'hacer muchas fotos',es_conj:'hice muchas fotos'},
+      {en:'swim in the sea',es_inf:'bañarse en el mar',es_conj:'me bañé en el mar'},
+      {en:'visit an ancient cathedral',es_inf:'visitar una catedral antigua',es_conj:'visité una catedral antigua'},
+      {en:'go to a natural park',es_inf:'ir a un parque natural',es_conj:'fui a un parque natural'},
+      {en:'watch a football match',es_inf:'ver un partido de fútbol',es_conj:'vi un partido de fútbol'},
+      {en:'dance at a local club',es_inf:'bailar en una discoteca local',es_conj:'bailé en una discoteca local'},
+      {en:'visit a medieval castle',es_inf:'visitar un castillo medieval',es_conj:'visité un castillo medieval'},
+      {en:'go on a bike tour',es_inf:'hacer una ruta en bicicleta',es_conj:'hice una ruta en bicicleta'},
+      {en:'take a boat trip',es_inf:'ir en barco por la costa',es_conj:'fui en barco por la costa'},
+      {en:'see an art exhibition',es_inf:'ver una exposición de arte',es_conj:'vi una exposición de arte'},
+      {en:'try the local wine',es_inf:'probar el vino de la región',es_conj:'probé el vino de la región'},
+      {en:'go surfing',es_inf:'hacer surf',es_conj:'hice surf por primera vez'},
+      {en:'take a guided tour',es_inf:'hacer una visita guiada',es_conj:'hice una visita guiada por la ciudad'},
     ];
-    const EVENTS = [
-      {es:'perdí el pasaporte y tuve que ir a la embajada',adv:'Desafortunadamente'},
-      {es:'perdí el vuelo y tuve que esperar seis horas',adv:'Desafortunadamente'},
-      {es:'encontré un restaurante increíble por casualidad',adv:'Por suerte'},
-      {es:'conocí a gente muy interesante en el hotel',adv:'Por suerte'},
-      {es:'llovió todo el día pero lo pasé bien igual',adv:'Desafortunadamente'},
-      {es:'perdí la maleta en el aeropuerto',adv:'Desafortunadamente'},
-      {es:'encontré un mercado especial lleno de artesanía',adv:'Por suerte'},
-      {es:'el hotel estaba completo y tuve que buscar otro',adv:'Desafortunadamente'},
-      {es:'me encontré con una fiesta local en la plaza',adv:'Por suerte'},
-      {es:'hizo tanto calor que no pude salir al mediodía',adv:'Desafortunadamente'},
+    const UNEXPECTED = [
+      {en:'you lost your passport',zh:'你丢失了护照',adv:'Desafortunadamente',es_conj:'perdí el pasaporte y tuve que ir a la embajada'},
+      {en:'you missed your flight',zh:'你错过了航班',adv:'Desafortunadamente',es_conj:'perdí el vuelo y tuve que esperar seis horas'},
+      {en:'you found an incredible restaurant by chance',zh:'你偶然发现了一家很棒的餐厅',adv:'Por suerte',es_conj:'encontré un restaurante increíble por casualidad'},
+      {en:'you met very interesting people',zh:'你遇到了很有趣的人',adv:'Por suerte',es_conj:'conocí a gente muy interesante en el hotel'},
+      {en:'it rained all day',zh:'下了一整天雨',adv:'Desafortunadamente',es_conj:'llovió todo el día pero lo pasé bien igual'},
+      {en:'you lost your luggage',zh:'你的行李丢失了',adv:'Desafortunadamente',es_conj:'perdí la maleta en el aeropuerto'},
+      {en:'you found a special local market',zh:'你发现了一个特别的当地市场',adv:'Por suerte',es_conj:'encontré un mercado especial lleno de artesanía'},
+      {en:'the hotel was full',zh:'酒店客满了',adv:'Desafortunadamente',es_conj:'el hotel estaba completo y tuve que buscar otro'},
+      {en:'you stumbled upon a local festival',zh:'你偶然遇上了当地节日',adv:'Por suerte',es_conj:'me encontré con una fiesta local en la plaza'},
+      {en:'it was so hot you couldn\'t go out at midday',zh:'天气太热了，你中午无法外出',adv:'Desafortunadamente',es_conj:'hizo tanto calor que no pude salir al mediodía'},
     ];
     const FEELINGS = ['muy bien','genial','fenomenal','fatal','estupendamente'];
 
@@ -187,15 +189,18 @@
       return n===1?res[0]:res;
     }
 
+    function isZh(){return document.body.classList.contains('zh');}
+
     function newTrip(){
       const dest=pick(DEST);
       const comp=pick(COMPANIONS);
       const dur=pick(DURATIONS);
       const acts=pick(ACTIVITIES,3);
-      const event=pick(EVENTS);
+      const ev=pick(UNEXPECTED);
       const feel=pick(FEELINGS);
-      curTrip={dest,comp,dur,acts,event,feel};
+      curTrip={dest,comp,dur,acts,ev,feel};
 
+      const zh=isZh();
       document.getElementById('trip-display').innerHTML=`
         <div class="trip-card">
           <div class="trip-label"><span class="lang-en">Destination</span><span class="lang-zh">目的地</span></div>
@@ -206,20 +211,28 @@
         </div>
         <div class="trip-card">
           <div class="trip-label"><span class="lang-en">With</span><span class="lang-zh">与谁</span></div>
-          <div class="trip-value">${comp.es}</div>
+          <div class="trip-value">${zh?comp.zh:comp.en}</div>
         </div>
         <div class="trip-card">
           <div class="trip-label"><span class="lang-en">Duration</span><span class="lang-zh">时长</span></div>
-          <div class="trip-value">${dur}</div>
+          <div class="trip-value">${zh?dur.zh:dur.en}</div>
         </div>
         <div class="trip-card">
           <div class="trip-label"><span class="lang-en">Activities</span><span class="lang-zh">活动</span></div>
           <div class="trip-activities">
-            ${acts.map(a=>`<div class="trip-activity">• ${a}</div>`).join('')}
+            ${acts.map(a=>`<div class="trip-activity">• ${a.es_inf} <span style="color:var(--muted);font-size:.82rem;">(${a.en})</span></div>`).join('')}
           </div>
+          <p style="margin-top:10px;font-size:.82rem;color:var(--warm);font-style:italic;">
+            <span class="lang-en">Now narrate this trip in the past tense. Conjugate each activity in the yo form.</span>
+            <span class="lang-zh">现在用过去时讲述这次旅行。将每个活动变为第一人称单数过去时。</span>
+          </p>
         </div>
         <div class="trip-event">
-          <span style="font-weight:600;">${event.adv}:</span> ${event.es}
+          <p style="font-size:.82rem;color:var(--muted);font-style:italic;margin-bottom:6px;">
+            <span class="lang-en">Something unexpected happened — how do you say this in Spanish using the preterite?</span>
+            <span class="lang-zh">发生了意外情况——你如何用西班牙语的过去时说这句话？</span>
+          </p>
+          <span style="font-weight:600;">${ev.adv}:</span> ${zh?ev.zh:ev.en}
         </div>`;
 
       document.getElementById('trip-model').style.display='none';
@@ -228,23 +241,22 @@
 
     function showTripModel(){
       if(!curTrip)return;
-      const {dest,comp,dur,acts,event,feel}=curTrip;
+      const {dest,comp,dur,acts,ev,feel}=curTrip;
       const m=document.getElementById('trip-model');
       m.innerHTML=`
         <div><strong>
-          <span class="lang-en">Model narration:</span>
-          <span class="lang-zh">示例叙述：</span>
+          <span class="lang-en">Model answer:</span>
+          <span class="lang-zh">参考答案：</span>
         </strong></div>
         <div style="margin-top:8px;">
-          El año pasado fui a <strong>${dest.n}</strong> ${comp.es} durante ${dur}.
-          Primero, ${acts[0]}.
-          Luego, ${acts[1]}.
-          También, ${acts[2]}.
-          ${event.adv}, ${event.es}.
+          El año pasado fui a <strong>${dest.n}</strong> ${comp.es} durante ${dur.es}.
+          Primero, ${acts[0].es_conj}.
+          Luego, ${acts[1].es_conj}.
+          También, ${acts[2].es_conj}.
+          ${ev.adv}, ${ev.es_conj}.
           En general, lo pasé <strong>${feel}</strong>.
         </div>`;
       m.style.display='block';
     }
   </script>
 </body>
-</html>

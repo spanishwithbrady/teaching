@@ -60,6 +60,11 @@
     .sentence-box{background:var(--wtint);border:1px solid var(--border);border-radius:8px;
       padding:10px 14px;margin-top:12px;font-size:.9rem;min-height:36px;color:var(--brown);
       font-style:italic;}
+    .cat-pills{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:14px;}
+    .cat-pill{background:var(--bg);border:1.5px solid var(--border);border-radius:20px;
+      padding:5px 13px;font-size:.8rem;color:var(--muted);font-weight:500;cursor:pointer;transition:all .15s;}
+    .cat-pill:hover{border-color:var(--green);color:var(--green);}
+    .cat-pill.act{background:var(--green);border-color:var(--green);color:#fff;}
   </style>
 </head>
 <body>
@@ -81,6 +86,16 @@
         <span class="lang-en">Spin for a hobby — what do you think of it?</span>
         <span class="lang-zh">转动转盘获得一个爱好——你对它有什么看法？</span>
       </p>
+      <div class="cat-pills" id="cat-pills">
+        <button class="cat-pill act" onclick="setCat('all',this)">
+          <span class="lang-en">All</span><span class="lang-zh">全部</span>
+        </button>
+        <button class="cat-pill" onclick="setCat('creative',this)">🎨 <span class="lang-en">Creative</span><span class="lang-zh">创意</span></button>
+        <button class="cat-pill" onclick="setCat('active',this)">⚽ <span class="lang-en">Active</span><span class="lang-zh">运动</span></button>
+        <button class="cat-pill" onclick="setCat('intellectual',this)">📚 <span class="lang-en">Intellectual</span><span class="lang-zh">学习</span></button>
+        <button class="cat-pill" onclick="setCat('social',this)">🎭 <span class="lang-en">Social</span><span class="lang-zh">社交</span></button>
+        <button class="cat-pill" onclick="setCat('relaxing',this)">🌿 <span class="lang-en">Relaxing</span><span class="lang-zh">放松</span></button>
+      </div>
       <div class="spinner-box" id="spinner-box">
         <span class="hobby-emoji" id="spin-emoji">🎲</span>
         <span class="hobby-name" id="spin-name">
@@ -134,7 +149,26 @@
       {es:'No me gusta nada',en:'I don\'t like it at all'},
       {es:'Lo odio',en:'I hate it'},
     ];
+    const HOBBY_CATS = {
+      all: null,
+      creative: ['bailar','cantar','tocar la guitarra','pintar','la fotografía','dibujar'],
+      active: ['hacer deporte','nadar','hacer senderismo','montar en bici','hacer yoga'],
+      intellectual: ['leer','aprender idiomas','meditar'],
+      social: ['ver series','jugar videojuegos','viajar','cocinar'],
+      relaxing: ['la jardinería','meditar','escuchar música'],
+    };
+    let curCat='all', activeHobbies=[...HOBBIES];
     let curHobby=null,spinning=false;
+
+    function setCat(cat, btn){
+      curCat=cat;
+      document.querySelectorAll('.cat-pill').forEach(b=>b.classList.remove('act'));
+      btn.classList.add('act');
+      activeHobbies = HOBBY_CATS[cat]
+        ? HOBBIES.filter(h=>HOBBY_CATS[cat].includes(h.es))
+        : [...HOBBIES];
+      if(!activeHobbies.length) activeHobbies=[...HOBBIES];
+    }
 
     // Build opinion chips
     const grid=document.getElementById('opinion-grid');
@@ -161,11 +195,11 @@
       document.querySelectorAll('.opinion-chip').forEach(c=>c.classList.remove('picked'));
       document.getElementById('sentence-box').innerHTML=
         '<span class="lang-en" style="color:var(--muted);">Your sentence will appear here.</span><span class="lang-zh" style="color:var(--muted);">你的句子将显示在这里。</span>';
-      const target=Math.floor(Math.random()*HOBBIES.length);
+      const target=Math.floor(Math.random()*activeHobbies.length);
       let count=0,total=32+Math.floor(Math.random()*18);
       function tick(){
-        const idx=Math.floor(Math.random()*HOBBIES.length);
-        const h=HOBBIES[idx];
+        const idx=Math.floor(Math.random()*activeHobbies.length);
+        const h=activeHobbies[idx];
         document.getElementById('spin-emoji').textContent=h.emoji;
         document.getElementById('spin-name').textContent=h.es;
         count++;
@@ -173,7 +207,7 @@
           const d=count<total*.55?70:count<total*.8?140:320;
           setTimeout(tick,d);
         } else {
-          curHobby=HOBBIES[target];
+          curHobby=activeHobbies[target];
           document.getElementById('spin-emoji').textContent=curHobby.emoji;
           document.getElementById('spin-name').textContent=curHobby.es;
           document.getElementById('spinner-box').classList.remove('spinning');

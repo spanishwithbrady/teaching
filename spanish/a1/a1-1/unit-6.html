@@ -239,7 +239,7 @@
           <p class="lang-en-block">Can you work it out? Read the chain, think of the answer, then click Reveal.</p>
           <p class="lang-zh-block">你能解出来吗？读出关系链，想好答案，然后点击查看。</p>
           <div class="chain-tool" id="chain-tool">
-            <div class="chain-counter" id="chain-counter">1 / 8</div>
+            <div class="chain-counter" id="chain-counter">1 / 25</div>
             <div class="chain-text" id="chain-text"></div>
             <div class="chain-answer" id="chain-answer"></div>
             <div class="chain-note" id="chain-note"></div>
@@ -587,14 +587,31 @@ if (saved === 'zh') setLang('zh');
 // ── Family chain puzzle ──
 (function () {
   var chains = [
-    { text: 'La hermana de mi madre es mi ___',   answer: 'tía',           note: '' },
-    { text: 'El hijo de mi tío es mi ___',         answer: 'primo',         note: '' },
-    { text: 'La madre de mi esposo es mi ___',     answer: 'suegra',        note: '(suegra = mother-in-law — bonus word! / 岳母/婆婆——加分词！)' },
-    { text: 'El hermano de mi padre es mi ___',    answer: 'tío',           note: '' },
-    { text: 'Los hijos de mis tíos son mis ___',   answer: 'primos',        note: '' },
-    { text: 'La hija de mis abuelos es mi ___',    answer: 'madre (o tía)', note: '¡Correcto! Puede ser tu madre o tu tía. / 正确！可以是你的母亲或阿姨。' },
-    { text: 'El padre de mi madre es mi ___',      answer: 'abuelo',        note: '' },
-    { text: 'La hija de mi hermano es mi ___',     answer: 'sobrina',       note: '' }
+    { text: 'La hermana de mi madre es mi ___', answer: 'tía', note: '' },
+    { text: 'El hijo de mi tío es mi ___', answer: 'primo', note: '' },
+    { text: 'La madre de mi esposo/a es mi ___', answer: 'suegra', note: '(suegra = mother-in-law / 岳母/婆婆)' },
+    { text: 'El hermano de mi padre es mi ___', answer: 'tío', note: '' },
+    { text: 'Los hijos de mis tíos son mis ___', answer: 'primos', note: '' },
+    { text: 'El padre de mi madre es mi ___', answer: 'abuelo', note: '' },
+    { text: 'La hija de mi hermano es mi ___', answer: 'sobrina', note: '' },
+    { text: 'El hijo de mis abuelos es mi ___', answer: 'tío (o padre)', note: '¡Correcto! Puede ser tu padre o tu tío. / 正确！可以是你父亲或叔叔。' },
+    { text: 'La madre de mi padre es mi ___', answer: 'abuela', note: '' },
+    { text: 'Los hijos de mis hijos son mis ___', answer: 'nietos', note: '' },
+    { text: 'El padre de mi esposa es mi ___', answer: 'suegro', note: '(suegro = father-in-law / 岳父/公公)' },
+    { text: 'La hija de mis tíos es mi ___', answer: 'prima', note: '' },
+    { text: 'El hermano de mi esposa es mi ___', answer: 'cuñado', note: '(cuñado = brother-in-law / 大伯/小叔/姐夫/妹夫)' },
+    { text: 'La hermana de mi esposo es mi ___', answer: 'cuñada', note: '(cuñada = sister-in-law / 大姑/小姑/嫂子/弟妹)' },
+    { text: 'Los padres de mis padres son mis ___', answer: 'abuelos', note: '' },
+    { text: 'El hijo de mi hermana es mi ___', answer: 'sobrino', note: '' },
+    { text: 'La hija de mis abuelos es mi ___', answer: 'tía (o madre)', note: '¡Correcto! Puede ser tu madre o tu tía. / 正确！可以是你母亲或阿姨。' },
+    { text: 'Los hijos de mis hermanos son mis ___', answer: 'sobrinos', note: '' },
+    { text: 'El esposo de mi hija es mi ___', answer: 'yerno', note: '(yerno = son-in-law / 女婿)' },
+    { text: 'La esposa de mi hijo es mi ___', answer: 'nuera', note: '(nuera = daughter-in-law / 儿媳)' },
+    { text: 'Los hermanos de mi madre son mis ___', answer: 'tíos', note: '' },
+    { text: 'La hija de mi hija es mi ___', answer: 'nieta', note: '' },
+    { text: 'El hijo de mi hijo es mi ___', answer: 'nieto', note: '' },
+    { text: 'Los padres de mi esposo/a son mis ___', answer: 'suegros', note: '(suegros = in-laws / 公婆/岳父母)' },
+    { text: 'La hermana de mi esposo/a es mi ___', answer: 'cuñada', note: '' }
   ];
 
   var order = [];
@@ -617,8 +634,7 @@ if (saved === 'zh') setLang('zh');
   }
 
   function resetOrder() {
-    order = shuffle(Array.from ? Array.from({length: chains.length}, function(_, i) { return i; })
-                               : [0,1,2,3,4,5,6,7]);
+    order = shuffle(Array.from({length: chains.length}, function(_, i) { return i; }));
     idx = 0;
   }
 
