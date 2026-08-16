@@ -4,11 +4,14 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>Extra Practice · Spanish with Brady</title>
+  <link rel="stylesheet" href="../assets/style.css">
   <style>
+    .lang-zh{display:none;}
+    body.zh .lang-en{display:none;}
+    body.zh .lang-zh{display:inline;}
+
+    /* type tag colors */
     :root {
-      --bg:#f7f5ef; --green:#6b8c42; --brown:#2e2416; --card:#ffffff;
-      --border:#e2ddd4; --muted:#7a6e60; --warm:#8B5E3C; --radius:12px;
-      --gtint:#eef4e4; --wtint:#f5ede0;
       --tag-ex-bg:#eef4e4;   --tag-ex-fg:#3d6018;
       --tag-vid-bg:#fde9e7;  --tag-vid-fg:#b83020;
       --tag-lis-bg:#e7f0fb;  --tag-lis-fg:#1c5e9a;
@@ -17,55 +20,11 @@
       --tag-live-bg:#e6f5ec; --tag-live-fg:#1a6e40;
       --tag-pdf-bg:#f0eaf8;  --tag-pdf-fg:#5e28a0;
     }
-    @media (prefers-color-scheme:dark){
-      :root:not([data-theme="light"]){
-        --bg:#191510; --green:#8ab055; --brown:#e8dfd0; --card:#211d17;
-        --border:#3a3028; --muted:#998878; --warm:#c07850; --gtint:#1c2812; --wtint:#281f14;
-        --tag-ex-bg:#1c2812;   --tag-ex-fg:#8ab055;
-        --tag-vid-bg:#2c1512;  --tag-vid-fg:#e06858;
-        --tag-lis-bg:#12202e;  --tag-lis-fg:#5898d8;
-        --tag-read-bg:#281f14; --tag-read-fg:#c07850;
-        --tag-chall-bg:#271a0e;--tag-chall-fg:#e07838;
-        --tag-live-bg:#12221a; --tag-live-fg:#3ec870;
-        --tag-pdf-bg:#1e1428;  --tag-pdf-fg:#a868e0;
-      }
-    }
-    :root[data-theme="dark"]{
-      --bg:#191510; --green:#8ab055; --brown:#e8dfd0; --card:#211d17;
-      --border:#3a3028; --muted:#998878; --warm:#c07850; --gtint:#1c2812; --wtint:#281f14;
-      --tag-ex-bg:#1c2812;   --tag-ex-fg:#8ab055;
-      --tag-vid-bg:#2c1512;  --tag-vid-fg:#e06858;
-      --tag-lis-bg:#12202e;  --tag-lis-fg:#5898d8;
-      --tag-read-bg:#281f14; --tag-read-fg:#c07850;
-      --tag-chall-bg:#271a0e;--tag-chall-fg:#e07838;
-      --tag-live-bg:#12221a; --tag-live-fg:#3ec870;
-      --tag-pdf-bg:#1e1428;  --tag-pdf-fg:#a868e0;
-    }
-
-    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
-    body{font-family:system-ui,-apple-system,sans-serif;background:var(--bg);
-      color:var(--brown);min-height:100vh;}
-    a{text-decoration:none;color:inherit;}
-    .lang-zh{display:none;}
-    body.zh .lang-en{display:none;}
-    body.zh .lang-zh{display:inline;}
-
-    /* ── header ── */
-    .t-hdr{display:flex;align-items:center;justify-content:space-between;
-      padding:10px 18px;border-bottom:1px solid var(--border);
-      background:var(--card);gap:12px;position:sticky;top:0;z-index:100;}
-    .t-logo{font-size:.9rem;font-weight:700;color:var(--brown);}
-    .t-back{font-size:.8rem;color:var(--warm);}
-    .t-back:hover{text-decoration:underline;}
-    .t-tog{display:flex;border:1px solid var(--border);border-radius:6px;overflow:hidden;flex-shrink:0;}
-    .t-tog button{padding:5px 13px;font-size:12px;font-weight:500;border:none;
-      cursor:pointer;background:var(--bg);color:var(--muted);}
-    .t-tog button.act{background:var(--green);color:#fff;}
 
     /* ── sticky unit nav ── */
-    .unit-nav{position:sticky;top:41px;z-index:90;background:var(--card);
-      border-bottom:1px solid var(--border);padding:0 18px;
-      display:flex;align-items:center;gap:0;overflow-x:auto;scrollbar-width:none;}
+    .unit-nav{position:sticky;top:56px;z-index:90;background:var(--card-bg);
+      border-bottom:1px solid var(--border);padding:0 2rem;
+      display:flex;align-items:center;overflow-x:auto;scrollbar-width:none;}
     .unit-nav::-webkit-scrollbar{display:none;}
     .unit-nav a{flex-shrink:0;padding:9px 11px;font-size:.78rem;font-weight:600;
       color:var(--muted);border-bottom:2px solid transparent;
@@ -75,79 +34,81 @@
     .unit-nav .nav-sep{color:var(--border);padding:0 4px;font-size:.7rem;flex-shrink:0;}
 
     /* ── type filter ── */
-    .filter-bar{padding:12px 18px;display:flex;gap:7px;flex-wrap:wrap;align-items:center;
+    .filter-bar{padding:12px 2rem;display:flex;gap:7px;flex-wrap:wrap;align-items:center;
       border-bottom:1px solid var(--border);background:var(--bg);}
     .filter-label{font-size:.75rem;color:var(--muted);font-weight:500;margin-right:4px;}
     .f-pill{font-size:.75rem;font-weight:600;padding:4px 12px;border-radius:20px;
-      border:1.5px solid var(--border);background:var(--card);color:var(--muted);
+      border:1.5px solid var(--border);background:var(--card-bg);color:var(--muted);
       cursor:pointer;transition:all .15s;}
     .f-pill:hover{border-color:var(--green);color:var(--green);}
     .f-pill.act{border-color:var(--green);background:var(--green);color:#fff;}
-    .f-pill[data-type="ex"].act{background:var(--tag-ex-fg);border-color:var(--tag-ex-fg);}
-    .f-pill[data-type="vid"].act{background:var(--tag-vid-fg);border-color:var(--tag-vid-fg);}
-    .f-pill[data-type="lis"].act{background:var(--tag-lis-fg);border-color:var(--tag-lis-fg);}
-    .f-pill[data-type="read"].act{background:var(--tag-read-fg);border-color:var(--tag-read-fg);}
-    .f-pill[data-type="chall"].act{background:var(--tag-chall-fg);border-color:var(--tag-chall-fg);}
 
     /* ── main layout ── */
-    main{max-width:780px;margin:0 auto;padding:24px 18px 60px;}
+    main{max-width:780px;margin:0 auto;padding:28px 2rem 60px;}
 
     /* ── unit section ── */
-    .unit-section{margin-bottom:32px;scroll-margin-top:100px;}
+    .unit-section{margin-bottom:32px;scroll-margin-top:108px;}
     .unit-hdr{display:flex;align-items:baseline;gap:10px;margin-bottom:12px;}
-    .unit-num{font-size:1.6rem;font-weight:800;color:var(--green);line-height:1;
-      font-variant-numeric:tabular-nums;flex-shrink:0;}
+    .unit-num{font-size:1.5rem;font-weight:800;color:var(--green);line-height:1;flex-shrink:0;}
     .unit-topic{font-size:1rem;font-weight:700;color:var(--brown);}
-    .unit-topic-zh{font-size:.85rem;color:var(--muted);font-weight:400;}
+    .unit-topic-sub{font-size:.82rem;color:var(--muted);font-weight:400;margin-left:4px;}
 
     /* ── resource cards ── */
     .res-list{display:flex;flex-direction:column;gap:7px;}
     .res-card{display:flex;align-items:center;gap:10px;padding:10px 14px;
-      background:var(--card);border:1px solid var(--border);border-radius:10px;
-      cursor:pointer;transition:border-color .15s,box-shadow .15s;
-      text-decoration:none;color:inherit;}
-    .res-card:hover{border-color:var(--green);
-      box-shadow:0 2px 10px rgba(107,140,66,.12);}
+      background:var(--card-bg);border:1px solid var(--border);border-radius:10px;
+      text-decoration:none;color:inherit;transition:border-color .15s,box-shadow .15s;}
+    .res-card:hover{border-color:var(--green);box-shadow:0 2px 10px rgba(107,140,66,.12);}
     .res-card.hidden{display:none;}
 
     .res-tag{flex-shrink:0;font-size:.68rem;font-weight:700;padding:3px 8px;
-      border-radius:12px;letter-spacing:.03em;text-transform:uppercase;}
-    .res-tag.ex  {background:var(--tag-ex-bg);  color:var(--tag-ex-fg);}
-    .res-tag.vid {background:var(--tag-vid-bg); color:var(--tag-vid-fg);}
-    .res-tag.lis {background:var(--tag-lis-bg); color:var(--tag-lis-fg);}
-    .res-tag.read{background:var(--tag-read-bg);color:var(--tag-read-fg);}
+      border-radius:12px;letter-spacing:.03em;text-transform:uppercase;white-space:nowrap;}
+    .res-tag.ex   {background:var(--tag-ex-bg);  color:var(--tag-ex-fg);}
+    .res-tag.vid  {background:var(--tag-vid-bg); color:var(--tag-vid-fg);}
+    .res-tag.lis  {background:var(--tag-lis-bg); color:var(--tag-lis-fg);}
+    .res-tag.read {background:var(--tag-read-bg);color:var(--tag-read-fg);}
     .res-tag.chall{background:var(--tag-chall-bg);color:var(--tag-chall-fg);}
-    .res-tag.live{background:var(--tag-live-bg);color:var(--tag-live-fg);}
-    .res-tag.pdf {background:var(--tag-pdf-bg); color:var(--tag-pdf-fg);}
+    .res-tag.live {background:var(--tag-live-bg);color:var(--tag-live-fg);}
+    .res-tag.pdf  {background:var(--tag-pdf-bg); color:var(--tag-pdf-fg);}
 
     .res-body{flex:1;min-width:0;}
     .res-name{font-size:.85rem;font-weight:600;color:var(--brown);
       white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
     .res-desc{font-size:.78rem;color:var(--muted);margin-top:1px;line-height:1.4;}
-    .res-arrow{flex-shrink:0;font-size:.85rem;color:var(--border);
-      transition:color .15s;}
+    .res-arrow{flex-shrink:0;font-size:.85rem;color:var(--border);transition:color .15s;}
     .res-card:hover .res-arrow{color:var(--green);}
 
-    .unit-empty{font-size:.85rem;color:var(--muted);font-style:italic;
-      padding:10px 0;}
+    .unit-empty{font-size:.85rem;color:var(--muted);font-style:italic;padding:10px 0;}
 
-    @media(max-width:480px){
-      .unit-num{font-size:1.3rem;}
-      .res-card{flex-wrap:wrap;}
-      .res-desc{width:100%;}
+    @media(max-width:600px){
+      main{padding:20px 1rem 60px;}
+      .filter-bar,.unit-nav{padding-left:1rem;padding-right:1rem;}
     }
   </style>
 </head>
 <body>
 
-<header class="t-hdr">
-  <a class="t-back" href="index.html">← <span class="lang-en">Back to tools</span><span class="lang-zh">返回工具页</span></a>
-  <a class="t-logo" href="../">Spanish with Brady</a>
-  <div class="t-tog">
-    <button id="en-btn" class="act" onclick="setLang('en')">EN</button>
-    <button id="zh-btn" onclick="setLang('zh')">中文</button>
-  </div>
+<header class="site-header">
+  <a class="site-logo" href="../">Spanish with Brady</a>
+  <nav>
+    <ul class="site-nav">
+      <li><a href="../spanish/">Spanish</a></li>
+      <li><a href="../mandarin/">Mandarin</a></li>
+      <li><a href="#">English</a></li>
+      <li><a href="./" class="active">Tools</a></li>
+    </ul>
+    <div style="display:flex;border:1px solid var(--border);border-radius:6px;overflow:hidden;">
+      <button id="en-btn" onclick="setLang('en')"
+        style="padding:5px 14px;font-size:12px;font-weight:500;border:none;cursor:pointer;background:var(--green);color:#fff;">EN</button>
+      <button id="zh-btn" onclick="setLang('zh')"
+        style="padding:5px 14px;font-size:12px;font-weight:500;border:none;cursor:pointer;background:var(--bg);color:var(--muted);">中文</button>
+    </div>
+  </nav>
 </header>
+
+<div class="breadcrumb">
+  <a href="./">Tools</a> / <span class="lang-en">Extra Practice</span><span class="lang-zh">课外练习</span>
+</div>
 
 <nav class="unit-nav" id="unit-nav">
   <a href="#u1">1</a><a href="#u2">2</a><a href="#u3">3</a><a href="#u4">4</a><a href="#u5">5</a>
@@ -162,24 +123,12 @@
 <div class="filter-bar">
   <span class="filter-label lang-en">Show:</span>
   <span class="filter-label lang-zh">筛选：</span>
-  <button class="f-pill act" data-type="all" onclick="setFilter('all',this)">
-    <span class="lang-en">All</span><span class="lang-zh">全部</span>
-  </button>
-  <button class="f-pill" data-type="ex"    onclick="setFilter('ex',this)">
-    <span class="lang-en">Exercises</span><span class="lang-zh">练习</span>
-  </button>
-  <button class="f-pill" data-type="vid"   onclick="setFilter('vid',this)">
-    <span class="lang-en">Video</span><span class="lang-zh">视频</span>
-  </button>
-  <button class="f-pill" data-type="lis"   onclick="setFilter('lis',this)">
-    <span class="lang-en">Listening</span><span class="lang-zh">听力</span>
-  </button>
-  <button class="f-pill" data-type="read"  onclick="setFilter('read',this)">
-    <span class="lang-en">Reading</span><span class="lang-zh">阅读</span>
-  </button>
-  <button class="f-pill" data-type="chall" onclick="setFilter('chall',this)">
-    <span class="lang-en">Challenge</span><span class="lang-zh">挑战</span>
-  </button>
+  <button class="f-pill act" data-type="all"   onclick="setFilter('all',this)"><span class="lang-en">All</span><span class="lang-zh">全部</span></button>
+  <button class="f-pill" data-type="ex"        onclick="setFilter('ex',this)"><span class="lang-en">Exercises</span><span class="lang-zh">练习</span></button>
+  <button class="f-pill" data-type="vid"       onclick="setFilter('vid',this)"><span class="lang-en">Video</span><span class="lang-zh">视频</span></button>
+  <button class="f-pill" data-type="lis"       onclick="setFilter('lis',this)"><span class="lang-en">Listening</span><span class="lang-zh">听力</span></button>
+  <button class="f-pill" data-type="read"      onclick="setFilter('read',this)"><span class="lang-en">Reading</span><span class="lang-zh">阅读</span></button>
+  <button class="f-pill" data-type="chall"     onclick="setFilter('chall',this)"><span class="lang-en">Challenge</span><span class="lang-zh">挑战</span></button>
 </div>
 
 <main>
@@ -188,7 +137,7 @@
 <section class="unit-section" id="u1">
   <div class="unit-hdr">
     <span class="unit-num">1</span>
-    <span class="unit-topic">Saludos y despedidas <span class="unit-topic-zh">问候与道别</span></span>
+    <span class="unit-topic">Saludos y despedidas <span class="unit-topic-sub lang-en">Greetings</span><span class="unit-topic-sub lang-zh">问候与道别</span></span>
   </div>
   <div class="res-list">
     <a class="res-card" data-type="ex" href="https://arche-ele.com/saludos-y-despedidas-aprende-espanol-learn-spanish" target="_blank" rel="noopener">
@@ -206,7 +155,7 @@
 <section class="unit-section" id="u2">
   <div class="unit-hdr">
     <span class="unit-num">2</span>
-    <span class="unit-topic">Origen y nacionalidades <span class="unit-topic-zh">来源与国籍</span></span>
+    <span class="unit-topic">Origen y nacionalidades <span class="unit-topic-sub lang-en">Countries & nationalities</span><span class="unit-topic-sub lang-zh">来源与国籍</span></span>
   </div>
   <div class="res-list">
     <a class="res-card" data-type="ex" href="https://aprenderespanol.org/vocabulario/paises-nacionalidades.html" target="_blank" rel="noopener">
@@ -225,7 +174,7 @@
       </div>
       <span class="res-arrow">↗</span>
     </a>
-    <a class="res-card" data-type="vid chall" href="https://www.youtube.com/watch?v=_kkcM9P0E8w" target="_blank" rel="noopener">
+    <a class="res-card" data-type="chall" href="https://www.youtube.com/watch?v=_kkcM9P0E8w" target="_blank" rel="noopener">
       <span class="res-tag chall">Challenge</span>
       <div class="res-body">
         <div class="res-name">YouTube — Nationalities (harder)</div>
@@ -240,7 +189,7 @@
 <section class="unit-section" id="u3">
   <div class="unit-hdr">
     <span class="unit-num">3</span>
-    <span class="unit-topic">Profesiones <span class="unit-topic-zh">职业</span></span>
+    <span class="unit-topic">Profesiones <span class="unit-topic-sub lang-en">Jobs</span><span class="unit-topic-sub lang-zh">职业</span></span>
   </div>
   <div class="res-list">
     <a class="res-card" data-type="ex" href="https://arche-ele.com/las-profesiones-professions-trabajo-espanol" target="_blank" rel="noopener">
@@ -262,7 +211,7 @@
     <a class="res-card" data-type="lis" href="https://www.youtube.com/watch?v=u86KDGKU1fo&list=PLae5ntSpaRBfSr5X7a01rgOiK-o19qh6O" target="_blank" rel="noopener">
       <span class="res-tag lis">Listening</span>
       <div class="res-body">
-        <div class="res-name">YouTube — Listening series (playlist)</div>
+        <div class="res-name">YouTube — A1 listening series (playlist)</div>
         <div class="res-desc">A1 listening practice playlist — professions and daily life</div>
       </div>
       <span class="res-arrow">↗</span>
@@ -282,7 +231,7 @@
 <section class="unit-section" id="u4">
   <div class="unit-hdr">
     <span class="unit-num">4</span>
-    <span class="unit-topic">La ciudad — ubicación <span class="unit-topic-zh">城市位置</span></span>
+    <span class="unit-topic">La ciudad — ubicación <span class="unit-topic-sub lang-en">City locations</span><span class="unit-topic-sub lang-zh">城市位置</span></span>
   </div>
   <div class="res-list">
     <a class="res-card" data-type="ex" href="https://arche-ele.com/la-ciudad-the-city-vocabulario-aprende-espanol" target="_blank" rel="noopener">
@@ -304,7 +253,7 @@
     <a class="res-card" data-type="vid" href="https://www.youtube.com/watch?v=1gM54VHMCVY" target="_blank" rel="noopener">
       <span class="res-tag vid">Video</span>
       <div class="res-body">
-        <div class="res-name">YouTube — ¿Dónde está? (Spanish accent)</div>
+        <div class="res-name">YouTube — ¿Dónde está? (Spain accent)</div>
         <div class="res-desc">Location vocab with España Spanish</div>
       </div>
       <span class="res-arrow">↗</span>
@@ -340,7 +289,7 @@
 <section class="unit-section" id="u5">
   <div class="unit-hdr">
     <span class="unit-num">5</span>
-    <span class="unit-topic">Objetos y hay/está <span class="unit-topic-zh">物品与存在</span></span>
+    <span class="unit-topic">Objetos y hay/está <span class="unit-topic-sub lang-en">Objects & existence</span><span class="unit-topic-sub lang-zh">物品与存在</span></span>
   </div>
   <div class="res-list">
     <a class="res-card" data-type="ex" href="https://hspanishacademy.com/es/activity/objetos-comunes/" target="_blank" rel="noopener">
@@ -358,7 +307,7 @@
 <section class="unit-section" id="u6">
   <div class="unit-hdr">
     <span class="unit-num">6</span>
-    <span class="unit-topic">La familia <span class="unit-topic-zh">家庭</span></span>
+    <span class="unit-topic">La familia <span class="unit-topic-sub lang-en">Family</span><span class="unit-topic-sub lang-zh">家庭</span></span>
   </div>
   <div class="res-list">
     <a class="res-card" data-type="ex" href="https://arche-ele.com/la-familia-vocabulario-family-spanish-vocabulary" target="_blank" rel="noopener">
@@ -373,7 +322,7 @@
       <span class="res-tag ex">Exercises</span>
       <div class="res-body">
         <div class="res-name">profedeele.es — La familia</div>
-        <div class="res-desc">Family activity from profedeele (some content may need subscription)</div>
+        <div class="res-desc">Family activity (some content may need subscription)</div>
       </div>
       <span class="res-arrow">↗</span>
     </a>
@@ -381,7 +330,7 @@
       <span class="res-tag ex">Exercises</span>
       <div class="res-body">
         <div class="res-name">spanishunicorn.com — La familia A1</div>
-        <div class="res-desc">Open-ended speaking questions about family — good for conversation practice</div>
+        <div class="res-desc">Open-ended speaking questions about family</div>
       </div>
       <span class="res-arrow">↗</span>
     </a>
@@ -392,7 +341,7 @@
 <section class="unit-section" id="u7">
   <div class="unit-hdr">
     <span class="unit-num">7</span>
-    <span class="unit-topic">Descripción física y de carácter <span class="unit-topic-zh">外貌与性格描述</span></span>
+    <span class="unit-topic">Descripción física y de carácter <span class="unit-topic-sub lang-en">Descriptions</span><span class="unit-topic-sub lang-zh">外貌与性格</span></span>
   </div>
   <div class="res-list">
     <a class="res-card" data-type="ex" href="https://arche-ele.com/descripciones-a1-fisicasydecaracter-en-espanol" target="_blank" rel="noopener">
@@ -434,7 +383,7 @@
 <section class="unit-section" id="u8">
   <div class="unit-hdr">
     <span class="unit-num">8</span>
-    <span class="unit-topic">Estados y emociones <span class="unit-topic-zh">状态与情绪</span></span>
+    <span class="unit-topic">Estados y emociones <span class="unit-topic-sub lang-en">Feelings & emotions</span><span class="unit-topic-sub lang-zh">状态与情绪</span></span>
   </div>
   <div class="res-list">
     <a class="res-card" data-type="ex" href="https://arche-ele.com/las-emociones-en-espanol-vocabulario" target="_blank" rel="noopener">
@@ -468,7 +417,7 @@
 <section class="unit-section" id="u9">
   <div class="unit-hdr">
     <span class="unit-num">9</span>
-    <span class="unit-topic">La semana y los hábitos <span class="unit-topic-zh">每周习惯</span></span>
+    <span class="unit-topic">La semana y los hábitos <span class="unit-topic-sub lang-en">Week & habits</span><span class="unit-topic-sub lang-zh">每周习惯</span></span>
   </div>
   <div class="res-list">
     <a class="res-card" data-type="ex" href="https://aprenderespanol.org/vocabulario/horas-dias-meses-estaciones-calendario.html" target="_blank" rel="noopener">
@@ -502,7 +451,7 @@
 <section class="unit-section" id="u10">
   <div class="unit-hdr">
     <span class="unit-num">10</span>
-    <span class="unit-topic">La rutina diaria <span class="unit-topic-zh">日常生活</span></span>
+    <span class="unit-topic">La rutina diaria <span class="unit-topic-sub lang-en">Daily routine</span><span class="unit-topic-sub lang-zh">日常生活</span></span>
   </div>
   <div class="res-list">
     <a class="res-card" data-type="ex" href="https://arche-ele.com/la-rutina-daily-routine-aprende-espanol-learn-spanish" target="_blank" rel="noopener">
@@ -568,7 +517,7 @@
 <section class="unit-section" id="u11">
   <div class="unit-hdr">
     <span class="unit-num">11</span>
-    <span class="unit-topic">El tiempo y el calendario <span class="unit-topic-zh">天气与日历</span></span>
+    <span class="unit-topic">El tiempo y el calendario <span class="unit-topic-sub lang-en">Weather & calendar</span><span class="unit-topic-sub lang-zh">天气与日历</span></span>
   </div>
   <div class="res-list">
     <a class="res-card" data-type="ex" href="https://hspanishacademy.com/es/activity/los-meses-y-las-estaciones/" target="_blank" rel="noopener">
@@ -610,7 +559,7 @@
 <section class="unit-section" id="u12">
   <div class="unit-hdr">
     <span class="unit-num">12</span>
-    <span class="unit-topic">Aficiones y gustos <span class="unit-topic-zh">爱好与喜好</span></span>
+    <span class="unit-topic">Aficiones y gustos <span class="unit-topic-sub lang-en">Hobbies & likes</span><span class="unit-topic-sub lang-zh">爱好与喜好</span></span>
   </div>
   <div class="res-list">
     <a class="res-card" data-type="ex" href="https://arche-ele.com/hobbies-aficiones-vocabulario-espanol" target="_blank" rel="noopener">
@@ -625,7 +574,7 @@
       <span class="res-tag ex">Exercises</span>
       <div class="res-body">
         <div class="res-name">deleahora.com — Aficiones y tiempo libre</div>
-        <div class="res-desc">Open-ended speaking questions about hobbies — good for conversation</div>
+        <div class="res-desc">Open-ended speaking questions about hobbies</div>
       </div>
       <span class="res-arrow">↗</span>
     </a>
@@ -636,7 +585,7 @@
 <section class="unit-section" id="u13">
   <div class="unit-hdr">
     <span class="unit-num">13</span>
-    <span class="unit-topic">En el restaurante <span class="unit-topic-zh">在餐厅</span></span>
+    <span class="unit-topic">En el restaurante <span class="unit-topic-sub lang-en">Restaurant</span><span class="unit-topic-sub lang-zh">在餐厅</span></span>
   </div>
   <div class="res-list">
     <a class="res-card" data-type="ex" href="https://arche-ele.com/en-el-restaurante-camarero-cliente-conversaciones" target="_blank" rel="noopener">
@@ -678,14 +627,14 @@
 <section class="unit-section" id="u14">
   <div class="unit-hdr">
     <span class="unit-num">14</span>
-    <span class="unit-topic">De compras <span class="unit-topic-zh">购物</span></span>
+    <span class="unit-topic">De compras <span class="unit-topic-sub lang-en">Shopping</span><span class="unit-topic-sub lang-zh">购物</span></span>
   </div>
   <div class="res-list">
     <a class="res-card" data-type="read" href="https://deleahora.com/actividades/comprension-de-lectura/i-de-compras-texto-para-completar" target="_blank" rel="noopener">
       <span class="res-tag read">Reading</span>
       <div class="res-body">
         <div class="res-name">deleahora.com — De compras (reading)</div>
-        <div class="res-desc">Reading comprehension with gap-fill — clothing, pronouns and grammar in context</div>
+        <div class="res-desc">Reading comprehension with gap-fill — clothing and pronouns in context</div>
       </div>
       <span class="res-arrow">↗</span>
     </a>
@@ -705,7 +654,7 @@
       </div>
       <span class="res-arrow">↗</span>
     </a>
-    <a class="res-card" data-type="ex chall" href="https://lingoda.swiss-language-academy.ch/PDF/ES/A1/A1_2041V_ES.pdf" target="_blank" rel="noopener">
+    <a class="res-card" data-type="chall" href="https://lingoda.swiss-language-academy.ch/PDF/ES/A1/A1_2041V_ES.pdf" target="_blank" rel="noopener">
       <span class="res-tag chall">Challenge</span>
       <div class="res-body">
         <div class="res-name">Lingoda — A1 Shopping unit (full PDF)</div>
@@ -716,125 +665,77 @@
   </div>
 </section>
 
-<!-- ── Units 15–20 placeholder ── -->
+<!-- ── Units 15–20 ── -->
 <section class="unit-section" id="u15">
-  <div class="unit-hdr">
-    <span class="unit-num">15</span>
-    <span class="unit-topic">Comparaciones <span class="unit-topic-zh">比较</span></span>
-  </div>
-  <p class="unit-empty lang-en">Resources coming soon.</p>
-  <p class="unit-empty lang-zh">资源即将推出。</p>
+  <div class="unit-hdr"><span class="unit-num">15</span><span class="unit-topic">Comparaciones</span></div>
+  <p class="unit-empty lang-en">Resources coming soon.</p><p class="unit-empty lang-zh">资源即将推出。</p>
 </section>
-
 <section class="unit-section" id="u15b">
-  <div class="unit-hdr">
-    <span class="unit-num">15b</span>
-    <span class="unit-topic">Obligación <span class="unit-topic-zh">义务</span></span>
-  </div>
-  <p class="unit-empty lang-en">Resources coming soon.</p>
-  <p class="unit-empty lang-zh">资源即将推出。</p>
+  <div class="unit-hdr"><span class="unit-num">15b</span><span class="unit-topic">Obligación</span></div>
+  <p class="unit-empty lang-en">Resources coming soon.</p><p class="unit-empty lang-zh">资源即将推出。</p>
 </section>
-
 <section class="unit-section" id="u16">
-  <div class="unit-hdr">
-    <span class="unit-num">16</span>
-    <span class="unit-topic">Transportes y ciudad <span class="unit-topic-zh">交通与城市</span></span>
-  </div>
-  <p class="unit-empty lang-en">Resources coming soon.</p>
-  <p class="unit-empty lang-zh">资源即将推出。</p>
+  <div class="unit-hdr"><span class="unit-num">16</span><span class="unit-topic">Transportes y ciudad</span></div>
+  <p class="unit-empty lang-en">Resources coming soon.</p><p class="unit-empty lang-zh">资源即将推出。</p>
 </section>
-
 <section class="unit-section" id="u17">
-  <div class="unit-hdr">
-    <span class="unit-num">17</span>
-    <span class="unit-topic">Salud y cuerpo <span class="unit-topic-zh">健康与身体</span></span>
-  </div>
-  <p class="unit-empty lang-en">Resources coming soon.</p>
-  <p class="unit-empty lang-zh">资源即将推出。</p>
+  <div class="unit-hdr"><span class="unit-num">17</span><span class="unit-topic">Salud y cuerpo</span></div>
+  <p class="unit-empty lang-en">Resources coming soon.</p><p class="unit-empty lang-zh">资源即将推出。</p>
 </section>
-
 <section class="unit-section" id="u18">
-  <div class="unit-hdr">
-    <span class="unit-num">18</span>
-    <span class="unit-topic">Planes de futuro <span class="unit-topic-zh">未来计划</span></span>
-  </div>
-  <p class="unit-empty lang-en">Resources coming soon.</p>
-  <p class="unit-empty lang-zh">资源即将推出。</p>
+  <div class="unit-hdr"><span class="unit-num">18</span><span class="unit-topic">Planes de futuro</span></div>
+  <p class="unit-empty lang-en">Resources coming soon.</p><p class="unit-empty lang-zh">资源即将推出。</p>
 </section>
-
 <section class="unit-section" id="u19">
-  <div class="unit-hdr">
-    <span class="unit-num">19</span>
-    <span class="unit-topic">El pasado I <span class="unit-topic-zh">过去时 I</span></span>
-  </div>
-  <p class="unit-empty lang-en">Resources coming soon.</p>
-  <p class="unit-empty lang-zh">资源即将推出。</p>
+  <div class="unit-hdr"><span class="unit-num">19</span><span class="unit-topic">El pasado I</span></div>
+  <p class="unit-empty lang-en">Resources coming soon.</p><p class="unit-empty lang-zh">资源即将推出。</p>
 </section>
-
 <section class="unit-section" id="u20">
-  <div class="unit-hdr">
-    <span class="unit-num">20</span>
-    <span class="unit-topic">El pasado II — viajes <span class="unit-topic-zh">过去时 II — 旅行</span></span>
-  </div>
-  <p class="unit-empty lang-en">Resources coming soon.</p>
-  <p class="unit-empty lang-zh">资源即将推出。</p>
+  <div class="unit-hdr"><span class="unit-num">20</span><span class="unit-topic">El pasado II — viajes</span></div>
+  <p class="unit-empty lang-en">Resources coming soon.</p><p class="unit-empty lang-zh">资源即将推出。</p>
 </section>
 
 </main>
 
 <script>
 function setLang(l){
-  document.body.classList.toggle('zh', l==='zh');
-  document.getElementById('en-btn').classList.toggle('act', l==='en');
-  document.getElementById('zh-btn').classList.toggle('act', l==='zh');
+  document.body.classList.toggle('zh',l==='zh');
+  document.getElementById('en-btn').style.background=l==='en'?'var(--green)':'var(--bg)';
+  document.getElementById('en-btn').style.color=l==='en'?'#fff':'var(--muted)';
+  document.getElementById('zh-btn').style.background=l==='zh'?'var(--green)':'var(--bg)';
+  document.getElementById('zh-btn').style.color=l==='zh'?'#fff':'var(--muted)';
 }
 
-let curFilter = 'all';
 function setFilter(type, btn){
-  curFilter = type;
   document.querySelectorAll('.f-pill').forEach(p=>p.classList.remove('act'));
   btn.classList.add('act');
   document.querySelectorAll('.res-card').forEach(card=>{
-    if(type === 'all'){
-      card.classList.remove('hidden');
-    } else {
-      const t = card.dataset.type || '';
-      card.classList.toggle('hidden', !t.split(' ').includes(type));
-    }
-  });
-  // re-check unit-empty visibility
-  document.querySelectorAll('.unit-section').forEach(sec=>{
-    const cards = sec.querySelectorAll('.res-card');
-    const visible = [...cards].filter(c=>!c.classList.contains('hidden'));
-    let empty = sec.querySelector('.unit-empty');
-    if(cards.length > 0){
-      if(!empty){
-        empty = document.createElement('p');
-        empty.className='unit-empty lang-en';
-        empty.textContent='No resources of this type for this unit.';
-        sec.querySelector('.res-list').appendChild(empty);
-      }
-      empty.style.display = visible.length === 0 ? 'block' : 'none';
-    }
+    if(type==='all'){card.classList.remove('hidden');}
+    else{card.classList.toggle('hidden', !(card.dataset.type||'').split(' ').includes(type));}
   });
 }
 
-// Active unit highlight in nav
-const sections = document.querySelectorAll('.unit-section');
-const navLinks = document.querySelectorAll('.unit-nav a');
-const observer = new IntersectionObserver(entries=>{
+const sections=document.querySelectorAll('.unit-section');
+const navLinks=document.querySelectorAll('.unit-nav a');
+new IntersectionObserver(entries=>{
   entries.forEach(e=>{
     if(e.isIntersecting){
       navLinks.forEach(a=>a.classList.remove('active'));
-      const match = document.querySelector(`.unit-nav a[href="#${e.target.id}"]`);
-      if(match){
-        match.classList.add('active');
-        match.scrollIntoView({behavior:'smooth',block:'nearest',inline:'center'});
-      }
+      const m=document.querySelector(`.unit-nav a[href="#${e.target.id}"]`);
+      if(m){m.classList.add('active');m.scrollIntoView({behavior:'smooth',block:'nearest',inline:'center'});}
     }
   });
-},{threshold:0.3, rootMargin:'-80px 0px -60% 0px'});
-sections.forEach(s=>observer.observe(s));
+},{threshold:0.3,rootMargin:'-100px 0px -60% 0px'}).observe;
+sections.forEach(s=>new IntersectionObserver(entries=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){
+      navLinks.forEach(a=>a.classList.remove('active'));
+      const m=document.querySelector(`.unit-nav a[href="#${e.target.id}"]`);
+      if(m){m.classList.add('active');m.scrollIntoView({behavior:'smooth',block:'nearest',inline:'center'});}
+    }
+  });
+},{threshold:0.2,rootMargin:'-100px 0px -55% 0px'}).observe(s));
 </script>
+<script src="../assets/search.js"></script>
 </body>
 </html>
