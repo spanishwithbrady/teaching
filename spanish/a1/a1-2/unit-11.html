@@ -42,6 +42,98 @@
       font-size: 0.9rem;
       line-height: 1.6;
     }
+
+    /* ── Weather Exercise ── */
+    :root {
+      --wx-card: #ffffff; --wx-fg: #2e2416; --wx-warm: #8B5E3C;
+      --wx-correct: #38763a; --wx-correct-tint: #edf7ed; --wx-correct-border: #82c082;
+      --wx-wrong: #ae3020; --wx-wrong-tint: #fdf2f1; --wx-wrong-border: #d09080;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root:not([data-theme="light"]) {
+        --wx-card: #26211a; --wx-fg: #ece4d4; --wx-warm: #c08855;
+        --wx-correct: #5ca85c; --wx-correct-tint: #142014; --wx-correct-border: #4a8050;
+        --wx-wrong: #d05848; --wx-wrong-tint: #2a1414; --wx-wrong-border: #9a4030;
+      }
+    }
+    :root[data-theme="dark"] {
+      --wx-card: #26211a; --wx-fg: #ece4d4; --wx-warm: #c08855;
+      --wx-correct: #5ca85c; --wx-correct-tint: #142014; --wx-correct-border: #4a8050;
+      --wx-wrong: #d05848; --wx-wrong-tint: #2a1414; --wx-wrong-border: #9a4030;
+    }
+    .wx-ex { font-family: system-ui, sans-serif; color: var(--wx-fg); margin-top: 16px; }
+    .wx-loading { text-align: center; padding: 32px 0; color: var(--muted); font-size: .9rem; font-weight: 600; }
+    .wx-spinner { width: 24px; height: 24px; border: 3px solid var(--border); border-top-color: var(--green); border-radius: 50%; animation: wxSpin .7s linear infinite; margin: 0 auto 10px; }
+    @keyframes wxSpin { to { transform: rotate(360deg); } }
+    .wx-error { background: var(--wx-wrong-tint); border: 1px solid var(--wx-wrong-border); border-radius: 12px; padding: 14px 18px; color: var(--wx-wrong); font-size: .88rem; font-weight: 600; margin-bottom: 14px; text-align: center; }
+    .wx-city-card { background: var(--wx-card); border: 1.5px solid var(--border); border-radius: 14px; padding: 18px 20px 14px; margin-bottom: 14px; display: flex; align-items: center; gap: 16px; }
+    .wx-city-icon { font-size: 2.2rem; line-height: 1; flex-shrink: 0; }
+    .wx-city-info { flex: 1; min-width: 0; }
+    .wx-city-name { font-size: 1.1rem; font-weight: 800; color: var(--wx-fg); margin: 0 0 2px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .wx-city-country { font-size: .78rem; color: var(--muted); font-weight: 600; }
+    .wx-data-row { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 8px; }
+    .wx-chip { background: var(--green-tint); border: 1px solid #c8ddb0; border-radius: 7px; padding: 4px 10px; font-size: .78rem; font-weight: 700; color: var(--green); }
+    .wx-prog-wrap { margin-bottom: 12px; }
+    .wx-prog-labels { display: flex; justify-content: space-between; font-size: .72rem; font-weight: 700; color: var(--muted); margin-bottom: 5px; }
+    .wx-prog-track { height: 5px; background: var(--border); border-radius: 99px; overflow: hidden; }
+    .wx-prog-fill { height: 100%; background: var(--green); border-radius: 99px; transition: width .45s cubic-bezier(.4,0,.2,1); width: 0%; }
+    .wx-q-card { background: var(--wx-card); border: 1.5px solid var(--border); border-radius: 14px; padding: 26px 20px 22px; transition: opacity .18s ease, transform .18s ease; }
+    .wx-q-card.out { opacity: 0; transform: translateY(-8px); pointer-events: none; }
+    @keyframes wxCardIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+    .wx-q-card.in { animation: wxCardIn .22s ease forwards; }
+    .wx-q-label { font-size: .68rem; font-weight: 700; letter-spacing: .09em; text-transform: uppercase; color: var(--muted); margin: 0 0 8px; }
+    .wx-q-text { font-size: 1.05rem; font-weight: 800; color: var(--wx-fg); margin: 0 0 18px; line-height: 1.4; }
+    .wx-options { display: flex; flex-direction: column; gap: 8px; }
+    .wx-opt { background: var(--bg); border: 2px solid var(--border); border-radius: 9px; padding: 11px 14px; font-family: inherit; font-size: .92rem; font-weight: 700; color: var(--wx-fg); cursor: pointer; text-align: left; transition: border-color .15s, background .15s; display: flex; align-items: center; gap: 9px; }
+    .wx-opt:hover:not(:disabled) { border-color: var(--green); background: var(--green-tint); }
+    .wx-opt:disabled { cursor: default; }
+    .wx-opt.selected-ok { border-color: var(--wx-correct-border); background: var(--wx-correct-tint); color: var(--wx-correct); }
+    .wx-opt.selected-bad { border-color: var(--wx-wrong-border); background: var(--wx-wrong-tint); color: var(--wx-wrong); }
+    .wx-opt.reveal-ok { border-color: var(--wx-correct-border); background: var(--wx-correct-tint); color: var(--wx-correct); }
+    .wx-opt-key { display: inline-flex; align-items: center; justify-content: center; width: 20px; height: 20px; border-radius: 5px; background: var(--border); font-size: .7rem; font-weight: 800; flex-shrink: 0; }
+    .wx-fill-wrap { display: flex; flex-direction: column; align-items: center; gap: 10px; }
+    .wx-fill-prompt { font-size: .95rem; font-weight: 700; color: var(--wx-fg); text-align: center; }
+    .wx-fill-prompt .wx-blank { display: inline-block; min-width: 56px; border-bottom: 2.5px solid var(--green); color: transparent; vertical-align: bottom; }
+    .wx-fill-input { font-family: inherit; font-size: 1.05rem; font-weight: 700; color: var(--wx-fg); background: var(--bg); border: 2px solid var(--border); border-radius: 9px; padding: 10px 18px; width: 150px; text-align: center; outline: none; transition: border-color .15s, background .15s, color .15s; }
+    .wx-fill-input:focus { border-color: var(--green); }
+    .wx-fill-input.ok { border-color: var(--wx-correct-border); background: var(--wx-correct-tint); color: var(--wx-correct); }
+    .wx-fill-input.bad { border-color: var(--wx-wrong-border); background: var(--wx-wrong-tint); color: var(--wx-wrong); }
+    .wx-fb { text-align: center; font-size: .9rem; font-weight: 700; min-height: 1.4em; margin-top: 10px; opacity: 0; transition: opacity .2s; }
+    .wx-fb.show { opacity: 1; }
+    .wx-fb.ok { color: var(--wx-correct); }
+    .wx-fb.bad { color: var(--wx-wrong); }
+    .wx-fb-hint { text-align: center; font-size: .8rem; color: var(--muted); font-weight: 600; min-height: 1.2em; margin-top: 2px; opacity: 0; transition: opacity .2s; }
+    .wx-fb-hint.show { opacity: 1; }
+    .wx-fb-hint strong { color: var(--wx-correct); font-weight: 800; }
+    .wx-action-wrap { text-align: center; margin-top: 16px; }
+    .wx-action-btn { font-family: inherit; font-size: .92rem; font-weight: 800; padding: 11px 32px; border-radius: 9px; border: none; cursor: pointer; background: var(--green); color: #fff; transition: opacity .15s, transform .1s; }
+    .wx-action-btn:hover { opacity: .87; }
+    .wx-action-btn:active { transform: scale(.97); }
+    .wx-action-btn:disabled { opacity: .4; cursor: default; transform: none; }
+    .wx-hint { text-align: center; font-size: .7rem; color: var(--muted); margin-top: 7px; }
+    .wx-summary { display: none; }
+    .wx-summary.show { display: block; animation: wxCardIn .3s ease forwards; }
+    .wx-score-block { text-align: center; margin-bottom: 22px; }
+    .wx-score-emoji { font-size: 2.2rem; display: block; margin-bottom: 5px; }
+    .wx-score-big { font-size: 3.2rem; font-weight: 800; color: var(--green); line-height: 1; display: block; }
+    .wx-score-big.perfect { color: var(--wx-warm); }
+    .wx-score-denom { font-size: .95rem; color: var(--muted); font-weight: 600; margin-top: 2px; }
+    .wx-score-verdict { font-size: .95rem; font-weight: 700; margin-top: 9px; color: var(--wx-fg); }
+    .wx-review-label { font-size: .68rem; font-weight: 700; letter-spacing: .09em; text-transform: uppercase; color: var(--muted); margin: 0 0 8px; }
+    .wx-review-list { display: flex; flex-direction: column; gap: 5px; margin-bottom: 18px; }
+    .wx-rev-item { background: var(--wx-card); border: 1.5px solid var(--border); border-radius: 9px; padding: 9px 12px; display: grid; grid-template-columns: auto 1fr; align-items: start; gap: 9px; font-size: .83rem; }
+    .wx-rev-item.ok { border-color: var(--wx-correct-border); }
+    .wx-rev-item.bad { border-color: var(--wx-wrong-border); }
+    .wx-rev-icon { font-size: .9rem; padding-top: 1px; }
+    .wx-rev-text { min-width: 0; font-weight: 600; line-height: 1.4; }
+    .wx-rev-text .ok { color: var(--wx-correct); font-weight: 800; }
+    .wx-rev-text .bad { color: var(--wx-wrong); font-weight: 800; text-decoration: line-through; }
+    .wx-rev-text .fix { color: var(--wx-correct); font-weight: 800; }
+    .wx-summary-btns { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; }
+    .wx-new-btn { font-family: inherit; font-size: .88rem; font-weight: 800; padding: 10px 22px; border-radius: 9px; background: var(--green); color: #fff; border: none; cursor: pointer; transition: opacity .15s; }
+    .wx-new-btn:hover { opacity: .87; }
+    .wx-retry-btn { font-family: inherit; font-size: .88rem; font-weight: 700; padding: 10px 22px; border-radius: 9px; background: var(--wx-card); border: 1.5px solid var(--border); color: var(--wx-fg); cursor: pointer; transition: background .15s; }
+    .wx-retry-btn:hover { background: var(--bg); }
   </style>
 </head>
 <body>
@@ -547,6 +639,28 @@
       </div>
     </details>
 
+    <details class="panel">
+      <summary class="panel-summary">
+        <span class="panel-num">10</span>
+        <span class="panel-title"><span class="lang-en">🌦️ Practice — Live Weather</span><span class="lang-zh">🌦️ 练习 — 实时天气</span></span>
+        <svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg>
+      </summary>
+      <div class="panel-body">
+        <p class="lang-en-block">Real weather from a random Spanish-speaking city — answer 3 questions, then hit <strong>New city</strong> for a fresh one.</p>
+        <p class="lang-zh-block">随机西班牙语城市的实时天气——回答 3 道题，点击<strong>新城市</strong>换一个。</p>
+
+        <div class="wx-ex">
+          <div id="wx11-app">
+            <div class="wx-loading" id="wx11-loading">
+              <div class="wx-spinner"></div>
+              <span class="lang-en">Fetching weather…</span>
+              <span class="lang-zh">正在获取天气…</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </details>
+
   </div>
 
   <div class="unit-nav">
@@ -579,5 +693,324 @@ if (saved === 'zh') setLang('zh');
 </script>
 
 <script src="../../../assets/search.js"></script>
+
+<script>
+(function() {
+  var APP_ID = 'wx11-app';
+
+  var CITIES = [
+    { name: "Madrid",           country: "España",          flag: "🇪🇸", lat: 40.4168,  lon: -3.7038  },
+    { name: "Barcelona",        country: "España",          flag: "🇪🇸", lat: 41.3828,  lon:  2.1769  },
+    { name: "Sevilla",          country: "España",          flag: "🇪🇸", lat: 37.3886,  lon: -5.9823  },
+    { name: "Buenos Aires",     country: "Argentina",       flag: "🇦🇷", lat: -34.6037, lon: -58.3816 },
+    { name: "Ciudad de México", country: "México",          flag: "🇲🇽", lat: 19.4285,  lon: -99.1277 },
+    { name: "Lima",             country: "Perú",            flag: "🇵🇪", lat: -12.0432, lon: -77.0282 },
+    { name: "Bogotá",           country: "Colombia",        flag: "🇨🇴", lat:   4.6097, lon: -74.0817 },
+    { name: "Santiago",         country: "Chile",           flag: "🇨🇱", lat: -33.4489, lon: -70.6693 },
+    { name: "Caracas",          country: "Venezuela",       flag: "🇻🇪", lat:  10.4806, lon: -66.9036 },
+    { name: "Montevideo",       country: "Uruguay",         flag: "🇺🇾", lat: -34.9011, lon: -56.1645 },
+    { name: "Quito",            country: "Ecuador",         flag: "🇪🇨", lat:  -0.2295, lon: -78.5243 },
+    { name: "La Paz",           country: "Bolivia",         flag: "🇧🇴", lat: -16.5000, lon: -68.1193 },
+    { name: "Asunción",         country: "Paraguay",        flag: "🇵🇾", lat: -25.2867, lon: -57.6470 },
+    { name: "San José",         country: "Costa Rica",      flag: "🇨🇷", lat:   9.9281, lon: -84.0907 },
+    { name: "Ciudad de Panamá", country: "Panamá",          flag: "🇵🇦", lat:   8.9936, lon: -79.5197 },
+    { name: "Managua",          country: "Nicaragua",       flag: "🇳🇮", lat:  12.1328, lon: -86.2504 },
+    { name: "Tegucigalpa",      country: "Honduras",        flag: "🇭🇳", lat:  14.0818, lon: -87.2068 },
+    { name: "San Salvador",     country: "El Salvador",     flag: "🇸🇻", lat:  13.6929, lon: -89.2182 },
+    { name: "Santo Domingo",    country: "Rep. Dominicana", flag: "🇩🇴", lat:  18.4861, lon: -69.9312 },
+    { name: "La Habana",        country: "Cuba",            flag: "🇨🇺", lat:  23.1136, lon: -82.3666 },
+    { name: "Valencia",         country: "España",          flag: "🇪🇸", lat:  39.4699, lon:  -0.3763 },
+    { name: "Guadalajara",      country: "México",          flag: "🇲🇽", lat:  20.6597, lon: -103.3496 },
+    { name: "Medellín",         country: "Colombia",        flag: "🇨🇴", lat:   6.2442, lon: -75.5812 },
+    { name: "Córdoba",          country: "Argentina",       flag: "🇦🇷", lat: -31.4201, lon: -64.1888 },
+  ];
+
+  var WMO = {
+    0:  { es: "Hace sol",                  icon: "☀️"  },
+    1:  { es: "Hace sol",                  icon: "🌤️"  },
+    2:  { es: "Está parcialmente nublado", icon: "⛅"  },
+    3:  { es: "Está nublado",              icon: "☁️"  },
+    45: { es: "Hay niebla",                icon: "🌫️"  },
+    48: { es: "Hay niebla",                icon: "🌫️"  },
+    51: { es: "Hay llovizna",              icon: "🌦️"  },
+    53: { es: "Hay llovizna",              icon: "🌦️"  },
+    55: { es: "Hay llovizna",              icon: "🌧️"  },
+    61: { es: "Llueve",                    icon: "🌧️"  },
+    63: { es: "Llueve",                    icon: "🌧️"  },
+    65: { es: "Llueve mucho",              icon: "🌧️"  },
+    71: { es: "Nieva",                     icon: "🌨️"  },
+    73: { es: "Nieva",                     icon: "❄️"  },
+    75: { es: "Nieva mucho",               icon: "❄️"  },
+    77: { es: "Cae granizo",               icon: "🌨️"  },
+    80: { es: "Hay chubascos",             icon: "🌦️"  },
+    81: { es: "Hay chubascos",             icon: "🌦️"  },
+    82: { es: "Hay chubascos fuertes",     icon: "⛈️"  },
+    85: { es: "Nieva",                     icon: "🌨️"  },
+    86: { es: "Nieva mucho",               icon: "❄️"  },
+    95: { es: "Hay tormenta",              icon: "⛈️"  },
+    96: { es: "Hay tormenta",              icon: "⛈️"  },
+    99: { es: "Hay tormenta fuerte",       icon: "⛈️"  },
+  };
+
+  function getWmo(code) { return WMO[code] || WMO[0]; }
+
+  function getTempPhrase(t) {
+    if (t >= 30) return "Hace mucho calor";
+    if (t >= 25) return "Hace calor";
+    if (t >= 20) return "Hace buen tiempo";
+    if (t >= 15) return "Hace fresco";
+    if (t >= 5)  return "Hace frío";
+    return               "Hace mucho frío";
+  }
+
+  var ALL_WEATHER = ["Hace sol","Está parcialmente nublado","Está nublado","Hay niebla","Hay llovizna","Llueve","Llueve mucho","Nieva","Hay chubascos","Hay tormenta"];
+  var ALL_TEMP    = ["Hace mucho calor","Hace calor","Hace buen tiempo","Hace fresco","Hace frío","Hace mucho frío"];
+
+  function shuffle(a) {
+    var b = a.slice();
+    for (var i = b.length - 1; i > 0; i--) {
+      var j = Math.floor(Math.random() * (i + 1));
+      var t = b[i]; b[i] = b[j]; b[j] = t;
+    }
+    return b;
+  }
+
+  function distractors(correct, pool, n) {
+    return shuffle(pool.filter(function(x){ return x !== correct; })).slice(0, n);
+  }
+
+  /* ── State ── */
+  var city, wdata, questions;
+  var qIdx = 0, score = 0, checked = false, selOpt = null;
+  var results = [];
+
+  function pickCity() {
+    city = CITIES[Math.floor(Math.random() * CITIES.length)];
+    loadWeather();
+  }
+
+  function loadWeather() {
+    var app = document.getElementById(APP_ID);
+    if (!app) return;
+    app.innerHTML = '<div class="wx-loading"><div class="wx-spinner"></div>Fetching weather…</div>';
+    var url = 'https://api.open-meteo.com/v1/forecast?latitude=' + city.lat +
+      '&longitude=' + city.lon +
+      '&current=temperature_2m,precipitation,weathercode,windspeed_10m&wind_speed_unit=kmh&temperature_unit=celsius&timezone=auto';
+    fetch(url).then(function(r){ return r.json(); }).then(function(data) {
+      var c = data.current;
+      wdata = { temp: Math.round(c.temperature_2m), code: c.weathercode, wind: Math.round(c.windspeed_10m), rain: c.precipitation };
+      buildQuestions();
+      renderShell();
+    }).catch(function() {
+      var app2 = document.getElementById(APP_ID);
+      if (app2) app2.innerHTML = '<div class="wx-error">⚠️ Could not load weather. Check your connection. <button onclick="wx11Pick()" style="margin-left:10px;font-family:inherit;font-size:.85rem;font-weight:700;padding:7px 16px;border-radius:7px;background:var(--green);color:#fff;border:none;cursor:pointer;">Retry</button></div>';
+    });
+  }
+
+  function buildQuestions() {
+    var w = getWmo(wdata.code);
+    var tp = getTempPhrase(wdata.temp);
+    questions = [
+      { type:'mc', label:'Pregunta 1', text:'¿Qué tiempo hace en ' + city.name + '?',
+        options: shuffle([w.es].concat(distractors(w.es, ALL_WEATHER, 3))), answer: w.es },
+      { type:'fill', label:'Pregunta 2',
+        prompt:'En ' + city.name + ' hace ___ grados Celsius.',
+        answer: String(wdata.temp) },
+      { type:'mc', label:'Pregunta 3', text:'Con ' + wdata.temp + '°C, ¿qué dices?',
+        options: shuffle([tp].concat(distractors(tp, ALL_TEMP, 3))), answer: tp },
+    ];
+  }
+
+  function renderShell() {
+    var w = getWmo(wdata.code);
+    var app = document.getElementById(APP_ID);
+    if (!app) return;
+    app.innerHTML =
+      '<div class="wx-city-card">' +
+        '<div class="wx-city-icon">' + city.flag + ' ' + w.icon + '</div>' +
+        '<div class="wx-city-info">' +
+          '<div class="wx-city-name">' + city.name + '</div>' +
+          '<div class="wx-city-country">' + city.country + '</div>' +
+          '<div class="wx-data-row">' +
+            '<div class="wx-chip">🌡️ ' + wdata.temp + '°C</div>' +
+            '<div class="wx-chip">💨 ' + wdata.wind + ' km/h</div>' +
+            (wdata.rain > 0 ? '<div class="wx-chip">🌧️ ' + wdata.rain + ' mm</div>' : '') +
+          '</div>' +
+        '</div>' +
+      '</div>' +
+      '<div class="wx-prog-wrap" id="wx11-prog">' +
+        '<div class="wx-prog-labels"><span id="wx11-plabel">Pregunta 1 de 3</span><span id="wx11-pscore">0 correctas</span></div>' +
+        '<div class="wx-prog-track"><div class="wx-prog-fill" id="wx11-pfill"></div></div>' +
+      '</div>' +
+      '<div id="wx11-qwrap">' +
+        '<div class="wx-q-card" id="wx11-qcard"><div id="wx11-qinner"></div>' +
+          '<div class="wx-fb" id="wx11-fb"></div>' +
+          '<div class="wx-fb-hint" id="wx11-fbhint"></div>' +
+          '<div class="wx-action-wrap"><button class="wx-action-btn" id="wx11-btn" disabled>Check</button></div>' +
+          '<p class="wx-hint" id="wx11-hint">Select an option to answer.</p>' +
+        '</div>' +
+      '</div>' +
+      '<div class="wx-summary" id="wx11-sum">' +
+        '<div class="wx-score-block"><span class="wx-score-emoji" id="wx11-emoji"></span><span class="wx-score-big" id="wx11-snum"></span><div class="wx-score-denom" id="wx11-sdenom"></div><div class="wx-score-verdict" id="wx11-sverdict"></div></div>' +
+        '<p class="wx-review-label">Revisión</p>' +
+        '<div class="wx-review-list" id="wx11-rlist"></div>' +
+        '<div class="wx-summary-btns"><button class="wx-new-btn" id="wx11-newbtn">🌍 New city</button><button class="wx-retry-btn" id="wx11-retrybtn">↩ Try again</button></div>' +
+      '</div>';
+
+    document.getElementById('wx11-newbtn').addEventListener('click', pickCity);
+    document.getElementById('wx11-retrybtn').addEventListener('click', retryWx);
+    document.getElementById('wx11-btn').addEventListener('click', handleAction);
+
+    qIdx = 0; score = 0; checked = false; selOpt = null; results = [];
+    renderQ(0, false);
+  }
+
+  function renderQ(idx, animate) {
+    checked = false; selOpt = null;
+    var q = questions[idx];
+    var btn = document.getElementById('wx11-btn');
+    var fb = document.getElementById('wx11-fb');
+    var fbh = document.getElementById('wx11-fbhint');
+    var hint = document.getElementById('wx11-hint');
+    document.getElementById('wx11-plabel').textContent = 'Pregunta ' + (idx+1) + ' de ' + questions.length;
+    document.getElementById('wx11-pfill').style.width = ((idx / questions.length) * 100) + '%';
+    fb.className = 'wx-fb'; fb.textContent = '';
+    fbh.className = 'wx-fb-hint'; fbh.innerHTML = '';
+    btn.textContent = 'Check'; btn.disabled = true;
+
+    if (q.type === 'mc') {
+      hint.innerHTML = 'Select an option to answer.';
+      var opts = q.options.map(function(opt, i) {
+        return '<button class="wx-opt" data-i="' + i + '"><span class="wx-opt-key">' + String.fromCharCode(65+i) + '</span><span>' + opt + '</span></button>';
+      }).join('');
+      document.getElementById('wx11-qinner').innerHTML =
+        '<p class="wx-q-label">' + q.label + '</p>' +
+        '<p class="wx-q-text">' + q.text + '</p>' +
+        '<div class="wx-options" id="wx11-opts">' + opts + '</div>';
+      document.getElementById('wx11-opts').addEventListener('click', function(e) {
+        var b = e.target.closest('.wx-opt');
+        if (!b || checked) return;
+        selOpt = parseInt(b.getAttribute('data-i'));
+        document.querySelectorAll('#wx11-opts .wx-opt').forEach(function(el) {
+          el.style.borderColor = ''; el.style.background = '';
+        });
+        b.style.borderColor = 'var(--green)'; b.style.background = 'var(--green-tint)';
+        btn.disabled = false;
+      });
+    } else {
+      hint.innerHTML = 'Press <strong>Enter</strong> to check.';
+      document.getElementById('wx11-qinner').innerHTML =
+        '<p class="wx-q-label">' + q.label + '</p>' +
+        '<p class="wx-q-text">Completa la frase:</p>' +
+        '<div class="wx-fill-wrap">' +
+          '<p class="wx-fill-prompt">' + q.prompt.replace('___', '<span class="wx-blank">&nbsp;&nbsp;&nbsp;</span>') + '</p>' +
+          '<input class="wx-fill-input" id="wx11-inp" type="text" placeholder="escribe aquí" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">' +
+        '</div>';
+      var inp = document.getElementById('wx11-inp');
+      inp.addEventListener('input', function() { btn.disabled = inp.value.trim() === ''; });
+      inp.addEventListener('keydown', function(e) { if (e.key === 'Enter') { e.preventDefault(); if (!btn.disabled) handleAction(); } });
+      setTimeout(function() { inp.focus(); }, animate ? 60 : 0);
+    }
+
+    if (animate) {
+      var card = document.getElementById('wx11-qcard');
+      card.classList.remove('out'); card.classList.add('in');
+      card.addEventListener('animationend', function() { card.classList.remove('in'); }, { once: true });
+    }
+  }
+
+  function handleAction() { if (!checked) checkAns(); else nextQ(); }
+
+  function checkAns() {
+    checked = true;
+    var q = questions[qIdx];
+    var fb = document.getElementById('wx11-fb');
+    var fbh = document.getElementById('wx11-fbhint');
+    var btn = document.getElementById('wx11-btn');
+    var correct;
+    if (q.type === 'mc') {
+      correct = q.options[selOpt] === q.answer;
+      document.querySelectorAll('#wx11-opts .wx-opt').forEach(function(el, i) {
+        el.disabled = true; el.style.borderColor = ''; el.style.background = '';
+        if (q.options[i] === q.answer) el.classList.add('reveal-ok');
+        if (i === selOpt && !correct) el.classList.add('selected-bad');
+      });
+    } else {
+      var inp = document.getElementById('wx11-inp');
+      var v = inp.value.trim().toLowerCase().replace(/[°c]/g,'');
+      correct = v === q.answer.toLowerCase();
+      inp.className = 'wx-fill-input ' + (correct ? 'ok' : 'bad');
+      inp.disabled = true;
+    }
+    if (correct) score++;
+    results.push({ correct: correct, q: q });
+    fb.textContent = correct ? '✓ ¡Correcto!' : '✗ Not quite.';
+    fb.className = 'wx-fb show ' + (correct ? 'ok' : 'bad');
+    if (!correct) { fbh.innerHTML = 'The answer is <strong>' + q.answer + '</strong>.'; fbh.className = 'wx-fb-hint show'; }
+    document.getElementById('wx11-pscore').textContent = score + ' correcta' + (score !== 1 ? 's' : '');
+    btn.textContent = (qIdx === questions.length - 1) ? 'Ver resultados' : 'Siguiente →';
+    btn.disabled = false; btn.focus();
+  }
+
+  function nextQ() {
+    if (qIdx === questions.length - 1) { showSum(); return; }
+    var card = document.getElementById('wx11-qcard');
+    card.classList.add('out');
+    setTimeout(function() { qIdx++; renderQ(qIdx, true); }, 190);
+  }
+
+  function showSum() {
+    document.getElementById('wx11-qwrap').style.display = 'none';
+    document.getElementById('wx11-prog').style.display = 'none';
+    var sum = document.getElementById('wx11-sum');
+    sum.classList.add('show');
+    var pct = score / questions.length;
+    var emoji = score === questions.length ? '🌟' : pct >= .67 ? '👏' : '💪';
+    var verdict = score === questions.length ? '¡Perfecto! Outstanding.' : pct >= .67 ? '¡Muy bien! Nearly there.' : 'Keep practising!';
+    document.getElementById('wx11-emoji').textContent = emoji;
+    var n = document.getElementById('wx11-snum'); n.textContent = score;
+    if (score === questions.length) n.classList.add('perfect');
+    document.getElementById('wx11-sdenom').textContent = 'out of ' + questions.length + ' correct';
+    document.getElementById('wx11-sverdict').textContent = verdict;
+    var list = document.getElementById('wx11-rlist'); list.innerHTML = '';
+    results.forEach(function(r) {
+      var item = document.createElement('div');
+      item.className = 'wx-rev-item ' + (r.correct ? 'ok' : 'bad');
+      var desc = r.q.type === 'mc'
+        ? r.q.text + ' → <span class="fix">' + r.q.answer + '</span>'
+        : r.q.prompt.replace('___', '<span class="fix">' + r.q.answer + '</span>');
+      item.innerHTML = '<div class="wx-rev-icon">' + (r.correct ? '✓' : '✗') + '</div><div class="wx-rev-text">' + desc + '</div>';
+      list.appendChild(item);
+    });
+    document.getElementById('wx11-pfill').style.width = '100%';
+  }
+
+  function retryWx() {
+    qIdx = 0; score = 0; checked = false; selOpt = null; results = [];
+    var n = document.getElementById('wx11-snum'); if (n) n.classList.remove('perfect');
+    document.getElementById('wx11-sum').classList.remove('show');
+    document.getElementById('wx11-qwrap').style.display = '';
+    document.getElementById('wx11-prog').style.display = '';
+    renderQ(0, false);
+  }
+
+  window.wx11Pick = pickCity;
+
+  /* Only initialise when the panel is first opened */
+  var panel = document.querySelector('.panel-summary .panel-num');
+  /* find panel 10 summary and attach a one-time listener */
+  document.querySelectorAll('.panel-summary').forEach(function(s) {
+    var num = s.querySelector('.panel-num');
+    if (num && num.textContent.trim() === '10') {
+      var details = s.closest('details');
+      details.addEventListener('toggle', function() {
+        if (details.open && !document.getElementById('wx11-qwrap')) {
+          pickCity();
+        }
+      }, { once: true });
+    }
+  });
+})();
+</script>
 </body>
 </html>
