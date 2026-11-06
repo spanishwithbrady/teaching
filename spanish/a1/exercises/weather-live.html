@@ -1,0 +1,722 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Weather Exercise · Spanish with Brady</title>
+  <link rel="stylesheet" href="../../../assets/style.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap">
+  <style>
+    .lang-zh { display: none; }
+    body.zh .lang-en { display: none; }
+    body.zh .lang-zh { display: inline; }
+    .lang-zh-block { display: none; }
+    body.zh .lang-zh-block { display: block; }
+    body.zh .lang-en-block { display: none; }
+
+    /* ── weather exercise wrapper ── */
+    .wx-ex {
+      font-family: 'Nunito', system-ui, sans-serif;
+      max-width: 520px;
+      margin: 0 auto;
+    }
+
+    /* city card */
+    .wx-city-card {
+      background: var(--card-bg, #fff);
+      border: 1.5px solid var(--border);
+      border-radius: 16px;
+      padding: 22px 24px 18px;
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 18px;
+    }
+    .wx-city-icon { font-size: 2.6rem; line-height: 1; flex-shrink: 0; }
+    .wx-city-info { flex: 1; min-width: 0; }
+    .wx-city-name {
+      font-size: 1.25rem; font-weight: 800;
+      color: var(--brown, #2e2416); margin: 0 0 2px;
+      white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+    }
+    .wx-city-country { font-size: .82rem; color: var(--muted, #7a6e60); font-weight: 600; }
+    .wx-data-row {
+      display: flex; gap: 16px; flex-wrap: wrap;
+      margin-top: 10px;
+    }
+    .wx-chip {
+      background: var(--green-tint, #eef4e4);
+      border: 1px solid #c8ddb0;
+      border-radius: 8px;
+      padding: 5px 12px;
+      font-size: .82rem; font-weight: 700;
+      color: var(--green, #6b8c42);
+      display: flex; align-items: center; gap: 5px;
+    }
+
+    /* skeleton / loading */
+    .wx-loading {
+      text-align: center; padding: 48px 0;
+      color: var(--muted, #7a6e60); font-size: .95rem; font-weight: 600;
+    }
+    .wx-loading .spinner {
+      width: 28px; height: 28px; border: 3px solid var(--border, #e2ddd4);
+      border-top-color: var(--green, #6b8c42);
+      border-radius: 50%; animation: wxSpin .7s linear infinite;
+      margin: 0 auto 12px;
+    }
+    @keyframes wxSpin { to { transform: rotate(360deg); } }
+
+    .wx-error {
+      background: #fdf2f1; border: 1px solid #d09080;
+      border-radius: 12px; padding: 16px 20px;
+      color: #ae3020; font-size: .9rem; font-weight: 600;
+      margin-bottom: 16px; text-align: center;
+    }
+
+    /* progress */
+    .wx-prog-wrap { margin-bottom: 14px; }
+    .wx-prog-labels {
+      display: flex; justify-content: space-between;
+      font-size: .72rem; font-weight: 700; color: var(--muted, #7a6e60); margin-bottom: 5px;
+    }
+    .wx-prog-track { height: 5px; background: var(--border, #e2ddd4); border-radius: 99px; overflow: hidden; }
+    .wx-prog-fill {
+      height: 100%; background: var(--green, #6b8c42); border-radius: 99px;
+      transition: width .45s cubic-bezier(.4,0,.2,1); width: 0%;
+    }
+
+    /* question card */
+    .wx-q-card {
+      background: var(--card-bg, #fff); border: 1.5px solid var(--border, #e2ddd4);
+      border-radius: 16px; padding: 28px 22px 24px;
+      transition: opacity .18s ease, transform .18s ease;
+    }
+    .wx-q-card.out { opacity: 0; transform: translateY(-8px); pointer-events: none; }
+    @keyframes wxCardIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+    .wx-q-card.in { animation: wxCardIn .22s ease forwards; }
+
+    .wx-q-label {
+      font-size: .7rem; font-weight: 700; letter-spacing: .09em;
+      text-transform: uppercase; color: var(--muted, #7a6e60); margin: 0 0 10px;
+    }
+    .wx-q-text {
+      font-size: 1.1rem; font-weight: 800;
+      color: var(--brown, #2e2416); margin: 0 0 20px; line-height: 1.4;
+    }
+
+    /* multiple choice options */
+    .wx-options { display: flex; flex-direction: column; gap: 9px; }
+    .wx-opt {
+      background: var(--bg, #f7f5ef); border: 2px solid var(--border, #e2ddd4);
+      border-radius: 10px; padding: 12px 16px;
+      font-family: inherit; font-size: .95rem; font-weight: 700;
+      color: var(--brown, #2e2416); cursor: pointer; text-align: left;
+      transition: border-color .15s, background .15s;
+      display: flex; align-items: center; gap: 10px;
+    }
+    .wx-opt:hover:not(:disabled) { border-color: var(--green, #6b8c42); background: var(--green-tint, #eef4e4); }
+    .wx-opt:disabled { cursor: default; }
+    .wx-opt.selected-ok { border-color: #82c082; background: #edf7ed; color: #38763a; }
+    .wx-opt.selected-bad { border-color: #d09080; background: #fdf2f1; color: #ae3020; }
+    .wx-opt.reveal-ok { border-color: #82c082; background: #edf7ed; color: #38763a; }
+    .wx-opt-key {
+      display: inline-flex; align-items: center; justify-content: center;
+      width: 22px; height: 22px; border-radius: 6px;
+      background: var(--border, #e2ddd4); font-size: .72rem;
+      font-weight: 800; flex-shrink: 0; transition: background .15s;
+    }
+    .wx-opt.selected-ok .wx-opt-key,
+    .wx-opt.reveal-ok .wx-opt-key { background: #c0e0c0; }
+    .wx-opt.selected-bad .wx-opt-key { background: #e0b0a8; }
+
+    /* fill blank */
+    .wx-fill-wrap { display: flex; flex-direction: column; align-items: center; gap: 12px; }
+    .wx-fill-prompt { font-size: 1rem; font-weight: 700; color: var(--brown, #2e2416); text-align: center; }
+    .wx-fill-prompt .wx-blank {
+      display: inline-block; min-width: 60px; border-bottom: 2.5px solid var(--green, #6b8c42);
+      color: transparent; vertical-align: bottom;
+    }
+    .wx-fill-input {
+      font-family: inherit; font-size: 1.1rem; font-weight: 700;
+      color: var(--brown, #2e2416); background: var(--bg, #f7f5ef);
+      border: 2px solid var(--border, #e2ddd4); border-radius: 10px;
+      padding: 11px 20px; width: 160px; text-align: center; outline: none;
+      transition: border-color .15s, background .15s, color .15s;
+    }
+    .wx-fill-input:focus { border-color: var(--green, #6b8c42); }
+    .wx-fill-input.ok { border-color: #82c082; background: #edf7ed; color: #38763a; }
+    .wx-fill-input.bad { border-color: #d09080; background: #fdf2f1; color: #ae3020; }
+
+    /* feedback */
+    .wx-fb { text-align: center; font-size: .92rem; font-weight: 700; min-height: 1.4em; margin-top: 10px; opacity: 0; transition: opacity .2s; }
+    .wx-fb.show { opacity: 1; }
+    .wx-fb.ok { color: #38763a; }
+    .wx-fb.bad { color: #ae3020; }
+    .wx-fb-hint { text-align: center; font-size: .82rem; color: var(--muted, #7a6e60); font-weight: 600; min-height: 1.2em; margin-top: 2px; opacity: 0; transition: opacity .2s; }
+    .wx-fb-hint.show { opacity: 1; }
+    .wx-fb-hint strong { color: #38763a; font-weight: 800; }
+
+    /* check / next button */
+    .wx-action-wrap { text-align: center; margin-top: 18px; }
+    .wx-action-btn {
+      font-family: inherit; font-size: .95rem; font-weight: 800;
+      padding: 12px 36px; border-radius: 9px; border: none;
+      cursor: pointer; background: var(--green, #6b8c42); color: #fff;
+      transition: opacity .15s, transform .1s;
+    }
+    .wx-action-btn:hover { opacity: .87; }
+    .wx-action-btn:active { transform: scale(.97); }
+    .wx-action-btn:disabled { opacity: .4; cursor: default; transform: none; }
+    .wx-hint { text-align: center; font-size: .72rem; color: var(--muted, #7a6e60); margin-top: 8px; }
+
+    /* summary */
+    .wx-summary { display: none; }
+    .wx-summary.show { display: block; animation: wxCardIn .3s ease forwards; }
+    .wx-score-block { text-align: center; margin-bottom: 24px; }
+    .wx-score-emoji { font-size: 2.4rem; display: block; margin-bottom: 6px; }
+    .wx-score-big { font-size: 3.6rem; font-weight: 800; color: var(--green, #6b8c42); line-height: 1; display: block; }
+    .wx-score-big.perfect { color: var(--warm-brown, #8B5E3C); }
+    .wx-score-denom { font-size: 1rem; color: var(--muted, #7a6e60); font-weight: 600; margin-top: 2px; }
+    .wx-score-verdict { font-size: 1rem; font-weight: 700; margin-top: 10px; color: var(--brown, #2e2416); }
+    .wx-review-label { font-size: .7rem; font-weight: 700; letter-spacing: .09em; text-transform: uppercase; color: var(--muted, #7a6e60); margin: 0 0 9px; }
+    .wx-review-list { display: flex; flex-direction: column; gap: 6px; margin-bottom: 20px; }
+    .wx-rev-item {
+      background: var(--card-bg, #fff); border: 1.5px solid var(--border, #e2ddd4);
+      border-radius: 10px; padding: 10px 14px;
+      display: grid; grid-template-columns: auto 1fr;
+      align-items: start; gap: 10px; font-size: .86rem;
+    }
+    .wx-rev-item.ok { border-color: #82c082; }
+    .wx-rev-item.bad { border-color: #d09080; }
+    .wx-rev-icon { font-size: .95rem; padding-top: 1px; }
+    .wx-rev-text { min-width: 0; font-weight: 600; line-height: 1.4; }
+    .wx-rev-text .ok { color: #38763a; font-weight: 800; }
+    .wx-rev-text .bad { color: #ae3020; font-weight: 800; text-decoration: line-through; }
+    .wx-rev-text .fix { color: #38763a; font-weight: 800; }
+    .wx-summary-btns { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; }
+    .wx-new-btn {
+      font-family: inherit; font-size: .9rem; font-weight: 800;
+      padding: 11px 26px; border-radius: 9px;
+      background: var(--green, #6b8c42); color: #fff;
+      border: none; cursor: pointer; transition: opacity .15s;
+    }
+    .wx-new-btn:hover { opacity: .87; }
+    .wx-retry-btn {
+      font-family: inherit; font-size: .9rem; font-weight: 700;
+      padding: 11px 26px; border-radius: 9px;
+      background: var(--card-bg, #fff); border: 1.5px solid var(--border, #e2ddd4);
+      color: var(--brown, #2e2416); cursor: pointer; transition: background .15s;
+    }
+    .wx-retry-btn:hover { background: var(--bg, #f7f5ef); }
+  </style>
+</head>
+<body>
+
+<header class="site-header">
+  <a class="site-logo" href="../../../">Spanish with Brady</a>
+  <nav>
+    <ul class="site-nav">
+      <li><a href="../../../spanish/" class="active">Spanish</a></li>
+      <li><a href="../../../mandarin/">Mandarin</a></li>
+      <li><a href="#">English</a></li>
+      <li><a href="../../../tools/">Tools</a></li>
+    </ul>
+    <div style="position:relative;">
+      <input type="text" placeholder="Search... / 搜索..." id="search-input"
+        style="width:200px;padding:6px 12px 6px 32px;border:1px solid #e2ddd4;border-radius:20px;font-size:13px;background:#f7f5ef;outline:none;transition:border-color .15s;"
+        onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'">
+      <span style="position:absolute;left:10px;top:50%;transform:translateY(-50%);color:#a09880;font-size:14px;">🔍</span>
+      <div id="search-results" style="display:none;position:absolute;top:calc(100% + 6px);right:0;width:280px;background:#ffffff;border:1px solid #e2ddd4;border-radius:10px;box-shadow:0 4px 12px rgba(0,0,0,0.08);z-index:1000;max-height:320px;overflow-y:auto;"></div>
+    </div>
+    <div style="display:flex;gap:0;border:1px solid #e2ddd4;border-radius:6px;overflow:hidden;">
+      <button id="btn-en" onclick="setLang('en')" style="padding:5px 12px;border:none;cursor:pointer;font-size:13px;background:#5a7a32;color:white;font-weight:600;">EN</button>
+      <button id="btn-zh" onclick="setLang('zh')" style="padding:5px 12px;border:none;cursor:pointer;font-size:13px;background:#f7f5ef;color:#7a6e60;font-weight:600;">中文</button>
+    </div>
+  </nav>
+</header>
+
+<main class="main-content">
+  <nav class="breadcrumb">
+    <a href="../../../">Home</a> ›
+    <a href="../../../spanish/">Spanish</a> ›
+    <a href="../../../spanish/a1/">A1</a> ›
+    <span>Weather Exercise</span>
+  </nav>
+
+  <div class="unit-header">
+    <div class="unit-meta">A1 · Extra Practice</div>
+    <h1 class="unit-title">
+      <span class="lang-en">🌦️ El tiempo — Live Weather Exercise</span>
+      <span class="lang-zh">🌦️ 天气练习 — 实时天气练习</span>
+    </h1>
+    <p class="unit-desc lang-en-block">Real weather from a random Spanish-speaking city — answer questions about it in Spanish.</p>
+    <p class="unit-desc lang-zh-block">随机西班牙语城市的实时天气——用西班牙语回答相关问题。</p>
+  </div>
+
+  <div class="unit-content wx-ex" id="wxApp">
+    <div class="wx-loading" id="wxLoading">
+      <div class="spinner"></div>
+      <span class="lang-en">Fetching weather…</span>
+      <span class="lang-zh">正在获取天气…</span>
+    </div>
+  </div>
+</main>
+
+<footer class="site-footer">Spanish with Brady · Private use only</footer>
+
+<script>
+function setLang(lang) {
+  if (lang === 'zh') {
+    document.body.classList.add('zh');
+    document.getElementById('btn-zh').style.background = '#5a7a32';
+    document.getElementById('btn-zh').style.color = 'white';
+    document.getElementById('btn-en').style.background = '#f7f5ef';
+    document.getElementById('btn-en').style.color = '#7a6e60';
+  } else {
+    document.body.classList.remove('zh');
+    document.getElementById('btn-en').style.background = '#5a7a32';
+    document.getElementById('btn-en').style.color = 'white';
+    document.getElementById('btn-zh').style.background = '#f7f5ef';
+    document.getElementById('btn-zh').style.color = '#7a6e60';
+  }
+  localStorage.setItem('lang', lang);
+}
+const saved = localStorage.getItem('lang');
+if (saved === 'zh') setLang('zh');
+</script>
+
+<script src="../../../assets/search.js"></script>
+
+<script>
+(function() {
+  /* ── City list ── */
+  const CITIES = [
+    { name: "Madrid",          country: "España",          flag: "🇪🇸", lat: 40.4168,  lon: -3.7038  },
+    { name: "Barcelona",       country: "España",          flag: "🇪🇸", lat: 41.3828,  lon:  2.1769  },
+    { name: "Sevilla",         country: "España",          flag: "🇪🇸", lat: 37.3886,  lon: -5.9823  },
+    { name: "Buenos Aires",    country: "Argentina",       flag: "🇦🇷", lat: -34.6037, lon: -58.3816 },
+    { name: "Ciudad de México",country: "México",          flag: "🇲🇽", lat: 19.4285,  lon: -99.1277 },
+    { name: "Lima",            country: "Perú",            flag: "🇵🇪", lat: -12.0432, lon: -77.0282 },
+    { name: "Bogotá",          country: "Colombia",        flag: "🇨🇴", lat:   4.6097, lon: -74.0817 },
+    { name: "Santiago",        country: "Chile",           flag: "🇨🇱", lat: -33.4489, lon: -70.6693 },
+    { name: "Caracas",         country: "Venezuela",       flag: "🇻🇪", lat:  10.4806, lon: -66.9036 },
+    { name: "Montevideo",      country: "Uruguay",         flag: "🇺🇾", lat: -34.9011, lon: -56.1645 },
+    { name: "Quito",           country: "Ecuador",         flag: "🇪🇨", lat:  -0.2295, lon: -78.5243 },
+    { name: "La Paz",          country: "Bolivia",         flag: "🇧🇴", lat: -16.5000, lon: -68.1193 },
+    { name: "Asunción",        country: "Paraguay",        flag: "🇵🇾", lat: -25.2867, lon: -57.6470 },
+    { name: "San José",        country: "Costa Rica",      flag: "🇨🇷", lat:   9.9281, lon: -84.0907 },
+    { name: "Ciudad de Panamá",country: "Panamá",          flag: "🇵🇦", lat:   8.9936, lon: -79.5197 },
+    { name: "Managua",         country: "Nicaragua",       flag: "🇳🇮", lat:  12.1328, lon: -86.2504 },
+    { name: "Tegucigalpa",     country: "Honduras",        flag: "🇭🇳", lat:  14.0818, lon: -87.2068 },
+    { name: "San Salvador",    country: "El Salvador",     flag: "🇸🇻", lat:  13.6929, lon: -89.2182 },
+    { name: "Santo Domingo",   country: "Rep. Dominicana", flag: "🇩🇴", lat:  18.4861, lon: -69.9312 },
+    { name: "La Habana",       country: "Cuba",            flag: "🇨🇺", lat:  23.1136, lon: -82.3666 },
+    { name: "Valencia",        country: "España",          flag: "🇪🇸", lat:  39.4699, lon:  -0.3763  },
+    { name: "Guadalajara",     country: "México",          flag: "🇲🇽", lat:  20.6597, lon: -103.3496 },
+    { name: "Medellín",        country: "Colombia",        flag: "🇨🇴", lat:   6.2442, lon: -75.5812 },
+    { name: "Córdoba",         country: "Argentina",       flag: "🇦🇷", lat: -31.4201, lon: -64.1888 },
+  ];
+
+  /* ── WMO code → weather info ── */
+  const WMO = {
+    0:  { es: "Hace sol",             en: "sunny",           icon: "☀️"  },
+    1:  { es: "Hace sol",             en: "mostly clear",    icon: "🌤️"  },
+    2:  { es: "Está parcialmente nublado", en: "partly cloudy", icon: "⛅"  },
+    3:  { es: "Está nublado",         en: "overcast",        icon: "☁️"  },
+    45: { es: "Hay niebla",           en: "foggy",           icon: "🌫️"  },
+    48: { es: "Hay niebla",           en: "foggy",           icon: "🌫️"  },
+    51: { es: "Hay llovizna",         en: "drizzling",       icon: "🌦️"  },
+    53: { es: "Hay llovizna",         en: "drizzling",       icon: "🌦️"  },
+    55: { es: "Hay llovizna",         en: "heavy drizzle",   icon: "🌧️"  },
+    61: { es: "Llueve",               en: "raining",         icon: "🌧️"  },
+    63: { es: "Llueve",               en: "raining",         icon: "🌧️"  },
+    65: { es: "Llueve mucho",         en: "heavy rain",      icon: "🌧️"  },
+    71: { es: "Nieva",                en: "snowing",         icon: "🌨️"  },
+    73: { es: "Nieva",                en: "snowing",         icon: "❄️"  },
+    75: { es: "Nieva mucho",          en: "heavy snow",      icon: "❄️"  },
+    77: { es: "Cae granizo",          en: "hail",            icon: "🌨️"  },
+    80: { es: "Hay chubascos",        en: "showers",         icon: "🌦️"  },
+    81: { es: "Hay chubascos",        en: "showers",         icon: "🌦️"  },
+    82: { es: "Hay chubascos fuertes",en: "heavy showers",   icon: "⛈️"  },
+    85: { es: "Nieva",                en: "snow showers",    icon: "🌨️"  },
+    86: { es: "Nieva mucho",          en: "heavy snow",      icon: "❄️"  },
+    95: { es: "Hay tormenta",         en: "thunderstorm",    icon: "⛈️"  },
+    96: { es: "Hay tormenta",         en: "thunderstorm",    icon: "⛈️"  },
+    99: { es: "Hay tormenta fuerte",  en: "severe thunderstorm", icon: "⛈️" },
+  };
+
+  function getWmo(code) {
+    return WMO[code] || WMO[0];
+  }
+
+  function getTempPhrase(temp) {
+    if (temp >= 30) return { es: "Hace mucho calor", threshold: "≥30°C" };
+    if (temp >= 25) return { es: "Hace calor",        threshold: "25–29°C" };
+    if (temp >= 20) return { es: "Hace buen tiempo",  threshold: "20–24°C" };
+    if (temp >= 15) return { es: "Hace fresco",       threshold: "15–19°C" };
+    if (temp >= 5)  return { es: "Hace frío",         threshold: "5–14°C"  };
+    return                 { es: "Hace mucho frío",   threshold: "<5°C"    };
+  }
+
+  /* all possible temperature phrases for wrong-answer options */
+  const ALL_TEMP_PHRASES = [
+    "Hace mucho calor", "Hace calor", "Hace buen tiempo",
+    "Hace fresco", "Hace frío", "Hace mucho frío"
+  ];
+
+  /* all possible weather phrases for wrong-answer options */
+  const ALL_WEATHER_PHRASES = [
+    "Hace sol", "Está parcialmente nublado", "Está nublado",
+    "Hay niebla", "Hay llovizna", "Llueve", "Nieva",
+    "Hay chubascos", "Hay tormenta", "Llueve mucho"
+  ];
+
+  function shuffle(arr) {
+    const a = [...arr];
+    for (let i = a.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [a[i], a[j]] = [a[j], a[i]];
+    }
+    return a;
+  }
+
+  function getDistractors(correct, pool, count) {
+    const others = shuffle(pool.filter(p => p !== correct));
+    return others.slice(0, count);
+  }
+
+  /* ── State ── */
+  let city, weatherData, questions;
+  let qIdx = 0, score = 0;
+  let checked = false;
+  const results = [];
+
+  /* ── Fetch weather ── */
+  async function loadCity(cityObj) {
+    const app = document.getElementById('wxApp');
+    app.innerHTML = '<div class="wx-loading" id="wxLoading"><div class="spinner"></div><span>Fetching weather…</span></div>';
+
+    try {
+      const url = `https://api.open-meteo.com/v1/forecast?latitude=${cityObj.lat}&longitude=${cityObj.lon}&current=temperature_2m,precipitation,weathercode,windspeed_10m&wind_speed_unit=kmh&temperature_unit=celsius&timezone=auto`;
+      const res = await fetch(url);
+      if (!res.ok) throw new Error('API error');
+      const data = await res.json();
+      const cur = data.current;
+      weatherData = {
+        temp:  Math.round(cur.temperature_2m),
+        code:  cur.weathercode,
+        wind:  Math.round(cur.windspeed_10m),
+        rain:  cur.precipitation,
+      };
+      city = cityObj;
+      buildExercise();
+    } catch(e) {
+      app.innerHTML = `<div class="wx-error">⚠️ Could not load weather data. Please check your internet connection and try again.<br><br><button onclick="wxPickCity()" style="font-family:inherit;font-size:.9rem;font-weight:700;padding:9px 22px;border-radius:8px;background:var(--green,#6b8c42);color:#fff;border:none;cursor:pointer;">Try again</button></div>`;
+    }
+  }
+
+  function wxPickCity() {
+    const c = CITIES[Math.floor(Math.random() * CITIES.length)];
+    loadCity(c);
+  }
+
+  /* ── Build questions ── */
+  function buildExercise() {
+    const wmo = getWmo(weatherData.code);
+    const tempPhrase = getTempPhrase(weatherData.temp);
+
+    questions = [];
+
+    /* Q1: ¿Qué tiempo hace? (multiple choice, 4 options) */
+    const correctWeather = wmo.es;
+    const wrongWeather = getDistractors(correctWeather, ALL_WEATHER_PHRASES, 3);
+    const weatherOptions = shuffle([correctWeather, ...wrongWeather]);
+    questions.push({
+      type: 'mc',
+      label: 'Pregunta 1',
+      text: `¿Qué tiempo hace en ${city.name}?`,
+      options: weatherOptions,
+      answer: correctWeather,
+      hint: `En ${city.name} ${wmo.en.toLowerCase()} (WMO code ${weatherData.code}).`,
+    });
+
+    /* Q2: temperature fill-blank */
+    questions.push({
+      type: 'fill',
+      label: 'Pregunta 2',
+      prompt: `En ${city.name} hace ___ grados Celsius.`,
+      answer: String(weatherData.temp),
+      answerAlt: [`+${weatherData.temp}`, `${weatherData.temp}°`, `${weatherData.temp}°C`],
+      hint: `La temperatura actual en ${city.name} es de ${weatherData.temp}°C.`,
+    });
+
+    /* Q3: ¿Hace frío o calor? (multiple choice) */
+    const correctTemp = tempPhrase.es;
+    const wrongTemp = getDistractors(correctTemp, ALL_TEMP_PHRASES, 3);
+    const tempOptions = shuffle([correctTemp, ...wrongTemp]);
+    questions.push({
+      type: 'mc',
+      label: 'Pregunta 3',
+      text: `Con ${weatherData.temp}°C, ¿qué dices?`,
+      options: tempOptions,
+      answer: correctTemp,
+      hint: `${weatherData.temp}°C → "${correctTemp}" (${tempPhrase.threshold}).`,
+    });
+
+    renderExercise();
+  }
+
+  /* ── Render exercise shell ── */
+  function renderExercise() {
+    const wmo = getWmo(weatherData.code);
+    const app = document.getElementById('wxApp');
+
+    app.innerHTML = `
+      <div class="wx-city-card" id="wxCityCard">
+        <div class="wx-city-icon">${city.flag} ${wmo.icon}</div>
+        <div class="wx-city-info">
+          <div class="wx-city-name">${city.name}</div>
+          <div class="wx-city-country">${city.country}</div>
+          <div class="wx-data-row">
+            <div class="wx-chip">🌡️ ${weatherData.temp}°C</div>
+            <div class="wx-chip">💨 ${weatherData.wind} km/h</div>
+            ${weatherData.rain > 0 ? `<div class="wx-chip">🌧️ ${weatherData.rain} mm</div>` : ''}
+          </div>
+        </div>
+      </div>
+
+      <div class="wx-prog-wrap" id="wxProgWrap">
+        <div class="wx-prog-labels">
+          <span id="wxProgLabel">Pregunta 1 de ${questions.length}</span>
+          <span id="wxProgScore">0 correctas</span>
+        </div>
+        <div class="wx-prog-track"><div class="wx-prog-fill" id="wxProgFill"></div></div>
+      </div>
+
+      <div id="wxQWrap">
+        <div class="wx-q-card" id="wxQCard">
+          <div id="wxQInner"></div>
+          <div class="wx-fb" id="wxFb"></div>
+          <div class="wx-fb-hint" id="wxFbHint"></div>
+          <div class="wx-action-wrap">
+            <button class="wx-action-btn" id="wxActionBtn" disabled>Check</button>
+          </div>
+          <p class="wx-hint" id="wxHint"></p>
+        </div>
+      </div>
+
+      <div class="wx-summary" id="wxSummary">
+        <div class="wx-score-block">
+          <span class="wx-score-emoji" id="wxSumEmoji"></span>
+          <span class="wx-score-big" id="wxSumNum"></span>
+          <div class="wx-score-denom" id="wxSumDenom"></div>
+          <div class="wx-score-verdict" id="wxSumVerdict"></div>
+        </div>
+        <p class="wx-review-label">Revisión</p>
+        <div class="wx-review-list" id="wxReviewList"></div>
+        <div class="wx-summary-btns">
+          <button class="wx-new-btn" id="wxNewBtn">🌍 New city</button>
+          <button class="wx-retry-btn" id="wxRetryBtn">↩ Try again</button>
+        </div>
+      </div>
+    `;
+
+    document.getElementById('wxNewBtn').addEventListener('click', wxPickCity);
+    document.getElementById('wxRetryBtn').addEventListener('click', wxRetry);
+
+    qIdx = 0; score = 0; checked = false; results.length = 0;
+    renderQuestion(0, false);
+  }
+
+  function renderQuestion(idx, animate) {
+    checked = false;
+    const q = questions[idx];
+
+    document.getElementById('wxProgLabel').textContent = `Pregunta ${idx + 1} de ${questions.length}`;
+    document.getElementById('wxProgFill').style.width = `${(idx / questions.length) * 100}%`;
+
+    document.getElementById('wxFb').className = 'wx-fb';
+    document.getElementById('wxFb').textContent = '';
+    document.getElementById('wxFbHint').className = 'wx-fb-hint';
+    document.getElementById('wxFbHint').innerHTML = '';
+
+    const btn = document.getElementById('wxActionBtn');
+    btn.textContent = 'Check';
+    btn.disabled = true;
+    btn.onclick = wxHandleAction;
+
+    const hint = document.getElementById('wxHint');
+
+    if (q.type === 'mc') {
+      hint.innerHTML = 'Select an option to answer.';
+      document.getElementById('wxQInner').innerHTML = `
+        <p class="wx-q-label">${q.label}</p>
+        <p class="wx-q-text">${q.text}</p>
+        <div class="wx-options" id="wxOptions">
+          ${q.options.map((opt, i) => `
+            <button class="wx-opt" data-opt="${i}" onclick="wxSelectOpt(${i})">
+              <span class="wx-opt-key">${String.fromCharCode(65+i)}</span>
+              <span>${opt}</span>
+            </button>`).join('')}
+        </div>`;
+    } else {
+      hint.innerHTML = 'Press <strong>Enter</strong> to check.';
+      document.getElementById('wxQInner').innerHTML = `
+        <p class="wx-q-label">${q.label}</p>
+        <p class="wx-q-text">Completa la frase:</p>
+        <div class="wx-fill-wrap">
+          <p class="wx-fill-prompt">${q.prompt.replace('___', '<span class="wx-blank">&nbsp;&nbsp;&nbsp;&nbsp;</span>')}</p>
+          <input class="wx-fill-input" id="wxFillInput" type="text"
+            placeholder="escribe aquí"
+            autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
+        </div>`;
+      const fillInp = document.getElementById('wxFillInput');
+      fillInp.addEventListener('input', () => {
+        btn.disabled = fillInp.value.trim() === '';
+      });
+      fillInp.addEventListener('keydown', e => {
+        if (e.key === 'Enter') { e.preventDefault(); if (!btn.disabled) wxHandleAction(); }
+      });
+      setTimeout(() => fillInp.focus(), animate ? 60 : 0);
+    }
+
+    if (animate) {
+      const card = document.getElementById('wxQCard');
+      card.classList.remove('out');
+      card.classList.add('in');
+      card.addEventListener('animationend', () => card.classList.remove('in'), { once: true });
+    }
+  }
+
+  let selectedOpt = null;
+
+  function wxSelectOpt(i) {
+    if (checked) return;
+    selectedOpt = i;
+    document.querySelectorAll('.wx-opt').forEach((el, idx) => {
+      el.classList.toggle('selected-ok', false);
+      el.classList.toggle('selected-bad', false);
+      el.style.borderColor = idx === i ? 'var(--green,#6b8c42)' : '';
+      el.style.background = idx === i ? 'var(--green-tint,#eef4e4)' : '';
+    });
+    document.getElementById('wxActionBtn').disabled = false;
+  }
+
+  function wxHandleAction() {
+    if (!checked) wxCheck(); else wxNext();
+  }
+
+  function wxCheck() {
+    checked = true;
+    const q = questions[qIdx];
+    const fb = document.getElementById('wxFb');
+    const fbHint = document.getElementById('wxFbHint');
+    const btn = document.getElementById('wxActionBtn');
+    const isLast = qIdx === questions.length - 1;
+    let correct;
+
+    if (q.type === 'mc') {
+      correct = q.options[selectedOpt] === q.answer;
+      document.querySelectorAll('.wx-opt').forEach((el, i) => {
+        el.disabled = true;
+        el.style.borderColor = '';
+        el.style.background = '';
+        const isAnswer = q.options[i] === q.answer;
+        const isSelected = i === selectedOpt;
+        if (isAnswer) el.classList.add('reveal-ok');
+        if (isSelected && !correct) el.classList.add('selected-bad');
+      });
+      selectedOpt = null;
+    } else {
+      const inp = document.getElementById('wxFillInput');
+      const val = inp.value.trim();
+      const given = val.toLowerCase().replace(/[°c]/g, '');
+      const ans = q.answer.toLowerCase();
+      const alts = (q.answerAlt || []).map(a => a.toLowerCase().replace(/[°c]/g, ''));
+      correct = given === ans || alts.includes(given);
+      inp.className = 'wx-fill-input ' + (correct ? 'ok' : 'bad');
+      inp.disabled = true;
+    }
+
+    if (correct) score++;
+    results.push({ correct, q });
+
+    fb.textContent = correct ? '✓ ¡Correcto!' : '✗ Not quite.';
+    fb.className = 'wx-fb show ' + (correct ? 'ok' : 'bad');
+
+    if (!correct) {
+      fbHint.innerHTML = `The answer is <strong>${q.answer}</strong>.`;
+      fbHint.className = 'wx-fb-hint show';
+    }
+
+    document.getElementById('wxProgScore').textContent = `${score} correcta${score !== 1 ? 's' : ''}`;
+    btn.textContent = isLast ? 'Ver resultados' : 'Siguiente →';
+    btn.disabled = false;
+    btn.focus();
+  }
+
+  function wxNext() {
+    if (qIdx === questions.length - 1) { wxShowSummary(); return; }
+    const card = document.getElementById('wxQCard');
+    card.classList.add('out');
+    setTimeout(() => { qIdx++; renderQuestion(qIdx, true); }, 190);
+  }
+
+  function wxShowSummary() {
+    document.getElementById('wxQWrap').style.display = 'none';
+    document.getElementById('wxProgWrap').style.display = 'none';
+    const sumEl = document.getElementById('wxSummary');
+    sumEl.classList.add('show');
+
+    const pct = score / questions.length;
+    let emoji, verdict;
+    if (score === questions.length) { emoji = '🌟'; verdict = '¡Perfecto! Outstanding.'; }
+    else if (pct >= .67)             { emoji = '👏'; verdict = '¡Muy bien! Nearly there.'; }
+    else                             { emoji = '💪'; verdict = 'Keep practising!'; }
+
+    document.getElementById('wxSumEmoji').textContent = emoji;
+    const numEl = document.getElementById('wxSumNum');
+    numEl.textContent = score;
+    if (score === questions.length) numEl.classList.add('perfect');
+    document.getElementById('wxSumDenom').textContent = `out of ${questions.length} correct`;
+    document.getElementById('wxSumVerdict').textContent = verdict;
+
+    const list = document.getElementById('wxReviewList');
+    list.innerHTML = '';
+    results.forEach((r, i) => {
+      const item = document.createElement('div');
+      item.className = 'wx-rev-item ' + (r.correct ? 'ok' : 'bad');
+      const icon = r.correct ? '✓' : '✗';
+      let desc;
+      if (r.q.type === 'mc') {
+        desc = r.q.text;
+        const correctAns = `<span class="fix">${r.q.answer}</span>`;
+        desc += ` → ${correctAns}`;
+      } else {
+        desc = r.q.prompt.replace('___', `<span class="fix">${r.q.answer}</span>`);
+      }
+      item.innerHTML =
+        `<div class="wx-rev-icon">${icon}</div>` +
+        `<div class="wx-rev-text">${desc}</div>`;
+      list.appendChild(item);
+    });
+  }
+
+  function wxRetry() {
+    qIdx = 0; score = 0; checked = false; results.length = 0; selectedOpt = null;
+    document.getElementById('wxSummary').classList.remove('show');
+    document.getElementById('wxSumNum').classList.remove('perfect');
+    document.getElementById('wxQWrap').style.display = '';
+    document.getElementById('wxProgWrap').style.display = '';
+    renderQuestion(0, false);
+  }
+
+  /* ── Init: pick a random city ── */
+  window.wxPickCity = wxPickCity;
+  window.wxSelectOpt = wxSelectOpt;
+  wxPickCity();
+})();
+</script>
+</body>
+</html>
