@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Unit 1 · Saludos · Spanish with Brady</title>
   <link rel="stylesheet" href="../../../assets/style.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap">
   <style>
     .lang-zh { display: none; }
     body.zh .lang-en { display: none; }
@@ -33,6 +34,91 @@
       font-size: 0.9rem;
       line-height: 1.6;
     }
+
+    /* ── SER Exercise ── */
+    :root {
+      --ser-card: #ffffff; --ser-fg: #2e2416; --ser-warm: #8B5E3C;
+      --ser-correct: #38763a; --ser-correct-tint: #edf7ed; --ser-correct-border: #82c082;
+      --ser-wrong: #ae3020; --ser-wrong-tint: #fdf2f1; --ser-wrong-border: #d09080;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root:not([data-theme="light"]) {
+        --ser-card: #26211a; --ser-fg: #ece4d4; --ser-warm: #c08855;
+        --ser-correct: #5ca85c; --ser-correct-tint: #142014; --ser-correct-border: #4a8050;
+        --ser-wrong: #d05848; --ser-wrong-tint: #2a1414; --ser-wrong-border: #9a4030;
+      }
+    }
+    :root[data-theme="dark"] {
+      --ser-card: #26211a; --ser-fg: #ece4d4; --ser-warm: #c08855;
+      --ser-correct: #5ca85c; --ser-correct-tint: #142014; --ser-correct-border: #4a8050;
+      --ser-wrong: #d05848; --ser-wrong-tint: #2a1414; --ser-wrong-border: #9a4030;
+    }
+    .ser-ex { font-family: 'Nunito', system-ui, sans-serif; color: var(--ser-fg); margin-top: 16px; }
+    .ser-ex .prog-wrap { margin-bottom: 14px; }
+    .ser-ex .prog-labels { display: flex; justify-content: space-between; font-size: .72rem; font-weight: 700; color: var(--muted); margin-bottom: 5px; }
+    .ser-ex .prog-track { height: 5px; background: var(--border); border-radius: 99px; overflow: hidden; }
+    .ser-ex .prog-fill { height: 100%; background: var(--green); border-radius: 99px; transition: width .45s cubic-bezier(.4,0,.2,1); width: 0%; }
+    .ser-ex .ref-toggle { display: flex; align-items: center; gap: 8px; width: 100%; background: var(--ser-card); border: 1px solid var(--border); border-radius: var(--radius); padding: 11px 16px; font-family: inherit; font-size: .84rem; font-weight: 700; color: var(--ser-warm); cursor: pointer; text-align: left; transition: background .15s; margin-bottom: 0; }
+    .ser-ex .ref-toggle:hover { background: var(--warm-tint); }
+    .ser-ex .ref-toggle .arrow { margin-left: auto; font-size: .65rem; transition: transform .2s; display: inline-block; }
+    .ser-ex .ref-toggle.open { border-radius: var(--radius) var(--radius) 0 0; }
+    .ser-ex .ref-toggle.open .arrow { transform: rotate(180deg); }
+    .ser-ex .ref-body { background: var(--warm-tint); border: 1px solid var(--border); border-top: none; border-radius: 0 0 var(--radius) var(--radius); padding: 14px 16px 16px; margin-bottom: 16px; display: none; }
+    .ser-ex .ref-body.open { display: block; }
+    .ser-ex .ref-table { width: 100%; border-collapse: collapse; font-size: .88rem; }
+    .ser-ex .ref-table thead th { text-align: left; font-size: .7rem; font-weight: 700; letter-spacing: .07em; text-transform: uppercase; color: var(--muted); padding: 0 10px 8px; }
+    .ser-ex .ref-table tbody td { padding: 7px 10px; border-top: 1px solid var(--border); }
+    .ser-ex .ref-table tbody td:first-child { color: var(--muted); }
+    .ser-ex .ref-table tbody td:last-child { font-weight: 800; color: var(--green); font-size: .95rem; }
+    .ser-ex .q-wrap { position: relative; }
+    .ser-ex .q-card { background: var(--ser-card); border: 1.5px solid var(--border); border-radius: var(--radius); padding: 32px 24px 26px; transition: opacity .18s ease, transform .18s ease; }
+    .ser-ex .q-card.out { opacity: 0; transform: translateY(-8px); pointer-events: none; }
+    @keyframes serCardIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+    .ser-ex .q-card.in { animation: serCardIn .22s ease forwards; }
+    .ser-ex .sentence { font-size: 1.2rem; font-weight: 700; text-align: center; line-height: 1.65; margin-bottom: 26px; min-height: 2.2em; display: flex; flex-wrap: wrap; align-items: baseline; justify-content: center; gap: 4px; }
+    .ser-ex .blank-slot { display: inline-block; min-width: 72px; padding: 0 4px; border-bottom: 2.5px solid var(--green); color: transparent; font-size: 1rem; }
+    .ser-ex .filled { display: inline-block; font-weight: 800; padding: 1px 9px 2px; border-radius: 6px; font-size: 1rem; }
+    .ser-ex .filled.ok  { color: var(--ser-correct); background: var(--ser-correct-tint); }
+    .ser-ex .filled.bad { color: var(--ser-wrong); background: var(--ser-wrong-tint); text-decoration: line-through; }
+    .ser-ex .filled.fix { color: var(--ser-correct); background: var(--ser-correct-tint); }
+    .ser-ex .input-area { display: flex; flex-direction: column; align-items: center; gap: 14px; }
+    .ser-ex .main-input { font-family: inherit; font-size: 1.1rem; font-weight: 700; color: var(--ser-fg); background: var(--bg); border: 2px solid var(--border); border-radius: 10px; padding: 11px 20px; width: 100%; max-width: 200px; text-align: center; outline: none; transition: border-color .15s, background .15s, color .15s; }
+    .ser-ex .main-input:focus { border-color: var(--green); }
+    .ser-ex .main-input.ok { border-color: var(--ser-correct-border); background: var(--ser-correct-tint); color: var(--ser-correct); }
+    .ser-ex .main-input.bad { border-color: var(--ser-wrong-border); background: var(--ser-wrong-tint); color: var(--ser-wrong); }
+    .ser-ex .fb-row { text-align: center; font-size: .92rem; font-weight: 700; min-height: 1.4em; transition: opacity .2s; opacity: 0; }
+    .ser-ex .fb-row.show { opacity: 1; }
+    .ser-ex .fb-row.ok { color: var(--ser-correct); }
+    .ser-ex .fb-row.bad { color: var(--ser-wrong); }
+    .ser-ex .fb-correction { text-align: center; font-size: .82rem; color: var(--muted); font-weight: 600; min-height: 1.2em; margin-top: 2px; transition: opacity .2s; opacity: 0; }
+    .ser-ex .fb-correction.show { opacity: 1; }
+    .ser-ex .fb-correction strong { color: var(--ser-correct); font-weight: 800; }
+    .ser-ex .action-btn { font-family: inherit; font-size: .95rem; font-weight: 800; padding: 12px 36px; border-radius: 9px; border: none; cursor: pointer; background: var(--green); color: #fff; transition: opacity .15s, transform .1s; letter-spacing: .01em; }
+    .ser-ex .action-btn:hover { opacity: .87; }
+    .ser-ex .action-btn:active { transform: scale(.97); }
+    .ser-ex .action-btn:disabled { opacity: .4; cursor: default; transform: none; }
+    .ser-ex .hint { text-align: center; font-size: .72rem; color: var(--muted); margin-top: 10px; }
+    .ser-ex .summary { display: none; }
+    .ser-ex .summary.show { display: block; animation: serCardIn .3s ease forwards; }
+    .ser-ex .score-block { text-align: center; margin-bottom: 28px; }
+    .ser-ex .score-emoji { font-size: 2.4rem; display: block; margin-bottom: 6px; }
+    .ser-ex .score-big { font-size: 3.6rem; font-weight: 800; color: var(--green); line-height: 1; display: block; }
+    .ser-ex .score-big.perfect { color: var(--ser-warm); }
+    .ser-ex .score-denom { font-size: 1rem; color: var(--muted); font-weight: 600; margin-top: 2px; }
+    .ser-ex .score-verdict { font-size: 1rem; font-weight: 700; margin-top: 10px; color: var(--ser-fg); }
+    .ser-ex .review-label { font-size: .7rem; font-weight: 700; letter-spacing: .09em; text-transform: uppercase; color: var(--muted); margin: 0 0 9px; }
+    .ser-ex .review-list { display: flex; flex-direction: column; gap: 6px; margin-bottom: 22px; }
+    .ser-ex .rev-item { background: var(--ser-card); border: 1.5px solid var(--border); border-radius: 10px; padding: 10px 14px; display: grid; grid-template-columns: auto 1fr auto; align-items: center; gap: 10px; font-size: .86rem; }
+    .ser-ex .rev-item.ok { border-color: var(--ser-correct-border); }
+    .ser-ex .rev-item.bad { border-color: var(--ser-wrong-border); }
+    .ser-ex .rev-icon { font-size: .95rem; }
+    .ser-ex .rev-text { min-width: 0; font-weight: 600; line-height: 1.4; }
+    .ser-ex .rev-text .ok { color: var(--ser-correct); font-weight: 800; }
+    .ser-ex .rev-text .bad { color: var(--ser-wrong); font-weight: 800; text-decoration: line-through; }
+    .ser-ex .rev-text .fix { color: var(--ser-correct); font-weight: 800; }
+    .ser-ex .rev-num { font-size: .7rem; color: var(--muted); font-weight: 700; }
+    .ser-ex .retry-btn { font-family: inherit; font-size: .9rem; font-weight: 700; padding: 11px 30px; border-radius: 9px; background: var(--ser-card); border: 1.5px solid var(--border); color: var(--ser-fg); cursor: pointer; transition: background .15s; display: block; margin: 0 auto; }
+    .ser-ex .retry-btn:hover { background: var(--bg); }
   </style>
 </head>
 <body>
@@ -622,6 +708,74 @@
       </div>
     </details>
 
+    <details class="panel">
+      <summary class="panel-summary">
+        <span class="panel-num">10</span>
+        <span class="panel-title"><span class="lang-en">✏️ Practice — Verb SER</span><span class="lang-zh">✏️ 练习 — 动词 SER</span></span>
+        <svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg>
+      </summary>
+      <div class="panel-body">
+        <p class="lang-en-block">Fill in the correct form of <strong>ser</strong>. One question at a time — type your answer and press Enter or tap Check.</p>
+        <p class="lang-zh-block">填写正确的 <strong>ser</strong> 变位形式，每次一题。输入答案后按回车键或点击"Check"。</p>
+
+        <div class="ser-ex">
+          <button class="ref-toggle" id="ser-refToggle" aria-expanded="false">
+            📋 Conjugation reference — tap to show / hide
+            <span class="arrow">▼</span>
+          </button>
+          <div class="ref-body" id="ser-refBody">
+            <table class="ref-table">
+              <thead><tr><th>Pronoun</th><th>Ser</th></tr></thead>
+              <tbody>
+                <tr><td>yo</td><td>soy</td></tr>
+                <tr><td>tú</td><td>eres</td></tr>
+                <tr><td>él / ella / usted</td><td>es</td></tr>
+                <tr><td>nosotros / nosotras</td><td>somos</td></tr>
+                <tr><td>vosotros / vosotras</td><td>sois</td></tr>
+                <tr><td>ellos / ellas / ustedes</td><td>son</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="prog-wrap" id="ser-progWrap">
+            <div class="prog-labels">
+              <span id="ser-progLabel">Question 1 of 10</span>
+              <span id="ser-progScore">0 correct</span>
+            </div>
+            <div class="prog-track"><div class="prog-fill" id="ser-progFill"></div></div>
+          </div>
+
+          <div class="q-wrap" id="ser-qWrap">
+            <div class="q-card" id="ser-qCard">
+              <div class="sentence" id="ser-sentence"></div>
+              <div class="input-area">
+                <input class="main-input" id="ser-mainInput" type="text"
+                  placeholder="escribe aquí"
+                  autocomplete="off" autocorrect="off"
+                  autocapitalize="off" spellcheck="false">
+                <div class="fb-row" id="ser-fbRow"></div>
+                <div class="fb-correction" id="ser-fbCorr"></div>
+                <button class="action-btn" id="ser-actionBtn">Check</button>
+              </div>
+            </div>
+            <p class="hint">Press <strong>Enter</strong> to check · <strong>Enter</strong> again to continue</p>
+          </div>
+
+          <div class="summary" id="ser-summary">
+            <div class="score-block">
+              <span class="score-emoji" id="ser-sumEmoji"></span>
+              <span class="score-big" id="ser-sumNum"></span>
+              <div class="score-denom" id="ser-sumDenom"></div>
+              <div class="score-verdict" id="ser-sumVerdict"></div>
+            </div>
+            <p class="review-label">Review</p>
+            <div class="review-list" id="ser-reviewList"></div>
+            <button class="retry-btn" id="ser-retryBtn">↩ Try again</button>
+          </div>
+        </div>
+      </div>
+    </details>
+
   </div>
 
   <div class="unit-nav">
@@ -660,5 +814,171 @@ if (saved === 'zh') setLang('zh');
 </script>
 
 <script src="../../../assets/search.js"></script>
+
+<script>
+(function() {
+  const serData = [
+    { before: "Yo",        after: "de Canadá.",               answer: "soy"   },
+    { before: "Tú",        after: "muy simpático.",           answer: "eres"  },
+    { before: "Él",        after: "médico en el hospital.",   answer: "es"    },
+    { before: "Ella",      after: "profesora de español.",    answer: "es"    },
+    { before: "Nosotros",  after: "estudiantes.",             answer: "somos" },
+    { before: "¿De dónde", after: "tú?",                     answer: "eres"  },
+    { before: "Ellos",     after: "muy amables.",             answer: "son"   },
+    { before: "Usted",     after: "el director, ¿verdad?",   answer: "es"    },
+    { before: "Vosotros",  after: "de Madrid.",               answer: "sois"  },
+    { before: "¿Ustedes",  after: "hermanos?",                answer: "son"   },
+  ];
+
+  let serCurrent = 0, serChecked = false, serScore = 0;
+  const serResults = [];
+
+  const serQCard     = document.getElementById('ser-qCard');
+  const serSentence  = document.getElementById('ser-sentence');
+  const serInp       = document.getElementById('ser-mainInput');
+  const serFbRow     = document.getElementById('ser-fbRow');
+  const serFbCorr    = document.getElementById('ser-fbCorr');
+  const serActionBtn = document.getElementById('ser-actionBtn');
+  const serProgFill  = document.getElementById('ser-progFill');
+  const serProgLabel = document.getElementById('ser-progLabel');
+  const serProgScore = document.getElementById('ser-progScore');
+
+  function serEsc(s) {
+    return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+  }
+
+  function serRenderQuestion(idx, animate) {
+    serChecked = false;
+    const ex = serData[idx];
+    serSentence.innerHTML =
+      `<span>${ex.before}&nbsp;</span>` +
+      `<span class="blank-slot">&nbsp;</span>` +
+      `<span>&nbsp;${ex.after}</span>`;
+    serInp.value = '';
+    serInp.className = 'main-input';
+    serInp.disabled = false;
+    serFbRow.textContent = '';
+    serFbRow.className = 'fb-row';
+    serFbCorr.innerHTML = '';
+    serFbCorr.className = 'fb-correction';
+    serActionBtn.textContent = 'Check';
+    serActionBtn.disabled = false;
+    serProgLabel.textContent = `Question ${idx + 1} of ${serData.length}`;
+    serProgFill.style.width = `${(idx / serData.length) * 100}%`;
+    if (animate) {
+      serQCard.classList.remove('out');
+      serQCard.classList.add('in');
+      serQCard.addEventListener('animationend', () => serQCard.classList.remove('in'), { once: true });
+    }
+    setTimeout(() => serInp.focus(), animate ? 50 : 0);
+  }
+
+  function serHandleAction() {
+    if (!serChecked) serCheckAnswer(); else serNextQuestion();
+  }
+
+  function serCheckAnswer() {
+    const ex = serData[serCurrent];
+    const val = serInp.value.trim().toLowerCase();
+    if (!val) { serInp.focus(); return; }
+    serChecked = true;
+    const correct = val === ex.answer;
+    if (correct) serScore++;
+    serResults.push({ correct, given: serInp.value.trim(), answer: ex.answer });
+    serInp.className = 'main-input ' + (correct ? 'ok' : 'bad');
+    serInp.disabled = true;
+    serSentence.innerHTML =
+      `<span>${ex.before}&nbsp;</span>` +
+      (correct
+        ? `<span class="filled ok">${serEsc(serInp.value.trim())}</span>`
+        : `<span class="filled bad">${serEsc(serInp.value.trim())}</span>
+           <span style="margin:0 2px;color:var(--muted);font-weight:400;font-size:.85rem;">→</span>
+           <span class="filled fix">${ex.answer}</span>`) +
+      `<span>&nbsp;${ex.after}</span>`;
+    serFbRow.textContent = correct ? '✓ ¡Correcto!' : '✗ Not quite.';
+    serFbRow.className = 'fb-row show ' + (correct ? 'ok' : 'bad');
+    if (!correct) {
+      serFbCorr.innerHTML = `The answer is <strong>${ex.answer}</strong>.`;
+      serFbCorr.className = 'fb-correction show';
+    }
+    serProgScore.textContent = `${serScore} correct`;
+    const isLast = serCurrent === serData.length - 1;
+    serActionBtn.textContent = isLast ? 'See results' : 'Next →';
+    serActionBtn.disabled = false;
+    serActionBtn.focus();
+  }
+
+  function serNextQuestion() {
+    if (serCurrent === serData.length - 1) { serShowSummary(); return; }
+    serQCard.classList.add('out');
+    setTimeout(() => { serCurrent++; serRenderQuestion(serCurrent, true); }, 190);
+  }
+
+  function serShowSummary() {
+    document.getElementById('ser-qWrap').style.display = 'none';
+    document.getElementById('ser-progWrap').style.display = 'none';
+    const sumEl = document.getElementById('ser-summary');
+    sumEl.classList.add('show');
+    const pct = serScore / serData.length;
+    let emoji, verdict;
+    if (serScore === serData.length)  { emoji = '🌟'; verdict = '¡Perfecto! Outstanding.'; }
+    else if (pct >= .8)                { emoji = '👏'; verdict = '¡Muy bien! Nearly there.'; }
+    else if (pct >= .6)                { emoji = '💪'; verdict = '¡Bien! Keep practising.'; }
+    else                               { emoji = '📖'; verdict = 'Review the table and try again.'; }
+    document.getElementById('ser-sumEmoji').textContent = emoji;
+    const numEl = document.getElementById('ser-sumNum');
+    numEl.textContent = serScore;
+    if (serScore === serData.length) numEl.classList.add('perfect');
+    document.getElementById('ser-sumDenom').textContent = `out of ${serData.length} correct`;
+    document.getElementById('ser-sumVerdict').textContent = verdict;
+    const list = document.getElementById('ser-reviewList');
+    list.innerHTML = '';
+    serData.forEach((ex, i) => {
+      const r = serResults[i];
+      const item = document.createElement('div');
+      item.className = 'rev-item ' + (r.correct ? 'ok' : 'bad');
+      const ansHtml = r.correct
+        ? `<span class="ok">${ex.answer}</span>`
+        : `<span class="bad">${serEsc(r.given)}</span> → <span class="fix">${ex.answer}</span>`;
+      item.innerHTML =
+        `<div class="rev-icon">${r.correct ? '✓' : '✗'}</div>` +
+        `<div class="rev-text">${ex.before} ${ansHtml} ${ex.after}</div>` +
+        `<div class="rev-num">${i + 1}</div>`;
+      list.appendChild(item);
+    });
+    serProgFill.style.width = '100%';
+  }
+
+  function serRestart() {
+    serCurrent = 0; serScore = 0; serChecked = false;
+    serResults.length = 0;
+    document.getElementById('ser-summary').classList.remove('show');
+    document.getElementById('ser-sumNum').classList.remove('perfect');
+    document.getElementById('ser-qWrap').style.display = '';
+    document.getElementById('ser-progWrap').style.display = '';
+    serProgScore.textContent = '0 correct';
+    serQCard.classList.remove('out', 'in');
+    serRenderQuestion(0, false);
+  }
+
+  function serToggleRef() {
+    const btn = document.getElementById('ser-refToggle');
+    const body = document.getElementById('ser-refBody');
+    const open = body.classList.toggle('open');
+    btn.classList.toggle('open', open);
+    btn.setAttribute('aria-expanded', open);
+  }
+
+  serActionBtn.addEventListener('click', serHandleAction);
+  document.getElementById('ser-retryBtn').addEventListener('click', serRestart);
+  document.getElementById('ser-refToggle').addEventListener('click', serToggleRef);
+
+  serInp.addEventListener('keydown', e => {
+    if (e.key === 'Enter') { e.preventDefault(); serHandleAction(); }
+  });
+
+  serRenderQuestion(0, false);
+})();
+</script>
 </body>
 </html>
