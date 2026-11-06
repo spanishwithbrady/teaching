@@ -48,18 +48,24 @@
       --wx-card: #ffffff; --wx-fg: #2e2416; --wx-warm: #8B5E3C;
       --wx-correct: #38763a; --wx-correct-tint: #edf7ed; --wx-correct-border: #82c082;
       --wx-wrong: #ae3020; --wx-wrong-tint: #fdf2f1; --wx-wrong-border: #d09080;
+      --wx-chip-bg: #eef4e4; --wx-chip-border: #c8ddb0; --wx-chip-fg: #3d6020;
+      --wx-opt-bg: #f7f5ef; --wx-opt-border: #d4cec4;
     }
     @media (prefers-color-scheme: dark) {
       :root:not([data-theme="light"]) {
-        --wx-card: #26211a; --wx-fg: #ece4d4; --wx-warm: #c08855;
+        --wx-card: #2a2318; --wx-fg: #e8dfc8; --wx-warm: #c08855;
         --wx-correct: #5ca85c; --wx-correct-tint: #142014; --wx-correct-border: #4a8050;
         --wx-wrong: #d05848; --wx-wrong-tint: #2a1414; --wx-wrong-border: #9a4030;
+        --wx-chip-bg: #354028; --wx-chip-border: #4a6030; --wx-chip-fg: #9dc865;
+        --wx-opt-bg: #38301e; --wx-opt-border: #5a4e38;
       }
     }
     :root[data-theme="dark"] {
-      --wx-card: #26211a; --wx-fg: #ece4d4; --wx-warm: #c08855;
+      --wx-card: #2a2318; --wx-fg: #e8dfc8; --wx-warm: #c08855;
       --wx-correct: #5ca85c; --wx-correct-tint: #142014; --wx-correct-border: #4a8050;
       --wx-wrong: #d05848; --wx-wrong-tint: #2a1414; --wx-wrong-border: #9a4030;
+      --wx-chip-bg: #354028; --wx-chip-border: #4a6030; --wx-chip-fg: #9dc865;
+      --wx-opt-bg: #38301e; --wx-opt-border: #5a4e38;
     }
     .wx-ex { font-family: system-ui, sans-serif; color: var(--wx-fg); margin-top: 16px; }
     .wx-loading { text-align: center; padding: 32px 0; color: var(--muted); font-size: .9rem; font-weight: 600; }
@@ -72,7 +78,7 @@
     .wx-city-name { font-size: 1.1rem; font-weight: 800; color: var(--wx-fg); margin: 0 0 2px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
     .wx-city-country { font-size: .78rem; color: var(--muted); font-weight: 600; }
     .wx-data-row { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 8px; }
-    .wx-chip { background: var(--green-tint); border: 1px solid #c8ddb0; border-radius: 7px; padding: 4px 10px; font-size: .78rem; font-weight: 700; color: var(--green); }
+    .wx-chip { background: var(--wx-chip-bg); border: 1px solid var(--wx-chip-border); border-radius: 7px; padding: 4px 10px; font-size: .78rem; font-weight: 700; color: var(--wx-chip-fg); }
     .wx-prog-wrap { margin-bottom: 12px; }
     .wx-prog-labels { display: flex; justify-content: space-between; font-size: .72rem; font-weight: 700; color: var(--muted); margin-bottom: 5px; }
     .wx-prog-track { height: 5px; background: var(--border); border-radius: 99px; overflow: hidden; }
@@ -84,7 +90,7 @@
     .wx-q-label { font-size: .68rem; font-weight: 700; letter-spacing: .09em; text-transform: uppercase; color: var(--muted); margin: 0 0 8px; }
     .wx-q-text { font-size: 1.05rem; font-weight: 800; color: var(--wx-fg); margin: 0 0 18px; line-height: 1.4; }
     .wx-options { display: flex; flex-direction: column; gap: 8px; }
-    .wx-opt { background: var(--bg); border: 2px solid var(--border); border-radius: 9px; padding: 11px 14px; font-family: inherit; font-size: .92rem; font-weight: 700; color: var(--wx-fg); cursor: pointer; text-align: left; transition: border-color .15s, background .15s; display: flex; align-items: center; gap: 9px; }
+    .wx-opt { background: var(--wx-opt-bg); border: 2px solid var(--wx-opt-border); border-radius: 9px; padding: 11px 14px; font-family: inherit; font-size: .92rem; font-weight: 700; color: var(--wx-fg); cursor: pointer; text-align: left; transition: border-color .15s, background .15s; display: flex; align-items: center; gap: 9px; }
     .wx-opt:hover:not(:disabled) { border-color: var(--green); background: var(--green-tint); }
     .wx-opt:disabled { cursor: default; }
     .wx-opt.selected-ok { border-color: var(--wx-correct-border); background: var(--wx-correct-tint); color: var(--wx-correct); }
@@ -94,7 +100,7 @@
     .wx-fill-wrap { display: flex; flex-direction: column; align-items: center; gap: 10px; }
     .wx-fill-prompt { font-size: .95rem; font-weight: 700; color: var(--wx-fg); text-align: center; }
     .wx-fill-prompt .wx-blank { display: inline-block; min-width: 56px; border-bottom: 2.5px solid var(--green); color: transparent; vertical-align: bottom; }
-    .wx-fill-input { font-family: inherit; font-size: 1.05rem; font-weight: 700; color: var(--wx-fg); background: var(--bg); border: 2px solid var(--border); border-radius: 9px; padding: 10px 18px; width: 150px; text-align: center; outline: none; transition: border-color .15s, background .15s, color .15s; }
+    .wx-fill-input { font-family: inherit; font-size: 1.05rem; font-weight: 700; color: var(--wx-fg); background: var(--wx-opt-bg); border: 2px solid var(--wx-opt-border); border-radius: 9px; padding: 10px 18px; width: 100%; max-width: 280px; text-align: center; outline: none; transition: border-color .15s, background .15s, color .15s; }
     .wx-fill-input:focus { border-color: var(--green); }
     .wx-fill-input.ok { border-color: var(--wx-correct-border); background: var(--wx-correct-tint); color: var(--wx-correct); }
     .wx-fill-input.bad { border-color: var(--wx-wrong-border); background: var(--wx-wrong-tint); color: var(--wx-wrong); }
@@ -754,6 +760,23 @@ if (saved === 'zh') setLang('zh');
 
   function getWmo(code) { return WMO[code] || WMO[0]; }
 
+  function numToSpanish(n) {
+    if (n < 0) return 'menos ' + numToSpanish(-n);
+    var under30 = ['cero','uno','dos','tres','cuatro','cinco','seis','siete','ocho','nueve',
+      'diez','once','doce','trece','catorce','quince','dieciséis','diecisiete','dieciocho','diecinueve',
+      'veinte','veintiuno','veintidós','veintitrés','veinticuatro','veinticinco','veintiséis','veintisiete','veintiocho','veintinueve'];
+    if (n < 30) return under30[n];
+    var t = Math.floor(n / 10) * 10, o = n % 10;
+    var tensMap = {30:'treinta', 40:'cuarenta', 50:'cincuenta'};
+    return o === 0 ? tensMap[t] : (tensMap[t] || String(n)) + ' y ' + under30[o];
+  }
+
+  function normalize(s) {
+    return s.trim().toLowerCase()
+      .replace(/á/g,'a').replace(/é/g,'e').replace(/í/g,'i').replace(/ó/g,'o').replace(/ú/g,'u')
+      .replace(/ü/g,'u');
+  }
+
   function getTempPhrase(t) {
     if (t >= 30) return "Hace mucho calor";
     if (t >= 25) return "Hace calor";
@@ -815,7 +838,7 @@ if (saved === 'zh') setLang('zh');
         options: shuffle([w.es].concat(distractors(w.es, ALL_WEATHER, 3))), answer: w.es },
       { type:'fill', label:'Pregunta 2',
         prompt:'En ' + city.name + ' hace ___ grados Celsius.',
-        answer: String(wdata.temp) },
+        answer: numToSpanish(wdata.temp) },
       { type:'mc', label:'Pregunta 3', text:'Con ' + wdata.temp + '°C, ¿qué dices?',
         options: shuffle([tp].concat(distractors(tp, ALL_TEMP, 3))), answer: tp },
     ];
@@ -898,13 +921,13 @@ if (saved === 'zh') setLang('zh');
         btn.disabled = false;
       });
     } else {
-      hint.innerHTML = 'Press <strong>Enter</strong> to check.';
+      hint.innerHTML = 'Escribe el número <strong>en palabras</strong> · Press <strong>Enter</strong> to check.';
       document.getElementById('wx11-qinner').innerHTML =
         '<p class="wx-q-label">' + q.label + '</p>' +
         '<p class="wx-q-text">Completa la frase:</p>' +
         '<div class="wx-fill-wrap">' +
-          '<p class="wx-fill-prompt">' + q.prompt.replace('___', '<span class="wx-blank">&nbsp;&nbsp;&nbsp;</span>') + '</p>' +
-          '<input class="wx-fill-input" id="wx11-inp" type="text" placeholder="escribe aquí" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">' +
+          '<p class="wx-fill-prompt">' + q.prompt.replace('___', '<span class="wx-blank">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>') + '</p>' +
+          '<input class="wx-fill-input" id="wx11-inp" type="text" placeholder="escribe en palabras…" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">' +
         '</div>';
       var inp = document.getElementById('wx11-inp');
       inp.addEventListener('input', function() { btn.disabled = inp.value.trim() === ''; });
@@ -937,8 +960,7 @@ if (saved === 'zh') setLang('zh');
       });
     } else {
       var inp = document.getElementById('wx11-inp');
-      var v = inp.value.trim().toLowerCase().replace(/[°c]/g,'');
-      correct = v === q.answer.toLowerCase();
+      correct = normalize(inp.value) === normalize(q.answer);
       inp.className = 'wx-fill-input ' + (correct ? 'ok' : 'bad');
       inp.disabled = true;
     }
