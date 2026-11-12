@@ -450,24 +450,38 @@
         <svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg>
       </summary>
       <div class="panel-body">
-        <h4><span class="lang-en">Exercise 1 — Choose the right greeting</span><span class="lang-zh">练习一 — 选择正确的问候语</span></h4>
-        <p class="lang-en-block">What would you say in each situation? Write the correct Spanish greeting or farewell.</p>
-        <p class="lang-zh-block">在以下每种情境中，你会说什么？写出正确的西班牙语问候或告别语。</p>
+        <h4><span class="lang-en">Exercise 1 — Match the expressions</span><span class="lang-zh">练习一 — 连线匹配</span></h4>
+        <p class="lang-en-block">Click a Spanish expression, then click its English meaning. All 10 pairs to find.</p>
+        <p class="lang-zh-block">点击一个西班牙语表达，再点击其对应的英语意思，共10组。</p>
+        <div id="match-ex" style="margin:16px 0;">
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;" id="match-grid"></div>
+          <div id="match-status" style="text-align:center;font-size:.82rem;font-weight:700;color:var(--muted);margin-top:10px;">0 / 10 matched</div>
+          <div id="match-done" style="display:none;text-align:center;padding:14px;background:#edf7ed;border:1px solid #82c082;border-radius:10px;color:#38763a;font-weight:700;margin-top:12px;">🌟 ¡Perfecto! All matched! <button onclick="matchRetry()" style="margin-left:12px;font-family:inherit;font-size:.8rem;font-weight:700;padding:5px 14px;border-radius:7px;background:#38763a;color:#fff;border:none;cursor:pointer;">↩ Again</button></div>
+        </div>
+
+        <h4 style="margin-top:24px;"><span class="lang-en">Exercise 2 — What would you say?</span><span class="lang-zh">练习二 — 你会怎么说？</span></h4>
+        <p class="lang-en-block">Write the correct Spanish expression for each situation.</p>
+        <p class="lang-zh-block">根据情境写出正确的西班牙语表达。</p>
         <div class="exercise-block">
         <div style="text-align:right; margin-bottom:8px;"><button onclick="this.closest('.exercise-block').querySelectorAll('input').forEach(function(i){i.value=''})" style="font-size:12px; color:#8B5E3C; background:none; border:1px solid #e2ddd4; border-radius:4px; padding:3px 10px; cursor:pointer;">Clear / 清空</button></div>
         <ol>
-          <li>It is 9:00 a.m. Your class is starting. You say hello to your teacher. → <input type="text" class="ex-input" placeholder="..." style="width:220px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"></li>
-          <li>It is 3:00 p.m. You meet a friend on WeChat. → <input type="text" class="ex-input" placeholder="..." style="width:220px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"></li>
-          <li>It is 10:00 p.m. Your lesson just ended. → <input type="text" class="ex-input" placeholder="..." style="width:220px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"></li>
-          <li>You will see your teacher again tomorrow. How do you say goodbye? → <input type="text" class="ex-input" placeholder="..." style="width:220px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"></li>
-          <li>You bump into someone accidentally. → <input type="text" class="ex-input" placeholder="..." style="width:220px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"></li>
-          <li>Someone says gracias to you. → <input type="text" class="ex-input" placeholder="..." style="width:220px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"></li>
-          <li>You need to pass someone in a narrow corridor. → <input type="text" class="ex-input" placeholder="..." style="width:220px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"></li>
-          <li>You meet Ana for the first time (you are male). → <input type="text" class="ex-input" placeholder="..." style="width:220px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"></li>
+          <li>It is 9:00 a.m. Your class is starting. You say hello to your teacher. → <input type="text" class="ex-input" placeholder="..." style="width:200px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"></li>
+          <li>It is 3:00 p.m. You meet a friend on WeChat. → <input type="text" class="ex-input" placeholder="..." style="width:200px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"></li>
+          <li>It is 10:00 p.m. Your lesson just ended. → <input type="text" class="ex-input" placeholder="..." style="width:200px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"></li>
+          <li>You will see your teacher again tomorrow. How do you say goodbye? → <input type="text" class="ex-input" placeholder="..." style="width:200px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"></li>
+          <li>You bump into someone accidentally. → <input type="text" class="ex-input" placeholder="..." style="width:200px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"></li>
+          <li>Someone says gracias to you. → <input type="text" class="ex-input" placeholder="..." style="width:200px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"></li>
+          <li>You meet Ana for the first time (you are male). → <input type="text" class="ex-input" placeholder="..." style="width:200px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"></li>
         </ol>
+        <details style="margin-top:10px;"><summary style="cursor:pointer;color:#5a7a32;font-weight:500;font-size:13px;"><span class="lang-en">Show answers</span><span class="lang-zh">查看答案</span></summary>
+          <ol style="font-size:13px;margin-top:6px;line-height:2;">
+            <li>Buenos días</li><li>Buenas tardes</li><li>Buenas noches</li>
+            <li>¡Hasta mañana!</li><li>Perdón / Lo siento</li><li>De nada</li><li>Encantado</li>
+          </ol>
+        </details>
         </div>
 
-        <h4><span class="lang-en">Exercise 2 — Tú or Usted?</span><span class="lang-zh">练习二 — 用 Tú 还是 Usted？</span></h4>
+        <h4><span class="lang-en">Exercise 3 — Tú or Usted?</span><span class="lang-zh">练习三 — 用 Tú 还是 Usted？</span></h4>
         <p class="lang-en-block">For each person, decide: tú or usted?</p>
         <p class="lang-zh-block">对以下每个人，判断应使用 tú 还是 usted。</p>
         <ol>
@@ -479,7 +493,7 @@
           <li>Your younger sister</li>
         </ol>
 
-        <h4><span class="lang-en">Exercise 3 — Complete with SER</span><span class="lang-zh">练习三 — 用 SER 的正确形式填空</span></h4>
+        <h4><span class="lang-en">Exercise 4 — Complete with SER</span><span class="lang-zh">练习四 — 用 SER 的正确形式填空</span></h4>
         <p class="lang-en-block">Fill in the correct form of SER.</p>
         <p class="lang-zh-block">用 SER 的正确形式填空。</p>
         <div class="exercise-block">
@@ -1088,6 +1102,141 @@ if (saved === 'zh') setLang('zh');
   });
 
   serRenderQuestion(0, false);
+})();
+</script>
+
+<script>
+/* ── Matching exercise (Panel 4, Exercise 1) ── */
+(function() {
+  var pairs = [
+    { es: 'Buenos días',    en: 'Good morning'       },
+    { es: 'Buenas tardes',  en: 'Good afternoon'     },
+    { es: 'Buenas noches',  en: 'Good evening/night' },
+    { es: 'Hola',           en: 'Hello / Hi'          },
+    { es: '¡Hasta luego!',  en: 'See you later'       },
+    { es: 'Mucho gusto',    en: 'Nice to meet you'    },
+    { es: 'Por favor',      en: 'Please'              },
+    { es: 'Gracias',        en: 'Thank you'           },
+    { es: 'De nada',        en: "You're welcome"      },
+    { es: 'Perdón',         en: 'Sorry / Excuse me'   },
+  ];
+
+  var selectedEl = null, selectedSide = null, selectedKey = null;
+  var matched = 0;
+
+  function shuffle(a) {
+    var b = a.slice();
+    for (var i = b.length - 1; i > 0; i--) {
+      var j = Math.floor(Math.random() * (i + 1));
+      var t = b[i]; b[i] = b[j]; b[j] = t;
+    }
+    return b;
+  }
+
+  var esOrder = shuffle(pairs.map(function(p) { return p.es; }));
+  var enOrder = shuffle(pairs.map(function(p) { return p.en; }));
+
+  var esMap = {}, enMap = {};
+
+  function btnStyle(active) {
+    return 'font-family:inherit;font-size:.88rem;font-weight:700;padding:9px 12px;border-radius:9px;border:2px solid var(--border);background:var(--bg);color:var(--brown);cursor:pointer;text-align:center;transition:border-color .15s,background .15s;width:100%;';
+  }
+
+  function buildGrid() {
+    var grid = document.getElementById('match-grid');
+    if (!grid) return;
+    grid.innerHTML = '';
+    esOrder.forEach(function(es) {
+      var btn = document.createElement('button');
+      btn.textContent = es;
+      btn.style.cssText = btnStyle();
+      btn.setAttribute('data-key', es);
+      btn.setAttribute('data-side', 'es');
+      btn.addEventListener('click', function() { handleClick(this, 'es', es); });
+      esMap[es] = btn;
+      grid.appendChild(btn);
+
+      var pair = pairs.find(function(p) { return p.es === es; });
+      var enBtn = document.createElement('button');
+      enBtn.textContent = pair.en;
+      enBtn.style.cssText = btnStyle();
+      enBtn.setAttribute('data-key', es);
+      enBtn.setAttribute('data-side', 'en');
+      enBtn.addEventListener('click', function() { handleClick(this, 'en', es); });
+      enMap[es] = enBtn;
+      grid.appendChild(enBtn);
+    });
+    /* shuffle display order: en buttons appear in enOrder, not paired rows */
+    /* rebuild so es col is left, en col is right but independently shuffled */
+    grid.innerHTML = '';
+    var esCol = document.createElement('div');
+    var enCol = document.createElement('div');
+    esCol.style.cssText = 'display:flex;flex-direction:column;gap:8px;';
+    enCol.style.cssText = 'display:flex;flex-direction:column;gap:8px;';
+    grid.style.cssText = 'display:grid;grid-template-columns:1fr 1fr;gap:12px;';
+
+    esOrder.forEach(function(es) { esCol.appendChild(esMap[es]); });
+    enOrder.forEach(function(enText) {
+      var key = pairs.find(function(p) { return p.en === enText; }).es;
+      enCol.appendChild(enMap[key]);
+    });
+    grid.appendChild(esCol);
+    grid.appendChild(enCol);
+  }
+
+  function handleClick(btn, side, key) {
+    if (btn.disabled) return;
+    if (selectedEl === null) {
+      selectedEl = btn; selectedSide = side; selectedKey = key;
+      btn.style.borderColor = 'var(--green)'; btn.style.background = 'var(--green-tint)';
+    } else {
+      if (selectedEl === btn) {
+        btn.style.borderColor = 'var(--border)'; btn.style.background = 'var(--bg)';
+        selectedEl = null; selectedSide = null; selectedKey = null;
+        return;
+      }
+      if (selectedSide === side) {
+        selectedEl.style.borderColor = 'var(--border)'; selectedEl.style.background = 'var(--bg)';
+        selectedEl = btn; selectedSide = side; selectedKey = key;
+        btn.style.borderColor = 'var(--green)'; btn.style.background = 'var(--green-tint)';
+        return;
+      }
+      var correct = selectedKey === key;
+      var a = selectedEl, b = btn;
+      if (correct) {
+        [a, b].forEach(function(el) {
+          el.style.borderColor = '#82c082'; el.style.background = '#edf7ed'; el.style.color = '#38763a';
+          el.disabled = true;
+        });
+        matched++;
+        document.getElementById('match-status').textContent = matched + ' / 10 matched';
+        if (matched === pairs.length) {
+          document.getElementById('match-done').style.display = 'block';
+        }
+      } else {
+        [a, b].forEach(function(el) {
+          el.style.borderColor = '#d09080'; el.style.background = '#fdf2f1';
+        });
+        setTimeout(function() {
+          [a, b].forEach(function(el) {
+            if (!el.disabled) { el.style.borderColor = 'var(--border)'; el.style.background = 'var(--bg)'; }
+          });
+        }, 600);
+      }
+      selectedEl = null; selectedSide = null; selectedKey = null;
+    }
+  }
+
+  window.matchRetry = function() {
+    matched = 0; selectedEl = null; selectedSide = null; selectedKey = null;
+    esOrder = shuffle(pairs.map(function(p) { return p.es; }));
+    enOrder = shuffle(pairs.map(function(p) { return p.en; }));
+    document.getElementById('match-done').style.display = 'none';
+    document.getElementById('match-status').textContent = '0 / 10 matched';
+    buildGrid();
+  };
+
+  buildGrid();
 })();
 </script>
 
