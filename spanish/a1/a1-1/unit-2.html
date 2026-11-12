@@ -738,7 +738,17 @@ const crCountries = [
   { name: "China", flag: "🇨🇳" },
   { name: "Japón", flag: "🇯🇵" },
   { name: "Estados Unidos", flag: "🇺🇸" },
-  { name: "Canadá", flag: "🇨🇦" }
+  { name: "Canadá", flag: "🇨🇦" },
+  { name: "India", flag: "🇮🇳" },
+  { name: "Corea del Sur", flag: "🇰🇷" },
+  { name: "Tailandia", flag: "🇹🇭" },
+  { name: "Egipto", flag: "🇪🇬" },
+  { name: "Nigeria", flag: "🇳🇬" },
+  { name: "Marruecos", flag: "🇲🇦" },
+  { name: "Sudáfrica", flag: "🇿🇦" },
+  { name: "Kenia", flag: "🇰🇪" },
+  { name: "Brasil", flag: "🇧🇷" },
+  { name: "Australia", flag: "🇦🇺" }
 ];
 
 function crInit(root) {
@@ -784,14 +794,26 @@ document.querySelectorAll('.cr-widget').forEach(crInit);
 // ── Flash card tool ──
 (function () {
   var fcData = [
-    { name: 'España',      code: 'es', nat: 'español / española' },
-    { name: 'México',      code: 'mx', nat: 'mexicano / mexicana' },
-    { name: 'Argentina',   code: 'ar', nat: 'argentino / argentina' },
-    { name: 'Francia',     code: 'fr', nat: 'francés / francesa' },
-    { name: 'Alemania',    code: 'de', nat: 'alemán / alemana' },
-    { name: 'China',       code: 'cn', nat: 'chino / china' },
-    { name: 'Japón',       code: 'jp', nat: 'japonés / japonesa' },
-    { name: 'Reino Unido', code: 'gb', nat: 'británico / británica' }
+    { name: 'España',       code: 'es', nat: 'español / española' },
+    { name: 'México',       code: 'mx', nat: 'mexicano / mexicana' },
+    { name: 'Argentina',    code: 'ar', nat: 'argentino / argentina' },
+    { name: 'Colombia',     code: 'co', nat: 'colombiano / colombiana' },
+    { name: 'Chile',        code: 'cl', nat: 'chileno / chilena' },
+    { name: 'Perú',         code: 'pe', nat: 'peruano / peruana' },
+    { name: 'Francia',      code: 'fr', nat: 'francés / francesa' },
+    { name: 'Italia',       code: 'it', nat: 'italiano / italiana' },
+    { name: 'Alemania',     code: 'de', nat: 'alemán / alemana' },
+    { name: 'Portugal',     code: 'pt', nat: 'portugués / portuguesa' },
+    { name: 'China',        code: 'cn', nat: 'chino / china' },
+    { name: 'Japón',        code: 'jp', nat: 'japonés / japonesa' },
+    { name: 'Corea del Sur',code: 'kr', nat: 'surcoreano / surcoreana' },
+    { name: 'India',        code: 'in', nat: 'indio / india' },
+    { name: 'Reino Unido',  code: 'gb', nat: 'británico / británica' },
+    { name: 'Estados Unidos',code:'us', nat: 'estadounidense' },
+    { name: 'Brasil',       code: 'br', nat: 'brasileño / brasileña' },
+    { name: 'Australia',    code: 'au', nat: 'australiano / australiana' },
+    { name: 'Marruecos',    code: 'ma', nat: 'marroquí' },
+    { name: 'Nigeria',      code: 'ng', nat: 'nigeriano / nigeriana' }
   ];
   var fcIdx = 0;
   var nameEl    = document.getElementById('fc-card-name');

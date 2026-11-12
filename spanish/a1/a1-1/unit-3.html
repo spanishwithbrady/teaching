@@ -33,6 +33,30 @@
       font-size: 0.9rem;
       line-height: 1.6;
     }
+    /* ── SER drill exercise ── */
+    :root { --ser-card:#ffffff; --ser-correct:#38763a; --ser-correct-tint:#edf7ed; --ser-correct-border:#82c082; --ser-wrong:#ae3020; --ser-wrong-tint:#fdf2f1; --ser-wrong-border:#d09080; }
+    @media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--ser-card:#26211a;--ser-correct:#5ca85c;--ser-correct-tint:#142014;--ser-correct-border:#4a8050;--ser-wrong:#d05848;--ser-wrong-tint:#2a1414;--ser-wrong-border:#9a4030;}}
+    :root[data-theme="dark"]{--ser-card:#26211a;--ser-correct:#5ca85c;--ser-correct-tint:#142014;--ser-correct-border:#4a8050;--ser-wrong:#d05848;--ser-wrong-tint:#2a1414;--ser-wrong-border:#9a4030;}
+    .ser-drill { margin-top:16px; }
+    .ser-drill .sd-prog { height:5px;background:var(--border);border-radius:99px;overflow:hidden;margin-bottom:14px; }
+    .ser-drill .sd-prog-fill { height:100%;background:var(--green);border-radius:99px;transition:width .4s ease;width:0%; }
+    .ser-drill .sd-card { background:var(--ser-card);border:1.5px solid var(--border);border-radius:12px;padding:28px 20px 22px;text-align:center; }
+    .ser-drill .sd-prompt { font-size:1.2rem;font-weight:700;margin-bottom:20px;line-height:1.6; }
+    .ser-drill .sd-input { font-family:inherit;font-size:1.05rem;font-weight:700;padding:10px 18px;border:2px solid var(--border);border-radius:9px;background:var(--bg);color:var(--brown);text-align:center;width:160px;outline:none;transition:border-color .15s; }
+    .ser-drill .sd-input:focus { border-color:var(--green); }
+    .ser-drill .sd-input.ok { border-color:var(--ser-correct-border);background:var(--ser-correct-tint);color:var(--ser-correct); }
+    .ser-drill .sd-input.bad { border-color:var(--ser-wrong-border);background:var(--ser-wrong-tint);color:var(--ser-wrong); }
+    .ser-drill .sd-fb { font-size:.9rem;font-weight:700;margin-top:10px;min-height:1.3em; }
+    .ser-drill .sd-fb.ok { color:var(--ser-correct); }
+    .ser-drill .sd-fb.bad { color:var(--ser-wrong); }
+    .ser-drill .sd-btns { display:flex;gap:10px;justify-content:center;margin-top:14px; }
+    .ser-drill .sd-btn { font-family:inherit;font-size:.9rem;font-weight:700;padding:10px 28px;border-radius:8px;border:none;cursor:pointer; }
+    .ser-drill .sd-check { background:var(--green);color:#fff; }
+    .ser-drill .sd-next { background:var(--brown);color:#fff; }
+    .ser-drill .sd-score { font-size:.78rem;color:var(--muted);margin-top:8px; }
+    .ser-drill .sd-summary { text-align:center;padding:28px 20px; }
+    .ser-drill .sd-sum-score { font-size:3rem;font-weight:800;color:var(--green);display:block;margin:8px 0; }
+    .ser-drill .sd-retry { font-family:inherit;font-size:.9rem;font-weight:700;padding:10px 28px;border-radius:8px;background:var(--green);color:#fff;border:none;cursor:pointer;margin-top:10px; }
   </style>
 </head>
 <body>
@@ -489,6 +513,58 @@
       </div>
     </details>
 
+    <!-- 10. SER conjugation practice -->
+    <details class="panel">
+      <summary>
+        <span class="panel-num">10</span>
+        <span class="panel-title"><span class="lang-en">✏️ Practice — SER with professions</span><span class="lang-zh">✏️ 练习 — SER 与职业</span></span>
+        <svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg>
+      </summary>
+      <div class="panel-body">
+        <p class="lang-en-block">SER is the verb for professions. Practice all forms here — one question at a time.</p>
+        <p class="lang-zh-block">SER 用于描述职业。在这里练习所有人称变位——每次一题。</p>
+
+        <details style="margin-bottom:14px;">
+          <summary id="ser3-refToggle" style="cursor:pointer; color:var(--green); font-weight:600; font-size:.85rem;" onclick="var b=document.getElementById('ser3-refBody');b.hidden=!b.hidden;">
+            📋 <span class="lang-en">SER reference table</span><span class="lang-zh">SER 变位参考表</span>
+          </summary>
+          <div id="ser3-refBody" hidden style="margin-top:8px; overflow-x:auto;">
+            <table style="font-size:.85rem;">
+              <tr><th><span class="lang-en">Pronoun</span><span class="lang-zh">人称</span></th><th>SER</th></tr>
+              <tr><td>yo</td><td><strong>soy</strong></td></tr>
+              <tr><td>tú</td><td><strong>eres</strong></td></tr>
+              <tr><td>él / ella / usted</td><td><strong>es</strong></td></tr>
+              <tr><td>nosotros/as</td><td><strong>somos</strong></td></tr>
+              <tr><td>vosotros/as</td><td><strong>sois</strong></td></tr>
+              <tr><td>ellos/as / ustedes</td><td><strong>son</strong></td></tr>
+            </table>
+          </div>
+        </details>
+
+        <div class="ser-drill" id="ser3-ex">
+          <div class="sd-prog"><div class="sd-prog-fill" id="ser3-progFill"></div></div>
+          <div id="ser3-qWrap">
+            <div class="sd-card">
+              <div class="sd-prompt" id="ser3-prompt"></div>
+              <input type="text" id="ser3-input" class="sd-input" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" placeholder="SER form...">
+              <div class="sd-fb" id="ser3-fb"></div>
+              <div class="sd-score" id="ser3-score"></div>
+              <div class="sd-btns">
+                <button class="sd-btn sd-check" id="ser3-checkBtn"><span class="lang-en">Check</span><span class="lang-zh">检查</span></button>
+                <button class="sd-btn sd-next" id="ser3-nextBtn" hidden><span class="lang-en">Next →</span><span class="lang-zh">下一题 →</span></button>
+              </div>
+            </div>
+          </div>
+          <div class="sd-summary" id="ser3-summary" hidden>
+            <div>🎉</div>
+            <div style="font-size:1.1rem;font-weight:700;margin:6px 0;"><span class="lang-en">¡Excelente!</span><span class="lang-zh">太棒了！</span></div>
+            <span class="sd-sum-score" id="ser3-sumScore"></span>
+            <div><button class="sd-retry" id="ser3-retryBtn"><span class="lang-en">↩ Try again</span><span class="lang-zh">↩ 再来一遍</span></button></div>
+          </div>
+        </div>
+      </div>
+    </details>
+
   </div>
 
   <div class="unit-nav">
@@ -518,6 +594,102 @@ function setLang(lang) {
 }
 const saved = localStorage.getItem('lang');
 if (saved === 'zh') setLang('zh');
+</script>
+
+<script>
+(function(){
+  var ser3Data = [
+    { prompt: 'Yo ___ médico.', answer: 'soy' },
+    { prompt: 'Ella ___ profesora.', answer: 'es' },
+    { prompt: 'Tú ___ arquitecto.', answer: 'eres' },
+    { prompt: 'Nosotros ___ enfermeros.', answer: 'somos' },
+    { prompt: 'Ellos ___ programadores.', answer: 'son' },
+    { prompt: 'Usted ___ piloto.', answer: 'es' },
+    { prompt: 'Vosotros ___ periodistas.', answer: 'sois' },
+    { prompt: 'Ellas ___ veterinarias.', answer: 'son' },
+    { prompt: 'Yo ___ fotógrafo.', answer: 'soy' },
+    { prompt: 'Tú ___ psicóloga.', answer: 'eres' },
+    { prompt: 'Él ___ bombero.', answer: 'es' },
+    { prompt: 'Nosotras ___ agricultoras.', answer: 'somos' }
+  ];
+
+  function shuffle(a){for(var i=a.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1));var t=a[i];a[i]=a[j];a[j]=t;}return a;}
+
+  var order=shuffle(ser3Data.map(function(_,i){return i;}));
+  var qi=0, correct=0, answered=0;
+
+  var promptEl=document.getElementById('ser3-prompt');
+  var inputEl=document.getElementById('ser3-input');
+  var scoreEl=document.getElementById('ser3-score');
+  var checkBtn=document.getElementById('ser3-checkBtn');
+  var nextBtn=document.getElementById('ser3-nextBtn');
+  var fbEl=document.getElementById('ser3-fb');
+  var progFill=document.getElementById('ser3-progFill');
+  var qWrap=document.getElementById('ser3-qWrap');
+  var summaryEl=document.getElementById('ser3-summary');
+  var sumScoreEl=document.getElementById('ser3-sumScore');
+  var retryBtn=document.getElementById('ser3-retryBtn');
+  var total=ser3Data.length;
+
+  function load(){
+    var q=ser3Data[order[qi]];
+    promptEl.textContent=q.prompt;
+    inputEl.value='';
+    inputEl.className='sd-input';
+    fbEl.textContent='';
+    fbEl.className='sd-fb';
+    scoreEl.textContent=correct+' / '+answered+' correct';
+    checkBtn.hidden=false;
+    nextBtn.hidden=true;
+    progFill.style.width=((qi/total)*100)+'%';
+    inputEl.focus();
+  }
+
+  function check(){
+    var q=ser3Data[order[qi]];
+    var val=inputEl.value.trim().toLowerCase();
+    if(!val) return;
+    checkBtn.hidden=true;
+    nextBtn.hidden=false;
+    answered++;
+    if(val===q.answer){
+      correct++;
+      inputEl.classList.add('ok');
+      fbEl.textContent='✅ ¡Correcto!';
+      fbEl.className='sd-fb ok';
+    } else {
+      inputEl.classList.add('bad');
+      fbEl.textContent='❌ → '+q.answer;
+      fbEl.className='sd-fb bad';
+    }
+    scoreEl.textContent=correct+' / '+answered+' correct';
+  }
+
+  function next(){
+    qi++;
+    if(qi>=total){
+      qWrap.hidden=true;
+      summaryEl.hidden=false;
+      progFill.style.width='100%';
+      sumScoreEl.textContent=correct+' / '+total;
+      return;
+    }
+    load();
+  }
+
+  checkBtn.addEventListener('click',check);
+  nextBtn.addEventListener('click',next);
+  inputEl.addEventListener('keydown',function(e){if(e.key==='Enter'){if(!checkBtn.hidden)check();else next();}});
+  retryBtn.addEventListener('click',function(){
+    order=shuffle(ser3Data.map(function(_,i){return i;}));
+    qi=0;correct=0;answered=0;
+    qWrap.hidden=false;
+    summaryEl.hidden=true;
+    load();
+  });
+
+  load();
+})();
 </script>
 
 <script src="../../../assets/search.js"></script>

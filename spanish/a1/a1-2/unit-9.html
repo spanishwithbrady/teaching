@@ -173,19 +173,64 @@
         <div class="mini-prac">
           <h4><span class="lang-en">🟢 Mini-Practice B — Frequency adverbs</span><span class="lang-zh">🟢 迷你练习 B — 频率副词</span></h4>
           <h4 style="margin-top:12px;"><span class="lang-en">Exercise 1 — Put in order from most to least frequent.</span><span class="lang-zh">练习一 — 从最频繁到最不频繁排列。</span></h4>
-          <p class="lang-en-block">Order these words: a veces / siempre / casi nunca / normalmente / nunca</p>
-          <p class="lang-zh-block">将这些词排列：a veces / siempre / casi nunca / normalmente / nunca</p>
-          <div class="exercise-block">
-            <div style="text-align:right; margin-bottom:8px;"><button onclick="this.closest('.exercise-block').querySelectorAll('input').forEach(function(i){i.value=''})" style="font-size:12px; color:#8B5E3C; background:none; border:1px solid #e2ddd4; border-radius:4px; padding:3px 10px; cursor:pointer;">Clear / 清空</button></div>
-            <ol>
-              <li><input type="text" class="ex-input" placeholder="..." style="width:280px; border:1px solid #e2ddd4; border-radius:6px; padding:4px 10px; font-size:14px; background:#ffffff; margin-left:8px;" onfocus="this.style.borderColor='#6b8c42'" onblur="this.style.borderColor='#e2ddd4'"></li>
-            </ol>
-          </div>
-          <details><<summary style="cursor:pointer; color:#5a7a32; font-weight:500; font-size:13px;"><span class="lang-en">Show answers</span><span class="lang-zh">查看答案</span></summary>
-            <div style="padding:8px 0 4px;">
-              <p>siempre → normalmente → a veces → casi nunca → nunca</p>
+          <p class="lang-en-block">Click the words in order from <strong>most frequent → least frequent</strong>. Build the chain!</p>
+          <p class="lang-zh-block">按<strong>从最频繁到最不频繁</strong>的顺序点击词语，把链条拼出来！</p>
+          <div id="freq-sort-ex" style="margin:12px 0;">
+            <div id="freq-chips" style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:12px;"></div>
+            <div id="freq-chain" style="min-height:40px;display:flex;flex-wrap:wrap;align-items:center;gap:6px;padding:10px;background:var(--green-tint);border-radius:10px;border:1px solid var(--border);"></div>
+            <div id="freq-msg" style="margin-top:10px;font-size:.85rem;font-weight:700;min-height:22px;"></div>
+            <div style="display:flex;gap:8px;margin-top:10px;">
+              <button id="freq-reset" style="font-size:12px;color:var(--warm-brown);background:none;border:1px solid var(--border);border-radius:4px;padding:3px 10px;cursor:pointer;font-family:inherit;"><span class="lang-en">Reset</span><span class="lang-zh">重置</span></button>
+              <button id="freq-check" style="font-size:12px;color:#fff;background:var(--green);border:none;border-radius:4px;padding:4px 14px;cursor:pointer;font-family:inherit;font-weight:700;"><span class="lang-en">Check</span><span class="lang-zh">检查</span></button>
             </div>
-          </details>
+          </div>
+          <script>
+          (function(){
+            var correct = ['siempre','normalmente','a veces','casi nunca','nunca'];
+            var pool = correct.slice();
+            var chosen = [];
+            var chips = document.getElementById('freq-chips');
+            var chain = document.getElementById('freq-chain');
+            var msg = document.getElementById('freq-msg');
+            function shuffle(a){for(var i=a.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1));var t=a[i];a[i]=a[j];a[j]=t;}return a;}
+            function render(){
+              chips.innerHTML='';
+              var remaining=pool.filter(function(w){return chosen.indexOf(w)<0;});
+              shuffle(remaining).forEach(function(w){
+                var b=document.createElement('button');
+                b.textContent=w;
+                b.style.cssText='padding:7px 16px;border-radius:20px;border:2px solid var(--green);background:#fff;color:var(--brown);font-size:.88rem;font-weight:600;cursor:pointer;font-family:inherit;transition:background .15s;';
+                b.onmouseenter=function(){b.style.background='var(--green-tint)';}
+                b.onmouseleave=function(){b.style.background='#fff';}
+                b.onclick=function(){chosen.push(w);msg.textContent='';renderChain();render();};
+                chips.appendChild(b);
+              });
+            }
+            function renderChain(){
+              chain.innerHTML='';
+              chosen.forEach(function(w,i){
+                var sp=document.createElement('span');
+                sp.textContent=w;
+                sp.style.cssText='padding:5px 12px;border-radius:16px;background:var(--green);color:#fff;font-size:.85rem;font-weight:700;';
+                chain.appendChild(sp);
+                if(i<chosen.length-1){
+                  var arr=document.createElement('span');
+                  arr.textContent='→';
+                  arr.style.color='var(--muted)';
+                  chain.appendChild(arr);
+                }
+              });
+            }
+            document.getElementById('freq-check').onclick=function(){
+              if(chosen.length<correct.length){msg.style.color='var(--warm-brown)';msg.textContent='⬆ Place all 5 words first! / 先放置所有5个词！';return;}
+              var ok=chosen.every(function(w,i){return w===correct[i];});
+              if(ok){msg.style.color='#38763a';msg.textContent='🎉 ¡Perfecto! siempre → normalmente → a veces → casi nunca → nunca';}
+              else{msg.style.color='#c0392b';msg.textContent='Not quite — try again! / 不对，再试一次！';}
+            };
+            document.getElementById('freq-reset').onclick=function(){chosen=[];msg.textContent='';renderChain();render();};
+            render();
+          })();
+          </script>
 
           <h4 style="margin-top:16px;"><span class="lang-en">Exercise 2 — Complete about yourself.</span><span class="lang-zh">练习二 — 描述你自己的习惯。</span></h4>
           <p class="lang-en-block">Use a frequency adverb to complete each sentence about yourself.</p>

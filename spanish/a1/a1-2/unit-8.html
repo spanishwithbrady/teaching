@@ -67,14 +67,6 @@
     .vocab-card-es { font-size: .85rem; font-weight: 700; color: var(--brown); display: block; }
     .vocab-card-trans { font-size: .72rem; color: var(--muted); }
 
-    /* ── Wooclap slot ── */
-    .wooclap-box {
-      background: #f0eafa; border: 2px dashed #9b59b6;
-      border-radius: 10px; padding: 18px; margin: 12px 0; text-align: center;
-    }
-    .wooclap-box .wc-title { font-weight: 700; color: #7d3c98; font-size: .95rem; margin-bottom: 6px; }
-    .wooclap-box .wc-desc { font-size: .82rem; color: #6c3483; margin-bottom: 10px; }
-    .wooclap-box code { font-size: .75rem; background: #e8d5f5; border-radius: 4px; padding: 3px 8px; color: #5b2c6f; }
 
     /* ── Google Slides slot ── */
     .slides-box {
@@ -190,12 +182,11 @@
       </summary>
       <div class="panel-body">
 
-        <!-- Wooclap slot -->
-        <div class="wooclap-box">
-          <div class="wc-title">🎯 Wooclap — Word cloud</div>
-          <div class="wc-desc lang-en-block">Activity: "What emotions or feelings do you know in Spanish?" — students type freely, watch the cloud build.</div>
-          <div class="wc-desc lang-zh-block">活动："你知道哪些西班牙语情绪词？"——学生自由输入，观察词云形成。</div>
-          <code>&lt;!-- paste Wooclap embed iframe here --&gt;</code>
+        <!-- Hook discussion -->
+        <div class="note-box" style="background:var(--warm-tint);">
+          <p><strong>💬 <span class="lang-en">Discussion opener</span><span class="lang-zh">热身讨论</span></strong></p>
+          <p class="lang-en-block">What emotions or feelings do you know in Spanish? <br>Call them out — your teacher will write them on screen.</p>
+          <p class="lang-zh-block">你知道哪些西班牙语情感词？<br>大声说出来——老师会把它们写在屏幕上。</p>
         </div>
 
         <!-- Opener image -->
