@@ -776,6 +776,116 @@
       </div>
     </details>
 
+    <!-- Panel 11 — Pronoun Practice -->
+    <details class="panel">
+      <summary class="panel-summary">
+        <span class="panel-num">11</span>
+        <span class="panel-title"><span class="lang-en">✏️ Practice — Subject Pronouns</span><span class="lang-zh">✏️ 练习 — 主语人称代词</span></span>
+        <svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg>
+      </summary>
+      <div class="panel-body">
+        <p class="lang-en-block">Pick the correct Spanish pronoun. One question at a time.</p>
+        <p class="lang-zh-block">选择正确的西班牙语人称代词，每次一题。</p>
+        <div class="ser-ex" id="pr-ex">
+          <div class="prog-wrap" id="pr-progWrap">
+            <div class="prog-labels">
+              <span id="pr-progLabel">Question 1 of 12</span>
+              <span id="pr-progScore">0 correct</span>
+            </div>
+            <div class="prog-track"><div class="prog-fill" id="pr-progFill"></div></div>
+          </div>
+          <div class="q-wrap" id="pr-qWrap">
+            <div class="q-card" id="pr-qCard">
+              <div class="sentence" id="pr-prompt" style="margin-bottom:16px;"></div>
+              <div id="pr-opts" style="display:flex;flex-direction:column;gap:8px;"></div>
+              <div class="fb-row" id="pr-fbRow" style="margin-top:12px;"></div>
+              <div class="fb-correction" id="pr-fbCorr"></div>
+              <div style="text-align:center;margin-top:14px;">
+                <button class="action-btn" id="pr-actionBtn" disabled>Check</button>
+              </div>
+            </div>
+            <p class="hint">Select an option to answer</p>
+          </div>
+          <div class="summary" id="pr-summary">
+            <div class="score-block">
+              <span class="score-emoji" id="pr-sumEmoji"></span>
+              <span class="score-big" id="pr-sumNum"></span>
+              <div class="score-denom" id="pr-sumDenom"></div>
+              <div class="score-verdict" id="pr-sumVerdict"></div>
+            </div>
+            <p class="review-label">Review</p>
+            <div class="review-list" id="pr-reviewList"></div>
+            <button class="retry-btn" id="pr-retryBtn">↩ Try again</button>
+          </div>
+        </div>
+      </div>
+    </details>
+
+    <!-- Panel 12 — Llamarse Practice -->
+    <details class="panel">
+      <summary class="panel-summary">
+        <span class="panel-num">12</span>
+        <span class="panel-title"><span class="lang-en">✏️ Practice — Llamarse</span><span class="lang-zh">✏️ 练习 — Llamarse 变位</span></span>
+        <svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg>
+      </summary>
+      <div class="panel-body">
+        <p class="lang-en-block">Fill in the correct form of <strong>llamarse</strong>. One question at a time — type your answer and press Enter or tap Check.</p>
+        <p class="lang-zh-block">填写正确的 <strong>llamarse</strong> 变位形式，每次一题。</p>
+        <div class="ser-ex">
+          <button class="ref-toggle" id="ll-refToggle" aria-expanded="false">
+            📋 Conjugation reference — tap to show / hide
+            <span class="arrow">▼</span>
+          </button>
+          <div class="ref-body" id="ll-refBody">
+            <table class="ref-table">
+              <thead><tr><th>Pronoun</th><th>Llamarse</th></tr></thead>
+              <tbody>
+                <tr><td>yo</td><td>me llamo</td></tr>
+                <tr><td>tú</td><td>te llamas</td></tr>
+                <tr><td>él / ella / usted</td><td>se llama</td></tr>
+                <tr><td>nosotros / nosotras</td><td>nos llamamos</td></tr>
+                <tr><td>vosotros / vosotras</td><td>os llamáis</td></tr>
+                <tr><td>ellos / ellas / ustedes</td><td>se llaman</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="prog-wrap" id="ll-progWrap">
+            <div class="prog-labels">
+              <span id="ll-progLabel">Question 1 of 10</span>
+              <span id="ll-progScore">0 correct</span>
+            </div>
+            <div class="prog-track"><div class="prog-fill" id="ll-progFill"></div></div>
+          </div>
+          <div class="q-wrap" id="ll-qWrap">
+            <div class="q-card" id="ll-qCard">
+              <div class="sentence" id="ll-sentence"></div>
+              <div class="input-area">
+                <input class="main-input" id="ll-mainInput" type="text"
+                  placeholder="escribe aquí"
+                  autocomplete="off" autocorrect="off"
+                  autocapitalize="off" spellcheck="false">
+                <div class="fb-row" id="ll-fbRow"></div>
+                <div class="fb-correction" id="ll-fbCorr"></div>
+                <button class="action-btn" id="ll-actionBtn">Check</button>
+              </div>
+            </div>
+            <p class="hint">Press <strong>Enter</strong> to check · <strong>Enter</strong> again to continue</p>
+          </div>
+          <div class="summary" id="ll-summary">
+            <div class="score-block">
+              <span class="score-emoji" id="ll-sumEmoji"></span>
+              <span class="score-big" id="ll-sumNum"></span>
+              <div class="score-denom" id="ll-sumDenom"></div>
+              <div class="score-verdict" id="ll-sumVerdict"></div>
+            </div>
+            <p class="review-label">Review</p>
+            <div class="review-list" id="ll-reviewList"></div>
+            <button class="retry-btn" id="ll-retryBtn">↩ Try again</button>
+          </div>
+        </div>
+      </div>
+    </details>
+
   </div>
 
   <div class="unit-nav">
@@ -978,6 +1088,288 @@ if (saved === 'zh') setLang('zh');
   });
 
   serRenderQuestion(0, false);
+})();
+</script>
+
+<script>
+/* ── Pronoun exercise (Panel 11) ── */
+(function() {
+  const prData = [
+    { prompt: 'I',                           answer: 'yo',        opts: ['yo','tú','él','nosotros'] },
+    { prompt: 'You (informal, singular)',     answer: 'tú',        opts: ['yo','tú','usted','vosotros'] },
+    { prompt: 'He',                          answer: 'él',        opts: ['él','ella','ellos','usted'] },
+    { prompt: 'She',                         answer: 'ella',      opts: ['él','ella','nosotros','ustedes'] },
+    { prompt: 'You (formal, singular)',       answer: 'usted',     opts: ['tú','usted','vosotros','ustedes'] },
+    { prompt: 'We',                          answer: 'nosotros',  opts: ['yo','nosotros','vosotros','ellos'] },
+    { prompt: 'You (plural, Spain)',          answer: 'vosotros',  opts: ['ustedes','vosotros','ellos','nosotros'] },
+    { prompt: 'They (masculine / mixed)',     answer: 'ellos',     opts: ['ellos','ellas','ustedes','vosotros'] },
+    { prompt: 'They (feminine)',              answer: 'ellas',     opts: ['ellos','ellas','usted','nosotras'] },
+    { prompt: 'You (plural, Latin America)',  answer: 'ustedes',   opts: ['usted','ustedes','vosotros','ellos'] },
+    { prompt: 'We (feminine group)',          answer: 'nosotras',  opts: ['nosotros','nosotras','ellas','vosotras'] },
+    { prompt: 'You (plural, Spain – feminine)', answer: 'vosotras', opts: ['vosotros','vosotras','ellas','ustedes'] },
+  ];
+
+  let prCurrent = 0, prChecked = false, prScore = 0, prSelected = null;
+  const prResults = [];
+
+  function prShuffle(a) {
+    const b = a.slice();
+    for (let i = b.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [b[i], b[j]] = [b[j], b[i]];
+    }
+    return b;
+  }
+
+  function prRender(idx, animate) {
+    prChecked = false; prSelected = null;
+    const q = prData[idx];
+    const opts = prShuffle(q.opts.slice());
+    document.getElementById('pr-progLabel').textContent = `Question ${idx + 1} of ${prData.length}`;
+    document.getElementById('pr-progFill').style.width = `${(idx / prData.length) * 100}%`;
+    document.getElementById('pr-prompt').innerHTML = `<strong style="font-size:1.1rem;">${q.prompt}</strong>`;
+    document.getElementById('pr-fbRow').textContent = '';
+    document.getElementById('pr-fbRow').className = 'fb-row';
+    document.getElementById('pr-fbCorr').innerHTML = '';
+    document.getElementById('pr-fbCorr').className = 'fb-correction';
+    document.getElementById('pr-actionBtn').textContent = 'Check';
+    document.getElementById('pr-actionBtn').disabled = true;
+
+    const optsEl = document.getElementById('pr-opts');
+    optsEl.innerHTML = opts.map((o, i) =>
+      `<button class="pr-opt" data-val="${o}" style="background:var(--bg);border:2px solid var(--border);border-radius:9px;padding:11px 16px;font-family:inherit;font-size:1rem;font-weight:700;color:var(--brown);cursor:pointer;text-align:left;transition:border-color .15s,background .15s;">${o}</button>`
+    ).join('');
+
+    optsEl.querySelectorAll('.pr-opt').forEach(btn => {
+      btn.addEventListener('click', function() {
+        if (prChecked) return;
+        optsEl.querySelectorAll('.pr-opt').forEach(b => { b.style.borderColor = ''; b.style.background = ''; });
+        this.style.borderColor = 'var(--green)';
+        this.style.background = 'var(--green-tint)';
+        prSelected = this.getAttribute('data-val');
+        document.getElementById('pr-actionBtn').disabled = false;
+      });
+    });
+
+    const card = document.getElementById('pr-qCard');
+    if (animate) {
+      card.classList.remove('out');
+      card.classList.add('in');
+      card.addEventListener('animationend', () => card.classList.remove('in'), { once: true });
+    }
+  }
+
+  function prCheck() {
+    if (prSelected === null) return;
+    prChecked = true;
+    const q = prData[prCurrent];
+    const correct = prSelected === q.answer;
+    if (correct) prScore++;
+    prResults.push({ correct, given: prSelected, answer: q.answer });
+    document.getElementById('pr-progScore').textContent = `${prScore} correct`;
+
+    document.getElementById('pr-opts').querySelectorAll('.pr-opt').forEach(btn => {
+      btn.disabled = true;
+      const v = btn.getAttribute('data-val');
+      if (v === q.answer) { btn.style.borderColor = '#82c082'; btn.style.background = '#edf7ed'; btn.style.color = '#38763a'; }
+      else if (v === prSelected && !correct) { btn.style.borderColor = '#d09080'; btn.style.background = '#fdf2f1'; btn.style.color = '#ae3020'; }
+    });
+
+    const fb = document.getElementById('pr-fbRow');
+    fb.textContent = correct ? '✓ ¡Correcto!' : '✗ Not quite.';
+    fb.className = 'fb-row show ' + (correct ? 'ok' : 'bad');
+    if (!correct) {
+      const corr = document.getElementById('pr-fbCorr');
+      corr.innerHTML = `The answer is <strong>${q.answer}</strong>.`;
+      corr.className = 'fb-correction show';
+    }
+
+    const isLast = prCurrent === prData.length - 1;
+    const btn = document.getElementById('pr-actionBtn');
+    btn.textContent = isLast ? 'See results' : 'Next →';
+    btn.disabled = false;
+  }
+
+  function prNext() {
+    if (prCurrent < prData.length - 1) {
+      prCurrent++;
+      document.getElementById('pr-qCard').classList.add('out');
+      setTimeout(() => prRender(prCurrent, true), 180);
+    } else {
+      prShowSummary();
+    }
+  }
+
+  function prShowSummary() {
+    document.getElementById('pr-qWrap').style.display = 'none';
+    const sum = document.getElementById('pr-summary');
+    sum.style.display = 'block';
+    const pct = prScore / prData.length;
+    document.getElementById('pr-sumEmoji').textContent = pct === 1 ? '🌟' : pct >= 0.7 ? '👍' : '📚';
+    document.getElementById('pr-sumNum').textContent = `${prScore}/${prData.length}`;
+    document.getElementById('pr-sumDenom').textContent = `correct`;
+    document.getElementById('pr-sumVerdict').textContent = pct === 1 ? '¡Perfecto!' : pct >= 0.7 ? 'Good work!' : 'Keep practising!';
+    document.getElementById('pr-reviewList').innerHTML = prResults.map((r, i) =>
+      `<div style="display:flex;gap:8px;align-items:center;padding:7px 10px;border-radius:8px;background:${r.correct ? '#edf7ed' : '#fdf2f1'};border:1px solid ${r.correct ? '#82c082' : '#d09080'};font-size:.85rem;">
+        <span>${r.correct ? '✓' : '✗'}</span>
+        <span><strong>${prData[i].prompt}</strong> → <strong>${r.answer}</strong>${!r.correct ? ` (you said: ${r.given})` : ''}</span>
+       </div>`
+    ).join('');
+    document.getElementById('pr-retryBtn').addEventListener('click', prRetry, { once: true });
+  }
+
+  function prRetry() {
+    prCurrent = 0; prScore = 0; prChecked = false; prSelected = null; prResults.length = 0;
+    document.getElementById('pr-summary').style.display = 'none';
+    document.getElementById('pr-qWrap').style.display = '';
+    document.getElementById('pr-progFill').style.width = '0%';
+    document.getElementById('pr-progScore').textContent = '0 correct';
+    prRender(0, false);
+  }
+
+  document.getElementById('pr-actionBtn').addEventListener('click', function() {
+    if (!prChecked) prCheck(); else prNext();
+  });
+
+  prRender(0, false);
+})();
+</script>
+
+<script>
+/* ── Llamarse exercise (Panel 12) ── */
+(function() {
+  const llData = [
+    { before: 'Yo',              after: 'María.',              answer: 'me llamo'    },
+    { before: 'Tú',              after: 'Carlos, ¿verdad?',    answer: 'te llamas'   },
+    { before: 'Él',              after: 'Juan.',               answer: 'se llama'    },
+    { before: 'Ella',            after: 'Sofía.',              answer: 'se llama'    },
+    { before: 'Usted',           after: 'señor García.',       answer: 'se llama'    },
+    { before: 'Nosotros',        after: 'los García.',         answer: 'nos llamamos'},
+    { before: 'Vosotros',        after: 'Miguel y Pedro.',     answer: 'os llamáis'  },
+    { before: 'Ellos',           after: 'los profesores.',     answer: 'se llaman'   },
+    { before: '¿Cómo',           after: 'tú?',                 answer: 'te llamas'   },
+    { before: '¿Cómo',           after: 'usted?',              answer: 'se llama'    },
+  ];
+
+  let llCurrent = 0, llChecked = false, llScore = 0;
+  const llResults = [];
+
+  const llQCard     = document.getElementById('ll-qCard');
+  const llSentence  = document.getElementById('ll-sentence');
+  const llInp       = document.getElementById('ll-mainInput');
+  const llFbRow     = document.getElementById('ll-fbRow');
+  const llFbCorr    = document.getElementById('ll-fbCorr');
+  const llActionBtn = document.getElementById('ll-actionBtn');
+  const llProgFill  = document.getElementById('ll-progFill');
+  const llProgLabel = document.getElementById('ll-progLabel');
+  const llProgScore = document.getElementById('ll-progScore');
+
+  function llEsc(s) { return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
+
+  function llNorm(s) {
+    return s.trim().toLowerCase()
+      .replace(/á/g,'a').replace(/é/g,'e').replace(/í/g,'i').replace(/ó/g,'o').replace(/ú/g,'u');
+  }
+
+  function llRender(idx, animate) {
+    llChecked = false;
+    const ex = llData[idx];
+    llSentence.innerHTML =
+      `<span>${ex.before}&nbsp;</span>` +
+      `<span class="blank-slot">&nbsp;</span>` +
+      `<span>&nbsp;${ex.after}</span>`;
+    llInp.value = ''; llInp.className = 'main-input'; llInp.disabled = false;
+    llFbRow.textContent = ''; llFbRow.className = 'fb-row';
+    llFbCorr.innerHTML = ''; llFbCorr.className = 'fb-correction';
+    llActionBtn.textContent = 'Check'; llActionBtn.disabled = false;
+    llProgLabel.textContent = `Question ${idx + 1} of ${llData.length}`;
+    llProgFill.style.width = `${(idx / llData.length) * 100}%`;
+    if (animate) {
+      llQCard.classList.remove('out'); llQCard.classList.add('in');
+      llQCard.addEventListener('animationend', () => llQCard.classList.remove('in'), { once: true });
+    }
+    setTimeout(() => llInp.focus(), animate ? 50 : 0);
+  }
+
+  function llCheck() {
+    const ex = llData[llCurrent];
+    const val = llInp.value.trim();
+    if (!val) { llInp.focus(); return; }
+    llChecked = true;
+    const correct = llNorm(val) === llNorm(ex.answer);
+    if (correct) llScore++;
+    llResults.push({ correct, given: val, answer: ex.answer });
+    llInp.className = 'main-input ' + (correct ? 'ok' : 'bad');
+    llInp.disabled = true;
+    llSentence.innerHTML =
+      `<span>${ex.before}&nbsp;</span>` +
+      (correct
+        ? `<span class="filled ok">${llEsc(val)}</span>`
+        : `<span class="filled bad">${llEsc(val)}</span>
+           <span style="margin:0 2px;color:var(--muted);font-weight:400;font-size:.85rem;">→</span>
+           <span class="filled fix">${ex.answer}</span>`) +
+      `<span>&nbsp;${ex.after}</span>`;
+    llFbRow.textContent = correct ? '✓ ¡Correcto!' : '✗ Not quite.';
+    llFbRow.className = 'fb-row show ' + (correct ? 'ok' : 'bad');
+    if (!correct) { llFbCorr.innerHTML = `The answer is <strong>${ex.answer}</strong>.`; llFbCorr.className = 'fb-correction show'; }
+    llProgScore.textContent = `${llScore} correct`;
+    const isLast = llCurrent === llData.length - 1;
+    llActionBtn.textContent = isLast ? 'See results' : 'Next →';
+    llActionBtn.disabled = false;
+    llActionBtn.focus();
+  }
+
+  function llNext() {
+    if (llCurrent < llData.length - 1) {
+      llCurrent++;
+      llQCard.classList.add('out');
+      setTimeout(() => llRender(llCurrent, true), 180);
+    } else {
+      llShowSummary();
+    }
+  }
+
+  function llShowSummary() {
+    document.getElementById('ll-qWrap').style.display = 'none';
+    const sum = document.getElementById('ll-summary');
+    sum.style.display = 'block';
+    const pct = llScore / llData.length;
+    document.getElementById('ll-sumEmoji').textContent = pct === 1 ? '🌟' : pct >= 0.7 ? '👍' : '📚';
+    document.getElementById('ll-sumNum').textContent = `${llScore}/${llData.length}`;
+    document.getElementById('ll-sumDenom').textContent = 'correct';
+    document.getElementById('ll-sumVerdict').textContent = pct === 1 ? '¡Perfecto!' : pct >= 0.7 ? 'Good work!' : 'Keep practising!';
+    document.getElementById('ll-reviewList').innerHTML = llResults.map((r, i) => {
+      const ex = llData[i];
+      return `<div style="padding:7px 10px;border-radius:8px;background:${r.correct ? '#edf7ed' : '#fdf2f1'};border:1px solid ${r.correct ? '#82c082' : '#d09080'};font-size:.85rem;margin-bottom:4px;">
+        <span>${r.correct ? '✓' : '✗'}</span>
+        <strong>${ex.before} ___ ${ex.after}</strong> → <strong>${ex.answer}</strong>${!r.correct ? ` (you wrote: ${r.given})` : ''}
+      </div>`;
+    }).join('');
+    document.getElementById('ll-retryBtn').addEventListener('click', llRetry, { once: true });
+  }
+
+  function llRetry() {
+    llCurrent = 0; llScore = 0; llChecked = false; llResults.length = 0;
+    document.getElementById('ll-summary').style.display = 'none';
+    document.getElementById('ll-qWrap').style.display = '';
+    llProgFill.style.width = '0%'; llProgScore.textContent = '0 correct';
+    llRender(0, false);
+  }
+
+  llActionBtn.addEventListener('click', function() { if (!llChecked) llCheck(); else llNext(); });
+  llInp.addEventListener('keydown', function(e) { if (e.key === 'Enter') { e.preventDefault(); if (!llActionBtn.disabled) llActionBtn.click(); } });
+
+  /* reference toggle */
+  document.getElementById('ll-refToggle').addEventListener('click', function() {
+    const body = document.getElementById('ll-refBody');
+    const open = body.style.display !== 'none' && body.style.display !== '';
+    body.style.display = open ? 'none' : 'block';
+    this.setAttribute('aria-expanded', String(!open));
+    this.querySelector('.arrow').textContent = open ? '▼' : '▲';
+  });
+  document.getElementById('ll-refBody').style.display = 'none';
+
+  llRender(0, false);
 })();
 </script>
 </body>
