@@ -162,6 +162,25 @@
     }
     .ex-clear-btn:hover { background: #f7f0eb; }
     input.ex-input { vertical-align: middle; }
+    /* ── nationality drill ── */
+    :root { --ser-card:#ffffff; --ser-correct:#38763a; --ser-correct-tint:#edf7ed; --ser-correct-border:#82c082; --ser-wrong:#ae3020; --ser-wrong-tint:#fdf2f1; --ser-wrong-border:#d09080; }
+    @media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--ser-card:#26211a;--ser-correct:#5ca85c;--ser-correct-tint:#142014;--ser-correct-border:#4a8050;--ser-wrong:#d05848;--ser-wrong-tint:#2a1414;--ser-wrong-border:#9a4030;}}
+    :root[data-theme="dark"]{--ser-card:#26211a;--ser-correct:#5ca85c;--ser-correct-tint:#142014;--ser-correct-border:#4a8050;--ser-wrong:#d05848;--ser-wrong-tint:#2a1414;--ser-wrong-border:#9a4030;}
+    .ser-drill { margin-top:16px; }
+    .ser-drill .sd-prog { height:5px;background:var(--border);border-radius:99px;overflow:hidden;margin-bottom:14px; }
+    .ser-drill .sd-prog-fill { height:100%;background:var(--green);border-radius:99px;transition:width .4s ease;width:0%; }
+    .ser-drill .sd-card { background:var(--ser-card);border:1.5px solid var(--border);border-radius:12px;padding:28px 20px 22px;text-align:center; }
+    .ser-drill .sd-prompt { font-size:1.2rem;font-weight:700;margin-bottom:20px;line-height:1.6; }
+    .ser-drill .sd-input { width:100%;max-width:260px;padding:10px 14px;border:1.5px solid var(--border);border-radius:8px;font-size:1rem;font-family:inherit;background:var(--bg);color:var(--brown);outline:none;text-align:center; }
+    .ser-drill .sd-input:focus { border-color:var(--green); }
+    .ser-drill .sd-fb { min-height:22px;margin:10px 0 4px;font-size:.88rem;font-weight:600; }
+    .ser-drill .sd-btns { display:flex;justify-content:center;gap:10px;margin-top:12px; }
+    .ser-drill .sd-btn { padding:9px 24px;border:none;border-radius:8px;font-size:.9rem;font-weight:600;cursor:pointer;font-family:inherit; }
+    .ser-drill .sd-check { background:var(--green);color:#fff; }
+    .ser-drill .sd-next { background:var(--warm-brown,#8B5E3C);color:#fff; }
+    .ser-drill .sd-summary { text-align:center;padding:28px 20px; }
+    .ser-drill .sd-sum-score { font-size:2rem;font-weight:700;color:var(--green);margin-bottom:16px; }
+    .ser-drill .sd-retry { background:var(--green);color:#fff;padding:10px 28px;border:none;border-radius:8px;font-size:.95rem;font-weight:600;cursor:pointer;font-family:inherit; }
   </style>
 </head>
 <body>
@@ -637,6 +656,131 @@
           <li>在没有提示的情况下，猜测一位名人的国籍和职业。</li>
           <li>如果你可以拥有另一个国籍，你会选哪个？为什么？（简单回答即可）</li>
         </ol>
+      </div>
+    </details>
+
+    <!-- Panel 10 — Nationality translator drill -->
+    <details class="panel">
+      <summary>
+        <span class="panel-num">10</span>
+        <span class="panel-title"><span class="lang-en">✏️ Practice — Nationality translator</span><span class="lang-zh">✏️ 练习 — 国籍翻译</span></span>
+        <svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg>
+      </summary>
+      <div class="panel-body">
+        <p class="lang-en-block">A flag and country appear — type the nationality in the <strong>masculine</strong> form. Accents are optional.</p>
+        <p class="lang-zh-block">显示国旗和国名——用<strong>阳性</strong>形式输入国籍词。重音符号可选。</p>
+
+        <div id="nt-ex" style="margin-top:16px;">
+          <div class="ser-drill">
+            <div class="sd-prog"><div class="sd-prog-fill" id="nt-progFill"></div></div>
+            <div class="sd-card" id="nt-qWrap">
+              <div id="nt-flag" style="font-size:3rem; margin-bottom:4px;"></div>
+              <div class="sd-prompt" id="nt-country"></div>
+              <input class="sd-input" id="nt-input" type="text" placeholder="nacionalidad..." autocomplete="off" autocorrect="off" spellcheck="false">
+              <div class="sd-fb" id="nt-fb"></div>
+              <div class="sd-btns">
+                <button class="sd-btn sd-check" id="nt-checkBtn">Check</button>
+                <button class="sd-btn sd-next" id="nt-nextBtn" style="display:none;">Next →</button>
+              </div>
+            </div>
+            <div class="sd-summary" id="nt-summary" style="display:none;">
+              <div class="sd-sum-score" id="nt-sumScore"></div>
+              <button class="sd-btn sd-retry" id="nt-retryBtn">↩ Try again</button>
+            </div>
+          </div>
+        </div>
+
+        <script>
+        (function(){
+          var ntData = [
+            { flag:'🇪🇸', name:'España',        masc:'español',        fem:'española' },
+            { flag:'🇲🇽', name:'México',         masc:'mexicano',       fem:'mexicana' },
+            { flag:'🇦🇷', name:'Argentina',      masc:'argentino',      fem:'argentina' },
+            { flag:'🇨🇴', name:'Colombia',       masc:'colombiano',     fem:'colombiana' },
+            { flag:'🇫🇷', name:'Francia',        masc:'frances',        fem:'francesa', display:'francés' },
+            { flag:'🇩🇪', name:'Alemania',       masc:'aleman',         fem:'alemana',  display:'alemán' },
+            { flag:'🇨🇳', name:'China',          masc:'chino',          fem:'china' },
+            { flag:'🇯🇵', name:'Japón',          masc:'japones',        fem:'japonesa', display:'japonés' },
+            { flag:'🇬🇧', name:'Reino Unido',    masc:'britanico',      fem:'britanica',display:'británico' },
+            { flag:'🇺🇸', name:'Estados Unidos', masc:'estadounidense', fem:'estadounidense' },
+            { flag:'🇧🇷', name:'Brasil',         masc:'brasileno',      fem:'brasilena',display:'brasileño' },
+            { flag:'🇵🇹', name:'Portugal',       masc:'portugues',      fem:'portuguesa',display:'portugués' },
+            { flag:'🇮🇹', name:'Italia',         masc:'italiano',       fem:'italiana' },
+            { flag:'🇰🇷', name:'Corea del Sur',  masc:'surcoreano',     fem:'surcoreana' },
+            { flag:'🇲🇦', name:'Marruecos',      masc:'marroqui',       fem:'marroqui', display:'marroquí' }
+          ];
+          function norm(s){ return s.trim().toLowerCase()
+            .replace(/á/g,'a').replace(/é/g,'e').replace(/í/g,'i').replace(/ó/g,'o').replace(/ú/g,'u').replace(/ü/g,'u'); }
+          function shuffle(a){ for(var i=a.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1));var t=a[i];a[i]=a[j];a[j]=t;} return a; }
+
+          var deck = shuffle(ntData.slice());
+          var idx = 0, correct = 0;
+          var progFill = document.getElementById('nt-progFill');
+          var flagEl   = document.getElementById('nt-flag');
+          var countryEl= document.getElementById('nt-country');
+          var inputEl  = document.getElementById('nt-input');
+          var fbEl     = document.getElementById('nt-fb');
+          var checkBtn = document.getElementById('nt-checkBtn');
+          var nextBtn  = document.getElementById('nt-nextBtn');
+          var summary  = document.getElementById('nt-summary');
+          var sumScore = document.getElementById('nt-sumScore');
+          var retryBtn = document.getElementById('nt-retryBtn');
+          var qWrap    = document.getElementById('nt-qWrap');
+
+          function showCard(){
+            var d = deck[idx];
+            flagEl.textContent = d.flag;
+            countryEl.textContent = d.name;
+            inputEl.value = '';
+            fbEl.textContent = '';
+            fbEl.style.color = '';
+            checkBtn.style.display = 'inline-block';
+            nextBtn.style.display = 'none';
+            inputEl.disabled = false;
+            inputEl.focus();
+            progFill.style.width = (idx / deck.length * 100) + '%';
+          }
+
+          function check(){
+            var d = deck[idx];
+            var val = norm(inputEl.value);
+            var ok = val === norm(d.masc) || val === norm(d.fem);
+            if(ok){
+              correct++;
+              fbEl.style.color = 'var(--green,#38763a)';
+              fbEl.textContent = '✓ ' + (d.display || d.masc) + ' / ' + d.fem;
+            } else {
+              fbEl.style.color = '#ae3020';
+              fbEl.textContent = '✗  ' + (d.display || d.masc) + ' / ' + d.fem;
+            }
+            inputEl.disabled = true;
+            checkBtn.style.display = 'none';
+            nextBtn.style.display = 'inline-block';
+          }
+
+          function next(){
+            idx++;
+            if(idx >= deck.length){
+              qWrap.style.display = 'none';
+              summary.style.display = 'block';
+              progFill.style.width = '100%';
+              sumScore.textContent = correct + ' / ' + deck.length;
+            } else { showCard(); }
+          }
+
+          checkBtn.addEventListener('click', check);
+          nextBtn.addEventListener('click', next);
+          inputEl.addEventListener('keydown', function(e){
+            if(e.key === 'Enter'){ if(!inputEl.disabled) check(); else next(); }
+          });
+          retryBtn.addEventListener('click', function(){
+            deck = shuffle(ntData.slice()); idx = 0; correct = 0;
+            qWrap.style.display = 'block'; summary.style.display = 'none';
+            showCard();
+          });
+          showCard();
+        })();
+        </script>
       </div>
     </details>
 

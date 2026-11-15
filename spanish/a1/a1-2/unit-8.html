@@ -126,6 +126,25 @@
       .vocab-grid { grid-template-columns: repeat(2,1fr); }
       .fear-grid { grid-template-columns: repeat(2,1fr); }
     }
+    /* ── TENER drill ── */
+    :root { --ser-card:#ffffff; --ser-correct:#38763a; --ser-wrong:#ae3020; }
+    @media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--ser-card:#26211a;--ser-correct:#5ca85c;--ser-wrong:#d05848;}}
+    :root[data-theme="dark"]{--ser-card:#26211a;--ser-correct:#5ca85c;--ser-wrong:#d05848;}
+    .ser-drill { margin-top:16px; }
+    .ser-drill .sd-prog { height:5px;background:var(--border);border-radius:99px;overflow:hidden;margin-bottom:14px; }
+    .ser-drill .sd-prog-fill { height:100%;background:var(--green);border-radius:99px;transition:width .4s ease;width:0%; }
+    .ser-drill .sd-card { background:var(--ser-card);border:1.5px solid var(--border);border-radius:12px;padding:28px 20px 22px;text-align:center; }
+    .ser-drill .sd-prompt { font-size:1.1rem;font-weight:700;margin-bottom:20px;line-height:1.6; }
+    .ser-drill .sd-input { width:100%;max-width:300px;padding:10px 14px;border:1.5px solid var(--border);border-radius:8px;font-size:1rem;font-family:inherit;background:var(--bg);color:var(--brown);outline:none;text-align:center; }
+    .ser-drill .sd-input:focus { border-color:var(--green); }
+    .ser-drill .sd-fb { min-height:22px;margin:10px 0 4px;font-size:.88rem;font-weight:600; }
+    .ser-drill .sd-btns { display:flex;justify-content:center;gap:10px;margin-top:12px; }
+    .ser-drill .sd-btn { padding:9px 24px;border:none;border-radius:8px;font-size:.9rem;font-weight:600;cursor:pointer;font-family:inherit; }
+    .ser-drill .sd-check { background:var(--green);color:#fff; }
+    .ser-drill .sd-next { background:var(--warm-brown,#8B5E3C);color:#fff; }
+    .ser-drill .sd-summary { text-align:center;padding:28px 20px; }
+    .ser-drill .sd-sum-score { font-size:2rem;font-weight:700;color:var(--green);margin-bottom:16px; }
+    .ser-drill .sd-retry { background:var(--green);color:#fff;padding:10px 28px;border:none;border-radius:8px;font-size:.95rem;font-weight:600;cursor:pointer;font-family:inherit; }
   </style>
 </head>
 <body>
@@ -768,6 +787,117 @@
           <span class="rn-arrow">↗</span>
         </a>
 
+      </div>
+    </details>
+
+    <!-- ══════════════════════════════════════════
+         PANEL 9 — TENER DRILL
+    ══════════════════════════════════════════ -->
+    <details class="panel">
+      <summary>
+        <span class="panel-num">9</span>
+        <span class="panel-title"><span class="lang-en">✏️ Practice — TENER expressions drill</span><span class="lang-zh">✏️ 练习 — TENER 短语</span></span>
+        <svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg>
+      </summary>
+      <div class="panel-body">
+        <p class="lang-en-block">Complete each sentence with the correct <strong>TENER</strong> expression. Type the full expression (e.g. <em>tiene hambre</em>).</p>
+        <p class="lang-zh-block">用正确的 <strong>TENER</strong> 短语完成每个句子（例如 <em>tiene hambre</em>）。</p>
+
+        <div id="tv-ex" style="margin-top:16px;">
+          <div class="ser-drill">
+            <div class="sd-prog"><div class="sd-prog-fill" id="tv-progFill"></div></div>
+            <div class="sd-card" id="tv-qWrap">
+              <div class="sd-prompt" id="tv-prompt"></div>
+              <input class="sd-input" id="tv-input" type="text" placeholder="tiene / tengo..." autocomplete="off" autocorrect="off" spellcheck="false">
+              <div class="sd-fb" id="tv-fb"></div>
+              <div class="sd-btns">
+                <button class="sd-btn sd-check" id="tv-checkBtn">Check</button>
+                <button class="sd-btn sd-next" id="tv-nextBtn" style="display:none;">Next →</button>
+              </div>
+            </div>
+            <div class="sd-summary" id="tv-summary" style="display:none;">
+              <div class="sd-sum-score" id="tv-sumScore"></div>
+              <button class="sd-btn sd-retry" id="tv-retryBtn">↩ Try again</button>
+            </div>
+          </div>
+        </div>
+
+        <script>
+        (function(){
+          var tvData = [
+            { prompt:'No he comido nada. Yo ___ mucha ___.',  answers:['tengo hambre','tengo mucha hambre'] },
+            { prompt:'Él busca agua por todas partes. Él ___ ___.',  answers:['tiene sed'] },
+            { prompt:'Son las 2 de la mañana. Nosotros ___ ___.',     answers:['tenemos sueño'] },
+            { prompt:'Estamos en el Ártico. Vosotros ___ mucho ___.',  answers:['tenéis frío','teneis frio'] },
+            { prompt:'Es julio y hay 40 grados. Ellas ___ ___.',       answers:['tienen calor'] },
+            { prompt:'La araña sale de debajo de la cama. Ella ___ ___.',answers:['tiene miedo'] },
+            { prompt:'Le duele mucho la cabeza. Él ___ ___.',          answers:['tiene dolor','tiene dolor de cabeza'] },
+            { prompt:'Mañana hay un examen. Yo ___ ___.',              answers:['tengo miedo','tengo nervios'] },
+            { prompt:'No ha dormido nada. Tú ___ ___.',                answers:['tienes sueño'] },
+            { prompt:'Es mediodía y no ha desayunado. Él ___ ___.',    answers:['tiene hambre'] }
+          ];
+          function norm(s){ return s.trim().toLowerCase()
+            .replace(/á/g,'a').replace(/é/g,'e').replace(/í/g,'i').replace(/ó/g,'o').replace(/ú/g,'u'); }
+          function shuffle(a){ for(var i=a.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1));var t=a[i];a[i]=a[j];a[j]=t;} return a; }
+
+          var deck = shuffle(tvData.slice());
+          var idx = 0, correct = 0;
+          var progFill = document.getElementById('tv-progFill');
+          var promptEl = document.getElementById('tv-prompt');
+          var inputEl  = document.getElementById('tv-input');
+          var fbEl     = document.getElementById('tv-fb');
+          var checkBtn = document.getElementById('tv-checkBtn');
+          var nextBtn  = document.getElementById('tv-nextBtn');
+          var summary  = document.getElementById('tv-summary');
+          var sumScore = document.getElementById('tv-sumScore');
+          var retryBtn = document.getElementById('tv-retryBtn');
+          var qWrap    = document.getElementById('tv-qWrap');
+
+          function showCard(){
+            promptEl.textContent = deck[idx].prompt;
+            inputEl.value = ''; fbEl.textContent = ''; fbEl.style.color = '';
+            checkBtn.style.display = 'inline-block'; nextBtn.style.display = 'none';
+            inputEl.disabled = false; inputEl.focus();
+            progFill.style.width = (idx / deck.length * 100) + '%';
+          }
+
+          function check(){
+            var d = deck[idx];
+            var val = norm(inputEl.value);
+            var ok = d.answers.some(function(a){ return norm(a) === val || val.indexOf(norm(a)) !== -1; });
+            if(ok){
+              correct++;
+              fbEl.style.color = 'var(--green,#38763a)';
+              fbEl.textContent = '✓ ' + d.answers[0];
+            } else {
+              fbEl.style.color = '#ae3020';
+              fbEl.textContent = '✗  ' + d.answers[0];
+            }
+            inputEl.disabled = true;
+            checkBtn.style.display = 'none'; nextBtn.style.display = 'inline-block';
+          }
+
+          function next(){
+            idx++;
+            if(idx >= deck.length){
+              qWrap.style.display = 'none'; summary.style.display = 'block';
+              progFill.style.width = '100%';
+              sumScore.textContent = correct + ' / ' + deck.length;
+            } else { showCard(); }
+          }
+
+          checkBtn.addEventListener('click', check);
+          nextBtn.addEventListener('click', next);
+          inputEl.addEventListener('keydown', function(e){
+            if(e.key === 'Enter'){ if(!inputEl.disabled) check(); else next(); }
+          });
+          retryBtn.addEventListener('click', function(){
+            deck = shuffle(tvData.slice()); idx = 0; correct = 0;
+            qWrap.style.display = 'block'; summary.style.display = 'none'; showCard();
+          });
+          showCard();
+        })();
+        </script>
       </div>
     </details>
 

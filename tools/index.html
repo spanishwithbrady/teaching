@@ -35,6 +35,16 @@
       transition: opacity .15s;
     }
     .tool-link:hover { opacity: .88; }
+    .tools-section { max-width: 900px; margin: 0 auto; padding: 28px 2rem 0; }
+    .tools-section-label {
+      font-size: .72rem; font-weight: 700; text-transform: uppercase;
+      letter-spacing: .09em; color: var(--muted); margin-bottom: 16px;
+      padding-bottom: 8px; border-bottom: 2px solid var(--border);
+    }
+    .tools-grid { display: grid; grid-template-columns: repeat(auto-fill,minmax(240px,1fr)); gap: 16px; }
+    .tool-unit-link { font-size: .78rem; color: var(--green); text-decoration: none; font-weight: 500; }
+    .tool-unit-link:hover { text-decoration: underline; }
+    .tool-unit-row { display:flex; align-items:center; gap:10px; margin-bottom:6px; }
   </style>
 </head>
 <body>
@@ -80,12 +90,18 @@
       style="padding:5px 14px;font-size:12px;font-weight:500;border:none;cursor:pointer;background:var(--bg);color:var(--muted);">中文</button>
   </div>
 </div>
-<div class="tools-grid">
+<!-- ── By-unit tools ── -->
+<div class="tools-section">
+  <div class="tools-section-label">
+    <span class="lang-en">📚 By Unit — open during the lesson</span>
+    <span class="lang-zh">📚 按单元 — 课堂中随时打开</span>
+  </div>
+  <div class="tools-grid">
 
   <div class="tool-card">
     <div class="tool-emoji">🌍</div>
     <div class="tool-name"><span class="lang-en">Country Randomizer</span><span class="lang-zh">国家随机器</span></div>
-    <div class="tool-unit">Unit 2</div>
+    <div class="tool-unit-row"><div class="tool-unit">Unit 2</div> · <a class="tool-unit-link" href="../spanish/a1/a1-1/unit-2.html"><span class="lang-en">→ Open unit</span><span class="lang-zh">→ 打开单元</span></a></div>
     <div class="tool-desc">
       <span class="lang-en">Spin for a random country and practice nationalities and SER.</span>
       <span class="lang-zh">随机抽取一个国家，练习国籍和 SER 动词。</span>
@@ -98,7 +114,7 @@
   <div class="tool-card">
     <div class="tool-emoji">📍</div>
     <div class="tool-name"><span class="lang-en">City Locator</span><span class="lang-zh">城市定位</span></div>
-    <div class="tool-unit">Unit 4</div>
+    <div class="tool-unit-row"><div class="tool-unit">Unit 4</div> · <a class="tool-unit-link" href="../spanish/a1/a1-1/unit-4.html"><span class="lang-en">→ Open unit</span><span class="lang-zh">→ 打开单元</span></a></div>
     <div class="tool-desc">
       <span class="lang-en">Describe where Spanish-speaking cities are using prepositions of place.</span>
       <span class="lang-zh">用方位介词描述西语国家城市的位置。</span>
@@ -111,7 +127,7 @@
   <div class="tool-card">
     <div class="tool-emoji">👨‍👩‍👧</div>
     <div class="tool-name"><span class="lang-en">Family Chain Puzzle</span><span class="lang-zh">家庭关系谜题</span></div>
-    <div class="tool-unit">Unit 6</div>
+    <div class="tool-unit-row"><div class="tool-unit">Unit 6</div> · <a class="tool-unit-link" href="../spanish/a1/a1-1/unit-6.html"><span class="lang-en">→ Open unit</span><span class="lang-zh">→ 打开单元</span></a></div>
     <div class="tool-desc">
       <span class="lang-en">Work out family relationships step by step using possessives.</span>
       <span class="lang-zh">用物主代词逐步推导家庭关系。</span>
@@ -124,7 +140,7 @@
   <div class="tool-card">
     <div class="tool-emoji">📅</div>
     <div class="tool-name"><span class="lang-en">Weekly Schedule Builder</span><span class="lang-zh">一周日程表</span></div>
-    <div class="tool-unit">Unit 9</div>
+    <div class="tool-unit-row"><div class="tool-unit">Unit 9</div> · <a class="tool-unit-link" href="../spanish/a1/a1-2/unit-9.html"><span class="lang-en">→ Open unit</span><span class="lang-zh">→ 打开单元</span></a></div>
     <div class="tool-desc">
       <span class="lang-en">Build your week in Spanish using -AR verbs and frequency adverbs.</span>
       <span class="lang-zh">用 -AR 动词和频率副词规划你的一周。</span>
@@ -137,7 +153,7 @@
   <div class="tool-card">
     <div class="tool-emoji">🕐</div>
     <div class="tool-name"><span class="lang-en">Clock Time Trainer</span><span class="lang-zh">钟表练习</span></div>
-    <div class="tool-unit">Unit 10</div>
+    <div class="tool-unit-row"><div class="tool-unit">Unit 10</div></div>
     <div class="tool-desc">
       <span class="lang-en">Practice telling the time in Spanish with a random clock face.</span>
       <span class="lang-zh">用随机时钟练习用西班牙语报时。</span>
@@ -150,7 +166,7 @@
   <div class="tool-card">
     <div class="tool-emoji">🌤️</div>
     <div class="tool-name"><span class="lang-en">Weather City Randomizer</span><span class="lang-zh">天气城市随机器</span></div>
-    <div class="tool-unit">Unit 11</div>
+    <div class="tool-unit-row"><div class="tool-unit">Unit 11</div></div>
     <div class="tool-desc">
       <span class="lang-en">Describe weather conditions for random cities worldwide.</span>
       <span class="lang-zh">描述全球随机城市的天气状况。</span>
@@ -163,7 +179,7 @@
   <div class="tool-card">
     <div class="tool-emoji">🎯</div>
     <div class="tool-name"><span class="lang-en">Hobby Spinner</span><span class="lang-zh">爱好转盘</span></div>
-    <div class="tool-unit">Unit 12</div>
+    <div class="tool-unit-row"><div class="tool-unit">Unit 12</div></div>
     <div class="tool-desc">
       <span class="lang-en">Spin for a hobby and react using GUSTAR-type vocabulary.</span>
       <span class="lang-zh">转动转盘获得爱好，用 GUSTAR 类词汇表达看法。</span>
@@ -176,7 +192,7 @@
   <div class="tool-card">
     <div class="tool-emoji">🍽️</div>
     <div class="tool-name"><span class="lang-en">Restaurant Menu</span><span class="lang-zh">餐厅菜单</span></div>
-    <div class="tool-unit">Unit 13</div>
+    <div class="tool-unit-row"><div class="tool-unit">Unit 13</div></div>
     <div class="tool-desc">
       <span class="lang-en">Order a full Spanish meal — click items, get a total, ask for the bill.</span>
       <span class="lang-zh">点一顿完整的西班牙餐——点菜、合计、要账单。</span>
@@ -189,7 +205,7 @@
   <div class="tool-card">
     <div class="tool-emoji">🫀</div>
     <div class="tool-name"><span class="lang-en">Body Map</span><span class="lang-zh">身体部位图</span></div>
-    <div class="tool-unit">Unit 17</div>
+    <div class="tool-unit-row"><div class="tool-unit">Unit 17</div></div>
     <div class="tool-desc">
       <span class="lang-en">Click body parts and practice DOLER sentences.</span>
       <span class="lang-zh">点击身体部位，练习 DOLER 句子。</span>
@@ -202,7 +218,7 @@
   <div class="tool-card">
     <div class="tool-emoji">✈️</div>
     <div class="tool-name"><span class="lang-en">Trip Randomizer</span><span class="lang-zh">旅行随机器</span></div>
-    <div class="tool-unit">Unit 20</div>
+    <div class="tool-unit-row"><div class="tool-unit">Unit 20</div></div>
     <div class="tool-desc">
       <span class="lang-en">Generate a past trip and narrate it using irregular preterites.</span>
       <span class="lang-zh">生成一次过去的旅行，用不规则过去时讲述它。</span>
@@ -213,10 +229,21 @@
   </div>
 
 
+  </div><!-- end by-unit grid -->
+</div><!-- end by-unit section -->
+
+<!-- ── Grammar & Reference ── -->
+<div class="tools-section">
+  <div class="tools-section-label">
+    <span class="lang-en">🔤 Grammar &amp; Reference</span>
+    <span class="lang-zh">🔤 语法与参考</span>
+  </div>
+  <div class="tools-grid">
+
   <div class="tool-card">
     <div class="tool-emoji">🔤</div>
     <div class="tool-name"><span class="lang-en">Verb Conjugator</span><span class="lang-zh">动词变位</span></div>
-    <div class="tool-unit">All units</div>
+    <div class="tool-unit-row"><div class="tool-unit">All units</div></div>
     <div class="tool-desc">
       <span class="lang-en">Reference table + practice drill for any Spanish verb.</span>
       <span class="lang-zh">查看任意西班牙语动词的变位表，或进行填空练习。</span>
@@ -227,9 +254,46 @@
   </div>
 
   <div class="tool-card">
+    <div class="tool-emoji">🃏</div>
+    <div class="tool-name"><span class="lang-en">Flashcard Mode</span><span class="lang-zh">闪卡模式</span></div>
+    <div class="tool-unit-row"><div class="tool-unit">All units</div></div>
+    <div class="tool-desc">
+      <span class="lang-en">Practice vocabulary in any direction — Spanish, English, or Chinese.</span>
+      <span class="lang-zh">多方向练习词汇——西班牙语、英语或中文。</span>
+    </div>
+    <a class="tool-link" href="flashcards.html">
+      <span class="lang-en">Open tool</span><span class="lang-zh">打开工具</span>
+    </a>
+  </div>
+
+  <div class="tool-card">
+    <div class="tool-emoji">📚</div>
+    <div class="tool-name"><span class="lang-en">Extra Practice</span><span class="lang-zh">课外练习</span></div>
+    <div class="tool-unit-row"><div class="tool-unit">All units</div></div>
+    <div class="tool-desc">
+      <span class="lang-en">External exercises, videos and listening resources organised by unit.</span>
+      <span class="lang-zh">按单元整理的外部练习、视频和听力资源。</span>
+    </div>
+    <a class="tool-link" href="extra-practice.html">
+      <span class="lang-en">Open</span><span class="lang-zh">打开</span>
+    </a>
+  </div>
+
+  </div><!-- end grammar grid -->
+</div><!-- end grammar section -->
+
+<!-- ── Classroom Tools ── -->
+<div class="tools-section" style="padding-bottom:40px;">
+  <div class="tools-section-label">
+    <span class="lang-en">🏫 Classroom Tools</span>
+    <span class="lang-zh">🏫 课堂工具</span>
+  </div>
+  <div class="tools-grid">
+
+  <div class="tool-card">
     <div class="tool-emoji">🎯</div>
     <div class="tool-name"><span class="lang-en">Student Picker</span><span class="lang-zh">随机选学生</span></div>
-    <div class="tool-unit">Group lessons</div>
+    <div class="tool-unit-row"><div class="tool-unit">Group lessons</div></div>
     <div class="tool-desc">
       <span class="lang-en">Spin to pick a student — fair and fun for group classes.</span>
       <span class="lang-zh">随机选出一名学生——公平又有趣。</span>
@@ -242,7 +306,7 @@
   <div class="tool-card">
     <div class="tool-emoji">🎲</div>
     <div class="tool-name"><span class="lang-en">Question Dice</span><span class="lang-zh">问题骰子</span></div>
-    <div class="tool-unit">All units</div>
+    <div class="tool-unit-row"><div class="tool-unit">All units</div></div>
     <div class="tool-desc">
       <span class="lang-en">Roll for a question word and form questions about any topic.</span>
       <span class="lang-zh">摇出一个疑问词，围绕任意话题造问句。</span>
@@ -253,22 +317,9 @@
   </div>
 
   <div class="tool-card">
-    <div class="tool-emoji">🃏</div>
-    <div class="tool-name"><span class="lang-en">Flashcard Mode</span><span class="lang-zh">闪卡模式</span></div>
-    <div class="tool-unit">All units</div>
-    <div class="tool-desc">
-      <span class="lang-en">Practice vocabulary in any direction — Spanish, English, or Chinese.</span>
-      <span class="lang-zh">多方向练习词汇——西班牙语、英语或中文。</span>
-    </div>
-    <a class="tool-link" href="flashcards.html">
-      <span class="lang-en">Open tool</span><span class="lang-zh">打开工具</span>
-    </a>
-  </div>
-
-  <div class="tool-card">
     <div class="tool-emoji">⏱</div>
     <div class="tool-name"><span class="lang-en">Lesson Timer</span><span class="lang-zh">课程计时器</span></div>
-    <div class="tool-unit">All lessons</div>
+    <div class="tool-unit-row"><div class="tool-unit">All lessons</div></div>
     <div class="tool-desc">
       <span class="lang-en">Structure your lesson time with preset or custom segments.</span>
       <span class="lang-zh">使用预设或自定义课程段规划课堂时间。</span>
@@ -278,20 +329,8 @@
     </a>
   </div>
 
-  <div class="tool-card">
-    <div class="tool-emoji">📚</div>
-    <div class="tool-name"><span class="lang-en">Extra Practice</span><span class="lang-zh">课外练习</span></div>
-    <div class="tool-unit">All units</div>
-    <div class="tool-desc">
-      <span class="lang-en">External exercises, videos and listening resources organised by unit.</span>
-      <span class="lang-zh">按单元整理的外部练习、视频和听力资源。</span>
-    </div>
-    <a class="tool-link" href="extra-practice.html">
-      <span class="lang-en">Open</span><span class="lang-zh">打开</span>
-    </a>
-  </div>
-
-</div>
+  </div><!-- end classroom grid -->
+</div><!-- end classroom section -->
 <script>
   function setLang(l){
     document.body.classList.toggle('zh',l==='zh');

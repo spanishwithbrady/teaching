@@ -42,6 +42,25 @@
       font-size: 0.9rem;
       line-height: 1.6;
     }
+    /* ── AR drill ── */
+    :root { --ser-card:#ffffff; --ser-correct:#38763a; --ser-wrong:#ae3020; }
+    @media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--ser-card:#26211a;--ser-correct:#5ca85c;--ser-wrong:#d05848;}}
+    :root[data-theme="dark"]{--ser-card:#26211a;--ser-correct:#5ca85c;--ser-wrong:#d05848;}
+    .ser-drill { margin-top:16px; }
+    .ser-drill .sd-prog { height:5px;background:var(--border);border-radius:99px;overflow:hidden;margin-bottom:14px; }
+    .ser-drill .sd-prog-fill { height:100%;background:var(--green);border-radius:99px;transition:width .4s ease;width:0%; }
+    .ser-drill .sd-card { background:var(--ser-card);border:1.5px solid var(--border);border-radius:12px;padding:28px 20px 22px;text-align:center; }
+    .ser-drill .sd-prompt { font-size:1.1rem;font-weight:700;margin-bottom:20px;line-height:1.6; }
+    .ser-drill .sd-input { width:100%;max-width:260px;padding:10px 14px;border:1.5px solid var(--border);border-radius:8px;font-size:1rem;font-family:inherit;background:var(--bg);color:var(--brown);outline:none;text-align:center; }
+    .ser-drill .sd-input:focus { border-color:var(--green); }
+    .ser-drill .sd-fb { min-height:22px;margin:10px 0 4px;font-size:.88rem;font-weight:600; }
+    .ser-drill .sd-btns { display:flex;justify-content:center;gap:10px;margin-top:12px; }
+    .ser-drill .sd-btn { padding:9px 24px;border:none;border-radius:8px;font-size:.9rem;font-weight:600;cursor:pointer;font-family:inherit; }
+    .ser-drill .sd-check { background:var(--green);color:#fff; }
+    .ser-drill .sd-next { background:var(--warm-brown,#8B5E3C);color:#fff; }
+    .ser-drill .sd-summary { text-align:center;padding:28px 20px; }
+    .ser-drill .sd-sum-score { font-size:2rem;font-weight:700;color:var(--green);margin-bottom:16px; }
+    .ser-drill .sd-retry { background:var(--green);color:#fff;padding:10px 28px;border:none;border-radius:8px;font-size:.95rem;font-weight:600;cursor:pointer;font-family:inherit; }
   </style>
 </head>
 <body>
@@ -537,6 +556,117 @@
           <li>用 también/tampoco 和同学比较你们的一周。</li>
           <li>你最喜欢一周中的哪一天？为什么？</li>
         </ol>
+      </div>
+    </details>
+
+    <!-- Panel 10 — AR verb drill -->
+    <details class="panel">
+      <summary>
+        <span class="panel-num">10</span>
+        <span class="panel-title"><span class="lang-en">✏️ Practice — -AR verb drill</span><span class="lang-zh">✏️ 练习 — -AR 动词变位</span></span>
+        <svg class="panel-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg>
+      </summary>
+      <div class="panel-body">
+        <p class="lang-en-block">Type the correct conjugated form of the -AR verb. Accents are optional.</p>
+        <p class="lang-zh-block">输入正确的 -AR 动词变位形式，重音符号可选。</p>
+
+        <div id="ar-ex" style="margin-top:16px;">
+          <div class="ser-drill">
+            <div class="sd-prog"><div class="sd-prog-fill" id="ar-progFill"></div></div>
+            <div class="sd-card" id="ar-qWrap">
+              <div class="sd-prompt" id="ar-prompt"></div>
+              <input class="sd-input" id="ar-input" type="text" placeholder="conjugation..." autocomplete="off" autocorrect="off" spellcheck="false">
+              <div class="sd-fb" id="ar-fb"></div>
+              <div class="sd-btns">
+                <button class="sd-btn sd-check" id="ar-checkBtn">Check</button>
+                <button class="sd-btn sd-next" id="ar-nextBtn" style="display:none;">Next →</button>
+              </div>
+            </div>
+            <div class="sd-summary" id="ar-summary" style="display:none;">
+              <div class="sd-sum-score" id="ar-sumScore"></div>
+              <button class="sd-btn sd-retry" id="ar-retryBtn">↩ Try again</button>
+            </div>
+          </div>
+        </div>
+
+        <script>
+        (function(){
+          var arData = [
+            { prompt:'Yo ___ (hablar) español todos los días.',       answer:'hablo' },
+            { prompt:'Tú ___ (trabajar) los lunes.',                  answer:'trabajas' },
+            { prompt:'Ella ___ (estudiar) por las noches.',           answer:'estudia' },
+            { prompt:'Nosotros ___ (cocinar) los domingos.',          answer:'cocinamos' },
+            { prompt:'Ellos ___ (bailar) salsa a veces.',             answer:'bailan' },
+            { prompt:'Usted ___ (escuchar) música siempre.',          answer:'escucha' },
+            { prompt:'Vosotros ___ (caminar) al trabajo.',            answer:'camináis', alt:'caminais' },
+            { prompt:'Yo ___ (descansar) los fines de semana.',       answer:'descanso' },
+            { prompt:'Tú ___ (escuchar) podcasts normalmente.',       answer:'escuchas' },
+            { prompt:'Él ___ (trabajar) desde casa los viernes.',     answer:'trabaja' },
+            { prompt:'Nosotras ___ (estudiar) juntas los martes.',    answer:'estudiamos' },
+            { prompt:'Ellas ___ (bailar) casi nunca.',                answer:'bailan' }
+          ];
+          function norm(s){ return s.trim().toLowerCase()
+            .replace(/á/g,'a').replace(/é/g,'e').replace(/í/g,'i').replace(/ó/g,'o').replace(/ú/g,'u'); }
+          function shuffle(a){ for(var i=a.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1));var t=a[i];a[i]=a[j];a[j]=t;} return a; }
+
+          var deck = shuffle(arData.slice());
+          var idx = 0, correct = 0;
+          var progFill = document.getElementById('ar-progFill');
+          var promptEl = document.getElementById('ar-prompt');
+          var inputEl  = document.getElementById('ar-input');
+          var fbEl     = document.getElementById('ar-fb');
+          var checkBtn = document.getElementById('ar-checkBtn');
+          var nextBtn  = document.getElementById('ar-nextBtn');
+          var summary  = document.getElementById('ar-summary');
+          var sumScore = document.getElementById('ar-sumScore');
+          var retryBtn = document.getElementById('ar-retryBtn');
+          var qWrap    = document.getElementById('ar-qWrap');
+
+          function showCard(){
+            promptEl.textContent = deck[idx].prompt;
+            inputEl.value = ''; fbEl.textContent = ''; fbEl.style.color = '';
+            checkBtn.style.display = 'inline-block'; nextBtn.style.display = 'none';
+            inputEl.disabled = false; inputEl.focus();
+            progFill.style.width = (idx / deck.length * 100) + '%';
+          }
+
+          function check(){
+            var d = deck[idx];
+            var val = norm(inputEl.value);
+            var ok = val === norm(d.answer) || (d.alt && val === norm(d.alt));
+            if(ok){
+              correct++;
+              fbEl.style.color = 'var(--green,#38763a)';
+              fbEl.textContent = '✓ ' + d.answer;
+            } else {
+              fbEl.style.color = '#ae3020';
+              fbEl.textContent = '✗  ' + d.answer;
+            }
+            inputEl.disabled = true;
+            checkBtn.style.display = 'none'; nextBtn.style.display = 'inline-block';
+          }
+
+          function next(){
+            idx++;
+            if(idx >= deck.length){
+              qWrap.style.display = 'none'; summary.style.display = 'block';
+              progFill.style.width = '100%';
+              sumScore.textContent = correct + ' / ' + deck.length;
+            } else { showCard(); }
+          }
+
+          checkBtn.addEventListener('click', check);
+          nextBtn.addEventListener('click', next);
+          inputEl.addEventListener('keydown', function(e){
+            if(e.key === 'Enter'){ if(!inputEl.disabled) check(); else next(); }
+          });
+          retryBtn.addEventListener('click', function(){
+            deck = shuffle(arData.slice()); idx = 0; correct = 0;
+            qWrap.style.display = 'block'; summary.style.display = 'none'; showCard();
+          });
+          showCard();
+        })();
+        </script>
       </div>
     </details>
 
